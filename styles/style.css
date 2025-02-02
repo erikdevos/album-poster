@@ -10,13 +10,23 @@ html {
 html, body {
   padding: 0;
   margin: 0;
+  font-family: sans-serif;
 }
 
 body {
-  font-family: sans-serif;
   font-size: 1rem;
   line-height: 1.4;
   background-color: #efefe6;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 a {
@@ -111,6 +121,7 @@ footer {
   padding: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  font-family: Roboto, sans-serif;
 }
 
 .album-name {
@@ -204,6 +215,7 @@ ol.track-list li {
   text-align: right;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
   padding-top: 1rem;
+  padding-top: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
