@@ -20,7 +20,10 @@
         gap: 1rem;
         font-size: 0.8rem;
         a {
-            color: rgb(76, 76, 76)
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 

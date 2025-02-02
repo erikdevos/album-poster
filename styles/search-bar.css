@@ -20,7 +20,10 @@
   font-size: 0.8rem;
 }
 .search-bar .search-button-wrapper a {
-  color: rgb(76, 76, 76);
+  text-decoration: none;
+}
+.search-bar .search-button-wrapper a:hover {
+  text-decoration: underline;
 }
 .search-bar input {
   width: 100%;
