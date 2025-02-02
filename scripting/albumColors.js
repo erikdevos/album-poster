@@ -7,16 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     albumCover.addEventListener("load", function () {
-        console.log("Image loaded, extracting color palette...")
+        //console.log("Image loaded, extracting color palette...")
         extractPalette(albumCover)
     })
 
-    console.log("Waiting for image to load...")
+    //console.log("Waiting for image to load...")
 })
 
 function extractPalette(img) {
     try {
-        console.log("Extracting color palette...")
+        //console.log("Extracting color palette...")
         const vibrant = new Vibrant(img)
         const swatches = vibrant.swatches()
         const colorsContainer = document.querySelector("#album-colors")
@@ -31,7 +31,7 @@ function extractPalette(img) {
         for (const swatch in swatches) {
             if (swatches.hasOwnProperty(swatch) && swatches[swatch]) {
                 const color = swatches[swatch].getHex()
-                console.log(swatch, color)
+                //console.log(swatch, color)
 
                 const colorDiv = document.createElement("div")
                 colorDiv.classList.add("album-color")
