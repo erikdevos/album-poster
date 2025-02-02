@@ -28,7 +28,7 @@
                 <!-- Album info -->
                 <div id="album-info" class="album-info-container">
                     <div class="album-cover-wrapper">
-                        <img id="album-cover" src="" alt="">
+                        <img id="album-cover" src="" alt="" crossorigin="anonymous">
                     </div>
                     <h2 id="album-name" class="album-name"></h2>
                     <div class="album-tracklist-genre-wrapper">
@@ -48,13 +48,21 @@
                         </div>
                     </div>
                     <div class="album-artist">
+                        <div id="album-colors" class="album-colors">
+                            
+                        </div>
                         <h3 id="album-artist"></h3>
                     </div>
                 </div>
             </section>
 
+            <!-- Vibrant JS for color extraction -->
+            <script src="/scripting/vibrant.min.js"></script>
+
             <!-- The scripting for the album view -->
             <script type="module" src="scripting/main.js"></script>
+
+            
         </main>
         <footer>
             <section class="container">

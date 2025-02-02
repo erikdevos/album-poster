@@ -1,5 +1,7 @@
 import { loadAlbumList } from './albumList.js'
 import { fetchAlbumDetails } from './albumDetails.js'
+import { extractPalette } from './albumColors.js'
+
 
 document.addEventListener('DOMContentLoaded', () => {
     loadAlbumList()
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('album-id').value = albumId
 
             fetchAlbumDetails()
+            extractPalette()
         }
     })
 })

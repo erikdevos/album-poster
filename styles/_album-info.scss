@@ -96,12 +96,15 @@ ol.track-list {
 }
 
 .album-artist {
-    text-align: right;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 3rem;
+    display: flex;
+    align-items: flex-start;
     padding-top: 1rem;
     h3 {
+        text-align: right;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 3rem;
+        margin-left: auto;
         line-height: 1;
     }
 }
