@@ -7,6 +7,10 @@
     margin-bottom: 2rem;
     font-family: $font-secondary;
     text-rendering: optimizeLegibility;
+    @media screen and (max-width: 600px) {
+        padding: 1rem;
+        margin-bottom: 6rem;
+    }
 }
 
 .album-name {
@@ -17,6 +21,14 @@
     padding-bottom: 1rem;
     line-height: 1;
     border-bottom: solid 3px black;
+    word-break: break-word;
+    hyphens: auto;
+    @media screen and (max-width: 768px) {
+        font-size: 2.5rem;
+    }
+    @media screen and (max-width: 600px) {
+        font-size: 1.8rem;
+    }
 }
 
 .album-cover-wrapper {
@@ -44,6 +56,16 @@ ol.track-list {
     margin-left: 1rem;
     font-size: 1rem;
     height: 100%;
+    @media screen and (max-width: 768px) {
+        column-gap: 2rem;
+        font-size: 0.9rem;
+        padding-bottom: 0;
+    }
+    @media screen and (max-width: 600px) {
+        column-gap: 1.5rem;
+        font-size: 0.8rem;
+        padding-bottom: 0;
+    }
     li {
         font-weight: 600;
     }
@@ -53,6 +75,11 @@ ol.track-list {
     display: flex;
     gap: 2rem;
     border-bottom: solid 3px black;
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 0;
+    }
+
     .left {
         flex: 2;
     }
@@ -66,6 +93,10 @@ ol.track-list {
 .album-footer-info {
     display: flex;
     gap: 0.5rem;
+    @media screen and (max-width: 600px) {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
 }
 
 .album-genre,
@@ -75,19 +106,15 @@ ol.track-list {
     margin-bottom: 1rem;
 }
 
-.album-year {
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.text-label {
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
+.album-year,
+.text-label,
 .album-label {
     font-weight: 600;
     text-transform: uppercase;
+    @media screen and (max-width: 600px) {
+        white-space: nowrap;
+    }
+
 }
 
 .album-cover-back {
@@ -102,6 +129,10 @@ ol.track-list {
         background-color: black;
         aspect-ratio: 1/1;
         image-rendering: optimizequality;
+        @media screen and (max-width: 600px) {
+            max-width: none;
+            margin-top: 1.5rem;
+        }
     }
 }
 
@@ -124,6 +155,10 @@ ol.track-list {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: solid 3px black;
+    @media screen and (max-width: 600px) {
+        flex-direction: column-reverse;
+        row-gap: 0.5rem;
+    }
     h3 {
         text-align: right;
         text-transform: uppercase;
@@ -131,5 +166,13 @@ ol.track-list {
         font-size: 3rem;
         margin-left: auto;
         line-height: 1;
+        @media screen and (max-width: 768px) {
+            font-size: 2.5rem;
+        }
+        @media screen and (max-width: 600px) {
+            font-size: 1.8rem;
+            margin-left: 0;
+            text-align: left;
+        }
     }
 }
