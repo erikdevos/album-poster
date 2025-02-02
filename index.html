@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Music Album Info</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <main>
+            <section class="container">
+                <!-- Find album by ID -->
+                <div class="search-bar">
+                    <h1>Get Album Info</h1>
+                    <input type="text" id="album-id" placeholder="Enter Album ID" value="2273822">
+                    <div class="search-button-wrapper">
+                        <button onclick="fetchAlbumDetails()">Search</button>
+                        <a href="https://www.theaudiodb.com/" target="_blank">Find id</a>
+                    </div>
+                    <ul class="albums-list">
+                        <li>
+                            <a href="#2429476">Hit me hard and soft</a>
+                        </li>
+                        <li>
+                            <a href="#2273822">StarBoy</a>
+                        </li>
+                        <li>
+                            <a href="#2126189">Trilogy</a>
+                        </li>
+                        <li>
+                            <a href="#2111844">The Downward Spiral</a>
+                        </li>
+                        <li>
+                            <a href="#2113384">Origin of Symmetry</a>
+                        </li>
+                        <li>
+                            <a href="#2109594">The Fame Monster</a>
+                        </li>
+                        <li>
+                            <a href="#2303672">Paradise</a>
+                        </li>
+                        <li>
+                            <a href="#2110500">Songs of Faith and Devotion</a>
+                        </li>
+                        <li>
+                            <a href="#2348684">The Man Machine</a>
+                        </li>
+                        <li>
+                            <a href="#2369219">If I Can't Have Love I Want Power</a>
+                        </li>
+                        <li>
+                            <a href="#2430149">BRAT</a>
+                        </li>
+                        <li>
+                            <a href="#2430737">The Rise and Fall of a Midwest Princess</a>
+                        </li>
+                        <li>
+                            <a href="#2111329">Minutes to Midnight</a>
+                        </li>
+                        <li>
+                            <a href="#2116381">The Black Parade</a>
+                        </li>
+                        <li>
+                            <a href="#2127592">Mellon Collie and The Infinite Sadness</a>
+                        </li>
+                        <li>
+                            <a href="#2151027">Cross</a>
+                        </li>
+                        <li>
+                            <a href="#2351676">Moral Panic</a>
+                        </li>
+                        <li>
+                            <a href="#2110674">Loud</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Album info -->
+                <div id="album-info" class="album-info-container">
+                    <div class="album-cover-wrapper">
+                        <img id="album-cover" src="" alt="">
+                    </div>
+                    <h2 id="album-name" class="album-name"></h2>
+                    <div class="album-tracklist-genre-wrapper">
+                        <div class="left">
+                            <ol id="track-list" class="track-list"></ol>
+                        </div>
+                        <div class="right">
+                            <div id="album-label" class="album-label"></div>
+                            <div id="album-year" class="album-year"></div>
+                            <div class="album-genre-style">
+                                <div id="album-style" class="album-style"></div>
+                                <div id="album-genre" class="album-genre"></div>
+                            </div>
+                            <div class="album-cover-back">
+                                <img id="album-cover-back" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album-artist">
+                        <div id="album-artist"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The scripting for the album view -->
+            <script type="text/javascript" src="/scripting/main.js"></script>
+        </main>
+        <footer>
+            <section class="container">
+                Thanks <a href="https://www.theaudiodb.com/">TheAudiodb</a> for the API that provides the data.
+            </section>
+        </footer>
+    </body>
+</html>

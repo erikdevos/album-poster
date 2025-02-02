@@ -1,0 +1,47 @@
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}  
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    background-color: #efefe6;
+}
+
+a {
+    color: inherit;
+}
+
+main {
+    min-height: 20rem;
+}
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 800px;
+}
+
+footer {
+    background-color: rgb(61, 61, 61);
+    color: white;
+    margin-top: 8rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    font-size: 0.9rem;
+}
