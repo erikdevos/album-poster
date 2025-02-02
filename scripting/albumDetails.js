@@ -1,4 +1,59 @@
-export async function fetchAlbumDetails() {
+document.addEventListener('DOMContentLoaded', () => {
+    loadAlbumList()
+
+    // Add event listeners to album list links (after dynamic loading)
+    document.querySelector('.albums-list').addEventListener('click', function(event) {
+        if (event.target.tagName === 'A') {
+            event.preventDefault()
+
+            const albumId = event.target.getAttribute('href').replace('#', '')
+            document.getElementById('album-id').value = albumId
+
+            fetchAlbumDetails()
+        }
+    })
+})
+
+// Modify the loadAlbumList function to set a random album as default
+async function loadAlbumList() {
+    try {
+        const response = await fetch('data/albums.json')
+        if (!response.ok) throw new Error('Failed to load album list')
+
+        const albums = await response.json()
+        const albumListEl = document.querySelector('.albums-list')
+
+        // Clear existing items
+        albumListEl.innerHTML = ''
+
+        // Populate list dynamically and set a random album
+        let defaultAlbumId = null;
+        albums.forEach(album => {
+            const li = document.createElement('li')
+            const a = document.createElement('a')
+            a.href = `#${album.id}`
+            a.textContent = `${album.name} – ${album.artist}`
+            li.appendChild(a)
+            albumListEl.appendChild(li)
+        })
+
+        // Set a random album from the list as the default
+        if (albums.length > 0) {
+            const randomIndex = Math.floor(Math.random() * albums.length)
+            defaultAlbumId = albums[randomIndex].id
+
+            // Set the default album ID in the input
+            document.getElementById('album-id').value = defaultAlbumId
+            fetchAlbumDetails() // Fetch the details of the randomly selected album
+        }
+
+    } catch (error) {
+        console.error('Error loading album list:', error)
+    }
+}
+
+// Your existing fetchAlbumDetails function remains unchanged
+async function fetchAlbumDetails() {
     const albumId = document.getElementById('album-id').value.trim()
     if (!albumId) {
         alert('Please enter an album ID')
@@ -82,3 +137,6 @@ export async function fetchAlbumDetails() {
         document.getElementById('album-info').innerHTML = '<p>Error fetching album details</p>'
     }
 }
+
+// Exporting the function for use in main.js
+export { fetchAlbumDetails }

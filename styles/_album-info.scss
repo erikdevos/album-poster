@@ -14,7 +14,7 @@
     margin-top: 0;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 1;
     border-bottom: solid 3px black;
 }
 
@@ -101,5 +101,7 @@ ol.track-list {
     font-weight: bold;
     font-size: 3rem;
     padding-top: 1rem;
-    padding-top: 0.5rem;
+    h3 {
+        line-height: 1;
+    }
 }
