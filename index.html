@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Music Album Poster</title>
         <link rel="icon" href="data:,">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/style.css">
@@ -60,11 +60,60 @@
             <!-- Vibrant JS for color extraction -->
             <script src="scripting/vibrant.min.js"></script>
             
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js" crossorigin="anonymous"></script>
 
             <!-- The scripting for the album view -->
             <script type="module" src="scripting/main.js"></script>
    
+            <script>
+async function loadImageAsDataURL(imageUrl) {
+    try {
+        const response = await fetch(imageUrl, { mode: 'cors' }); // Request with CORS
+        const blob = await response.blob(); // Convert response to blob
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result); // Convert blob to Data URL
+            reader.readAsDataURL(blob);
+        });
+    } catch (error) {
+        console.error('Failed to fetch image:', error);
+        return null;
+    }
+}
+
+async function processAlbumScreenshot() {
+    const albumCover = document.querySelector("#album-cover"); // Your image element
+    if (!albumCover) {
+        console.error("Album cover not found.");
+        return;
+    }
+
+    // Fetch the image as a Data URL
+    const dataUrl = await loadImageAsDataURL(albumCover.src);
+    if (dataUrl) {
+        albumCover.src = dataUrl; // Set it as the new source
+    } else {
+        console.error("Failed to load image with CORS workaround.");
+        return;
+    }
+
+    // Wait a bit for the browser to render the new image
+    setTimeout(() => {
+        const node = document.getElementById('album-info');
+        htmlToImage.toPng(node)
+            .then(function (dataUrl) {
+                const link = document.createElement('a');
+                link.download = 'album-cover.png';
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch(function (error) {
+                console.error('Something went wrong with image generation.', error);
+            });
+    }, 500); // Small delay to ensure rendering
+}
+
+            </script>
         </main>
         <footer>
             <section class="container">

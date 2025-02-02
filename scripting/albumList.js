@@ -8,6 +8,9 @@ export async function loadAlbumList() {
 
         albumListEl.innerHTML = '' // Clear existing items
 
+        // Reverse the albums array
+        albums.reverse()
+
         albums.forEach(album => {
             const li = document.createElement('li')
             const a = document.createElement('a')
