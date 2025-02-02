@@ -37,5 +37,10 @@
     { "id": "2127591", "name": "The Fragile", "artist": "Nine Inch Nails"},
     { "id": "2115752", "name": "Superunknown", "artist": "SoundGarden"},
     { "id": "2239184", "name": "Ghosts I/IV", "artist": "Nine Inch Nails"},
-    { "id": "2121207", "name": "Mer de Noms", "artist": "A Perfect Circle"}
+    { "id": "2121207", "name": "Mer de Noms", "artist": "A Perfect Circle"},
+    { "id": "2121207", "name": "Mer de Noms", "artist": "A Perfect Circle"},
+    { "id": "2338425", "name": "Future Nostalgia", "artist": "Dua Lipa"},
+    { "id": "2400118", "name": "My 21st Century Blues", "artist": "Raye"},
+    { "id": "2122185", "name": "Straight Outta Compton", "artist": "N.W.A"},
+    { "id": "2110839", "name": "Nevermind", "artist": "Nirvana"}
 ]

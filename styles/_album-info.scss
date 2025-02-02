@@ -63,8 +63,9 @@ ol.track-list {
     }
 }
 
-.album-genre-style {
+.album-footer-info {
     display: flex;
+    gap: 0.5rem;
 }
 
 .album-genre,
@@ -79,6 +80,11 @@ ol.track-list {
     text-transform: uppercase;
 }
 
+.text-label {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 .album-label {
     font-weight: 600;
     text-transform: uppercase;
@@ -86,13 +92,14 @@ ol.track-list {
 
 .album-cover-back {
     width: 100%;
-    max-width: 8rem;
     margin-bottom: 2rem;
-    background-color: black;
     line-height: 0;
     img {
+        margin-left: auto;
         width: 100%;
+        max-width: 12rem;
         height: auto;
+        background-color: black;
         aspect-ratio: 1/1;
         image-rendering: optimizequality;
     }
@@ -114,6 +121,9 @@ ol.track-list {
     display: flex;
     align-items: flex-start;
     padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: solid 3px black;
     h3 {
         text-align: right;
         text-transform: uppercase;
