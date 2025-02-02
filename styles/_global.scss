@@ -56,15 +56,3 @@ footer {
     padding-bottom: 3rem;
     font-size: 0.9rem;
 }
-
-.album-colors {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    .album-color {
-        flex: 1;
-        display: block;
-        width: 2.5rem;
-        aspect-ratio: 1/1;
-    }
-}

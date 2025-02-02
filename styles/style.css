@@ -55,18 +55,6 @@ footer {
   font-size: 0.9rem;
 }
 
-.album-colors {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.album-colors .album-color {
-  flex: 1;
-  display: block;
-  width: 2.5rem;
-  aspect-ratio: 1/1;
-}
-
 .search-bar {
   display: flex;
   align-items: flex-start;
@@ -220,6 +208,18 @@ ol.track-list li {
 .album-cover-back img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1/1;
+}
+
+.album-colors {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.album-colors .album-color {
+  flex: 1;
+  display: block;
+  width: 2.5rem;
   aspect-ratio: 1/1;
 }
 
