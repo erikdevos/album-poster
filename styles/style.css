@@ -49,12 +49,11 @@ footer {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-top: 1rem;
   margin-bottom: 1rem;
   position: fixed;
-  right: 2rem;
+  right: 1rem;
   top: 1rem;
-  max-width: 12rem;
+  max-width: 13rem;
   flex-direction: column;
   background-color: lightgray;
   padding: 1rem;
@@ -67,7 +66,10 @@ footer {
   font-size: 0.8rem;
 }
 .search-bar .search-button-wrapper a {
-  color: rgb(76, 76, 76);
+  text-decoration: none;
+}
+.search-bar .search-button-wrapper a:hover {
+  text-decoration: underline;
 }
 .search-bar input {
   width: 100%;
@@ -82,10 +84,12 @@ footer {
 .search-bar ul.albums-list {
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 0.7rem;
+  margin-left: 0;
   padding-left: 0;
   width: 100%;
   list-style-type: disc;
+  max-height: 8em;
+  overflow-x: auto;
 }
 .search-bar ul.albums-list li {
   font-size: 0.7rem;
