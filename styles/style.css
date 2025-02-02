@@ -98,7 +98,7 @@ footer {
   padding-left: 0;
   width: 100%;
   list-style-type: disc;
-  max-height: 8em;
+  max-height: 6rem;
   overflow-x: auto;
 }
 .search-bar ul.albums-list li {
@@ -122,6 +122,7 @@ footer {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-family: Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 .album-name {
@@ -143,6 +144,7 @@ footer {
 }
 .album-cover-wrapper img {
   width: 100%;
+  image-rendering: optimizequality;
 }
 
 ol.track-list {
@@ -155,10 +157,11 @@ ol.track-list {
   list-style-position: outside;
   -moz-column-count: 2;
        column-count: 2;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
   margin-left: 1rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  height: 100%;
 }
 ol.track-list li {
   font-weight: 600;
@@ -174,7 +177,7 @@ ol.track-list li {
 }
 .album-tracklist-genre-wrapper .right {
   flex: 1;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .album-genre-style {
@@ -209,6 +212,7 @@ ol.track-list li {
   width: 100%;
   height: auto;
   aspect-ratio: 1/1;
+  image-rendering: optimizequality;
 }
 
 .album-colors {

@@ -29,5 +29,13 @@
     { "id": "2381408", "name": "Motomami", "artist": "Rosalia"},
     { "id": "2114786", "name": "The College Dropout", "artist": "Kanye West"},
     { "id": "2433567", "name": "Short and Sweet", "artist": "Sabrina Carpenter"},
-    { "id": "2399425", "name": "RUSH", "artist": "Måneskin"}
+    { "id": "2399425", "name": "RUSH", "artist": "Måneskin"},
+    { "id": "2109889", "name": "Dark Side of The Moon", "artist": "Pink Floyd"},
+    { "id": "2139503", "name": "Welcome Oblivion", "artist": "How To Destroy Angels"},
+    { "id": "2112504", "name": "London Calling", "artist": "The Clash"},
+    { "id": "2113003", "name": "Songs for the Deaf", "artist": "Queens of the Stone Age"},
+    { "id": "2127591", "name": "The Fragile", "artist": "Nine Inch Nails"},
+    { "id": "2115752", "name": "Superunknown", "artist": "SoundGarden"},
+    { "id": "2239184", "name": "Ghosts I/IV", "artist": "Nine Inch Nails"},
+    { "id": "2121207", "name": "Mer de Noms", "artist": "A Perfect Circle"}
 ]

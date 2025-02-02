@@ -6,6 +6,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-family: $font-secondary;
+    text-rendering: optimizeLegibility;
 }
 
 .album-name {
@@ -26,7 +27,7 @@
     margin-bottom: 2rem;
     img {
         width: 100%;
-
+        image-rendering: optimizequality;
     }
 }
 
@@ -39,9 +40,10 @@ ol.track-list {
     margin-bottom: 0;
     list-style-position: outside;
     column-count: 2;
-    column-gap: 2rem;
+    column-gap: 2.5rem;
     margin-left: 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    height: 100%;
     li {
         font-weight: 600;
     }
@@ -57,7 +59,7 @@ ol.track-list {
 
     .right {
         flex: 1;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -92,6 +94,7 @@ ol.track-list {
         width: 100%;
         height: auto;
         aspect-ratio: 1/1;
+        image-rendering: optimizequality;
     }
 }
 
