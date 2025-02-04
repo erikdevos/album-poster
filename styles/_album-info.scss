@@ -1,4 +1,42 @@
 // Album info poster
+#album-container {
+    &.size-s {
+        max-width: 450px;
+        .album-info-container {
+            padding: 1.5rem;
+        }
+        .album-cover-wrapper {
+            margin-bottom: 1rem;
+        }
+        .album-name {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .track-list {
+            font-size: 0.6rem;
+        }
+        .album-colors {
+            .album-color {
+                width: 1rem;
+            }
+        }
+        #album-artist {
+            font-size: 2rem;
+        }
+        .album-footer-info {
+            font-size: 0.6rem;
+        }
+    }
+
+    &.size-m {
+        max-width: 600px;
+    }
+
+    &.size-l {
+        max-width: 800px;
+    }
+}
+
 .album-info-container {
     border: solid 4px black;
     background-color: #efefe6;
@@ -67,7 +105,7 @@ ol.track-list {
         padding-bottom: 0;
     }
     li {
-        font-weight: 600;
+        font-weight: 700;
     }
 }
 
@@ -101,20 +139,28 @@ ol.track-list {
 
 .album-genre,
 .album-style {
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
 
 .album-year,
-.text-label,
+.album-text-label,
 .album-label {
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     @media screen and (max-width: 600px) {
         white-space: nowrap;
     }
+}
 
+.album-year,
+.album-label {
+    &:after {
+        content: "|";
+        font-weight: inherit;
+        margin-left: 0.5rem;
+    }
 }
 
 .album-cover-back {

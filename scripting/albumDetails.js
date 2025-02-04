@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const albumId = event.target.getAttribute('href').replace('#', '')
             document.getElementById('album-id').value = albumId
-
+            console.log("fetch album details");
             fetchAlbumDetails()
         }
     })
@@ -55,8 +55,10 @@ async function loadAlbumList() {
 // Your existing fetchAlbumDetails function remains unchanged
 async function fetchAlbumDetails() {
     const albumId = document.getElementById('album-id').value.trim()
+    console.log("called fetch album!");
     if (!albumId) {
-        alert('Please enter an album ID')
+        alert('Please enter an album ID');
+        console("no album id");
         return
     }
 
@@ -65,60 +67,86 @@ async function fetchAlbumDetails() {
     const trackListUrl = `https://www.theaudiodb.com/api/v1/json/${apiKey}/track.php?m=${albumId}`
 
     try {
+        console.log("Fetch album details")
         const response = await fetch(albumDetailsUrl)
         if (!response.ok) throw new Error('Failed to fetch album data')
-
+    
         const data = await response.json()
         if (!data.album) throw new Error('No album details found')
-
+    
         const album = data.album[0]
-
+    
         const trackResponse = await fetch(trackListUrl)
         if (!trackResponse.ok) throw new Error('Failed to fetch tracklist data')
-
+    
         const trackData = await trackResponse.json()
-
+    
         // Update elements safely
         document.getElementById('album-name').textContent = album.strAlbum || 'Unknown Album'
         document.getElementById('album-artist').textContent = album.strArtist || 'Unknown Artist'
-        document.getElementById('album-label').textContent = album.strLabel || ''
-        document.getElementById('album-year').textContent = album.intYearReleased || ''
-
-        // Handle album style and genre logic
+    
+        // Handle album label visibility
+        const albumLabel = document.getElementById('album-label')
+        const albumTextLabel = document.querySelector('.album-text-label')
+        console.log('Album Label:', album.strLabel) // Debugging line
+    
+        if (album.strLabel && album.strLabel.trim() !== '') {
+            albumLabel.textContent = album.strLabel
+            albumTextLabel.classList.remove('hidden') // Show label
+            albumLabel.classList.remove('hidden') // Show label content
+        } else {
+            albumTextLabel.classList.add('hidden') // Hide label
+            albumLabel.classList.add('hidden') // Hide label content
+        }
+    
+        // Handle album year visibility
+        const albumYear = document.getElementById('album-year')
+        console.log('Album Year:', album.intYearReleased) // Debugging line
+    
+        if (album.intYearReleased && album.intYearReleased.toString().trim() !== '') {
+            albumYear.textContent = album.intYearReleased
+            albumYear.classList.remove('hidden') // Show year
+        } else {
+            albumYear.classList.add('hidden') // Hide year
+        }
+    
+        // Handle album style and genre visibility
         const albumStyle = document.getElementById('album-style')
         const albumGenre = document.getElementById('album-genre')
-
-        if (album.strStyle) {
+        console.log('Album Style:', album.strStyle) // Debugging line
+        console.log('Album Genre:', album.strGenre) // Debugging line
+    
+        if (album.strStyle && album.strStyle.trim() !== '') {
             albumStyle.textContent = album.strStyle
-            albumStyle.style.display = 'block'
-            albumGenre.style.display = 'none'
-        } else if (album.strGenre) {
+            albumStyle.classList.remove('hidden') // Show style
+            albumGenre.classList.add('hidden') // Hide genre
+        } else if (album.strGenre && album.strGenre.trim() !== '') {
             albumGenre.textContent = album.strGenre
-            albumGenre.style.display = 'block'
-            albumStyle.style.display = 'none'
+            albumGenre.classList.remove('hidden') // Show genre
+            albumStyle.classList.add('hidden') // Hide style
         } else {
-            albumStyle.style.display = 'none'
-            albumGenre.style.display = 'none'
+            albumStyle.classList.add('hidden') // Hide style
+            albumGenre.classList.add('hidden') // Hide genre
         }
-
+    
         // Set album cover
         const albumCover = document.getElementById('album-cover')
-        if (album.strAlbumThumb) {
+        if (album.strAlbumThumb && album.strAlbumThumb.trim() !== '') {
             albumCover.src = album.strAlbumThumb
-            albumCover.style.display = 'block'
+            albumCover.classList.remove('hidden')
         } else {
-            albumCover.style.display = 'none'
+            albumCover.classList.add('hidden')
         }
-
+    
         // Set album back cover
         const albumCoverBack = document.getElementById('album-cover-back')
-        if (album.strAlbumBack) {
+        if (album.strAlbumBack && album.strAlbumBack.trim() !== '') {
             albumCoverBack.src = album.strAlbumBack
-            albumCoverBack.style.display = 'block'
+            albumCoverBack.classList.remove('hidden')
         } else {
-            albumCoverBack.style.display = 'none'
+            albumCoverBack.classList.add('hidden')
         }
-
+    
         // Populate tracklist
         const trackListEl = document.getElementById('track-list')
         trackListEl.innerHTML = ''
@@ -131,11 +159,12 @@ async function fetchAlbumDetails() {
         } else {
             trackListEl.innerHTML = '<p>No tracklist data available</p>'
         }
-
+    
     } catch (error) {
         console.error('Error fetching album details:', error)
         document.getElementById('album-info').innerHTML = '<p>Error fetching album details</p>'
     }
+    
 }
 
 // Exporting the function for use in main.js

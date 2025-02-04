@@ -2,20 +2,29 @@ import { loadAlbumList } from './albumList.js'
 import { fetchAlbumDetails } from './albumDetails.js'
 import { extractPalette } from './albumColors.js'
 
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Initial load of the album list
     loadAlbumList()
 
-    // Add event listeners to album list links (after dynamic loading)
-    document.querySelector('.albums-list').addEventListener('click', function(event) {
+    // Album list link click event
+    document.querySelector('.albums-list').addEventListener('click', (event) => {
         if (event.target.tagName === 'A') {
             event.preventDefault()
-
             const albumId = event.target.getAttribute('href').replace('#', '')
             document.getElementById('album-id').value = albumId
-
-            fetchAlbumDetails()
+            fetchAlbumDetails(albumId)
             extractPalette()
+        }
+    })
+
+    // Search button click event
+    document.getElementById('search-button').addEventListener('click', () => {
+        const albumId = document.getElementById('album-id').value.trim()
+        console.log('Search button clicked, album ID:', albumId) // Log the album ID
+        if (albumId) {
+            fetchAlbumDetails(albumId)
+        } else {
+            alert('Please enter an album ID to search')
         }
     })
 })

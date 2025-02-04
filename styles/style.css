@@ -60,6 +60,10 @@ footer {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 .search-bar {
   display: flex;
   align-items: flex-start;
@@ -127,6 +131,7 @@ footer {
 .search-bar ul.albums-list li {
   font-size: 0.7rem;
   width: 100%;
+  margin-bottom: 0.2rem;
 }
 .search-bar ul.albums-list li a {
   display: block;
@@ -136,6 +141,38 @@ footer {
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
+}
+
+#album-container.size-s {
+  max-width: 450px;
+}
+#album-container.size-s .album-info-container {
+  padding: 1.5rem;
+}
+#album-container.size-s .album-cover-wrapper {
+  margin-bottom: 1rem;
+}
+#album-container.size-s .album-name {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#album-container.size-s .track-list {
+  font-size: 0.6rem;
+}
+#album-container.size-s .album-colors .album-color {
+  width: 1rem;
+}
+#album-container.size-s #album-artist {
+  font-size: 2rem;
+}
+#album-container.size-s .album-footer-info {
+  font-size: 0.6rem;
+}
+#album-container.size-m {
+  max-width: 600px;
+}
+#album-container.size-l {
+  max-width: 800px;
 }
 
 .album-info-container {
@@ -222,7 +259,7 @@ ol.track-list {
   }
 }
 ol.track-list li {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .album-tracklist-genre-wrapper {
@@ -257,23 +294,30 @@ ol.track-list li {
 
 .album-genre,
 .album-style {
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .album-year,
-.text-label,
+.album-text-label,
 .album-label {
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
 }
 @media screen and (max-width: 600px) {
   .album-year,
-  .text-label,
+  .album-text-label,
   .album-label {
     white-space: nowrap;
   }
+}
+
+.album-year:after,
+.album-label:after {
+  content: "|";
+  font-weight: inherit;
+  margin-left: 0.5rem;
 }
 
 .album-cover-back {
