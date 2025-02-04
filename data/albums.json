@@ -38,9 +38,14 @@
     { "id": "2115752", "name": "Superunknown", "artist": "SoundGarden"},
     { "id": "2239184", "name": "Ghosts I/IV", "artist": "Nine Inch Nails"},
     { "id": "2121207", "name": "Mer de Noms", "artist": "A Perfect Circle"},
-    { "id": "2121207", "name": "Mer de Noms", "artist": "A Perfect Circle"},
     { "id": "2338425", "name": "Future Nostalgia", "artist": "Dua Lipa"},
     { "id": "2400118", "name": "My 21st Century Blues", "artist": "Raye"},
     { "id": "2122185", "name": "Straight Outta Compton", "artist": "N.W.A"},
-    { "id": "2110839", "name": "Nevermind", "artist": "Nirvana"}
+    { "id": "2110839", "name": "Nevermind", "artist": "Nirvana"},
+    { "id": "2443116", "name": "The Weeknd", "artist": "Hurry up Tomorrow"},
+    { "id": "2247627", "name": "The Weeknd", "artist": "Beauty Behind The Madness"},
+    { "id": "2337674", "name": "The Weeknd", "artist": "After Hours"},
+    { "id": "2376730", "name": "The Weeknd", "artist": "Dawn FM"},
+    { "id": "2301398", "name": "The Weeknd", "artist": "My Dear Melancholy"}
+    
 ]
