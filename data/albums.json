@@ -7,14 +7,20 @@
     { "id": "2109594", "name": "The Fame Monster", "artist": "Lady Gaga" },
     { "id": "2303672", "name": "Paradise", "artist": "Lana Del Rey" },
     { "id": "2110500", "name": "Songs of Faith and Devotion", "artist": "Depeche Mode" },
+    { "id": "2110493", "name": "Violator", "artist": "Depeche Mode" },
     { "id": "2348684", "name": "The Man Machine", "artist": "Kraftwerk" },
     { "id": "2369219", "name": "If I Can't Have Love, I Want Power", "artist": "Halsey" },
     { "id": "2430149", "name": "BRAT", "artist": "Charli XCX" },
-    { "id": "2430737", "name": "The Rise and Fall of a Midwest Princess", "artist": "Chappell Roan" },
+    { "id": "2430737", "name": "The Rise and Fall of a Midwest Princess", "artist": "Chappell Roan" },    
+    { "id": "2111331", "name": "Hybrid Theory", "artist": "Linkin Park" },
     { "id": "2111329", "name": "Minutes to Midnight", "artist": "Linkin Park" },
+    { "id": "2111327", "name": "Meteora", "artist": "Linkin Park" },
+    { "id": "2280121", "name": "One More Light", "artist": "Linkin Park" },
+    { "id": "2434839", "name": "From Zero", "artist": "Linkin Park"},
     { "id": "2116381", "name": "The Black Parade", "artist": "My Chemical Romance" },
     { "id": "2127592", "name": "Mellon Collie and the Infinite Sadness", "artist": "The Smashing Pumpkins" },
     { "id": "2151027", "name": "Cross", "artist": "Justice" },
+    { "id": "2428191", "name": "Hyperdrama", "artist": "Justice" },
     { "id": "2351676", "name": "Moral Panic", "artist": "Nothing But Thieves" },
     { "id": "2110674", "name": "Loud", "artist": "Rihanna" },
     { "id": "2109696", "name": "Sgt. Pepper's Lonely Hearts Club Band", "artist": "The Beatles" },
@@ -47,10 +53,10 @@
     { "id": "2337674", "name": "After Hours", "artist": "The Weeknd"},
     { "id": "2376730", "name": "Dawn FM", "artist": "The Weeknd"},
     { "id": "2301398", "name": "My Dear Melancholy", "artist": "The Weeknd"},
+    { "id": "2232390", "name": "Kiss land", "artist": "The Weeknd"},
     { "id": "2368394", "name": "Happier Than Ever", "artist": "Billie Eilish"},
     { "id": "2313086", "name": "When We All Fall Asleep Where Do We Go?", "artist": "Billie Eilish"},
     { "id": "2279375", "name": "DAMN.", "artist": "Kendrick Lamar"},
     { "id": "2236239", "name": "To Pimp A Butterfly", "artist": "Kendrick Lamar"}
-
 
 ]
