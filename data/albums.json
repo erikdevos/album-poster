@@ -10,6 +10,7 @@
     { "id": "2113383", "name": "Black Holes and Revelations", "artist": "Muse" },
     { "id": "2109594", "name": "The Fame Monster", "artist": "Lady Gaga" },
     { "id": "2303672", "name": "Paradise", "artist": "Lana Del Rey" },
+    { "id": "2127594", "name": "Born To Die", "artist": "Lana Del Rey" },
     { "id": "2110500", "name": "Songs of Faith and Devotion", "artist": "Depeche Mode" },
     { "id": "2110493", "name": "Violator", "artist": "Depeche Mode" },
     { "id": "2348684", "name": "The Man Machine", "artist": "Kraftwerk" },
@@ -21,6 +22,7 @@
     { "id": "2111327", "name": "Meteora", "artist": "Linkin Park" },
     { "id": "2280121", "name": "One More Light", "artist": "Linkin Park" },
     { "id": "2434839", "name": "From Zero", "artist": "Linkin Park"},
+    { "id": "2139237", "name": "The Rising Tied", "artist": "Fort Minor"},
     { "id": "2116381", "name": "The Black Parade", "artist": "My Chemical Romance" },
     { "id": "2127592", "name": "Mellon Collie and the Infinite Sadness", "artist": "The Smashing Pumpkins" },
     { "id": "2151027", "name": "Cross", "artist": "Justice" },
@@ -73,6 +75,13 @@
     { "id": "2368394", "name": "Happier Than Ever", "artist": "Billie Eilish"},
     { "id": "2313086", "name": "When We All Fall Asleep Where Do We Go?", "artist": "Billie Eilish"},
     { "id": "2279375", "name": "DAMN.", "artist": "Kendrick Lamar"},
-    { "id": "2236239", "name": "To Pimp A Butterfly", "artist": "Kendrick Lamar"}
-
+    { "id": "2236239", "name": "To Pimp A Butterfly", "artist": "Kendrick Lamar"},
+    { "id": "2178515", "name": "The Bones of What You Believe", "artist": "CHVRCHES"},
+    { "id": "2114830", "name": "La Roux", "artist": "La Roux"},
+    { "id": "2126729", "name": "Unapologetic", "artist": "Rihanna"},
+    { "id": "2110671", "name": "Rated R", "artist": "Rihanna"},
+    { "id": "2257888", "name": "Anti", "artist": "Rihanna"},
+    { "id": "2110672", "name": "Talk That Talk", "artist": "Rihanna"},
+    { "id": "2133701", "name": "Good Girl Gone Bad", "artist": "Rihanna"}
+    
 ]
