@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial load of the album list
     loadAlbumList()
 
+    // Check for album ID in URL hash and load it
+    const hashAlbumId = window.location.hash.replace('#', '')
+    if (hashAlbumId) {
+        document.getElementById('album-id').value = hashAlbumId
+        fetchAlbumDetails(hashAlbumId)
+        extractPalette()
+    }
+
     // Album list link click event
     document.querySelector('.albums-list').addEventListener('click', (event) => {
         if (event.target.tagName === 'A') {
