@@ -132,7 +132,8 @@ async function fetchAlbumDetails() {
         // Set album cover
         const albumCover = document.getElementById('album-cover')
         if (album.strAlbumThumb && album.strAlbumThumb.trim() !== '') {
-            albumCover.src = album.strAlbumThumb
+            // Use CORS proxy to avoid CORS issues with color extraction
+            albumCover.src = `https://cors-anywhere.herokuapp.com/${album.strAlbumThumb}`
             albumCover.classList.remove('hidden')
         } else {
             albumCover.classList.add('hidden')
@@ -141,7 +142,8 @@ async function fetchAlbumDetails() {
         // Set album back cover
         const albumCoverBack = document.getElementById('album-cover-back')
         if (album.strAlbumBack && album.strAlbumBack.trim() !== '') {
-            albumCoverBack.src = album.strAlbumBack
+            // Use CORS proxy to avoid CORS issues
+            albumCoverBack.src = `https://cors-anywhere.herokuapp.com/${album.strAlbumBack}`
             albumCoverBack.classList.remove('hidden')
         } else {
             albumCoverBack.classList.add('hidden')
