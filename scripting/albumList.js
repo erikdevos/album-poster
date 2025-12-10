@@ -52,6 +52,17 @@ if (size === 'l') {
   albumInfo.classList.add('size-s')
 }
 
+// Check the "theme" parameter and apply the corresponding theme
+const theme = params.get('theme')
+if (theme === 'dark') {
+  document.body.classList.add('dark-theme')
+  document.body.classList.remove('light-theme')
+} else {
+  // Default to light theme
+  document.body.classList.add('light-theme')
+  document.body.classList.remove('dark-theme')
+}
+
 // Search button click event
 document.getElementById('search-button').addEventListener('click', (event) => {
     const albumId = document.getElementById('album-id').value.trim()

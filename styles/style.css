@@ -13,13 +13,16 @@ html, body {
   font-family: sans-serif;
   color: #000000;
   background-color: #EFEFE6;
-  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) {
-  html, body {
-    background-color: #000000;
-    color: #FFFFFF;
-  }
+
+body.dark-theme {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+body.light-theme {
+  background-color: #EFEFE6;
+  color: #000000;
 }
 
 body {
@@ -192,15 +195,13 @@ footer {
   text-rendering: optimizeLegibility;
 }
 @media screen and (max-width: 600px) {
-  .album-info-container {
-    padding: 1rem;
-    margin-bottom: 6rem;
-  }
 }
-@media (prefers-color-scheme: dark) {
-  .album-info-container {
-    border-color: #FFFFFF;
-  }
+body.dark-theme .album-info-container {
+  border-color: #FFFFFF;
+}
+
+body.light-theme .album-info-container {
+  border-color: #000000;
 }
 
 .album-name {
@@ -215,20 +216,11 @@ footer {
   -webkit-hyphens: auto;
           hyphens: auto;
 }
-@media screen and (max-width: 768px) {
-  .album-name {
-    font-size: 2.5rem;
-  }
+body.dark-theme .album-name {
+  border-bottom-color: #FFFFFF;
 }
-@media screen and (max-width: 600px) {
-  .album-name {
-    font-size: 1.8rem;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  .album-name {
-    border-bottom-color: #FFFFFF;
-  }
+body.light-theme .album-name {
+  border-bottom-color: #000000;
 }
 
 .album-cover-wrapper {
@@ -296,10 +288,11 @@ ol.track-list li {
     gap: 0;
   }
 }
-@media (prefers-color-scheme: dark) {
-  .album-tracklist-genre-wrapper {
-    border-bottom-color: #FFFFFF;
-  }
+body.dark-theme .album-tracklist-genre-wrapper {
+  border-bottom-color: #FFFFFF;
+}
+body.light-theme .album-tracklist-genre-wrapper {
+  border-bottom-color: black;
 }
 .album-tracklist-genre-wrapper .left {
   flex: 2;
@@ -379,10 +372,11 @@ ol.track-list li {
   width: 2.5rem;
   aspect-ratio: 1/1;
 }
-@media (prefers-color-scheme: dark) {
-  .album-colors .album-color {
-    outline: solid 1.5px #FFFFFF;
-  }
+body.dark-theme .album-colors .album-color {
+  outline: solid 1.5px #FFFFFF;
+}
+body.light-theme .album-colors .album-color {
+  outline: none;
 }
 
 .album-artist {
@@ -399,10 +393,11 @@ ol.track-list li {
     row-gap: 0.5rem;
   }
 }
-@media (prefers-color-scheme: dark) {
-  .album-artist {
-    border-bottom-color: #FFFFFF;
-  }
+body.dark-theme .album-artist {
+  border-bottom-color: #FFFFFF;
+}
+body.light-theme .album-artist {
+  border-bottom-color: black;
 }
 .album-artist h3 {
   text-align: right;

@@ -20,8 +20,11 @@ Combine with query parameters for additional features:
 - `?size=l` - Sets large poster size
 - `?size=m` - Sets medium poster size  
 - `?size=s` - Sets small poster size
+- `?theme=dark` - Sets dark theme (black background, white text)
+- `?theme=light` - Sets light theme (light background, black text) - default
 
 #### Combined Examples:
 - `#2458157?debug=true` - Load specific album with search bar visible
 - `#2458157?size=l` - Load specific album with large size
-- `#2458157?debug=true&size=s` - Load specific album with debug bar and small size
+- `#2458157?theme=dark` - Load specific album with dark theme
+- `#2458157?debug=true&size=s&theme=dark` - Load specific album with debug bar, small size, and dark theme
