@@ -263,6 +263,43 @@ test('a theme in the URL wins over the saved choice, and the switch keeps the UR
     } finally { await close() }
 })
 
+test('freezing the line breaks keeps every text as high as it is on screen, and undoes cleanly', async () => {
+    // a narrow poster, so that long tracks wrap
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 420, height: 1600 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const result = await page.evaluate(async () => {
+            const { freezeLineBreaks, freezeAllLineBreaks } = await import('/scripting/lineBreaks.js')
+            const lineHeight = li => parseFloat(getComputedStyle(li).lineHeight)
+            const items = [...document.querySelectorAll('#track-list li')]
+            // make two tracks long enough to wrap, one of them over three lines
+            items[0].firstChild.data = 'Sexo, violencia y llantas con un titel dat echt te lang is'
+            items[1].firstChild.data = 'Mio Cristo piange diamanti'
+            const wrapping = items.filter(li => li.getBoundingClientRect().height > lineHeight(li) * 1.5)
+
+            const before = wrapping.map(li => ({ text: li.textContent, height: li.getBoundingClientRect().height }))
+            const undo = freezeAllLineBreaks()
+            const frozen = wrapping.map(li => ({
+                lines: li.firstChild.data.split('\n').length,
+                height: li.getBoundingClientRect().height,
+                whiteSpace: li.style.whiteSpace
+            }))
+            undo()
+            const after = wrapping.map(li => ({ text: li.textContent, whiteSpace: li.style.whiteSpace }))
+            return { count: wrapping.length, before, frozen, after, single: typeof freezeLineBreaks }
+        })
+
+        assert.ok(result.count > 0, 'the test needs tracks that wrap on screen')
+        result.before.forEach((item, i) => {
+            const { lines, height, whiteSpace } = result.frozen[i]
+            assert.ok(lines >= 2, `${item.text} has real line breaks`)
+            assert.ok(Math.abs(height - item.height) < 1, `${item.text} is as high as before`)
+            assert.equal(whiteSpace, 'pre')
+            assert.deepEqual(result.after[i], { text: item.text, whiteSpace: '' })
+        })
+    } finally { await close() }
+})
+
 test('with colors=cover the poster gets the colours of the cover', async () => {
     const { page, close } = await open(`?colors=cover#${LUX}`)
     try {

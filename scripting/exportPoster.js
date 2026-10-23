@@ -3,6 +3,10 @@
 
 import { DPI, canvasLimits, planExport } from './exportPlan.js'
 import { buildPdf, setPngDpi } from './fileFormats.js'
+import { freezeAllLineBreaks } from './lineBreaks.js'
+
+// Only the experiments in the tests turn this off
+export const exportSettings = { freezeLineBreaks: true }
 
 const HTML_TO_IMAGE = 'https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/+esm'
 const ORIGINAL_TIMEOUT_MS = 30_000
@@ -15,17 +19,21 @@ async function renderPosterCanvas(quality) {
     const { width, height } = poster.getBoundingClientRect()
     const plan = planExport({ width, height, quality, limits: canvasLimits(navigator.userAgent) })
 
-    // The library freezes every computed size, including the height of the tracklist, which is
-    // laid out in CSS columns. If a word wraps differently in the rendered copy, the last track
-    // would fall into a column that is not there. A little spare room in the list prevents that.
+    // The library freezes every computed size, and the image is drawn at a different scale than the
+    // screen, so text can wrap differently in the image. Two things keep the image like the screen:
+    // - the line breaks that are on screen are put into the text (see lineBreaks.js), and
+    // - the tracklist, laid out in CSS columns, gets a little spare room, so that a track that does
+    //   end up wider cannot fall into a column that is not there.
+    const unfreeze = exportSettings.freezeLineBreaks ? freezeAllLineBreaks() : () => {}
     const trackList = document.getElementById('track-list')
     const spare = Math.ceil(parseFloat(getComputedStyle(trackList).fontSize) * 1.9)
     trackList.style.height = `${trackList.getBoundingClientRect().height + spare}px`
-
-    // The page shows a 1200 pixel cover, which is soft at a large size: use the original
-    const restore = quality === 'standard' ? () => {} : await useOriginalCovers()
+    let restoreCovers = () => {}
 
     try {
+        // The page shows a 1200 pixel cover, which is soft at a large size: use the original
+        if (quality !== 'standard') restoreCovers = await useOriginalCovers()
+
         const canvas = await toCanvas(poster, {
             pixelRatio: plan.pixelRatio,
             backgroundColor: getComputedStyle(document.body).backgroundColor,
@@ -35,8 +43,9 @@ async function renderPosterCanvas(quality) {
         })
         return { canvas, plan }
     } finally {
-        restore()
+        restoreCovers()
         trackList.style.height = ''
+        unfreeze()
     }
 }
 
