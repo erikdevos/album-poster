@@ -11,6 +11,10 @@
     --muted-bg: color-mix(in srgb, var(--fg) 8%, transparent);
     --chrome: #3d3d3d;
     --page-gutter: 1rem;
+    --chrome-height: 6.5rem; /* header + page padding around the poster */
+}
+:root[data-controls="off"] {
+    --chrome-height: 3rem;
 }
 
 /* Theme: follows the system, `?theme=light|dark` sets data-theme on <html> */
@@ -115,7 +119,7 @@ main {
         width: min(
             100% - 2 * var(--page-gutter),
             var(--poster-max),
-            max(var(--poster-min), calc((100dvh - 3rem) / 1.85))
+            max(var(--poster-min), calc((100dvh - var(--chrome-height)) / 1.85))
         );
     }
 }
@@ -283,50 +287,124 @@ ol.track-list li::before {
     margin-right: 1.5cqi;
 }
 
-/* ---------- Search (debug mode) ---------- */
+/* ---------- Header and search ---------- */
 
-.search-bar {
-    width: min(100% - 2 * var(--page-gutter), 800px);
-    margin: 0 auto 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
-    background-color: var(--muted-bg);
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    width: min(100% - 2 * var(--page-gutter), 1100px);
+    margin-inline: auto;
+    padding-block: 0.75rem;
 }
-.search-bar h1 {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
+:root[data-controls="off"] .site-header {
+    display: none;
+}
+
+.site-title {
+    margin-right: auto;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
-.search-bar input {
+
+.search {
+    position: relative;
+    flex: 1 1 16rem;
+    max-width: 26rem;
+}
+.search input {
     width: 100%;
-    padding: 0.4rem 0.5rem;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
+    border-radius: 999px;
+    background-color: transparent;
+    color: inherit;
     font: inherit;
     font-size: 0.9rem;
 }
-.search-bar ul.albums-list {
-    margin: 0.5rem 0 0;
-    padding: 0;
-    max-height: 7rem;
+.search input::placeholder {
+    color: color-mix(in srgb, var(--fg) 60%, transparent);
+}
+
+#search-results {
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    max-height: min(60dvh, 24rem);
+    margin: 0;
+    padding: 0.35rem;
     overflow-y: auto;
     list-style: none;
+    border: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+    border-radius: 0.75rem;
+    background-color: var(--bg);
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.25);
+    font-size: 0.85rem;
 }
-.search-bar ul.albums-list:empty {
+#search-results[hidden] {
     display: none;
 }
-.search-bar ul.albums-list li {
-    margin-bottom: 0.2rem;
-    font-size: 0.75rem;
+#search-results [role="option"] {
+    padding: 0.5rem 0.65rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
-.search-bar ul.albums-list a {
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+#search-results [role="option"]:hover,
+#search-results [role="option"][aria-selected="true"] {
+    background-color: color-mix(in srgb, var(--fg) 14%, transparent);
+}
+#search-results .search-group {
+    padding: 0.5rem 0.65rem 0.2rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    text-decoration: none;
+    opacity: 0.6;
 }
-.search-bar ul.albums-list a:hover {
-    text-decoration: underline;
+#search-results .search-message {
+    padding: 0.5rem 0.65rem;
+    opacity: 0.7;
+}
+
+.shuffle-button {
+    padding: 0.55rem 0.95rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
+    border-radius: 999px;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.shuffle-button:hover {
+    background-color: var(--muted-bg);
+}
+
+@media (max-width: 600px) {
+    .search {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+    }
+    .shuffle-button {
+        padding-inline: 0.8rem;
+    }
+}
+
+/* Only for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 /* ---------- Footer ---------- */
@@ -344,6 +422,6 @@ footer .container {
 }
 
 @media print {
-    .search-bar, footer, .status { display: none; }
+    .site-header, footer, .status { display: none; }
     #album-container { width: 100%; }
 }

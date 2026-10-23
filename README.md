@@ -19,6 +19,10 @@ All data access sits behind two functions in `scripting/source.js`: `searchAlbum
 
 `data/albums.json` is the curated list: `id` is the MusicBrainz release-group id, `audiodbId` the id the app used before, so old links keep working. `scripts/migrate-albums.mjs` was used for the one-off conversion.
 
+## Search
+
+The header has a search box (an ARIA combobox: arrow keys, Enter, Escape) and a random album button. Searching goes through MusicBrainz: every word has to match the album or the artist, the last one as a prefix while you type. MusicBrainz has no popularity, so hits are ranked by their relevance score plus the number of releases of the album, which puts well-known albums first. Compilations, live albums, remixes and the like are left out. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
+
 ## Layout
 
 The poster is a size container and all measurements inside it are relative to its width, so it scales as one piece. On landscape screens its width follows the viewport height, so the poster stays in view (never narrower than 480px, then the page scrolls). On portrait screens and phones it fills the width and the page scrolls. Long titles, artists and tracklists get a smaller type size, and a poster without back cover gives the tracklist the full width.
@@ -26,7 +30,7 @@ The poster is a size container and all measurements inside it are relative to it
 ## URL Parameters
 
 ### Loading Specific Albums
-Use the hash to load a specific album by its MusicBrainz release-group id. Without a hash a random album is shown. Search in debug mode (`?debug=true`) to find the id of any album: picking a result puts it in the URL.
+Use the hash to load a specific album by its MusicBrainz release-group id. Without a hash a random album is shown. Use the search box to find any album: picking a result puts its id in the URL, so every poster has a link you can share. Without a hash a random album is shown, and its id is put in the URL.
 ```
 #album-id
 ```
@@ -38,7 +42,7 @@ Examples:
 ### Additional Options
 Add query parameters before the hash:
 
-- `?debug=true` - Shows the search bar to find any album
+- `?controls=false` - Hides the header with search and the random button, for showing the poster on a screen
 - `?size=l` - Sets large poster size
 - `?size=m` - Sets medium poster size
 - `?size=s` - Sets small poster size
@@ -48,9 +52,9 @@ Add query parameters before the hash:
 - `?colors=cover` - Takes the poster colours from the cover (background, text and numbers), with a contrast check; falls back to the classic look when no readable combination is found
 
 #### Combined Examples:
-- `?debug=true#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0` - Load specific album with search bar visible
+- `?controls=false#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0` - Load specific album without the header
 - `?size=l#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0` - Load specific album with large size
 - `?theme=dark#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0` - Load specific album with dark theme
-- `?debug=true&size=s&theme=dark#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0` - Load specific album with debug bar, small size, and dark theme
+- `?size=s&theme=dark#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0` - Load specific album small size and dark theme
 
-The older form with the options after the hash (`#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0?debug=true`) still works.
+The older form with the options after the hash (`#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0?theme=dark`) still works.

@@ -2,11 +2,11 @@ import { getAlbum, isValidId } from './source.js'
 
 let currentRequest = null
 
-// Fetches and renders an album. A newer call cancels an older one still in flight.
+// Fetches and renders an album, and returns it. A newer call cancels an older one still in flight.
 export async function fetchAlbumDetails(albumId) {
     if (!isValidId(albumId)) {
         setStatus('This is not a valid album id.', 'error')
-        return
+        return null
     }
 
     currentRequest?.abort()
@@ -19,10 +19,12 @@ export async function fetchAlbumDetails(albumId) {
         const album = await getAlbum(albumId, controller.signal)
         renderAlbum(album)
         setStatus('')
+        return album
     } catch (error) {
-        if (error.name === 'AbortError') return
+        if (error.name === 'AbortError') return null
         console.error('Error fetching album details:', error)
         setStatus('Could not load this album. Try again in a moment or pick another one.', 'error')
+        return null
     }
 }
 

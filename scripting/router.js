@@ -1,5 +1,5 @@
-// The URL is the single source of truth: `?debug=true&size=s&theme=dark#<album id>`.
-// The legacy form `#<id>?debug=true` is still understood, so old links keep working.
+// The URL is the single source of truth: `?size=s&theme=dark#<album id>`.
+// The legacy form `#<id>?theme=dark` is still understood, so old links keep working.
 // Albums are MusicBrainz release-group ids. Old links with a numeric TheAudioDB id are
 // translated by main.js using `audiodbId` in data/albums.json.
 

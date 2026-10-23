@@ -52,20 +52,35 @@ async function musicBrainz(path, signal, attempts = 3) {
 const credit = artistCredit => artistCredit?.map(part => part.name + (part.joinphrase ?? '')).join('') ?? ''
 const year = date => date?.slice(0, 4) ?? ''
 
+// Every word has to match the title or the artist, the last one as a prefix (typeahead).
+// MusicBrainz knows nothing about popularity, so the hits are re-ranked: the number of releases
+// of an album is a good stand-in (a famous album has been released many times).
+const EXCLUDED_TYPES = 'compilation OR live OR remix OR demo OR soundtrack OR mixtape OR dj-mix OR ' +
+    'spokenword OR interview OR audiobook OR audio-drama OR field-recording'
+const POPULARITY_WEIGHT = 30
+const MAX_RESULTS = 8
+
 export async function searchAlbums(query, signal) {
-    const text = query.trim()
-    if (text.length < 2) return []
+    const words = query.match(/[\p{L}\p{N}]+/gu) ?? []
+    if (query.trim().length < 2 || words.length === 0) return []
 
-    const terms = text.replace(/["\\]/g, ' ')
-    const lucene = `(releasegroup:(${terms}) OR artist:(${terms})) AND primarytype:album`
-    const data = await musicBrainz(`release-group?query=${encodeURIComponent(lucene)}&limit=8`, signal)
+    const clauses = words.map((word, index) => {
+        const term = index === words.length - 1 && word.length >= 2 ? `${word}*` : word
+        return `(releasegroup:${term} OR artist:${term})`
+    })
+    const lucene = `${clauses.join(' AND ')} AND primarytype:album AND NOT secondarytype:(${EXCLUDED_TYPES})`
+    const data = await musicBrainz(`release-group?query=${encodeURIComponent(lucene)}&limit=25`, signal)
 
-    return data['release-groups'].map(group => ({
-        id: group.id,
-        title: group.title,
-        artist: credit(group['artist-credit']),
-        year: year(group['first-release-date'])
-    }))
+    const rank = group => group.score + POPULARITY_WEIGHT * Math.log10(1 + (group.count ?? 1))
+    return data['release-groups']
+        .sort((a, b) => rank(b) - rank(a))
+        .slice(0, MAX_RESULTS)
+        .map(group => ({
+            id: group.id,
+            title: group.title,
+            artist: credit(group['artist-credit']),
+            year: year(group['first-release-date'])
+        }))
 }
 
 export async function getAlbum(id, signal) {
