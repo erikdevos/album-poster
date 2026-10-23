@@ -484,20 +484,20 @@ ol.track-list li::before {
     color: #fff;
     background-color: #1c1c1e;
 }
-#album-container[data-layout="blur"] .poster-backdrop {
+#album-container:is([data-layout="blur"], [data-layout="cd-blur"]) .poster-backdrop {
     display: block;
     position: absolute;
     inset: 0;
     z-index: -1;
     overflow: hidden;
 }
-#album-container[data-layout="blur"] .poster-backdrop::after {
+#album-container:is([data-layout="blur"], [data-layout="cd-blur"]) .poster-backdrop::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgb(0 0 0 / 0.05) 25%, rgb(0 0 0 / 0.5));
 }
-#album-container[data-layout="blur"] .poster-backdrop img {
+#album-container:is([data-layout="blur"], [data-layout="cd-blur"]) .poster-backdrop img {
     display: block;
     width: 100%;
     height: 100%;
@@ -605,32 +605,26 @@ ol.track-list li::before {
     }
 }
 
-/* CD: the back of a cd case. A band of cover art along the top, artist and title, a centred numbered
-   tracklist, the details at the bottom, and the two edges with vertical text. */
-#album-container[data-layout="cd"] {
-    --poster-ratio: 1;
-    --strip-h: 17cqi; /* the band of cover art along the top */
+/* CD: the back of a cd case. Artist and title, a centred numbered tracklist, the details at the
+   bottom, and the two edges with vertical text. cd-blur is the same, on the blurred cover. */
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) {
+    --poster-ratio: 0.9;
 }
-#album-container[data-layout="cd"] .album-info-container {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-info-container {
     position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     align-content: center;
     justify-items: center;
-    aspect-ratio: 150 / 140;
-    padding: 0 13cqi 6cqi;
+    aspect-ratio: 150 / 128;
+    padding: 6cqi 13cqi;
     text-align: center;
     border-width: max(1.5px, 0.35cqi);
 }
-#album-container[data-layout="cd"] .cd-spine {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine {
     position: absolute;
-    /* Not top: var(--strip-h): a container query length on an absolutely positioned box does not
-       always resolve against the poster. The band lies over the top of the edges instead, and the
-       padding (a percentage of the width, which is the height of the band) centres the text below it. */
     top: 0;
     bottom: 0;
-    box-sizing: border-box;
-    padding-top: 17.2%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -644,46 +638,33 @@ ol.track-list li::before {
     writing-mode: vertical-rl;
     overflow: hidden;
 }
-#album-container[data-layout="cd"] .cd-spine span {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine span {
     max-height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-#album-container[data-layout="cd"] .cd-spine-left {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine-left {
     left: 0;
     border-right: max(1px, 0.25cqi) solid currentColor;
     transform: rotate(180deg); /* reads from the bottom up, like on a cd */
 }
-#album-container[data-layout="cd"] .cd-spine-right {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine-right {
     right: 0;
     border-left: max(1px, 0.25cqi) solid currentColor;
 }
-#album-container[data-layout="cd"] .album-tracklist-genre-wrapper .right,
-#album-container[data-layout="cd"] .album-colors {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-cover-wrapper,
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-tracklist-genre-wrapper .right,
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-colors {
     display: none;
 }
-/* The cover, cropped to a wide band that runs edge to edge, as on many cd backs */
-#album-container[data-layout="cd"] .album-cover-wrapper {
-    grid-row: 1;
-    position: relative;
-    z-index: 1;
-    justify-self: stretch;
-    width: auto;
-    height: var(--strip-h);
-    aspect-ratio: auto;
-    margin: 0 -13cqi 6cqi;
-}
-#album-container[data-layout="cd"] .album-cover-wrapper img {
-    object-position: center 35%;
-}
-#album-container[data-layout="cd"] .album-artist {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-artist {
     grid-row: 2;
     display: block;
     padding: 0;
     margin: 0 0 1.2cqi;
     border: none;
 }
-#album-container[data-layout="cd"] .album-artist h3 {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-artist h3 {
     max-width: none;
     margin: 0;
     font-size: calc(2.8cqi * var(--fit-artist));
@@ -691,7 +672,7 @@ ol.track-list li::before {
     letter-spacing: 0.16em;
     text-align: center;
 }
-#album-container[data-layout="cd"] .album-name {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-name {
     grid-row: 3;
     margin: 0 0 4cqi;
     padding: 0;
@@ -700,21 +681,21 @@ ol.track-list li::before {
     letter-spacing: 0.04em;
     text-align: center;
 }
-#album-container[data-layout="cd"] .album-tracklist-genre-wrapper {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-tracklist-genre-wrapper {
     grid-row: 4;
     width: 100%;
     border: none;
 }
-#album-container[data-layout="cd"] .album-tracklist-genre-wrapper .left {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-tracklist-genre-wrapper .left {
     flex: 1;
 }
-#album-container[data-layout="cd"] ol.track-list {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list {
     column-count: 1;
     padding-bottom: 0;
     font-size: max(9px, calc(clamp(10px, 2.7cqi, 1.1rem) * min(1, 18 / var(--track-count))));
     line-height: 1.2;
 }
-#album-container[data-layout="cd"] ol.track-list li {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li {
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -722,7 +703,7 @@ ol.track-list li::before {
     margin-bottom: 0.45em;
     text-align: left;
 }
-#album-container[data-layout="cd"] ol.track-list li::before {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li::before {
     flex: none;
     min-width: 1.7em;
     padding: 0.05em 0.25em;
@@ -732,7 +713,7 @@ ol.track-list li::before {
     text-align: center;
     color: inherit;
 }
-#album-container[data-layout="cd"] .album-footer-info {
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-footer-info {
     grid-row: 5;
     justify-content: center;
     width: 100%;
@@ -745,15 +726,25 @@ ol.track-list li::before {
 
 /* Narrow cd poster: a little less side padding */
 @container poster (max-width: 420px) {
-    #album-container[data-layout="cd"] .album-info-container {
+    #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-info-container {
         padding-inline: 11cqi;
     }
-    #album-container[data-layout="cd"] .album-cover-wrapper {
-        margin-inline: -11cqi;
-    }
-    #album-container[data-layout="cd"] .cd-spine {
+    #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine {
         width: 6.5cqi;
     }
+}
+
+/* CD on the blurred cover: light type on a darkened background, as in the blur layout */
+#album-container[data-layout="cd-blur"] .album-info-container {
+    isolation: isolate;
+    /* no overflow: hidden here, because then the box would no longer grow with a long tracklist;
+       the backdrop clips itself */
+    border: none;
+    color: #fff;
+    background-color: #1c1c1e;
+}
+#album-container[data-layout="cd-blur"] .cd-spine {
+    background-color: rgb(255 255 255 / 0.1);
 }
 
 /* ---------- Header: all the options live here ---------- */
@@ -1096,11 +1087,11 @@ ol.track-list li::before {
 /* Blur in display mode: the blurred cover fills the whole screen, not just the poster, so the
    colours of the album are the colours of the screen. The poster itself keeps its layout. The
    backdrop is centred on the poster, which is centred on the screen. */
-:root[data-display="on"] #album-container[data-layout="blur"] .album-info-container {
+:root[data-display="on"] #album-container:is([data-layout="blur"], [data-layout="cd-blur"]) .album-info-container {
     overflow: visible;
     background-color: transparent;
 }
-:root[data-display="on"] #album-container[data-layout="blur"] .poster-backdrop {
+:root[data-display="on"] #album-container:is([data-layout="blur"], [data-layout="cd-blur"]) .poster-backdrop {
     inset: auto;
     top: 50%;
     left: 50%;
@@ -1108,15 +1099,15 @@ ol.track-list li::before {
     height: 100dvh;
     transform: translate(-50%, -50%);
 }
-:root[data-display="on"] #album-container[data-layout="blur"] .poster-backdrop img {
+:root[data-display="on"] #album-container:is([data-layout="blur"], [data-layout="cd-blur"]) .poster-backdrop img {
     filter: blur(9cqi) saturate(1.4) brightness(0.85);
 }
-:root[data-display="on"] #album-container[data-layout="blur"] .poster-backdrop::after {
+:root[data-display="on"] #album-container:is([data-layout="blur"], [data-layout="cd-blur"]) .poster-backdrop::after {
     background:
         radial-gradient(ellipse at center, rgb(0 0 0 / 0.1) 30%, rgb(0 0 0 / 0.55) 100%),
         linear-gradient(to bottom, transparent 40%, rgb(0 0 0 / 0.3));
 }
-:root[data-display="on"]:has(#album-container[data-layout="blur"]) body {
+:root[data-display="on"]:has(#album-container[data-layout="blur"], #album-container[data-layout="cd-blur"]) body {
     background-color: #1c1c1e;
 }
 
@@ -1378,7 +1369,8 @@ footer .container {
     #album-container[data-layout="blur"] {
         width: 160mm;
     }
-    #album-container[data-layout="cd"] {
+    #album-container[data-layout="cd"],
+    #album-container[data-layout="cd-blur"] {
         width: 186mm;
     }
 }

@@ -106,7 +106,7 @@ Add query parameters before the hash:
 
 - `?controls=false` - Hides the header (search, layout, random, display, export, light/dark), for showing just the poster on a screen
 - `?display=true`, `?kiosk=10`, `source=random`, `progress=false` - see Display mode and slideshow below
-- `?layout=classic|minimal|swiss|blur|cd` - The look of the poster (classic is the default; cd is the back of a cd case: a band of cover art, a centred numbered tracklist, edges with vertical text, details at the bottom; blur puts the cover, enlarged and blurred, behind the poster; in display mode the blurred cover fills the whole screen and the poster keeps its layout on top); the header has a menu that changes the URL too
+- `?layout=classic|minimal|swiss|blur|cd|cd-blur` - The look of the poster (classic is the default; cd is the back of a cd case: a centred numbered tracklist, edges with vertical text, details at the bottom, and cd-blur is the same on the blurred cover; blur puts the cover, enlarged and blurred, behind the poster; in display mode the blurred cover fills the whole screen and the poster keeps its layout on top); the header has a menu that changes the URL too
 - `?size=l` - Sets large poster size
 - `?size=m` - Sets medium poster size
 - `?size=s` - Sets small poster size

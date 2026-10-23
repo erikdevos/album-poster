@@ -290,7 +290,7 @@ test('in display mode the blur backdrop fills the whole screen and the poster ke
     } finally { await close() }
 })
 
-test('the cd layout has a cover band, edges with vertical text and a centred numbered tracklist', async () => {
+test('the cd layout has edges with vertical text and a centred numbered tracklist, and no cover', async () => {
     const { page, close } = await open(`?layout=cd#${LUX}`)
     try {
         await poster(page).title.getByText('LUX').waitFor()
@@ -298,19 +298,40 @@ test('the cd layout has a cover band, edges with vertical text and a centred num
         await left.waitFor()
         assert.match(await left.textContent(), /LUX/)
         assert.equal(await page.locator('.cd-spine-right').isVisible(), true)
-        const { centred, cover, listAlign } = await page.evaluate(() => {
+        const { centred, coverHidden, listAlign } = await page.evaluate(() => {
             const info = document.getElementById('album-info').getBoundingClientRect()
             const li = document.querySelector('#track-list li').getBoundingClientRect()
-            const cover = document.querySelector('.album-cover-wrapper').getBoundingClientRect()
             return {
                 centred: Math.abs((li.left + li.right) / 2 - (info.left + info.right) / 2) < info.width * 0.12,
-                cover: { width: cover.width, height: cover.height, infoWidth: info.width },
+                coverHidden: getComputedStyle(document.querySelector('.album-cover-wrapper')).display === 'none',
                 listAlign: getComputedStyle(document.querySelector('#track-list li')).justifyContent
             }
         })
         assert.ok(centred, 'the tracklist is centred')
         assert.equal(listAlign, 'center')
-        assert.ok(cover.height < cover.width / 3, 'the cover is a wide band')
+        assert.ok(coverHidden)
+    } finally { await close() }
+})
+
+test('cd-blur is the cd layout on the blurred cover', async () => {
+    const { page, close } = await open(`?layout=cd-blur#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-backdrop').naturalWidth > 0)
+        const { backdrop, filter, spine, color } = await page.evaluate(() => {
+            const info = document.getElementById('album-info')
+            const box = document.querySelector('.poster-backdrop')
+            return {
+                backdrop: getComputedStyle(box).display,
+                filter: getComputedStyle(box.querySelector('img')).filter,
+                spine: getComputedStyle(document.querySelector('.cd-spine-left')).display,
+                color: getComputedStyle(info).color
+            }
+        })
+        assert.equal(backdrop, 'block')
+        assert.match(filter, /blur/)
+        assert.notEqual(spine, 'none')
+        assert.equal(color, 'rgb(255, 255, 255)')
     } finally { await close() }
 })
 
@@ -822,7 +843,7 @@ test('with colors=cover the poster gets the colours of the cover', async () => {
     } finally { await close() }
 })
 
-for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd']) {
+for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur']) {
     test(`on a phone the ${layout} poster fits the screen and nothing sticks out`, async () => {
         const { page, close } = await open(`?layout=${layout}#${LUX}`, { viewport: { width: 375, height: 812 } })
         try {
