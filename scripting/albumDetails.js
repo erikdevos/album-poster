@@ -97,7 +97,7 @@ function setField(id, value) {
 }
 
 // Status message that does not touch the poster markup, so it can always recover
-function setStatus(message, type = 'info') {
+export function setStatus(message, type = 'info') {
     const el = document.getElementById('status')
     el.textContent = message
     el.dataset.type = type

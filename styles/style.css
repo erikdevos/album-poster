@@ -407,6 +407,37 @@ ol.track-list li::before {
     white-space: nowrap;
 }
 
+/* ---------- Actions under the poster ---------- */
+
+.poster-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    width: min(100% - 2 * var(--page-gutter), 800px);
+    margin: 1rem auto 0;
+}
+:root[data-controls="off"] .poster-actions {
+    display: none;
+}
+.poster-actions button {
+    padding: 0.5rem 0.95rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
+    border-radius: 999px;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.poster-actions button:hover:not(:disabled) {
+    background-color: var(--muted-bg);
+}
+.poster-actions button:disabled {
+    cursor: progress;
+    opacity: 0.6;
+}
+
 /* ---------- Footer ---------- */
 
 footer {
@@ -421,7 +452,39 @@ footer .container {
     margin-inline: auto;
 }
 
+/* ---------- Print: one poster on an A4 page, in the light theme ---------- */
+
+@page {
+    size: A4 portrait;
+    margin: 12mm;
+}
+
 @media print {
-    .site-header, footer, .status { display: none; }
-    #album-container { width: 100%; }
+    :root,
+    :root[data-theme="dark"] {
+        --bg: #ffffff;
+        --fg: #000000;
+        color-scheme: light;
+    }
+
+    html, body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .site-header, .poster-actions, .status, footer {
+        display: none !important;
+    }
+
+    main {
+        min-height: 0;
+        padding: 0;
+    }
+
+    /* About 1.85 times as high as wide, so 150mm wide fits the 273mm of the page */
+    #album-container {
+        width: 150mm;
+        margin-inline: auto;
+        break-inside: avoid;
+    }
 }

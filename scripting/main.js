@@ -1,8 +1,9 @@
 import { loadAlbumList } from './albumList.js'
-import { fetchAlbumDetails } from './albumDetails.js'
+import { fetchAlbumDetails, setStatus } from './albumDetails.js'
 import { watchCover } from './albumColors.js'
 import { applyDisplayOptions } from './displayOptions.js'
 import { setupSearch, rememberAlbum } from './search.js'
+import { downloadPoster, printPoster, sharePoster } from './exportPoster.js'
 import { parseLocation, isLegacyId, replaceAlbumId, navigateToAlbum, onAlbumChange } from './router.js'
 
 let albums = []
@@ -27,6 +28,25 @@ function showRandomAlbum() {
     if (others.length > 0) navigateToAlbum(others[Math.floor(Math.random() * others.length)].id)
 }
 
+// Runs a button action; the button is disabled meanwhile and a failure is shown in the status line
+function onClick(id, action, { busy = '', done = {} } = {}) {
+    const button = document.getElementById(id)
+    button.addEventListener('click', async () => {
+        button.disabled = true
+        if (busy) setStatus(busy)
+        try {
+            const result = await action()
+            setStatus(done[result] ?? '')
+            if (done[result]) setTimeout(() => setStatus(''), 3000)
+        } catch (error) {
+            console.error(`${id} failed:`, error)
+            setStatus('That did not work. Try again.', 'error')
+        } finally {
+            button.disabled = false
+        }
+    })
+}
+
 async function init() {
     const { albumId, params } = parseLocation()
     applyDisplayOptions(params)
@@ -35,6 +55,9 @@ async function init() {
     albums = await loadAlbumList()
     setupSearch(document.getElementById('album-search'), albums)
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
+    onClick('download-button', downloadPoster, { busy: 'Creating PNG…' })
+    onClick('print-button', printPoster)
+    onClick('share-button', sharePoster, { done: { copied: 'Link copied to the clipboard' } })
 
     // Search results and lists navigate by changing the `#id` in the URL
     onAlbumChange(showAlbum)

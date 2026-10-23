@@ -121,14 +121,18 @@ async function getCoverArt(groupId, signal) {
         const back = image('Back')
         return {
             releaseId: data.release?.split('/').pop(),
-            front: front && (front.thumbnails['1200'] ?? front.image),
-            back: back && (back.thumbnails['500'] ?? back.image)
+            front: front && secure(front.thumbnails['1200'] ?? front.image),
+            back: back && secure(back.thumbnails['500'] ?? back.image)
         }
     } catch (error) {
         if (error.name === 'AbortError') throw error
         return null // no cover art on record for this album
     }
 }
+
+// Older entries in the Cover Art Archive still list http:// image URLs, which the browser
+// blocks on an https page (mixed content)
+const secure = url => url.replace(/^http:\/\//, 'https://')
 
 // Fallback when there is no cover art: the earliest official release
 async function pickRelease(groupId, signal) {

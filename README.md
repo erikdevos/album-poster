@@ -23,6 +23,14 @@ All data access sits behind two functions in `scripting/source.js`: `searchAlbum
 
 The header has a search box (an ARIA combobox: arrow keys, Enter, Escape) and a random album button. Searching goes through MusicBrainz: every word has to match the album or the artist, the last one as a prefix while you type. MusicBrainz has no popularity, so hits are ranked by their relevance score plus the number of releases of the album, which puts well-known albums first. Compilations, live albums, remixes and the like are left out. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
 
+## Export, print and share
+
+Under the poster are three buttons (hidden with `?controls=false`):
+
+- **Download PNG** renders the poster at 2400px wide (at most five times its size on screen), named "Artist - Album.png". It uses [html-to-image](https://github.com/bubkoo/html-to-image) 1.11.13, loaded from jsDelivr only when someone exports. The cover must come from a source with CORS headers, which is why the Cover Art Archive works here. The browser tab must be visible while exporting; a hidden tab pauses until you come back.
+- **Print** prints one poster on an A4 page, always in the light theme, without header, buttons or footer (`@media print` in `styles/style.css`). Turn on "background graphics" in the print dialog if you use `?colors=cover`. A poster with a very long tracklist can run over to a second page.
+- **Share link** opens the share sheet where the browser has one, otherwise it copies the link (and as a last resort shows it, to copy by hand).
+
 ## Layout
 
 The poster is a size container and all measurements inside it are relative to its width, so it scales as one piece. On landscape screens its width follows the viewport height, so the poster stays in view (never narrower than 480px, then the page scrolls). On portrait screens and phones it fills the width and the page scrolls. Long titles, artists and tracklists get a smaller type size, and a poster without back cover gives the tracklist the full width.
