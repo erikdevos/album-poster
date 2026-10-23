@@ -58,15 +58,17 @@ const year = date => date?.slice(0, 4) ?? ''
 // ---------- Search ----------
 // Every word has to match the title or the artist, the last one as a prefix (typeahead), and the
 // whole text as a phrase is boosted, so that an exact title or artist is found first.
-// Albums and EPs are searched (an artist like KATSEYE only has EPs and singles); compilations, live
-// albums, remixes and the like are left out. Only when that gives nothing are singles included.
+// Albums, EPs and singles are searched, and soundtracks too (Tron: Legacy, a film score); live
+// albums, compilations, remixes and the like are left out.
 //
 // MusicBrainz knows nothing about popularity and orders only by relevance, so for a name like
 // "Beatles" the famous albums are not among the first hundred hits. Therefore two searches are done:
 // one for the best matches, one for matches with many releases (a famous album has been released
-// many times), and the hits are ranked together (see rankGroups).
+// many times), and the hits are ranked together by popularity (see rankGroups).
 const EXCLUDED_TYPES = 'compilation OR live OR remix OR demo OR soundtrack OR mixtape OR dj-mix OR ' +
     'spokenword OR interview OR audiobook OR audio-drama OR field-recording'
+// The same, without soundtracks: those can be searched for, but are not picked as a random album
+const SEARCH_EXCLUDED_TYPES = EXCLUDED_TYPES.replace(' OR soundtrack', '')
 const POPULAR_RELEASES = 15
 const SEARCH_POOL = 100 // the most MusicBrainz gives in one go
 const MAX_RESULTS = 8
@@ -75,8 +77,8 @@ const MAX_RESULTS = 8
 export const normalize = text => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '')
 
 // The Lucene query for what someone typed, or null when it is too short to search for.
-// options.popular: only albums with many releases; options.singles: also singles and other types
-export function buildSearchQuery(query, { popular = false, singles = false } = {}) {
+// options.popular: only what has many releases
+export function buildSearchQuery(query, { popular = false } = {}) {
     const words = query.match(/[\p{L}\p{N}]+/gu) ?? []
     if (query.trim().length < 2 || words.length === 0) return null
 
@@ -87,9 +89,9 @@ export function buildSearchQuery(query, { popular = false, singles = false } = {
     const phrase = words.join(' ')
     const parts = [
         `((${clauses.join(' AND ')}) OR releasegroup:"${phrase}"^5 OR artist:"${phrase}"^5)`,
-        `NOT secondarytype:(${EXCLUDED_TYPES})`
+        '(primarytype:album OR primarytype:ep OR primarytype:single)',
+        `NOT secondarytype:(${SEARCH_EXCLUDED_TYPES})`
     ]
-    if (!singles) parts.splice(1, 0, '(primarytype:album OR primarytype:ep)')
     if (popular) parts.push(`releases:[${POPULAR_RELEASES} TO *]`)
     return parts.join(' AND ')
 }
@@ -100,7 +102,7 @@ const comparable = text => normalize(text).replace(/^the(?=.)/, '')
 // Best first: how well it matches, plus how well known it is (the number of releases, on a log
 // scale, so that 85 releases is not ten times as good as 8). An exact title or artist counts as a
 // perfect match, with a bonus: all albums of "Beatles" are equally relevant, so the better known
-// ones come first. An EP counts less than an album.
+// ones come first. An EP or a single counts a little less than an album.
 export function rankGroups(groups, query = '') {
     const wanted = comparable(query)
     const rank = group => {
@@ -109,7 +111,7 @@ export function rankGroups(groups, query = '') {
 
         let points = 0.5 * (exact ? 100 : group.score) + 40 * Math.log10(1 + (group.count ?? 1))
         if (exact) points += 25
-        if (group['primary-type'] === 'EP') points -= 15
+        if (['EP', 'Single'].includes(group['primary-type'])) points -= 15
         return points
     }
     return [...groups].sort((a, b) => rank(b) - rank(a))
@@ -126,9 +128,8 @@ export async function searchAlbums(query, signal) {
     // Both go to the queue of MusicBrainz requests, one after the other
     const [best, popular] = await Promise.all([search({}), search({ popular: true })])
     const found = new Map([...best, ...popular].map(group => [group.id, group]))
-    const groups = found.size > 0 ? [...found.values()] : await search({ singles: true })
 
-    return rankGroups(groups, query)
+    return rankGroups([...found.values()], query)
         .slice(0, MAX_RESULTS)
         .map(group => ({
             id: group.id,

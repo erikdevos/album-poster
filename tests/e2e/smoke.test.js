@@ -168,6 +168,30 @@ test('searching and picking a result opens that album and updates the URL', asyn
     } finally { await close() }
 })
 
+test('a loader shows in the search box while searching, and the results do not move the page', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const box = page.getByRole('combobox', { name: 'Search albums' })
+        const before = await posterTop(page)
+
+        slowMs = 1500
+        await box.fill('abbey')
+        await page.waitForFunction(() => document.querySelector('.search').hasAttribute('data-searching'))
+        assert.equal(await page.locator('#search-results').getAttribute('aria-busy'), 'true')
+        assert.equal(await page.evaluate(() => getComputedStyle(document.querySelector('.search'), '::after').content), '""')
+        await page.getByText('Searching…').waitFor()
+        assert.equal(await posterTop(page), before)
+
+        await page.getByRole('option', { name: /Abbey Road/ }).waitFor({ timeout: 15_000 })
+        assert.equal(await page.locator('.search').getAttribute('data-searching'), null)
+        assert.equal(await page.locator('#search-results').getAttribute('aria-busy'), 'false')
+    } finally {
+        slowMs = 0
+        await close()
+    }
+})
+
 test('the search box works with the keyboard', async () => {
     const { page, close } = await open(`#${LUX}`)
     try {

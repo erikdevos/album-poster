@@ -39,6 +39,13 @@ export function setupSearch(input, curatedAlbums) {
 
     const options = () => entries.filter(entry => entry.id)
 
+    // A round loader in the box and in the list while a search is under way
+    const wrapper = input.closest('.search')
+    function setSearching(on) {
+        wrapper.toggleAttribute('data-searching', on)
+        list.setAttribute('aria-busy', String(on))
+    }
+
     function render(newEntries, announcement = '') {
         entries = newEntries
         active = -1
@@ -52,7 +59,7 @@ export function setupSearch(input, curatedAlbums) {
                 li.dataset.index = index
             } else {
                 li.setAttribute('role', 'presentation')
-                li.className = entry.group ? 'search-group' : 'search-message'
+                li.className = entry.group ? 'search-group' : entry.searching ? 'search-message is-searching' : 'search-message'
             }
             return li
         }))
@@ -90,6 +97,7 @@ export function setupSearch(input, curatedAlbums) {
         if (!entry?.id) return
         clearTimeout(timer)
         request?.abort()
+        setSearching(false)
         navigateToAlbum(entry.id)
         input.value = ''
         setOpen(false)
@@ -108,6 +116,8 @@ export function setupSearch(input, curatedAlbums) {
     async function search() {
         request?.abort()
         request = new AbortController()
+        const own = request
+        setSearching(true)
         try {
             const results = await searchAlbums(input.value, request.signal)
             render(results.length
@@ -121,18 +131,22 @@ export function setupSearch(input, curatedAlbums) {
             if (error.name === 'AbortError') return
             console.error('Search failed:', error)
             render([{ text: 'Search failed, try again in a moment' }], 'Search failed')
+        } finally {
+            if (request === own) setSearching(false) // a newer search keeps the loader going
         }
     }
 
     input.addEventListener('input', () => {
         clearTimeout(timer)
         request?.abort()
+        setSearching(false)
         if (input.value.trim().length === 0) {
             showSuggestions()
         } else if (input.value.trim().length < 2) {
             render([])
         } else {
-            render([{ text: 'Searching…' }])
+            render([{ text: 'Searching…', searching: true }], 'Searching')
+            setSearching(true)
             timer = setTimeout(search, DEBOUNCE_MS)
         }
     })

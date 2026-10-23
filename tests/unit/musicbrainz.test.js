@@ -53,18 +53,16 @@ test('search query: every word must match, the last one as a prefix, and the who
     assert.match(query, /releasegroup:"abbey road"\^5 OR artist:"abbey road"\^5/)
 })
 
-test('search query: albums and EPs, without live albums, compilations and the like', () => {
-    const query = buildSearchQuery('katseye')
-    assert.match(query, /\(primarytype:album OR primarytype:ep\)/)
+test('search query: albums, EPs and singles, soundtracks included, without live albums, compilations and the like', () => {
+    const query = buildSearchQuery('tron legacy')
+    assert.match(query, /\(primarytype:album OR primarytype:ep OR primarytype:single\)/)
     assert.match(query, /NOT secondarytype:\(compilation OR live OR remix/)
+    assert.doesNotMatch(query.split('NOT secondarytype')[1], /soundtrack/)
     assert.doesNotMatch(query, /releases:/)
 })
 
-test('search query: the popular variant asks for many releases, the singles variant drops the type', () => {
+test('search query: the popular variant asks for many releases', () => {
     assert.match(buildSearchQuery('beatles', { popular: true }), /releases:\[15 TO \*\]/)
-    const singles = buildSearchQuery('katseye', { singles: true })
-    assert.doesNotMatch(singles, /primarytype/)
-    assert.match(singles, /NOT secondarytype/)
 })
 
 test('search query: handles accents and strips Lucene syntax', () => {
@@ -178,14 +176,15 @@ test('searchAlbums finds an artist that only has EPs, like KATSEYE', async () =>
     assert.equal(calls.length, 2)
 })
 
-test('searchAlbums includes singles only when there is nothing else', async () => {
-    fakeFetch([['release-group?query=', url => json({
-        'release-groups': url.includes('primarytype') ? [] : [group(uuid(60), 'Only a single', 'Some Artist', { type: 'Single' })]
-    })]])
-    const results = await searchAlbums('some artist')
-    assert.deepEqual(results.map(item => item.title), ['Only a single'])
-    assert.equal(calls.length, 3, 'best, popular, and then the singles')
-    assert.doesNotMatch(calls.at(-1), /primarytype/)
+test('searchAlbums finds soundtracks and singles, the best known first', async () => {
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': [
+        group(uuid(60), 'Obscure single', 'Some Artist', { type: 'Single', count: 1 }),
+        group(uuid(61), 'TRON: Legacy', 'Daft Punk', { count: 40 }),
+        group(uuid(62), 'Derezzed', 'Daft Punk', { type: 'Single', count: 12 })
+    ] })]])
+    const results = await searchAlbums('tron')
+    assert.deepEqual(results.map(item => item.title), ['TRON: Legacy', 'Derezzed', 'Obscure single'])
+    assert.equal(calls.length, 2, 'best and popular, no extra search for singles')
 })
 
 test('searchAlbums gives an empty list when nothing is found at all', async () => {

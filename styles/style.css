@@ -641,6 +641,34 @@ ol.track-list li::before {
     font: inherit;
     font-size: 0.9rem;
 }
+/* Searching: a small round loader at the end of the box, and in front of the message in the list */
+.search[data-searching] input {
+    padding-right: 2.2rem;
+}
+.search[data-searching]::after,
+#search-results .is-searching::before {
+    content: "";
+    width: 0.95rem;
+    height: 0.95rem;
+    border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+.search[data-searching]::after {
+    position: absolute;
+    top: calc(50% - 0.475rem);
+    right: 0.8rem;
+    pointer-events: none;
+}
+#search-results .is-searching {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+#search-results .is-searching::before {
+    flex: none;
+}
 .search input::placeholder {
     color: color-mix(in srgb, var(--fg) 60%, transparent);
 }
@@ -1129,7 +1157,9 @@ ol.track-list li::before {
         transform: none;
         width: 100%;
     }
-    .header-control[aria-busy="true"]::after {
+    .header-control[aria-busy="true"]::after,
+    .search[data-searching]::after,
+    #search-results .is-searching::before {
         animation-duration: 1.6s;
     }
     .toast {
