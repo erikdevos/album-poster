@@ -482,7 +482,6 @@ ol.track-list li::before {
     border: none;
     color: #fff;
     background-color: #1c1c1e;
-    text-shadow: 0 0 2cqi rgb(0 0 0 / 0.25);
 }
 #album-container[data-layout="blur"] .poster-backdrop {
     display: block;
