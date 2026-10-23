@@ -290,6 +290,30 @@ test('in display mode the blur backdrop fills the whole screen and the poster ke
     } finally { await close() }
 })
 
+test('the cd layout has a cover band, edges with vertical text and a centred numbered tracklist', async () => {
+    const { page, close } = await open(`?layout=cd#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const left = page.locator('#album-info .cd-spine-left')
+        await left.waitFor()
+        assert.match(await left.textContent(), /LUX/)
+        assert.equal(await page.locator('.cd-spine-right').isVisible(), true)
+        const { centred, cover, listAlign } = await page.evaluate(() => {
+            const info = document.getElementById('album-info').getBoundingClientRect()
+            const li = document.querySelector('#track-list li').getBoundingClientRect()
+            const cover = document.querySelector('.album-cover-wrapper').getBoundingClientRect()
+            return {
+                centred: Math.abs((li.left + li.right) / 2 - (info.left + info.right) / 2) < info.width * 0.12,
+                cover: { width: cover.width, height: cover.height, infoWidth: info.width },
+                listAlign: getComputedStyle(document.querySelector('#track-list li')).justifyContent
+            }
+        })
+        assert.ok(centred, 'the tracklist is centred')
+        assert.equal(listAlign, 'center')
+        assert.ok(cover.height < cover.width / 3, 'the cover is a wide band')
+    } finally { await close() }
+})
+
 test('the backdrop is not shown in the other layouts', async () => {
     const { page, close } = await open(`#${LUX}`)
     try {
@@ -798,7 +822,7 @@ test('with colors=cover the poster gets the colours of the cover', async () => {
     } finally { await close() }
 })
 
-for (const layout of ['classic', 'minimal', 'swiss', 'blur']) {
+for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd']) {
     test(`on a phone the ${layout} poster fits the screen and nothing sticks out`, async () => {
         const { page, close } = await open(`?layout=${layout}#${LUX}`, { viewport: { width: 375, height: 812 } })
         try {

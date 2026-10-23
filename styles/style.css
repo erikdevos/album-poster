@@ -129,7 +129,8 @@ main {
     }
 }
 
-.poster-backdrop {
+.poster-backdrop,
+.cd-spine {
     display: none;
 }
 
@@ -601,6 +602,157 @@ ol.track-list li::before {
     }
     #album-container[data-layout="blur"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
         content: "|";
+    }
+}
+
+/* CD: the back of a cd case. A band of cover art along the top, artist and title, a centred numbered
+   tracklist, the details at the bottom, and the two edges with vertical text. */
+#album-container[data-layout="cd"] {
+    --poster-ratio: 1;
+    --strip-h: 17cqi; /* the band of cover art along the top */
+}
+#album-container[data-layout="cd"] .album-info-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    justify-items: center;
+    aspect-ratio: 150 / 140;
+    padding: 0 13cqi 6cqi;
+    text-align: center;
+    border-width: max(1.5px, 0.35cqi);
+}
+#album-container[data-layout="cd"] .cd-spine {
+    position: absolute;
+    /* Not top: var(--strip-h): a container query length on an absolutely positioned box does not
+       always resolve against the poster. The band lies over the top of the edges instead, and the
+       padding (a percentage of the width, which is the height of the band) centres the text below it. */
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding-top: 17.2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8cqi;
+    background-color: color-mix(in srgb, currentColor 9%, transparent);
+    font-size: max(8px, 2.1cqi);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    overflow: hidden;
+}
+#album-container[data-layout="cd"] .cd-spine span {
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#album-container[data-layout="cd"] .cd-spine-left {
+    left: 0;
+    border-right: max(1px, 0.25cqi) solid currentColor;
+    transform: rotate(180deg); /* reads from the bottom up, like on a cd */
+}
+#album-container[data-layout="cd"] .cd-spine-right {
+    right: 0;
+    border-left: max(1px, 0.25cqi) solid currentColor;
+}
+#album-container[data-layout="cd"] .album-tracklist-genre-wrapper .right,
+#album-container[data-layout="cd"] .album-colors {
+    display: none;
+}
+/* The cover, cropped to a wide band that runs edge to edge, as on many cd backs */
+#album-container[data-layout="cd"] .album-cover-wrapper {
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+    justify-self: stretch;
+    width: auto;
+    height: var(--strip-h);
+    aspect-ratio: auto;
+    margin: 0 -13cqi 6cqi;
+}
+#album-container[data-layout="cd"] .album-cover-wrapper img {
+    object-position: center 35%;
+}
+#album-container[data-layout="cd"] .album-artist {
+    grid-row: 2;
+    display: block;
+    padding: 0;
+    margin: 0 0 1.2cqi;
+    border: none;
+}
+#album-container[data-layout="cd"] .album-artist h3 {
+    max-width: none;
+    margin: 0;
+    font-size: calc(2.8cqi * var(--fit-artist));
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-align: center;
+}
+#album-container[data-layout="cd"] .album-name {
+    grid-row: 3;
+    margin: 0 0 4cqi;
+    padding: 0;
+    border: none;
+    font-size: calc(7cqi * min(var(--fit-title), var(--fit-word)));
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+#album-container[data-layout="cd"] .album-tracklist-genre-wrapper {
+    grid-row: 4;
+    width: 100%;
+    border: none;
+}
+#album-container[data-layout="cd"] .album-tracklist-genre-wrapper .left {
+    flex: 1;
+}
+#album-container[data-layout="cd"] ol.track-list {
+    column-count: 1;
+    padding-bottom: 0;
+    font-size: max(9px, calc(clamp(10px, 2.7cqi, 1.1rem) * min(1, 18 / var(--track-count))));
+    line-height: 1.2;
+}
+#album-container[data-layout="cd"] ol.track-list li {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.7em;
+    margin-bottom: 0.45em;
+    text-align: left;
+}
+#album-container[data-layout="cd"] ol.track-list li::before {
+    flex: none;
+    min-width: 1.7em;
+    padding: 0.05em 0.25em;
+    border: 1px solid currentColor;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-align: center;
+    color: inherit;
+}
+#album-container[data-layout="cd"] .album-footer-info {
+    grid-row: 5;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4cqi;
+    padding-top: 2.5cqi;
+    border-top: max(1px, 0.25cqi) solid currentColor;
+    font-size: max(9px, 2.1cqi);
+    letter-spacing: 0.08em;
+}
+
+/* Narrow cd poster: a little less side padding */
+@container poster (max-width: 420px) {
+    #album-container[data-layout="cd"] .album-info-container {
+        padding-inline: 11cqi;
+    }
+    #album-container[data-layout="cd"] .album-cover-wrapper {
+        margin-inline: -11cqi;
+    }
+    #album-container[data-layout="cd"] .cd-spine {
+        width: 6.5cqi;
     }
 }
 
@@ -1225,5 +1377,8 @@ footer .container {
     }
     #album-container[data-layout="blur"] {
         width: 160mm;
+    }
+    #album-container[data-layout="cd"] {
+        width: 186mm;
     }
 }

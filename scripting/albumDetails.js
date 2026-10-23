@@ -68,6 +68,7 @@ export function renderAlbum(album) {
     setImage('album-cover', album.front, album.frontFull, `Cover of ${album.title} by ${album.artist}`)
     setImage('album-cover-back', album.back, album.backFull, `Back cover of ${album.title} by ${album.artist}`)
     setBackdrop(album.front)
+    setSpines(album)
     document.getElementById('album-info').classList.toggle('no-back', !album.back)
 
     renderTracks(album.tracks)
@@ -137,6 +138,15 @@ function setBackdrop(url) {
     } else {
         img.removeAttribute('src')
     }
+}
+
+// The edges of the cd layout: artist and title on the left, label and year on the right
+function setSpines(album) {
+    const text = (side, value) => {
+        document.querySelector(`#album-info .cd-spine-${side} span`).textContent = value
+    }
+    text('left', `${album.artist}  ${album.title}`)
+    text('right', [album.label, album.year].filter(Boolean).join('  '))
 }
 
 // Sets a footer value; the wrapping item is hidden when there is nothing to show
