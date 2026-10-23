@@ -3,7 +3,8 @@ import { fetchAlbumDetails, setStatus } from './albumDetails.js'
 import { watchCover } from './albumColors.js'
 import { applyDisplayOptions, setLayout, setupThemeToggle } from './displayOptions.js'
 import { setupSearch, rememberAlbum } from './search.js'
-import { setupExportMenu } from './exportMenu.js'
+import { setupMenu } from './menu.js'
+import { setupDisplay } from './display.js'
 import { downloadPoster, printPoster, sharePoster } from './exportPoster.js'
 import { parseLocation, isLegacyId, replaceAlbumId, navigateToAlbum, onAlbumChange } from './router.js'
 
@@ -61,7 +62,7 @@ async function init() {
     setupThemeToggle()
     document.getElementById('layout-select').addEventListener('change', event => setLayout(event.target.value))
     // The export panel closes when something in it is used; progress then shows in the status line
-    const exportMenu = setupExportMenu()
+    const exportMenu = setupMenu('export-toggle', 'export-panel')
     const before = () => exportMenu.close()
     onClick('download-button', () => downloadPoster({
         format: document.getElementById('export-format').value,
@@ -70,17 +71,30 @@ async function init() {
     onClick('print-button', printPoster, { before })
     onClick('share-button', async () => (await sharePoster()) === 'copied' ? 'Link copied to the clipboard' : '', { before })
 
+    // Display mode and the slideshow: from the URL, or from the Display menu
+    const displayMenu = setupMenu('display-toggle', 'display-panel')
+    const display = setupDisplay({
+        albums,
+        closeMenu: displayMenu.close,
+        // the slideshow draws its albums without adding them to "recently viewed"
+        showAlbum: id => { replaceAlbumId(id); return fetchAlbumDetails(id) }
+    })
+    display.applyUrl(params)
+
     // Search results and lists navigate by changing the `#id` in the URL
     onAlbumChange(showAlbum)
 
     if (albumId) {
-        showAlbum(albumId)
+        await showAlbum(albumId)
     } else if (albums.length > 0) {
         // No album requested: show a random one, and put it in the URL so it can be shared
         const random = albums[Math.floor(Math.random() * albums.length)].id
         replaceAlbumId(random)
-        showAlbum(random)
+        await showAlbum(random)
     }
+
+    // A slideshow in the URL starts once the first album is on the poster
+    display.startFromUrl(params)
 }
 
 init()

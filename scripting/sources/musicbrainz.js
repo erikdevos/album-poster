@@ -4,6 +4,7 @@
 //
 // Every source exposes the same two functions, so another one can be swapped in (see ../source.js):
 //   searchAlbums(query, signal) -> [{ id, title, artist, year }]
+//   randomAlbumId(signal, random) -> the id of a fairly well known album, picked at random
 //   getAlbum(id, signal)        -> { id, title, artist, year, label, genre, tracks, front, back,
 //                                    frontFull, backFull }   (the last two are the original, big images)
 
@@ -94,6 +95,48 @@ export async function searchAlbums(query, signal) {
             artist: credit(group['artist-credit']),
             year: year(group['first-release-date'])
         }))
+}
+
+// ---------- A random album ----------
+// MusicBrainz has no "random", so: a random genre, sometimes a random decade, and an album from a
+// random page of what matches. Albums with few releases are left out, so that it is mostly albums
+// that people know (and that have a cover).
+
+export const RANDOM_TAGS = [
+    'rock', 'pop', 'hip hop', 'electronic', 'jazz', 'soul', 'funk', 'metal', 'punk', 'folk', 'blues',
+    'reggae', 'country', 'indie rock', 'alternative rock', 'r&b', 'disco', 'house', 'techno', 'ambient',
+    'singer-songwriter', 'synthpop', 'new wave', 'hard rock', 'progressive rock', 'latin'
+]
+const RANDOM_DECADES = [1960, 1970, 1980, 1990, 2000, 2010, 2020]
+const RANDOM_PAGE_SIZE = 25
+const RANDOM_PAGES = 12 // the first 300 matches, which are the better known ones
+
+const pick = (items, random) => items[Math.floor(random() * items.length)]
+
+// The search for a random album: { query, offset }
+export function buildRandomQuery(random = Math.random) {
+    const clauses = [
+        `tag:"${pick(RANDOM_TAGS, random)}"`,
+        'primarytype:album',
+        `NOT secondarytype:(${EXCLUDED_TYPES})`,
+        'releases:[8 TO *]'
+    ]
+    if (random() < 0.6) {
+        const decade = pick(RANDOM_DECADES, random)
+        clauses.push(`firstreleasedate:[${decade} TO ${decade + 9}]`)
+    }
+    return { query: clauses.join(' AND '), offset: Math.floor(random() * RANDOM_PAGES) * RANDOM_PAGE_SIZE }
+}
+
+export async function randomAlbumId(signal, random = Math.random) {
+    for (let attempt = 0; attempt < 4; attempt++) {
+        const { query, offset } = buildRandomQuery(random)
+        // a page past the last result is empty; the next attempt starts again at a new search
+        const path = `release-group?query=${encodeURIComponent(query)}&limit=${RANDOM_PAGE_SIZE}&offset=${offset}`
+        const { 'release-groups': groups } = await musicBrainz(path, signal)
+        if (groups.length > 0) return pick(groups, random).id
+    }
+    throw new Error('No random album found')
 }
 
 export async function getAlbum(id, signal) {

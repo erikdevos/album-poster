@@ -1,7 +1,8 @@
 import { test, beforeEach } from 'node:test'
 import assert from 'node:assert/strict'
 import {
-    settings, buildSearchQuery, rankGroups, secure, searchAlbums, getAlbum, isValidId
+    settings, buildSearchQuery, rankGroups, secure, searchAlbums, getAlbum, isValidId,
+    buildRandomQuery, randomAlbumId, RANDOM_TAGS
 } from '../../scripting/sources/musicbrainz.js'
 
 settings.minGapMs = 0 // no waiting between requests in tests
@@ -193,4 +194,40 @@ test('a 404 from MusicBrainz is not retried', async () => {
     ])
     await assert.rejects(() => getAlbum(id), error => error.status === 404)
     assert.equal(attempts, 1)
+})
+
+test('the random query: a genre, only albums, no live or compilations, a minimum of releases', () => {
+    const { query, offset } = buildRandomQuery(() => 0.99) // 0.99 means no decade
+    assert.match(query, new RegExp(`tag:"${RANDOM_TAGS.at(-1)}"`))
+    assert.match(query, /primarytype:album/)
+    assert.match(query, /NOT secondarytype:\(compilation OR live/)
+    assert.match(query, /releases:\[8 TO \*\]/)
+    assert.doesNotMatch(query, /firstreleasedate/)
+    assert.equal(offset, 275) // the last page of 25 within the first 300
+})
+
+test('the random query sometimes limits to a decade, and always pages in steps of 25', () => {
+    const { query, offset } = buildRandomQuery(() => 0.1)
+    assert.match(query, /firstreleasedate:\[1960 TO 1969\]/)
+    assert.equal(offset, 25) // floor(0.1 * 12) pages of 25
+
+    for (let i = 0; i < 50; i++) assert.equal(buildRandomQuery().offset % 25, 0)
+})
+
+test('randomAlbumId picks one of the results', async () => {
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': [{ id: uuid(20) }, { id: uuid(21) }, { id: uuid(22) }] })]])
+    const id = await randomAlbumId(undefined, () => 0.5)
+    assert.equal(id, uuid(21))
+})
+
+test('randomAlbumId searches again when a page is empty, and gives up after four tries', async () => {
+    let searches = 0
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': ++searches < 3 ? [] : [{ id: uuid(30) }] })]])
+    assert.equal(await randomAlbumId(undefined, () => 0.2), uuid(30))
+    assert.equal(searches, 3)
+
+    searches = -100
+    fakeFetch([['release-group?query=', () => { searches++; return json({ 'release-groups': [] }) }]])
+    await assert.rejects(() => randomAlbumId(undefined, () => 0.2), /No random album/)
+    assert.equal(searches, -96)
 })

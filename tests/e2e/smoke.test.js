@@ -33,8 +33,11 @@ function release(title, artist) {
     }
 }
 
-// What the fake MusicBrainz knows: every release-group id has the same album, named after the id
+// What the fake MusicBrainz knows: three named albums; any other id gets an album named after the id
 const albums = new Map([[ABBEY, ['Abbey Road', 'The Beatles']], [LUX, ['LUX', 'ROSALÍA']], [RATED_R, ['Rated R', 'Rihanna']]])
+const albumFor = id => albums.get(id) ?? [`Album ${id.slice(0, 8)}`, 'Some Band']
+const RANDOM_ID = '11111111-2222-4333-8444-555555555555'
+const searches = []
 
 async function mockNetwork(context) {
     await context.route(/^https?:\/\/(?!localhost|127\.0\.0\.1)/, async route => {
@@ -43,6 +46,11 @@ async function mockNetwork(context) {
 
         if (url.hostname === 'musicbrainz.org') {
             if (path.endsWith('/release-group') && url.searchParams.has('query')) {
+                searches.push(url.searchParams.get('query'))
+                // the slideshow's random source searches by genre
+                if (url.searchParams.get('query').startsWith('tag:')) {
+                    return json(route, { 'release-groups': [{ id: RANDOM_ID }] })
+                }
                 return json(route, {
                     'release-groups': [{
                         id: ABBEY, title: 'Abbey Road', score: 97, count: 73, 'first-release-date': '1969-09-26',
@@ -52,14 +60,14 @@ async function mockNetwork(context) {
             }
             const match = path.match(/\/release\/([^/]+)$/)
             if (match) {
-                const [title, artist] = albums.get(match[1].replace(/^r-/, '')) ?? ['Unknown', 'Nobody']
+                const [title, artist] = albumFor(match[1].replace(/^r-/, ''))
                 return json(route, release(title, artist))
             }
         }
 
         if (url.hostname === 'coverartarchive.org') {
             const match = path.match(/\/release-group\/([^/]+)$/)
-            if (match && albums.has(match[1])) {
+            if (match) {
                 return json(route, {
                     release: `https://musicbrainz.org/release/r-${match[1]}`,
                     images: [{ types: ['Front'], image: 'https://images.test/front.svg', thumbnails: { 1200: 'https://images.test/front.svg' } }]
@@ -311,6 +319,172 @@ test('on a phone the title and all the controls share one row, with the search b
         assert.ok(tops.controls.every(top => Math.abs(top - tops.controls[0]) <= 1), 'the controls are on one row')
         assert.ok(tops.search > tops.controls[0] + 20, 'the search box is below the controls')
         assert.equal(await page.locator('#export-toggle').getAttribute('title'), 'Export')
+    } finally { await close() }
+})
+
+// ---------- Display mode and the slideshow ----------
+
+const curatedIds = JSON.parse(await readFile(join(ROOT, 'data/albums.json'), 'utf8')).map(album => album.id)
+const currentId = page => page.evaluate(() => location.hash.slice(1))
+const root = page => page.locator('html')
+
+test('?display=true shows only the poster, as large as the screen allows', async () => {
+    const { page, close } = await open(`?display=true#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        assert.equal(await page.locator('.site-header').isHidden(), true)
+        assert.equal(await page.locator('footer').isHidden(), true)
+
+        // the poster fills the height of the screen without scrolling
+        const { top, bottom, scrollHeight, innerHeight } = await page.evaluate(() => {
+            const rect = document.getElementById('album-info').getBoundingClientRect()
+            return { top: rect.top, bottom: rect.bottom, scrollHeight: document.documentElement.scrollHeight, innerHeight }
+        })
+        assert.ok(top >= 0 && bottom <= innerHeight, `the poster is on screen (${top}..${bottom} of ${innerHeight})`)
+        assert.ok(bottom - top > innerHeight * 0.9, 'and fills most of the height')
+        assert.ok(scrollHeight <= innerHeight, 'no scrolling')
+    } finally { await close() }
+})
+
+test('the buttons show on activity, and Exit brings the normal page back', async () => {
+    const { page, close } = await open(`?display=true#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const controls = page.locator('.display-controls')
+        const opacity = () => controls.evaluate(el => getComputedStyle(el).opacity)
+
+        await page.mouse.move(300, 300)
+        await page.mouse.move(320, 320)
+        await page.waitForFunction(() => getComputedStyle(document.querySelector('.display-controls')).opacity === '1')
+        assert.equal(await page.getByRole('button', { name: 'Pause' }).isHidden(), true) // only with a slideshow
+
+        await page.getByRole('button', { name: 'Exit display mode' }).click()
+        assert.equal(await page.locator('.site-header').isVisible(), true)
+        assert.equal(await root(page).getAttribute('data-display'), null)
+        assert.doesNotMatch(page.url(), /display=/)
+        assert.equal(await opacity(), '0')
+    } finally { await close() }
+})
+
+test('?controls=false leaves out the buttons too', async () => {
+    const { page, close } = await open(`?display=true&controls=false#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.mouse.move(300, 300)
+        assert.equal(await page.locator('.display-controls').isHidden(), true)
+    } finally { await close() }
+})
+
+test('the slideshow changes album every few seconds, from the curated list, and updates the URL', async () => {
+    const { page, close } = await open(`?kiosk=3#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        assert.equal(await root(page).getAttribute('data-kiosk'), 'on')
+        assert.equal(await root(page).getAttribute('data-display'), 'on')
+        assert.equal(await currentId(page), LUX) // it starts with the album in the URL
+
+        await page.waitForFunction(id => location.hash.slice(1) !== id, LUX, { timeout: 15_000 })
+        const second = await currentId(page)
+        assert.ok(curatedIds.includes(second), 'the next album is one from the curated list')
+        await page.locator('#album-name').getByText(`Album ${second.slice(0, 8)}`).waitFor()
+
+        await page.waitForFunction(id => location.hash.slice(1) !== id, second, { timeout: 15_000 })
+        assert.notEqual(await currentId(page), second)
+    } finally { await close() }
+})
+
+test('pause stops the slideshow, and Next, N and the arrow key go on to the next album', async () => {
+    const { page, close } = await open(`?kiosk=3#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.mouse.move(200, 200)
+        await page.mouse.move(210, 210)
+
+        await page.getByRole('button', { name: 'Pause' }).click()
+        assert.equal(await page.getByRole('button', { name: 'Continue' }).getAttribute('aria-pressed'), 'true')
+        await page.waitForTimeout(5000)
+        assert.equal(await currentId(page), LUX, 'nothing changes while paused')
+
+        // the buttons have faded away by now; a move of the mouse brings them back
+        await page.mouse.move(220, 220)
+        await page.mouse.move(230, 230)
+        const changedFrom = id => page.waitForFunction(from => location.hash.slice(1) !== from, id, { timeout: 15_000 })
+
+        await page.getByRole('button', { name: 'Next album' }).click()
+        await changedFrom(LUX)
+        const afterButton = await currentId(page)
+        await page.waitForFunction(() => !document.getElementById('album-container').classList.contains('is-changing'))
+
+        await page.keyboard.press('n')
+        await changedFrom(afterButton)
+        const afterN = await currentId(page)
+        await page.waitForFunction(() => !document.getElementById('album-container').classList.contains('is-changing'))
+
+        await page.keyboard.press('ArrowRight')
+        await changedFrom(afterN)
+    } finally { await close() }
+})
+
+test('the slideshow can take random albums from MusicBrainz', async () => {
+    searches.length = 0
+    const { page, close } = await open(`?kiosk=3&source=random#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(id => location.hash.slice(1) === id, RANDOM_ID, { timeout: 20_000 })
+        await page.locator('#album-name').getByText(`Album ${RANDOM_ID.slice(0, 8)}`).waitFor()
+
+        const search = searches.find(query => query.startsWith('tag:'))
+        assert.ok(search, 'a random search was made')
+        assert.match(search, /primarytype:album/)
+        assert.match(search, /releases:\[8 TO \*\]/)
+    } finally { await close() }
+})
+
+test('the Display menu starts a slideshow, and Escape or Exit stops it again', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.getByRole('button', { name: 'Display' }).click()
+        assert.equal(await page.locator('#display-panel').isVisible(), true)
+
+        await page.getByLabel('Change every').selectOption('15')
+        await page.getByLabel('Albums from').selectOption('random')
+        await page.getByRole('button', { name: 'Start slideshow' }).click()
+
+        await page.waitForFunction(() => document.documentElement.dataset.kiosk === 'on')
+        assert.match(page.url(), /kiosk=15/)
+        assert.match(page.url(), /source=random/)
+        assert.equal(await page.locator('.site-header').isHidden(), true)
+        assert.equal(await page.locator('#display-panel').isHidden(), true)
+
+        // leave full screen first when the browser went there; then Exit
+        await page.mouse.move(100, 100)
+        await page.mouse.move(110, 110)
+        await page.getByRole('button', { name: 'Exit display mode' }).click()
+        await page.waitForFunction(() => !document.documentElement.dataset.kiosk)
+        assert.doesNotMatch(page.url(), /kiosk=|source=/)
+        assert.equal(await page.locator('.site-header').isVisible(), true)
+    } finally { await close() }
+})
+
+test('"Full screen" in the menu shows only the poster, and Escape leaves again', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.getByRole('button', { name: 'Display' }).click()
+        await page.locator('#menu-fullscreen').click()
+        await page.waitForFunction(() => document.documentElement.dataset.display === 'on')
+        assert.equal(await page.locator('.site-header').isHidden(), true)
+
+        // when the browser did not go full screen (some cannot), Escape leaves the display mode itself
+        if (!await page.evaluate(() => Boolean(document.fullscreenElement))) {
+            await page.keyboard.press('Escape')
+            await page.waitForFunction(() => !document.documentElement.dataset.display)
+        } else {
+            await page.evaluate(() => document.exitFullscreen())
+            await page.waitForFunction(() => !document.documentElement.dataset.display)
+        }
+        assert.equal(await page.locator('.site-header').isVisible(), true)
     } finally { await close() }
 })
 

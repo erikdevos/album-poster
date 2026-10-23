@@ -44,6 +44,7 @@ export function renderAlbum(album) {
 
     renderTracks(album.tracks)
     setFit(album)
+    document.dispatchEvent(new Event('poster:rendered')) // display mode measures the new poster
 }
 
 // Long titles and artists and long tracklists get a smaller type size, via custom properties

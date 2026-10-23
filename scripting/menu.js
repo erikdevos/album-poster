@@ -1,10 +1,11 @@
-// The export panel under the Export button: opens on a click, closes on Escape, on a click
-// elsewhere and when focus leaves it. After Escape focus goes back to the button.
+// A small panel under a header button: opens on a click, closes on Escape, on a click elsewhere
+// (also on another menu button) and when focus leaves it. After Escape focus goes back to the button.
+// Markup: <div class="header-menu"> <button id=toggleId aria-controls=panelId> <div id=panelId hidden>
 
-export function setupExportMenu() {
-    const toggle = document.getElementById('export-toggle')
-    const panel = document.getElementById('export-panel')
-    const menu = toggle.closest('.export-menu')
+export function setupMenu(toggleId, panelId) {
+    const toggle = document.getElementById(toggleId)
+    const panel = document.getElementById(panelId)
+    const menu = toggle.closest('.header-menu')
 
     const isOpen = () => !panel.hidden
 
@@ -31,7 +32,7 @@ export function setupExportMenu() {
     })
 
     document.addEventListener('pointerdown', event => {
-        if (!event.target.closest?.('.export-menu')) close()
+        if (!menu.contains(event.target)) close()
     })
 
     // Tabbing out of the panel (or the button) closes it

@@ -36,7 +36,7 @@ All data access sits behind two functions in `scripting/source.js`: `searchAlbum
 
 ## Search
 
-The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu, the random album button, the export panel and the light/dark switch; on a phone those are icons on one row. Searching goes through MusicBrainz: every word has to match the album or the artist, the last one as a prefix while you type. MusicBrainz has no popularity, so hits are ranked by their relevance score plus the number of releases of the album, which puts well-known albums first. Compilations, live albums, remixes and the like are left out. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
+The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu, the random album button, the display menu, the export panel and the light/dark switch; on a phone those are icons on one row. Searching goes through MusicBrainz: every word has to match the album or the artist, the last one as a prefix while you type. MusicBrainz has no popularity, so hits are ranked by their relevance score plus the number of releases of the album, which puts well-known albums first. Compilations, live albums, remixes and the like are left out. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
 
 ### Layouts
 
@@ -62,6 +62,22 @@ All options are in the header (hidden with `?controls=false`), so the page is ju
 - **Print** (in the panel) prints one poster on an A4 page, always in the light theme, without header, buttons or footer (`@media print` in `styles/style.css`). Turn on "background graphics" in the print dialog if you use `?colors=cover`. A poster with a very long tracklist can run over to a second page.
 - **Copy link** (in the panel) opens the share sheet where the browser has one, otherwise it copies the link (and as a last resort shows it, to copy by hand).
 
+## Display mode and slideshow (kiosk)
+
+For a screen that only shows the poster. Everything can be set in the URL, so a screen can be pointed at one link, or started from the **Display** menu in the header (the monitor icon).
+
+- `?display=true` shows only the poster, as large as the screen allows: no header, no footer, no scrolling. The width follows from the real shape of the poster (a long tracklist makes it taller), measured after every album.
+- `?kiosk=10` is the same, with another album every 10 seconds. `kiosk=true` means 10; the interval is between 3 and 3600 seconds.
+- `source=random` takes albums from all of MusicBrainz instead of `data/albums.json`. MusicBrainz has no "random", so each time a random genre (and often a decade) is searched and an album is picked from a random page of the albums with at least 8 releases. An album without a cover is skipped. If MusicBrainz cannot be reached, the slideshow falls back to the curated list.
+- The curated list is played in random order, every album once before any repeats, and never the same one twice in a row.
+- `progress=false` leaves out the thin line at the bottom that fills up until the next album.
+- `controls=false` also leaves out the buttons below, for a screen nobody touches.
+- A mouse move, a tap or a key press shows a few buttons for three seconds: full screen, exit display mode and, with a slideshow, pause and next. The keys `F` (full screen), `Space` (pause), `N` or the right arrow (next) and `Escape` (exit) work too.
+
+The slideshow starts with the album in the URL and then shows a new one every interval. The next album is fetched, with its cover, while the current one is on screen; the poster fades out and in. The URL follows the album on screen, so a reload carries on from there. Full screen comes from the menu or the `F` key: a browser only allows it after a click or key press, so a URL alone cannot start it. On a screen that should be full screen on its own, start the browser in kiosk mode (for example Chrome with `--kiosk URL`). While display mode is on, the page asks the screen to stay on (Screen Wake Lock, where the browser has it). When display mode was started by going full screen, leaving full screen leaves display mode too.
+
+Code: `scripting/display.js` (mode, buttons, keys), `scripting/kiosk.js` (the slideshow), `scripting/playlist.js` (order and URL settings), `scripting/fullscreen.js`.
+
 ## Light and dark
 
 The switch in the header (sun or moon) flips between light and dark. Until you use it the page follows the system setting, also when that changes. A choice is remembered in this browser. `?theme=light|dark` in the URL wins over it, and when the URL has a theme the switch updates it, so a shared link shows what is on screen. A small script in `index.html` sets the theme before the first paint to avoid a flash of the wrong one. Printing is always light.
@@ -85,7 +101,8 @@ Examples:
 ### Additional Options
 Add query parameters before the hash:
 
-- `?controls=false` - Hides the header (search, layout, random, export, light/dark), for showing just the poster on a screen
+- `?controls=false` - Hides the header (search, layout, random, display, export, light/dark), for showing just the poster on a screen
+- `?display=true`, `?kiosk=10`, `source=random`, `progress=false` - see Display mode and slideshow below
 - `?layout=classic|minimal|swiss` - The look of the poster (classic is the default); the header has a menu that changes the URL too
 - `?size=l` - Sets large poster size
 - `?size=m` - Sets medium poster size

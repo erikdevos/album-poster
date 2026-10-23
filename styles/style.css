@@ -582,12 +582,12 @@ ol.track-list li::before {
     display: block;
 }
 
-/* ---------- Export: a small panel under its button ---------- */
+/* ---------- Menus: a small panel under a header button (Display, Export) ---------- */
 
-.export-menu {
+.header-menu {
     position: relative;
 }
-.export-panel {
+.menu-panel {
     position: absolute;
     z-index: 20;
     top: calc(100% + 0.4rem);
@@ -602,10 +602,10 @@ ol.track-list li::before {
     box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.25);
     font-size: 0.85rem;
 }
-.export-panel[hidden] {
+.menu-panel[hidden] {
     display: none;
 }
-.export-field {
+.panel-field {
     display: grid;
     gap: 0.25rem;
     font-size: 0.7rem;
@@ -614,7 +614,7 @@ ol.track-list li::before {
     text-transform: uppercase;
     opacity: 0.85;
 }
-.export-field select {
+.panel-field select {
     height: 2.2rem;
     padding: 0 0.5rem;
     border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
@@ -627,11 +627,11 @@ ol.track-list li::before {
     letter-spacing: 0;
     text-transform: none;
 }
-.export-field select option {
+.panel-field select option {
     background-color: var(--bg);
     color: var(--fg);
 }
-.export-download {
+.panel-primary {
     height: 2.4rem;
     border: 1px solid var(--fg);
     border-radius: 999px;
@@ -641,9 +641,31 @@ ol.track-list li::before {
     font-weight: 700;
     cursor: pointer;
 }
-.export-download:disabled {
+.panel-primary:disabled {
     cursor: progress;
     opacity: 0.6;
+}
+.panel-button {
+    height: 2.4rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
+    border-radius: 999px;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+.panel-button:hover {
+    background-color: var(--muted-bg);
+}
+.panel-heading {
+    margin: 0.25rem 0 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
 }
 .export-more {
     display: flex;
@@ -689,8 +711,18 @@ ol.track-list li::before {
         flex-basis: 100%;
         max-width: none;
     }
+    /* No room for the title next to five buttons; screen readers still have it */
     .site-title {
-        font-size: 0.85rem;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+    .layout-select {
+        margin-right: auto;
     }
 }
 
@@ -704,6 +736,141 @@ ol.track-list li::before {
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
+}
+
+/* ---------- Display mode and the slideshow ---------- */
+
+/* Only the poster, as large as the screen allows. display.js measures the real shape of the poster
+   and puts it in --poster-ratio, so that the width follows from the height. */
+:root[data-display="on"] .site-header,
+:root[data-display="on"] footer,
+:root[data-display="on"] .status {
+    display: none;
+}
+:root[data-display="on"] body {
+    overflow: hidden;
+}
+:root[data-display="on"] main {
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+    padding: 0;
+}
+:root[data-display="on"] #album-container {
+    --poster-max: 3000px;
+    width: min(
+        100vw - 2 * var(--page-gutter),
+        calc((100dvh - 2 * var(--page-gutter)) / var(--poster-ratio)),
+        var(--poster-max)
+    );
+    transition: opacity 0.5s ease;
+}
+/* The poster fades out and in when the slideshow changes album */
+#album-container.is-changing {
+    opacity: 0;
+}
+:root[data-display="on"]:not(.display-active) {
+    cursor: none;
+}
+
+/* The buttons that show for a moment */
+.display-controls {
+    position: fixed;
+    z-index: 30;
+    left: 50%;
+    bottom: 1.25rem;
+    display: none;
+    gap: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 999px;
+    background-color: rgb(20 20 20 / 0.85);
+    color: #fff;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+:root[data-display="on"] .display-controls {
+    display: flex;
+}
+:root[data-display="on"][data-controls="off"] .display-controls {
+    display: none;
+}
+:root[data-display="on"].display-active .display-controls,
+:root[data-display="on"] .display-controls:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+}
+.display-button {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.display-button:hover {
+    background-color: rgb(255 255 255 / 0.18);
+}
+.display-button[hidden] {
+    display: none;
+}
+.display-button:focus-visible {
+    outline-color: #fff;
+}
+.display-controls .kiosk-only {
+    display: none;
+}
+:root[data-kiosk="on"] .display-controls .kiosk-only {
+    display: grid;
+}
+#display-pause .icon-play,
+#display-pause[aria-pressed="true"] .icon-pause {
+    display: none;
+}
+#display-pause[aria-pressed="true"] .icon-play {
+    display: block;
+}
+
+/* A thin line at the bottom that fills up until the next album */
+.kiosk-progress {
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    display: none;
+    pointer-events: none;
+}
+:root[data-kiosk="on"]:not(.no-progress) .kiosk-progress {
+    display: block;
+}
+.kiosk-progress-bar {
+    height: 100%;
+    background-color: var(--fg);
+    opacity: 0.35;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+:root.kiosk-tick .kiosk-progress-bar {
+    animation: kiosk-progress var(--kiosk-interval, 10s) linear forwards;
+}
+:root.kiosk-paused .kiosk-progress-bar {
+    animation-play-state: paused;
+}
+@keyframes kiosk-progress {
+    to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #album-container.is-changing {
+        transition: none;
+    }
 }
 
 /* ---------- Footer ---------- */
@@ -740,7 +907,7 @@ footer .container {
         -webkit-print-color-adjust: exact;
     }
 
-    .site-header, .status, footer {
+    .site-header, .status, footer, .display-controls, .kiosk-progress {
         display: none !important;
     }
 
