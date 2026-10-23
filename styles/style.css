@@ -607,7 +607,7 @@ ol.track-list li::before {
 /* CD: the back of a cd case. Artist and title, a centred numbered tracklist and the details at the
    bottom. cd-blur is the same, on the blurred cover. */
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) {
-    --poster-ratio: 0.9;
+    --poster-ratio: 1; /* a cd is square; a long tracklist makes it taller */
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-info-container {
     position: relative;
@@ -617,8 +617,8 @@ ol.track-list li::before {
        the barcode stay at the bottom, also when the list is short */
     grid-template-rows: auto auto auto 1fr auto auto;
     justify-items: center;
-    aspect-ratio: 150 / 128;
-    padding: 7cqi 10cqi;
+    aspect-ratio: 1 / 1;
+    padding: 6cqi 10cqi;
     text-align: center;
     border-width: max(1.5px, 0.35cqi);
 }
@@ -644,10 +644,10 @@ ol.track-list li::before {
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-name {
     grid-row: 3;
-    margin: 0 0 4cqi;
+    margin: 0 0 3cqi;
     padding: 0;
     border: none;
-    font-size: calc(7cqi * min(var(--fit-title), var(--fit-word)));
+    font-size: calc(6.5cqi * min(var(--fit-title), var(--fit-word)));
     letter-spacing: 0.04em;
     text-align: center;
 }
@@ -663,32 +663,32 @@ ol.track-list li::before {
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list {
     column-count: 1;
     padding-bottom: 0;
-    font-size: max(9px, calc(clamp(10px, 2.7cqi, 1.1rem) * min(1, 18 / var(--track-count))));
-    line-height: 1.2;
+    font-size: max(9px, calc(clamp(10px, 2.35cqi, 1.1rem) * min(1, 18 / var(--track-count))));
+    line-height: 1.15;
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     gap: 0.7em;
-    margin-bottom: 0.45em;
+    margin-bottom: 0.3em;
     text-align: left;
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li::before {
     flex: none;
-    min-width: 1.7em;
+    min-width: 1.6em;
     padding: 0.05em 0.25em;
     border: 1px solid currentColor;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 400;
     text-align: center;
     color: inherit;
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-footer-info {
-    grid-row: 5;
+    grid-row: 6;
     justify-content: center;
     width: 100%;
-    margin-top: 4cqi;
+    margin-top: 3cqi;
     padding-top: 2.5cqi;
     border-top: max(1px, 0.25cqi) solid currentColor;
     font-size: max(9px, 2.1cqi);
@@ -708,11 +708,11 @@ ol.track-list li::before {
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-barcode:not(.hidden) {
     display: block;
-    grid-row: 6;
+    grid-row: 5; /* above the details, which are the last row */
     justify-self: end;
-    width: 21cqi;
-    margin-top: 3cqi;
-    padding: 0.8cqi 0.6cqi 0.2cqi;
+    width: 15cqi;
+    margin: 2cqi -5cqi 0 0; /* into the padding: close to the right edge */
+    padding: 0.6cqi 0.45cqi 0.15cqi;
     background-color: #fff;
     color: #000;
     line-height: 0;

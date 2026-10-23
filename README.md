@@ -106,7 +106,7 @@ Add query parameters before the hash:
 
 - `?controls=false` - Hides the header (search, layout, random, display, export, light/dark), for showing just the poster on a screen
 - `?display=true`, `?kiosk=10`, `source=random`, `progress=false` - see Display mode and slideshow below
-- `?layout=classic|minimal|swiss|blur|cd|cd-blur` - The look of the poster (classic is the default; cd is the back of a cd case: a centred numbered tracklist with the details at the bottom, and cd-blur is the same on the blurred cover. Both show the real barcode of the release (MusicBrainz knows it for most releases) bottom right, drawn as a scannable EAN-13 on a white label; no barcode is shown when the release has none; blur puts the cover, enlarged and blurred, behind the poster; in display mode the blurred cover fills the whole screen and the poster keeps its layout on top); the header has a menu that changes the URL too
+- `?layout=classic|minimal|swiss|blur|cd|cd-blur` - The look of the poster (classic is the default; cd is the back of a cd case, square when the tracklist allows it (about 18 short titles) and taller for longer lists: a centred numbered tracklist with the details at the bottom, and cd-blur is the same on the blurred cover. Both show the real barcode of the release (MusicBrainz knows it for most releases) at the right, above the album info, drawn as a scannable EAN-13 on a white label; no barcode is shown when the release has none; blur puts the cover, enlarged and blurred, behind the poster; in display mode the blurred cover fills the whole screen and the poster keeps its layout on top); the header has a menu that changes the URL too
 - `?size=l` - Sets large poster size
 - `?size=m` - Sets medium poster size
 - `?size=s` - Sets small poster size
