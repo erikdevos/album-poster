@@ -129,6 +129,10 @@ main {
     }
 }
 
+.poster-backdrop {
+    display: none;
+}
+
 .album-info-container {
     padding: 4cqi;
     font-family: var(--font-secondary);
@@ -458,6 +462,146 @@ ol.track-list li::before {
     }
     #album-container[data-layout="swiss"] .album-footer-info {
         grid-row: 5;
+    }
+}
+
+/* Blur: the cover, enlarged and blurred, fills the poster, so cover and text form one picture.
+   Always light type on a darkened background; the cover colours option does not apply here. */
+#album-container[data-layout="blur"] {
+    --poster-ratio: 1.6;
+}
+#album-container[data-layout="blur"] .album-info-container {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 3cqi;
+    align-content: start;
+    padding: 7cqi;
+    border: none;
+    color: #fff;
+    background-color: #1c1c1e;
+    text-shadow: 0 0 2cqi rgb(0 0 0 / 0.25);
+}
+#album-container[data-layout="blur"] .poster-backdrop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+#album-container[data-layout="blur"] .poster-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0.05) 25%, rgb(0 0 0 / 0.5));
+}
+#album-container[data-layout="blur"] .poster-backdrop img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* the blur makes the edges fade out, so the image is a bit larger than the poster */
+    transform: scale(1.4);
+    filter: blur(5cqi) saturate(1.35);
+}
+#album-container[data-layout="blur"] .album-cover-wrapper {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    margin-bottom: 5cqi;
+    background-color: rgb(255 255 255 / 0.12);
+    box-shadow: 0 2cqi 6cqi rgb(0 0 0 / 0.35);
+}
+#album-container[data-layout="blur"] .album-name {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: calc(5.5cqi * min(var(--fit-title), var(--fit-word)));
+    line-height: 1.05;
+    text-transform: none;
+    text-wrap: balance;
+}
+#album-container[data-layout="blur"] .album-artist {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    display: block;
+    padding: 0.5cqi 0 3.5cqi;
+    margin: 0 0 4cqi;
+    border-bottom-width: max(1px, 0.3cqi);
+    border-color: rgb(255 255 255 / 0.85);
+}
+#album-container[data-layout="blur"] .album-artist h3 {
+    max-width: none;
+    margin: 0;
+    font-size: calc(3.4cqi * var(--fit-artist));
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: none;
+    opacity: 0.85;
+}
+#album-container[data-layout="blur"] .album-colors {
+    display: none;
+}
+#album-container[data-layout="blur"] .album-tracklist-genre-wrapper {
+    grid-row: 4;
+    grid-column: 1 / 9;
+    border: none;
+}
+#album-container[data-layout="blur"] .album-tracklist-genre-wrapper .right {
+    display: none;
+}
+#album-container[data-layout="blur"] .album-tracklist-genre-wrapper .left {
+    flex: 1;
+}
+#album-container[data-layout="blur"] ol.track-list {
+    column-count: 2;
+    column-gap: 3cqi;
+    padding-bottom: 0;
+    font-size: max(9px, calc(clamp(10px, 2.1cqi, 0.95rem) * min(1, 18 / var(--track-count))));
+    text-transform: none;
+}
+#album-container[data-layout="blur"] ol.track-list li {
+    font-weight: 500;
+}
+#album-container[data-layout="blur"] ol.track-list li::before {
+    opacity: 0.7;
+}
+#album-container[data-layout="blur"] .album-footer-info {
+    grid-row: 4;
+    grid-column: 9 / -1;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: start;
+    gap: 1.5cqi;
+    font-size: max(9px, 2.1cqi);
+    font-weight: 500;
+    text-align: right;
+    text-transform: none;
+}
+#album-container[data-layout="blur"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
+    content: none;
+}
+
+/* Narrow blur poster: the tracklist takes the full width and the details go below it */
+@container poster (max-width: 420px) {
+    #album-container[data-layout="blur"] .album-tracklist-genre-wrapper {
+        grid-column: 1 / -1;
+    }
+    #album-container[data-layout="blur"] .album-footer-info {
+        grid-row: 5;
+        grid-column: 1 / -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 4cqi;
+        text-align: left;
+    }
+    #album-container[data-layout="blur"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
+        content: "|";
     }
 }
 
@@ -1022,5 +1166,8 @@ footer .container {
     }
     #album-container[data-layout="swiss"] {
         width: 186mm;
+    }
+    #album-container[data-layout="blur"] {
+        width: 160mm;
     }
 }

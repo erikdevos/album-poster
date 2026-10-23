@@ -67,6 +67,7 @@ export function renderAlbum(album) {
 
     setImage('album-cover', album.front, album.frontFull, `Cover of ${album.title} by ${album.artist}`)
     setImage('album-cover-back', album.back, album.backFull, `Back cover of ${album.title} by ${album.artist}`)
+    setBackdrop(album.front)
     document.getElementById('album-info').classList.toggle('no-back', !album.back)
 
     renderTracks(album.tracks)
@@ -121,6 +122,16 @@ function setImage(id, url, fullUrl, alt) {
         img.classList.add('hidden')
         if (id === 'album-cover-back') document.getElementById('album-info').classList.add('no-back')
     }
+    if (url) {
+        img.src = url
+    } else {
+        img.removeAttribute('src')
+    }
+}
+
+// The blurred background of the blur layout is the front cover again (same URL, so no extra download)
+function setBackdrop(url) {
+    const img = document.getElementById('album-backdrop')
     if (url) {
         img.src = url
     } else {

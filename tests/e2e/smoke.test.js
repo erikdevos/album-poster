@@ -221,6 +221,35 @@ test('the layout menu changes the poster and the URL', async () => {
     } finally { await close() }
 })
 
+test('the blur layout shows the cover enlarged and blurred behind the poster', async () => {
+    const { page, close } = await open(`?layout=blur#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-backdrop').naturalWidth > 0)
+        const { shown, sameCover, filter, fillsPoster } = await page.evaluate(() => {
+            const backdrop = document.getElementById('album-backdrop')
+            const box = backdrop.parentElement.getBoundingClientRect()
+            const poster = document.getElementById('album-info').getBoundingClientRect()
+            return {
+                shown: getComputedStyle(backdrop.parentElement).display !== 'none',
+                sameCover: backdrop.src === document.getElementById('album-cover').src,
+                filter: getComputedStyle(backdrop).filter,
+                fillsPoster: Math.abs(box.width - poster.width) < 2 && Math.abs(box.height - poster.height) < 2
+            }
+        })
+        assert.ok(shown && sameCover && fillsPoster)
+        assert.match(filter, /blur/)
+    } finally { await close() }
+})
+
+test('the backdrop is not shown in the other layouts', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        assert.equal(await page.locator('.poster-backdrop').isHidden(), true)
+    } finally { await close() }
+})
+
 test('options in the URL are applied', async () => {
     const { page, close } = await open(`?layout=minimal&theme=light&controls=false#${LUX}`)
     try {
@@ -721,7 +750,7 @@ test('with colors=cover the poster gets the colours of the cover', async () => {
     } finally { await close() }
 })
 
-for (const layout of ['classic', 'minimal', 'swiss']) {
+for (const layout of ['classic', 'minimal', 'swiss', 'blur']) {
     test(`on a phone the ${layout} poster fits the screen and nothing sticks out`, async () => {
         const { page, close } = await open(`?layout=${layout}#${LUX}`, { viewport: { width: 375, height: 812 } })
         try {

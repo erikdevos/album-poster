@@ -2,9 +2,9 @@
 //   size=s|m|l       maximum poster width
 //   theme=light|dark overrides the saved choice and the system setting
 //   colors=cover     poster colours taken from the cover
-//   layout=classic|minimal|swiss   how the poster is laid out
+//   layout=classic|minimal|swiss|blur   how the poster is laid out
 //   controls=false   hides the header with search, for showing the poster on a screen
-export const LAYOUTS = ['classic', 'minimal', 'swiss']
+export const LAYOUTS = ['classic', 'minimal', 'swiss', 'blur']
 
 export function applyDisplayOptions(params) {
     const container = document.getElementById('album-container')
