@@ -48,15 +48,21 @@ export function renderAlbum(album) {
 
 // Long titles and artists and long tracklists get a smaller type size, via custom properties
 // that the stylesheet multiplies into its sizes
-function setFit(album) {
-    const poster = document.getElementById('album-container')
+export function fitFactors(album) {
     const fit = text => Math.min(1, Math.max(0.5, 22 / text.length))
-    poster.style.setProperty('--fit-title', fit(album.title).toFixed(2))
-    poster.style.setProperty('--fit-artist', fit(album.artist).toFixed(2))
     // A single long word cannot wrap, so the biggest layouts also shrink for the longest word
     const longestWord = Math.max(...album.title.split(/\s+/).map(word => word.length))
-    poster.style.setProperty('--fit-word', Math.min(1, 10 / longestWord).toFixed(2))
-    poster.style.setProperty('--track-count', Math.max(album.tracks.length, 1))
+    return {
+        '--fit-title': fit(album.title).toFixed(2),
+        '--fit-artist': fit(album.artist).toFixed(2),
+        '--fit-word': Math.min(1, 10 / longestWord).toFixed(2),
+        '--track-count': Math.max(album.tracks.length, 1)
+    }
+}
+
+function setFit(album) {
+    const poster = document.getElementById('album-container')
+    for (const [name, value] of Object.entries(fitFactors(album))) poster.style.setProperty(name, value)
 }
 
 function renderTracks(tracks) {

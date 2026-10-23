@@ -6,10 +6,25 @@ https://erikdevos.github.io/album-poster/
 The app uses ES modules and `fetch`, so it needs a web server (opening `index.html` directly fails):
 
 ```
-python3 -m http.server 8000
+npm start
 ```
 
-Then open http://localhost:8000. There is no build step: the styles are plain CSS in `styles/style.css`.
+Then open http://localhost:8000 (this runs `python3 -m http.server 8000`; any static server will do). There is no build step: the styles are plain CSS in `styles/style.css`.
+
+## Tests
+
+```
+npm install
+npm test            # unit tests, no browser needed
+npm run test:e2e    # browser tests
+```
+
+- **Unit tests** (`tests/unit`) use the test runner built into Node 22 and have no dependencies. They cover the URL router, the MusicBrainz source (search query, ranking, retries, fallbacks, with a fake `fetch`), the colour picking, the type size rules and the integrity of `data/albums.json`.
+- **Browser tests** (`tests/e2e`) drive the installed Chrome through `playwright-core` (no browser download; set `CHROME_PATH` to use another one). The site is served from this folder and MusicBrainz and the Cover Art Archive are replaced by fixtures, so the tests are quick and do not depend on them. They check loading from the hash, search with mouse and keyboard, the old numeric links, error recovery, layouts, URL options, cover colours, no sideways scroll on a phone in every layout, and the PNG download (the last one is skipped when jsDelivr cannot be reached).
+
+## Deploy
+
+`.github/workflows/ci.yml` runs both test suites on every pull request and on every push to a branch other than `main`. `.github/workflows/pages.yml` runs them on `main` and, when they pass, publishes `index.html`, `scripting`, `styles` and `data` to GitHub Pages. For that to work, set **Settings > Pages > Source** to **GitHub Actions** once.
 
 ## Data
 

@@ -8,7 +8,8 @@
 
 const MB = 'https://musicbrainz.org/ws/2'
 const CAA = 'https://coverartarchive.org'
-const MIN_GAP_MS = 1100 // MusicBrainz allows about one request per second
+// MusicBrainz allows about one request per second; tests set the gap to 0
+export const settings = { minGapMs: 1100 }
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 export const isValidId = id => UUID.test(id)
@@ -20,7 +21,7 @@ let queue = Promise.resolve()
 // Runs MusicBrainz requests one after another, with a gap in between
 function throttled(task) {
     const run = queue.then(async () => {
-        const wait = lastMusicBrainzCall + MIN_GAP_MS - Date.now()
+        const wait = lastMusicBrainzCall + settings.minGapMs - Date.now()
         if (wait > 0) await new Promise(resolve => setTimeout(resolve, wait))
         lastMusicBrainzCall = Date.now()
         return task()
@@ -60,20 +61,31 @@ const EXCLUDED_TYPES = 'compilation OR live OR remix OR demo OR soundtrack OR mi
 const POPULARITY_WEIGHT = 30
 const MAX_RESULTS = 8
 
-export async function searchAlbums(query, signal) {
+// The Lucene query for what someone typed, or null when it is too short to search
+export function buildSearchQuery(query) {
     const words = query.match(/[\p{L}\p{N}]+/gu) ?? []
-    if (query.trim().length < 2 || words.length === 0) return []
+    if (query.trim().length < 2 || words.length === 0) return null
 
     const clauses = words.map((word, index) => {
         const term = index === words.length - 1 && word.length >= 2 ? `${word}*` : word
         return `(releasegroup:${term} OR artist:${term})`
     })
-    const lucene = `${clauses.join(' AND ')} AND primarytype:album AND NOT secondarytype:(${EXCLUDED_TYPES})`
+    return `${clauses.join(' AND ')} AND primarytype:album AND NOT secondarytype:(${EXCLUDED_TYPES})`
+}
+
+// Most relevant and best known first
+export function rankGroups(groups) {
+    const rank = group => group.score + POPULARITY_WEIGHT * Math.log10(1 + (group.count ?? 1))
+    return [...groups].sort((a, b) => rank(b) - rank(a))
+}
+
+export async function searchAlbums(query, signal) {
+    const lucene = buildSearchQuery(query)
+    if (!lucene) return []
+
     const data = await musicBrainz(`release-group?query=${encodeURIComponent(lucene)}&limit=25`, signal)
 
-    const rank = group => group.score + POPULARITY_WEIGHT * Math.log10(1 + (group.count ?? 1))
-    return data['release-groups']
-        .sort((a, b) => rank(b) - rank(a))
+    return rankGroups(data['release-groups'])
         .slice(0, MAX_RESULTS)
         .map(group => ({
             id: group.id,
@@ -132,7 +144,7 @@ async function getCoverArt(groupId, signal) {
 
 // Older entries in the Cover Art Archive still list http:// image URLs, which the browser
 // blocks on an https page (mixed content)
-const secure = url => url.replace(/^http:\/\//, 'https://')
+export const secure = url => url.replace(/^http:\/\//, 'https://')
 
 // Fallback when there is no cover art: the earliest official release
 async function pickRelease(groupId, signal) {
