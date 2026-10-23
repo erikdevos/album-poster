@@ -36,7 +36,7 @@ All data access sits behind two functions in `scripting/source.js`: `searchAlbum
 
 ## Search
 
-The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu, the random album button, the display menu, the export panel and the light/dark switch; on a phone those are icons on one row. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
+The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu and four round icon buttons: random album, display, export and light/dark. The buttons show only an icon; each has a name (`aria-label`) and the same text as a tooltip (`title`) for screen readers and for hovering. The search box is short; its list of results is wider than the box. On a phone the box gets its own row. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
 
 Searching goes through MusicBrainz (`searchAlbums` in `scripting/sources/musicbrainz.js`):
 
@@ -64,6 +64,14 @@ Code: `scripting/display.js` (mode, buttons, keys), `scripting/kiosk.js` (the sl
 ## Light and dark
 
 The switch in the header (sun or moon) flips between light and dark. Until you use it the page follows the system setting, also when that changes. A choice is remembered in this browser. `?theme=light|dark` in the URL wins over it, and when the URL has a theme the switch updates it, so a shared link shows what is on screen. A small script in `index.html` sets the theme before the first paint to avoid a flash of the wrong one. Printing is always light.
+
+## Loading and messages
+
+Nothing that tells you what is going on takes up room in the page, so the poster never jumps (`scripting/feedback.js`):
+
+- **A thin line along the top of the window** runs while an album loads. It shows after a fifth of a second, so a quick load does not flicker. It is left out in display mode, where the poster fades instead.
+- **A small round loader on a button** that is busy: on Random while the next album comes, and on Export while a file is made.
+- **A bubble at the bottom of the window** for a short message: an error ("Could not load this album...") or "Link copied". It is announced to screen readers (`role="status"`), goes away by itself and is not shown in display mode.
 
 ## Layout
 

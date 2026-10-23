@@ -77,15 +77,6 @@ main {
     display: none !important;
 }
 
-.status {
-    width: min(100% - 2 * var(--page-gutter), 800px);
-    margin: 0 auto 1rem;
-    font-size: 0.9rem;
-}
-.status[data-type="error"] {
-    font-weight: 700;
-}
-
 /* ---------- Poster ---------- */
 
 #album-container {
@@ -483,8 +474,7 @@ ol.track-list li::before {
 
 .search {
     position: relative;
-    flex: 1 1 16rem;
-    max-width: 26rem;
+    flex: 0 1 10rem;
 }
 .search input {
     width: 100%;
@@ -506,7 +496,7 @@ ol.track-list li::before {
     z-index: 10;
     top: calc(100% + 0.35rem);
     left: 0;
-    right: 0;
+    min-width: min(20rem, calc(100vw - 2 * var(--page-gutter)));
     max-height: min(60dvh, 24rem);
     margin: 0;
     padding: 0.35rem;
@@ -569,6 +559,7 @@ ol.track-list li::before {
 .theme-toggle svg {
     flex: none;
 }
+.icon-button,
 .theme-toggle {
     width: 2.4rem;
     padding: 0;
@@ -693,10 +684,6 @@ ol.track-list li::before {
 }
 
 @media (max-width: 700px) {
-    /* Icons only, so that title, layout menu and buttons stay on one row */
-    .button-label {
-        display: none;
-    }
     .icon-button,
     .theme-toggle {
         width: 2.3rem;
@@ -709,7 +696,10 @@ ol.track-list li::before {
     .search {
         order: 3;
         flex-basis: 100%;
-        max-width: none;
+    }
+    #search-results {
+        right: 0;
+        min-width: 0;
     }
     /* No room for the title next to five buttons; screen readers still have it */
     .site-title {
@@ -744,7 +734,8 @@ ol.track-list li::before {
    and puts it in --poster-ratio, so that the width follows from the height. */
 :root[data-display="on"] .site-header,
 :root[data-display="on"] footer,
-:root[data-display="on"] .status {
+:root[data-display="on"] .toast,
+:root[data-display="on"] .loading-line {
     display: none;
 }
 :root[data-display="on"] body {
@@ -873,6 +864,109 @@ ol.track-list li::before {
     }
 }
 
+/* ---------- Loading and messages: fixed to the window, so that the page never moves ---------- */
+
+/* A thin line along the top that runs while an album loads. It only shows after a moment, so that
+   a quick load does not flicker. */
+.loading-line {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+}
+.loading-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    background-color: var(--fg);
+    opacity: 0.6;
+    transform: translateX(-100%);
+}
+:root[data-loading] .loading-line {
+    animation: loading-appear 0.2s ease 0.2s forwards;
+}
+:root[data-loading] .loading-line::before {
+    animation: loading-run 1.1s ease-in-out infinite;
+}
+@keyframes loading-appear {
+    to { opacity: 1; }
+}
+@keyframes loading-run {
+    to { transform: translateX(350%); }
+}
+
+/* A button that is busy shows a small round loader in place of its icon */
+.header-control[aria-busy="true"] {
+    position: relative;
+    pointer-events: none;
+}
+.header-control[aria-busy="true"] svg {
+    visibility: hidden;
+}
+.header-control[aria-busy="true"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 1.05rem;
+    height: 1.05rem;
+    border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* A short message, for example an error: a bubble at the bottom of the window */
+.toast {
+    position: fixed;
+    z-index: 60;
+    left: 50%;
+    bottom: 1.25rem;
+    max-width: min(28rem, calc(100vw - 2 * var(--page-gutter)));
+    padding: 0.65rem 1rem;
+    border-radius: 0.75rem;
+    background-color: rgb(20 20 20 / 0.92);
+    color: #fff;
+    font-size: 0.85rem;
+    text-align: center;
+    box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 0.3);
+    transform: translateX(-50%);
+    animation: toast-in 0.2s ease;
+}
+.toast[hidden] {
+    display: none;
+}
+.toast[data-type="error"] {
+    background-color: #8a1c1c;
+}
+@keyframes toast-in {
+    from { opacity: 0; transform: translate(-50%, 0.5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root[data-loading] .loading-line::before {
+        animation: none;
+        transform: none;
+        width: 100%;
+    }
+    .header-control[aria-busy="true"]::after {
+        animation-duration: 1.6s;
+    }
+    .toast {
+        animation: none;
+    }
+}
+
 /* ---------- Footer ---------- */
 
 footer {
@@ -907,7 +1001,7 @@ footer .container {
         -webkit-print-color-adjust: exact;
     }
 
-    .site-header, .status, footer, .display-controls, .kiosk-progress {
+    .site-header, .toast, .loading-line, footer, .display-controls, .kiosk-progress {
         display: none !important;
     }
 

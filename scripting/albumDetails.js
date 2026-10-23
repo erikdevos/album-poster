@@ -1,11 +1,12 @@
 import { getAlbum, isValidId } from './source.js'
+import { setLoading, showMessage, clearMessage } from './feedback.js'
 
 let currentRequest = null
 
 // Fetches and renders an album, and returns it. A newer call cancels an older one still in flight.
 export async function fetchAlbumDetails(albumId) {
     if (!isValidId(albumId)) {
-        setStatus('This is not a valid album id.', 'error')
+        showMessage('This is not a valid album id.', { error: true })
         return null
     }
 
@@ -13,18 +14,20 @@ export async function fetchAlbumDetails(albumId) {
     const controller = new AbortController()
     currentRequest = controller
 
-    setStatus('Loading album…')
+    clearMessage()
+    setLoading(true) // a thin line at the top of the window; nothing in the page moves
 
     try {
         const album = await getAlbum(albumId, controller.signal)
         renderAlbum(album)
-        setStatus('')
         return album
     } catch (error) {
         if (error.name === 'AbortError') return null
         console.error('Error fetching album details:', error)
-        setStatus('Could not load this album. Try again in a moment or pick another one.', 'error')
+        showMessage('Could not load this album. Try again in a moment or pick another one.', { error: true })
         return null
+    } finally {
+        setLoading(false)
     }
 }
 
@@ -106,12 +109,4 @@ function setField(id, value) {
     const el = document.getElementById(id)
     el.textContent = value
     el.closest('.footer-item').classList.toggle('hidden', !value)
-}
-
-// Status message that does not touch the poster markup, so it can always recover
-export function setStatus(message, type = 'info') {
-    const el = document.getElementById('status')
-    el.textContent = message
-    el.dataset.type = type
-    el.classList.toggle('hidden', !message)
 }

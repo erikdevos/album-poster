@@ -1,5 +1,6 @@
 import { loadAlbumList } from './albumList.js'
-import { fetchAlbumDetails, setStatus } from './albumDetails.js'
+import { fetchAlbumDetails } from './albumDetails.js'
+import { setBusy, showMessage, isLoading } from './feedback.js'
 import { watchCover } from './albumColors.js'
 import { applyDisplayOptions, setLayout, setupThemeToggle } from './displayOptions.js'
 import { setupSearch, rememberAlbum } from './search.js'
@@ -22,31 +23,36 @@ function resolveAlbumId(albumId) {
 async function showAlbum(albumId) {
     const album = await fetchAlbumDetails(resolveAlbumId(albumId))
     if (album) rememberAlbum(album)
+    // the loader on the Random button stays while a newer album is still loading
+    if (!isLoading()) setBusy(document.getElementById('shuffle-button'), false)
 }
 
 function showRandomAlbum() {
     const current = parseLocation().albumId
     const others = albums.filter(album => album.id !== current)
-    if (others.length > 0) navigateToAlbum(others[Math.floor(Math.random() * others.length)].id)
+    if (others.length === 0) return
+    setBusy(document.getElementById('shuffle-button'), true) // cleared in showAlbum, when the album is there
+    navigateToAlbum(others[Math.floor(Math.random() * others.length)].id)
 }
 
-// Runs a button action: the button is disabled meanwhile, a failure is shown in the status line,
-// and the message the action returns (if any) is shown for a few seconds
-function onClick(id, action, { busy = '', before = () => {} } = {}) {
+// Runs a button action: the button is disabled meanwhile (and, with `busyButton`, a loader shows on
+// that button), a failure is shown as a message, and so is the text the action returns, if any
+function onClick(id, action, { busyButton = id, before = () => {} } = {}) {
     const button = document.getElementById(id)
+    const loader = document.getElementById(busyButton)
     button.addEventListener('click', async () => {
         before()
         button.disabled = true
-        if (busy) setStatus(busy)
+        setBusy(loader, true)
         try {
             const message = await action()
-            setStatus(message ?? '')
-            if (message) setTimeout(() => setStatus(''), 6000)
+            if (message) showMessage(message)
         } catch (error) {
             console.error(`${id} failed:`, error)
-            setStatus('That did not work. Try again.', 'error')
+            showMessage('That did not work. Try again.', { error: true })
         } finally {
             button.disabled = false
+            setBusy(loader, false)
         }
     })
 }
@@ -61,15 +67,15 @@ async function init() {
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
     setupThemeToggle()
     document.getElementById('layout-select').addEventListener('change', event => setLayout(event.target.value))
-    // The export panel closes when something in it is used; progress then shows in the status line
+    // The export panel closes when something in it is used; the Export button shows a loader while the file is made
     const exportMenu = setupMenu('export-toggle', 'export-panel')
     const before = () => exportMenu.close()
     onClick('download-button', () => downloadPoster({
         format: document.getElementById('export-format').value,
         quality: document.getElementById('export-quality').value
-    }), { busy: 'Creating the file…', before })
-    onClick('print-button', printPoster, { before })
-    onClick('share-button', async () => (await sharePoster()) === 'copied' ? 'Link copied to the clipboard' : '', { before })
+    }), { busyButton: 'export-toggle', before })
+    onClick('print-button', printPoster, { busyButton: null, before })
+    onClick('share-button', async () => (await sharePoster()) === 'copied' ? 'Link copied to the clipboard' : '', { busyButton: null, before })
 
     // Display mode and the slideshow: from the URL, or from the Display menu
     const displayMenu = setupMenu('display-toggle', 'display-panel')

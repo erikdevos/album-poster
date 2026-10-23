@@ -38,11 +38,16 @@ const albums = new Map([[ABBEY, ['Abbey Road', 'The Beatles']], [LUX, ['LUX', 'R
 const albumFor = id => albums.get(id) ?? [`Album ${id.slice(0, 8)}`, 'Some Band']
 const RANDOM_ID = '11111111-2222-4333-8444-555555555555'
 const searches = []
+let slowMs = 0 // makes MusicBrainz and the Cover Art Archive answer slowly, to see the loading state
 
 async function mockNetwork(context) {
     await context.route(/^https?:\/\/(?!localhost|127\.0\.0\.1)/, async route => {
         const url = new URL(route.request().url())
         const path = decodeURIComponent(url.pathname)
+
+        if (slowMs && ['musicbrainz.org', 'coverartarchive.org'].includes(url.hostname)) {
+            await new Promise(resolve => setTimeout(resolve, slowMs))
+        }
 
         if (url.hostname === 'musicbrainz.org') {
             if (path.endsWith('/release-group') && url.searchParams.has('query')) {
@@ -193,7 +198,7 @@ test('a bad id shows a message, and the poster recovers with a good one', async 
 
         await page.evaluate(id => { location.hash = id }, ABBEY)
         await poster(page).title.getByText('Abbey Road').waitFor()
-        assert.equal(await page.locator('#status').isHidden(), true)
+        assert.equal(await page.locator('#toast').isHidden(), true)
     } finally { await close() }
 })
 
@@ -485,6 +490,97 @@ test('"Full screen" in the menu shows only the poster, and Escape leaves again',
             await page.waitForFunction(() => !document.documentElement.dataset.display)
         }
         assert.equal(await page.locator('.site-header').isVisible(), true)
+    } finally { await close() }
+})
+
+// ---------- Loading and messages never move the page ----------
+
+const posterTop = page => page.evaluate(() => Math.round(document.getElementById('album-container').getBoundingClientRect().top))
+
+test('while an album loads there is a loader on the Random button and a line at the top, and nothing moves', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const before = { top: await posterTop(page), header: await page.locator('.site-header').boundingBox() }
+        assert.equal(await page.evaluate(() => document.documentElement.dataset.loading ?? null), null)
+
+        slowMs = 1500
+        const random = page.getByRole('button', { name: 'Random album' })
+        await random.click()
+
+        // the loaders show up
+        await page.waitForFunction(() => document.documentElement.dataset.loading === 'true')
+        assert.equal(await random.getAttribute('aria-busy'), 'true')
+        await page.waitForFunction(() => getComputedStyle(document.querySelector('.loading-line')).opacity === '1')
+
+        // ... and the page stays exactly where it is, with no line of text added anywhere
+        assert.equal(await posterTop(page), before.top)
+        assert.deepEqual(await page.locator('.site-header').boundingBox(), before.header)
+        assert.equal(await page.locator('#toast').isHidden(), true)
+
+        // when the album is there, the loaders are gone
+        await page.waitForFunction(() => !document.documentElement.dataset.loading, null, { timeout: 15_000 })
+        assert.equal(await random.getAttribute('aria-busy'), null)
+        assert.equal(await posterTop(page), before.top)
+    } finally {
+        slowMs = 0
+        await close()
+    }
+})
+
+test('a message is a bubble at the bottom of the window, and does not move the poster either', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const top = await posterTop(page)
+
+        await page.evaluate(() => { location.hash = 'nonsense' })
+        const toast = page.locator('#toast')
+        await toast.waitFor()
+        assert.equal(await toast.evaluate(el => getComputedStyle(el).position), 'fixed')
+        assert.equal(await toast.getAttribute('data-type'), 'error')
+        assert.equal(await posterTop(page), top)
+        assert.equal(await page.getByRole('status').filter({ hasText: 'valid album id' }).count(), 1) // announced to screen readers
+
+        // a new album clears it
+        await page.evaluate(id => { location.hash = id }, ABBEY)
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        assert.equal(await toast.isHidden(), true)
+    } finally { await close() }
+})
+
+test('the menu buttons are icons, with a clear name for screen readers and a tooltip', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const buttons = { 'shuffle-button': 'Random album', 'display-toggle': 'Display and slideshow', 'export-toggle': 'Export', 'theme-toggle': 'Dark mode' }
+        for (const [id, name] of Object.entries(buttons)) {
+            const button = page.locator(`#${id}`)
+            assert.equal((await button.innerText()).trim(), '', `${id} shows no text`)
+            assert.equal(await button.getAttribute('aria-label'), name)
+            assert.equal(await button.getAttribute('title'), name)
+            assert.equal(await button.locator('svg').count() > 0, true, `${id} has an icon`)
+            assert.ok((await button.boundingBox()).width <= 40, `${id} is a small round button`)
+        }
+        // the name of the layout menu and the search box are there too
+        assert.equal(await page.getByLabel('Poster layout').count(), 1)
+        assert.equal(await page.getByRole('combobox', { name: 'Search albums' }).count(), 1)
+    } finally { await close() }
+})
+
+test('the search box is short on a wide screen and the results are wider than the box', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const box = page.getByRole('combobox', { name: 'Search albums' })
+        assert.ok((await box.boundingBox()).width <= 180, 'a short box')
+
+        await box.focus()
+        const list = page.locator('#search-results')
+        await list.waitFor()
+        assert.ok((await list.boundingBox()).width >= 280, 'but the list can be read')
+        const { x, width } = await list.boundingBox()
+        assert.ok(x >= 0 && x + width <= 1280, 'and it is inside the window')
     } finally { await close() }
 })
 

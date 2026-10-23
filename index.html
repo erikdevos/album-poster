@@ -19,6 +19,10 @@
         </script>
     </head>
     <body>
+        <!-- Fixed to the window, so that loading and messages never move the page -->
+        <div class="loading-line" aria-hidden="true"></div>
+        <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
         <header class="site-header">
             <h1 class="site-title">Album poster</h1>
             <div class="search" role="search">
@@ -33,19 +37,17 @@
                 <option value="minimal">Minimal</option>
                 <option value="swiss">Swiss</option>
             </select>
-            <button id="shuffle-button" class="header-control icon-button" type="button" title="Random album">
+            <button id="shuffle-button" class="header-control icon-button" type="button" title="Random album" aria-label="Random album">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                     <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span class="button-label">Random</span>
             </button>
             <div class="header-menu">
-                <button id="display-toggle" class="header-control icon-button" type="button" title="Display"
+                <button id="display-toggle" class="header-control icon-button" type="button" title="Display and slideshow" aria-label="Display and slideshow"
                         aria-haspopup="dialog" aria-expanded="false" aria-controls="display-panel">
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                         <path d="M3 5h18v11H3zM8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span class="button-label">Display</span>
                 </button>
                 <div id="display-panel" class="menu-panel" role="dialog" aria-label="Display and slideshow" hidden>
                     <button id="menu-fullscreen" class="panel-button" type="button">Full screen</button>
@@ -69,12 +71,11 @@
                 </div>
             </div>
             <div class="header-menu">
-                <button id="export-toggle" class="header-control icon-button" type="button" title="Export"
+                <button id="export-toggle" class="header-control icon-button" type="button" title="Export" aria-label="Export"
                         aria-haspopup="dialog" aria-expanded="false" aria-controls="export-panel">
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span class="button-label">Export</span>
                 </button>
                 <div id="export-panel" class="menu-panel" role="dialog" aria-label="Export the poster" hidden>
                     <label class="panel-field">File type
@@ -108,7 +109,6 @@
             </button>
         </header>
         <main>
-            <p id="status" class="status hidden" role="status" aria-live="polite"></p>
 
             <section id="album-container" aria-label="Album poster">
                 <!-- Album info -->
