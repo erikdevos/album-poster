@@ -1,6 +1,6 @@
 {
   "name": "album-poster",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Generates an album poster from MusicBrainz data",
   "type": "module",
