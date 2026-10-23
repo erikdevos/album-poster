@@ -56,6 +56,10 @@ Under the poster are three buttons (hidden with `?controls=false`):
 - **Print** prints one poster on an A4 page, always in the light theme, without header, buttons or footer (`@media print` in `styles/style.css`). Turn on "background graphics" in the print dialog if you use `?colors=cover`. A poster with a very long tracklist can run over to a second page.
 - **Share link** opens the share sheet where the browser has one, otherwise it copies the link (and as a last resort shows it, to copy by hand).
 
+## Light and dark
+
+The switch in the header (sun or moon) flips between light and dark. Until you use it the page follows the system setting, also when that changes. A choice is remembered in this browser. `?theme=light|dark` in the URL wins over it, and when the URL has a theme the switch updates it, so a shared link shows what is on screen. A small script in `index.html` sets the theme before the first paint to avoid a flash of the wrong one. Printing is always light.
+
 ## Layout
 
 The poster is a size container and all measurements inside it are relative to its width, so it scales as one piece. On landscape screens its width follows the viewport height, so the poster stays in view (never narrower than 480px, then the page scrolls). On portrait screens and phones it fills the width and the page scrolls. Long titles, artists and tracklists get a smaller type size, and a poster without back cover gives the tracklist the full width.
@@ -82,7 +86,7 @@ Add query parameters before the hash:
 - `?size=s` - Sets small poster size
 - `?theme=dark` - Sets dark theme (black background, white text)
 - `?theme=light` - Sets light theme (light background, black text)
-- Without `theme` the page follows the system light/dark setting
+- Without `theme` the page uses the choice made with the light/dark switch in the header, and without such a choice the system setting
 - `?colors=cover` - Takes the poster colours from the cover (background, text and numbers), with a contrast check; falls back to the classic look when no readable combination is found
 
 #### Combined Examples:

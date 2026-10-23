@@ -217,6 +217,52 @@ test('options in the URL are applied', async () => {
     } finally { await close() }
 })
 
+test('the light/dark switch follows the system, can be flipped, and is remembered', async () => {
+    const { page, close } = await open(`#${LUX}`) // the test browser prefers dark
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const toggle = page.getByRole('button', { name: 'Dark mode' })
+        const pageBackground = () => page.evaluate(() => getComputedStyle(document.body).backgroundColor)
+        const explicitTheme = () => page.locator('html').getAttribute('data-theme')
+
+        assert.equal(await toggle.getAttribute('aria-pressed'), 'true')
+        assert.equal(await pageBackground(), 'rgb(0, 0, 0)')
+        assert.equal(await explicitTheme(), null)
+
+        await toggle.click()
+        assert.equal(await toggle.getAttribute('aria-pressed'), 'false')
+        assert.equal(await explicitTheme(), 'light')
+        assert.equal(await pageBackground(), 'rgb(239, 239, 230)')
+
+        await page.reload()
+        await poster(page).title.getByText('LUX').waitFor()
+        assert.equal(await explicitTheme(), 'light')
+        assert.equal(await toggle.getAttribute('aria-pressed'), 'false')
+
+        await toggle.click()
+        assert.equal(await explicitTheme(), 'dark')
+        assert.equal(await pageBackground(), 'rgb(0, 0, 0)')
+    } finally { await close() }
+})
+
+test('a theme in the URL wins over the saved choice, and the switch keeps the URL in step', async () => {
+    const { page, close } = await open(`?theme=light#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const toggle = page.getByRole('button', { name: 'Dark mode' })
+        assert.equal(await page.locator('html').getAttribute('data-theme'), 'light')
+
+        await toggle.click()
+        assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark')
+        assert.match(page.url(), /theme=dark/)
+
+        // the page can be loaded in the other theme before anything is painted: no flash
+        await page.evaluate(() => localStorage.setItem('album-poster.theme', 'light'))
+        await page.goto(`${base}?theme=dark#${LUX}`)
+        assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark')
+    } finally { await close() }
+})
+
 test('with colors=cover the poster gets the colours of the cover', async () => {
     const { page, close } = await open(`?colors=cover#${LUX}`)
     try {

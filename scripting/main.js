@@ -1,7 +1,7 @@
 import { loadAlbumList } from './albumList.js'
 import { fetchAlbumDetails, setStatus } from './albumDetails.js'
 import { watchCover } from './albumColors.js'
-import { applyDisplayOptions, setLayout } from './displayOptions.js'
+import { applyDisplayOptions, setLayout, setupThemeToggle } from './displayOptions.js'
 import { setupSearch, rememberAlbum } from './search.js'
 import { downloadPoster, printPoster, sharePoster } from './exportPoster.js'
 import { parseLocation, isLegacyId, replaceAlbumId, navigateToAlbum, onAlbumChange } from './router.js'
@@ -55,6 +55,7 @@ async function init() {
     albums = await loadAlbumList()
     setupSearch(document.getElementById('album-search'), albums)
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
+    setupThemeToggle()
     document.getElementById('layout-select').addEventListener('change', event => setLayout(event.target.value))
     onClick('download-button', downloadPoster, { busy: 'Creating PNG…' })
     onClick('print-button', printPoster)
