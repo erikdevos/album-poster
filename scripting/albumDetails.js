@@ -53,6 +53,9 @@ function setFit(album) {
     const fit = text => Math.min(1, Math.max(0.5, 22 / text.length))
     poster.style.setProperty('--fit-title', fit(album.title).toFixed(2))
     poster.style.setProperty('--fit-artist', fit(album.artist).toFixed(2))
+    // A single long word cannot wrap, so the biggest layouts also shrink for the longest word
+    const longestWord = Math.max(...album.title.split(/\s+/).map(word => word.length))
+    poster.style.setProperty('--fit-word', Math.min(1, 10 / longestWord).toFixed(2))
     poster.style.setProperty('--track-count', Math.max(album.tracks.length, 1))
 }
 

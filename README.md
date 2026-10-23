@@ -23,6 +23,16 @@ All data access sits behind two functions in `scripting/source.js`: `searchAlbum
 
 The header has a search box (an ARIA combobox: arrow keys, Enter, Escape) and a random album button. Searching goes through MusicBrainz: every word has to match the album or the artist, the last one as a prefix while you type. MusicBrainz has no popularity, so hits are ranked by their relevance score plus the number of releases of the album, which puts well-known albums first. Compilations, live albums, remixes and the like are left out. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
 
+### Layouts
+
+All layouts use the same markup and data, so colours (`?colors=cover`), theme, export and print work with each of them.
+
+- **classic**: the framed poster with the full width cover, rules between the sections and the tracklist in columns.
+- **minimal**: no frame, a lot of white space, light type, a plain tracklist and the artist with small colour dots. The back cover is left out.
+- **swiss**: a 12 column grid with the artist on top, a very large title and the tracklist beside the cover. On a narrow poster the tracklist moves below the cover.
+
+A layout is a block of CSS keyed on `data-layout` in `styles/style.css`, plus its name in `LAYOUTS` in `scripting/displayOptions.js` and an option in `index.html`. `--poster-ratio` (height divided by width) tells the landscape fitting and nothing else, so set it to what the layout needs.
+
 ## Export, print and share
 
 Under the poster are three buttons (hidden with `?controls=false`):
@@ -51,6 +61,7 @@ Examples:
 Add query parameters before the hash:
 
 - `?controls=false` - Hides the header with search and the random button, for showing the poster on a screen
+- `?layout=classic|minimal|swiss` - The look of the poster (classic is the default); the header has a menu that changes the URL too
 - `?size=l` - Sets large poster size
 - `?size=m` - Sets medium poster size
 - `?size=s` - Sets small poster size
