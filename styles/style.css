@@ -129,8 +129,7 @@ main {
     }
 }
 
-.poster-backdrop,
-.cd-spine {
+.poster-backdrop {
     display: none;
 }
 
@@ -605,8 +604,8 @@ ol.track-list li::before {
     }
 }
 
-/* CD: the back of a cd case. Artist and title, a centred numbered tracklist, the details at the
-   bottom, and the two edges with vertical text. cd-blur is the same, on the blurred cover. */
+/* CD: the back of a cd case. Artist and title, a centred numbered tracklist and the details at the
+   bottom. cd-blur is the same, on the blurred cover. */
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) {
     --poster-ratio: 0.9;
 }
@@ -617,40 +616,9 @@ ol.track-list li::before {
     align-content: center;
     justify-items: center;
     aspect-ratio: 150 / 128;
-    padding: 6cqi 13cqi;
+    padding: 7cqi 10cqi;
     text-align: center;
     border-width: max(1.5px, 0.35cqi);
-}
-#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 8cqi;
-    background-color: color-mix(in srgb, currentColor 9%, transparent);
-    font-size: max(8px, 2.1cqi);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    writing-mode: vertical-rl;
-    overflow: hidden;
-}
-#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine span {
-    max-height: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine-left {
-    left: 0;
-    border-right: max(1px, 0.25cqi) solid currentColor;
-    transform: rotate(180deg); /* reads from the bottom up, like on a cd */
-}
-#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine-right {
-    right: 0;
-    border-left: max(1px, 0.25cqi) solid currentColor;
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-cover-wrapper,
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-tracklist-genre-wrapper .right,
@@ -727,12 +695,9 @@ ol.track-list li::before {
 /* Narrow cd poster: a little less side padding */
 @container poster (max-width: 420px) {
     #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-info-container {
-        padding-inline: 11cqi;
+        padding-inline: 8cqi;
     }
-    #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .cd-spine {
-        width: 6.5cqi;
     }
-}
 
 /* CD on the blurred cover: light type on a darkened background, as in the blur layout */
 #album-container[data-layout="cd-blur"] .album-info-container {
@@ -742,9 +707,6 @@ ol.track-list li::before {
     border: none;
     color: #fff;
     background-color: #1c1c1e;
-}
-#album-container[data-layout="cd-blur"] .cd-spine {
-    background-color: rgb(255 255 255 / 0.1);
 }
 
 /* ---------- Header: all the options live here ---------- */

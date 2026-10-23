@@ -290,14 +290,11 @@ test('in display mode the blur backdrop fills the whole screen and the poster ke
     } finally { await close() }
 })
 
-test('the cd layout has edges with vertical text and a centred numbered tracklist, and no cover', async () => {
+test('the cd layout has a centred numbered tracklist and the album info below it, and no cover or edges', async () => {
     const { page, close } = await open(`?layout=cd#${LUX}`)
     try {
         await poster(page).title.getByText('LUX').waitFor()
-        const left = page.locator('#album-info .cd-spine-left')
-        await left.waitFor()
-        assert.match(await left.textContent(), /LUX/)
-        assert.equal(await page.locator('.cd-spine-right').isVisible(), true)
+        assert.equal(await page.locator('.cd-spine').count(), 0)
         const { centred, coverHidden, listAlign } = await page.evaluate(() => {
             const info = document.getElementById('album-info').getBoundingClientRect()
             const li = document.querySelector('#track-list li').getBoundingClientRect()
@@ -318,19 +315,17 @@ test('cd-blur is the cd layout on the blurred cover', async () => {
     try {
         await poster(page).title.getByText('LUX').waitFor()
         await page.waitForFunction(() => document.getElementById('album-backdrop').naturalWidth > 0)
-        const { backdrop, filter, spine, color } = await page.evaluate(() => {
+        const { backdrop, filter, color } = await page.evaluate(() => {
             const info = document.getElementById('album-info')
             const box = document.querySelector('.poster-backdrop')
             return {
                 backdrop: getComputedStyle(box).display,
                 filter: getComputedStyle(box.querySelector('img')).filter,
-                spine: getComputedStyle(document.querySelector('.cd-spine-left')).display,
                 color: getComputedStyle(info).color
             }
         })
         assert.equal(backdrop, 'block')
         assert.match(filter, /blur/)
-        assert.notEqual(spine, 'none')
         assert.equal(color, 'rgb(255, 255, 255)')
     } finally { await close() }
 })
