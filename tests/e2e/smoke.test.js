@@ -213,7 +213,7 @@ test('options in the URL are applied', async () => {
         assert.equal(await page.locator('#album-container').getAttribute('data-layout'), 'minimal')
         assert.equal(await page.locator('html').getAttribute('data-theme'), 'light')
         assert.equal(await page.locator('.site-header').isHidden(), true)
-        assert.equal(await page.locator('.poster-actions').isHidden(), true)
+        assert.equal(await page.locator('#export-toggle').isHidden(), true)
     } finally { await close() }
 })
 
@@ -260,6 +260,57 @@ test('a theme in the URL wins over the saved choice, and the switch keeps the UR
         await page.evaluate(() => localStorage.setItem('album-poster.theme', 'light'))
         await page.goto(`${base}?theme=dark#${LUX}`)
         assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark')
+    } finally { await close() }
+})
+
+test('there are no buttons under the poster, and the export options sit in a panel', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+
+        // nothing to click between the poster and the footer
+        const underThePoster = await page.evaluate(() =>
+            [...document.querySelectorAll('main button, main select, main input')]
+                .filter(el => el.getBoundingClientRect().top > document.getElementById('album-container').getBoundingClientRect().bottom).length)
+        assert.equal(underThePoster, 0)
+
+        const toggle = page.getByRole('button', { name: 'Export' })
+        const panel = page.locator('#export-panel')
+        assert.equal(await panel.isHidden(), true)
+        assert.equal(await toggle.getAttribute('aria-expanded'), 'false')
+
+        await toggle.click()
+        assert.equal(await panel.isVisible(), true)
+        assert.equal(await toggle.getAttribute('aria-expanded'), 'true')
+        for (const name of ['Download', 'Print', 'Copy link']) {
+            assert.equal(await panel.getByRole('button', { name }).isVisible(), true, name)
+        }
+
+        await page.keyboard.press('Escape')
+        assert.equal(await panel.isHidden(), true)
+        assert.equal(await page.evaluate(() => document.activeElement.id), 'export-toggle')
+
+        await toggle.click()
+        await page.locator('#album-container').click({ position: { x: 5, y: 5 } })
+        assert.equal(await panel.isHidden(), true)
+    } finally { await close() }
+})
+
+test('on a phone the title and all the controls share one row, with the search box below', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 375, height: 812 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const tops = await page.evaluate(() => {
+            const top = el => Math.round(el.getBoundingClientRect().top)
+            return {
+                title: top(document.querySelector('.site-title')),
+                controls: [...document.querySelectorAll('.header-control')].map(top),
+                search: top(document.querySelector('.search'))
+            }
+        })
+        assert.ok(tops.controls.every(top => Math.abs(top - tops.controls[0]) <= 1), 'the controls are on one row')
+        assert.ok(tops.search > tops.controls[0] + 20, 'the search box is below the controls')
+        assert.equal(await page.locator('#export-toggle').getAttribute('title'), 'Export')
     } finally { await close() }
 })
 
@@ -338,6 +389,7 @@ async function exportFile({ format, quality }) {
     try {
         await poster(page).title.getByText('Abbey Road').waitFor()
         await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+        await page.getByRole('button', { name: 'Export' }).click()
         await page.getByLabel('File type').selectOption(format)
         await page.getByLabel('Quality').selectOption(quality)
         const [download] = await Promise.all([

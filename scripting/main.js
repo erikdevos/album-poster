@@ -3,6 +3,7 @@ import { fetchAlbumDetails, setStatus } from './albumDetails.js'
 import { watchCover } from './albumColors.js'
 import { applyDisplayOptions, setLayout, setupThemeToggle } from './displayOptions.js'
 import { setupSearch, rememberAlbum } from './search.js'
+import { setupExportMenu } from './exportMenu.js'
 import { downloadPoster, printPoster, sharePoster } from './exportPoster.js'
 import { parseLocation, isLegacyId, replaceAlbumId, navigateToAlbum, onAlbumChange } from './router.js'
 
@@ -30,9 +31,10 @@ function showRandomAlbum() {
 
 // Runs a button action: the button is disabled meanwhile, a failure is shown in the status line,
 // and the message the action returns (if any) is shown for a few seconds
-function onClick(id, action, { busy = '' } = {}) {
+function onClick(id, action, { busy = '', before = () => {} } = {}) {
     const button = document.getElementById(id)
     button.addEventListener('click', async () => {
+        before()
         button.disabled = true
         if (busy) setStatus(busy)
         try {
@@ -58,12 +60,15 @@ async function init() {
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
     setupThemeToggle()
     document.getElementById('layout-select').addEventListener('change', event => setLayout(event.target.value))
+    // The export panel closes when something in it is used; progress then shows in the status line
+    const exportMenu = setupExportMenu()
+    const before = () => exportMenu.close()
     onClick('download-button', () => downloadPoster({
         format: document.getElementById('export-format').value,
         quality: document.getElementById('export-quality').value
-    }), { busy: 'Creating the file…' })
-    onClick('print-button', printPoster)
-    onClick('share-button', async () => (await sharePoster()) === 'copied' ? 'Link copied to the clipboard' : '')
+    }), { busy: 'Creating the file…', before })
+    onClick('print-button', printPoster, { before })
+    onClick('share-button', async () => (await sharePoster()) === 'copied' ? 'Link copied to the clipboard' : '', { before })
 
     // Search results and lists navigate by changing the `#id` in the URL
     onAlbumChange(showAlbum)
