@@ -4,7 +4,8 @@
 //   a short message (an error, "Link copied") in a bubble fixed at the bottom of the window.
 // None of these take up room in the page, so the poster never jumps.
 
-const root = document.documentElement
+// (looked up when used, so that this file can also be imported where there is no page, as in the unit tests)
+const root = () => document.documentElement
 
 // ---- the loading line ----
 
@@ -15,8 +16,8 @@ let loading = 0
 // away when the last one is done.
 export function setLoading(on) {
     loading = Math.max(0, loading + (on ? 1 : -1))
-    if (loading > 0) root.dataset.loading = 'true'
-    else delete root.dataset.loading
+    if (loading > 0) root().dataset.loading = 'true'
+    else delete root().dataset.loading
 }
 
 export const isLoading = () => loading > 0
