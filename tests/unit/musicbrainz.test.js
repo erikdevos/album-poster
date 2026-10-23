@@ -53,11 +53,11 @@ test('search query: every word must match, the last one as a prefix, and the who
     assert.match(query, /releasegroup:"abbey road"\^5 OR artist:"abbey road"\^5/)
 })
 
-test('search query: albums, EPs and singles, soundtracks included, without live albums, compilations and the like', () => {
+test('search query: albums, EPs and singles, soundtracks, live and remix albums included, without compilations and the like', () => {
     const query = buildSearchQuery('tron legacy')
     assert.match(query, /\(primarytype:album OR primarytype:ep OR primarytype:single\)/)
-    assert.match(query, /NOT secondarytype:\(compilation OR live OR remix/)
-    assert.doesNotMatch(query.split('NOT secondarytype')[1], /soundtrack/)
+    assert.match(query, /NOT secondarytype:\(compilation OR demo/)
+    assert.doesNotMatch(query.split('NOT secondarytype')[1], /soundtrack|live|remix/)
     assert.doesNotMatch(query, /releases:/)
 })
 
@@ -84,8 +84,8 @@ test('normalize ignores case, accents and punctuation', () => {
     assert.equal(normalize('KATSEYE'), 'katseye')
 })
 
-const group = (id, title, artist, { score = 100, count = 1, type = 'Album' } = {}) =>
-    ({ id, title, score, count, 'primary-type': type, 'artist-credit': [{ name: artist }] })
+const group = (id, title, artist, { score = 100, count = 1, type = 'Album', secondary } = {}) =>
+    ({ id, title, score, count, 'primary-type': type, 'secondary-types': secondary, 'artist-credit': [{ name: artist }] })
 
 test('ranking: a well known album beats an obscure one with a better score', () => {
     const ranked = rankGroups([
@@ -185,6 +185,26 @@ test('searchAlbums finds soundtracks and singles, the best known first', async (
     const results = await searchAlbums('tron')
     assert.deepEqual(results.map(item => item.title), ['TRON: Legacy', 'Derezzed', 'Obscure single'])
     assert.equal(calls.length, 2, 'best and popular, no extra search for singles')
+})
+
+test('searchAlbums: an iconic live album beats an obscure studio album', async () => {
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': [
+        group(uuid(70), 'Unknown Studio Album', 'Nirvana Tribute', { count: 1 }),
+        group(uuid(71), 'MTV Unplugged in New York', 'Nirvana', { count: 60 })
+    ] })]])
+    const results = await searchAlbums('nirvana')
+    assert.equal(results[0].title, 'MTV Unplugged in New York')
+})
+
+test('searchAlbums: bootleg-like live recordings with one release are left out, iconic ones stay', async () => {
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': [
+        group(uuid(80), '1991-11-27: The Hummingbird, Birmingham, UK', 'Nirvana', { count: 1, secondary: ['Live'] }),
+        group(uuid(81), 'MTV Unplugged in New York', 'Nirvana', { count: 60, secondary: ['Live'] }),
+        group(uuid(82), 'A small studio album', 'Nirvana', { count: 1 }),
+        group(uuid(83), '1994-02-22: Palaghiaccio di Marino, Rome, Italy', 'Nirvana', { count: 21, secondary: ['Live'] })
+    ] })]])
+    const titles = (await searchAlbums('nirvana')).map(item => item.title)
+    assert.deepEqual(titles, ['MTV Unplugged in New York', 'A small studio album'])
 })
 
 test('searchAlbums gives an empty list when nothing is found at all', async () => {

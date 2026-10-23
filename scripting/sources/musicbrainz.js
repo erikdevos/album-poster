@@ -58,8 +58,10 @@ const year = date => date?.slice(0, 4) ?? ''
 // ---------- Search ----------
 // Every word has to match the title or the artist, the last one as a prefix (typeahead), and the
 // whole text as a phrase is boosted, so that an exact title or artist is found first.
-// Albums, EPs and singles are searched, and soundtracks too (Tron: Legacy, a film score); live
-// albums, compilations, remixes and the like are left out.
+// Albums, EPs and singles are searched, and soundtracks, live albums and remix albums too (Tron:
+// Legacy, Live at Budokan); compilations, demos and the like are left out. A well known release
+// beats a lesser known one wherever it comes from, because the ranking only looks at relevance and
+// popularity.
 //
 // MusicBrainz knows nothing about popularity and orders only by relevance, so for a name like
 // "Beatles" the famous albums are not among the first hundred hits. Therefore two searches are done:
@@ -67,11 +69,15 @@ const year = date => date?.slice(0, 4) ?? ''
 // many times), and the hits are ranked together by popularity (see rankGroups).
 const EXCLUDED_TYPES = 'compilation OR live OR remix OR demo OR soundtrack OR mixtape OR dj-mix OR ' +
     'spokenword OR interview OR audiobook OR audio-drama OR field-recording'
-// The same, without soundtracks: those can be searched for, but are not picked as a random album
-const SEARCH_EXCLUDED_TYPES = EXCLUDED_TYPES.replace(' OR soundtrack', '')
+// What the search leaves out. Soundtracks, live albums and remix albums can be searched for (the
+// famous ones are among the best known releases there are); they are not picked as a random album.
+const SEARCH_EXCLUDED_TYPES = 'compilation OR demo OR mixtape OR dj-mix OR spokenword OR interview OR ' +
+    'audiobook OR audio-drama OR field-recording'
 const POPULAR_RELEASES = 15
 const SEARCH_POOL = 100 // the most MusicBrainz gives in one go
 const MAX_RESULTS = 8
+const MIN_LIVE_RELEASES = 3 // for live and remix albums, see searchAlbums
+const DATED_TITLE = /^\d{4}-\d{2}-\d{2}\b/
 
 // Letters and digits only, in lower case and without accents: "Rosalía" and "ROSALIA" are the same
 export const normalize = text => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '')
@@ -129,7 +135,13 @@ export async function searchAlbums(query, signal) {
     const [best, popular] = await Promise.all([search({}), search({ popular: true })])
     const found = new Map([...best, ...popular].map(group => [group.id, group]))
 
-    return rankGroups([...found.values()], query)
+    // A live or remix release that came out only once, or that is named after a date ("1994-02-22:
+    // Palaghiaccio di Marino, Rome"), is a bootleg or a recording of a single night; the iconic ones
+    // have a title and have been released many times
+    const worthShowing = group => !(group['secondary-types'] ?? []).some(type => ['Live', 'Remix'].includes(type)) ||
+        ((group.count ?? 1) >= MIN_LIVE_RELEASES && !DATED_TITLE.test(group.title))
+
+    return rankGroups([...found.values()].filter(worthShowing), query)
         .slice(0, MAX_RESULTS)
         .map(group => ({
             id: group.id,
