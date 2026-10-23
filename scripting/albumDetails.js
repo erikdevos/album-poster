@@ -1,5 +1,6 @@
 import { getAlbum, isValidId } from './source.js'
 import { setLoading, showMessage, clearMessage } from './feedback.js'
+import { crossfade } from './crossfade.js'
 
 let currentRequest = null
 
@@ -19,7 +20,11 @@ export async function fetchAlbumDetails(albumId) {
 
     try {
         const album = await getAlbum(albumId, controller.signal)
-        renderAlbum(album)
+        await preloadImages(album, controller.signal)
+        if (controller !== currentRequest) return null // another album was asked for meanwhile
+
+        // text, covers and colours change together, with the old poster fading out over them
+        crossfade(() => renderAlbum(album))
         return album
     } catch (error) {
         if (error.name === 'AbortError') return null
@@ -29,6 +34,25 @@ export async function fetchAlbumDetails(albumId) {
     } finally {
         setLoading(false)
     }
+}
+
+const IMAGE_TIMEOUT_MS = 6000
+
+// Loads the covers before the poster changes. Otherwise the new title would stand on screen with
+// the cover of the album before it, until the new cover came in. An image that fails or is slow
+// does not hold things up: the poster then changes without it.
+function preloadImages(album, signal) {
+    const load = url => new Promise(resolve => {
+        const image = new Image()
+        image.crossOrigin = 'anonymous' // the same kind of request as the poster makes, so the cache is used
+        const done = () => resolve()
+        image.onload = () => image.decode().then(done, done)
+        image.onerror = done
+        image.src = url
+        setTimeout(done, IMAGE_TIMEOUT_MS)
+        signal?.addEventListener('abort', done, { once: true })
+    })
+    return Promise.all([album.front, album.back].filter(Boolean).map(load))
 }
 
 export function renderAlbum(album) {

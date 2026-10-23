@@ -73,8 +73,9 @@ async function useOriginalCovers() {
         }
     }))
 
-    return () => swaps.forEach(({ img, thumbnail, failed }) => {
-        if (!failed) img.src = thumbnail
+    return () => swaps.forEach(({ img, thumbnail, full, failed }) => {
+        // another album may have come on the poster meanwhile (a slideshow): then leave it alone
+        if (!failed && img.dataset.fullSrc === full) img.src = thumbnail
         delete img.dataset.exporting
     })
 }

@@ -73,6 +73,17 @@ Nothing that tells you what is going on takes up room in the page, so the poster
 - **A small round loader on a button** that is busy: on Random while the next album comes, and on Export while a file is made.
 - **A bubble at the bottom of the window** for a short message: an error ("Could not load this album...") or "Link copied". It is announced to screen readers (`role="status"`), goes away by itself and is not shown in display mode.
 
+## Changing album: all at once, with a crossfade
+
+When another album is picked, nothing changes on the poster until everything of the new album is there (`fetchAlbumDetails` in `scripting/albumDetails.js`):
+
+1. the data is fetched, and the covers are loaded in the background (with a time limit of six seconds, after which the poster changes without a cover that is still not in);
+2. then title, tracklist, covers and colours change in one go. Before this, the new title would stand on screen with the cover of the album before it until the new cover came in.
+
+The change is a crossfade (`scripting/crossfade.js`). A copy of the old poster, with its own sizes, layout and colours, is laid over the real one and fades away in 0.45 seconds while the real poster already shows the new album. The copy is not clickable, hidden from screen readers and has no ids of its own. With "reduce motion" set in the system, the first album and any quick succession of changes, the poster just changes. The slideshow uses the same crossfade.
+
+If another album is picked while one is still loading, the older one is dropped, so the last pick always wins.
+
 ## Layout
 
 The poster is a size container and all measurements inside it are relative to its width, so it scales as one piece. On landscape screens its width follows the viewport height, so the poster stays in view (never narrower than 480px, then the page scrolls). On portrait screens and phones it fills the width and the page scrolls. Long titles, artists and tracklists get a smaller type size, and a poster without back cover gives the tracklist the full width.

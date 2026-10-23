@@ -1,30 +1,17 @@
 // The slideshow: shows another album every few seconds, from the curated list or at random.
 //
 // The next album is prepared while the current one is on screen (its data and its cover are
-// fetched), so the switch is quick; the poster fades out, changes and fades in again.
+// fetched), so the switch is quick; the old poster fades into the new one (see crossfade.js).
 // The controller only drives the poster and a few attributes on <html>. The controls are in display.js.
 
 import { createPlaylist } from './playlist.js'
 import { getAlbum, randomAlbumId } from './source.js'
 
-const FADE_MS = 500
 const COVER_TIMEOUT_MS = 6000
 const RETRY_MS = 2000
 const RANDOM_TRIES = 4
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-// Resolves when the image has loaded (or after a while, so that a slow cover never stops the show)
-function coverLoaded(img) {
-    if (img.complete && img.naturalWidth > 0) return Promise.resolve()
-    return Promise.race([
-        new Promise(resolve => {
-            img.addEventListener('load', resolve, { once: true })
-            img.addEventListener('error', resolve, { once: true })
-        }),
-        delay(COVER_TIMEOUT_MS)
-    ])
-}
 
 // Fetches a cover ahead of time, so that it is in the cache when the poster needs it
 async function preloadCover(url) {
@@ -38,9 +25,6 @@ async function preloadCover(url) {
 // albums: the curated list [{ id }]; showAlbum(id) draws an album on the poster and resolves when done
 export function createKiosk({ albums, showAlbum }) {
     const root = document.documentElement
-    const poster = document.getElementById('album-container')
-    const cover = document.getElementById('album-cover')
-
     let options = null
     let running = false
     let paused = false
@@ -103,13 +87,7 @@ export function createKiosk({ albums, showAlbum }) {
                 return
             }
 
-            poster.classList.add('is-changing')
-            await delay(FADE_MS)
-            if (isCurrent(id)) {
-                await showAlbum(albumId)
-                await coverLoaded(cover)
-            }
-            poster.classList.remove('is-changing')
+            await showAlbum(albumId) // fades from the old poster to the new one by itself
             if (!isCurrent(id)) return
 
             restartProgress(options.intervalSeconds)
@@ -149,7 +127,6 @@ export function createKiosk({ albums, showAlbum }) {
             clearTimeout(timer)
             preparing = null
             busy = false
-            poster.classList.remove('is-changing')
             delete root.dataset.kiosk
             root.classList.remove('kiosk-tick', 'kiosk-paused', 'no-progress')
         },

@@ -38,6 +38,7 @@ const albums = new Map([[ABBEY, ['Abbey Road', 'The Beatles']], [LUX, ['LUX', 'R
 const albumFor = id => albums.get(id) ?? [`Album ${id.slice(0, 8)}`, 'Some Band']
 const RANDOM_ID = '11111111-2222-4333-8444-555555555555'
 const searches = []
+let slowImageMs = 0 // makes the cover images slow, to see that the poster waits for them
 let slowMs = 0 // makes MusicBrainz and the Cover Art Archive answer slowly, to see the loading state
 
 async function mockNetwork(context) {
@@ -75,13 +76,14 @@ async function mockNetwork(context) {
             if (match) {
                 return json(route, {
                     release: `https://musicbrainz.org/release/r-${match[1]}`,
-                    images: [{ types: ['Front'], image: 'https://images.test/front.svg', thumbnails: { 1200: 'https://images.test/front.svg' } }]
+                    images: [{ types: ['Front'], image: `https://images.test/front-${match[1]}.svg`, thumbnails: { 1200: `https://images.test/front-${match[1]}.svg` } }]
                 })
             }
             return json(route, {}, 404)
         }
 
         if (url.hostname === 'images.test') {
+            if (slowImageMs) await new Promise(resolve => setTimeout(resolve, slowImageMs))
             return route.fulfill({ status: 200, contentType: 'image/svg+xml', headers: CORS, body: COVER })
         }
 
@@ -119,8 +121,8 @@ after(async () => {
 })
 
 // A fresh page for each test, with the fake network and the errors of the page collected
-async function open(path, { viewport = { width: 1280, height: 900 }, acceptDownloads = false } = {}) {
-    const context = await browser.newContext({ viewport, acceptDownloads, colorScheme: 'dark' })
+async function open(path, { viewport = { width: 1280, height: 900 }, acceptDownloads = false, reducedMotion = 'no-preference' } = {}) {
+    const context = await browser.newContext({ viewport, acceptDownloads, colorScheme: 'dark', reducedMotion })
     await mockNetwork(context)
     const page = await context.newPage()
     const errors = []
@@ -418,12 +420,12 @@ test('pause stops the slideshow, and Next, N and the arrow key go on to the next
         await page.getByRole('button', { name: 'Next album' }).click()
         await changedFrom(LUX)
         const afterButton = await currentId(page)
-        await page.waitForFunction(() => !document.getElementById('album-container').classList.contains('is-changing'))
+        await page.waitForFunction(() => !document.querySelector('.poster-ghost'))
 
         await page.keyboard.press('n')
         await changedFrom(afterButton)
         const afterN = await currentId(page)
-        await page.waitForFunction(() => !document.getElementById('album-container').classList.contains('is-changing'))
+        await page.waitForFunction(() => !document.querySelector('.poster-ghost'))
 
         await page.keyboard.press('ArrowRight')
         await changedFrom(afterN)
@@ -584,6 +586,95 @@ test('the search box is short on a wide screen and the results are wider than th
     } finally { await close() }
 })
 
+// ---------- A new album changes all at once, with a crossfade ----------
+
+test('the title and the cover change together: the old poster stays until the new cover is in', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-cover').complete)
+        const oldCover = await page.evaluate(() => document.getElementById('album-cover').src)
+
+        slowImageMs = 1500
+        await page.evaluate(id => { location.hash = id }, ABBEY)
+
+        // while the new cover is on its way, the old poster stays complete: old title, old cover
+        await page.waitForFunction(() => document.documentElement.dataset.loading === 'true')
+        await page.waitForTimeout(500)
+        assert.equal(await poster(page).title.textContent(), 'LUX')
+        assert.equal(await page.evaluate(() => document.getElementById('album-cover').src), oldCover)
+
+        // then both change in one go: the new title never stands on the old cover
+        await poster(page).title.getByText('Abbey Road').waitFor({ timeout: 15_000 })
+        const state = await page.evaluate(() => {
+            const cover = document.getElementById('album-cover')
+            return { src: cover.src, complete: cover.complete, width: cover.naturalWidth, hidden: cover.classList.contains('hidden') }
+        })
+        assert.equal(state.src, `https://images.test/front-${ABBEY}.svg`)
+        assert.equal(state.complete && state.width > 0 && !state.hidden, true, 'and the new cover is already in')
+    } finally {
+        slowImageMs = 0
+        await close()
+    }
+})
+
+test('the old poster fades out over the new one, and is gone afterwards', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.evaluate(() => { window.__ghostSeen = []
+            new MutationObserver(() => {
+                const ghost = document.querySelector('.poster-ghost')
+                if (ghost && !window.__ghostSeen.length) {
+                    const first = document.querySelector('#album-name').textContent
+                    window.__ghostSeen.push({ ghostTitle: ghost.querySelector('.album-name').textContent, liveTitle: first,
+                        ghostIds: ghost.querySelectorAll('[id]').length, hidden: ghost.getAttribute('aria-hidden'), clickable: getComputedStyle(ghost).pointerEvents })
+                }
+            }).observe(document.querySelector('main'), { childList: true })
+        })
+
+        await page.evaluate(id => { location.hash = id }, ABBEY)
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        await page.waitForFunction(() => window.__ghostSeen.length > 0)
+
+        const seen = await page.evaluate(() => window.__ghostSeen[0])
+        assert.equal(seen.ghostTitle, 'LUX', 'the copy shows the old album')
+        assert.equal(seen.liveTitle, 'Abbey Road', 'while the real poster already shows the new one')
+        assert.equal(seen.ghostIds, 0, 'no duplicate ids')
+        assert.equal(seen.hidden, 'true')
+        assert.equal(seen.clickable, 'none')
+
+        await page.waitForFunction(() => !document.querySelector('.poster-ghost'), null, { timeout: 5000 })
+        assert.equal(await page.locator('[id="album-name"]').count(), 1)
+    } finally { await close() }
+})
+
+test('with "reduce motion" there is no crossfade, the poster just changes', async () => {
+    const { page, close } = await open(`#${LUX}`, { reducedMotion: 'reduce' })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.evaluate(() => { window.__ghosts = 0
+            new MutationObserver(() => { if (document.querySelector('.poster-ghost')) window.__ghosts++ }).observe(document.querySelector('main'), { childList: true })
+        })
+        await page.evaluate(id => { location.hash = id }, ABBEY)
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        await page.waitForTimeout(700)
+        assert.equal(await page.evaluate(() => window.__ghosts), 0)
+    } finally { await close() }
+})
+
+test('a quick second choice does not leave copies behind, and the last album wins', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.evaluate(([a, b]) => { location.hash = a; setTimeout(() => { location.hash = b }, 60) }, [ABBEY, RATED_R])
+        await poster(page).title.getByText('Rated R').waitFor()
+        await page.waitForFunction(() => !document.querySelector('.poster-ghost'), null, { timeout: 5000 })
+        assert.equal(await poster(page).title.textContent(), 'Rated R')
+        assert.equal(await page.evaluate(() => document.querySelectorAll('.poster-ghost').length), 0)
+    } finally { await close() }
+})
+
 test('freezing the line breaks keeps every text as high as it is on screen, and undoes cleanly', async () => {
     // a narrow poster, so that long tracks wrap
     const { page, close } = await open(`#${LUX}`, { viewport: { width: 420, height: 1600 } })
@@ -701,7 +792,7 @@ test('the higher qualities make larger PNGs, and the page goes back to its own c
 
     const high = await exportFile({ format: 'png', quality: 'high' })
     assert.equal(pngInfo(high.bytes).width, 4000)
-    assert.equal(high.cover, 'https://images.test/front.svg')
+    assert.equal(high.cover, `https://images.test/front-${ABBEY}.svg`)
 })
 
 test('download PDF gives a one page PDF as large as the image at 300 dpi', async t => {

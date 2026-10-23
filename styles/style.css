@@ -79,6 +79,17 @@ main {
 
 /* ---------- Poster ---------- */
 
+/* The old poster, laid over the new one while it fades away (see crossfade.js). It is a copy of
+   #album-container, so it has the sizes and colours of the old album; the script sets where it sits. */
+.poster-ghost {
+    position: absolute;
+    z-index: 5;
+    margin: 0;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+
 #album-container {
     --poster-max: 800px;
     /* Poster colours; the classic look is the page foreground on the page background.
@@ -754,11 +765,6 @@ ol.track-list li::before {
         calc((100dvh - 2 * var(--page-gutter)) / var(--poster-ratio)),
         var(--poster-max)
     );
-    transition: opacity 0.5s ease;
-}
-/* The poster fades out and in when the slideshow changes album */
-#album-container.is-changing {
-    opacity: 0;
 }
 :root[data-display="on"]:not(.display-active) {
     cursor: none;
@@ -856,12 +862,6 @@ ol.track-list li::before {
 }
 @keyframes kiosk-progress {
     to { transform: scaleX(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    #album-container.is-changing {
-        transition: none;
-    }
 }
 
 /* ---------- Loading and messages: fixed to the window, so that the page never moves ---------- */
@@ -1001,7 +1001,7 @@ footer .container {
         -webkit-print-color-adjust: exact;
     }
 
-    .site-header, .toast, .loading-line, footer, .display-controls, .kiosk-progress {
+    .site-header, .toast, .loading-line, footer, .display-controls, .kiosk-progress, .poster-ghost {
         display: none !important;
     }
 
