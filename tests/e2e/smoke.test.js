@@ -289,20 +289,70 @@ for (const layout of ['classic', 'minimal', 'swiss']) {
     })
 }
 
-test('download PNG gives a file named after the album', async t => {
-    // The export library comes from jsDelivr, so this needs the internet
-    const online = await fetch('https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/+esm', { method: 'HEAD' })
+// The export library comes from jsDelivr, so the tests that export need the internet
+async function jsDelivrReachable() {
+    return fetch('https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/+esm', { method: 'HEAD' })
         .then(response => response.ok, () => false)
-    if (!online) return t.skip('jsDelivr is not reachable')
+}
 
+// Opens the album, picks the export options, downloads, and gives back the file name and bytes
+async function exportFile({ format, quality }) {
     const { page, close } = await open(`#${ABBEY}`, { acceptDownloads: true })
     try {
         await poster(page).title.getByText('Abbey Road').waitFor()
         await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+        await page.getByLabel('File type').selectOption(format)
+        await page.getByLabel('Quality').selectOption(quality)
         const [download] = await Promise.all([
-            page.waitForEvent('download', { timeout: 30_000 }),
-            page.getByRole('button', { name: 'Download PNG' }).click()
+            page.waitForEvent('download', { timeout: 60_000 }),
+            page.getByRole('button', { name: 'Download' }).click()
         ])
-        assert.equal(download.suggestedFilename(), 'The Beatles - Abbey Road.png')
+        const bytes = await readFile(await download.path())
+        // the cover is back to the size of the page afterwards
+        const cover = await page.evaluate(() => document.getElementById('album-cover').src)
+        return { filename: download.suggestedFilename(), bytes, cover }
     } finally { await close() }
+}
+
+const pngInfo = bytes => {
+    const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+    const chunks = {}
+    for (let offset = 8; offset < bytes.length; offset += 12 + view.getUint32(offset)) {
+        chunks[Buffer.from(bytes.subarray(offset + 4, offset + 8)).toString('ascii')] = offset + 8
+    }
+    return {
+        width: view.getUint32(chunks.IHDR),
+        height: view.getUint32(chunks.IHDR + 4),
+        pixelsPerMeter: chunks.pHYs ? view.getUint32(chunks.pHYs) : null
+    }
+}
+
+test('download PNG gives a file named after the album, 2400 px wide at 300 dpi', async t => {
+    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+
+    const { filename, bytes } = await exportFile({ format: 'png', quality: 'standard' })
+    assert.equal(filename, 'The Beatles - Abbey Road.png')
+    const { width, pixelsPerMeter } = pngInfo(bytes)
+    assert.equal(width, 2400)
+    assert.equal(pixelsPerMeter, 11811)
+})
+
+test('the higher qualities make larger PNGs, and the page goes back to its own cover', async t => {
+    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+
+    const high = await exportFile({ format: 'png', quality: 'high' })
+    assert.equal(pngInfo(high.bytes).width, 4000)
+    assert.equal(high.cover, 'https://images.test/front.svg')
+})
+
+test('download PDF gives a one page PDF as large as the image at 300 dpi', async t => {
+    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+
+    const { filename, bytes } = await exportFile({ format: 'pdf', quality: 'standard' })
+    assert.equal(filename, 'The Beatles - Abbey Road.pdf')
+    const text = Buffer.from(bytes).toString('latin1')
+    assert.ok(text.startsWith('%PDF-1.4'))
+    assert.match(text, /\/MediaBox \[0 0 576\.00 \d+\.\d\d\]/) // 2400 / 300 * 72 = 576 points
+    assert.match(text, /\/Width 2400 /)
+    assert.match(text, /\/Title <FEFF/)
 })

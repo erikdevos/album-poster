@@ -28,16 +28,17 @@ function showRandomAlbum() {
     if (others.length > 0) navigateToAlbum(others[Math.floor(Math.random() * others.length)].id)
 }
 
-// Runs a button action; the button is disabled meanwhile and a failure is shown in the status line
-function onClick(id, action, { busy = '', done = {} } = {}) {
+// Runs a button action: the button is disabled meanwhile, a failure is shown in the status line,
+// and the message the action returns (if any) is shown for a few seconds
+function onClick(id, action, { busy = '' } = {}) {
     const button = document.getElementById(id)
     button.addEventListener('click', async () => {
         button.disabled = true
         if (busy) setStatus(busy)
         try {
-            const result = await action()
-            setStatus(done[result] ?? '')
-            if (done[result]) setTimeout(() => setStatus(''), 3000)
+            const message = await action()
+            setStatus(message ?? '')
+            if (message) setTimeout(() => setStatus(''), 6000)
         } catch (error) {
             console.error(`${id} failed:`, error)
             setStatus('That did not work. Try again.', 'error')
@@ -57,9 +58,12 @@ async function init() {
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
     setupThemeToggle()
     document.getElementById('layout-select').addEventListener('change', event => setLayout(event.target.value))
-    onClick('download-button', downloadPoster, { busy: 'Creating PNG…' })
+    onClick('download-button', () => downloadPoster({
+        format: document.getElementById('export-format').value,
+        quality: document.getElementById('export-quality').value
+    }), { busy: 'Creating the file…' })
     onClick('print-button', printPoster)
-    onClick('share-button', sharePoster, { done: { copied: 'Link copied to the clipboard' } })
+    onClick('share-button', async () => (await sharePoster()) === 'copied' ? 'Link copied to the clipboard' : '')
 
     // Search results and lists navigate by changing the `#id` in the URL
     onAlbumChange(showAlbum)

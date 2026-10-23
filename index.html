@@ -79,7 +79,16 @@
             </section>
 
             <div class="poster-actions">
-                <button id="download-button" type="button">Download PNG</button>
+                <select id="export-format" class="export-select" aria-label="File type">
+                    <option value="png">PNG</option>
+                    <option value="pdf">PDF</option>
+                </select>
+                <select id="export-quality" class="export-select" aria-label="Quality">
+                    <option value="standard">Standard, 2400 px</option>
+                    <option value="high">High, 4000 px</option>
+                    <option value="maximum">Maximum, 6000 px</option>
+                </select>
+                <button id="download-button" type="button">Download</button>
                 <button id="print-button" type="button">Print</button>
                 <button id="share-button" type="button">Share link</button>
             </div>

@@ -52,7 +52,12 @@ A layout is a block of CSS keyed on `data-layout` in `styles/style.css`, plus it
 
 Under the poster are three buttons (hidden with `?controls=false`):
 
-- **Download PNG** renders the poster at 2400px wide (at most five times its size on screen), named "Artist - Album.png". It uses [html-to-image](https://github.com/bubkoo/html-to-image) 1.11.13, loaded from jsDelivr only when someone exports. The cover must come from a source with CORS headers, which is why the Cover Art Archive works here. The browser tab must be visible while exporting; a hidden tab pauses until you come back.
+- **Download** makes a PNG or a PDF, named "Artist - Album". Choose the quality first: Standard (2400 px wide), High (4000 px) or Maximum (6000 px); at 300 dpi that is about 20, 34 and 51 cm wide. It uses [html-to-image](https://github.com/bubkoo/html-to-image) 1.11.13, loaded from jsDelivr only when someone exports. The poster is drawn as it is on screen and scaled up, so text and lines stay sharp at any size.
+  - **Covers:** the page shows a 1200 px cover, which would be soft in a large export. High and Maximum therefore fetch the original image from the Cover Art Archive first (often 3000 px, a few MB) and put the page back afterwards. If the original cannot be loaded within 30 seconds, the export goes on with the cover as it is.
+  - **PNG** carries a 300 dpi tag (a `pHYs` chunk), so a layout or print program opens it at the right physical size.
+  - **PDF** is one page that is as large as the image at 300 dpi, with the poster as a high quality JPEG (95%). It is made by `buildPdf` in `scripting/fileFormats.js`, without a library. The text in it is not selectable; for a PDF with real text, use **Print** and choose "Save as PDF".
+  - **Browser limits:** a browser can only draw a canvas up to some size (Safari and iPhones about 16 megapixels, other phones about 36, desktops about 120). When the wanted size does not fit, the poster is made as large as the browser allows, and the status line says so. The rules are in `scripting/exportPlan.js`.
+  - The browser tab must be visible while exporting; a hidden tab pauses until you come back.
 - **Print** prints one poster on an A4 page, always in the light theme, without header, buttons or footer (`@media print` in `styles/style.css`). Turn on "background graphics" in the print dialog if you use `?colors=cover`. A poster with a very long tracklist can run over to a second page.
 - **Share link** opens the share sheet where the browser has one, otherwise it copies the link (and as a last resort shows it, to copy by hand).
 

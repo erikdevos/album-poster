@@ -4,7 +4,8 @@
 //
 // Every source exposes the same two functions, so another one can be swapped in (see ../source.js):
 //   searchAlbums(query, signal) -> [{ id, title, artist, year }]
-//   getAlbum(id, signal)        -> { id, title, artist, year, label, genre, tracks, front, back }
+//   getAlbum(id, signal)        -> { id, title, artist, year, label, genre, tracks, front, back,
+//                                    frontFull, backFull }   (the last two are the original, big images)
 
 const MB = 'https://musicbrainz.org/ws/2'
 const CAA = 'https://coverartarchive.org'
@@ -117,7 +118,9 @@ export async function getAlbum(id, signal) {
             title: track.title
         })) ?? [],
         front: art?.front ?? '',
-        back: art?.back ?? ''
+        back: art?.back ?? '',
+        frontFull: art?.frontFull ?? '',
+        backFull: art?.backFull ?? ''
     }
 
     albumCache.set(id, album)
@@ -134,7 +137,9 @@ async function getCoverArt(groupId, signal) {
         return {
             releaseId: data.release?.split('/').pop(),
             front: front && secure(front.thumbnails['1200'] ?? front.image),
-            back: back && secure(back.thumbnails['500'] ?? back.image)
+            back: back && secure(back.thumbnails['500'] ?? back.image),
+            frontFull: front && secure(front.image),
+            backFull: back && secure(back.image)
         }
     } catch (error) {
         if (error.name === 'AbortError') throw error

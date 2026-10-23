@@ -121,7 +121,9 @@ test('getAlbum combines Cover Art Archive and MusicBrainz', async () => {
         genre: 'rock / pop',
         tracks: [{ number: '1', title: 'One' }, { number: '2', title: 'Two' }, { number: '3', title: 'Three' }],
         front: 'https://x/front-1200.jpg',
-        back: 'https://x/back-500.jpg'
+        back: 'https://x/back-500.jpg',
+        frontFull: 'https://x/front.jpg',
+        backFull: 'https://x/back.jpg'
     })
 })
 
@@ -154,6 +156,7 @@ test('without cover art the earliest official release is used, and there are no 
     const album = await getAlbum(id)
     assert.equal(album.front, '')
     assert.equal(album.back, '')
+    assert.equal(album.frontFull, '')
     assert.equal(album.tracks.length, 3)
     assert.ok(calls.some(url => url.includes(`release/${uuid(8)}`)))
 })

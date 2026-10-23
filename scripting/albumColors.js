@@ -29,7 +29,10 @@ export function extractPalette(img) {
 
 // Re-extracts the palette every time the cover has finished loading
 export function watchCover(img) {
-    img.addEventListener('load', () => extractPalette(img))
+    // (the export briefly swaps in the original image; the palette stays as it is)
+    img.addEventListener('load', () => {
+        if (!img.dataset.exporting) extractPalette(img)
+    })
 }
 
 // --- Poster colours from the cover (?colors=cover) ---

@@ -38,8 +38,8 @@ export function renderAlbum(album) {
     setField('album-year', album.year)
     setField('album-genre', album.genre)
 
-    setImage('album-cover', album.front, `Cover of ${album.title} by ${album.artist}`)
-    setImage('album-cover-back', album.back, `Back cover of ${album.title} by ${album.artist}`)
+    setImage('album-cover', album.front, album.frontFull, `Cover of ${album.title} by ${album.artist}`)
+    setImage('album-cover-back', album.back, album.backFull, `Back cover of ${album.title} by ${album.artist}`)
     document.getElementById('album-info').classList.toggle('no-back', !album.back)
 
     renderTracks(album.tracks)
@@ -83,9 +83,11 @@ function renderTracks(tracks) {
     }))
 }
 
-function setImage(id, url, alt) {
+// `fullUrl` is the original image; the export uses it for the higher qualities
+function setImage(id, url, fullUrl, alt) {
     const img = document.getElementById(id)
     img.alt = alt
+    img.dataset.fullSrc = fullUrl ?? ''
     img.classList.toggle('hidden', !url)
     img.onerror = () => {
         img.classList.add('hidden')

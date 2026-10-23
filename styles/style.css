@@ -628,7 +628,8 @@ ol.track-list li::before {
 :root[data-controls="off"] .poster-actions {
     display: none;
 }
-.poster-actions button {
+.poster-actions button,
+.poster-actions .export-select {
     padding: 0.5rem 0.95rem;
     border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
     border-radius: 999px;
@@ -638,7 +639,8 @@ ol.track-list li::before {
     font-size: 0.85rem;
     cursor: pointer;
 }
-.poster-actions button:hover:not(:disabled) {
+.poster-actions button:hover:not(:disabled),
+.poster-actions .export-select:hover {
     background-color: var(--muted-bg);
 }
 .poster-actions button:disabled {
