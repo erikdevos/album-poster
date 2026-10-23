@@ -1,429 +1,349 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-  box-sizing: border-box;
+/* Album poster. Plain CSS, no build step.
+   The poster is a size container: every measurement inside it is in `cqi` (1% of the poster
+   width), so the whole layout scales as one piece from phone to large screen. */
+
+:root {
+    --font-primary: sans-serif;
+    --font-secondary: Roboto, sans-serif;
+
+    --bg: #EFEFE6;
+    --fg: #000000;
+    --muted-bg: color-mix(in srgb, var(--fg) 8%, transparent);
+    --chrome: #3d3d3d;
+    --page-gutter: 1rem;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+/* Theme: follows the system, `?theme=light|dark` sets data-theme on <html> */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #000000;
+        --fg: #FFFFFF;
+    }
 }
+:root[data-theme="dark"] {
+    --bg: #000000;
+    --fg: #FFFFFF;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: light dark;
+}
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
 
 html, body {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  color: #000000;
-  background-color: #EFEFE6;
-}
-
-body.dark-theme {
-  background-color: #000000;
-  color: #FFFFFF;
-}
-
-body.light-theme {
-  background-color: #EFEFE6;
-  color: #000000;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-primary);
+    color: var(--fg);
+    background-color: var(--bg);
 }
 
 body {
-  font-size: 1rem;
-  line-height: 1.4;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: Roboto, sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  margin-top: 0;
-  margin-bottom: 0;
+h1, h2, h3 {
+    font-family: var(--font-secondary);
+    font-optical-sizing: auto;
+    font-weight: 800;
+    margin: 0;
 }
 
 a {
-  color: inherit;
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
 }
 
 main {
-  min-height: 20rem;
-}
-
-.container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 800px;
-}
-
-footer {
-  background-color: rgb(61, 61, 61);
-  color: white;
-  margin-top: 5rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  font-size: 0.8rem;
-}
-@media screen and (max-width: 600px) {
-  footer {
-    margin-top: 3rem;
-  }
+    min-height: 20rem;
+    padding-block: 1rem;
 }
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
 .status {
-  margin: 0 0 1rem;
-  font-size: 0.9rem;
+    width: min(100% - 2 * var(--page-gutter), 800px);
+    margin: 0 auto 1rem;
+    font-size: 0.9rem;
 }
-.status[data-type=error] {
-  font-weight: 700;
-}
-
-.search-bar {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  max-width: 13rem;
-  flex-direction: column;
-  background-color: lightgray;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-@media screen and (max-width: 600px) {
-  .search-bar {
-    position: relative;
-    top: initial;
-    right: initial;
-    max-width: none;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: calc(100% - 2rem);
-  }
-}
-.search-bar .search-button-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
-}
-.search-bar .search-button-wrapper a {
-  text-decoration: none;
-}
-.search-bar .search-button-wrapper a:hover {
-  text-decoration: underline;
-}
-.search-bar input {
-  width: 100%;
-  padding: 0.3rem;
-}
-.search-bar h1 {
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-transform: uppercase;
-}
-.search-bar ul.albums-list {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  padding-left: 0;
-  width: 100%;
-  list-style-type: disc;
-  max-height: 6rem;
-  overflow-x: auto;
-}
-@media screen and (max-width: 600px) {
-  .search-bar ul.albums-list {
-    max-height: none;
-  }
-}
-.search-bar ul.albums-list li {
-  font-size: 0.7rem;
-  width: 100%;
-  margin-bottom: 0.2rem;
-}
-.search-bar ul.albums-list li a {
-  display: block;
-  color: inherit;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 100%;
+.status[data-type="error"] {
+    font-weight: 700;
 }
 
-#album-container.size-s {
-  max-width: 450px;
+/* ---------- Poster ---------- */
+
+#album-container {
+    --poster-max: 800px;
+    /* Poster colours; the classic look is the page foreground on the page background.
+       With ?colors=cover, albumColors.js overrides these from the cover. */
+    --poster-bg: transparent;
+    --poster-fg: var(--fg);
+    --poster-accent: currentColor;
+    /* Set from the data by albumDetails.js */
+    --fit-title: 1;
+    --fit-artist: 1;
+    --track-count: 18;
+
+    width: min(100% - 2 * var(--page-gutter), var(--poster-max));
+    margin-inline: auto;
+    container: poster / inline-size;
 }
-#album-container.size-s .album-info-container {
-  padding: 1.5rem;
-}
-#album-container.size-s .album-cover-wrapper {
-  margin-bottom: 1rem;
-}
-#album-container.size-s .album-name {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-#album-container.size-s .track-list {
-  font-size: 0.6rem;
-}
-#album-container.size-s .album-colors .album-color {
-  width: 1rem;
-}
-#album-container.size-s #album-artist {
-  font-size: 2rem;
-}
-#album-container.size-s .album-footer-info {
-  font-size: 0.6rem;
-}
-#album-container.size-m {
-  max-width: 600px;
-}
-#album-container.size-l {
-  max-width: 800px;
+
+#album-container.size-s { --poster-max: 450px; }
+#album-container.size-m { --poster-max: 600px; }
+#album-container.size-l { --poster-max: 800px; }
+
+/* Landscape screens: keep the poster in view. A poster with a normal tracklist is about 1.85 times
+   as high as it is wide, so the width follows from the viewport height. It never gets narrower
+   than --poster-min, because type that small is not readable; then the page scrolls a little.
+   Portrait screens just scroll. */
+@media (min-aspect-ratio: 1/1) and (min-width: 700px) {
+    #album-container {
+        --poster-min: 480px;
+        width: min(
+            100% - 2 * var(--page-gutter),
+            var(--poster-max),
+            max(var(--poster-min), calc((100dvh - 3rem) / 1.85))
+        );
+    }
 }
 
 .album-info-container {
-  border: solid 4px #000000;
-  padding: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-family: Roboto, sans-serif;
-  text-rendering: optimizeLegibility;
-}
-@media screen and (max-width: 600px) {
-}
-body.dark-theme .album-info-container {
-  border-color: #FFFFFF;
+    padding: 4cqi;
+    font-family: var(--font-secondary);
+    text-rendering: optimizeLegibility;
+    color: var(--poster-fg);
+    background-color: var(--poster-bg);
+    border: max(2px, 0.5cqi) solid currentColor;
 }
 
-body.light-theme .album-info-container {
-  border-color: #000000;
-}
-
-.album-name {
-  text-transform: uppercase;
-  font-size: 3rem;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  line-height: 1;
-  border-bottom: solid 3px #000000;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-          hyphens: auto;
-}
-body.dark-theme .album-name {
-  border-bottom-color: #FFFFFF;
-}
-body.light-theme .album-name {
-  border-bottom-color: #000000;
+/* Rules between the sections */
+.album-name,
+.album-tracklist-genre-wrapper,
+.album-artist {
+    border-bottom: max(1.5px, 0.375cqi) solid currentColor;
 }
 
 .album-cover-wrapper {
-  background-color: #000000;
-  width: 100%;
-  aspect-ratio: 1/1;
-  line-height: 0;
-  margin-bottom: 2rem;
-}
-@media screen and (max-width: 600px) {
-  .album-cover-wrapper {
-    margin-bottom: 1rem;
-  }
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    line-height: 0;
+    margin-bottom: 4cqi;
+    background-color: color-mix(in srgb, currentColor 12%, transparent);
 }
 .album-cover-wrapper img {
-  width: 100%;
-  image-rendering: optimizequality;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-ol.track-list {
-  text-transform: uppercase;
-  padding-top: 0;
-  padding-bottom: 1.5rem;
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style-position: outside;
-  -moz-column-count: 2;
-       column-count: 2;
-  -moz-column-gap: 2.8rem;
-       column-gap: 2.8rem;
-  margin-left: 1rem;
-  font-size: 1rem;
-  height: 100%;
-}
-@media screen and (max-width: 768px) {
-  ol.track-list {
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
-    font-size: 0.9rem;
-    padding-bottom: 0;
-  }
-}
-@media screen and (max-width: 600px) {
-  ol.track-list {
-    -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
-    font-size: 0.8rem;
-    padding-bottom: 0;
-  }
-}
-ol.track-list li {
-  font-weight: 700;
-  margin-bottom: 0.2rem;
+.album-name {
+    margin-bottom: 4cqi;
+    padding-bottom: 2cqi;
+    font-size: calc(8cqi * var(--fit-title));
+    line-height: 1;
+    text-transform: uppercase;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .album-tracklist-genre-wrapper {
-  display: flex;
-  gap: 2rem;
-  border-bottom: solid 3px black;
-}
-@media screen and (max-width: 600px) {
-  .album-tracklist-genre-wrapper {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-body.dark-theme .album-tracklist-genre-wrapper {
-  border-bottom-color: #FFFFFF;
-}
-body.light-theme .album-tracklist-genre-wrapper {
-  border-bottom-color: black;
+    display: flex;
+    gap: 4cqi;
 }
 .album-tracklist-genre-wrapper .left {
-  flex: 2;
+    flex: 2;
+    min-width: 0;
 }
 .album-tracklist-genre-wrapper .right {
-  flex: 1;
-  font-size: 1rem;
+    flex: 1;
+    min-width: 0;
 }
 
-.album-footer-info {
-  display: flex;
-  gap: 0.3rem;
+ol.track-list {
+    margin: 0;
+    padding: 0 0 3cqi;
+    list-style: none;
+    counter-reset: track;
+    column-count: 2;
+    column-gap: 4cqi;
+    font-size: max(10px, calc(clamp(11px, 2.6cqi, 1.1rem) * min(1, 18 / var(--track-count))));
+    line-height: 1.25;
+    text-transform: uppercase;
 }
-@media screen and (max-width: 600px) {
-  .album-footer-info {
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
+ol.track-list li {
+    display: grid;
+    grid-template-columns: 2.2em 1fr;
+    margin-bottom: 0.35em;
+    break-inside: avoid;
+    font-weight: 700;
+    counter-increment: track;
+    overflow-wrap: anywhere;
 }
-
-.album-genre,
-.album-style {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.album-year,
-.album-text-label,
-.album-label {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-@media screen and (max-width: 600px) {
-  .album-year,
-  .album-text-label,
-  .album-label {
-    white-space: nowrap;
-  }
+ol.track-list li::before {
+    content: counter(track, decimal-leading-zero);
+    font-weight: 300;
+    font-variant-numeric: tabular-nums;
+    color: var(--poster-accent);
 }
 
-.album-year:after,
-.album-label:after {
-  content: "|";
-  font-weight: inherit;
-  margin-left: 0.5rem;
+/* No back cover: the tracklist gets the whole row */
+.album-info-container.no-back .album-tracklist-genre-wrapper .right {
+    display: none;
+}
+.album-info-container.no-back ol.track-list {
+    column-count: 3;
+}
+@container poster (max-width: 420px) {
+    .album-info-container.no-back ol.track-list {
+        column-count: 2;
+    }
 }
 
 .album-cover-back {
-  width: 100%;
-  margin-bottom: 2rem;
-  line-height: 0;
+    line-height: 0;
+    padding-bottom: 3cqi;
 }
 .album-cover-back img {
-  margin-left: auto;
-  width: 100%;
-  max-width: 12rem;
-  height: auto;
-  background-color: black;
-  aspect-ratio: 1/1;
-  image-rendering: optimizequality;
-}
-@media screen and (max-width: 600px) {
-  .album-cover-back img {
-    max-width: none;
-    margin-top: 1.5rem;
-  }
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: color-mix(in srgb, currentColor 12%, transparent);
 }
 
-.album-colors {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-.album-colors .album-color {
-  flex: 1;
-  display: block;
-  width: 2.5rem;
-  aspect-ratio: 1/1;
-}
-body.dark-theme .album-colors .album-color {
-  outline: solid 1.5px #FFFFFF;
-}
-body.light-theme .album-colors .album-color {
-  outline: none;
+/* Very narrow posters: the back cover moves below the tracklist */
+@container poster (max-width: 360px) {
+    .album-tracklist-genre-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+    ol.track-list {
+        column-count: 1;
+    }
 }
 
 .album-artist {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: solid 3px black;
-}
-@media screen and (max-width: 600px) {
-  .album-artist {
-    flex-direction: column-reverse;
-    row-gap: 0.5rem;
-  }
-}
-body.dark-theme .album-artist {
-  border-bottom-color: #FFFFFF;
-}
-body.light-theme .album-artist {
-  border-bottom-color: black;
+    display: flex;
+    align-items: flex-start;
+    gap: 3cqi;
+    padding-block: 3cqi;
+    margin-bottom: 3cqi;
 }
 .album-artist h3 {
-  text-align: right;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 3rem;
-  margin-left: auto;
-  line-height: 1;
+    margin-left: auto;
+    max-width: 70%;
+    font-size: calc(7cqi * var(--fit-artist));
+    line-height: 1;
+    text-align: right;
+    text-transform: uppercase;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
-@media screen and (max-width: 768px) {
-  .album-artist h3 {
-    font-size: 2.5rem;
-  }
+
+.album-colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5cqi;
+    align-items: center;
 }
-@media screen and (max-width: 600px) {
-  .album-artist h3 {
-    font-size: 1.8rem;
-    margin-left: 0;
-    text-align: left;
-  }
-}/*# sourceMappingURL=style.css.map */
+.album-color {
+    display: block;
+    width: 5.5cqi;
+    aspect-ratio: 1 / 1;
+    outline: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.album-footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5cqi;
+    font-size: max(10px, 2.4cqi);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+/* A separator in front of every visible item that has a visible item before it */
+.album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
+    content: "|";
+    margin-right: 1.5cqi;
+}
+
+/* ---------- Search (debug mode) ---------- */
+
+.search-bar {
+    width: min(100% - 2 * var(--page-gutter), 800px);
+    margin: 0 auto 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background-color: var(--muted-bg);
+}
+.search-bar h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.search-bar input {
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    font: inherit;
+    font-size: 0.9rem;
+}
+.search-bar ul.albums-list {
+    margin: 0.5rem 0 0;
+    padding: 0;
+    max-height: 7rem;
+    overflow-y: auto;
+    list-style: none;
+}
+.search-bar ul.albums-list:empty {
+    display: none;
+}
+.search-bar ul.albums-list li {
+    margin-bottom: 0.2rem;
+    font-size: 0.75rem;
+}
+.search-bar ul.albums-list a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.search-bar ul.albums-list a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 3rem;
+    padding: 2rem var(--page-gutter);
+    background-color: var(--chrome);
+    color: white;
+    font-size: 0.8rem;
+}
+footer .container {
+    width: min(100%, 800px);
+    margin-inline: auto;
+}
+
+@media print {
+    .search-bar, footer, .status { display: none; }
+    #album-container { width: 100%; }
+}

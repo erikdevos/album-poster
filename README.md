@@ -9,7 +9,7 @@ The app uses ES modules and `fetch`, so it needs a web server (opening `index.ht
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000. The styles are written in SCSS (`styles/*.scss`) and compiled to `styles/style.css`, which is committed. Keep both in sync until the build setup is replaced.
+Then open http://localhost:8000. There is no build step: the styles are plain CSS in `styles/style.css`.
 
 ## Data
 
@@ -18,6 +18,10 @@ Album data comes from [MusicBrainz](https://musicbrainz.org/) (title, artist, ye
 All data access sits behind two functions in `scripting/source.js`: `searchAlbums(query)` and `getAlbum(id)`. The MusicBrainz implementation is in `scripting/sources/musicbrainz.js` and can be replaced by another source with the same interface. MusicBrainz allows about one request per second; the source queues its requests and retries on a 503.
 
 `data/albums.json` is the curated list: `id` is the MusicBrainz release-group id, `audiodbId` the id the app used before, so old links keep working. `scripts/migrate-albums.mjs` was used for the one-off conversion.
+
+## Layout
+
+The poster is a size container and all measurements inside it are relative to its width, so it scales as one piece. On landscape screens its width follows the viewport height, so the poster stays in view (never narrower than 480px, then the page scrolls). On portrait screens and phones it fills the width and the page scrolls. Long titles, artists and tracklists get a smaller type size, and a poster without back cover gives the tracklist the full width.
 
 ## URL Parameters
 
@@ -39,7 +43,9 @@ Add query parameters before the hash:
 - `?size=m` - Sets medium poster size
 - `?size=s` - Sets small poster size
 - `?theme=dark` - Sets dark theme (black background, white text)
-- `?theme=light` - Sets light theme (light background, black text) - default
+- `?theme=light` - Sets light theme (light background, black text)
+- Without `theme` the page follows the system light/dark setting
+- `?colors=cover` - Takes the poster colours from the cover (background, text and numbers), with a contrast check; falls back to the classic look when no readable combination is found
 
 #### Combined Examples:
 - `?debug=true#bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0` - Load specific album with search bar visible

@@ -66,7 +66,8 @@ function message(text) {
     return li
 }
 
-// Applies the display options from the URL: debug, size and theme
+// Applies the display options from the URL: debug, size, theme (light|dark, default is the
+// system setting) and colors=cover (poster colours taken from the cover)
 export function applyDisplayOptions(params) {
     const searchBar = document.getElementById('search-bar')
     searchBar.style.display = params.get('debug') === 'true' ? 'block' : 'none'
@@ -76,7 +77,17 @@ export function applyDisplayOptions(params) {
     const size = params.get('size')
     if (['s', 'm', 'l'].includes(size)) container.classList.add(`size-${size}`)
 
-    const dark = params.get('theme') === 'dark'
-    document.body.classList.toggle('dark-theme', dark)
-    document.body.classList.toggle('light-theme', !dark)
+    const root = document.documentElement
+    const theme = params.get('theme')
+    if (theme === 'light' || theme === 'dark') {
+        root.dataset.theme = theme
+    } else {
+        delete root.dataset.theme
+    }
+
+    if (params.get('colors') === 'cover') {
+        root.dataset.colors = 'cover'
+    } else {
+        delete root.dataset.colors
+    }
 }

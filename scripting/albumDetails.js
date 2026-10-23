@@ -32,16 +32,26 @@ export function renderAlbum(album) {
     document.title = `${album.title} – ${album.artist}`
 
     // Footer: label, year and genre
-    document.querySelector('.album-text-label').classList.toggle('hidden', !album.label)
     setField('album-label', album.label)
     setField('album-year', album.year)
-    setField('album-style', '')
     setField('album-genre', album.genre)
 
     setImage('album-cover', album.front, `Cover of ${album.title} by ${album.artist}`)
     setImage('album-cover-back', album.back, `Back cover of ${album.title} by ${album.artist}`)
+    document.getElementById('album-info').classList.toggle('no-back', !album.back)
 
     renderTracks(album.tracks)
+    setFit(album)
+}
+
+// Long titles and artists and long tracklists get a smaller type size, via custom properties
+// that the stylesheet multiplies into its sizes
+function setFit(album) {
+    const poster = document.getElementById('album-container')
+    const fit = text => Math.min(1, Math.max(0.5, 22 / text.length))
+    poster.style.setProperty('--fit-title', fit(album.title).toFixed(2))
+    poster.style.setProperty('--fit-artist', fit(album.artist).toFixed(2))
+    poster.style.setProperty('--track-count', Math.max(album.tracks.length, 1))
 }
 
 function renderTracks(tracks) {
@@ -66,6 +76,10 @@ function setImage(id, url, alt) {
     const img = document.getElementById(id)
     img.alt = alt
     img.classList.toggle('hidden', !url)
+    img.onerror = () => {
+        img.classList.add('hidden')
+        if (id === 'album-cover-back') document.getElementById('album-info').classList.add('no-back')
+    }
     if (url) {
         img.src = url
     } else {
@@ -73,10 +87,11 @@ function setImage(id, url, alt) {
     }
 }
 
+// Sets a footer value; the wrapping item is hidden when there is nothing to show
 function setField(id, value) {
     const el = document.getElementById(id)
     el.textContent = value
-    el.classList.toggle('hidden', !value)
+    el.closest('.footer-item').classList.toggle('hidden', !value)
 }
 
 // Status message that does not touch the poster markup, so it can always recover

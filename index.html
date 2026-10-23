@@ -12,11 +12,19 @@
     </head>
     <body>
         <main>
-            <section id="album-container" class="container">
-                <p id="status" class="status hidden" role="status" aria-live="polite"></p>
+            <!-- Find an album (shown with ?debug=true) -->
+            <div id="search-bar" class="search-bar" style="display: none">
+                <h1>Find an album</h1>
+                <input type="search" id="album-search" placeholder="Album or artist" aria-label="Search albums" autocomplete="off">
+                <ul id="search-results" class="albums-list" aria-live="polite"></ul>
+                <ul id="album-list" class="albums-list"></ul>
+            </div>
 
+            <p id="status" class="status hidden" role="status" aria-live="polite"></p>
+
+            <section id="album-container" aria-label="Album poster">
                 <!-- Album info -->
-                <div id="album-info" class="album-info-container">
+                <div id="album-info" class="album-info-container no-back">
                     <div class="album-cover-wrapper">
                         <img id="album-cover" src="" alt="" crossorigin="anonymous">
                     </div>
@@ -27,49 +35,34 @@
                         </div>
                         <div class="right">
                             <div class="album-cover-back">
-                                <img id="album-cover-back" src="" alt="">
+                                <img id="album-cover-back" src="" alt="" crossorigin="anonymous">
                             </div>
                         </div>
                     </div>
                     <div class="album-artist">
-                        <div id="album-colors" class="album-colors">
+                        <div id="album-colors" class="album-colors" aria-hidden="true">
                             <!-- Loaded through JS -->
                         </div>
                         <h3 id="album-artist"></h3>
                     </div>
                     <div class="album-footer-info">
-                        <span class="album-text-label">Label:</span>
-                        <div id="album-label" class="album-label"></div>
-                        <div id="album-year" class="album-year"></div>
-                        <div class="album-genre-style">
-                            <div id="album-style" class="album-style"></div>
-                            <div id="album-genre" class="album-genre"></div>
-                        </div>
+                        <div class="footer-item hidden"><span class="album-text-label">Label:</span> <span id="album-label"></span></div>
+                        <div class="footer-item hidden"><span id="album-year"></span></div>
+                        <div class="footer-item hidden"><span id="album-genre"></span></div>
                     </div>
                 </div>
             </section>
 
-            <!-- Find album by ID -->
-            <div id="search-bar" class="search-bar">
-                <h1>Find an album</h1>
-                <input type="search" id="album-search" placeholder="Album or artist" aria-label="Search albums" autocomplete="off">
-                <ul id="search-results" class="albums-list" aria-live="polite"></ul>
-                <ul id="album-list" class="albums-list">
-                    <!-- Data loaded from json -->
-                </ul>
-            </div>
-
             <!-- Vibrant JS for color extraction -->
             <script src="scripting/vibrant.min.js"></script>
-            
+
             <!-- The scripting for the album view -->
             <script type="module" src="scripting/main.js"></script>
-
         </main>
         <footer>
-            <section class="container">
+            <div class="container">
                 Album data by <a href="https://musicbrainz.org/">MusicBrainz</a>, cover art by the <a href="https://coverartarchive.org/">Cover Art Archive</a>.
-            </section>
+            </div>
         </footer>
     </body>
 </html>
