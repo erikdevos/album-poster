@@ -194,7 +194,7 @@ ol.track-list {
     counter-reset: track;
     column-count: 2;
     column-gap: 4cqi;
-    font-size: max(10px, calc(clamp(11px, 2.6cqi, 1.1rem) * min(1, 18 / var(--track-count))));
+    font-size: max(9px, calc(clamp(10px, 2.2cqi, 0.95rem) * min(1, 16 / var(--track-count))));
     line-height: 1.25;
     text-transform: uppercase;
 }
