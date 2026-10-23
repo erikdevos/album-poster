@@ -1,49 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const albumCover = document.querySelector("#album-cover")
+// `Vibrant` is a global from vibrant.min.js, loaded before the modules.
+export function extractPalette(img) {
+    const colorsContainer = document.querySelector('#album-colors')
+    if (!colorsContainer) return
 
-    if (!albumCover) {
-        console.error("No #albumcover found.")
-        return
-    }
-
-    albumCover.addEventListener("load", function () {
-        //console.log("Image loaded, extracting color palette...")
-        extractPalette(albumCover)
-    })
-
-    //console.log("Waiting for image to load...")
-})
-
-function extractPalette(img) {
     try {
-        //console.log("Extracting color palette...")
-        const vibrant = new Vibrant(img)
-        const swatches = vibrant.swatches()
-        const colorsContainer = document.querySelector("#album-colors")
+        const swatches = new Vibrant(img).swatches()
 
-        if (!colorsContainer) {
-            console.error("No #album-colors container found.")
-            return
-        }
+        const colorDivs = Object.entries(swatches)
+            .filter(([, swatch]) => swatch)
+            .map(([name, swatch]) => {
+                const colorDiv = document.createElement('div')
+                colorDiv.classList.add('album-color')
+                colorDiv.style.backgroundColor = swatch.getHex()
+                colorDiv.dataset.swatch = name
+                return colorDiv
+            })
 
-        colorsContainer.innerHTML = ""
-
-        for (const swatch in swatches) {
-            if (swatches.hasOwnProperty(swatch) && swatches[swatch]) {
-                const color = swatches[swatch].getHex()
-                //console.log(swatch, color)
-
-                const colorDiv = document.createElement("div")
-                colorDiv.classList.add("album-color")
-                colorDiv.style.backgroundColor = color
-                colorDiv.dataset.swatch = swatch
-
-                colorsContainer.appendChild(colorDiv)
-            }
-        }
+        colorsContainer.replaceChildren(...colorDivs)
     } catch (error) {
-        console.error("Error extracting palette:", error)
+        console.error('Error extracting palette:', error)
+        colorsContainer.replaceChildren()
     }
 }
 
-export { extractPalette }
+// Re-extracts the palette every time the cover has finished loading
+export function watchCover(img) {
+    img.addEventListener('load', () => extractPalette(img))
+}

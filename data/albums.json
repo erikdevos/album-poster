@@ -1,88 +1,512 @@
 [
-    { "id": "2429476", "name": "Hit Me Hard and Soft", "artist": "Billie Eilish" },
-    { "id": "2273822", "name": "Starboy", "artist": "The Weeknd" },
-    { "id": "2126189", "name": "Trilogy", "artist": "The Weeknd" },
-    { "id": "2111844", "name": "The Downward Spiral", "artist": "Nine Inch Nails" },
-    { "id": "2177770", "name": "Hesitation Marks", "artist": "Nine Inch Nails" },
-    { "id": "2111840", "name": "With Teeth", "artist": "Nine Inch Nails" },
-    { "id": "2113384", "name": "Origin of Symmetry", "artist": "Muse" },
-    { "id": "2113380", "name": "Absolution", "artist": "Muse" },
-    { "id": "2113383", "name": "Black Holes and Revelations", "artist": "Muse" },
-    { "id": "2109594", "name": "The Fame Monster", "artist": "Lady Gaga" },
-    { "id": "2303672", "name": "Paradise", "artist": "Lana Del Rey" },
-    { "id": "2127594", "name": "Born To Die", "artist": "Lana Del Rey" },
-    { "id": "2110500", "name": "Songs of Faith and Devotion", "artist": "Depeche Mode" },
-    { "id": "2110493", "name": "Violator", "artist": "Depeche Mode" },
-    { "id": "2348684", "name": "The Man Machine", "artist": "Kraftwerk" },
-    { "id": "2369219", "name": "If I Can't Have Love, I Want Power", "artist": "Halsey" },
-    { "id": "2430149", "name": "BRAT", "artist": "Charli XCX" },
-    { "id": "2430737", "name": "The Rise and Fall of a Midwest Princess", "artist": "Chappell Roan" },    
-    { "id": "2111331", "name": "Hybrid Theory", "artist": "Linkin Park" },
-    { "id": "2111329", "name": "Minutes to Midnight", "artist": "Linkin Park" },
-    { "id": "2111327", "name": "Meteora", "artist": "Linkin Park" },
-    { "id": "2280121", "name": "One More Light", "artist": "Linkin Park" },
-    { "id": "2434839", "name": "From Zero", "artist": "Linkin Park"},
-    { "id": "2139237", "name": "The Rising Tied", "artist": "Fort Minor"},
-    { "id": "2116381", "name": "The Black Parade", "artist": "My Chemical Romance" },
-    { "id": "2127592", "name": "Mellon Collie and the Infinite Sadness", "artist": "The Smashing Pumpkins" },
-    { "id": "2151027", "name": "Cross", "artist": "Justice" },
-    { "id": "2114766", "name": "Audio, Video, Disco", "artist": "Justice" },
-    { "id": "2273364", "name": "Woman", "artist": "Justice" },
-    { "id": "2428191", "name": "Hyperdrama", "artist": "Justice" },
-    { "id": "2351676", "name": "Moral Panic", "artist": "Nothing But Thieves" },
-    { "id": "2255196", "name": "Nothing But Thieves", "artist": "Nothing But Thieves" },
-    { "id": "2284864", "name": "Broken Machine", "artist": "Nothing But Thieves" },
-    { "id": "2407300", "name": "Dead Club City", "artist": "Nothing But Thieves" },
-    { "id": "2110674", "name": "Loud", "artist": "Rihanna" },
-    { "id": "2109696", "name": "Sgt. Pepper's Lonely Hearts Club Band", "artist": "The Beatles" },
-    { "id": "2112908", "name": "10,000 Days", "artist": "Tool" },
-    { "id": "2110232", "name": "Master of Puppets", "artist": "Metallica"},
-    { "id": "2126323", "name": "Reanimation", "artist": "Linkin Park"},
-    { "id": "2162908", "name": "Random Access Memories", "artist": "Daft Punk"},
-    { "id": "2118654", "name": "Discovery", "artist": "Daft Punk"},
-    { "id": "2112973", "name": "Homework", "artist": "Daft Punk"},
-    { "id": "2112975", "name": "Human After All", "artist": "Daft Punk"},
-    { "id": "2118619", "name": "TRON: Legacy", "artist": "Daft Punk"},
-    { "id": "2110249", "name": "Rumors", "artist": "Fleetwood Mac"},
-    { "id": "2112027", "name": "Kid A", "artist": "Radiohead"},
-    { "id": "2112023", "name": "OK Computer", "artist": "Radiohead"},
-    { "id": "2112024", "name": "The Bends", "artist": "Radiohead"},
-    { "id": "2181276", "name": "In Rainbows", "artist": "Radiohead"},
-    { "id": "2113884", "name": "Back To Black", "artist": "Amy Winehouse"},
-    { "id": "2113740", "name": "Mezzanine", "artist": "Massive Attack"},
-    { "id": "2381408", "name": "Motomami", "artist": "Rosalia"},
-    { "id": "2114786", "name": "The College Dropout", "artist": "Kanye West"},
-    { "id": "2433567", "name": "Short and Sweet", "artist": "Sabrina Carpenter"},
-    { "id": "2399425", "name": "RUSH", "artist": "Måneskin"},
-    { "id": "2109889", "name": "Dark Side of The Moon", "artist": "Pink Floyd"},
-    { "id": "2139503", "name": "Welcome Oblivion", "artist": "How To Destroy Angels"},
-    { "id": "2112504", "name": "London Calling", "artist": "The Clash"},
-    { "id": "2113003", "name": "Songs for the Deaf", "artist": "Queens of the Stone Age"},
-    { "id": "2127591", "name": "The Fragile", "artist": "Nine Inch Nails"},
-    { "id": "2115752", "name": "Superunknown", "artist": "SoundGarden"},
-    { "id": "2239184", "name": "Ghosts I/IV", "artist": "Nine Inch Nails"},
-    { "id": "2121207", "name": "Mer de Noms", "artist": "A Perfect Circle"},
-    { "id": "2338425", "name": "Future Nostalgia", "artist": "Dua Lipa"},
-    { "id": "2400118", "name": "My 21st Century Blues", "artist": "Raye"},
-    { "id": "2122185", "name": "Straight Outta Compton", "artist": "N.W.A"},
-    { "id": "2110839", "name": "Nevermind", "artist": "Nirvana"},
-    { "id": "2443116", "name": "Hurry up Tomorrow", "artist": "The Weeknd"},
-    { "id": "2247627", "name": "Beauty Behind The Madness", "artist": "The Weeknd"},
-    { "id": "2337674", "name": "After Hours", "artist": "The Weeknd"},
-    { "id": "2376730", "name": "Dawn FM", "artist": "The Weeknd"},
-    { "id": "2301398", "name": "My Dear Melancholy", "artist": "The Weeknd"},
-    { "id": "2232390", "name": "Kiss land", "artist": "The Weeknd"},
-    { "id": "2368394", "name": "Happier Than Ever", "artist": "Billie Eilish"},
-    { "id": "2313086", "name": "When We All Fall Asleep Where Do We Go?", "artist": "Billie Eilish"},
-    { "id": "2279375", "name": "DAMN.", "artist": "Kendrick Lamar"},
-    { "id": "2236239", "name": "To Pimp A Butterfly", "artist": "Kendrick Lamar"},
-    { "id": "2178515", "name": "The Bones of What You Believe", "artist": "CHVRCHES"},
-    { "id": "2114830", "name": "La Roux", "artist": "La Roux"},
-    { "id": "2126729", "name": "Unapologetic", "artist": "Rihanna"},
-    { "id": "2110671", "name": "Rated R", "artist": "Rihanna"},
-    { "id": "2257888", "name": "Anti", "artist": "Rihanna"},
-    { "id": "2110672", "name": "Talk That Talk", "artist": "Rihanna"},
-    { "id": "2133701", "name": "Good Girl Gone Bad", "artist": "Rihanna"},
-    { "id": "2458157", "name": "LUX", "artist": "Rosalia"}
-    
+  {
+    "id": "02a544b3-0459-42c7-bd9c-047162e7b67a",
+    "audiodbId": "2429476",
+    "name": "Hit Me Hard and Soft",
+    "artist": "Billie Eilish"
+  },
+  {
+    "id": "ceaa5c39-91c7-4c8a-886c-85b11fa8a1f6",
+    "audiodbId": "2273822",
+    "name": "Starboy",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "d0ae475d-ee3b-4934-a442-631468867384",
+    "audiodbId": "2126189",
+    "name": "Trilogy",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "7c4cab8d-dead-3870-b501-93c90fd0a580",
+    "audiodbId": "2111844",
+    "name": "The Downward Spiral",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "5abc64d9-2699-4f26-82cb-87ed127f42eb",
+    "audiodbId": "2177770",
+    "name": "Hesitation Marks",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "10224fb3-a861-3247-9eab-81b7b0fbb0d4",
+    "audiodbId": "2111840",
+    "name": "With Teeth",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "ef03fe86-b54c-3667-8768-029833e7e1cd",
+    "audiodbId": "2113384",
+    "name": "Origin of Symmetry",
+    "artist": "Muse"
+  },
+  {
+    "id": "6f151223-f3a3-3e57-810f-598f7897006c",
+    "audiodbId": "2113380",
+    "name": "Absolution",
+    "artist": "Muse"
+  },
+  {
+    "id": "af2e8e23-e9c3-4e67-8ad8-66387c5898fd",
+    "audiodbId": "2113383",
+    "name": "Black Holes and Revelations",
+    "artist": "Muse"
+  },
+  {
+    "id": "20b4c8b3-e922-44a3-90e8-fa00acad8ed4",
+    "audiodbId": "2109594",
+    "name": "The Fame Monster",
+    "artist": "Lady Gaga"
+  },
+  {
+    "id": "f88a8087-1c93-42a5-8dd7-c1734a286948",
+    "audiodbId": "2303672",
+    "name": "Paradise",
+    "artist": "Lana Del Rey"
+  },
+  {
+    "id": "4b16a1bc-8644-48ae-9b3e-8ae36aa30cfc",
+    "audiodbId": "2127594",
+    "name": "Born To Die",
+    "artist": "Lana Del Rey"
+  },
+  {
+    "id": "e171597d-e6d5-36c8-8d0e-63daf79796b8",
+    "audiodbId": "2110500",
+    "name": "Songs of Faith and Devotion",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "71f1482e-e63f-3b2c-811b-939f62708f2a",
+    "audiodbId": "2110493",
+    "name": "Violator",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "d147e89b-90ca-35b6-9f7b-3e34b8edf63f",
+    "audiodbId": "2348684",
+    "name": "The Man Machine",
+    "artist": "Kraftwerk"
+  },
+  {
+    "id": "798e5814-9f96-46b2-a72a-408d67267661",
+    "audiodbId": "2369219",
+    "name": "If I Can't Have Love, I Want Power",
+    "artist": "Halsey"
+  },
+  {
+    "id": "e0fdb431-0109-420d-8a37-f99eaeb4d671",
+    "audiodbId": "2430149",
+    "name": "BRAT",
+    "artist": "Charli XCX"
+  },
+  {
+    "id": "eda0f5d3-44eb-42cf-bcfd-5c9f93e05c7a",
+    "audiodbId": "2430737",
+    "name": "The Rise and Fall of a Midwest Princess",
+    "artist": "Chappell Roan"
+  },
+  {
+    "id": "43091de5-04b6-46e6-b181-b457694f4ce0",
+    "audiodbId": "2111331",
+    "name": "Hybrid Theory",
+    "artist": "Linkin Park"
+  },
+  {
+    "id": "a4201f5c-f0d7-319c-ba9d-ba0bac38da7a",
+    "audiodbId": "2111329",
+    "name": "Minutes to Midnight",
+    "artist": "Linkin Park"
+  },
+  {
+    "id": "09474d62-17dd-3a4f-98fb-04c65f38a479",
+    "audiodbId": "2111327",
+    "name": "Meteora",
+    "artist": "Linkin Park"
+  },
+  {
+    "id": "b976c959-d13e-487c-85d7-cab70ed7c842",
+    "audiodbId": "2280121",
+    "name": "One More Light",
+    "artist": "Linkin Park"
+  },
+  {
+    "id": "a3159fb4-2ad3-4678-ba51-36fbc8b8430d",
+    "audiodbId": "2434839",
+    "name": "From Zero",
+    "artist": "Linkin Park"
+  },
+  {
+    "id": "7000572e-05be-3380-9e2e-fbabdc7baf02",
+    "audiodbId": "2139237",
+    "name": "The Rising Tied",
+    "artist": "Fort Minor"
+  },
+  {
+    "id": "bcba43e7-2f72-3b60-b234-577e77fd2d9e",
+    "audiodbId": "2116381",
+    "name": "The Black Parade",
+    "artist": "My Chemical Romance"
+  },
+  {
+    "id": "1af599c9-0b44-3a5a-a06b-39e8db6b2b4e",
+    "audiodbId": "2127592",
+    "name": "Mellon Collie and the Infinite Sadness",
+    "artist": "The Smashing Pumpkins"
+  },
+  {
+    "id": "867d4882-4e8e-3acd-8134-66f19bcca915",
+    "audiodbId": "2151027",
+    "name": "Cross",
+    "artist": "Justice"
+  },
+  {
+    "id": "c3f7093d-5a86-45ed-afa6-2413538074c2",
+    "audiodbId": "2114766",
+    "name": "Audio, Video, Disco",
+    "artist": "Justice"
+  },
+  {
+    "id": "e295b8f2-a86c-49fb-8668-aaba1c9f9e4a",
+    "audiodbId": "2273364",
+    "name": "Woman",
+    "artist": "Justice"
+  },
+  {
+    "id": "08110ae5-16bc-4baf-900c-9ce04c9a9e40",
+    "audiodbId": "2428191",
+    "name": "Hyperdrama",
+    "artist": "Justice"
+  },
+  {
+    "id": "71c5027e-7d5d-4ab3-857b-7995a2b6578a",
+    "audiodbId": "2351676",
+    "name": "Moral Panic",
+    "artist": "Nothing But Thieves"
+  },
+  {
+    "id": "7b043d9a-b5e1-4ab8-970e-1b0130726029",
+    "audiodbId": "2255196",
+    "name": "Nothing But Thieves",
+    "artist": "Nothing But Thieves"
+  },
+  {
+    "id": "160d64d4-75ee-4097-a3a8-3c1d690c0d94",
+    "audiodbId": "2284864",
+    "name": "Broken Machine",
+    "artist": "Nothing But Thieves"
+  },
+  {
+    "id": "89a734a1-074a-44bd-b92e-0bb9cd9ca497",
+    "audiodbId": "2407300",
+    "name": "Dead Club City",
+    "artist": "Nothing But Thieves"
+  },
+  {
+    "id": "7c6de97d-bf6a-4793-82f5-f142baed33e6",
+    "audiodbId": "2110674",
+    "name": "Loud",
+    "artist": "Rihanna"
+  },
+  {
+    "id": "9f7a4c28-8fa2-3113-929c-c47a9f7982c3",
+    "audiodbId": "2109696",
+    "name": "Sgt. Pepper's Lonely Hearts Club Band",
+    "artist": "The Beatles"
+  },
+  {
+    "id": "ecfd0a01-57c8-3949-990a-1a950942e0e0",
+    "audiodbId": "2112908",
+    "name": "10,000 Days",
+    "artist": "Tool"
+  },
+  {
+    "id": "3d00fb45-f8ab-3436-a8e1-b4bfc4d66913",
+    "audiodbId": "2110232",
+    "name": "Master of Puppets",
+    "artist": "Metallica"
+  },
+  {
+    "id": "bd0fa028-36ce-3e0e-81f2-e7d2b3e058c1",
+    "audiodbId": "2126323",
+    "name": "Reanimation",
+    "artist": "Linkin Park"
+  },
+  {
+    "id": "aa997ea0-2936-40bd-884d-3af8a0e064dc",
+    "audiodbId": "2162908",
+    "name": "Random Access Memories",
+    "artist": "Daft Punk"
+  },
+  {
+    "id": "48117b90-a16e-34ca-a514-19c702df1158",
+    "audiodbId": "2118654",
+    "name": "Discovery",
+    "artist": "Daft Punk"
+  },
+  {
+    "id": "00054665-89fa-33d5-a8f0-1728ea8c32c3",
+    "audiodbId": "2112973",
+    "name": "Homework",
+    "artist": "Daft Punk"
+  },
+  {
+    "id": "f9e8042a-674e-3f01-80ec-7f0ab1c537df",
+    "audiodbId": "2112975",
+    "name": "Human After All",
+    "artist": "Daft Punk"
+  },
+  {
+    "id": "b585e56e-69cb-4f53-9597-320af5e5f541",
+    "audiodbId": "2118619",
+    "name": "TRON: Legacy",
+    "artist": "Daft Punk"
+  },
+  {
+    "id": "416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6",
+    "audiodbId": "2110249",
+    "name": "Rumors",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "id": "e75c0549-ad55-39e3-8025-c72c5d4a3c5d",
+    "audiodbId": "2112027",
+    "name": "Kid A",
+    "artist": "Radiohead"
+  },
+  {
+    "id": "b1392450-e666-3926-a536-22c65f834433",
+    "audiodbId": "2112023",
+    "name": "OK Computer",
+    "artist": "Radiohead"
+  },
+  {
+    "id": "b8048f24-c026-3398-b23a-b5e50716cbc7",
+    "audiodbId": "2112024",
+    "name": "The Bends",
+    "artist": "Radiohead"
+  },
+  {
+    "id": "6e335887-60ba-38f0-95af-fae7774336bf",
+    "audiodbId": "2181276",
+    "name": "In Rainbows",
+    "artist": "Radiohead"
+  },
+  {
+    "id": "6eac2e57-ee50-36f8-b0c4-c4c847a2c098",
+    "audiodbId": "2113884",
+    "name": "Back To Black",
+    "artist": "Amy Winehouse"
+  },
+  {
+    "id": "6f9f6899-c0d3-311d-ae87-a10ae6bc53a9",
+    "audiodbId": "2113740",
+    "name": "Mezzanine",
+    "artist": "Massive Attack"
+  },
+  {
+    "id": "f455f658-dd55-4790-8cd3-99c7c273018a",
+    "audiodbId": "2381408",
+    "name": "Motomami",
+    "artist": "Rosalia"
+  },
+  {
+    "id": "8a01217e-6947-3927-a39b-6691104694f1",
+    "audiodbId": "2114786",
+    "name": "The College Dropout",
+    "artist": "Kanye West"
+  },
+  {
+    "id": "c8bea388-c195-4177-bf9b-7469f6e695a1",
+    "audiodbId": "2433567",
+    "name": "Short and Sweet",
+    "artist": "Sabrina Carpenter"
+  },
+  {
+    "id": "0bee34eb-07db-48d8-8a76-3470fb212edd",
+    "audiodbId": "2399425",
+    "name": "RUSH",
+    "artist": "Måneskin"
+  },
+  {
+    "id": "f5093c06-23e3-404f-aeaa-40f72885ee3a",
+    "audiodbId": "2109889",
+    "name": "Dark Side of The Moon",
+    "artist": "Pink Floyd"
+  },
+  {
+    "id": "67683e84-ca17-4ab8-baaf-664e4f5d81f6",
+    "audiodbId": "2139503",
+    "name": "Welcome Oblivion",
+    "artist": "How To Destroy Angels"
+  },
+  {
+    "id": "8d73e45e-7ca1-3cb4-ae28-6da76196c17c",
+    "audiodbId": "2112504",
+    "name": "London Calling",
+    "artist": "The Clash"
+  },
+  {
+    "id": "cbffb669-c390-3a4d-b46f-1be8ea934b03",
+    "audiodbId": "2113003",
+    "name": "Songs for the Deaf",
+    "artist": "Queens of the Stone Age"
+  },
+  {
+    "id": "fc4d7589-a6b9-35ca-a6b6-8c8e70c3baaa",
+    "audiodbId": "2127591",
+    "name": "The Fragile",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "8300fe9c-0022-3c55-8a3e-8dc61f282e8c",
+    "audiodbId": "2115752",
+    "name": "Superunknown",
+    "artist": "SoundGarden"
+  },
+  {
+    "id": "550bf4b9-92ca-30ba-9ea2-8b45f9d081f1",
+    "audiodbId": "2239184",
+    "name": "Ghosts I/IV",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "b2d16a29-8953-3e14-bc76-4c775b3d8afd",
+    "audiodbId": "2121207",
+    "name": "Mer de Noms",
+    "artist": "A Perfect Circle"
+  },
+  {
+    "id": "aa366795-92d7-4d67-91fa-6741f82a4858",
+    "audiodbId": "2338425",
+    "name": "Future Nostalgia",
+    "artist": "Dua Lipa"
+  },
+  {
+    "id": "c9018967-1382-47e4-87ac-486a824cd81d",
+    "audiodbId": "2400118",
+    "name": "My 21st Century Blues",
+    "artist": "Raye"
+  },
+  {
+    "id": "fed1608d-80b7-38d2-aeb8-c6357f0d4c23",
+    "audiodbId": "2122185",
+    "name": "Straight Outta Compton",
+    "artist": "N.W.A"
+  },
+  {
+    "id": "1b022e01-4da6-387b-8658-8678046e4cef",
+    "audiodbId": "2110839",
+    "name": "Nevermind",
+    "artist": "Nirvana"
+  },
+  {
+    "id": "14f83b04-2b9e-4974-9169-476f26475be3",
+    "audiodbId": "2443116",
+    "name": "Hurry up Tomorrow",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "a85b8aff-fcbc-4431-95ba-d8c20bbfb77e",
+    "audiodbId": "2247627",
+    "name": "Beauty Behind The Madness",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "78570bea-2a26-467c-a3db-c52723ceb394",
+    "audiodbId": "2337674",
+    "name": "After Hours",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "3344452a-3da9-4b4f-8954-ae23a86c2ecf",
+    "audiodbId": "2376730",
+    "name": "Dawn FM",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "286591d4-ade8-4d24-a804-7024a9b565a4",
+    "audiodbId": "2301398",
+    "name": "My Dear Melancholy",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "de9470f4-f4a3-4ddf-967b-ac77c886ad49",
+    "audiodbId": "2232390",
+    "name": "Kiss land",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "3ac5236a-3bd8-44c6-ab60-69b013594ae6",
+    "audiodbId": "2368394",
+    "name": "Happier Than Ever",
+    "artist": "Billie Eilish"
+  },
+  {
+    "id": "72375978-a9a1-4254-b957-85565c716b7e",
+    "audiodbId": "2313086",
+    "name": "When We All Fall Asleep Where Do We Go?",
+    "artist": "Billie Eilish"
+  },
+  {
+    "id": "b88655ba-7469-48b8-a296-b9011ab73ef3",
+    "audiodbId": "2279375",
+    "name": "DAMN.",
+    "artist": "Kendrick Lamar"
+  },
+  {
+    "id": "d9103c72-3807-4378-9ce7-b6f3e8fdd547",
+    "audiodbId": "2236239",
+    "name": "To Pimp A Butterfly",
+    "artist": "Kendrick Lamar"
+  },
+  {
+    "id": "b2cbaa83-cb77-4961-8ca3-816b24e5204f",
+    "audiodbId": "2178515",
+    "name": "The Bones of What You Believe",
+    "artist": "CHVRCHES"
+  },
+  {
+    "id": "9ad9539d-00e4-43b1-ada2-9574b848e3e0",
+    "audiodbId": "2114830",
+    "name": "La Roux",
+    "artist": "La Roux"
+  },
+  {
+    "id": "1ab3ba95-bc96-46f4-bc6d-1e57bc6ad1a0",
+    "audiodbId": "2126729",
+    "name": "Unapologetic",
+    "artist": "Rihanna"
+  },
+  {
+    "id": "06fda337-5c4b-42e0-a96c-a349c786965f",
+    "audiodbId": "2110671",
+    "name": "Rated R",
+    "artist": "Rihanna"
+  },
+  {
+    "id": "0c482acd-35a2-466b-b833-ef5f2f1297d4",
+    "audiodbId": "2257888",
+    "name": "Anti",
+    "artist": "Rihanna"
+  },
+  {
+    "id": "15818ec5-bf34-47de-a4e5-260f98828d64",
+    "audiodbId": "2110672",
+    "name": "Talk That Talk",
+    "artist": "Rihanna"
+  },
+  {
+    "id": "7e48f018-b774-32e6-a68b-b42db04535c0",
+    "audiodbId": "2133701",
+    "name": "Good Girl Gone Bad",
+    "artist": "Rihanna"
+  },
+  {
+    "id": "bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0",
+    "audiodbId": "2458157",
+    "name": "LUX",
+    "artist": "Rosalia"
+  }
 ]

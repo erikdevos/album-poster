@@ -69,3 +69,12 @@ footer {
 .hidden {
     display: none !important;
 }
+
+.status {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+
+    &[data-type="error"] {
+        font-weight: 700;
+    }
+}

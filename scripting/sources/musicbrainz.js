@@ -1,0 +1,134 @@
+// Album data source: MusicBrainz (metadata + tracks) and Cover Art Archive (covers).
+// Both send `access-control-allow-origin: *`, also on the redirect to the image files, so the
+// covers can be read from a canvas for colour extraction without a proxy.
+//
+// Every source exposes the same two functions, so another one can be swapped in (see ../source.js):
+//   searchAlbums(query, signal) -> [{ id, title, artist, year }]
+//   getAlbum(id, signal)        -> { id, title, artist, year, label, genre, tracks, front, back }
+
+const MB = 'https://musicbrainz.org/ws/2'
+const CAA = 'https://coverartarchive.org'
+const MIN_GAP_MS = 1100 // MusicBrainz allows about one request per second
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+export const isValidId = id => UUID.test(id)
+
+const albumCache = new Map()
+let lastMusicBrainzCall = 0
+let queue = Promise.resolve()
+
+// Runs MusicBrainz requests one after another, with a gap in between
+function throttled(task) {
+    const run = queue.then(async () => {
+        const wait = lastMusicBrainzCall + MIN_GAP_MS - Date.now()
+        if (wait > 0) await new Promise(resolve => setTimeout(resolve, wait))
+        lastMusicBrainzCall = Date.now()
+        return task()
+    })
+    queue = run.catch(() => {})
+    return run
+}
+
+async function getJson(url, signal) {
+    const response = await fetch(url, { signal })
+    if (!response.ok) {
+        const error = new Error(`Request failed (${response.status}): ${url}`)
+        error.status = response.status
+        throw error
+    }
+    return response.json()
+}
+
+// MusicBrainz regularly answers 503 when it is busy or rate limiting; a retry usually succeeds
+async function musicBrainz(path, signal, attempts = 3) {
+    try {
+        return await throttled(() => getJson(`${MB}/${path}&fmt=json`, signal))
+    } catch (error) {
+        if (attempts <= 1 || ![429, 503].includes(error.status)) throw error
+        return musicBrainz(path, signal, attempts - 1)
+    }
+}
+
+const credit = artistCredit => artistCredit?.map(part => part.name + (part.joinphrase ?? '')).join('') ?? ''
+const year = date => date?.slice(0, 4) ?? ''
+
+export async function searchAlbums(query, signal) {
+    const text = query.trim()
+    if (text.length < 2) return []
+
+    const terms = text.replace(/["\\]/g, ' ')
+    const lucene = `(releasegroup:(${terms}) OR artist:(${terms})) AND primarytype:album`
+    const data = await musicBrainz(`release-group?query=${encodeURIComponent(lucene)}&limit=8`, signal)
+
+    return data['release-groups'].map(group => ({
+        id: group.id,
+        title: group.title,
+        artist: credit(group['artist-credit']),
+        year: year(group['first-release-date'])
+    }))
+}
+
+export async function getAlbum(id, signal) {
+    if (albumCache.has(id)) return albumCache.get(id)
+
+    const art = await getCoverArt(id, signal)
+    const releaseId = art?.releaseId ?? await pickRelease(id, signal)
+
+    const release = await musicBrainz(
+        `release/${releaseId}?inc=recordings+labels+artist-credits+release-groups+genres`, signal)
+    const group = release['release-group'] ?? {}
+
+    const album = {
+        id,
+        title: group.title ?? release.title,
+        artist: credit(release['artist-credit']),
+        year: year(group['first-release-date'] ?? release.date),
+        label: release['label-info']?.map(info => info.label?.name).find(Boolean) ?? '',
+        genre: topGenres(group.genres?.length ? group.genres : release.genres),
+        tracks: release.media?.flatMap(medium => medium.tracks ?? []).map(track => ({
+            number: track.number,
+            title: track.title
+        })) ?? [],
+        front: art?.front ?? '',
+        back: art?.back ?? ''
+    }
+
+    albumCache.set(id, album)
+    return album
+}
+
+// Cover Art Archive redirects a release-group to the release that has the front cover
+async function getCoverArt(groupId, signal) {
+    try {
+        const data = await getJson(`${CAA}/release-group/${groupId}`, signal)
+        const image = type => data.images.find(img => img.types.includes(type))
+        const front = image('Front')
+        const back = image('Back')
+        return {
+            releaseId: data.release?.split('/').pop(),
+            front: front && (front.thumbnails['1200'] ?? front.image),
+            back: back && (back.thumbnails['500'] ?? back.image)
+        }
+    } catch (error) {
+        if (error.name === 'AbortError') throw error
+        return null // no cover art on record for this album
+    }
+}
+
+// Fallback when there is no cover art: the earliest official release
+async function pickRelease(groupId, signal) {
+    const data = await musicBrainz(`release-group/${groupId}?inc=releases`, signal)
+    const releases = [...data.releases].sort((a, b) =>
+        (a.status === 'Official' ? 0 : 1) - (b.status === 'Official' ? 0 : 1) ||
+        (a.date || '9999').localeCompare(b.date || '9999'))
+    if (!releases.length) throw new Error('This album has no releases')
+    return releases[0].id
+}
+
+function topGenres(genres = []) {
+    return [...genres]
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 2)
+        .map(genre => genre.name)
+        .join(' / ')
+}

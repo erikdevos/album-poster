@@ -75,6 +75,14 @@ footer {
   display: none !important;
 }
 
+.status {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+.status[data-type=error] {
+  font-weight: 700;
+}
+
 .search-bar {
   display: flex;
   align-items: flex-start;

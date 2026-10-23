@@ -1,77 +1,82 @@
-import { fetchAlbumDetails } from './albumDetails.js';
-import { extractPalette } from './albumColors.js';
+import { searchAlbums } from './source.js'
 
 export async function loadAlbumList() {
+    const albumListEl = document.getElementById('album-list')
+
     try {
         const response = await fetch('data/albums.json')
         if (!response.ok) throw new Error('Failed to load album list')
 
-        const albums = await response.json()
-        const albumListEl = document.querySelector('.albums-list')
+        // Newest additions first; albums without a MusicBrainz match cannot be shown
+        const albums = (await response.json()).filter(album => album.id).reverse()
 
-        albumListEl.innerHTML = '' // Clear existing items
+        albumListEl.replaceChildren(...albums.map(album =>
+            albumItem(album.id, `${album.name} – ${album.artist}`)))
 
-        // Reverse the albums array
-        albums.reverse()
-
-        albums.forEach(album => {
-            const li = document.createElement('li')
-            const a = document.createElement('a')
-            a.href = `#${album.id}`
-            a.textContent = `${album.name} – ${album.artist}`
-            li.appendChild(a)
-            albumListEl.appendChild(li)
-        })
-        console.log("Albums loaded");
+        return albums
     } catch (error) {
         console.error('Error loading album list:', error)
+        return []
     }
 }
 
-// Get the query string from the URL
-const params = new URLSearchParams(window.location.search)
+// Typeahead search on all of MusicBrainz. Picking a result goes through the `#id` links.
+export function setupSearch(input) {
+    const resultsEl = document.getElementById('search-results')
+    let timer = null
+    let request = null
 
-// Check if the "debug" parameter is set to "true"
-if (params.get('debug') === 'true') {
-  // Show the element
-  document.getElementById('search-bar').style.display = 'block'
-} else {
-  // Hide the element
-  document.getElementById('search-bar').style.display = 'none'
-}
+    input.addEventListener('input', () => {
+        clearTimeout(timer)
+        request?.abort()
+        if (input.value.trim().length < 2) {
+            resultsEl.replaceChildren()
+            return
+        }
+        timer = setTimeout(search, 400)
+    })
 
-// Check the "size" parameter and add the corresponding class to #album-info
-const albumInfo = document.getElementById('album-container')
-const size = params.get('size')
-
-if (size === 'l') {
-  albumInfo.classList.add('size-l')
-} else if (size === 'm') {
-  albumInfo.classList.add('size-m')
-} else if (size === 's') {
-  albumInfo.classList.add('size-s')
-}
-
-// Check the "theme" parameter and apply the corresponding theme
-const theme = params.get('theme')
-if (theme === 'dark') {
-  document.body.classList.add('dark-theme')
-  document.body.classList.remove('light-theme')
-} else {
-  // Default to light theme
-  document.body.classList.add('light-theme')
-  document.body.classList.remove('dark-theme')
-}
-
-// Search button click event
-document.getElementById('search-button').addEventListener('click', (event) => {
-    const albumId = document.getElementById('album-id').value.trim()
-    if (albumId) {
-        fetchAlbumDetails(albumId)
-        extractPalette()
-        console.log("fetch album");
-        console.log(albumId);
-    } else {
-        alert('Please enter a valid album ID')
+    async function search() {
+        request = new AbortController()
+        try {
+            const results = await searchAlbums(input.value, request.signal)
+            resultsEl.replaceChildren(...(results.length
+                ? results.map(album => albumItem(album.id, `${album.title} – ${album.artist} (${album.year || '?'})`))
+                : [message('No albums found')]))
+        } catch (error) {
+            if (error.name === 'AbortError') return
+            console.error('Search failed:', error)
+            resultsEl.replaceChildren(message('Search failed, try again'))
+        }
     }
-})
+}
+
+function albumItem(id, text) {
+    const li = document.createElement('li')
+    const a = document.createElement('a')
+    a.href = `#${id}`
+    a.textContent = text
+    li.appendChild(a)
+    return li
+}
+
+function message(text) {
+    const li = document.createElement('li')
+    li.textContent = text
+    return li
+}
+
+// Applies the display options from the URL: debug, size and theme
+export function applyDisplayOptions(params) {
+    const searchBar = document.getElementById('search-bar')
+    searchBar.style.display = params.get('debug') === 'true' ? 'block' : 'none'
+
+    const container = document.getElementById('album-container')
+    container.classList.remove('size-s', 'size-m', 'size-l')
+    const size = params.get('size')
+    if (['s', 'm', 'l'].includes(size)) container.classList.add(`size-${size}`)
+
+    const dark = params.get('theme') === 'dark'
+    document.body.classList.toggle('dark-theme', dark)
+    document.body.classList.toggle('light-theme', !dark)
+}
