@@ -242,6 +242,30 @@ test('the blur layout shows the cover enlarged and blurred behind the poster', a
     } finally { await close() }
 })
 
+test('in display mode the blur backdrop fills the whole screen and the poster keeps its place', async () => {
+    const { page, close } = await open(`?layout=blur&display=true&controls=false#${LUX}`, { viewport: { width: 1600, height: 900 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.documentElement.dataset.display === 'on')
+        const { backdrop, info, scrollWidth, scrollHeight } = await page.evaluate(() => {
+            const box = selector => {
+                const { left, top, width, height } = document.querySelector(selector).getBoundingClientRect()
+                return { left, top, width, height }
+            }
+            return {
+                backdrop: box('.poster-backdrop'),
+                info: box('#album-info'),
+                scrollWidth: document.documentElement.scrollWidth,
+                scrollHeight: document.documentElement.scrollHeight
+            }
+        })
+        assert.ok(Math.abs(backdrop.width - 1600) < 2 && Math.abs(backdrop.height - 900) < 2, 'backdrop does not fill the screen')
+        assert.ok(Math.abs(backdrop.left) < 2 && Math.abs(backdrop.top) < 2)
+        assert.ok(info.width < 1000 && info.height <= 900, 'the poster itself should stay poster-sized')
+        assert.ok(scrollWidth <= 1600 && scrollHeight <= 900, 'the page scrolls')
+    } finally { await close() }
+})
+
 test('the backdrop is not shown in the other layouts', async () => {
     const { page, close } = await open(`#${LUX}`)
     try {

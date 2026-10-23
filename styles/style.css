@@ -914,6 +914,33 @@ ol.track-list li::before {
     cursor: none;
 }
 
+/* Blur in display mode: the blurred cover fills the whole screen, not just the poster, so the
+   colours of the album are the colours of the screen. The poster itself keeps its layout. The
+   backdrop is centred on the poster, which is centred on the screen. */
+:root[data-display="on"] #album-container[data-layout="blur"] .album-info-container {
+    overflow: visible;
+    background-color: transparent;
+}
+:root[data-display="on"] #album-container[data-layout="blur"] .poster-backdrop {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100dvh;
+    transform: translate(-50%, -50%);
+}
+:root[data-display="on"] #album-container[data-layout="blur"] .poster-backdrop img {
+    filter: blur(9cqi) saturate(1.4) brightness(0.85);
+}
+:root[data-display="on"] #album-container[data-layout="blur"] .poster-backdrop::after {
+    background:
+        radial-gradient(ellipse at center, rgb(0 0 0 / 0.1) 30%, rgb(0 0 0 / 0.55) 100%),
+        linear-gradient(to bottom, transparent 40%, rgb(0 0 0 / 0.3));
+}
+:root[data-display="on"]:has(#album-container[data-layout="blur"]) body {
+    background-color: #1c1c1e;
+}
+
 /* The buttons that show for a moment */
 .display-controls {
     position: fixed;
