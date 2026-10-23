@@ -27,6 +27,7 @@ beforeEach(() => { calls = [] })
 const release = {
     title: 'Release title',
     date: '2001-05-06',
+    barcode: '4006381333931',
     'artist-credit': [{ name: 'A', joinphrase: ' & ' }, { name: 'B' }],
     'label-info': [{ label: null }, { label: { name: 'Columbia' } }],
     'release-group': {
@@ -239,6 +240,7 @@ test('getAlbum combines Cover Art Archive and MusicBrainz', async () => {
         year: '2001',
         label: 'Columbia',
         genre: 'rock / pop',
+        barcode: '4006381333931',
         tracks: [{ number: '1', title: 'One' }, { number: '2', title: 'Two' }, { number: '3', title: 'Three' }],
         front: 'https://x/front-1200.jpg',
         back: 'https://x/back-500.jpg',

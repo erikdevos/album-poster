@@ -1,6 +1,7 @@
 import { getAlbum, isValidId } from './source.js'
 import { setLoading, showMessage, clearMessage } from './feedback.js'
 import { crossfade } from './crossfade.js'
+import { barcodeSvg } from './barcode.js'
 
 let currentRequest = null
 
@@ -68,6 +69,7 @@ export function renderAlbum(album) {
     setImage('album-cover', album.front, album.frontFull, `Cover of ${album.title} by ${album.artist}`)
     setImage('album-cover-back', album.back, album.backFull, `Back cover of ${album.title} by ${album.artist}`)
     setBackdrop(album.front)
+    setBarcode(album.barcode)
     document.getElementById('album-info').classList.toggle('no-back', !album.back)
 
     renderTracks(album.tracks)
@@ -137,6 +139,14 @@ function setBackdrop(url) {
     } else {
         img.removeAttribute('src')
     }
+}
+
+// The barcode of the cd layouts; nothing is shown when the release has none or it is not a valid code
+function setBarcode(code) {
+    const box = document.getElementById('album-barcode')
+    const svg = code ? barcodeSvg(code) : null
+    box.replaceChildren(...(svg ? [svg] : []))
+    box.classList.toggle('hidden', !svg)
 }
 
 // Sets a footer value; the wrapping item is hidden when there is nothing to show

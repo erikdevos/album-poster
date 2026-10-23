@@ -5,7 +5,7 @@
 // Every source exposes the same two functions, so another one can be swapped in (see ../source.js):
 //   searchAlbums(query, signal) -> [{ id, title, artist, year }]
 //   randomAlbumId(signal, random) -> the id of a fairly well known album, picked at random
-//   getAlbum(id, signal)        -> { id, title, artist, year, label, genre, tracks, front, back,
+//   getAlbum(id, signal)        -> { id, title, artist, year, label, genre, barcode, tracks, front, back,
 //                                    frontFull, backFull }   (the last two are the original, big images)
 
 const MB = 'https://musicbrainz.org/ws/2'
@@ -208,6 +208,7 @@ export async function getAlbum(id, signal) {
         title: group.title ?? release.title,
         artist: credit(release['artist-credit']),
         year: year(group['first-release-date'] ?? release.date),
+        barcode: release.barcode ?? '',
         label: release['label-info']?.map(info => info.label?.name).find(Boolean) ?? '',
         genre: topGenres(group.genres?.length ? group.genres : release.genres),
         tracks: release.media?.flatMap(medium => medium.tracks ?? []).map(track => ({

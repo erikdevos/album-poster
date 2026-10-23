@@ -26,6 +26,7 @@ function release(title, artist) {
     return {
         title,
         date: '1969-09-26',
+        barcode: '5901234123457',
         'artist-credit': [{ name: artist }],
         'label-info': [{ label: { name: 'Apple' } }],
         'release-group': { title, 'first-release-date': '1969-09-26', genres: [{ name: 'rock', count: 3 }] },
@@ -327,6 +328,28 @@ test('cd-blur is the cd layout on the blurred cover', async () => {
         assert.equal(backdrop, 'block')
         assert.match(filter, /blur/)
         assert.equal(color, 'rgb(255, 255, 255)')
+    } finally { await close() }
+})
+
+test('the cd layouts show the real barcode of the release, bottom right, and the other layouts do not', async () => {
+    const { page, close } = await open(`?layout=cd#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const barcode = page.locator('#album-barcode svg')
+        await barcode.waitFor()
+        assert.match(await barcode.getAttribute('aria-label'), /5901234123457/)
+        assert.equal((await barcode.locator('text').allTextContents()).join(''), '5901234123457')
+        const { right, bottom, infoRight, infoBottom, width } = await page.evaluate(() => {
+            const code = document.getElementById('album-barcode').getBoundingClientRect()
+            const info = document.getElementById('album-info').getBoundingClientRect()
+            return { right: code.right, bottom: code.bottom, infoRight: info.right, infoBottom: info.bottom, width: info.width }
+        })
+        assert.ok(infoRight - right < width * 0.15 && infoBottom - bottom < width * 0.15, 'bottom right of the poster')
+
+        await page.getByLabel('Poster layout').selectOption('classic')
+        assert.equal(await page.locator('#album-barcode').isHidden(), true)
+        await page.getByLabel('Poster layout').selectOption('cd-blur')
+        assert.equal(await page.locator('#album-barcode').isVisible(), true)
     } finally { await close() }
 })
 
