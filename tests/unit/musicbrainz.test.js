@@ -2,7 +2,7 @@ import { test, beforeEach } from 'node:test'
 import assert from 'node:assert/strict'
 import {
     settings, buildSearchQuery, rankGroups, secure, searchAlbums, getAlbum, isValidId,
-    buildRandomQuery, randomAlbumId, RANDOM_TAGS
+    buildRandomQuery, randomAlbumId, RANDOM_TAGS, normalize
 } from '../../scripting/sources/musicbrainz.js'
 
 settings.minGapMs = 0 // no waiting between requests in tests
@@ -47,17 +47,31 @@ test('isValidId only accepts a MusicBrainz id', () => {
     assert.equal(isValidId(`${uuid(1)}x`), false)
 })
 
-test('search query: every word must match, the last one as a prefix', () => {
+test('search query: every word must match, the last one as a prefix, and the whole text as a phrase', () => {
     const query = buildSearchQuery('abbey road')
     assert.match(query, /\(releasegroup:abbey OR artist:abbey\) AND \(releasegroup:road\* OR artist:road\*\)/)
-    assert.match(query, /primarytype:album/)
+    assert.match(query, /releasegroup:"abbey road"\^5 OR artist:"abbey road"\^5/)
+})
+
+test('search query: albums and EPs, without live albums, compilations and the like', () => {
+    const query = buildSearchQuery('katseye')
+    assert.match(query, /\(primarytype:album OR primarytype:ep\)/)
     assert.match(query, /NOT secondarytype:\(compilation OR live OR remix/)
+    assert.doesNotMatch(query, /releases:/)
+})
+
+test('search query: the popular variant asks for many releases, the singles variant drops the type', () => {
+    assert.match(buildSearchQuery('beatles', { popular: true }), /releases:\[15 TO \*\]/)
+    const singles = buildSearchQuery('katseye', { singles: true })
+    assert.doesNotMatch(singles, /primarytype/)
+    assert.match(singles, /NOT secondarytype/)
 })
 
 test('search query: handles accents and strips Lucene syntax', () => {
     assert.match(buildSearchQuery('Rosalía'), /releasegroup:Rosalía\*/)
     const query = buildSearchQuery('a"b) OR (c')
-    assert.doesNotMatch(query.split(' AND primarytype')[0], /["()]\s*OR \(c/)
+    assert.doesNotMatch(query.split(' AND NOT secondarytype')[0], /["()]\s*OR \(c/)
+    assert.match(query, /"a b OR c"\^5/) // only letters and digits are left of what was typed
 })
 
 test('search query: too short or empty gives nothing to search for', () => {
@@ -66,13 +80,67 @@ test('search query: too short or empty gives nothing to search for', () => {
     assert.equal(buildSearchQuery('!!'), null)
 })
 
-test('ranking: a well known album beats an obscure one with a slightly better score', () => {
+test('normalize ignores case, accents and punctuation', () => {
+    assert.equal(normalize('ROSALÍA'), normalize('rosalia'))
+    assert.equal(normalize("Sgt. Pepper's"), 'sgtpeppers')
+    assert.equal(normalize('KATSEYE'), 'katseye')
+})
+
+const group = (id, title, artist, { score = 100, count = 1, type = 'Album' } = {}) =>
+    ({ id, title, score, count, 'primary-type': type, 'artist-credit': [{ name: artist }] })
+
+test('ranking: a well known album beats an obscure one with a better score', () => {
     const ranked = rankGroups([
-        { id: 'obscure', score: 100, count: 1 },
-        { id: 'famous', score: 84, count: 151 },
-        { id: 'unknown-count', score: 50 }
-    ])
-    assert.deepEqual(ranked.map(group => group.id), ['famous', 'obscure', 'unknown-count'])
+        group('obscure', 'Beatles Tribute', 'Nobody', { score: 100, count: 1 }),
+        group('famous', 'Abbey Road', 'The Beatles', { score: 76, count: 73 }),
+        group('unknown-count', 'Something', 'Someone', { score: 50, count: undefined })
+    ], 'beatles')
+    assert.deepEqual(ranked.map(item => item.id), ['famous', 'obscure', 'unknown-count'])
+})
+
+test('ranking: an exact title or artist is put first, also with other letters and accents', () => {
+    const ranked = rankGroups([
+        group('other', 'Lux Aeterna', 'Clint Mansell', { score: 100, count: 5 }),
+        group('exact', 'LUX', 'ROSALÍA', { score: 51, count: 6 }),
+        group('artist', 'Motomami', 'Lux', { score: 51, count: 6 })
+    ], 'lux')
+    assert.deepEqual(ranked.map(item => item.id).slice(0, 2).sort(), ['artist', 'exact'])
+    assert.equal(rankGroups([group('a', 'Dile', 'Rosalía'), group('b', 'Xyz', 'Someone')], 'ROSALIA')[0].id, 'a')
+})
+
+test('ranking: an EP counts for less than an album, but popular EPs of one artist keep their order', () => {
+    assert.equal(rankGroups([group('ep', 'Thriller', 'Thriller', { type: 'EP', count: 1 }), group('album', 'Thriller', 'Michael Jackson', { count: 85 })], 'thriller')[0].id, 'album')
+
+    const katseye = rankGroups([
+        group('sis', 'SIS (Soft Is Strong)', 'KATSEYE', { type: 'EP', count: 14 }),
+        group('wild', 'WILD', 'KATSEYE', { type: 'EP', count: 37 }),
+        group('chaos', 'BEAUTIFUL CHAOS', 'KATSEYE', { type: 'EP', count: 23 })
+    ], 'katseye')
+    assert.deepEqual(katseye.map(item => item.id), ['wild', 'chaos', 'sis'])
+})
+
+test('ranking: all albums of an exact artist are equally relevant, so the best known comes first', () => {
+    // Abbey Road does not have "beatles" in its title, so MusicBrainz scores it lower than "The Beatles"
+    const ranked = rankGroups([
+        group('white', 'The Beatles', 'The Beatles', { score: 100, count: 58 }),
+        group('abbey', 'Abbey Road', 'The Beatles', { score: 76, count: 73 }),
+        group('sale', 'Beatles for Sale', 'The Beatles', { score: 93, count: 53 })
+    ], 'beatles')
+    assert.deepEqual(ranked.map(item => item.id), ['abbey', 'white', 'sale'])
+})
+
+test('ranking: "the" at the start of a name does not matter when comparing', () => {
+    const ranked = rankGroups([
+        group('x', 'Something', 'Someone Else', { score: 100, count: 30 }),
+        group('weeknd', 'After Hours', 'The Weeknd', { score: 60, count: 20 })
+    ], 'weeknd')
+    assert.equal(ranked[0].id, 'weeknd')
+})
+
+test('ranking does not change the list it is given', () => {
+    const input = [group('a', 'A', 'X', { count: 1 }), group('b', 'B', 'Y', { count: 50 })]
+    rankGroups(input, 'q')
+    assert.deepEqual(input.map(item => item.id), ['a', 'b'])
 })
 
 test('old http cover urls are upgraded to https', () => {
@@ -80,17 +148,49 @@ test('old http cover urls are upgraded to https', () => {
     assert.equal(secure('https://coverartarchive.org/x.jpg'), 'https://coverartarchive.org/x.jpg')
 })
 
-test('searchAlbums returns at most 8 ranked results in the shape the app uses', async () => {
-    const groups = Array.from({ length: 12 }, (_, i) => ({
-        id: uuid(100 + i), title: `Album ${i}`, score: 90 - i, count: 1,
-        'first-release-date': '1999-01-01', 'artist-credit': [{ name: 'Band' }]
-    }))
-    fakeFetch([['release-group?query=', () => json({ 'release-groups': groups })]])
+test('searchAlbums does the best matches and the popular ones together, ranked, at most 8', async () => {
+    const make = (count, offset) => Array.from({ length: count }, (_, i) =>
+        ({ ...group(uuid(offset + i), `Album ${offset + i}`, 'Band', { score: 90, count: 1 + i }), 'first-release-date': '1999-01-01' }))
+    fakeFetch([['release-group?query=', url => json({ 'release-groups': url.includes('releases%3A%5B15') ? make(5, 200) : make(8, 100) })]])
 
     const results = await searchAlbums('album')
+    assert.equal(calls.length, 2, 'one search for the best matches, one for the popular ones')
+    assert.ok(calls.some(url => url.includes('releases%3A%5B15')))
     assert.equal(results.length, 8)
-    assert.deepEqual(results[0], { id: uuid(100), title: 'Album 0', artist: 'Band', year: '1999' })
-    assert.equal(calls.length, 1)
+    assert.deepEqual(results[0], { id: uuid(107), title: 'Album 107', artist: 'Band', year: '1999' }) // most releases first
+    assert.equal(new Set(results.map(item => item.id)).size, 8, 'no album twice')
+})
+
+test('searchAlbums does not list an album twice when both searches find it', async () => {
+    const same = [group(uuid(40), 'Abbey Road', 'The Beatles', { count: 73 })]
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': same })]])
+    assert.equal((await searchAlbums('abbey road')).length, 1)
+})
+
+test('searchAlbums finds an artist that only has EPs, like KATSEYE', async () => {
+    const eps = [
+        group(uuid(50), 'SIS (Soft Is Strong)', 'KATSEYE', { type: 'EP', count: 14 }),
+        group(uuid(51), 'BEAUTIFUL CHAOS', 'KATSEYE', { type: 'EP', count: 23 })
+    ]
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': eps })]])
+    const results = await searchAlbums('KATSEYE')
+    assert.deepEqual(results.map(item => item.title), ['BEAUTIFUL CHAOS', 'SIS (Soft Is Strong)'])
+    assert.equal(calls.length, 2)
+})
+
+test('searchAlbums includes singles only when there is nothing else', async () => {
+    fakeFetch([['release-group?query=', url => json({
+        'release-groups': url.includes('primarytype') ? [] : [group(uuid(60), 'Only a single', 'Some Artist', { type: 'Single' })]
+    })]])
+    const results = await searchAlbums('some artist')
+    assert.deepEqual(results.map(item => item.title), ['Only a single'])
+    assert.equal(calls.length, 3, 'best, popular, and then the singles')
+    assert.doesNotMatch(calls.at(-1), /primarytype/)
+})
+
+test('searchAlbums gives an empty list when nothing is found at all', async () => {
+    fakeFetch([['release-group?query=', () => json({ 'release-groups': [] })]])
+    assert.deepEqual(await searchAlbums('zzzzzz'), [])
 })
 
 test('searchAlbums does not call the network for a query that is too short', async () => {

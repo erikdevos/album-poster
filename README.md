@@ -36,31 +36,14 @@ All data access sits behind two functions in `scripting/source.js`: `searchAlbum
 
 ## Search
 
-The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu, the random album button, the display menu, the export panel and the light/dark switch; on a phone those are icons on one row. Searching goes through MusicBrainz: every word has to match the album or the artist, the last one as a prefix while you type. MusicBrainz has no popularity, so hits are ranked by their relevance score plus the number of releases of the album, which puts well-known albums first. Compilations, live albums, remixes and the like are left out. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
+The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu, the random album button, the display menu, the export panel and the light/dark switch; on a phone those are icons on one row. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
 
-### Layouts
+Searching goes through MusicBrainz (`searchAlbums` in `scripting/sources/musicbrainz.js`):
 
-All layouts use the same markup and data, so colours (`?colors=cover`), theme, export and print work with each of them.
-
-- **classic**: the framed poster with the full width cover, rules between the sections and the tracklist in columns.
-- **minimal**: no frame, a lot of white space, light type, a plain tracklist and the artist with small colour dots. The back cover is left out.
-- **swiss**: a 12 column grid with the artist on top, a very large title and the tracklist beside the cover. On a narrow poster the tracklist moves below the cover.
-
-A layout is a block of CSS keyed on `data-layout` in `styles/style.css`, plus its name in `LAYOUTS` in `scripting/displayOptions.js` and an option in `index.html`. `--poster-ratio` (height divided by width) tells the landscape fitting and nothing else, so set it to what the layout needs.
-
-## Export, print and share
-
-All options are in the header (hidden with `?controls=false`), so the page is just the poster. The **Export** button opens a small panel with the file type, the quality and the buttons below; Escape, a click elsewhere or tabbing away closes it:
-
-- **Download** (in the panel) makes a PNG or a PDF, named "Artist - Album". Choose the quality first: Standard (2400 px wide), High (4000 px) or Maximum (6000 px); at 300 dpi that is about 20, 34 and 51 cm wide. It uses [html-to-image](https://github.com/bubkoo/html-to-image) 1.11.13, loaded from jsDelivr only when someone exports. The poster is drawn as it is on screen and scaled up, so text and lines stay sharp at any size.
-  - **Covers:** the page shows a 1200 px cover, which would be soft in a large export. High and Maximum therefore fetch the original image from the Cover Art Archive first (often 3000 px, a few MB) and put the page back afterwards. If the original cannot be loaded within 30 seconds, the export goes on with the cover as it is.
-  - **PNG** carries a 300 dpi tag (a `pHYs` chunk), so a layout or print program opens it at the right physical size.
-  - **PDF** is one page that is as large as the image at 300 dpi, with the poster as a high quality JPEG (95%). It is made by `buildPdf` in `scripting/fileFormats.js`, without a library. The text in it is not selectable; for a PDF with real text, use **Print** and choose "Save as PDF".
-  - **Browser limits:** a browser can only draw a canvas up to some size (Safari and iPhones about 16 megapixels, other phones about 36, desktops about 120). When the wanted size does not fit, the poster is made as large as the browser allows, and the status line says so. The rules are in `scripting/exportPlan.js`.
-  - **Line breaks:** at a large scale a browser measures text a little differently, so a track that wraps on screen could fit on one line in the image while its second line stayed reserved (a blank line in the tracklist). While exporting, the line breaks that are on screen are put into the text itself (`scripting/lineBreaks.js`), so the file wraps exactly like the page.
-  - The browser tab must be visible while exporting; a hidden tab pauses until you come back.
-- **Print** (in the panel) prints one poster on an A4 page, always in the light theme, without header, buttons or footer (`@media print` in `styles/style.css`). Turn on "background graphics" in the print dialog if you use `?colors=cover`. A poster with a very long tracklist can run over to a second page.
-- **Copy link** (in the panel) opens the share sheet where the browser has one, otherwise it copies the link (and as a last resort shows it, to copy by hand).
+- Every word has to match the album or the artist, the last one as a prefix while you type ("abbey ro" works), and the whole text as a phrase counts extra, so an exact title or artist is found first.
+- **Albums and EPs** are searched, because an artist like KATSEYE only has EPs and singles. Compilations, live albums, remixes, soundtracks and the like are left out. Singles are only included when there is nothing else.
+- **Popular first.** MusicBrainz orders by relevance only and knows nothing about popularity: for "beatles" the famous albums are not among its first hundred hits. So two searches are done at once, one for the best matches and one for albums with at least 15 releases (a famous album has been released many times), and the hits are ranked together: half the MusicBrainz score, plus 40 times the logarithm of the number of releases, plus a bonus for an exact title or artist (then all albums of that artist count as equally relevant, and the best known come first), and minus a little for an EP. The weights are in `rankGroups` and are tested; "beatles" gives Rubber Soul, Sgt. Pepper, Please Please Me and Abbey Road first.
+- Two searches take a little longer than one (a few seconds in a slow moment), because MusicBrainz allows about one request per second.
 
 ## Display mode and slideshow (kiosk)
 
