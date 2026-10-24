@@ -666,22 +666,28 @@ ol.track-list li::before {
     font-size: max(9px, calc(clamp(10px, 2.35cqi, 1.1rem) * min(1, 18 / var(--track-count))));
     line-height: 1.15;
 }
+/* The number is an inline box in front of the title, not a column of its own: a title that wraps
+   then has the number next to its first line, and every line is centred (balanced, so that the lines
+   are about as long). The box of a wrapped text always fills the whole row, so a flex row with the
+   number at the side would leave the number at the edge. */
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.7em;
+    display: block;
     margin-bottom: 0.3em;
-    text-align: center; /* a long title on two lines stays centred */
+    text-align: center;
+    text-wrap: balance;
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li::before {
-    flex: none;
+    display: inline-block;
     min-width: 1.6em;
+    margin-right: 0.7em;
     padding: 0.05em 0.25em;
     border: 1px solid currentColor;
     font-size: 0.7em;
     font-weight: 400;
+    line-height: 1.2;
     text-align: center;
+    vertical-align: 0.12em;
+    text-wrap: nowrap;
     color: inherit;
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) .album-footer-info {

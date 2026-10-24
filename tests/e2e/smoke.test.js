@@ -310,7 +310,7 @@ test('the cd layout has a centred numbered tracklist and the album info below it
             return {
                 centred: Math.abs((li.left + li.right) / 2 - (info.left + info.right) / 2) < info.width * 0.12,
                 coverHidden: getComputedStyle(document.querySelector('.album-cover-wrapper')).display === 'none',
-                listAlign: getComputedStyle(document.querySelector('#track-list li')).justifyContent
+                listAlign: getComputedStyle(document.querySelector('#track-list li')).textAlign
             }
         })
         assert.ok(centred, 'the tracklist is centred')
@@ -1254,12 +1254,14 @@ test('gallery: the cover sits in a white mat, with the label below it and the tr
     } finally { await close() }
 })
 
-test('in the cd layouts a track title that wraps to two lines is centred', async () => {
+test('in the cd layouts a track title that wraps is centred, with the number next to it', async () => {
     for (const layout of ['cd', 'cd-blur']) {
         const { page, close } = await open(`?layout=${layout}#${LUX}`)
         try {
             await poster(page).title.getByText('LUX').waitFor()
             assert.equal(await page.locator('#track-list li').first().evaluate(li => getComputedStyle(li).textAlign), 'center', layout)
+            // the number is a box in front of the title, so that it stays next to the title when that wraps
+            assert.equal(await page.locator('#track-list li').first().evaluate(li => getComputedStyle(li, '::before').display), 'inline-block', layout)
         } finally { await close() }
     }
 })
