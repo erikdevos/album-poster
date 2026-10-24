@@ -8,6 +8,7 @@ import { readFile } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright-core'
+import { sortAlbums } from '../../scripting/wallList.js'
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url))
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json' }
@@ -73,6 +74,10 @@ async function mockNetwork(context) {
         }
 
         if (url.hostname === 'coverartarchive.org') {
+            // the thumbnails of the wall
+            if (path.endsWith('/front-250')) {
+                return route.fulfill({ status: 200, contentType: 'image/svg+xml', headers: CORS, body: COVER })
+            }
             const match = path.match(/\/release-group\/([^/]+)$/)
             if (match) {
                 return json(route, {
@@ -475,7 +480,8 @@ test('on a phone the title and all the controls share one row, with the search b
             const top = el => Math.round(el.getBoundingClientRect().top)
             return {
                 title: top(document.querySelector('.site-title')),
-                controls: [...document.querySelectorAll('.header-control')].map(top),
+                // the previous and next buttons are left out on a phone
+                controls: [...document.querySelectorAll('.header-control')].filter(el => el.offsetParent).map(top),
                 search: top(document.querySelector('.search'))
             }
         })
@@ -877,7 +883,7 @@ test('with colors=cover the poster gets the colours of the cover', async () => {
     } finally { await close() }
 })
 
-for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur']) {
+for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery']) {
     test(`on a phone the ${layout} poster fits the screen and nothing sticks out`, async () => {
         const { page, close } = await open(`?layout=${layout}#${LUX}`, { viewport: { width: 375, height: 812 } })
         try {
@@ -901,14 +907,20 @@ async function jsDelivrReachable() {
 }
 
 // Opens the album, picks the export options, downloads, and gives back the file name and bytes
-async function exportFile({ format, quality }) {
+async function exportFile({ format, quality, print = {} }) {
     const { page, close } = await open(`#${ABBEY}`, { acceptDownloads: true })
     try {
         await poster(page).title.getByText('Abbey Road').waitFor()
         await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
         await page.getByRole('button', { name: 'Export' }).click()
         await page.getByLabel('File type').selectOption(format)
-        await page.getByLabel('Quality').selectOption(quality)
+        if (format === 'png') await page.getByLabel('Quality').selectOption(quality)
+        // the print options of a PDF: { paper, orientation, margin, dpi, bleed, marks }
+        for (const [name, value] of Object.entries(print)) {
+            const field = { paper: '#print-paper', orientation: '#print-orientation', margin: '#print-margin', dpi: '#print-dpi' }[name]
+            if (field) await page.locator(field).selectOption(String(value))
+            else await page.locator(`#print-${name}`).setChecked(value)
+        }
         const [download] = await Promise.all([
             page.waitForEvent('download', { timeout: 60_000 }),
             page.getByRole('button', { name: 'Download' }).click()
@@ -951,14 +963,300 @@ test('the higher qualities make larger PNGs, and the page goes back to its own c
     assert.equal(high.cover, `https://images.test/front-${ABBEY}.svg`)
 })
 
-test('download PDF gives a one page PDF as large as the image at 300 dpi', async t => {
+test('download PDF gives an A4 page for a printer: a margin, and the dpi in the name', async t => {
     if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
 
-    const { filename, bytes } = await exportFile({ format: 'pdf', quality: 'standard' })
-    assert.equal(filename, 'The Beatles - Abbey Road.pdf')
+    const { filename, bytes } = await exportFile({ format: 'pdf', print: { paper: 'a4', margin: 10, dpi: 300 } })
+    assert.match(filename, /^The Beatles - Abbey Road \(A4, (29\d|30\d) dpi\)\.pdf$/)
     const text = Buffer.from(bytes).toString('latin1')
     assert.ok(text.startsWith('%PDF-1.4'))
-    assert.match(text, /\/MediaBox \[0 0 576\.00 \d+\.\d\d\]/) // 2400 / 300 * 72 = 576 points
-    assert.match(text, /\/Width 2400 /)
+    assert.match(text, /\/MediaBox \[0 0 595\.28 841\.89\]/) // A4 in points
+    assert.match(text, /\/TrimBox \[0\.00 0\.00 595\.28 841\.89\]/)
     assert.match(text, /\/Title <FEFF/)
+    // the picture has the pixels for 300 dpi: wider than 1500 and not more than the page holds at 300 dpi
+    const width = Number(text.match(/\/Width (\d+) /)[1])
+    assert.ok(width > 1500 && width <= 2480, `width ${width}`)
+})
+
+test('a PDF with bleed and crop marks has room around the trim, and the marks', async t => {
+    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+
+    const { bytes } = await exportFile({ format: 'pdf', print: { paper: 'a3', margin: 0, dpi: 150, bleed: true, marks: true } })
+    const text = Buffer.from(bytes).toString('latin1')
+    const pt = mm => (mm / 25.4 * 72).toFixed(2)
+    // A3 is 297 x 420 mm; 8 mm for the marks on every side
+    assert.match(text, new RegExp(`/MediaBox \\[0 0 ${pt(313)} ${pt(436)}\\]`))
+    assert.match(text, new RegExp(`/TrimBox \\[${pt(8)} ${pt(8)} ${pt(305)} ${pt(428)}\\]`))
+    assert.match(text, /0 0 0 1 K/)
+    assert.equal((text.match(/ l S/g) ?? []).length, 8)
+})
+
+test('a PDF named without options still makes the old page, as large as the image at 300 dpi', async t => {
+    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+
+    const { page, close } = await open(`#${ABBEY}`)
+    try {
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        const result = await page.evaluate(async () => {
+            const { renderPoster } = await import('/scripting/exportPoster.js')
+            const { blob, filename } = await renderPoster({ format: 'pdf', quality: 'standard' })
+            return { filename, text: await blob.text() }
+        })
+        assert.equal(result.filename, 'The Beatles - Abbey Road.pdf')
+        assert.match(result.text, /\/MediaBox \[0 0 576\.00 \d+\.\d\d\]/)
+    } finally { await close() }
+})
+
+test('the export panel shows pixels for a PNG and print options, with dpi, for a PDF', async () => {
+    const { page, close } = await open(`#${ABBEY}`)
+    try {
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        await page.getByRole('button', { name: 'Export' }).click()
+        assert.equal(await page.locator('#print-options').isHidden(), true)
+        assert.equal(await page.locator('#export-quality').isVisible(), true)
+
+        await page.getByLabel('File type').selectOption('pdf')
+        assert.equal(await page.locator('#print-options').isVisible(), true)
+        assert.equal(await page.locator('#export-quality').isHidden(), true)
+        assert.deepEqual(await page.locator('#print-dpi option').allTextContents(), ['150 dpi, draft', '300 dpi, print', '600 dpi, fine art'])
+        const paper = await page.locator('#print-paper option').allTextContents()
+        for (const name of ['A4', 'A3', '50 × 70 cm', 'Letter (8.5 × 11 in)']) assert.ok(paper.includes(name), name)
+
+        // the summary says what the file will be, and follows the options
+        const summary = page.locator('#print-summary')
+        await page.waitForFunction(() => document.getElementById('print-summary').textContent.includes('dpi'))
+        assert.match(await summary.textContent(), /^A4 portrait, poster \d+ × \d+ mm at 300 dpi, \d+ × \d+ px$/)
+        await page.locator('#print-paper').selectOption('a2')
+        await page.locator('#print-dpi').selectOption('150')
+        await page.locator('#print-bleed').check()
+        await page.locator('#print-marks').check()
+        assert.match(await summary.textContent(), /^A2 portrait.* at 150 dpi, \d+ × \d+ px, 3 mm bleed, crop marks$/)
+    } finally { await close() }
+})
+
+test('the print settings are remembered, and the print dialog gets that paper', async () => {
+    const { page, close } = await open(`#${ABBEY}`)
+    try {
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        await page.getByRole('button', { name: 'Export' }).click()
+        await page.getByLabel('File type').selectOption('pdf')
+        await page.locator('#print-paper').selectOption('a3')
+        await page.locator('#print-margin').selectOption('5')
+        await page.locator('#print-marks').check()
+
+        await page.reload()
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        assert.equal(await page.locator('#print-paper').inputValue(), 'a3')
+        assert.equal(await page.locator('#print-margin').inputValue(), '5')
+        assert.equal(await page.locator('#print-marks').isChecked(), true)
+
+        // window.print() is replaced, to see what the page asks the printer for
+        const css = await page.evaluate(async () => {
+            let seen = ''
+            window.print = () => { seen = [...document.querySelectorAll('head style')].map(style => style.textContent).join('\n') }
+            const { printPoster } = await import('/scripting/exportPoster.js')
+            const { printSettings } = await import('/scripting/exportPanel.js')
+            printPoster(printSettings())
+            return seen
+        })
+        assert.match(css, /@page \{ size: 297mm 420mm; margin: 5mm; \}/)
+    } finally { await close() }
+})
+
+// ---------- The wall and browsing ----------
+
+const curated = JSON.parse(await readFile(join(ROOT, 'data/albums.json'), 'utf8'))
+const byArtist = sortAlbums(curated, 'artist') // the same order as the page, which wallList.test.js checks
+
+test('the wall shows a cover for every album, and a count', async () => {
+    const { page, errors, close } = await open('wall/')
+    try {
+        await page.locator('.wall-tile').first().waitFor()
+        assert.equal(await page.locator('.wall-tile').count(), curated.length)
+        assert.equal((await page.locator('#wall-count').textContent()).trim(), `${curated.length} albums`)
+        // the default order is by artist
+        const first = await page.locator('.wall-tile').first().getAttribute('title')
+        assert.equal(first, `${byArtist[0].name} – ${byArtist[0].artist}`)
+        assert.equal(await page.locator('.wall-tile img').first().getAttribute('loading'), 'lazy')
+        assert.deepEqual(errors, [])
+    } finally { await close() }
+})
+
+test('filtering the wall narrows it down and updates the URL; clearing it brings everything back', async () => {
+    const { page, close } = await open('wall/')
+    try {
+        await page.locator('.wall-tile').first().waitFor()
+        await page.getByRole('searchbox', { name: 'Filter albums' }).fill('rosalia')
+        await page.waitForFunction(() => document.querySelectorAll('.wall-tile').length === 2)
+        assert.equal(new URL(page.url()).searchParams.get('q'), 'rosalia')
+        assert.match(await page.locator('#wall-count').textContent(), /^2 of \d+ albums$/)
+
+        await page.getByRole('searchbox', { name: 'Filter albums' }).fill('qqqqzzzz')
+        await page.getByText('No albums match this filter.').waitFor()
+
+        await page.getByRole('searchbox', { name: 'Filter albums' }).fill('')
+        await page.waitForFunction(n => document.querySelectorAll('.wall-tile').length === n, curated.length)
+        assert.equal(new URL(page.url()).searchParams.has('q'), false)
+    } finally { await close() }
+})
+
+test('the wall can be grouped by artist, and a click on an artist filters on that artist', async () => {
+    const { page, close } = await open('wall/?group=artist&sort=artist')
+    try {
+        await page.locator('.wall-group').first().waitFor()
+        const artists = new Set(curated.map(album => album.artist))
+        assert.equal(await page.locator('.wall-group').count(), artists.size)
+        assert.equal(await page.locator('#wall-group').inputValue(), 'artist')
+
+        await page.getByRole('button', { name: 'Tool', exact: true }).click()
+        await page.waitForFunction(() => document.querySelectorAll('.wall-group').length === 1)
+        assert.equal(await page.getByRole('searchbox', { name: 'Filter albums' }).inputValue(), 'Tool')
+    } finally { await close() }
+})
+
+test('the wall can be sorted, and the cover size changes the grid', async () => {
+    const { page, close } = await open('wall/')
+    try {
+        await page.locator('.wall-tile').first().waitFor()
+        await page.locator('#wall-sort').selectOption('added')
+        const newest = curated.at(-1)
+        await page.waitForFunction(title => document.querySelector('.wall-tile')?.title === title, `${newest.name} – ${newest.artist}`)
+        assert.equal(new URL(page.url()).searchParams.get('sort'), 'added')
+
+        const column = () => page.evaluate(() => document.querySelector('.wall-tile').getBoundingClientRect().width)
+        const before = await column()
+        await page.locator('#wall-size').fill('20')
+        await page.waitForFunction(old => document.querySelector('.wall-tile').getBoundingClientRect().width > old, before)
+    } finally { await close() }
+})
+
+test('a cover on the wall opens that poster, with the layout of the wall page kept; the wall link goes back', async () => {
+    const { page, close } = await open('wall/?layout=cd')
+    try {
+        await page.locator('.wall-tile').first().waitFor()
+        await page.getByRole('searchbox', { name: 'Filter albums' }).fill('rosalia lux')
+        await page.locator('.wall-tile').first().click()
+
+        await poster(page).title.getByText('LUX').waitFor()
+        const url = new URL(page.url())
+        assert.equal(url.pathname, '/')
+        assert.equal(url.hash, `#${LUX}`)
+        assert.equal(url.searchParams.get('layout'), 'cd')
+
+        await page.getByRole('link', { name: 'Wall: all albums' }).click()
+        await page.locator('.wall-tile').first().waitFor()
+        assert.equal(new URL(page.url()).pathname, '/wall/')
+        assert.equal(new URL(page.url()).searchParams.get('layout'), 'cd')
+    } finally { await close() }
+})
+
+test('previous and next go through the list by artist, with buttons and arrow keys', async () => {
+    const start = byArtist[10]
+    const { page, close } = await open(`#${start.id}`)
+    try {
+        // the fake MusicBrainz names an unknown album after its id
+        await poster(page).title.getByText(`Album ${start.id.slice(0, 8)}`).waitFor()
+        const wait = id => page.waitForFunction(id => location.hash === `#${id}`, id)
+
+        await page.getByRole('button', { name: 'Next album' }).click()
+        await wait(byArtist[11].id)
+        await page.keyboard.press('ArrowRight')
+        await wait(byArtist[12].id)
+        await page.keyboard.press('ArrowLeft')
+        await wait(byArtist[11].id)
+        await page.getByRole('button', { name: 'Previous album' }).click()
+        await wait(byArtist[10].id)
+    } finally { await close() }
+})
+
+test('the arrow keys do not browse while typing in the search box, and an album outside the list has no neighbours', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const box = page.getByRole('combobox', { name: 'Search albums' })
+        await box.fill('abc')
+        await box.press('ArrowLeft')
+        assert.equal(await currentId(page), LUX)
+
+        await page.evaluate(() => { location.hash = '99999999-2222-4333-8444-555555555555' })
+        await page.waitForFunction(() => document.getElementById('prev-button').disabled)
+        assert.equal(await page.locator('#next-button').isDisabled(), true)
+    } finally { await close() }
+})
+
+// ---------- Festival, receipt and gallery ----------
+
+test('festival, receipt and gallery are in the layout menu', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const options = await page.locator('#layout-select option').allTextContents()
+        for (const name of ['Festival', 'Receipt', 'Gallery']) assert.ok(options.includes(name), `${name} is missing`)
+        for (const layout of ['festival', 'receipt', 'gallery']) {
+            await page.getByLabel('Poster layout').selectOption(layout)
+            assert.equal(await page.locator('#album-container').getAttribute('data-layout'), layout)
+        }
+    } finally { await close() }
+})
+
+test('festival: the artist is the biggest text and the line-up gets smaller down the list', async () => {
+    const { page, close } = await open(`?layout=festival#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const sizes = await page.evaluate(() => ({
+            artist: parseFloat(getComputedStyle(document.querySelector('#album-artist')).fontSize),
+            title: parseFloat(getComputedStyle(document.querySelector('#album-name')).fontSize),
+            tracks: [...document.querySelectorAll('#track-list li')].map(li => parseFloat(getComputedStyle(li).fontSize)),
+            bulletAfterFirst: getComputedStyle(document.querySelector('#track-list li'), '::after').content,
+            bulletAfterLast: getComputedStyle(document.querySelector('#track-list li:last-child'), '::after').content
+        }))
+        assert.ok(sizes.artist > sizes.title, 'the artist is bigger than the title')
+        assert.ok(sizes.title > sizes.tracks[0] * 0.8, 'the title is not smaller than the first track, about')
+        assert.ok(sizes.tracks[0] >= sizes.tracks.at(-1), 'the first track is not smaller than the last')
+        assert.equal(sizes.bulletAfterFirst, '"•"')
+        assert.notEqual(sizes.bulletAfterLast, '"•"')
+    } finally { await close() }
+})
+
+test('receipt: a narrow paper strip in monospace, with a track total, and the barcode of the release', async () => {
+    const { page, close } = await open(`?layout=receipt#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const { width, parent, font, total, background } = await page.evaluate(() => {
+            const info = document.getElementById('album-info')
+            return {
+                width: info.getBoundingClientRect().width,
+                parent: document.getElementById('album-container').getBoundingClientRect().width,
+                font: getComputedStyle(info).fontFamily,
+                total: getComputedStyle(document.getElementById('track-list'), '::after').content,
+                background: getComputedStyle(info).backgroundColor
+            }
+        })
+        assert.ok(width < parent * 0.7, 'narrower than the poster area')
+        assert.match(font, /mono|Courier/i)
+        assert.equal(total, '"Tracks " counter(track)') // the browser fills in the count when it draws
+        assert.equal(background, 'rgb(253, 252, 247)') // paper, in the dark theme too
+        await page.locator('#album-barcode svg').waitFor()
+    } finally { await close() }
+})
+
+test('gallery: the cover sits in a white mat, with the label below it and the tracklist on the right', async () => {
+    const { page, close } = await open(`?layout=gallery#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const box = await page.evaluate(() => {
+            const rect = selector => document.querySelector(selector).getBoundingClientRect()
+            return {
+                mat: getComputedStyle(document.querySelector('.album-cover-wrapper')).backgroundColor,
+                cover: rect('.album-cover-wrapper'),
+                artist: rect('#album-artist'),
+                name: rect('#album-name'),
+                tracks: rect('#track-list')
+            }
+        })
+        assert.equal(box.mat, 'rgb(255, 255, 255)')
+        assert.ok(box.artist.top >= box.cover.bottom, 'the label is below the picture')
+        assert.ok(box.name.top > box.artist.top, 'the title is below the artist')
+        assert.ok(box.tracks.left > box.name.right, 'the tracklist is to the right of the label')
+    } finally { await close() }
 })

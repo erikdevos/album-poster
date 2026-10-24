@@ -67,13 +67,59 @@ export function setPngDpi(png, dpi) {
 // ---------- PDF: one page that is one JPEG ----------
 
 const POINTS_PER_INCH = 72
+const MM_PER_INCH = 25.4
+const points = mm => mm / MM_PER_INCH * POINTS_PER_INCH
+const fixed = value => value.toFixed(2)
 
-// A PDF with a single page, as large as the image is at `dpi`. The JPEG has to be an ordinary
-// 8 bit colour JPEG, which is what a browser canvas produces.
-export function buildPdf({ jpeg, width, height, dpi, title = '' }) {
-    const pageWidth = (width / dpi * POINTS_PER_INCH).toFixed(2)
-    const pageHeight = (height / dpi * POINTS_PER_INCH).toFixed(2)
-    const content = `q ${pageWidth} 0 0 ${pageHeight} 0 0 cm /Im0 Do Q`
+// The drawing instructions of a print page (see planPrint in printPlan.js): the background colour
+// over the trim and the bleed, the picture, and the crop marks in the space around it
+function printContent({ plan, background }) {
+    const { image, trim, bleed, slug, marks, markOffset, markLength } = plan
+    const [r, g, b] = background.map(channel => (channel / 255).toFixed(3))
+
+    const lines = [
+        'q',
+        `${r} ${g} ${b} rg`,
+        `${fixed(points(slug - bleed))} ${fixed(points(slug - bleed))} ${fixed(points(trim.width + 2 * bleed))} ${fixed(points(trim.height + 2 * bleed))} re f`,
+        'Q',
+        `q ${fixed(points(image.width))} 0 0 ${fixed(points(image.height))} ${fixed(points(image.x))} ${fixed(points(image.y))} cm /Im0 Do Q`
+    ]
+
+    if (marks) {
+        // black in the CMYK of the printer, a hairline; two lines in every corner, outside the bleed
+        const left = slug, right = slug + trim.width, bottom = slug, top = slug + trim.height
+        const strokes = []
+        for (const [x, directionX] of [[left, -1], [right, 1]]) {
+            for (const [y, directionY] of [[bottom, -1], [top, 1]]) {
+                const from = markOffset, to = markOffset + markLength
+                strokes.push(`${fixed(points(x + directionX * from))} ${fixed(points(y))} m ${fixed(points(x + directionX * to))} ${fixed(points(y))} l S`)
+                strokes.push(`${fixed(points(x))} ${fixed(points(y + directionY * from))} m ${fixed(points(x))} ${fixed(points(y + directionY * to))} l S`)
+            }
+        }
+        lines.push('q 0 0 0 1 K 0.25 w', ...strokes, 'Q')
+    }
+
+    return lines.join('\n')
+}
+
+// A PDF with a single page that is one JPEG. The JPEG has to be an ordinary 8 bit colour JPEG,
+// which is what a browser canvas produces. Two ways to use it:
+//   { jpeg, width, height, dpi }          a page as large as the image is at `dpi`
+//   { jpeg, width, height, plan, background }
+//        a print page: `plan` from planPrint (paper, margin, bleed, crop marks) and the background
+//        colour [r, g, b] of the page. The TrimBox and BleedBox tell a printer where to cut.
+export function buildPdf({ jpeg, width, height, dpi, plan = null, background = [255, 255, 255], title = '' }) {
+    const pageWidth = fixed(plan ? points(plan.media.width) : width / dpi * POINTS_PER_INCH)
+    const pageHeight = fixed(plan ? points(plan.media.height) : height / dpi * POINTS_PER_INCH)
+    const content = plan
+        ? printContent({ plan, background })
+        : `q ${pageWidth} 0 0 ${pageHeight} 0 0 cm /Im0 Do Q`
+
+    // Where the paper is cut and how far the picture goes beyond that
+    const boxes = plan
+        ? ` /TrimBox [${fixed(points(plan.slug))} ${fixed(points(plan.slug))} ${fixed(points(plan.slug + plan.trim.width))} ${fixed(points(plan.slug + plan.trim.height))}]` +
+          ` /BleedBox [${fixed(points(plan.slug - plan.bleed))} ${fixed(points(plan.slug - plan.bleed))} ${fixed(points(plan.slug + plan.trim.width + plan.bleed))} ${fixed(points(plan.slug + plan.trim.height + plan.bleed))}]`
+        : ''
 
     // A title in UTF-16BE (a string's code units are UTF-16), so that accents and other letters survive
     const titleHex = 'FEFF' + Array.from({ length: title.length }, (_, i) =>
@@ -82,7 +128,7 @@ export function buildPdf({ jpeg, width, height, dpi, title = '' }) {
     const objects = [
         encoder.encode('<< /Type /Catalog /Pages 2 0 R >>'),
         encoder.encode('<< /Type /Pages /Kids [3 0 R] /Count 1 >>'),
-        encoder.encode(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] ` +
+        encoder.encode(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}]${boxes} ` +
             '/Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>'),
         concat([
             encoder.encode(`<< /Type /XObject /Subtype /Image /Width ${width} /Height ${height} ` +

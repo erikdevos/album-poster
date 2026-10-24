@@ -39,12 +39,30 @@
                 <option value="blur">Blur</option>
                 <option value="cd">CD</option>
                 <option value="cd-blur">CD blur</option>
+                <option value="festival">Festival</option>
+                <option value="receipt">Receipt</option>
+                <option value="gallery">Gallery</option>
             </select>
+            <button id="prev-button" class="header-control icon-button browse-button" type="button" title="Previous album (left arrow)" aria-label="Previous album">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button id="next-button" class="header-control icon-button browse-button" type="button" title="Next album (right arrow)" aria-label="Next album">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
             <button id="shuffle-button" class="header-control icon-button" type="button" title="Random album" aria-label="Random album">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                     <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
+            <a id="wall-link" class="header-control icon-button" href="wall/" title="Wall: all albums" aria-label="Wall: all albums">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+            </a>
             <div class="header-menu">
                 <button id="display-toggle" class="header-control icon-button" type="button" title="Display and slideshow" aria-label="Display and slideshow"
                         aria-haspopup="dialog" aria-expanded="false" aria-controls="display-panel">
@@ -87,13 +105,44 @@
                             <option value="pdf">PDF</option>
                         </select>
                     </label>
-                    <label class="panel-field">Quality
+                    <label class="panel-field" id="export-quality-field">Quality
                         <select id="export-quality">
                             <option value="standard">Standard, 2400 px</option>
                             <option value="high">High, 4000 px</option>
                             <option value="maximum">Maximum, 6000 px</option>
                         </select>
                     </label>
+                    <!-- Only for a PDF: the page for a printer, in print units -->
+                    <div id="print-options" class="print-options" hidden>
+                        <label class="panel-field">Paper size
+                            <select id="print-paper"><!-- Loaded through JS --></select>
+                        </label>
+                        <label class="panel-field">Orientation
+                            <select id="print-orientation">
+                                <option value="auto">Automatic</option>
+                                <option value="portrait">Portrait</option>
+                                <option value="landscape">Landscape</option>
+                            </select>
+                        </label>
+                        <label class="panel-field">Margin
+                            <select id="print-margin">
+                                <option value="0">No margin</option>
+                                <option value="5">5 mm</option>
+                                <option value="10">10 mm</option>
+                                <option value="20">20 mm</option>
+                            </select>
+                        </label>
+                        <label class="panel-field">Print dpi
+                            <select id="print-dpi">
+                                <option value="150">150 dpi, draft</option>
+                                <option value="300">300 dpi, print</option>
+                                <option value="600">600 dpi, fine art</option>
+                            </select>
+                        </label>
+                        <label class="panel-check"><input id="print-bleed" type="checkbox"> 3 mm bleed</label>
+                        <label class="panel-check"><input id="print-marks" type="checkbox"> Crop marks</label>
+                        <p id="print-summary" class="panel-note" role="status"></p>
+                    </div>
                     <button id="download-button" class="panel-primary" type="button">Download</button>
                     <div class="export-more">
                         <button id="print-button" type="button">Print</button>

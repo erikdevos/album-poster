@@ -734,6 +734,386 @@ ol.track-list li::before {
     background-color: #1c1c1e;
 }
 
+/* Festival: a gig poster. The artist is the headliner and the tracklist is the line-up, the first
+   tracks biggest. Takes the cover colours (?colors=cover) like the classic layout. */
+#album-container[data-layout="festival"] {
+    --poster-ratio: 1.5;
+}
+#album-container[data-layout="festival"] .album-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6cqi 6cqi 5cqi;
+    text-align: center;
+}
+#album-container[data-layout="festival"] .album-artist {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 3.5cqi;
+    margin: 0 0 3.5cqi;
+    border-bottom-width: max(3px, 1cqi);
+}
+#album-container[data-layout="festival"] .album-artist h3 {
+    order: 1;
+    max-width: none;
+    margin: 0;
+    font-size: calc(10cqi * var(--fit-artist));
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 0.92;
+    text-align: center;
+}
+#album-container[data-layout="festival"] .album-colors {
+    order: 2;
+    justify-content: center;
+    margin-top: 3cqi;
+}
+#album-container[data-layout="festival"] .album-name {
+    order: 2;
+    margin: 0 0 4.5cqi;
+    padding: 0;
+    border: none;
+    font-size: calc(4.2cqi * min(var(--fit-title), var(--fit-word)));
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    line-height: 1.2;
+}
+#album-container[data-layout="festival"] .album-cover-wrapper {
+    order: 3;
+    width: 74%;
+    margin: 0 0 5cqi;
+    box-shadow: 1.5cqi 1.5cqi 0 var(--poster-accent);
+}
+#album-container[data-layout="festival"] .album-tracklist-genre-wrapper {
+    order: 4;
+    width: 100%;
+    border: none;
+}
+#album-container[data-layout="festival"] .album-tracklist-genre-wrapper .right {
+    display: none;
+}
+#album-container[data-layout="festival"] .album-tracklist-genre-wrapper .left {
+    flex: 1;
+}
+#album-container[data-layout="festival"] ol.track-list {
+    --lineup: min(1, calc(22 / var(--track-count))); /* a long tracklist gets smaller type */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.35em 0;
+    padding-bottom: 5cqi;
+    font-size: max(9px, calc(2.1cqi * var(--lineup)));
+    line-height: 1.1;
+    column-count: auto;
+}
+#album-container[data-layout="festival"] ol.track-list li {
+    display: block;
+    margin: 0;
+    font-weight: 800;
+    break-inside: auto;
+}
+#album-container[data-layout="festival"] ol.track-list li::before {
+    content: none;
+}
+/* the dot after a track, except the last */
+#album-container[data-layout="festival"] ol.track-list li:not(:last-child)::after {
+    content: "•";
+    margin-inline: 0.55em;
+    font-weight: 400;
+    color: var(--poster-accent);
+}
+#album-container[data-layout="festival"] ol.track-list li:nth-child(-n+2) {
+    font-size: max(12px, calc(4.8cqi * var(--lineup)));
+    font-weight: 900;
+}
+#album-container[data-layout="festival"] ol.track-list li:nth-child(n+3):nth-child(-n+6) {
+    font-size: max(10px, calc(3.5cqi * var(--lineup)));
+}
+#album-container[data-layout="festival"] ol.track-list li:nth-child(n+7):nth-child(-n+12) {
+    font-size: max(9px, calc(2.8cqi * var(--lineup)));
+}
+#album-container[data-layout="festival"] .album-footer-info {
+    order: 5;
+    justify-content: center;
+    width: 100%;
+    padding-top: 3cqi;
+    border-top: max(3px, 1cqi) solid currentColor;
+    letter-spacing: 0.08em;
+}
+#album-container[data-layout="festival"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
+    content: "•";
+}
+
+/* Receipt: a till receipt in monospace on warm paper, with torn edges. The tracks are the items,
+   there is a track total, and the barcode of the release at the bottom. Fixed colours, like a real
+   receipt, so the cover colours option does not apply here. */
+#album-container[data-layout="receipt"] {
+    --poster-ratio: 1.75;
+}
+#album-container[data-layout="receipt"] .album-info-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 64cqi);
+    margin-inline: auto;
+    padding: 7cqi 4.5cqi;
+    border: none;
+    color: #1b1b1b;
+    background-color: #fdfcf7;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+    font-size: max(9px, 2.1cqi);
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+/* The torn edges: the page background in a row of triangles, over the paper */
+#album-container[data-layout="receipt"] .album-info-container::before,
+#album-container[data-layout="receipt"] .album-info-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2cqi;
+    background-image:
+        linear-gradient(135deg, var(--bg) 25%, transparent 25%),
+        linear-gradient(225deg, var(--bg) 25%, transparent 25%);
+    background-size: 2cqi 2cqi;
+    background-position: 0 0;
+}
+#album-container[data-layout="receipt"] .album-info-container::before {
+    top: 0;
+}
+#album-container[data-layout="receipt"] .album-info-container::after {
+    bottom: 0;
+    transform: scaleY(-1);
+}
+#album-container[data-layout="receipt"] .album-cover-wrapper {
+    order: 1;
+    width: 46%;
+    margin: 0 auto 4cqi;
+    background-color: #e9e7df;
+    /* thermal paper prints in black and white */
+    filter: grayscale(1) contrast(1.25);
+}
+#album-container[data-layout="receipt"] .album-artist {
+    order: 2;
+    display: block;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+#album-container[data-layout="receipt"] .album-artist h3 {
+    max-width: none;
+    margin: 0;
+    font-family: inherit;
+    font-size: calc(3.6cqi * var(--fit-artist));
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    text-align: center;
+}
+#album-container[data-layout="receipt"] .album-colors {
+    display: none;
+}
+#album-container[data-layout="receipt"] .album-name {
+    order: 3;
+    margin: 1.2cqi 0 3cqi;
+    padding: 0 0 3cqi;
+    border-bottom: max(1.5px, 0.3cqi) dashed currentColor;
+    font-family: inherit;
+    font-size: calc(2.6cqi * min(var(--fit-title), var(--fit-word)));
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-align: center;
+}
+#album-container[data-layout="receipt"] .album-tracklist-genre-wrapper {
+    order: 4;
+    border: none;
+}
+#album-container[data-layout="receipt"] .album-tracklist-genre-wrapper .right {
+    display: none;
+}
+#album-container[data-layout="receipt"] .album-tracklist-genre-wrapper .left {
+    flex: 1;
+}
+#album-container[data-layout="receipt"] ol.track-list {
+    column-count: 1;
+    padding-bottom: 0;
+    font-size: max(9px, calc(2.1cqi * min(1, 20 / var(--track-count))));
+    line-height: 1.3;
+}
+#album-container[data-layout="receipt"] ol.track-list li {
+    grid-template-columns: 2.6em 1fr;
+    font-weight: 400;
+}
+#album-container[data-layout="receipt"] ol.track-list li::before {
+    font-weight: 400;
+    color: inherit;
+}
+/* the counter has counted every track by now */
+#album-container[data-layout="receipt"] ol.track-list::after {
+    content: "Tracks " counter(track);
+    display: block;
+    margin: 3cqi 0 0;
+    padding: 2.5cqi 0 3cqi;
+    border-top: max(1.5px, 0.3cqi) dashed currentColor;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+#album-container[data-layout="receipt"] .album-footer-info {
+    order: 5;
+    flex-direction: column;
+    gap: 0.4cqi;
+    padding: 0 0 3cqi;
+    font-size: max(9px, 1.9cqi);
+    font-weight: 400;
+    text-align: center;
+}
+#album-container[data-layout="receipt"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
+    content: none;
+}
+#album-container[data-layout="receipt"] .album-footer-info::after {
+    content: "*** Thank you for listening ***";
+    margin-top: 2.5cqi;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+#album-container[data-layout="receipt"] .album-barcode:not(.hidden) {
+    order: 6;
+    display: block;
+    width: 62%;
+    margin: 0 auto;
+    color: #000;
+    line-height: 0;
+}
+
+/* Gallery: a framed cover on the wall, with the label next to it as in a museum. */
+#album-container[data-layout="gallery"] {
+    --poster-ratio: 1.3;
+}
+#album-container[data-layout="gallery"] .album-info-container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto auto auto 1fr; /* the tracklist spans the three label rows; the last takes its spare height */
+    column-gap: 3cqi;
+    align-content: start;
+    padding: 9cqi;
+    border: none;
+    color: #1f1e1c;
+    background-color: #eeece6;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+#album-container[data-layout="gallery"] .album-cover-wrapper {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    margin: 0 0 7cqi;
+    padding: 5.5cqi; /* the mat around the picture */
+    background-color: #fff;
+    box-shadow: 0 0 0 max(1px, 0.25cqi) rgb(0 0 0 / 0.2), 0 2cqi 6cqi rgb(0 0 0 / 0.3);
+}
+#album-container[data-layout="gallery"] .album-cover-wrapper img {
+    box-shadow: 0 0 0 max(1px, 0.2cqi) rgb(0 0 0 / 0.25);
+}
+#album-container[data-layout="gallery"] .album-artist {
+    grid-row: 2;
+    grid-column: 1 / 7;
+    display: block;
+    padding: 0;
+    margin: 0 0 1.5cqi;
+    border: none;
+}
+#album-container[data-layout="gallery"] .album-artist h3 {
+    max-width: none;
+    margin: 0;
+    font-family: inherit;
+    font-size: calc(2.3cqi * var(--fit-artist));
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-align: left;
+}
+#album-container[data-layout="gallery"] .album-colors {
+    display: none;
+}
+#album-container[data-layout="gallery"] .album-name {
+    grid-row: 3;
+    grid-column: 1 / 7;
+    margin: 0 0 3cqi;
+    padding: 0;
+    border: none;
+    font-family: inherit;
+    font-size: calc(4.6cqi * min(var(--fit-title), var(--fit-word)));
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: none;
+}
+#album-container[data-layout="gallery"] .album-footer-info {
+    grid-row: 4;
+    grid-column: 1 / 7;
+    flex-direction: column;
+    align-self: start;
+    gap: 0.6cqi;
+    font-size: max(9px, 1.9cqi);
+    font-weight: 400;
+    text-transform: none;
+    opacity: 0.75;
+}
+#album-container[data-layout="gallery"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
+    content: none;
+}
+#album-container[data-layout="gallery"] .album-tracklist-genre-wrapper {
+    grid-row: 2 / span 3;
+    grid-column: 8 / -1;
+    padding-left: 3cqi;
+    border: none;
+    border-left: max(1px, 0.2cqi) solid rgb(0 0 0 / 0.25);
+}
+#album-container[data-layout="gallery"] .album-tracklist-genre-wrapper .right {
+    display: none;
+}
+#album-container[data-layout="gallery"] .album-tracklist-genre-wrapper .left {
+    flex: 1;
+}
+#album-container[data-layout="gallery"] ol.track-list {
+    column-count: 1;
+    padding-bottom: 0;
+    font-size: max(9px, calc(clamp(10px, 1.9cqi, 0.95rem) * min(1, 18 / var(--track-count))));
+    line-height: 1.35;
+    text-transform: none;
+}
+#album-container[data-layout="gallery"] ol.track-list li {
+    font-weight: 400;
+}
+#album-container[data-layout="gallery"] ol.track-list li::before {
+    font-weight: 400;
+    opacity: 0.55;
+    color: inherit;
+}
+
+/* Narrow gallery poster: the label goes below the picture and the tracklist below that */
+@container poster (max-width: 420px) {
+    #album-container[data-layout="gallery"] .album-info-container {
+        padding: 6cqi;
+    }
+    #album-container[data-layout="gallery"] .album-artist,
+    #album-container[data-layout="gallery"] .album-name,
+    #album-container[data-layout="gallery"] .album-footer-info {
+        grid-column: 1 / -1;
+    }
+    #album-container[data-layout="gallery"] .album-tracklist-genre-wrapper {
+        grid-row: 5;
+        grid-column: 1 / -1;
+        margin-top: 4cqi;
+        padding: 3cqi 0 0;
+        border-left: none;
+        border-top: max(1px, 0.2cqi) solid rgb(0 0 0 / 0.25);
+    }
+}
+
 /* ---------- Header: all the options live here ---------- */
 
 .site-header {
@@ -876,6 +1256,13 @@ ol.track-list li::before {
     width: 2.4rem;
     padding: 0;
 }
+a.header-control {
+    text-decoration: none;
+}
+.browse-button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
 /* The sun while dark is on (click for light), the moon while light is on */
 .theme-toggle svg {
     display: none;
@@ -933,6 +1320,26 @@ ol.track-list li::before {
 .panel-field select option {
     background-color: var(--bg);
     color: var(--fg);
+}
+.print-options {
+    display: grid;
+    gap: 0.6rem;
+}
+.print-options[hidden],
+.panel-field[hidden] {
+    display: none;
+}
+.panel-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+.panel-note {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    opacity: 0.75;
 }
 .panel-primary {
     height: 2.4rem;
@@ -1008,6 +1415,10 @@ ol.track-list li::before {
     .search {
         order: 3;
         flex-basis: 100%;
+    }
+    /* No room on a phone; the wall and the arrow keys remain */
+    .browse-button {
+        display: none;
     }
     #search-results {
         right: 0;
@@ -1359,5 +1770,12 @@ footer .container {
     #album-container[data-layout="cd"],
     #album-container[data-layout="cd-blur"] {
         width: 186mm;
+    }
+    #album-container[data-layout="festival"],
+    #album-container[data-layout="gallery"] {
+        width: 160mm;
+    }
+    #album-container[data-layout="receipt"] {
+        width: 170mm;
     }
 }

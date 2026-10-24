@@ -19,16 +19,20 @@ export function canvasLimits(userAgent = '') {
     }
 }
 
-// The scale to draw the poster (as it is on screen) at, for the wanted quality, within the limits
-export function planExport({ width, height, quality, limits }) {
-    const wanted = QUALITIES[quality] ?? QUALITIES.standard
-    const wantedRatio = wanted / width
-    const maxRatio = Math.min(
+// The largest scale the poster can be drawn at, within the limits of the browser
+export function maxPixelRatio({ width, height, limits }) {
+    return Math.min(
         limits.maxSide / width,
         limits.maxSide / height,
         Math.sqrt(limits.maxArea / (width * height))
     )
-    const pixelRatio = Math.min(wantedRatio, maxRatio)
+}
+
+// The scale to draw the poster (as it is on screen) at, for the wanted quality, within the limits
+export function planExport({ width, height, quality, limits }) {
+    const wanted = QUALITIES[quality] ?? QUALITIES.standard
+    const wantedRatio = wanted / width
+    const pixelRatio = Math.min(wantedRatio, maxPixelRatio({ width, height, limits }))
 
     return {
         pixelRatio,

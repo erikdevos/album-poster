@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Album list – admin</title>
+        <link rel="icon" href="data:,">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/admin.css">
+        <script>
+            try {
+                var theme = new URLSearchParams(location.search).get('theme') || localStorage.getItem('album-poster.theme');
+                if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+            } catch (error) {}
+        </script>
+    </head>
+    <body>
+        <header class="site-header admin-header">
+            <h1 class="site-title">Album list</h1>
+            <p id="admin-status" class="admin-status" role="status" aria-live="polite"></p>
+            <button id="admin-revert" class="header-control" type="button" disabled>Revert</button>
+            <button id="admin-save" class="header-control admin-save" type="button" disabled>Save</button>
+            <a class="header-control" href="../wall/">Wall</a>
+            <button id="theme-toggle" class="header-control theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode">
+                <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </header>
+        <main class="admin">
+            <section class="admin-section" aria-labelledby="add-heading">
+                <h2 id="add-heading">Add albums</h2>
+                <form id="add-form" class="admin-search" role="search">
+                    <input id="add-input" type="search" aria-label="Search MusicBrainz or paste an id"
+                           placeholder="Search album or artist, or paste a MusicBrainz id or link"
+                           autocomplete="off" spellcheck="false">
+                    <button class="header-control" type="submit">Search</button>
+                </form>
+                <p id="add-message" class="admin-note" role="status" aria-live="polite"></p>
+                <ul id="add-results" class="admin-rows" aria-label="Search results"></ul>
+            </section>
+
+            <section class="admin-section" aria-labelledby="list-heading">
+                <h2 id="list-heading">In the list <span id="list-count" class="admin-count"></span></h2>
+                <div class="admin-search">
+                    <input id="list-filter" type="search" aria-label="Filter the list" placeholder="Filter the list"
+                           autocomplete="off" spellcheck="false">
+                </div>
+                <div id="removed" class="admin-removed" hidden>
+                    <h3>Removed, not saved yet</h3>
+                    <ul id="removed-rows" class="admin-rows"></ul>
+                </div>
+                <ul id="list-rows" class="admin-rows" aria-label="Albums in the list"></ul>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                Changes go to <code>data/albums.json</code> when you press Save. Then run <code>npm test</code> and commit the file.
+                Album data by <a href="https://musicbrainz.org/">MusicBrainz</a>, cover art by the <a href="https://coverartarchive.org/">Cover Art Archive</a>.
+            </div>
+        </footer>
+        <script type="module" src="../scripting/admin.js"></script>
+    </body>
+</html>

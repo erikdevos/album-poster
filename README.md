@@ -24,7 +24,7 @@ npm run test:e2e    # browser tests
 
 ## Deploy
 
-`.github/workflows/ci.yml` runs both test suites on every pull request and on every push to a branch other than `main`. `.github/workflows/pages.yml` runs them on `main` and, when they pass, publishes `index.html`, `scripting`, `styles` and `data` to GitHub Pages. For that to work, set **Settings > Pages > Source** to **GitHub Actions** once.
+`.github/workflows/ci.yml` runs both test suites on every pull request and on every push to a branch other than `main`. `.github/workflows/pages.yml` runs them on `main` and, when they pass, publishes `index.html`, `wall`, `scripting`, `styles` and `data` to GitHub Pages. For that to work, set **Settings > Pages > Source** to **GitHub Actions** once.
 
 ## Data
 
@@ -34,9 +34,25 @@ All data access sits behind two functions in `scripting/source.js`: `searchAlbum
 
 `data/albums.json` is the curated list: `id` is the MusicBrainz release-group id, `audiodbId` the id the app used before, so old links keep working. `scripts/migrate-albums.mjs` was used for the one-off conversion.
 
+## Managing the list (local admin)
+
+`data/albums.json` can be edited by hand, but there is also a page for it that runs on this computer only:
+
+```
+npm run admin
+```
+
+Then open http://localhost:8001/admin/ (`PORT=9000 npm run admin` for another port). The page shows the list, newest first, with covers, and has:
+
+- **Search:** the same MusicBrainz search as the app, or paste a MusicBrainz id or a link to a release group. Every result shows its cover, and a result without a cover gets a red "No cover" warning (such an album has no colours on the poster and an empty square on the wall). Add puts the album at the end of the list, which is where the newest albums are. An album that is already in the list cannot be added twice.
+- **Edit and remove:** Edit changes the name and the artist (what the wall and the search show); Remove can be undone until you save. New and renamed albums are marked, and the top shows what is not saved yet ("Not saved: 2 added, 1 removed"). Revert goes back to the file.
+- **Save** writes `data/albums.json` (two spaces, fields in a fixed order, a newline at the end), after which you run `npm test` and commit the file. Nothing is written before Save.
+
+The server (`scripts/admin.mjs`, no dependencies) listens on 127.0.0.1 only, serves only `admin`, `scripting`, `styles` and `data`, refuses a request with another `Host` (DNS rebinding) and a write that does not come from its own page (`Origin`) as JSON, and validates the list before writing (`scripting/albumData.js`: a valid MusicBrainz id, a name and an artist, no doubles). It writes to a temporary file and moves it over the list, so a crash cannot leave half a file. The admin is not part of the site on GitHub Pages: `pages.yml` does not copy `admin` or `scripts`.
+
 ## Search
 
-The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu and four round icon buttons: random album, display, export and light/dark. The buttons show only an icon; each has a name (`aria-label`) and the same text as a tooltip (`title`) for screen readers and for hovering. The search box is short; its list of results is wider than the box. On a phone the box gets its own row. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
+The header has a search box (an ARIA combobox: arrow keys, Enter, Escape). Next to it are the layout menu and round icon buttons: previous and next album, random album, the wall, display, export and light/dark. The buttons show only an icon; each has a name (`aria-label`) and the same text as a tooltip (`title`) for screen readers and for hovering. The search box is short; its list of results is wider than the box. On a phone the box gets its own row. Empty, the box suggests the albums you viewed last (kept in this browser only) and the curated list.
 
 Searching goes through MusicBrainz (`searchAlbums` in `scripting/sources/musicbrainz.js`):
 
@@ -61,6 +77,17 @@ For a screen that only shows the poster. Everything can be set in the URL, so a 
 The slideshow starts with the album in the URL and then shows a new one every interval. The next album is fetched, with its cover, while the current one is on screen; the poster fades out and in. The URL follows the album on screen, so a reload carries on from there. Full screen comes from the menu or the `F` key: a browser only allows it after a click or key press, so a URL alone cannot start it. On a screen that should be full screen on its own, start the browser in kiosk mode (for example Chrome with `--kiosk URL`). While display mode is on, the page asks the screen to stay on (Screen Wake Lock, where the browser has it). When display mode was started by going full screen, leaving full screen leaves display mode too.
 
 Code: `scripting/display.js` (mode, buttons, keys), `scripting/kiosk.js` (the slideshow), `scripting/playlist.js` (order and URL settings), `scripting/fullscreen.js`.
+
+## Export and print
+
+The export panel (the download icon) makes a **PNG** or a **PDF**.
+
+- **PNG:** a width in pixels (2400, 4000 or 6000), with the dpi set to 300 in the file.
+- **PDF:** a page for a printer. Instead of pixels it has print units: the **paper size** (A5 to A1, 30 × 40, 40 × 50 and 50 × 70 cm, Letter, Tabloid), the **orientation** (automatic follows the shape of the poster), the **margin** (none, 5, 10 or 20 mm), the **dpi** (150 draft, 300 print, 600 fine art), an optional **3 mm bleed** and optional **crop marks**. The poster is as large as fits inside the margin and sits in the middle; the colour of the page behind it fills the margin and the bleed. A line in the panel says what you get, for example "A3 portrait, poster 280 × 420 mm at 300 dpi, 3307 × 4961 px, 3 mm bleed, crop marks", and the file name has the paper and the dpi that were really reached. When a browser cannot draw that many pixels (a phone or Safari) the dpi is brought down, and the line and the message afterwards say so. With bleed the PDF page is 3 mm larger on every side; with crop marks there is room for a hairline mark in each corner outside the bleed (CMYK black, 5 mm long, at least 3 mm from the trim). The PDF has a `TrimBox` and a `BleedBox`, which is what print shops read. The picture is a JPEG, so a print shop gets one page with one image; text is not vector.
+- The settings are remembered in this browser (`album-poster.print`).
+- **Print** opens the browser's own print dialog with the same paper, orientation and margin, and the poster as wide as it is on the PDF (a style is added for the moment of printing). Bleed and crop marks are only in the PDF, a browser cannot print them. Without the panel, `Ctrl+P` prints one poster on A4 in the light theme.
+
+Code: `scripting/printPlan.js` (the page and the pixels, pure and tested), `scripting/fileFormats.js` (`buildPdf` with and without a print page), `scripting/exportPoster.js`, `scripting/exportPanel.js` (the panel).
 
 ## Light and dark
 
@@ -89,6 +116,14 @@ If another album is picked while one is still loading, the older one is dropped,
 
 The poster is a size container and all measurements inside it are relative to its width, so it scales as one piece. On landscape screens its width follows the viewport height, so the poster stays in view (never narrower than 480px, then the page scrolls). On portrait screens and phones it fills the width and the page scrolls. Long titles, artists and tracklists get a smaller type size, and a poster without back cover gives the tracklist the full width.
 
+## The wall and browsing
+
+`/wall/` (`wall/index.html`, a static page like the rest, so it works on GitHub Pages as it is) shows every album of `data/albums.json` as a cover in a grid, with the covers from the Cover Art Archive (`front-250`, loaded lazily). The header has a filter (every word has to be in the title or the artist; accents and ligatures do not matter, so "aenima" finds Ænima), a sort (artist, title, newest added), a switch to group by artist (a click on an artist then filters on that artist) and a slider for the size of the covers. A click on a cover opens its poster, with the `layout`, `theme` and `colors` of the wall page kept. All settings are in the URL: `?q=muse&sort=title&group=artist&size=12`. The Wall button in the header of the poster page goes the other way, again with the layout, theme and colours.
+
+On the poster page the buttons left and right of the layout menu, and the left and right arrow keys, go to the previous and next album of the list, by artist and then by title, going round at the ends (not while typing in a field, and not in display mode, where the arrow keys belong to the slideshow). An album found with the search box that is not in the list has no neighbours. On a phone the two buttons are left out for lack of room; the wall is there for that.
+
+Code: `scripting/wallList.js` (filter, sort, group, neighbours, URL settings; pure and tested), `scripting/wall.js` (the page), `scripting/browse.js` (previous and next), `styles/wall.css`.
+
 ## URL Parameters
 
 ### Loading Specific Albums
@@ -106,7 +141,7 @@ Add query parameters before the hash:
 
 - `?controls=false` - Hides the header (search, layout, random, display, export, light/dark), for showing just the poster on a screen
 - `?display=true`, `?kiosk=10`, `source=random`, `progress=false` - see Display mode and slideshow below
-- `?layout=classic|minimal|swiss|blur|cd|cd-blur` - The look of the poster (classic is the default; cd is the back of a cd case, square when the tracklist allows it (about 18 short titles) and taller for longer lists: a centred numbered tracklist with the details at the bottom, and cd-blur is the same on the blurred cover. Both show the real barcode of the release (MusicBrainz knows it for most releases) at the right, above the album info, drawn as a scannable EAN-13 on a white label; no barcode is shown when the release has none; blur puts the cover, enlarged and blurred, behind the poster; in display mode the blurred cover fills the whole screen and the poster keeps its layout on top); the header has a menu that changes the URL too
+- `?layout=classic|minimal|swiss|blur|cd|cd-blur|festival|receipt|gallery` - The look of the poster (classic is the default; festival is a gig poster: the artist is the headliner and the tracklist the line-up, the first tracks biggest; receipt is a till receipt in monospace on paper, with the tracks as items, a track total and the barcode of the release (fixed paper colours, so `colors=cover` does not apply); gallery is a framed cover in a white mat on a gallery wall with the label next to it as in a museum; cd is the back of a cd case, square when the tracklist allows it (about 18 short titles) and taller for longer lists: a centred numbered tracklist with the details at the bottom, and cd-blur is the same on the blurred cover. Both show the real barcode of the release (MusicBrainz knows it for most releases) at the right, above the album info, drawn as a scannable EAN-13 on a white label; no barcode is shown when the release has none; blur puts the cover, enlarged and blurred, behind the poster; in display mode the blurred cover fills the whole screen and the poster keeps its layout on top); the header has a menu that changes the URL too
 - `?size=l` - Sets large poster size
 - `?size=m` - Sets medium poster size
 - `?size=s` - Sets small poster size

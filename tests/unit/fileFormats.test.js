@@ -129,3 +129,56 @@ test('buildPdf writes the title as UTF-16 so that accents survive', () => {
     assert.ok(text.includes(`/Title <FEFF${hex}>`))
     assert.ok(hex.includes('00CD') && hex.includes('2013')) // the accent and the en dash really are in there
 })
+
+// ---------- PDF for a printer ----------
+
+import { planPrint } from '../../scripting/printPlan.js'
+
+const printPage = settings => planPrint({ settings, width: 400, height: 740 })
+const pt = mm => (mm / 25.4 * 72).toFixed(2)
+
+test('a print PDF has a page as large as the paper, with the picture in the margin', () => {
+    const plan = printPage({ paper: 'a4', margin: 10 })
+    const text = latin1(buildPdf({ jpeg, width: 1000, height: 1850, plan, background: [0, 0, 0], title: 'LUX' }))
+
+    assert.match(text, new RegExp(`/MediaBox \\[0 0 ${pt(210)} ${pt(297)}\\]`))
+    assert.match(text, new RegExp(`/TrimBox \\[0\\.00 0\\.00 ${pt(210)} ${pt(297)}\\]`))
+    assert.match(text, /\/Width 1000 \/Height 1850/)
+    // the background colour over the whole page, then the picture at its place and size
+    assert.match(text, /0\.000 0\.000 0\.000 rg/)
+    assert.match(text, new RegExp(`q ${pt(plan.image.width)} 0 0 ${pt(plan.image.height)} ${pt(plan.image.x)} ${pt(plan.image.y)} cm /Im0 Do Q`))
+    assert.doesNotMatch(text, / K\n/) // no crop marks
+})
+
+test('a print PDF with bleed has a larger page, and says where the trim and the bleed are', () => {
+    const plan = printPage({ paper: 'a4', margin: 10, bleed: true })
+    const text = latin1(buildPdf({ jpeg, width: 1000, height: 1850, plan }))
+
+    assert.match(text, new RegExp(`/MediaBox \\[0 0 ${pt(216)} ${pt(303)}\\]`))
+    assert.match(text, new RegExp(`/TrimBox \\[${pt(3)} ${pt(3)} ${pt(213)} ${pt(300)}\\]`))
+    assert.match(text, /\/BleedBox \[0\.00 0\.00 /)
+})
+
+test('a print PDF with crop marks draws two hairlines in every corner, outside the trim', () => {
+    const plan = printPage({ paper: 'a4', margin: 10, marks: true })
+    const text = latin1(buildPdf({ jpeg, width: 1000, height: 1850, plan }))
+
+    assert.match(text, /q 0 0 0 1 K 0\.25 w/)
+    const strokes = text.match(/ m [\d.]+ [\d.]+ l S/g) ?? []
+    assert.equal(strokes.length, 8)
+
+    // the corner at the bottom left of the trim is at (8, 8) mm; its marks lie to the left and below
+    const left = text.match(new RegExp(`${pt(8 - 3)} ${pt(8)} m ${pt(8 - 8)} ${pt(8)} l S`))
+    const down = text.match(new RegExp(`${pt(8)} ${pt(8 - 3)} m ${pt(8)} ${pt(8 - 8)} l S`))
+    assert.ok(left && down, 'marks at the bottom left')
+})
+
+test('a print PDF is still a valid file: the cross reference table points at every object', () => {
+    const text = latin1(buildPdf({ jpeg, width: 1000, height: 1850, plan: printPage({ paper: 'a3', marks: true, bleed: true }) }))
+    const startxref = Number(text.match(/startxref\n(\d+)\n/)[1])
+    assert.equal(text.slice(startxref, startxref + 4), 'xref')
+    text.slice(startxref).split('\n').slice(3, 9).forEach((entry, index) => {
+        const offset = Number(entry.slice(0, 10))
+        assert.equal(text.slice(offset, offset + `${index + 1} 0 obj`.length), `${index + 1} 0 obj`)
+    })
+})

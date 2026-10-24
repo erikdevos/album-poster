@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wall – Album poster</title>
+        <link rel="icon" href="data:,">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/wall.css">
+        <script>
+            // The same rule as the poster page: the URL, then the saved choice, else the system
+            try {
+                var theme = new URLSearchParams(location.search).get('theme') || localStorage.getItem('album-poster.theme');
+                if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+            } catch (error) {}
+        </script>
+    </head>
+    <body>
+        <header class="site-header wall-header">
+            <h1 class="site-title"><a id="poster-link" href="../">Album poster</a></h1>
+            <div class="search wall-search" role="search">
+                <input id="wall-filter" type="search" aria-label="Filter albums" placeholder="Filter album or artist"
+                       autocomplete="off" spellcheck="false">
+            </div>
+            <label class="wall-field">Sort
+                <select id="wall-sort" class="header-control">
+                    <option value="artist">Artist A–Z</option>
+                    <option value="title">Title A–Z</option>
+                    <option value="added">Newest added</option>
+                </select>
+            </label>
+            <label class="wall-field">Group
+                <select id="wall-group" class="header-control">
+                    <option value="none">All albums</option>
+                    <option value="artist">By artist</option>
+                </select>
+            </label>
+            <label class="wall-field wall-size">Size
+                <input id="wall-size" type="range" min="6" max="20" step="1" value="10">
+            </label>
+            <a id="wall-poster" class="header-control icon-button" href="../" title="Poster" aria-label="Poster">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path d="M6 3h12v18H6zM9 7h6v6H9zM9 16h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <button id="theme-toggle" class="header-control theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode">
+                <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </header>
+        <main class="wall">
+            <p id="wall-count" class="wall-count" role="status" aria-live="polite"></p>
+            <div id="wall-albums"><!-- Loaded through JS --></div>
+        </main>
+        <footer>
+            <div class="container">
+                Album data by <a href="https://musicbrainz.org/">MusicBrainz</a>, cover art by the <a href="https://coverartarchive.org/">Cover Art Archive</a>.
+            </div>
+        </footer>
+        <script type="module" src="../scripting/wall.js"></script>
+    </body>
+</html>

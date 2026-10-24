@@ -6,7 +6,9 @@ import { applyDisplayOptions, setLayout, setupThemeToggle } from './displayOptio
 import { setupSearch, rememberAlbum } from './search.js'
 import { setupMenu } from './menu.js'
 import { setupDisplay } from './display.js'
+import { setupBrowse } from './browse.js'
 import { downloadPoster, printPoster, sharePoster } from './exportPoster.js'
+import { setupExportPanel, exportOptions, printSettings } from './exportPanel.js'
 import { parseLocation, isLegacyId, replaceAlbumId, navigateToAlbum, onAlbumChange } from './router.js'
 
 let albums = []
@@ -65,16 +67,15 @@ async function init() {
     albums = await loadAlbumList()
     setupSearch(document.getElementById('album-search'), albums)
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
+    setupBrowse(albums)
     setupThemeToggle()
     document.getElementById('layout-select').addEventListener('change', event => setLayout(event.target.value))
     // The export panel closes when something in it is used; the Export button shows a loader while the file is made
     const exportMenu = setupMenu('export-toggle', 'export-panel')
     const before = () => exportMenu.close()
-    onClick('download-button', () => downloadPoster({
-        format: document.getElementById('export-format').value,
-        quality: document.getElementById('export-quality').value
-    }), { busyButton: 'export-toggle', before })
-    onClick('print-button', printPoster, { busyButton: null, before })
+    setupExportPanel()
+    onClick('download-button', () => downloadPoster(exportOptions()), { busyButton: 'export-toggle', before })
+    onClick('print-button', () => printPoster(printSettings()), { busyButton: null, before })
     onClick('share-button', async () => (await sharePoster()) === 'copied' ? 'Link copied to the clipboard' : '', { busyButton: null, before })
 
     // Display mode and the slideshow: from the URL, or from the Display menu

@@ -37,7 +37,7 @@ jobs:
       - name: Collect the site (no tests, scripts or tooling)
         run: |
           mkdir _site
-          cp -r index.html scripting styles data _site/
+          cp -r index.html wall scripting styles data _site/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

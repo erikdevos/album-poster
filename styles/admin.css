@@ -1,0 +1,219 @@
+/* The local admin page for the list of albums. Uses the header, colours and footer of style.css. */
+
+.admin-header {
+    row-gap: 0.5rem;
+}
+.admin-header .site-title {
+    margin-right: 0;
+}
+.admin-status {
+    flex: 1 1 12rem;
+    margin: 0 0 0 0.75rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+.admin-status.is-error,
+.admin-note.is-error {
+    color: #d93025;
+    opacity: 1;
+}
+a.header-control {
+    text-decoration: none;
+}
+.admin-save:not(:disabled) {
+    border-color: var(--fg);
+    background-color: var(--fg);
+    color: var(--bg);
+    font-weight: 700;
+}
+.header-control:disabled {
+    cursor: default;
+    opacity: 0.4;
+}
+
+.admin {
+    display: grid;
+    gap: 2.5rem;
+    width: min(100% - 2 * var(--page-gutter), 900px);
+    margin-inline: auto;
+}
+.admin-section h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+}
+.admin-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+}
+.admin-count {
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+.admin-search {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.admin-search input {
+    flex: 1;
+    height: 2.4rem;
+    padding: 0 0.95rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
+    border-radius: 999px;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.9rem;
+}
+.admin-note {
+    min-height: 1.2em;
+    margin: 0 0 0.75rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+.admin-rows {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.admin-row {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+    border-radius: 0.6rem;
+}
+.admin-row[data-state="new"] {
+    border-color: #1e8e3e;
+}
+.admin-row[data-state="edited"] {
+    border-color: #f9ab00;
+}
+.admin-row img,
+.admin-row.no-cover::before {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    background-color: var(--muted-bg);
+}
+/* a square in place of the cover that is missing */
+.admin-row.no-cover::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 1;
+}
+.admin-row.no-cover > .admin-text {
+    grid-column: 2;
+}
+.admin-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.6rem;
+    min-width: 0;
+    font-family: var(--font-secondary);
+}
+.admin-text strong {
+    flex: 1 0 100%;
+    overflow-wrap: anywhere;
+}
+.admin-text span {
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+.admin-text .admin-badge {
+    opacity: 1;
+}
+.admin-badge {
+    padding: 0.05rem 0.5rem;
+    border-radius: 999px;
+    background-color: #1e8e3e;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.admin-row[data-state="edited"] .admin-badge {
+    background-color: #f9ab00;
+    color: #000;
+}
+.admin-badge.is-warning {
+    background-color: #d93025;
+    color: #fff;
+}
+.admin-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.admin-actions .header-control {
+    height: 2rem;
+    padding-inline: 0.8rem;
+    font-size: 0.8rem;
+}
+.admin-actions a {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+.admin-removed {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px dashed color-mix(in srgb, var(--fg) 35%, transparent);
+    border-radius: 0.6rem;
+}
+.admin-removed .admin-row {
+    opacity: 0.7;
+}
+
+.admin-edit {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 0.5rem;
+    width: 100%;
+}
+.admin-edit label {
+    display: grid;
+    gap: 0.2rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.admin-edit input {
+    height: 2.1rem;
+    padding: 0 0.6rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
+    border-radius: 0.4rem;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 700px) {
+    .admin-row {
+        grid-template-columns: 3.5rem minmax(0, 1fr);
+    }
+    .admin-actions {
+        grid-column: 1 / -1;
+        justify-content: flex-end;
+    }
+    .admin-edit {
+        grid-template-columns: 1fr;
+    }
+}
