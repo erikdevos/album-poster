@@ -1,0 +1,47 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876002982,
+  "album": {
+    "id": "1fd18f5b-9a92-41fd-a590-da6b5cc60d85",
+    "title": "★",
+    "artist": "David Bowie",
+    "year": "2016",
+    "barcode": "888751738621",
+    "label": "Columbia",
+    "genre": "art rock / experimental rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "★"
+      },
+      {
+        "number": "2",
+        "title": "’Tis a Pity She Was a Whore"
+      },
+      {
+        "number": "3",
+        "title": "Lazarus"
+      },
+      {
+        "number": "4",
+        "title": "Sue (or In a Season of Crime)"
+      },
+      {
+        "number": "5",
+        "title": "Girl Loves Me"
+      },
+      {
+        "number": "6",
+        "title": "Dollar Days"
+      },
+      {
+        "number": "7",
+        "title": "I Can’t Give Everything Away"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/3e981b41-4400-4a51-97c6-4c17fc762982/22635538251-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/3e981b41-4400-4a51-97c6-4c17fc762982/22635538251.jpg",
+    "backFull": ""
+  }
+}

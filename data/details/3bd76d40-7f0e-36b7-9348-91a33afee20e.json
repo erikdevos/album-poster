@@ -1,0 +1,83 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875991152,
+  "album": {
+    "id": "3bd76d40-7f0e-36b7-9348-91a33afee20e",
+    "title": "Year Zero",
+    "artist": "Nine Inch Nails",
+    "year": "2007",
+    "barcode": "00602517324237",
+    "label": "Nothing Records",
+    "genre": "industrial rock / industrial",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "HYPERPOWER!"
+      },
+      {
+        "number": "2",
+        "title": "The Beginning of the End"
+      },
+      {
+        "number": "3",
+        "title": "Survivalism"
+      },
+      {
+        "number": "4",
+        "title": "The Good Soldier"
+      },
+      {
+        "number": "5",
+        "title": "Vessel"
+      },
+      {
+        "number": "6",
+        "title": "Me, I’m Not"
+      },
+      {
+        "number": "7",
+        "title": "Capital G"
+      },
+      {
+        "number": "8",
+        "title": "My Violent Heart"
+      },
+      {
+        "number": "9",
+        "title": "The Warning"
+      },
+      {
+        "number": "10",
+        "title": "God Given"
+      },
+      {
+        "number": "11",
+        "title": "Meet Your Master"
+      },
+      {
+        "number": "12",
+        "title": "The Greater Good"
+      },
+      {
+        "number": "13",
+        "title": "The Great Destroyer"
+      },
+      {
+        "number": "14",
+        "title": "Another Version of the Truth"
+      },
+      {
+        "number": "15",
+        "title": "In This Twilight"
+      },
+      {
+        "number": "16",
+        "title": "Zero Sum"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/d8de198d-2162-4264-9cfe-926d92c4c7ad/34228141965-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/d8de198d-2162-4264-9cfe-926d92c4c7ad/34228141965.jpg",
+    "backFull": ""
+  }
+}

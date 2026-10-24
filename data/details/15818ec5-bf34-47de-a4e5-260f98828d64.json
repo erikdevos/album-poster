@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875900875,
+  "album": {
+    "id": "15818ec5-bf34-47de-a4e5-260f98828d64",
+    "title": "Talk That Talk",
+    "artist": "Rihanna",
+    "year": "2011",
+    "barcode": "00602527878416",
+    "label": "Def Jam Recordings",
+    "genre": "pop / contemporary r&b",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "You da One"
+      },
+      {
+        "number": "2",
+        "title": "Where Have You Been"
+      },
+      {
+        "number": "3",
+        "title": "We Found Love"
+      },
+      {
+        "number": "4",
+        "title": "Talk That Talk"
+      },
+      {
+        "number": "5",
+        "title": "Cockiness (Love It)"
+      },
+      {
+        "number": "6",
+        "title": "Birthday Cake"
+      },
+      {
+        "number": "7",
+        "title": "We All Want Love"
+      },
+      {
+        "number": "8",
+        "title": "Drunk on Love"
+      },
+      {
+        "number": "9",
+        "title": "Roc Me Out"
+      },
+      {
+        "number": "10",
+        "title": "Watch n’ Learn"
+      },
+      {
+        "number": "11",
+        "title": "Farewell"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/6c4c5763-1a3c-4b2f-88c0-18f60047b71e/32362057914-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/6c4c5763-1a3c-4b2f-88c0-18f60047b71e/32362057914.jpg",
+    "backFull": ""
+  }
+}

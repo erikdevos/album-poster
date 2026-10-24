@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876383423,
+  "album": {
+    "id": "7c4cab8d-dead-3870-b501-93c90fd0a580",
+    "title": "The Downward Spiral",
+    "artist": "Nine Inch Nails",
+    "year": "1994",
+    "barcode": "731452212627",
+    "label": "TVT Records",
+    "genre": "industrial rock / industrial",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Mr Self Destruct"
+      },
+      {
+        "number": "2",
+        "title": "Piggy"
+      },
+      {
+        "number": "3",
+        "title": "Heresy"
+      },
+      {
+        "number": "4",
+        "title": "March of the Pigs"
+      },
+      {
+        "number": "5",
+        "title": "Closer"
+      },
+      {
+        "number": "6",
+        "title": "Ruiner"
+      },
+      {
+        "number": "7",
+        "title": "The Becoming"
+      },
+      {
+        "number": "8",
+        "title": "I Do Not Want This"
+      },
+      {
+        "number": "9",
+        "title": "Big Man With a Gun"
+      },
+      {
+        "number": "10",
+        "title": "A Warm Place"
+      },
+      {
+        "number": "11",
+        "title": "Eraser"
+      },
+      {
+        "number": "12",
+        "title": "Reptile"
+      },
+      {
+        "number": "13",
+        "title": "The Downward Spiral"
+      },
+      {
+        "number": "14",
+        "title": "Hurt"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/2d410836-5add-3661-b0b0-168ba1696611/2546761764-1200.jpg",
+    "back": "https://coverartarchive.org/release/2d410836-5add-3661-b0b0-168ba1696611/11240135771-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/2d410836-5add-3661-b0b0-168ba1696611/2546761764.jpg",
+    "backFull": "https://coverartarchive.org/release/2d410836-5add-3661-b0b0-168ba1696611/11240135771.jpg"
+  }
+}

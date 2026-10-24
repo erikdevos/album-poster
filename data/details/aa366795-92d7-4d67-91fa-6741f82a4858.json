@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875863268,
+  "album": {
+    "id": "aa366795-92d7-4d67-91fa-6741f82a4858",
+    "title": "Future Nostalgia",
+    "artist": "Dua Lipa",
+    "year": "2020",
+    "barcode": "190295252960",
+    "label": "Warner Records",
+    "genre": "dance-pop / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Future Nostalgia"
+      },
+      {
+        "number": "2",
+        "title": "Don’t Start Now"
+      },
+      {
+        "number": "3",
+        "title": "Cool"
+      },
+      {
+        "number": "4",
+        "title": "Physical"
+      },
+      {
+        "number": "5",
+        "title": "Levitating"
+      },
+      {
+        "number": "6",
+        "title": "Pretty Please"
+      },
+      {
+        "number": "7",
+        "title": "Hallucinate"
+      },
+      {
+        "number": "8",
+        "title": "Love Again"
+      },
+      {
+        "number": "9",
+        "title": "Break My Heart"
+      },
+      {
+        "number": "10",
+        "title": "Good in Bed"
+      },
+      {
+        "number": "11",
+        "title": "Boys Will Be Boys"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/57bc5762-baa9-48d8-93ec-7858d8350880/25777832070-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/57bc5762-baa9-48d8-93ec-7858d8350880/25777832070.jpg",
+    "backFull": ""
+  }
+}

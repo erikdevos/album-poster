@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875867045,
+  "album": {
+    "id": "fed1608d-80b7-38d2-aeb8-c6357f0d4c23",
+    "title": "Straight Outta Compton",
+    "artist": "N.W.A",
+    "year": "1988",
+    "barcode": "049925710212",
+    "label": "Priority Records",
+    "genre": "gangsta rap / hip hop",
+    "tracks": [
+      {
+        "number": "A1",
+        "title": "Straight Outta Compton"
+      },
+      {
+        "number": "A2",
+        "title": "Fuck tha Police"
+      },
+      {
+        "number": "A3",
+        "title": "Gangsta Gangsta"
+      },
+      {
+        "number": "A4",
+        "title": "If It Ain’t Ruff"
+      },
+      {
+        "number": "A5",
+        "title": "Parental Discretion Iz Advised"
+      },
+      {
+        "number": "B1",
+        "title": "Express Yourself"
+      },
+      {
+        "number": "B2",
+        "title": "Compton’s N the House (remix)"
+      },
+      {
+        "number": "B3",
+        "title": "I Ain’t tha 1"
+      },
+      {
+        "number": "B4",
+        "title": "Dopeman (remix)"
+      },
+      {
+        "number": "B5",
+        "title": "Quiet on tha Set"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/d930166c-e5b6-420d-8177-e62f351f6859/5658377319-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/d930166c-e5b6-420d-8177-e62f351f6859/5658377319.jpg",
+    "backFull": ""
+  }
+}

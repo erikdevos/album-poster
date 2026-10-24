@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875926200,
+  "album": {
+    "id": "341005c2-14ee-4be3-a421-57e9cf9bae61",
+    "title": "Hyperion",
+    "artist": "Gesaffelstein",
+    "year": "2019",
+    "barcode": "190759405727",
+    "label": "Columbia",
+    "genre": "contemporary r&b / dark ambient",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Hyperion"
+      },
+      {
+        "number": "2",
+        "title": "Reset"
+      },
+      {
+        "number": "3",
+        "title": "Lost in the Fire"
+      },
+      {
+        "number": "4",
+        "title": "Ever Now"
+      },
+      {
+        "number": "5",
+        "title": "Blast Off"
+      },
+      {
+        "number": "6",
+        "title": "So Bad"
+      },
+      {
+        "number": "7",
+        "title": "Forever"
+      },
+      {
+        "number": "8",
+        "title": "Vortex"
+      },
+      {
+        "number": "9",
+        "title": "Memora"
+      },
+      {
+        "number": "10",
+        "title": "Humanity Gone"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/0942e4a8-50fe-404b-b75e-36d449a20130/23790562150-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/0942e4a8-50fe-404b-b75e-36d449a20130/23790562150.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875809006,
+  "album": {
+    "id": "3d00fb45-f8ab-3436-a8e1-b4bfc4d66913",
+    "title": "Master of Puppets",
+    "artist": "Metallica",
+    "year": "1986",
+    "barcode": "07559604391",
+    "label": "Elektra",
+    "genre": "thrash metal / heavy metal",
+    "tracks": [
+      {
+        "number": "A1",
+        "title": "Battery"
+      },
+      {
+        "number": "A2",
+        "title": "Master of Puppets"
+      },
+      {
+        "number": "A3",
+        "title": "The Thing That Should Not Be"
+      },
+      {
+        "number": "A4",
+        "title": "Welcome Home (Sanitarium)"
+      },
+      {
+        "number": "B1",
+        "title": "Disposable Heroes"
+      },
+      {
+        "number": "B2",
+        "title": "Leper Messiah"
+      },
+      {
+        "number": "B3",
+        "title": "Orion"
+      },
+      {
+        "number": "B4",
+        "title": "Damage, Inc."
+      }
+    ],
+    "front": "https://coverartarchive.org/release/1ac12ae0-d1ae-41e7-8514-07cb36d5c493/43409244175-1200.jpg",
+    "back": "https://coverartarchive.org/release/1ac12ae0-d1ae-41e7-8514-07cb36d5c493/43409243619-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/1ac12ae0-d1ae-41e7-8514-07cb36d5c493/43409244175.jpg",
+    "backFull": "https://coverartarchive.org/release/1ac12ae0-d1ae-41e7-8514-07cb36d5c493/43409243619.jpg"
+  }
+}

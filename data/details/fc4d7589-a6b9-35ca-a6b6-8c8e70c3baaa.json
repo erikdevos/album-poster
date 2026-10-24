@@ -1,0 +1,111 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875854912,
+  "album": {
+    "id": "fc4d7589-a6b9-35ca-a6b6-8c8e70c3baaa",
+    "title": "The Fragile",
+    "artist": "Nine Inch Nails",
+    "year": "1999",
+    "barcode": "606949047320",
+    "label": "Nothing Records",
+    "genre": "industrial / industrial rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Somewhat Damaged"
+      },
+      {
+        "number": "2",
+        "title": "The Day the World Went Away"
+      },
+      {
+        "number": "3",
+        "title": "The Frail"
+      },
+      {
+        "number": "4",
+        "title": "The Wretched"
+      },
+      {
+        "number": "5",
+        "title": "We’re in This Together"
+      },
+      {
+        "number": "6",
+        "title": "The Fragile"
+      },
+      {
+        "number": "7",
+        "title": "Just Like You Imagined"
+      },
+      {
+        "number": "8",
+        "title": "Even Deeper"
+      },
+      {
+        "number": "9",
+        "title": "Pilgrimage"
+      },
+      {
+        "number": "10",
+        "title": "No, You Don’t"
+      },
+      {
+        "number": "11",
+        "title": "La Mer"
+      },
+      {
+        "number": "12",
+        "title": "The Great Below"
+      },
+      {
+        "number": "1",
+        "title": "The Way Out Is Through"
+      },
+      {
+        "number": "2",
+        "title": "Into the Void"
+      },
+      {
+        "number": "3",
+        "title": "Where Is Everybody?"
+      },
+      {
+        "number": "4",
+        "title": "The Mark Has Been Made"
+      },
+      {
+        "number": "5",
+        "title": "Please"
+      },
+      {
+        "number": "6",
+        "title": "Starfuckers, Inc."
+      },
+      {
+        "number": "7",
+        "title": "Complication"
+      },
+      {
+        "number": "8",
+        "title": "I’m Looking Forward to Joining You, Finally"
+      },
+      {
+        "number": "9",
+        "title": "The Big Come Down"
+      },
+      {
+        "number": "10",
+        "title": "Underneath It All"
+      },
+      {
+        "number": "11",
+        "title": "Ripe (With Decay)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/d790bcd2-f30b-37d6-aaef-37563a661212/2226772480.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/d790bcd2-f30b-37d6-aaef-37563a661212/2226772480.jpg",
+    "backFull": ""
+  }
+}

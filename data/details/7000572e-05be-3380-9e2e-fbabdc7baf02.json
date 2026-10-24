@@ -1,0 +1,123 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876432767,
+  "album": {
+    "id": "7000572e-05be-3380-9e2e-fbabdc7baf02",
+    "title": "The Rising Tied",
+    "artist": "Fort Minor",
+    "year": "2005",
+    "barcode": "093624941026",
+    "label": "Machine Shop Recordings",
+    "genre": "hip hop / heavy metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Introduction"
+      },
+      {
+        "number": "2",
+        "title": "Remember the Name"
+      },
+      {
+        "number": "3",
+        "title": "Right Now"
+      },
+      {
+        "number": "4",
+        "title": "Petrified"
+      },
+      {
+        "number": "5",
+        "title": "Feel Like Home"
+      },
+      {
+        "number": "6",
+        "title": "Where’d You Go"
+      },
+      {
+        "number": "7",
+        "title": "In Stereo"
+      },
+      {
+        "number": "8",
+        "title": "Back Home"
+      },
+      {
+        "number": "9",
+        "title": "Cigarettes"
+      },
+      {
+        "number": "10",
+        "title": "Believe Me"
+      },
+      {
+        "number": "11",
+        "title": "Get Me Gone"
+      },
+      {
+        "number": "12",
+        "title": "High Road"
+      },
+      {
+        "number": "13",
+        "title": "Kenji"
+      },
+      {
+        "number": "14",
+        "title": "Red to Black"
+      },
+      {
+        "number": "15",
+        "title": "The Battle"
+      },
+      {
+        "number": "16",
+        "title": "Slip Out the Back"
+      },
+      {
+        "number": "17",
+        "title": "[silence]"
+      },
+      {
+        "number": "18",
+        "title": "[silence]"
+      },
+      {
+        "number": "19",
+        "title": "Be Somebody"
+      },
+      {
+        "number": "20",
+        "title": "There They Go"
+      },
+      {
+        "number": "21",
+        "title": "The Hard Way"
+      },
+      {
+        "number": "1",
+        "title": "Studio Footage"
+      },
+      {
+        "number": "2",
+        "title": "Interview Footage"
+      },
+      {
+        "number": "3",
+        "title": "“Believe Me“ Video and Making Of…"
+      },
+      {
+        "number": "4",
+        "title": "Mike Shinoda Meeting Jay-Z"
+      },
+      {
+        "number": "5",
+        "title": "Mike Shinoda Painting Cover Artwork"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/2260aedd-155d-33b0-a4bb-6db7ce3f6598/28875936991-1200.jpg",
+    "back": "https://coverartarchive.org/release/2260aedd-155d-33b0-a4bb-6db7ce3f6598/28875937633-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/2260aedd-155d-33b0-a4bb-6db7ce3f6598/28875936991.jpg",
+    "backFull": "https://coverartarchive.org/release/2260aedd-155d-33b0-a4bb-6db7ce3f6598/28875937633.jpg"
+  }
+}

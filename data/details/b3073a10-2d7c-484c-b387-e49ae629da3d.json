@@ -1,0 +1,87 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875921146,
+  "album": {
+    "id": "b3073a10-2d7c-484c-b387-e49ae629da3d",
+    "title": "DeBÍ TiRAR MáS FOToS",
+    "artist": "Bad Bunny",
+    "year": "2025",
+    "barcode": "199066342442",
+    "label": "Rimas",
+    "genre": "reggaeton / plena",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "NUEVAYoL"
+      },
+      {
+        "number": "2",
+        "title": "VOY A LLeVARTE PA PR"
+      },
+      {
+        "number": "3",
+        "title": "BAILE INoLVIDABLE"
+      },
+      {
+        "number": "4",
+        "title": "PERFuMITO NUEVO"
+      },
+      {
+        "number": "5",
+        "title": "WELTiTA"
+      },
+      {
+        "number": "6",
+        "title": "VeLDÁ"
+      },
+      {
+        "number": "7",
+        "title": "EL CLúB"
+      },
+      {
+        "number": "8",
+        "title": "KETU TeCRÉ"
+      },
+      {
+        "number": "9",
+        "title": "BOKeTE"
+      },
+      {
+        "number": "10",
+        "title": "KLOuFRENS"
+      },
+      {
+        "number": "11",
+        "title": "TURiSTA"
+      },
+      {
+        "number": "12",
+        "title": "CAFé CON RON"
+      },
+      {
+        "number": "13",
+        "title": "PIToRRO DE COCO"
+      },
+      {
+        "number": "14",
+        "title": "LO QUE LE PASÓ A HAWAii"
+      },
+      {
+        "number": "15",
+        "title": "EoO"
+      },
+      {
+        "number": "16",
+        "title": "DtMF"
+      },
+      {
+        "number": "17",
+        "title": "LA MuDANZA"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c9e6b642-a6d9-4b22-8ec1-16c47b6143fc/40857018101-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/c9e6b642-a6d9-4b22-8ec1-16c47b6143fc/40857018101.jpg",
+    "backFull": ""
+  }
+}

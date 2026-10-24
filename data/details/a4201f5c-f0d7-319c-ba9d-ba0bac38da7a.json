@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876427057,
+  "album": {
+    "id": "a4201f5c-f0d7-319c-ba9d-ba0bac38da7a",
+    "title": "Minutes to Midnight",
+    "artist": "Linkin Park",
+    "year": "2007",
+    "barcode": "093624994312",
+    "label": "Warner Bros. Records",
+    "genre": "alternative rock / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Wake"
+      },
+      {
+        "number": "2",
+        "title": "Given Up (Clean)"
+      },
+      {
+        "number": "3",
+        "title": "Leave Out All the Rest"
+      },
+      {
+        "number": "4",
+        "title": "Bleed It Out (Clean)"
+      },
+      {
+        "number": "5",
+        "title": "Shadow of the Day"
+      },
+      {
+        "number": "6",
+        "title": "What I’ve Done"
+      },
+      {
+        "number": "7",
+        "title": "Hands Held High (Clean)"
+      },
+      {
+        "number": "8",
+        "title": "No More Sorrow"
+      },
+      {
+        "number": "9",
+        "title": "Valentine’s Day"
+      },
+      {
+        "number": "10",
+        "title": "In Between"
+      },
+      {
+        "number": "11",
+        "title": "In Pieces"
+      },
+      {
+        "number": "12",
+        "title": "The Little Things Give You Away"
+      },
+      {
+        "number": "13",
+        "title": "What I’ve Done (live)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/939c1e8b-7b8b-4e0e-894e-8a3333d18b17/22148796481-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/939c1e8b-7b8b-4e0e-894e-8a3333d18b17/22148796481.jpg",
+    "backFull": ""
+  }
+}

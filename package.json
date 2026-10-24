@@ -9,7 +9,8 @@
     "test": "node --test \"tests/unit/*.test.js\"",
     "test:e2e": "node --test \"tests/e2e/*.test.js\"",
     "test:all": "npm test && npm run test:e2e",
-    "admin": "node scripts/admin.mjs"
+    "admin": "node scripts/admin.mjs",
+    "details": "node scripts/details.mjs"
   },
   "devDependencies": {
     "playwright-core": "1.64.1"

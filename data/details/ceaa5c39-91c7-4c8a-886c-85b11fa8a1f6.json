@@ -1,0 +1,91 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876379168,
+  "album": {
+    "id": "ceaa5c39-91c7-4c8a-886c-85b11fa8a1f6",
+    "title": "Starboy",
+    "artist": "The Weeknd",
+    "year": "2016",
+    "barcode": "00602557212419",
+    "label": "Universal Republic Records",
+    "genre": "contemporary r&b / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Starboy"
+      },
+      {
+        "number": "2",
+        "title": "Party Monster"
+      },
+      {
+        "number": "3",
+        "title": "False Alarm"
+      },
+      {
+        "number": "4",
+        "title": "Reminder"
+      },
+      {
+        "number": "5",
+        "title": "Rockin’"
+      },
+      {
+        "number": "6",
+        "title": "Secrets"
+      },
+      {
+        "number": "7",
+        "title": "True Colors"
+      },
+      {
+        "number": "8",
+        "title": "Stargirl (interlude)"
+      },
+      {
+        "number": "9",
+        "title": "Sidewalks"
+      },
+      {
+        "number": "10",
+        "title": "Six Feet Under"
+      },
+      {
+        "number": "11",
+        "title": "Love to Lay"
+      },
+      {
+        "number": "12",
+        "title": "A Lonely Night"
+      },
+      {
+        "number": "13",
+        "title": "Attention"
+      },
+      {
+        "number": "14",
+        "title": "Ordinary Life"
+      },
+      {
+        "number": "15",
+        "title": "Nothing Without You"
+      },
+      {
+        "number": "16",
+        "title": "All I Know"
+      },
+      {
+        "number": "17",
+        "title": "Die for You"
+      },
+      {
+        "number": "18",
+        "title": "I Feel It Coming"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e7a685cb-197b-4407-9310-239ee24f0e76/29173409048-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e7a685cb-197b-4407-9310-239ee24f0e76/29173409048.png",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875823037,
+  "album": {
+    "id": "416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6",
+    "title": "Rumours",
+    "artist": "Fleetwood Mac",
+    "year": "1977",
+    "barcode": "081227970949",
+    "label": "Warner Bros. Records",
+    "genre": "rock / pop rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Second Hand News"
+      },
+      {
+        "number": "2",
+        "title": "Dreams"
+      },
+      {
+        "number": "3",
+        "title": "Never Going Back Again"
+      },
+      {
+        "number": "4",
+        "title": "Don’t Stop"
+      },
+      {
+        "number": "5",
+        "title": "Go Your Own Way"
+      },
+      {
+        "number": "6",
+        "title": "Songbird"
+      },
+      {
+        "number": "7",
+        "title": "The Chain"
+      },
+      {
+        "number": "8",
+        "title": "You Make Loving Fun"
+      },
+      {
+        "number": "9",
+        "title": "I Don’t Want to Know"
+      },
+      {
+        "number": "10",
+        "title": "Oh Daddy"
+      },
+      {
+        "number": "11",
+        "title": "Gold Dust Woman"
+      },
+      {
+        "number": "12",
+        "title": "Silver Springs"
+      },
+      {
+        "number": "1",
+        "title": "Intro (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "2",
+        "title": "Monday Morning (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "3",
+        "title": "Dreams (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "4",
+        "title": "Don’t Stop (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "5",
+        "title": "The Chain (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "6",
+        "title": "Oh Daddy (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "7",
+        "title": "Rhiannon (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "8",
+        "title": "Never Going Back Again (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "9",
+        "title": "Gold Dust Woman (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "10",
+        "title": "World Turning (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "11",
+        "title": "Go Your Own Way (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "12",
+        "title": "Songbird (live, 1977 Rumours World Tour)"
+      },
+      {
+        "number": "1",
+        "title": "Second Hand News (early take)"
+      },
+      {
+        "number": "2",
+        "title": "Dreams (take 2)"
+      },
+      {
+        "number": "3",
+        "title": "Never Going Back Again (acoustic duet)"
+      },
+      {
+        "number": "4",
+        "title": "Go Your Own Way (early take)"
+      },
+      {
+        "number": "5",
+        "title": "Songbird (demo)"
+      },
+      {
+        "number": "6",
+        "title": "Songbird (instrumental, take 10)"
+      },
+      {
+        "number": "7",
+        "title": "I Don’t Want to Know (early take)"
+      },
+      {
+        "number": "8",
+        "title": "Keep Me There (instrumental)"
+      },
+      {
+        "number": "9",
+        "title": "The Chain (demo)"
+      },
+      {
+        "number": "10",
+        "title": "Keep Me There (with vocal)"
+      },
+      {
+        "number": "11",
+        "title": "Gold Dust Woman (early take)"
+      },
+      {
+        "number": "12",
+        "title": "Oh Daddy (early take)"
+      },
+      {
+        "number": "13",
+        "title": "Silver Springs (early take)"
+      },
+      {
+        "number": "14",
+        "title": "Planets of the Universe (demo)"
+      },
+      {
+        "number": "15",
+        "title": "Doesn’t Anything Last (acoustic duet)"
+      },
+      {
+        "number": "16",
+        "title": "Never Going Back Again (instrumental)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/7699b503-6a69-4920-91ac-8ee8aa1c1622/7946930592.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/7699b503-6a69-4920-91ac-8ee8aa1c1622/7946930592.jpg",
+    "backFull": ""
+  }
+}

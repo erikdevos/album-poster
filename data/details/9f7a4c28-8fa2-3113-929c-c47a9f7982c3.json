@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875806074,
+  "album": {
+    "id": "9f7a4c28-8fa2-3113-929c-c47a9f7982c3",
+    "title": "Sgt. Pepper’s Lonely Hearts Club Band",
+    "artist": "The Beatles",
+    "year": "1967",
+    "barcode": "00602547673473",
+    "label": "EMI Catalogue",
+    "genre": "rock / psychedelic rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Sgt. Pepper’s Lonely Hearts Club Band"
+      },
+      {
+        "number": "2",
+        "title": "With a Little Help From My Friends"
+      },
+      {
+        "number": "3",
+        "title": "Lucy in the Sky With Diamonds"
+      },
+      {
+        "number": "4",
+        "title": "Getting Better"
+      },
+      {
+        "number": "5",
+        "title": "Fixing a Hole"
+      },
+      {
+        "number": "6",
+        "title": "She’s Leaving Home"
+      },
+      {
+        "number": "7",
+        "title": "Being for the Benefit of Mr. Kite!"
+      },
+      {
+        "number": "8",
+        "title": "Within You Without You"
+      },
+      {
+        "number": "9",
+        "title": "When I’m Sixty Four"
+      },
+      {
+        "number": "10",
+        "title": "Lovely Rita"
+      },
+      {
+        "number": "11",
+        "title": "Good Morning Good Morning"
+      },
+      {
+        "number": "12",
+        "title": "Sgt. Pepper’s Lonely Hearts Club Band (reprise)"
+      },
+      {
+        "number": "13",
+        "title": "A Day in the Life"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/9dca8a47-b1e1-4810-aeb7-2774a0e7af5b/29759367493-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/9dca8a47-b1e1-4810-aeb7-2774a0e7af5b/29759367493.jpg",
+    "backFull": ""
+  }
+}

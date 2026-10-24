@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876430060,
+  "album": {
+    "id": "b976c959-d13e-487c-85d7-cab70ed7c842",
+    "title": "One More Light",
+    "artist": "Linkin Park",
+    "year": "2017",
+    "barcode": "093624913238",
+    "label": "Machine Shop Recordings",
+    "genre": "electropop / pop rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Nobody Can Save Me"
+      },
+      {
+        "number": "2",
+        "title": "Good Goodbye"
+      },
+      {
+        "number": "3",
+        "title": "Talking to Myself"
+      },
+      {
+        "number": "4",
+        "title": "Battle Symphony"
+      },
+      {
+        "number": "5",
+        "title": "Invisible"
+      },
+      {
+        "number": "6",
+        "title": "Heavy"
+      },
+      {
+        "number": "7",
+        "title": "Sorry for Now"
+      },
+      {
+        "number": "8",
+        "title": "Halfway Right"
+      },
+      {
+        "number": "9",
+        "title": "One More Light"
+      },
+      {
+        "number": "10",
+        "title": "Sharp Edges"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/aa623b4f-f8f7-4639-ad3b-89ec2c3bb465/16247595624-1200.jpg",
+    "back": "https://coverartarchive.org/release/aa623b4f-f8f7-4639-ad3b-89ec2c3bb465/38179713175-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/aa623b4f-f8f7-4639-ad3b-89ec2c3bb465/16247595624.jpg",
+    "backFull": "https://coverartarchive.org/release/aa623b4f-f8f7-4639-ad3b-89ec2c3bb465/38179713175.png"
+  }
+}

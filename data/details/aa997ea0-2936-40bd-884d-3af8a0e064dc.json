@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875812838,
+  "album": {
+    "id": "aa997ea0-2936-40bd-884d-3af8a0e064dc",
+    "title": "Random Access Memories",
+    "artist": "Daft Punk",
+    "year": "2013",
+    "barcode": "886443927087",
+    "label": "Columbia",
+    "genre": "electronic / disco",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Give Life Back to Music"
+      },
+      {
+        "number": "2",
+        "title": "The Game of Love"
+      },
+      {
+        "number": "3",
+        "title": "Giorgio by Moroder"
+      },
+      {
+        "number": "4",
+        "title": "Within"
+      },
+      {
+        "number": "5",
+        "title": "Instant Crush"
+      },
+      {
+        "number": "6",
+        "title": "Lose Yourself to Dance"
+      },
+      {
+        "number": "7",
+        "title": "Touch"
+      },
+      {
+        "number": "8",
+        "title": "Get Lucky"
+      },
+      {
+        "number": "9",
+        "title": "Beyond"
+      },
+      {
+        "number": "10",
+        "title": "Motherboard"
+      },
+      {
+        "number": "11",
+        "title": "Fragments of Time"
+      },
+      {
+        "number": "12",
+        "title": "Doin’ It Right"
+      },
+      {
+        "number": "13",
+        "title": "Contact"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/5000a285-b67e-4cfc-b54b-2b98f1810d2e/46361185179-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/5000a285-b67e-4cfc-b54b-2b98f1810d2e/46361185179.jpg",
+    "backFull": ""
+  }
+}

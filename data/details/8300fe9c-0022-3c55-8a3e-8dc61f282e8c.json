@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875856301,
+  "album": {
+    "id": "8300fe9c-0022-3c55-8a3e-8dc61f282e8c",
+    "title": "Superunknown",
+    "artist": "Soundgarden",
+    "year": "1994",
+    "barcode": "00602537879717",
+    "label": "A&M Records",
+    "genre": "alternative rock / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Let Me Drown"
+      },
+      {
+        "number": "2",
+        "title": "My Wave"
+      },
+      {
+        "number": "3",
+        "title": "Fell on Black Days"
+      },
+      {
+        "number": "4",
+        "title": "Mailman"
+      },
+      {
+        "number": "5",
+        "title": "Superunknown"
+      },
+      {
+        "number": "6",
+        "title": "Head Down"
+      },
+      {
+        "number": "7",
+        "title": "Black Hole Sun"
+      },
+      {
+        "number": "8",
+        "title": "Spoonman"
+      },
+      {
+        "number": "9",
+        "title": "Limo Wreck"
+      },
+      {
+        "number": "10",
+        "title": "The Day I Tried to Live"
+      },
+      {
+        "number": "11",
+        "title": "Kickstand"
+      },
+      {
+        "number": "12",
+        "title": "Fresh Tendrils"
+      },
+      {
+        "number": "13",
+        "title": "4th of July"
+      },
+      {
+        "number": "14",
+        "title": "Half"
+      },
+      {
+        "number": "15",
+        "title": "Like Suicide"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/76c4b437-5af1-46aa-946b-fadd2d378003/45124521191-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/76c4b437-5af1-46aa-946b-fadd2d378003/45124521191.jpg",
+    "backFull": ""
+  }
+}

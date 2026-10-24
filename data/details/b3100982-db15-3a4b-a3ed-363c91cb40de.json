@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875964272,
+  "album": {
+    "id": "b3100982-db15-3a4b-a3ed-363c91cb40de",
+    "title": "Some Great Reward",
+    "artist": "Depeche Mode",
+    "year": "1984",
+    "barcode": "",
+    "label": "Mute",
+    "genre": "industrial / electronic",
+    "tracks": [
+      {
+        "number": "A1",
+        "title": "Something to Do"
+      },
+      {
+        "number": "A2",
+        "title": "Lie to Me"
+      },
+      {
+        "number": "A3",
+        "title": "People Are People"
+      },
+      {
+        "number": "A4",
+        "title": "It Doesn't Matter"
+      },
+      {
+        "number": "A5",
+        "title": "Stories of Old"
+      },
+      {
+        "number": "B1",
+        "title": "Somebody"
+      },
+      {
+        "number": "B2",
+        "title": "Master and Servant"
+      },
+      {
+        "number": "B3",
+        "title": "If You Want"
+      },
+      {
+        "number": "B4",
+        "title": "Blasphemous Rumours"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/3e3a9c1d-aee4-4f73-9376-fbe70e8366d8/9000459494.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/3e3a9c1d-aee4-4f73-9376-fbe70e8366d8/9000459494.jpg",
+    "backFull": ""
+  }
+}

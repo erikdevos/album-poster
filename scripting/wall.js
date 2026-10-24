@@ -3,6 +3,8 @@
 
 import { loadAlbumList } from './albumList.js'
 import { setupThemeToggle } from './displayOptions.js'
+import { setupMenu } from './menu.js'
+import { registerServiceWorker, offlineReady, offlineStatus, downloadForOffline, clearOffline } from './offline.js'
 import { sortAlbums, filterAlbums, groupByArtist, wallOptions, wallParams, posterLink } from './wallList.js'
 
 const CAA = 'https://coverartarchive.org'
@@ -18,6 +20,7 @@ function tile(album) {
     link.title = `${album.name} – ${album.artist}`
 
     const cover = document.createElement('img')
+    cover.crossOrigin = 'anonymous' // a CORS request, so that the service worker can keep the cover
     cover.src = `${CAA}/release-group/${album.id}/front-250`
     cover.alt = `Cover of ${album.name} by ${album.artist}`
     cover.loading = 'lazy'
@@ -98,7 +101,53 @@ function update() {
     render()
 }
 
+// The panel with the offline use: what is kept, and buttons to download everything or clear it
+function setupOffline() {
+    const menu = setupMenu('offline-toggle', 'offline-panel')
+    const status = $('offline-status')
+    const progress = $('offline-progress')
+    let running = null // the AbortController of a download that is going on
+
+    async function showStatus() {
+        const { stored, total, used } = await offlineStatus(albums)
+        status.textContent = `${stored} of ${total} albums are kept in this browser${used ? `, ${used} used by this site` : ''}.` +
+            (offlineReady() ? '' : ' Offline mode starts after this page has been reloaded once.')
+        $('offline-download').textContent = running ? 'Stop' : stored < total ? 'Download all albums' : 'Download again'
+    }
+
+    $('offline-toggle').addEventListener('click', showStatus)
+
+    $('offline-download').addEventListener('click', async () => {
+        if (running) return running.abort()
+        running = new AbortController()
+        progress.hidden = false
+        progress.value = 0
+        $('offline-download').textContent = 'Stop'
+        const result = await downloadForOffline(albums, {
+            signal: running.signal,
+            onProgress: ({ done, total, failed }) => {
+                progress.value = done / total
+                status.textContent = `Downloading… ${done} of ${total}${failed ? `, ${failed} failed` : ''}`
+            }
+        })
+        const stopped = running.signal.aborted
+        running = null
+        progress.hidden = true
+        await showStatus()
+        if (result.failed) status.textContent += ` ${result.failed} could not be downloaded; try again later.`
+        else if (stopped) status.textContent += ' Stopped.'
+    })
+
+    $('offline-clear').addEventListener('click', async () => {
+        running?.abort()
+        await clearOffline()
+        await showStatus()
+    })
+    return menu
+}
+
 async function init() {
+    registerServiceWorker()
     $('wall-filter').value = options.query
     $('wall-sort').value = options.sort
     $('wall-group').value = options.group
@@ -108,7 +157,8 @@ async function init() {
     for (const id of ['wall-sort', 'wall-group', 'wall-size']) $(id).addEventListener('input', update)
     $('wall-filter').addEventListener('input', update)
 
-    albums = await loadAlbumList('../data/albums.json')
+    albums = await loadAlbumList()
+    setupOffline()
     render()
 }
 

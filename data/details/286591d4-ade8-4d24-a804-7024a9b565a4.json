@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875878358,
+  "album": {
+    "id": "286591d4-ade8-4d24-a804-7024a9b565a4",
+    "title": "My Dear Melancholy,",
+    "artist": "The Weeknd",
+    "year": "2018",
+    "barcode": "00602567580041",
+    "label": "Universal Republic Records",
+    "genre": "contemporary r&b / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Call Out My Name"
+      },
+      {
+        "number": "2",
+        "title": "Try Me"
+      },
+      {
+        "number": "3",
+        "title": "Wasted Times"
+      },
+      {
+        "number": "4",
+        "title": "I Was Never There"
+      },
+      {
+        "number": "5",
+        "title": "Hurt You"
+      },
+      {
+        "number": "6",
+        "title": "Privilege"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/769e3e26-10ae-4f67-a42e-fb8f633c95da/19682539941-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/769e3e26-10ae-4f67-a42e-fb8f633c95da/19682539941.jpg",
+    "backFull": ""
+  }
+}

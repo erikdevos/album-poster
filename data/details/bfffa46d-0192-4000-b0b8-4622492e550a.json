@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875904768,
+  "album": {
+    "id": "bfffa46d-0192-4000-b0b8-4622492e550a",
+    "title": "WILD",
+    "artist": "KATSEYE",
+    "year": "2026",
+    "barcode": "00199957793087",
+    "label": "HYBE × GEFFEN",
+    "genre": "new jack swing / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "PINKY UP"
+      },
+      {
+        "number": "2",
+        "title": "Animal"
+      },
+      {
+        "number": "3",
+        "title": "Hootie Frutti"
+      },
+      {
+        "number": "4",
+        "title": "Bel Air"
+      },
+      {
+        "number": "5",
+        "title": "That Way"
+      },
+      {
+        "number": "6",
+        "title": "PINKY UP"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/49f9bf56-e06a-4fe9-86df-1c735a5e19c8/45425769709-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/49f9bf56-e06a-4fe9-86df-1c735a5e19c8/45425769709.jpg",
+    "backFull": ""
+  }
+}

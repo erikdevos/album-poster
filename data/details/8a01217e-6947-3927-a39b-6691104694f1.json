@@ -1,0 +1,103 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875842170,
+  "album": {
+    "id": "8a01217e-6947-3927-a39b-6691104694f1",
+    "title": "The College Dropout",
+    "artist": "Kanye West",
+    "year": "2004",
+    "barcode": "602498617397",
+    "label": "Roc‐A‐Fella Records",
+    "genre": "hip hop / pop rap",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Intro"
+      },
+      {
+        "number": "2",
+        "title": "We Don’t Care"
+      },
+      {
+        "number": "3",
+        "title": "Graduation Day"
+      },
+      {
+        "number": "4",
+        "title": "All Falls Down"
+      },
+      {
+        "number": "5",
+        "title": "I’ll Fly Away"
+      },
+      {
+        "number": "6",
+        "title": "Spaceship"
+      },
+      {
+        "number": "7",
+        "title": "Jesus Walks"
+      },
+      {
+        "number": "8",
+        "title": "Never Let Me Down"
+      },
+      {
+        "number": "9",
+        "title": "Get ’Em High"
+      },
+      {
+        "number": "10",
+        "title": "Workout Plan"
+      },
+      {
+        "number": "11",
+        "title": "The New Workout Plan"
+      },
+      {
+        "number": "12",
+        "title": "Slow Jamz"
+      },
+      {
+        "number": "13",
+        "title": "Breathe In, Breathe Out"
+      },
+      {
+        "number": "14",
+        "title": "School Spirit (skit 1)"
+      },
+      {
+        "number": "15",
+        "title": "School Spirit"
+      },
+      {
+        "number": "16",
+        "title": "School Spirit (skit 2)"
+      },
+      {
+        "number": "17",
+        "title": "Lil Jimmy (skit)"
+      },
+      {
+        "number": "18",
+        "title": "Two Words"
+      },
+      {
+        "number": "19",
+        "title": "Through the Wire"
+      },
+      {
+        "number": "20",
+        "title": "Family Business"
+      },
+      {
+        "number": "21",
+        "title": "Last Call"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/da13b81f-7b09-3fb6-b5c9-8551f22c797e/37280144185-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/da13b81f-7b09-3fb6-b5c9-8551f22c797e/37280144185.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876415546,
+  "album": {
+    "id": "798e5814-9f96-46b2-a72a-408d67267661",
+    "title": "If I Can’t Have Love, I Want Power",
+    "artist": "Halsey",
+    "year": "2021",
+    "barcode": "00602438242269",
+    "label": "Capitol Records",
+    "genre": "pop / alternative pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Tradition"
+      },
+      {
+        "number": "2",
+        "title": "Bells in Santa Fe"
+      },
+      {
+        "number": "3",
+        "title": "Easier Than Lying"
+      },
+      {
+        "number": "4",
+        "title": "Lilith"
+      },
+      {
+        "number": "5",
+        "title": "Girl Is a Gun"
+      },
+      {
+        "number": "6",
+        "title": "You asked for this"
+      },
+      {
+        "number": "7",
+        "title": "Darling"
+      },
+      {
+        "number": "8",
+        "title": "1121"
+      },
+      {
+        "number": "9",
+        "title": "honey"
+      },
+      {
+        "number": "10",
+        "title": "Whispers"
+      },
+      {
+        "number": "11",
+        "title": "I am not a woman, I’m a god"
+      },
+      {
+        "number": "12",
+        "title": "The Lighthouse"
+      },
+      {
+        "number": "13",
+        "title": "Ya’aburnee"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/158a7931-9a39-4f57-90de-8dddede10b94/30252563830-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/158a7931-9a39-4f57-90de-8dddede10b94/30252563830.png",
+    "backFull": ""
+  }
+}

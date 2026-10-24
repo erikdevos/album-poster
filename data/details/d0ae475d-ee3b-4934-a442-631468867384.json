@@ -1,0 +1,139 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876381445,
+  "album": {
+    "id": "d0ae475d-ee3b-4934-a442-631468867384",
+    "title": "Trilogy",
+    "artist": "The Weeknd",
+    "year": "2012",
+    "barcode": "602537197934",
+    "label": "Universal Republic Records",
+    "genre": "contemporary r&b / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "High for This"
+      },
+      {
+        "number": "2",
+        "title": "What You Need"
+      },
+      {
+        "number": "3",
+        "title": "House of Balloons / Glass Table Girls"
+      },
+      {
+        "number": "4",
+        "title": "The Morning"
+      },
+      {
+        "number": "5",
+        "title": "Wicked Games"
+      },
+      {
+        "number": "6",
+        "title": "The Party & the After Party"
+      },
+      {
+        "number": "7",
+        "title": "Coming Down"
+      },
+      {
+        "number": "8",
+        "title": "Loft Music"
+      },
+      {
+        "number": "9",
+        "title": "The Knowing"
+      },
+      {
+        "number": "10",
+        "title": "Twenty Eight"
+      },
+      {
+        "number": "1",
+        "title": "Lonely Star"
+      },
+      {
+        "number": "2",
+        "title": "Life of the Party"
+      },
+      {
+        "number": "3",
+        "title": "Thursday"
+      },
+      {
+        "number": "4",
+        "title": "The Zone"
+      },
+      {
+        "number": "5",
+        "title": "The Birds Pt. 1"
+      },
+      {
+        "number": "6",
+        "title": "The Birds Pt. 2"
+      },
+      {
+        "number": "7",
+        "title": "Gone"
+      },
+      {
+        "number": "8",
+        "title": "Rolling Stone"
+      },
+      {
+        "number": "9",
+        "title": "Heaven or Las Vegas"
+      },
+      {
+        "number": "10",
+        "title": "Valerie"
+      },
+      {
+        "number": "1",
+        "title": "D.D."
+      },
+      {
+        "number": "2",
+        "title": "Montreal"
+      },
+      {
+        "number": "3",
+        "title": "Outside"
+      },
+      {
+        "number": "4",
+        "title": "XO / The Host"
+      },
+      {
+        "number": "5",
+        "title": "Initiation"
+      },
+      {
+        "number": "6",
+        "title": "Same Old Song"
+      },
+      {
+        "number": "7",
+        "title": "The Fall"
+      },
+      {
+        "number": "8",
+        "title": "Next"
+      },
+      {
+        "number": "9",
+        "title": "Echoes of Silence"
+      },
+      {
+        "number": "10",
+        "title": "Till Dawn (Here Comes the Sun)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/62ea06a1-8517-4e85-b66f-c2eee37e5b68/6456250497-1200.jpg",
+    "back": "https://coverartarchive.org/release/62ea06a1-8517-4e85-b66f-c2eee37e5b68/35690384202-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/62ea06a1-8517-4e85-b66f-c2eee37e5b68/6456250497.jpg",
+    "backFull": "https://coverartarchive.org/release/62ea06a1-8517-4e85-b66f-c2eee37e5b68/35690384202.jpg"
+  }
+}

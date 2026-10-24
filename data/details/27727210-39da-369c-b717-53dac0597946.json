@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875934641,
+  "album": {
+    "id": "27727210-39da-369c-b717-53dac0597946",
+    "title": "Playing the Angel",
+    "artist": "Depeche Mode",
+    "year": "2005",
+    "barcode": "0094634057707",
+    "label": "Mute",
+    "genre": "synth-pop / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "A Pain That I’m Used To"
+      },
+      {
+        "number": "2",
+        "title": "John the Revelator"
+      },
+      {
+        "number": "3",
+        "title": "Suffer Well"
+      },
+      {
+        "number": "4",
+        "title": "The Sinner in Me"
+      },
+      {
+        "number": "5",
+        "title": "Precious"
+      },
+      {
+        "number": "6",
+        "title": "Macro"
+      },
+      {
+        "number": "7",
+        "title": "I Want It All"
+      },
+      {
+        "number": "8",
+        "title": "Nothing’s Impossible"
+      },
+      {
+        "number": "9",
+        "title": "Introspectre"
+      },
+      {
+        "number": "10",
+        "title": "Damaged People"
+      },
+      {
+        "number": "11",
+        "title": "Lilian"
+      },
+      {
+        "number": "12",
+        "title": "The Darkest Star"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/d371c531-00b0-4afd-b239-257a30ee1171/21813145326-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/d371c531-00b0-4afd-b239-257a30ee1171/21813145326.png",
+    "backFull": ""
+  }
+}

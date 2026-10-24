@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875919720,
+  "album": {
+    "id": "07de8cfe-5ef6-448f-888f-3eeb9d3fb112",
+    "title": "Sanctuary",
+    "artist": "Evanescence",
+    "year": "2026",
+    "barcode": "4099964251289",
+    "label": "Columbia Local",
+    "genre": "alternative metal / heavy metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Beautiful Lie"
+      },
+      {
+        "number": "2",
+        "title": "Tell Me When You’ve Had Enough"
+      },
+      {
+        "number": "3",
+        "title": "Who Will You Follow"
+      },
+      {
+        "number": "4",
+        "title": "Rapture"
+      },
+      {
+        "number": "5",
+        "title": "Afterlife"
+      },
+      {
+        "number": "6",
+        "title": "Sanctuary"
+      },
+      {
+        "number": "7",
+        "title": "How Do I Heal"
+      },
+      {
+        "number": "8",
+        "title": "About Us"
+      },
+      {
+        "number": "9",
+        "title": "Calm Down"
+      },
+      {
+        "number": "10",
+        "title": "Self Destruct"
+      },
+      {
+        "number": "11",
+        "title": "Forever Without You"
+      },
+      {
+        "number": "12",
+        "title": "Wide Open Heart"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c7e9b845-23cc-4644-bbbe-6051ef156af7/44832558193-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/c7e9b845-23cc-4644-bbbe-6051ef156af7/44832558193.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875928927,
+  "album": {
+    "id": "38b34599-6352-389b-ad6a-02866357dabe",
+    "title": "Audioslave",
+    "artist": "Audioslave",
+    "year": "2002",
+    "barcode": "696998696822",
+    "label": "Epic",
+    "genre": "hard rock / post-grunge",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Cochise"
+      },
+      {
+        "number": "2",
+        "title": "Show Me How to Live"
+      },
+      {
+        "number": "3",
+        "title": "Gasoline"
+      },
+      {
+        "number": "4",
+        "title": "What You Are"
+      },
+      {
+        "number": "5",
+        "title": "Like a Stone"
+      },
+      {
+        "number": "6",
+        "title": "Set It Off"
+      },
+      {
+        "number": "7",
+        "title": "Shadow on the Sun"
+      },
+      {
+        "number": "8",
+        "title": "I Am the Highway"
+      },
+      {
+        "number": "9",
+        "title": "Exploder"
+      },
+      {
+        "number": "10",
+        "title": "Hypnotize"
+      },
+      {
+        "number": "11",
+        "title": "Bring Em Back Alive"
+      },
+      {
+        "number": "12",
+        "title": "Light My Way"
+      },
+      {
+        "number": "13",
+        "title": "Getaway Car"
+      },
+      {
+        "number": "14",
+        "title": "The Last Remaining Light"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/07fc4a1d-ae17-484f-a23b-10a6c8fc0b1d/26560467892-1200.jpg",
+    "back": "https://coverartarchive.org/release/07fc4a1d-ae17-484f-a23b-10a6c8fc0b1d/14911254759-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/07fc4a1d-ae17-484f-a23b-10a6c8fc0b1d/26560467892.jpg",
+    "backFull": "https://coverartarchive.org/release/07fc4a1d-ae17-484f-a23b-10a6c8fc0b1d/14911254759.jpg"
+  }
+}

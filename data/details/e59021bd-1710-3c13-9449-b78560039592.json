@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875936432,
+  "album": {
+    "id": "e59021bd-1710-3c13-9449-b78560039592",
+    "title": "Music for the Masses",
+    "artist": "Depeche Mode",
+    "year": "1987",
+    "barcode": "5016025600472",
+    "label": "Mute",
+    "genre": "synth-pop / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Never Let Me Down Again"
+      },
+      {
+        "number": "2",
+        "title": "The Things You Said"
+      },
+      {
+        "number": "3",
+        "title": "Strangelove"
+      },
+      {
+        "number": "4",
+        "title": "Sacred"
+      },
+      {
+        "number": "5",
+        "title": "Little 15"
+      },
+      {
+        "number": "6",
+        "title": "Behind the Wheel"
+      },
+      {
+        "number": "7",
+        "title": "I Want You Now"
+      },
+      {
+        "number": "8",
+        "title": "To Have and to Hold"
+      },
+      {
+        "number": "9",
+        "title": "Nothing"
+      },
+      {
+        "number": "10",
+        "title": "Pimpf / Interlude #1: Mission Impossible"
+      },
+      {
+        "number": "11",
+        "title": "Agent Orange"
+      },
+      {
+        "number": "12",
+        "title": "Never Let Me Down Again (Aggro mix)"
+      },
+      {
+        "number": "13",
+        "title": "To Have and to Hold (Spanish Taster)"
+      },
+      {
+        "number": "14",
+        "title": "Pleasure, Little Treasure (Glitter mix)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/8d059e75-d9bb-4d90-97a9-1cb6ed7472c6/9552817368-1200.jpg",
+    "back": "https://coverartarchive.org/release/8d059e75-d9bb-4d90-97a9-1cb6ed7472c6/35273052221-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/8d059e75-d9bb-4d90-97a9-1cb6ed7472c6/9552817368.jpg",
+    "backFull": "https://coverartarchive.org/release/8d059e75-d9bb-4d90-97a9-1cb6ed7472c6/35273052221.jpg"
+  }
+}

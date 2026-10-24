@@ -1,0 +1,87 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875992836,
+  "album": {
+    "id": "9162580e-5df4-32de-80cc-f45a8d8a9b1d",
+    "title": "Abbey Road",
+    "artist": "The Beatles",
+    "year": "1969",
+    "barcode": "00602547670342",
+    "label": "EMI Catalogue",
+    "genre": "rock / pop rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Come Together"
+      },
+      {
+        "number": "2",
+        "title": "Something"
+      },
+      {
+        "number": "3",
+        "title": "Maxwell’s Silver Hammer"
+      },
+      {
+        "number": "4",
+        "title": "Oh! Darling"
+      },
+      {
+        "number": "5",
+        "title": "Octopus’s Garden"
+      },
+      {
+        "number": "6",
+        "title": "I Want You (She’s So Heavy)"
+      },
+      {
+        "number": "7",
+        "title": "Here Comes the Sun"
+      },
+      {
+        "number": "8",
+        "title": "Because"
+      },
+      {
+        "number": "9",
+        "title": "You Never Give Me Your Money"
+      },
+      {
+        "number": "10",
+        "title": "Sun King"
+      },
+      {
+        "number": "11",
+        "title": "Mean Mr Mustard"
+      },
+      {
+        "number": "12",
+        "title": "Polythene Pam"
+      },
+      {
+        "number": "13",
+        "title": "She Came In Through the Bathroom Window"
+      },
+      {
+        "number": "14",
+        "title": "Golden Slumbers"
+      },
+      {
+        "number": "15",
+        "title": "Carry That Weight"
+      },
+      {
+        "number": "16",
+        "title": "The End"
+      },
+      {
+        "number": "17",
+        "title": "Her Majesty"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/31765b9f-e969-4257-855f-c7ea1f657b2a/39706767821-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/31765b9f-e969-4257-855f-c7ea1f657b2a/39706767821.jpg",
+    "backFull": ""
+  }
+}

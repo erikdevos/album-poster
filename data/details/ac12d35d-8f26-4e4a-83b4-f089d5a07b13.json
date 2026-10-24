@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875945353,
+  "album": {
+    "id": "ac12d35d-8f26-4e4a-83b4-f089d5a07b13",
+    "title": "BADLANDS",
+    "artist": "Halsey",
+    "year": "2015",
+    "barcode": "602547559333",
+    "label": "Astralwerks",
+    "genre": "electronic / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Castle"
+      },
+      {
+        "number": "2",
+        "title": "Hold Me Down"
+      },
+      {
+        "number": "3",
+        "title": "New Americana"
+      },
+      {
+        "number": "4",
+        "title": "Drive"
+      },
+      {
+        "number": "5",
+        "title": "Roman Holiday"
+      },
+      {
+        "number": "6",
+        "title": "Colors"
+      },
+      {
+        "number": "7",
+        "title": "Coming Down"
+      },
+      {
+        "number": "8",
+        "title": "Haunting"
+      },
+      {
+        "number": "9",
+        "title": "Control"
+      },
+      {
+        "number": "10",
+        "title": "Young God"
+      },
+      {
+        "number": "11",
+        "title": "Ghost"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/624c3866-e54d-468e-b525-cfb3815eef49/25490675842-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/624c3866-e54d-468e-b525-cfb3815eef49/25490675842.jpg",
+    "backFull": ""
+  }
+}

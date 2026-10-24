@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876417369,
+  "album": {
+    "id": "e0fdb431-0109-420d-8a37-f99eaeb4d671",
+    "title": "BRAT",
+    "artist": "Charli xcx",
+    "year": "2024",
+    "barcode": "075679666130",
+    "label": "Atlantic",
+    "genre": "dance-pop / electropop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "360"
+      },
+      {
+        "number": "2",
+        "title": "Club classics"
+      },
+      {
+        "number": "3",
+        "title": "Sympathy is a knife"
+      },
+      {
+        "number": "4",
+        "title": "I might say something stupid"
+      },
+      {
+        "number": "5",
+        "title": "Talk talk"
+      },
+      {
+        "number": "6",
+        "title": "Von dutch"
+      },
+      {
+        "number": "7",
+        "title": "Everything is romantic"
+      },
+      {
+        "number": "8",
+        "title": "Rewind"
+      },
+      {
+        "number": "9",
+        "title": "So I"
+      },
+      {
+        "number": "10",
+        "title": "Girl, so confusing"
+      },
+      {
+        "number": "11",
+        "title": "Apple"
+      },
+      {
+        "number": "12",
+        "title": "B2b"
+      },
+      {
+        "number": "13",
+        "title": "Mean girls"
+      },
+      {
+        "number": "14",
+        "title": "I think about it all the time"
+      },
+      {
+        "number": "15",
+        "title": "365"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/ab55ac76-eee5-4f89-ac14-7bb9aa837bc8/44951744950-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/ab55ac76-eee5-4f89-ac14-7bb9aa837bc8/44951744950.jpg",
+    "backFull": ""
+  }
+}

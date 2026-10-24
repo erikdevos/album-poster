@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875977286,
+  "album": {
+    "id": "a842d860-a023-3a71-ad2e-a3a94cffabd7",
+    "title": "Showbiz",
+    "artist": "Muse",
+    "year": "1999",
+    "barcode": "3298490321119",
+    "label": "naïve",
+    "genre": "rock / alternative rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Sunburn"
+      },
+      {
+        "number": "2",
+        "title": "Muscle Museum"
+      },
+      {
+        "number": "3",
+        "title": "Fillip"
+      },
+      {
+        "number": "4",
+        "title": "Falling Down"
+      },
+      {
+        "number": "5",
+        "title": "Cave"
+      },
+      {
+        "number": "6",
+        "title": "Showbiz"
+      },
+      {
+        "number": "7",
+        "title": "Unintended"
+      },
+      {
+        "number": "8",
+        "title": "Uno"
+      },
+      {
+        "number": "9",
+        "title": "Sober"
+      },
+      {
+        "number": "10",
+        "title": "Escape"
+      },
+      {
+        "number": "11",
+        "title": "Overdue"
+      },
+      {
+        "number": "12",
+        "title": "Hate This & I’ll Love You"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/5f2e104f-3b06-3cfe-a004-e5141b13f681/1940746072-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/5f2e104f-3b06-3cfe-a004-e5141b13f681/1940746072.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876445868,
+  "album": {
+    "id": "c3f7093d-5a86-45ed-afa6-2413538074c2",
+    "title": "Audio, Video, Disco.",
+    "artist": "Justice",
+    "year": "2011",
+    "barcode": "9340650011034",
+    "label": "Ed Banger Records",
+    "genre": "electro / electroclash",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Horsepower"
+      },
+      {
+        "number": "2",
+        "title": "Civilization"
+      },
+      {
+        "number": "3",
+        "title": "Ohio"
+      },
+      {
+        "number": "4",
+        "title": "Canon (primo)"
+      },
+      {
+        "number": "5",
+        "title": "Canon"
+      },
+      {
+        "number": "6",
+        "title": "On’n’On"
+      },
+      {
+        "number": "7",
+        "title": "Brianvision"
+      },
+      {
+        "number": "8",
+        "title": "Parade"
+      },
+      {
+        "number": "9",
+        "title": "New Lands"
+      },
+      {
+        "number": "10",
+        "title": "Helix"
+      },
+      {
+        "number": "11",
+        "title": "Audio, Video, Disco. / Presence"
+      }
+    ],
+    "front": "",
+    "back": "",
+    "frontFull": "",
+    "backFull": ""
+  }
+}

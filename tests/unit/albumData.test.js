@@ -48,3 +48,38 @@ test('the difference between the saved list and the page: added, removed and ren
     assert.deepEqual(diff.edited.map(album => album.artist), ['Rosalía'])
     assert.deepEqual(diffAlbums(saved, saved), { added: [], removed: [], edited: [] })
 })
+
+// ---------- The details of an album ----------
+import { validateDetails, formatDetails } from '../../scripting/albumData.js'
+
+const detail = (changes = {}) => ({
+    v: 1, fetchedAt: 1_700_000_000_000,
+    album: { id: A, title: 'LUX', artist: 'ROSALÍA', year: '2025', barcode: '196873722672', label: 'Columbia', genre: 'art pop',
+        tracks: [{ number: '1', title: 'Reliquia' }], front: 'https://coverartarchive.org/x.jpg', back: '', frontFull: '', backFull: '', ...changes }
+})
+
+test('valid details come back clean, in a fixed order', () => {
+    const clean = validateDetails({ ...detail(), extra: 1 }, A)
+    assert.deepEqual(Object.keys(clean), ['v', 'fetchedAt', 'album'])
+    assert.deepEqual(Object.keys(clean.album).slice(0, 4), ['id', 'title', 'artist', 'year'])
+    assert.equal(formatDetails(detail(), A).endsWith('}\n'), true)
+})
+
+test('details are refused when they are for another album, or incomplete or odd', () => {
+    assert.throws(() => validateDetails(detail(), B), /another album/)
+    assert.throws(() => validateDetails({ ...detail(), v: 0 }, A), /version/)
+    assert.throws(() => validateDetails({ ...detail(), fetchedAt: 'yesterday' }, A), /date/)
+    assert.throws(() => validateDetails({ v: 1, fetchedAt: 1 }, A), /no album/)
+    assert.throws(() => validateDetails(detail({ title: ' ' }), A), /title/)
+    assert.throws(() => validateDetails(detail({ tracks: 'x' }), A), /tracks/)
+    assert.throws(() => validateDetails(detail({ front: 'http://insecure.test/x.jpg' }), A), /https/)
+    assert.throws(() => validateDetails(detail({ front: 'javascript:alert(1)' }), A), /https/)
+    assert.throws(() => validateDetails(detail({ label: 'x'.repeat(501) }), A), /text/)
+    assert.throws(() => validateDetails(detail({ tracks: Array.from({ length: 501 }, () => ({ title: 'x' })) }), A), /tracks/)
+})
+
+test('missing optional fields become empty text', () => {
+    const clean = validateDetails({ v: 1, fetchedAt: 1, album: { id: A, title: 'LUX', artist: 'Rosalia', tracks: [] } }, A)
+    assert.equal(clean.album.year, '')
+    assert.equal(clean.album.front, '')
+})

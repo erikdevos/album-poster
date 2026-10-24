@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876395338,
+  "album": {
+    "id": "20b4c8b3-e922-44a3-90e8-fa00acad8ed4",
+    "title": "The Fame Monster",
+    "artist": "Lady Gaga",
+    "year": "2009",
+    "barcode": "602537621606",
+    "label": "Interscope Records",
+    "genre": "dance-pop / electropop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Bad Romance"
+      },
+      {
+        "number": "2",
+        "title": "Alejandro"
+      },
+      {
+        "number": "3",
+        "title": "Monster"
+      },
+      {
+        "number": "4",
+        "title": "Speechless"
+      },
+      {
+        "number": "5",
+        "title": "Dance in the Dark"
+      },
+      {
+        "number": "6",
+        "title": "Telephone"
+      },
+      {
+        "number": "7",
+        "title": "So Happy I Could Die"
+      },
+      {
+        "number": "8",
+        "title": "Teeth"
+      },
+      {
+        "number": "9",
+        "title": "Bad Romance (Starsmith remix)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/a31482f5-532a-49db-9c70-e2c0a59565ef/26028751908-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/a31482f5-532a-49db-9c70-e2c0a59565ef/26028751908.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875952555,
+  "album": {
+    "id": "e5495719-b3ad-3eea-a533-fb70af43c23d",
+    "title": "The Fame",
+    "artist": "Lady Gaga",
+    "year": "2008",
+    "barcode": "00602517913974",
+    "label": "Interscope Records",
+    "genre": "pop / dance-pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Just Dance"
+      },
+      {
+        "number": "2",
+        "title": "LoveGame"
+      },
+      {
+        "number": "3",
+        "title": "Paparazzi"
+      },
+      {
+        "number": "4",
+        "title": "Poker Face"
+      },
+      {
+        "number": "5",
+        "title": "Eh, Eh (Nothing Else I Can Say)"
+      },
+      {
+        "number": "6",
+        "title": "Beautiful, Dirty, Rich"
+      },
+      {
+        "number": "7",
+        "title": "The Fame"
+      },
+      {
+        "number": "8",
+        "title": "Money Honey"
+      },
+      {
+        "number": "9",
+        "title": "Starstruck"
+      },
+      {
+        "number": "10",
+        "title": "Boys Boys Boys"
+      },
+      {
+        "number": "11",
+        "title": "Paper Gangsta"
+      },
+      {
+        "number": "12",
+        "title": "Brown Eyes"
+      },
+      {
+        "number": "13",
+        "title": "I Like It Rough"
+      },
+      {
+        "number": "14",
+        "title": "Summerboy"
+      },
+      {
+        "number": "15",
+        "title": "Disco Heaven"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/8c86403a-6bfb-40f8-a1db-1cde6cbf68a5/33619706574-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/8c86403a-6bfb-40f8-a1db-1cde6cbf68a5/33619706574.jpg",
+    "backFull": ""
+  }
+}

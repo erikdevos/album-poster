@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876428643,
+  "album": {
+    "id": "09474d62-17dd-3a4f-98fb-04c65f38a479",
+    "title": "Meteora",
+    "artist": "Linkin Park",
+    "year": "2003",
+    "barcode": "093624949350",
+    "label": "Warner Bros. Records",
+    "genre": "nu metal / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Foreword"
+      },
+      {
+        "number": "2",
+        "title": "Don’t Stay"
+      },
+      {
+        "number": "3",
+        "title": "Somewhere I Belong"
+      },
+      {
+        "number": "4",
+        "title": "Lying From You"
+      },
+      {
+        "number": "5",
+        "title": "Hit the Floor"
+      },
+      {
+        "number": "6",
+        "title": "Easier to Run"
+      },
+      {
+        "number": "7",
+        "title": "Faint"
+      },
+      {
+        "number": "8",
+        "title": "Figure.09"
+      },
+      {
+        "number": "9",
+        "title": "Breaking the Habit"
+      },
+      {
+        "number": "10",
+        "title": "From the Inside"
+      },
+      {
+        "number": "11",
+        "title": "Nobody’s Listening"
+      },
+      {
+        "number": "12",
+        "title": "Session"
+      },
+      {
+        "number": "13",
+        "title": "Numb"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e1656e7e-c23f-48e4-894e-fe1e0d5e6707/17357251129-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e1656e7e-c23f-48e4-894e-fe1e0d5e6707/17357251129.jpg",
+    "backFull": ""
+  }
+}

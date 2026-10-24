@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875999435,
+  "album": {
+    "id": "156f5e11-10db-34f4-b874-f8b6c59b7c43",
+    "title": "Out of Exile",
+    "artist": "Audioslave",
+    "year": "2005",
+    "barcode": "602498815632",
+    "label": "Interscope Records",
+    "genre": "hard rock / alternative rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Your Time Has Come"
+      },
+      {
+        "number": "2",
+        "title": "Out of Exile"
+      },
+      {
+        "number": "3",
+        "title": "Be Yourself"
+      },
+      {
+        "number": "4",
+        "title": "Doesn’t Remind Me"
+      },
+      {
+        "number": "5",
+        "title": "Drown Me Slowly"
+      },
+      {
+        "number": "6",
+        "title": "Heaven’s Dead"
+      },
+      {
+        "number": "7",
+        "title": "The Worm"
+      },
+      {
+        "number": "8",
+        "title": "Man or Animal"
+      },
+      {
+        "number": "9",
+        "title": "Yesterday to Tomorrow"
+      },
+      {
+        "number": "10",
+        "title": "Dandelion"
+      },
+      {
+        "number": "11",
+        "title": "#1 Zero"
+      },
+      {
+        "number": "12",
+        "title": "The Curse"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/6c02f2db-3668-31ce-a758-6da1d735cd16/14911264703.jpg",
+    "back": "https://coverartarchive.org/release/6c02f2db-3668-31ce-a758-6da1d735cd16/14911260934.jpg",
+    "frontFull": "https://coverartarchive.org/release/6c02f2db-3668-31ce-a758-6da1d735cd16/14911264703.jpg",
+    "backFull": "https://coverartarchive.org/release/6c02f2db-3668-31ce-a758-6da1d735cd16/14911260934.jpg"
+  }
+}

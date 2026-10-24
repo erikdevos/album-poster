@@ -22,3 +22,30 @@ test('ids are unique, and so are the legacy TheAudioDB ids', () => {
     assert.equal(new Set(legacy).size, legacy.length)
     for (const id of legacy) assert.match(id, /^\d+$/)
 })
+
+// ---------- The prepared details, data/details/<id>.json ----------
+import { readdir } from 'node:fs/promises'
+import { validateDetails } from '../../scripting/albumData.js'
+import { SCHEMA } from '../../scripting/albumCache.js'
+
+const detailsUrl = name => new URL(`../../data/details/${name}`, import.meta.url)
+
+test('every album of the list has valid prepared details; if one is missing, run: npm run details', async () => {
+    for (const album of albums) {
+        let record
+        try {
+            record = JSON.parse(await readFile(detailsUrl(`${album.id}.json`), 'utf8'))
+        } catch {
+            assert.fail(`no details for ${album.artist} - ${album.name}: run npm run details`)
+        }
+        const clean = validateDetails(record, album.id)
+        assert.equal(clean.v, SCHEMA, `${album.name} has details of another version: run npm run details -- --all`)
+        assert.ok(clean.album.tracks.length > 0 || clean.album.title, `${album.name} has no tracks`)
+    }
+})
+
+test('there are no details of albums that are not in the list', async () => {
+    const ids = new Set(albums.map(album => album.id))
+    const files = (await readdir(detailsUrl(''))).filter(name => name.endsWith('.json'))
+    for (const name of files) assert.ok(ids.has(name.slice(0, -5)), `${name} is not in the list: run npm run details`)
+})

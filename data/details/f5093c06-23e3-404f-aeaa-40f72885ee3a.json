@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875846893,
+  "album": {
+    "id": "f5093c06-23e3-404f-aeaa-40f72885ee3a",
+    "title": "The Dark Side of the Moon",
+    "artist": "Pink Floyd",
+    "year": "1973",
+    "barcode": "",
+    "label": "Harvest",
+    "genre": "progressive rock / rock",
+    "tracks": [
+      {
+        "number": "A1",
+        "title": "Speak to Me"
+      },
+      {
+        "number": "A2",
+        "title": "Breathe"
+      },
+      {
+        "number": "A3",
+        "title": "On the Run"
+      },
+      {
+        "number": "A4",
+        "title": "Time"
+      },
+      {
+        "number": "A5",
+        "title": "The Great Gig in the Sky"
+      },
+      {
+        "number": "B1",
+        "title": "Money"
+      },
+      {
+        "number": "B2",
+        "title": "Us and Them"
+      },
+      {
+        "number": "B3",
+        "title": "Any Colour You Like"
+      },
+      {
+        "number": "B4",
+        "title": "Brain Damage"
+      },
+      {
+        "number": "B5",
+        "title": "Eclipse"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/956fbc58-362d-43b8-b880-3779e0508559/34025419985-1200.jpg",
+    "back": "https://coverartarchive.org/release/956fbc58-362d-43b8-b880-3779e0508559/34025420412-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/956fbc58-362d-43b8-b880-3779e0508559/34025419985.jpg",
+    "backFull": "https://coverartarchive.org/release/956fbc58-362d-43b8-b880-3779e0508559/34025420412.jpg"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876431309,
+  "album": {
+    "id": "a3159fb4-2ad3-4678-ba51-36fbc8b8430d",
+    "title": "From Zero",
+    "artist": "Linkin Park",
+    "year": "2024",
+    "barcode": "093624839835",
+    "label": "Warner Records",
+    "genre": "nu metal / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "From Zero (Intro)"
+      },
+      {
+        "number": "2",
+        "title": "The Emptiness Machine"
+      },
+      {
+        "number": "3",
+        "title": "Cut the Bridge"
+      },
+      {
+        "number": "4",
+        "title": "Heavy Is the Crown"
+      },
+      {
+        "number": "5",
+        "title": "Over Each Other"
+      },
+      {
+        "number": "6",
+        "title": "Casualty"
+      },
+      {
+        "number": "7",
+        "title": "Overflow"
+      },
+      {
+        "number": "8",
+        "title": "Two Faced"
+      },
+      {
+        "number": "9",
+        "title": "Stained"
+      },
+      {
+        "number": "10",
+        "title": "IGYEIH"
+      },
+      {
+        "number": "11",
+        "title": "Good Things Go"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/cd0ab2da-5003-4ebb-93fb-c930fe39164b/44074278821-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/cd0ab2da-5003-4ebb-93fb-c930fe39164b/44074278821.jpg",
+    "backFull": ""
+  }
+}

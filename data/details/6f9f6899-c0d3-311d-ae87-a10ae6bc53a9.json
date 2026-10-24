@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875834608,
+  "album": {
+    "id": "6f9f6899-c0d3-311d-ae87-a10ae6bc53a9",
+    "title": "Mezzanine",
+    "artist": "Massive Attack",
+    "year": "1998",
+    "barcode": "4988006737839",
+    "label": "Virgin",
+    "genre": "trip hop / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Angel"
+      },
+      {
+        "number": "2",
+        "title": "Risingson"
+      },
+      {
+        "number": "3",
+        "title": "Teardrop"
+      },
+      {
+        "number": "4",
+        "title": "Inertia Creeps"
+      },
+      {
+        "number": "5",
+        "title": "Exchange"
+      },
+      {
+        "number": "6",
+        "title": "Dissolved Girl"
+      },
+      {
+        "number": "7",
+        "title": "Man Next Door"
+      },
+      {
+        "number": "8",
+        "title": "Black Milk"
+      },
+      {
+        "number": "9",
+        "title": "Mezzanine"
+      },
+      {
+        "number": "10",
+        "title": "Group Four"
+      },
+      {
+        "number": "11",
+        "title": "(Exchange)"
+      },
+      {
+        "number": "12",
+        "title": "Superpredators (The Mad Professor remix)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/6e512ec0-1316-4abb-b6b6-07dbd8b005ed/12203062606.png",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/6e512ec0-1316-4abb-b6b6-07dbd8b005ed/12203062606.png",
+    "backFull": ""
+  }
+}

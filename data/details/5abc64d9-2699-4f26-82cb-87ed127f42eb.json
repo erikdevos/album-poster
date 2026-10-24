@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876385503,
+  "album": {
+    "id": "5abc64d9-2699-4f26-82cb-87ed127f42eb",
+    "title": "Hesitation Marks",
+    "artist": "Nine Inch Nails",
+    "year": "2013",
+    "barcode": "00602537506095",
+    "label": "Polydor",
+    "genre": "industrial / heavy metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Eater of Dreams"
+      },
+      {
+        "number": "2",
+        "title": "Copy of A"
+      },
+      {
+        "number": "3",
+        "title": "Came Back Haunted"
+      },
+      {
+        "number": "4",
+        "title": "Find My Way"
+      },
+      {
+        "number": "5",
+        "title": "All Time Low"
+      },
+      {
+        "number": "6",
+        "title": "Disappointed"
+      },
+      {
+        "number": "7",
+        "title": "Everything"
+      },
+      {
+        "number": "8",
+        "title": "Satellite"
+      },
+      {
+        "number": "9",
+        "title": "Various Methods of Escape"
+      },
+      {
+        "number": "10",
+        "title": "Running"
+      },
+      {
+        "number": "11",
+        "title": "I Would for You"
+      },
+      {
+        "number": "12",
+        "title": "In Two"
+      },
+      {
+        "number": "13",
+        "title": "While I’m Still Here"
+      },
+      {
+        "number": "14",
+        "title": "Black Noise"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c83ebf08-97f4-4971-8fe2-624fc52dd4ca/41845859925-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/c83ebf08-97f4-4971-8fe2-624fc52dd4ca/41845859925.jpg",
+    "backFull": ""
+  }
+}

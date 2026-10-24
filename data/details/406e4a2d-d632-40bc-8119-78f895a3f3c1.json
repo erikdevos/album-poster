@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875946856,
+  "album": {
+    "id": "406e4a2d-d632-40bc-8119-78f895a3f3c1",
+    "title": "dont smile at me",
+    "artist": "Billie Eilish",
+    "year": "2017",
+    "barcode": "00602567328063",
+    "label": "Darkroom Records",
+    "genre": "electropop / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "COPYCAT"
+      },
+      {
+        "number": "2",
+        "title": "idontwannabeyouanymore"
+      },
+      {
+        "number": "3",
+        "title": "my boy"
+      },
+      {
+        "number": "4",
+        "title": "watch"
+      },
+      {
+        "number": "5",
+        "title": "party favor"
+      },
+      {
+        "number": "6",
+        "title": "bellyache"
+      },
+      {
+        "number": "7",
+        "title": "ocean eyes"
+      },
+      {
+        "number": "8",
+        "title": "hostage"
+      },
+      {
+        "number": "9",
+        "title": "&burn"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/d675890d-f14c-4a40-b791-c50432c2a22d/22042933816-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/d675890d-f14c-4a40-b791-c50432c2a22d/22042933816.jpg",
+    "backFull": ""
+  }
+}

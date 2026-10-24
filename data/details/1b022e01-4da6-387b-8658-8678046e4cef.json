@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875868518,
+  "album": {
+    "id": "1b022e01-4da6-387b-8658-8678046e4cef",
+    "title": "Nevermind",
+    "artist": "Nirvana",
+    "year": "1991",
+    "barcode": "00602537498659",
+    "label": "Geffen",
+    "genre": "grunge / alternative rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Smells Like Teen Spirit"
+      },
+      {
+        "number": "2",
+        "title": "In Bloom"
+      },
+      {
+        "number": "3",
+        "title": "Come as You Are"
+      },
+      {
+        "number": "4",
+        "title": "Breed"
+      },
+      {
+        "number": "5",
+        "title": "Lithium"
+      },
+      {
+        "number": "6",
+        "title": "Polly"
+      },
+      {
+        "number": "7",
+        "title": "Territorial Pissings"
+      },
+      {
+        "number": "8",
+        "title": "Drain You"
+      },
+      {
+        "number": "9",
+        "title": "Lounge Act"
+      },
+      {
+        "number": "10",
+        "title": "Stay Away"
+      },
+      {
+        "number": "11",
+        "title": "On a Plain"
+      },
+      {
+        "number": "12",
+        "title": "Something in the Way"
+      },
+      {
+        "number": "13",
+        "title": "Endless, Nameless"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c771f7fc-9e62-4349-a2e3-ceaf7122bf5b/30501372565-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/c771f7fc-9e62-4349-a2e3-ceaf7122bf5b/30501372565.jpg",
+    "backFull": ""
+  }
+}

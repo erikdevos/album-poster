@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875912614,
+  "album": {
+    "id": "7dffeca3-420b-4095-abf4-f2e1ab61be35",
+    "title": "The Wow! Signal",
+    "artist": "Muse",
+    "year": "2026",
+    "barcode": "5026854898216",
+    "label": "Warner Records",
+    "genre": "alternative rock / pop rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Dark Forest"
+      },
+      {
+        "number": "2",
+        "title": "Nightshift Superstar"
+      },
+      {
+        "number": "3",
+        "title": "Shimmering Scars"
+      },
+      {
+        "number": "4",
+        "title": "Cryogen"
+      },
+      {
+        "number": "5",
+        "title": "Be With You"
+      },
+      {
+        "number": "6",
+        "title": "Hexagons"
+      },
+      {
+        "number": "7",
+        "title": "The Sickness in You & I"
+      },
+      {
+        "number": "8",
+        "title": "Unravelling"
+      },
+      {
+        "number": "9",
+        "title": "Hush"
+      },
+      {
+        "number": "10",
+        "title": "Space Debris"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/66f96b82-4cf1-41a7-82b1-ee075a91952b/44651000762-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/66f96b82-4cf1-41a7-82b1-ee075a91952b/44651000762.jpg",
+    "backFull": ""
+  }
+}

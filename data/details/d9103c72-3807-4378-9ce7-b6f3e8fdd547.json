@@ -1,0 +1,83 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875888957,
+  "album": {
+    "id": "d9103c72-3807-4378-9ce7-b6f3e8fdd547",
+    "title": "To Pimp a Butterfly",
+    "artist": "Kendrick Lamar",
+    "year": "2015",
+    "barcode": "00602547276636",
+    "label": "Aftermath Entertainment",
+    "genre": "conscious hip hop / west coast hip hop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Wesley’s Theory"
+      },
+      {
+        "number": "2",
+        "title": "For Free? (interlude)"
+      },
+      {
+        "number": "3",
+        "title": "King Kunta"
+      },
+      {
+        "number": "4",
+        "title": "Institutionalized"
+      },
+      {
+        "number": "5",
+        "title": "These Walls"
+      },
+      {
+        "number": "6",
+        "title": "u"
+      },
+      {
+        "number": "7",
+        "title": "Alright"
+      },
+      {
+        "number": "8",
+        "title": "For Sale? (interlude)"
+      },
+      {
+        "number": "9",
+        "title": "Momma"
+      },
+      {
+        "number": "10",
+        "title": "Hood Politics"
+      },
+      {
+        "number": "11",
+        "title": "How Much a Dollar Cost"
+      },
+      {
+        "number": "12",
+        "title": "Complexion (A Zulu Love)"
+      },
+      {
+        "number": "13",
+        "title": "The Blacker the Berry"
+      },
+      {
+        "number": "14",
+        "title": "You Ain’t Gotta Lie (Momma Said)"
+      },
+      {
+        "number": "15",
+        "title": "i"
+      },
+      {
+        "number": "16",
+        "title": "Mortal Man"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/b4d6e526-4195-49bc-b660-b6df4c27686e/45334112812-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/b4d6e526-4195-49bc-b660-b6df4c27686e/45334112812.jpg",
+    "backFull": ""
+  }
+}

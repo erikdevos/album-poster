@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875959477,
+  "album": {
+    "id": "b9c6879f-3a34-3aa0-a68f-73ced2608f7a",
+    "title": "Black Celebration",
+    "artist": "Depeche Mode",
+    "year": "1986",
+    "barcode": "",
+    "label": "Mute",
+    "genre": "alternative dance / electronic",
+    "tracks": [
+      {
+        "number": "A1",
+        "title": "Black Celebration"
+      },
+      {
+        "number": "A2",
+        "title": "Fly on the Windscreen (final)"
+      },
+      {
+        "number": "A3",
+        "title": "A Question of Lust"
+      },
+      {
+        "number": "A4",
+        "title": "Sometimes"
+      },
+      {
+        "number": "A5",
+        "title": "It Doesn't Matter Two"
+      },
+      {
+        "number": "B1",
+        "title": "A Question of Time"
+      },
+      {
+        "number": "B2",
+        "title": "Stripped"
+      },
+      {
+        "number": "B3",
+        "title": "Here Is the House"
+      },
+      {
+        "number": "B4",
+        "title": "World Full of Nothing"
+      },
+      {
+        "number": "B5",
+        "title": "Dressed in Black"
+      },
+      {
+        "number": "B6",
+        "title": "New Dress"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/786db0cb-0f4b-33b4-afe5-4d768e6fed33/15648221019.jpg",
+    "back": "https://coverartarchive.org/release/786db0cb-0f4b-33b4-afe5-4d768e6fed33/15648222386.jpg",
+    "frontFull": "https://coverartarchive.org/release/786db0cb-0f4b-33b4-afe5-4d768e6fed33/15648221019.jpg",
+    "backFull": "https://coverartarchive.org/release/786db0cb-0f4b-33b4-afe5-4d768e6fed33/15648222386.jpg"
+  }
+}

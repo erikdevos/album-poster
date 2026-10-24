@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875885570,
+  "album": {
+    "id": "b88655ba-7469-48b8-a296-b9011ab73ef3",
+    "title": "DAMN.",
+    "artist": "Kendrick Lamar",
+    "year": "2017",
+    "barcode": "00602557608724",
+    "label": "Aftermath Entertainment",
+    "genre": "hip hop / west coast hip hop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "BLOOD."
+      },
+      {
+        "number": "2",
+        "title": "DNA."
+      },
+      {
+        "number": "3",
+        "title": "YAH."
+      },
+      {
+        "number": "4",
+        "title": "ELEMENT."
+      },
+      {
+        "number": "5",
+        "title": "FEEL."
+      },
+      {
+        "number": "6",
+        "title": "LOYALTY."
+      },
+      {
+        "number": "7",
+        "title": "PRIDE."
+      },
+      {
+        "number": "8",
+        "title": "HUMBLE."
+      },
+      {
+        "number": "9",
+        "title": "LUST."
+      },
+      {
+        "number": "10",
+        "title": "LOVE."
+      },
+      {
+        "number": "11",
+        "title": "XXX."
+      },
+      {
+        "number": "12",
+        "title": "FEAR."
+      },
+      {
+        "number": "13",
+        "title": "GOD."
+      },
+      {
+        "number": "14",
+        "title": "DUCKWORTH."
+      }
+    ],
+    "front": "https://coverartarchive.org/release/b292c647-e3f6-4991-a919-7bd4df4d99ff/46309689086-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/b292c647-e3f6-4991-a919-7bd4df4d99ff/46309689086.jpg",
+    "backFull": ""
+  }
+}

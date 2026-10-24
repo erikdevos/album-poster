@@ -1,0 +1,83 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875816364,
+  "album": {
+    "id": "00054665-89fa-33d5-a8f0-1728ea8c32c3",
+    "title": "Homework",
+    "artist": "Daft Punk",
+    "year": "1997",
+    "barcode": "0724384260958",
+    "label": "Parlophone France",
+    "genre": "electronic / house",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Daftendirekt"
+      },
+      {
+        "number": "2",
+        "title": "WDPK 83.7 FM"
+      },
+      {
+        "number": "3",
+        "title": "Revolution 909"
+      },
+      {
+        "number": "4",
+        "title": "Da Funk"
+      },
+      {
+        "number": "5",
+        "title": "Phœnix"
+      },
+      {
+        "number": "6",
+        "title": "Fresh"
+      },
+      {
+        "number": "7",
+        "title": "Around the World"
+      },
+      {
+        "number": "8",
+        "title": "Rollin' & Scratchin'"
+      },
+      {
+        "number": "9",
+        "title": "Teachers"
+      },
+      {
+        "number": "10",
+        "title": "High Fidelity"
+      },
+      {
+        "number": "11",
+        "title": "Rock'n Roll"
+      },
+      {
+        "number": "12",
+        "title": "Oh Yeah"
+      },
+      {
+        "number": "13",
+        "title": "Burnin'"
+      },
+      {
+        "number": "14",
+        "title": "Indo Silver Club"
+      },
+      {
+        "number": "15",
+        "title": "Alive"
+      },
+      {
+        "number": "16",
+        "title": "Funk Ad"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/2fdcc2d7-50b9-4b27-8262-8cf9e31aaa4d/11664602418-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/2fdcc2d7-50b9-4b27-8262-8cf9e31aaa4d/11664602418.jpg",
+    "backFull": ""
+  }
+}

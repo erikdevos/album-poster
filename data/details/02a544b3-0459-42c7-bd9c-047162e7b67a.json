@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875712592,
+  "album": {
+    "id": "02a544b3-0459-42c7-bd9c-047162e7b67a",
+    "title": "HIT ME HARD AND SOFT",
+    "artist": "Billie Eilish",
+    "year": "2024",
+    "barcode": "602465638707",
+    "label": "Darkroom Records",
+    "genre": "alternative pop / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "SKINNY"
+      },
+      {
+        "number": "2",
+        "title": "LUNCH"
+      },
+      {
+        "number": "3",
+        "title": "CHIHIRO"
+      },
+      {
+        "number": "4",
+        "title": "BIRDS OF A FEATHER"
+      },
+      {
+        "number": "5",
+        "title": "WILDFLOWER"
+      },
+      {
+        "number": "6",
+        "title": "THE GREATEST"
+      },
+      {
+        "number": "7",
+        "title": "L’AMOUR DE MA VIE"
+      },
+      {
+        "number": "8",
+        "title": "THE DINER"
+      },
+      {
+        "number": "9",
+        "title": "BITTERSUITE"
+      },
+      {
+        "number": "10",
+        "title": "BLUE"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/d43998d7-e84b-4027-b084-dd7650199f4f/38841282070-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/d43998d7-e84b-4027-b084-dd7650199f4f/38841282070.jpg",
+    "backFull": ""
+  }
+}

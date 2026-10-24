@@ -13,7 +13,7 @@ import { createAdminServer } from '../../scripts/admin.mjs'
 const ROOT = fileURLToPath(new URL('../../', import.meta.url))
 const LUX = 'bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0'
 const BILLIE = '02a544b3-0459-42c7-bd9c-047162e7b67a'
-const ABBEY = 'f5093c06-23e3-404f-aeaa-40f72885ee3a'
+const ABBEY = '11111111-aaaa-4bbb-8ccc-dddddddddddd' // not in the curated list, so no prepared details
 const NO_COVER = '99999999-aaaa-4bbb-8ccc-dddddddddddd'
 
 const CORS = { 'access-control-allow-origin': '*' }
@@ -34,7 +34,7 @@ before(async () => {
     folder = await mkdtemp(join(tmpdir(), 'album-admin-e2e-'))
     albumsPath = join(folder, 'albums.json')
     await reset()
-    admin = createAdminServer({ root: ROOT, albumsPath })
+    admin = createAdminServer({ root: ROOT, albumsPath, detailsRoot: folder })
     base = `http://127.0.0.1:${await admin.listen(0)}`
     browser = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : { channel: 'chrome' })
 })
@@ -47,7 +47,7 @@ after(async () => {
 
 async function open() {
     await reset()
-    const context = await browser.newContext({ viewport: { width: 1100, height: 900 } })
+    const context = await browser.newContext({ viewport: { width: 1100, height: 900 }, serviceWorkers: 'block' })
     await context.route(/^https?:\/\/(?!localhost|127\.0\.0\.1)/, route => {
         const url = new URL(route.request().url())
         if (url.hostname === 'musicbrainz.org' && url.pathname.endsWith('/release-group')) {
@@ -59,6 +59,25 @@ async function open() {
                         'artist-credit': [{ name: album.artist }]
                     }))
                 })
+            })
+        }
+        // what the page fetches for the details of a new album
+        const release = url.pathname.match(/\/release\/r-([^/]+)$/)
+        if (url.hostname === 'musicbrainz.org' && release) {
+            return route.fulfill({
+                status: 200, contentType: 'application/json', headers: CORS,
+                body: JSON.stringify({
+                    title: 'Abbey Road', date: '1969-09-26', barcode: '', 'artist-credit': [{ name: 'The Beatles' }],
+                    'release-group': { title: 'Abbey Road', 'first-release-date': '1969-09-26', genres: [] },
+                    media: [{ tracks: [{ number: '1', title: 'Come Together' }] }]
+                })
+            })
+        }
+        const group = url.pathname.match(/\/release-group\/([^/]+)$/)
+        if (url.hostname === 'coverartarchive.org' && group) {
+            return route.fulfill({
+                status: 200, contentType: 'application/json', headers: CORS,
+                body: JSON.stringify({ release: `https://musicbrainz.org/release/r-${group[1]}`, images: [] })
             })
         }
         if (url.hostname === 'coverartarchive.org' && url.pathname.endsWith('/front-250')) {
@@ -107,11 +126,17 @@ test('searching shows the covers, warns about a missing cover, and an album is a
         assert.equal((await saved()).length, 2, 'nothing is written before Save')
 
         await page.getByRole('button', { name: 'Save', exact: true }).click()
-        await page.waitForFunction(() => document.getElementById('admin-status').textContent.startsWith('Saved 3 albums'))
+        await page.waitForFunction(() => /^Saved 3 albums at .*commit/.test(document.getElementById('admin-status').textContent))
         const list = await saved()
         assert.deepEqual(list.map(album => album.name), ['Hit Me Hard and Soft', 'LUX', 'Abbey Road'])
         assert.equal(list[2].artist, 'The Beatles')
         assert.equal(list[0].audiodbId, '2429476', 'the other albums are left as they were')
+
+        // the details of the new album were fetched by the page and kept by the server
+        const details = JSON.parse(await readFile(join(folder, 'data', 'details', `${ABBEY}.json`), 'utf8'))
+        assert.equal(details.album.title, 'Abbey Road')
+        assert.equal(details.album.tracks[0].title, 'Come Together')
+        assert.match(await page.locator('#admin-status').textContent(), /Run npm test and commit data\/albums.json and data\/details/)
     } finally { await close() }
 })
 
@@ -120,8 +145,10 @@ test('a MusicBrainz link is understood', async () => {
     try {
         await page.getByRole('searchbox', { name: /Search MusicBrainz/ }).fill(`https://musicbrainz.org/release-group/${ABBEY}`)
         await page.getByRole('button', { name: 'Search', exact: true }).click()
-        // the album is looked up by id; the fake MusicBrainz has no release for it, so it says so
-        await page.waitForFunction(() => document.getElementById('add-message').textContent.includes('failed'))
+        // the album is looked up by id and shown with its cover
+        await page.locator('#add-results .admin-row').first().waitFor()
+        assert.equal(await page.locator('#add-results .admin-row').count(), 1)
+        assert.equal(await page.locator('#add-results .admin-row strong').textContent(), 'Abbey Road')
     } finally { await close() }
 })
 

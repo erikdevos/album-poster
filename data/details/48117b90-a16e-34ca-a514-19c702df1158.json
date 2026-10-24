@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875815108,
+  "album": {
+    "id": "48117b90-a16e-34ca-a514-19c702df1158",
+    "title": "Discovery",
+    "artist": "Daft Punk",
+    "year": "2001",
+    "barcode": "724384960650",
+    "label": "ADA France",
+    "genre": "house / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "One More Time"
+      },
+      {
+        "number": "2",
+        "title": "Aerodynamic"
+      },
+      {
+        "number": "3",
+        "title": "Digital Love"
+      },
+      {
+        "number": "4",
+        "title": "Harder, Better, Faster, Stronger"
+      },
+      {
+        "number": "5",
+        "title": "Crescendolls"
+      },
+      {
+        "number": "6",
+        "title": "Nightvision"
+      },
+      {
+        "number": "7",
+        "title": "Superheroes"
+      },
+      {
+        "number": "8",
+        "title": "High Life"
+      },
+      {
+        "number": "9",
+        "title": "Something About Us"
+      },
+      {
+        "number": "10",
+        "title": "Voyager"
+      },
+      {
+        "number": "11",
+        "title": "Veridis Quo"
+      },
+      {
+        "number": "12",
+        "title": "Short Circuit"
+      },
+      {
+        "number": "13",
+        "title": "Face to Face"
+      },
+      {
+        "number": "14",
+        "title": "Too Long"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/6cd30d99-4923-4d5e-8e51-9d87506976f1/43702618964-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/6cd30d99-4923-4d5e-8e51-9d87506976f1/43702618964.jpg",
+    "backFull": ""
+  }
+}

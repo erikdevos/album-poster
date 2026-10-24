@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875864767,
+  "album": {
+    "id": "c9018967-1382-47e4-87ac-486a824cd81d",
+    "title": "My 21st Century Blues.",
+    "artist": "RAYE",
+    "year": "2023",
+    "barcode": "197186999980",
+    "label": "Human Re Sources",
+    "genre": "contemporary r&b / dance-pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Introduction."
+      },
+      {
+        "number": "2",
+        "title": "Oscar Winning Tears."
+      },
+      {
+        "number": "3",
+        "title": "Hard Out Here."
+      },
+      {
+        "number": "4",
+        "title": "Black Mascara."
+      },
+      {
+        "number": "5",
+        "title": "Escapism."
+      },
+      {
+        "number": "6",
+        "title": "Mary Jane."
+      },
+      {
+        "number": "7",
+        "title": "The Thrill Is Gone."
+      },
+      {
+        "number": "8",
+        "title": "Ice Cream Man."
+      },
+      {
+        "number": "9",
+        "title": "Flip a Switch."
+      },
+      {
+        "number": "10",
+        "title": "Body Dysmorphia."
+      },
+      {
+        "number": "11",
+        "title": "Environmental Anxiety."
+      },
+      {
+        "number": "12",
+        "title": "Five Star Hotels."
+      },
+      {
+        "number": "13",
+        "title": "Worth It."
+      },
+      {
+        "number": "14",
+        "title": "Buss It Down."
+      },
+      {
+        "number": "15",
+        "title": "Fin."
+      }
+    ],
+    "front": "https://coverartarchive.org/release/904d62fe-3d1d-4520-bc53-37be816009fe/33893717664-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/904d62fe-3d1d-4520-bc53-37be816009fe/33893717664.jpg",
+    "backFull": ""
+  }
+}

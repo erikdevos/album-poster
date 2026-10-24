@@ -1,0 +1,95 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875911518,
+  "album": {
+    "id": "87f70591-69e0-4654-b099-dc47bf3141f7",
+    "title": "The Girl in the Tower",
+    "artist": "Halsey",
+    "year": "",
+    "barcode": "",
+    "label": "",
+    "genre": "",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Nightmare (live)"
+      },
+      {
+        "number": "2",
+        "title": "I Am Not a Woman, I’m a God (live)"
+      },
+      {
+        "number": "3",
+        "title": "Castle (live)"
+      },
+      {
+        "number": "4",
+        "title": "Easier Than Lying (live)"
+      },
+      {
+        "number": "5",
+        "title": "Dog Years (live)"
+      },
+      {
+        "number": "6",
+        "title": "You Asked for This (live)"
+      },
+      {
+        "number": "7",
+        "title": "Experiment on Me (live)"
+      },
+      {
+        "number": "8",
+        "title": "Closer (live)"
+      },
+      {
+        "number": "9",
+        "title": "Honey (live)"
+      },
+      {
+        "number": "10",
+        "title": "Lighthouse (live)"
+      },
+      {
+        "number": "11",
+        "title": "Colors (live)"
+      },
+      {
+        "number": "12",
+        "title": "Without Me (live)"
+      },
+      {
+        "number": "13",
+        "title": "Hurricane (live)"
+      },
+      {
+        "number": "14",
+        "title": "Lie (live)"
+      },
+      {
+        "number": "15",
+        "title": "Gasoline (live)"
+      },
+      {
+        "number": "16",
+        "title": "Lonely Is the Muse (live)"
+      },
+      {
+        "number": "17",
+        "title": "Bells in Santa Fe (live)"
+      },
+      {
+        "number": "18",
+        "title": "People Disappear Here (live)"
+      },
+      {
+        "number": "19",
+        "title": "Bad at Love (live)"
+      }
+    ],
+    "front": "",
+    "back": "",
+    "frontFull": "",
+    "backFull": ""
+  }
+}

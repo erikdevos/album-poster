@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875903390,
+  "album": {
+    "id": "deca614f-7b89-4546-b77e-2dbeccfe0c75",
+    "title": "WOR$T GIRL IN AMERICA",
+    "artist": "Slayyyter",
+    "year": "2026",
+    "barcode": "196873835891",
+    "label": "Columbia",
+    "genre": "electropop / electro house",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "DANCE…"
+      },
+      {
+        "number": "2",
+        "title": "BEAT UP CHANEL$"
+      },
+      {
+        "number": "3",
+        "title": "CANNIBALISM!"
+      },
+      {
+        "number": "4",
+        "title": "OLD TECHNOLOGY"
+      },
+      {
+        "number": "5",
+        "title": "CRANK"
+      },
+      {
+        "number": "6",
+        "title": "GAS STATION"
+      },
+      {
+        "number": "7",
+        "title": "YES GODDD"
+      },
+      {
+        "number": "8",
+        "title": "UNKNOWN LOVERZ"
+      },
+      {
+        "number": "9",
+        "title": "OLD FLING$"
+      },
+      {
+        "number": "10",
+        "title": "I’M ACTUALLY KINDA FAMOUS"
+      },
+      {
+        "number": "11",
+        "title": "$T. LOSER"
+      },
+      {
+        "number": "12",
+        "title": "WHAT IS IT LIKE, TO BE LIKED?"
+      },
+      {
+        "number": "13",
+        "title": "*PRAYER*"
+      },
+      {
+        "number": "14",
+        "title": "BRITTANY MURPHY."
+      }
+    ],
+    "front": "https://coverartarchive.org/release/79a2f948-e3a2-4eee-ae7b-2f0e117d4c1d/44080257335-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/79a2f948-e3a2-4eee-ae7b-2f0e117d4c1d/44080257335.jpg",
+    "backFull": ""
+  }
+}

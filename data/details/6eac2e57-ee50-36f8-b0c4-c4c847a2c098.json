@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875833406,
+  "album": {
+    "id": "6eac2e57-ee50-36f8-b0c4-c4c847a2c098",
+    "title": "Back to Black",
+    "artist": "Amy Winehouse",
+    "year": "2006",
+    "barcode": "00602547462220",
+    "label": "Island",
+    "genre": "soul / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Rehab"
+      },
+      {
+        "number": "2",
+        "title": "You Know I’m No Good"
+      },
+      {
+        "number": "3",
+        "title": "Me & Mr Jones"
+      },
+      {
+        "number": "4",
+        "title": "Just Friends"
+      },
+      {
+        "number": "5",
+        "title": "Back to Black"
+      },
+      {
+        "number": "6",
+        "title": "Love Is a Losing Game"
+      },
+      {
+        "number": "7",
+        "title": "Tears Dry on Their Own"
+      },
+      {
+        "number": "8",
+        "title": "Wake Up Alone"
+      },
+      {
+        "number": "9",
+        "title": "Some Unholy War"
+      },
+      {
+        "number": "10",
+        "title": "He Can Only Hold Her"
+      },
+      {
+        "number": "11",
+        "title": "Addicted"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/ccf4da26-ea82-462f-b753-88bb976fd40e/36926439244-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/ccf4da26-ea82-462f-b753-88bb976fd40e/36926439244.jpg",
+    "backFull": ""
+  }
+}

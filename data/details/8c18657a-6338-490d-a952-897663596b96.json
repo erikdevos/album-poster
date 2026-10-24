@@ -1,0 +1,91 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876011987,
+  "album": {
+    "id": "8c18657a-6338-490d-a952-897663596b96",
+    "title": "The Life of Pablo",
+    "artist": "Kanye West",
+    "year": "2016",
+    "barcode": "602547793386",
+    "label": "G.O.O.D. Music",
+    "genre": "hip hop / contemporary r&b",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Ultralight Beam"
+      },
+      {
+        "number": "2",
+        "title": "Father Stretch My Hands, Pt. 1"
+      },
+      {
+        "number": "3",
+        "title": "Pt. 2"
+      },
+      {
+        "number": "4",
+        "title": "Famous"
+      },
+      {
+        "number": "5",
+        "title": "Feedback"
+      },
+      {
+        "number": "6",
+        "title": "Low Lights"
+      },
+      {
+        "number": "7",
+        "title": "Highlights"
+      },
+      {
+        "number": "8",
+        "title": "Freestyle 4"
+      },
+      {
+        "number": "9",
+        "title": "I Love Kanye"
+      },
+      {
+        "number": "10",
+        "title": "Waves"
+      },
+      {
+        "number": "11",
+        "title": "FML"
+      },
+      {
+        "number": "12",
+        "title": "Real Friends"
+      },
+      {
+        "number": "13",
+        "title": "Wolves"
+      },
+      {
+        "number": "14",
+        "title": "Siiiiiiiiilver Surffffeeeeer Intermission"
+      },
+      {
+        "number": "15",
+        "title": "30 Hours"
+      },
+      {
+        "number": "16",
+        "title": "No More Parties in LA"
+      },
+      {
+        "number": "17",
+        "title": "Facts (Charlie Heat version)"
+      },
+      {
+        "number": "18",
+        "title": "Fade"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/99e14f9e-5831-4b2c-b595-531be0f225ea/12790816703-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/99e14f9e-5831-4b2c-b595-531be0f225ea/12790816703.jpg",
+    "backFull": ""
+  }
+}

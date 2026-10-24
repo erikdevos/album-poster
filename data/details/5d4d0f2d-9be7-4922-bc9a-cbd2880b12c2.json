@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876007138,
+  "album": {
+    "id": "5d4d0f2d-9be7-4922-bc9a-cbd2880b12c2",
+    "title": "Yeezus",
+    "artist": "Kanye West",
+    "year": "2013",
+    "barcode": "00602537439317",
+    "label": "Def Jam Recordings",
+    "genre": "hip hop / experimental hip hop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "On Sight"
+      },
+      {
+        "number": "2",
+        "title": "Black Skinhead"
+      },
+      {
+        "number": "3",
+        "title": "I Am a God"
+      },
+      {
+        "number": "4",
+        "title": "New Slaves"
+      },
+      {
+        "number": "5",
+        "title": "Hold My Liquor"
+      },
+      {
+        "number": "6",
+        "title": "I’m in It"
+      },
+      {
+        "number": "7",
+        "title": "Blood on the Leaves"
+      },
+      {
+        "number": "8",
+        "title": "Guilt Trip"
+      },
+      {
+        "number": "9",
+        "title": "Send It Up"
+      },
+      {
+        "number": "10",
+        "title": "Bound 2"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/44f67341-2586-4283-bc3f-cf03ae89dc35/20178703246-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/44f67341-2586-4283-bc3f-cf03ae89dc35/20178703246.png",
+    "backFull": ""
+  }
+}

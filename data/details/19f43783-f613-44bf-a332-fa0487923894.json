@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875915058,
+  "album": {
+    "id": "19f43783-f613-44bf-a332-fa0487923894",
+    "title": "Vol.1",
+    "artist": "Angine de Poitrine",
+    "year": "2024",
+    "barcode": "196429599963",
+    "label": "[no label]",
+    "genre": "math rock / experimental rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Sherpa"
+      },
+      {
+        "number": "2",
+        "title": "Tohogd"
+      },
+      {
+        "number": "3",
+        "title": "Tamebsz"
+      },
+      {
+        "number": "4",
+        "title": "Ababa Hotel"
+      },
+      {
+        "number": "5",
+        "title": "Sahardnieh"
+      },
+      {
+        "number": "6",
+        "title": "L’Aberek"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/de0e1482-d8a6-4afe-9cd1-dc9e1a53941e/44293504530-1200.jpg",
+    "back": "https://coverartarchive.org/release/de0e1482-d8a6-4afe-9cd1-dc9e1a53941e/44539342878-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/de0e1482-d8a6-4afe-9cd1-dc9e1a53941e/44293504530.png",
+    "backFull": "https://coverartarchive.org/release/de0e1482-d8a6-4afe-9cd1-dc9e1a53941e/44539342878.png"
+  }
+}

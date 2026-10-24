@@ -1,0 +1,95 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875850816,
+  "album": {
+    "id": "8d73e45e-7ca1-3cb4-ae28-6da76196c17c",
+    "title": "London Calling",
+    "artist": "The Clash",
+    "year": "1979",
+    "barcode": "",
+    "label": "CBS",
+    "genre": "punk rock / punk",
+    "tracks": [
+      {
+        "number": "A1",
+        "title": "London Calling"
+      },
+      {
+        "number": "A2",
+        "title": "Brand New Cadillac"
+      },
+      {
+        "number": "A3",
+        "title": "Jimmy Jazz"
+      },
+      {
+        "number": "A4",
+        "title": "Hateful"
+      },
+      {
+        "number": "A5",
+        "title": "Rudie Can’t Fail"
+      },
+      {
+        "number": "B1",
+        "title": "Spanish Bombs"
+      },
+      {
+        "number": "B2",
+        "title": "The Right Profile"
+      },
+      {
+        "number": "B3",
+        "title": "Lost in the Supermarket"
+      },
+      {
+        "number": "B4",
+        "title": "Clampdown"
+      },
+      {
+        "number": "B5",
+        "title": "The Guns of Brixton"
+      },
+      {
+        "number": "C1",
+        "title": "Wrong ’Em Boyo"
+      },
+      {
+        "number": "C2",
+        "title": "Death or Glory"
+      },
+      {
+        "number": "C3",
+        "title": "Koka Kola"
+      },
+      {
+        "number": "C4",
+        "title": "The Card Cheat"
+      },
+      {
+        "number": "D1",
+        "title": "Lover’s Rock"
+      },
+      {
+        "number": "D2",
+        "title": "Four Horsemen"
+      },
+      {
+        "number": "D3",
+        "title": "I’m Not Down"
+      },
+      {
+        "number": "D4",
+        "title": "Revolution Rock"
+      },
+      {
+        "number": "D5",
+        "title": "Train in Vain"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/7bec22a0-eb73-4b79-a619-b253d5c2af87/44824441588-1200.jpg",
+    "back": "https://coverartarchive.org/release/7bec22a0-eb73-4b79-a619-b253d5c2af87/44824443332-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/7bec22a0-eb73-4b79-a619-b253d5c2af87/44824441588.jpg",
+    "backFull": "https://coverartarchive.org/release/7bec22a0-eb73-4b79-a619-b253d5c2af87/44824443332.jpg"
+  }
+}

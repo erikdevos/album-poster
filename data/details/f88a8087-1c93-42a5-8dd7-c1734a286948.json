@@ -1,0 +1,51 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876401369,
+  "album": {
+    "id": "f88a8087-1c93-42a5-8dd7-c1734a286948",
+    "title": "Paradise",
+    "artist": "Lana Del Rey",
+    "year": "2012",
+    "barcode": "602537209699",
+    "label": "Interscope Records",
+    "genre": "pop / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Ride"
+      },
+      {
+        "number": "2",
+        "title": "American"
+      },
+      {
+        "number": "3",
+        "title": "Cola"
+      },
+      {
+        "number": "4",
+        "title": "Body Electric"
+      },
+      {
+        "number": "5",
+        "title": "Blue Velvet"
+      },
+      {
+        "number": "6",
+        "title": "Gods and Monsters"
+      },
+      {
+        "number": "7",
+        "title": "Yayo"
+      },
+      {
+        "number": "8",
+        "title": "Bel Air"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/1207a042-69d8-4d9a-b246-59a7f616b648/28044870740-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/1207a042-69d8-4d9a-b246-59a7f616b648/28044870740.jpg",
+    "backFull": ""
+  }
+}

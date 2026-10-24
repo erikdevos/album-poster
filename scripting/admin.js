@@ -5,6 +5,7 @@ import { searchAlbums, getAlbum } from './source.js'
 import { setupThemeToggle } from './displayOptions.js'
 import { validateAlbums, idFromText, diffAlbums } from './albumData.js'
 import { filterAlbums } from './wallList.js'
+import { makeRecord } from './albumCache.js'
 
 const CAA = 'https://coverartarchive.org'
 const $ = id => document.getElementById(id)
@@ -236,10 +237,32 @@ async function load() {
     removedAt = new Map()
 }
 
+// The details of the new albums are fetched here, in the browser, and the server keeps them in
+// data/details, so the app can show these albums without asking MusicBrainz. Returns the ones that failed.
+async function saveDetails(albums) {
+    const failed = []
+    for (const [index, album] of albums.entries()) {
+        say($('admin-status'), `Saved. Fetching the details of ${album.name} (${index + 1} of ${albums.length})…`)
+        try {
+            const response = await fetch(`../api/details/${album.id}`, {
+                method: 'PUT',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(makeRecord(await getAlbum(album.id)))
+            })
+            if (!response.ok) throw new Error(`status ${response.status}`)
+        } catch (error) {
+            console.error(error)
+            failed.push(album)
+        }
+    }
+    return failed
+}
+
 async function save() {
     $('admin-save').disabled = true
     try {
         const clean = validateAlbums(list)
+        const added = diffAlbums(saved, clean).added
         const response = await fetch('../api/albums', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
@@ -251,7 +274,13 @@ async function save() {
         list = copy(clean)
         removedAt = new Map()
         render()
-        say($('admin-status'), `Saved ${body.saved} albums at ${new Date().toLocaleTimeString()}. Run npm test and commit data/albums.json.`)
+
+        const failed = await saveDetails(added)
+        const time = new Date().toLocaleTimeString()
+        say($('admin-status'), failed.length
+            ? `Saved ${body.saved} albums at ${time}, but the details of ${failed.map(album => album.name).join(', ')} could not be fetched. Run npm run details later.`
+            : `Saved ${body.saved} albums at ${time}. Run npm test and commit data/albums.json and data/details.`,
+            { error: failed.length > 0 })
     } catch (error) {
         console.error(error)
         say($('admin-status'), error.message, { error: true })

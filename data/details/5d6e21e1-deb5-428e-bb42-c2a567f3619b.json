@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876009629,
+  "album": {
+    "id": "5d6e21e1-deb5-428e-bb42-c2a567f3619b",
+    "title": "My Beautiful Dark Twisted Fantasy",
+    "artist": "Kanye West",
+    "year": "2010",
+    "barcode": "602527523736",
+    "label": "Roc‐A‐Fella Records",
+    "genre": "hip hop / pop rap",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Dark Fantasy"
+      },
+      {
+        "number": "2",
+        "title": "Gorgeous"
+      },
+      {
+        "number": "3",
+        "title": "Power"
+      },
+      {
+        "number": "4",
+        "title": "All of the Lights (interlude)"
+      },
+      {
+        "number": "5",
+        "title": "All of the Lights"
+      },
+      {
+        "number": "6",
+        "title": "Monster"
+      },
+      {
+        "number": "7",
+        "title": "So Appalled"
+      },
+      {
+        "number": "8",
+        "title": "Devil in a New Dress"
+      },
+      {
+        "number": "9",
+        "title": "Runaway"
+      },
+      {
+        "number": "10",
+        "title": "Hell of a Life"
+      },
+      {
+        "number": "11",
+        "title": "Blame Game"
+      },
+      {
+        "number": "12",
+        "title": "Lost in the World"
+      },
+      {
+        "number": "13",
+        "title": "Who Will Survive in America"
+      },
+      {
+        "number": "1",
+        "title": "Runaway"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/cd474271-bd7a-4d53-ba9e-e9d5bd7958cb/39032890177-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/cd474271-bd7a-4d53-ba9e-e9d5bd7958cb/39032890177.jpg",
+    "backFull": ""
+  }
+}

@@ -10,6 +10,7 @@ import { readFile, writeFile, rename } from 'node:fs/promises'
 import { extname, join, normalize, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { formatAlbums, validateAlbums } from '../scripting/albumData.js'
+import { pruneDetails, writeDetails } from './detailsFiles.mjs'
 
 const TYPES = {
     '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
@@ -20,13 +21,31 @@ const SERVED = ['admin', 'scripting', 'styles', 'data']
 const MAX_BODY = 1_000_000
 
 // `root` is the project folder, `albumsPath` the file that is read and written
-export function createAdminServer({ root, albumsPath = join(root, 'data', 'albums.json') }) {
+// `detailsRoot` is the folder that has data/details (the project folder, unless a test says otherwise)
+export function createAdminServer({ root, albumsPath = join(root, 'data', 'albums.json'), detailsRoot = root }) {
     let port = null
     const send = (response, status, body, type = 'application/json; charset=utf-8') => {
         response.writeHead(status, { 'content-type': type, 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' })
         response.end(body)
     }
     const fail = (response, status, message) => send(response, status, JSON.stringify({ error: message }))
+
+    // The JSON body of a write, after the checks that it comes from the admin page; or undefined
+    // when the request was refused (the answer has been sent)
+    async function readJson(request, response, host) {
+        if (request.headers.origin !== `http://${host}`) return void fail(response, 403, 'Wrong origin.')
+        if (!(request.headers['content-type'] ?? '').startsWith('application/json')) return void fail(response, 415, 'Send JSON.')
+        let body = ''
+        for await (const chunk of request) {
+            body += chunk
+            if (body.length > MAX_BODY) return void fail(response, 413, 'That is too large.')
+        }
+        try {
+            return JSON.parse(body)
+        } catch {
+            return void fail(response, 400, 'That is not JSON.')
+        }
+    }
 
     const server = createServer(async (request, response) => {
         try {
@@ -41,28 +60,41 @@ export function createAdminServer({ root, albumsPath = join(root, 'data', 'album
                 if (request.method === 'GET') return send(response, 200, await readFile(albumsPath, 'utf8'))
 
                 if (request.method === 'PUT') {
-                    const origin = request.headers.origin
-                    if (origin !== `http://${host}`) return fail(response, 403, 'Wrong origin.')
-                    if (!(request.headers['content-type'] ?? '').startsWith('application/json')) return fail(response, 415, 'Send JSON.')
-
-                    let body = ''
-                    for await (const chunk of request) {
-                        body += chunk
-                        if (body.length > MAX_BODY) return fail(response, 413, 'The list is too large.')
-                    }
+                    const body = await readJson(request, response, host)
+                    if (body === undefined) return
                     let albums
                     try {
-                        albums = validateAlbums(JSON.parse(body))
+                        albums = validateAlbums(body)
                     } catch (error) {
-                        return fail(response, 400, error instanceof SyntaxError ? 'That is not JSON.' : error.message)
+                        return fail(response, 400, error.message)
                     }
                     // written next to the file and moved over it, so a crash cannot leave half a file
                     const temporary = `${albumsPath}.tmp`
                     await writeFile(temporary, formatAlbums(albums))
                     await rename(temporary, albumsPath)
-                    return send(response, 200, JSON.stringify({ saved: albums.length }))
+                    // the details of an album that left the list are not needed any more
+                    const removed = await pruneDetails(detailsRoot, albums.map(album => album.id))
+                    return send(response, 200, JSON.stringify({ saved: albums.length, removedDetails: removed.length }))
                 }
                 return fail(response, 405, 'Use GET or PUT.')
+            }
+
+            // The details of one album, as the page got them from MusicBrainz
+            const details = pathname.match(/^\/api\/details\/([^/]+)$/)
+            if (details) {
+                if (request.method !== 'PUT') return fail(response, 405, 'Use PUT.')
+                const body = await readJson(request, response, host)
+                if (body === undefined) return
+                const id = details[1].toLowerCase()
+                // only for an album that is in the list
+                const listed = validateAlbums(JSON.parse(await readFile(albumsPath, 'utf8')))
+                if (!listed.some(album => album.id === id)) return fail(response, 404, 'That album is not in the list.')
+                try {
+                    await writeDetails(detailsRoot, id, body)
+                } catch (error) {
+                    return fail(response, 400, error.message)
+                }
+                return send(response, 200, JSON.stringify({ saved: id }))
             }
 
             if (request.method !== 'GET') return fail(response, 405, 'Use GET.')

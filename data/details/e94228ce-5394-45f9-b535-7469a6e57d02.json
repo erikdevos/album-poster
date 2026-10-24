@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875916280,
+  "album": {
+    "id": "e94228ce-5394-45f9-b535-7469a6e57d02",
+    "title": "Vol.II",
+    "artist": "Angine de Poitrine",
+    "year": "2026",
+    "barcode": "199384273909",
+    "label": "[no label]",
+    "genre": "math rock / experimental rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Fabienk"
+      },
+      {
+        "number": "2",
+        "title": "Mata Zyklek"
+      },
+      {
+        "number": "3",
+        "title": "Sarniezz"
+      },
+      {
+        "number": "4",
+        "title": "Utzp"
+      },
+      {
+        "number": "5",
+        "title": "Yor Zarad"
+      },
+      {
+        "number": "6",
+        "title": "Angor"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/aa7845c8-79e3-4149-93ac-3968d7951439/44536532463-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/aa7845c8-79e3-4149-93ac-3968d7951439/44536532463.jpg",
+    "backFull": ""
+  }
+}

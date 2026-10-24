@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875859100,
+  "album": {
+    "id": "550bf4b9-92ca-30ba-9ea2-8b45f9d081f1",
+    "title": "Ghosts I–IV",
+    "artist": "Nine Inch Nails",
+    "year": "2008",
+    "barcode": "",
+    "label": "The Null Corporation",
+    "genre": "industrial / ambient",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "1 Ghosts I"
+      },
+      {
+        "number": "2",
+        "title": "2 Ghosts I"
+      },
+      {
+        "number": "3",
+        "title": "3 Ghosts I"
+      },
+      {
+        "number": "4",
+        "title": "4 Ghosts I"
+      },
+      {
+        "number": "5",
+        "title": "5 Ghosts I"
+      },
+      {
+        "number": "6",
+        "title": "6 Ghosts I"
+      },
+      {
+        "number": "7",
+        "title": "7 Ghosts I"
+      },
+      {
+        "number": "8",
+        "title": "8 Ghosts I"
+      },
+      {
+        "number": "9",
+        "title": "9 Ghosts I"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/f36eb891-6276-452a-8fdf-cde443a6f543/10264802906-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/f36eb891-6276-452a-8fdf-cde443a6f543/10264802906.jpg",
+    "backFull": ""
+  }
+}

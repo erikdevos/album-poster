@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875966721,
+  "album": {
+    "id": "97822855-3e00-30a9-8d7a-bd0802c961e7",
+    "title": "Exciter",
+    "artist": "Depeche Mode",
+    "year": "2001",
+    "barcode": "724381024324",
+    "label": "Labels",
+    "genre": "electronic / leftfield",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Dream On"
+      },
+      {
+        "number": "2",
+        "title": "Shine"
+      },
+      {
+        "number": "3",
+        "title": "The Sweetest Condition"
+      },
+      {
+        "number": "4",
+        "title": "When the Body Speaks"
+      },
+      {
+        "number": "5",
+        "title": "The Dead of Night"
+      },
+      {
+        "number": "6",
+        "title": "Lovetheme"
+      },
+      {
+        "number": "7",
+        "title": "Freelove"
+      },
+      {
+        "number": "8",
+        "title": "Comatose"
+      },
+      {
+        "number": "9",
+        "title": "I Feel Loved"
+      },
+      {
+        "number": "10",
+        "title": "Breathe"
+      },
+      {
+        "number": "11",
+        "title": "Easy Tiger"
+      },
+      {
+        "number": "12",
+        "title": "I Am You"
+      },
+      {
+        "number": "13",
+        "title": "Goodnight Lovers"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/2689a2ed-19b4-4095-8c77-f2e24e915962/22524388802-1200.jpg",
+    "back": "https://coverartarchive.org/release/2689a2ed-19b4-4095-8c77-f2e24e915962/20246382155-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/2689a2ed-19b4-4095-8c77-f2e24e915962/22524388802.jpg",
+    "backFull": "https://coverartarchive.org/release/2689a2ed-19b4-4095-8c77-f2e24e915962/20246382155.jpg"
+  }
+}

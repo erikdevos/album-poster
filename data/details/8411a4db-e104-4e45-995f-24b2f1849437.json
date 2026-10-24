@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875978652,
+  "album": {
+    "id": "8411a4db-e104-4e45-995f-24b2f1849437",
+    "title": "The Resistance",
+    "artist": "Muse",
+    "year": "2009",
+    "barcode": "825646874347",
+    "label": "Warner Bros. Records",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Uprising"
+      },
+      {
+        "number": "2",
+        "title": "Resistance"
+      },
+      {
+        "number": "3",
+        "title": "Undisclosed Desires"
+      },
+      {
+        "number": "4",
+        "title": "United States of Eurasia / Collateral Damage"
+      },
+      {
+        "number": "5",
+        "title": "Guiding Light"
+      },
+      {
+        "number": "6",
+        "title": "Unnatural Selection"
+      },
+      {
+        "number": "7",
+        "title": "MK Ultra"
+      },
+      {
+        "number": "8",
+        "title": "I Belong to You / Mon cœur s’ouvre à ta voix"
+      },
+      {
+        "number": "9",
+        "title": "Exogenesis: Symphony, Part 1: Overture"
+      },
+      {
+        "number": "10",
+        "title": "Exogenesis: Symphony, Part 2: Cross‐Pollination"
+      },
+      {
+        "number": "11",
+        "title": "Exogenesis: Symphony, Part 3: Redemption"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/8b81525b-7fd8-4cd8-b9cf-c4eb0040804d/9587523172.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/8b81525b-7fd8-4cd8-b9cf-c4eb0040804d/9587523172.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875924468,
+  "album": {
+    "id": "19a2e470-0f10-479e-b66a-53b05fba77b8",
+    "title": "Aleph",
+    "artist": "Gesaffelstein",
+    "year": "2013",
+    "barcode": "825646397471",
+    "label": "Parlophone France",
+    "genre": "electronic / ebm",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Out of Line"
+      },
+      {
+        "number": "2",
+        "title": "Pursuit"
+      },
+      {
+        "number": "3",
+        "title": "Nameless"
+      },
+      {
+        "number": "4",
+        "title": "Destinations"
+      },
+      {
+        "number": "5",
+        "title": "Obsession"
+      },
+      {
+        "number": "6",
+        "title": "Hellifornia"
+      },
+      {
+        "number": "7",
+        "title": "Aleph"
+      },
+      {
+        "number": "8",
+        "title": "Wall of Memories"
+      },
+      {
+        "number": "9",
+        "title": "Duel"
+      },
+      {
+        "number": "10",
+        "title": "Piece of Future"
+      },
+      {
+        "number": "11",
+        "title": "Hate or Glory"
+      },
+      {
+        "number": "12",
+        "title": "Values"
+      },
+      {
+        "number": "13",
+        "title": "Trans"
+      },
+      {
+        "number": "14",
+        "title": "Perfection"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c7e34161-37cd-40d4-aec8-f5b361c0fa92/5483875148-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/c7e34161-37cd-40d4-aec8-f5b361c0fa92/5483875148.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875941103,
+  "album": {
+    "id": "d44c50ad-61fd-3fce-95fc-27024d7f1d30",
+    "title": "Graduation",
+    "artist": "Kanye West",
+    "year": "2007",
+    "barcode": "00602577027888",
+    "label": "Roc‐A‐Fella Records",
+    "genre": "hip hop / pop rap",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Good Morning"
+      },
+      {
+        "number": "2",
+        "title": "Champion"
+      },
+      {
+        "number": "3",
+        "title": "Stronger"
+      },
+      {
+        "number": "4",
+        "title": "I Wonder"
+      },
+      {
+        "number": "5",
+        "title": "Good Life"
+      },
+      {
+        "number": "6",
+        "title": "Can’t Tell Me Nothing"
+      },
+      {
+        "number": "7",
+        "title": "Barry Bonds"
+      },
+      {
+        "number": "8",
+        "title": "Drunk and Hot Girls"
+      },
+      {
+        "number": "9",
+        "title": "Flashing Lights"
+      },
+      {
+        "number": "10",
+        "title": "Everything I Am"
+      },
+      {
+        "number": "11",
+        "title": "The Glory"
+      },
+      {
+        "number": "12",
+        "title": "Homecoming"
+      },
+      {
+        "number": "13",
+        "title": "Big Brother"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/08e0cab1-e95c-4b33-8ed3-1337d934fb7f/24202595971-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/08e0cab1-e95c-4b33-8ed3-1337d934fb7f/24202595971.png",
+    "backFull": ""
+  }
+}

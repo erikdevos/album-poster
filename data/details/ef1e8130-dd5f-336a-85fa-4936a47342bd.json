@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875987651,
+  "album": {
+    "id": "ef1e8130-dd5f-336a-85fa-4936a47342bd",
+    "title": "Ænima",
+    "artist": "Tool",
+    "year": "1996",
+    "barcode": "886447824757",
+    "label": "RCA",
+    "genre": "alternative metal / progressive metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Stinkfist"
+      },
+      {
+        "number": "2",
+        "title": "Eulogy"
+      },
+      {
+        "number": "3",
+        "title": "H."
+      },
+      {
+        "number": "4",
+        "title": "Useful Idiot"
+      },
+      {
+        "number": "5",
+        "title": "Forty Six & 2"
+      },
+      {
+        "number": "6",
+        "title": "Message to Harry Manback"
+      },
+      {
+        "number": "7",
+        "title": "Hooker With a Penis"
+      },
+      {
+        "number": "8",
+        "title": "Intermission"
+      },
+      {
+        "number": "9",
+        "title": "Jimmy"
+      },
+      {
+        "number": "10",
+        "title": "Die Eier von Satan"
+      },
+      {
+        "number": "11",
+        "title": "Pushit"
+      },
+      {
+        "number": "12",
+        "title": "Cesaro Summability"
+      },
+      {
+        "number": "13",
+        "title": "Ænema"
+      },
+      {
+        "number": "14",
+        "title": "(‐) Ions"
+      },
+      {
+        "number": "15",
+        "title": "Third Eye"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/bb6bd783-6a88-40c6-9abf-ee1c80b3f753/32803266360-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/bb6bd783-6a88-40c6-9abf-ee1c80b3f753/32803266360.jpg",
+    "backFull": ""
+  }
+}

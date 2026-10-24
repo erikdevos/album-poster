@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875974622,
+  "album": {
+    "id": "2a0981fb-9593-3019-864b-ce934d97a16e",
+    "title": "In Utero",
+    "artist": "Nirvana",
+    "year": "1993",
+    "barcode": "602537528677",
+    "label": "Geffen",
+    "genre": "grunge / alternative rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Serve the Servants"
+      },
+      {
+        "number": "2",
+        "title": "Scentless Apprentice"
+      },
+      {
+        "number": "3",
+        "title": "Heart‐Shaped Box"
+      },
+      {
+        "number": "4",
+        "title": "Rape Me"
+      },
+      {
+        "number": "5",
+        "title": "Frances Farmer Will Have Her Revenge on Seattle"
+      },
+      {
+        "number": "6",
+        "title": "Dumb"
+      },
+      {
+        "number": "7",
+        "title": "Very Ape"
+      },
+      {
+        "number": "8",
+        "title": "Milk It"
+      },
+      {
+        "number": "9",
+        "title": "Pennyroyal Tea"
+      },
+      {
+        "number": "10",
+        "title": "Radio Friendly Unit Shifter"
+      },
+      {
+        "number": "11",
+        "title": "Tourette’s"
+      },
+      {
+        "number": "12",
+        "title": "All Apologies"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/7d13c434-1c49-4d7f-b164-a5247108af01/19918667556-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/7d13c434-1c49-4d7f-b164-a5247108af01/19918667556.jpg",
+    "backFull": ""
+  }
+}

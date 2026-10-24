@@ -1,0 +1,107 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875871303,
+  "album": {
+    "id": "14f83b04-2b9e-4974-9169-476f26475be3",
+    "title": "Hurry Up Tomorrow",
+    "artist": "The Weeknd",
+    "year": "2025",
+    "barcode": "00602475916062",
+    "label": "Republic Records",
+    "genre": "alternative r&b / synth-pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Wake Me Up"
+      },
+      {
+        "number": "2",
+        "title": "Cry for Me"
+      },
+      {
+        "number": "3",
+        "title": "I Can’t Fucking Sing"
+      },
+      {
+        "number": "4",
+        "title": "São Paulo"
+      },
+      {
+        "number": "5",
+        "title": "Until We’re Skin & Bones"
+      },
+      {
+        "number": "6",
+        "title": "Baptized in Fear"
+      },
+      {
+        "number": "7",
+        "title": "Open Hearts"
+      },
+      {
+        "number": "8",
+        "title": "Opening Night"
+      },
+      {
+        "number": "9",
+        "title": "Reflections Laughing"
+      },
+      {
+        "number": "10",
+        "title": "Enjoy the Show"
+      },
+      {
+        "number": "11",
+        "title": "Given Up on Me"
+      },
+      {
+        "number": "12",
+        "title": "I Can’t Wait to Get There"
+      },
+      {
+        "number": "13",
+        "title": "Timeless"
+      },
+      {
+        "number": "14",
+        "title": "Niagara Falls"
+      },
+      {
+        "number": "15",
+        "title": "Take Me Back to LA"
+      },
+      {
+        "number": "16",
+        "title": "Big Sleep"
+      },
+      {
+        "number": "17",
+        "title": "Give Me Mercy"
+      },
+      {
+        "number": "18",
+        "title": "Drive"
+      },
+      {
+        "number": "19",
+        "title": "The Abyss"
+      },
+      {
+        "number": "20",
+        "title": "Red Terror"
+      },
+      {
+        "number": "21",
+        "title": "Without a Warning"
+      },
+      {
+        "number": "22",
+        "title": "Hurry Up Tomorrow"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c807933b-b18b-4ec9-a126-bd4aecf2f5fb/45194765731-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/c807933b-b18b-4ec9-a126-bd4aecf2f5fb/45194765731.jpg",
+    "backFull": ""
+  }
+}

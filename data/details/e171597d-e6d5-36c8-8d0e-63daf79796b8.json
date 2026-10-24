@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876406828,
+  "album": {
+    "id": "e171597d-e6d5-36c8-8d0e-63daf79796b8",
+    "title": "Songs of Faith and Devotion",
+    "artist": "Depeche Mode",
+    "year": "1993",
+    "barcode": "4006758468884",
+    "label": "Mute",
+    "genre": "alternative rock / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "I Feel You"
+      },
+      {
+        "number": "2",
+        "title": "Walking in My Shoes"
+      },
+      {
+        "number": "3",
+        "title": "Condemnation"
+      },
+      {
+        "number": "4",
+        "title": "Mercy in You"
+      },
+      {
+        "number": "5",
+        "title": "Judas"
+      },
+      {
+        "number": "6",
+        "title": "In Your Room"
+      },
+      {
+        "number": "7",
+        "title": "Get Right With Me / Interlude #4"
+      },
+      {
+        "number": "8",
+        "title": "Rush"
+      },
+      {
+        "number": "9",
+        "title": "One Caress"
+      },
+      {
+        "number": "10",
+        "title": "Higher Love"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/13ee7e6b-2f9a-30af-b4bb-2c2dbde12c44/20967138423-1200.jpg",
+    "back": "https://coverartarchive.org/release/13ee7e6b-2f9a-30af-b4bb-2c2dbde12c44/20948210043-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/13ee7e6b-2f9a-30af-b4bb-2c2dbde12c44/20967138423.jpg",
+    "backFull": "https://coverartarchive.org/release/13ee7e6b-2f9a-30af-b4bb-2c2dbde12c44/20948210043.jpg"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876410319,
+  "album": {
+    "id": "71f1482e-e63f-3b2c-811b-939f62708f2a",
+    "title": "Violator",
+    "artist": "Depeche Mode",
+    "year": "1990",
+    "barcode": "5016025310647",
+    "label": "Mute",
+    "genre": "synth-pop / electronic",
+    "tracks": [
+      {
+        "number": "A1",
+        "title": "World in My Eyes"
+      },
+      {
+        "number": "A2",
+        "title": "Sweetest Perfection"
+      },
+      {
+        "number": "A3",
+        "title": "Personal Jesus"
+      },
+      {
+        "number": "A4",
+        "title": "Halo"
+      },
+      {
+        "number": "A5",
+        "title": "Waiting for the Night"
+      },
+      {
+        "number": "B1",
+        "title": "Enjoy the Silence / Interlude #2: Crucified"
+      },
+      {
+        "number": "B2",
+        "title": "Policy of Truth"
+      },
+      {
+        "number": "B3",
+        "title": "Blue Dress / Interlude #3"
+      },
+      {
+        "number": "B4",
+        "title": "Clean"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/5454efa9-445a-4b73-8d16-e9fdbf022119/18529866710-1200.jpg",
+    "back": "https://coverartarchive.org/release/5454efa9-445a-4b73-8d16-e9fdbf022119/18529868327-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/5454efa9-445a-4b73-8d16-e9fdbf022119/18529866710.jpg",
+    "backFull": "https://coverartarchive.org/release/5454efa9-445a-4b73-8d16-e9fdbf022119/18529868327.jpg"
+  }
+}

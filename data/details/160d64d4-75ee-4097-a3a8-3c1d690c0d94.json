@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875801017,
+  "album": {
+    "id": "160d64d4-75ee-4097-a3a8-3c1d690c0d94",
+    "title": "Broken Machine",
+    "artist": "Nothing But Thieves",
+    "year": "2017",
+    "barcode": "889854370329",
+    "label": "RCA",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "I Was Just a Kid"
+      },
+      {
+        "number": "2",
+        "title": "Amsterdam"
+      },
+      {
+        "number": "3",
+        "title": "Sorry"
+      },
+      {
+        "number": "4",
+        "title": "Broken Machine"
+      },
+      {
+        "number": "5",
+        "title": "Live Like Animals"
+      },
+      {
+        "number": "6",
+        "title": "Soda"
+      },
+      {
+        "number": "7",
+        "title": "I'm Not Made by Design"
+      },
+      {
+        "number": "8",
+        "title": "Particles"
+      },
+      {
+        "number": "9",
+        "title": "Get Better"
+      },
+      {
+        "number": "10",
+        "title": "Hell, Yeah"
+      },
+      {
+        "number": "11",
+        "title": "Afterlife"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c83dc1c3-e728-4030-a2ff-4e064ccdae28/19004917092-1200.jpg",
+    "back": "https://coverartarchive.org/release/c83dc1c3-e728-4030-a2ff-4e064ccdae28/19004918725-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/c83dc1c3-e728-4030-a2ff-4e064ccdae28/19004917092.jpg",
+    "backFull": "https://coverartarchive.org/release/c83dc1c3-e728-4030-a2ff-4e064ccdae28/19004918725.jpg"
+  }
+}

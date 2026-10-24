@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875884366,
+  "album": {
+    "id": "72375978-a9a1-4254-b957-85565c716b7e",
+    "title": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+    "artist": "Billie Eilish",
+    "year": "2019",
+    "barcode": "602577427640",
+    "label": "Darkroom Records",
+    "genre": "alternative pop / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "!!!!!!!"
+      },
+      {
+        "number": "2",
+        "title": "bad guy"
+      },
+      {
+        "number": "3",
+        "title": "xanny"
+      },
+      {
+        "number": "4",
+        "title": "you should see me in a crown"
+      },
+      {
+        "number": "5",
+        "title": "all the good girls go to hell"
+      },
+      {
+        "number": "6",
+        "title": "wish you were gay"
+      },
+      {
+        "number": "7",
+        "title": "when the party’s over"
+      },
+      {
+        "number": "8",
+        "title": "8"
+      },
+      {
+        "number": "9",
+        "title": "my strange addiction"
+      },
+      {
+        "number": "10",
+        "title": "bury a friend"
+      },
+      {
+        "number": "11",
+        "title": "ilomilo"
+      },
+      {
+        "number": "12",
+        "title": "listen before i go"
+      },
+      {
+        "number": "13",
+        "title": "i love you"
+      },
+      {
+        "number": "14",
+        "title": "goodbye"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e5e6642c-7814-4e02-9c68-7734b21c1f63/32734888823-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e5e6642c-7814-4e02-9c68-7734b21c1f63/32734888823.jpg",
+    "backFull": ""
+  }
+}

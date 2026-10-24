@@ -1,5 +1,5 @@
 // Poster export: PNG or PDF at several sizes, print and share link.
-// html-to-image is only loaded when someone actually exports, so it does not slow down the page.
+// html-to-image (scripting/vendor) is only loaded when someone actually exports, so it does not slow down the page.
 
 import { DPI, canvasLimits, planExport } from './exportPlan.js'
 import { MM_PER_INCH, planPrint, printStyle } from './printPlan.js'
@@ -9,7 +9,7 @@ import { freezeAllLineBreaks } from './lineBreaks.js'
 // Only the experiments in the tests turn this off
 export const exportSettings = { freezeLineBreaks: true }
 
-const HTML_TO_IMAGE = 'https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/+esm'
+const HTML_TO_IMAGE = './vendor/html-to-image.js' // kept in the repo, so that exporting also works offline
 const ORIGINAL_TIMEOUT_MS = 30_000
 
 // The cover on the page is a thumbnail of 1200 px; in a print wider than this the original looks better

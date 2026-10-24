@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875804484,
+  "album": {
+    "id": "7c6de97d-bf6a-4793-82f5-f142baed33e6",
+    "title": "Loud",
+    "artist": "Rihanna",
+    "year": "2010",
+    "barcode": "4988005640802",
+    "label": "Def Jam Recordings",
+    "genre": "contemporary r&b / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "S&M"
+      },
+      {
+        "number": "2",
+        "title": "What's My Name?"
+      },
+      {
+        "number": "3",
+        "title": "Cheers (Drink to That)"
+      },
+      {
+        "number": "4",
+        "title": "Fading"
+      },
+      {
+        "number": "5",
+        "title": "Only Girl (in the World)"
+      },
+      {
+        "number": "6",
+        "title": "California King Bed"
+      },
+      {
+        "number": "7",
+        "title": "Man Down"
+      },
+      {
+        "number": "8",
+        "title": "Raining Men"
+      },
+      {
+        "number": "9",
+        "title": "Complicated"
+      },
+      {
+        "number": "10",
+        "title": "Skin"
+      },
+      {
+        "number": "11",
+        "title": "Love the Way You Lie (Part II)"
+      },
+      {
+        "number": "12",
+        "title": "Only Girl (in the World) (the Bimbo Jones radio)"
+      },
+      {
+        "number": "13",
+        "title": "Only Girl (in the World) (CCW radio mix)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/7d3ebe0a-94a1-45a2-89f3-dc008837b338/14542240865.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/7d3ebe0a-94a1-45a2-89f3-dc008837b338/14542240865.jpg",
+    "backFull": ""
+  }
+}

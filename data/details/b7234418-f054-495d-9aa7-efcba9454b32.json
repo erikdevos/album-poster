@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875908432,
+  "album": {
+    "id": "b7234418-f054-495d-9aa7-efcba9454b32",
+    "title": "PRIMA",
+    "artist": "ADÉLA",
+    "year": "2026",
+    "barcode": "00881061182955",
+    "label": "Capitol Records",
+    "genre": "dance-pop / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "KGB"
+      },
+      {
+        "number": "2",
+        "title": "Nicole Kidman"
+      },
+      {
+        "number": "3",
+        "title": "I’m the Man"
+      },
+      {
+        "number": "4",
+        "title": "Boys"
+      },
+      {
+        "number": "5",
+        "title": "Red Bottoms"
+      },
+      {
+        "number": "6",
+        "title": "Hitachi"
+      },
+      {
+        "number": "7",
+        "title": "Fantasize"
+      },
+      {
+        "number": "8",
+        "title": "Starving Artist"
+      },
+      {
+        "number": "9",
+        "title": "Marijuana"
+      },
+      {
+        "number": "10",
+        "title": "Therapy"
+      },
+      {
+        "number": "11",
+        "title": "Ain’t in LA"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/264d60e5-36d0-4b3a-9529-dd57a2ac5c39/46101322026-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/264d60e5-36d0-4b3a-9529-dd57a2ac5c39/46101322026.jpg",
+    "backFull": ""
+  }
+}

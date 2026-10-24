@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875942692,
+  "album": {
+    "id": "1c1b50ec-828b-3d7c-9b1b-54cb1fe97d55",
+    "title": "808s & Heartbreak",
+    "artist": "Kanye West",
+    "year": "2008",
+    "barcode": "602517913417",
+    "label": "Roc‐A‐Fella Records",
+    "genre": "hip hop / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Say You Will"
+      },
+      {
+        "number": "2",
+        "title": "Welcome to Heartbreak"
+      },
+      {
+        "number": "3",
+        "title": "Heartless"
+      },
+      {
+        "number": "4",
+        "title": "Amazing"
+      },
+      {
+        "number": "5",
+        "title": "Love Lockdown"
+      },
+      {
+        "number": "6",
+        "title": "Paranoid"
+      },
+      {
+        "number": "7",
+        "title": "RoboCop"
+      },
+      {
+        "number": "8",
+        "title": "Street Lights"
+      },
+      {
+        "number": "9",
+        "title": "Bad News"
+      },
+      {
+        "number": "10",
+        "title": "See You in My Nightmares"
+      },
+      {
+        "number": "11",
+        "title": "Coldest Winter"
+      },
+      {
+        "number": "12",
+        "title": "Pinocchio Story (freestyle live from Singapore)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/9505501e-f98d-4975-9775-63a671f713e1/43101510210-1200.jpg",
+    "back": "https://coverartarchive.org/release/9505501e-f98d-4975-9775-63a671f713e1/43101510792-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/9505501e-f98d-4975-9775-63a671f713e1/43101510210.jpg",
+    "backFull": "https://coverartarchive.org/release/9505501e-f98d-4975-9775-63a671f713e1/43101510792.jpg"
+  }
+}

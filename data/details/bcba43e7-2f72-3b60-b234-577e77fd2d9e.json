@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876435536,
+  "album": {
+    "id": "bcba43e7-2f72-3b60-b234-577e77fd2d9e",
+    "title": "The Black Parade",
+    "artist": "My Chemical Romance",
+    "year": "2006",
+    "barcode": "093624324560",
+    "label": "Reprise Records",
+    "genre": "emo / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The End."
+      },
+      {
+        "number": "2",
+        "title": "Dead!"
+      },
+      {
+        "number": "3",
+        "title": "This Is How I Disappear"
+      },
+      {
+        "number": "4",
+        "title": "The Sharpest Lives"
+      },
+      {
+        "number": "5",
+        "title": "Welcome to the Black Parade"
+      },
+      {
+        "number": "6",
+        "title": "I Don’t Love You"
+      },
+      {
+        "number": "7",
+        "title": "House of Wolves"
+      },
+      {
+        "number": "8",
+        "title": "Cancer"
+      },
+      {
+        "number": "9",
+        "title": "Mama"
+      },
+      {
+        "number": "10",
+        "title": "Sleep"
+      },
+      {
+        "number": "11",
+        "title": "Teenagers"
+      },
+      {
+        "number": "12",
+        "title": "Disenchanted"
+      },
+      {
+        "number": "13",
+        "title": "Famous Last Words"
+      },
+      {
+        "number": "14",
+        "title": "Blood"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/30aec7a5-af1c-4f41-949c-5ecf8ad0ce4e/27877560750-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/30aec7a5-af1c-4f41-949c-5ecf8ad0ce4e/27877560750.jpg",
+    "backFull": ""
+  }
+}

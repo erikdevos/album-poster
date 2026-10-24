@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876403971,
+  "album": {
+    "id": "4b16a1bc-8644-48ae-9b3e-8ae36aa30cfc",
+    "title": "Born to Die",
+    "artist": "Lana Del Rey",
+    "year": "2012",
+    "barcode": "0602537056880",
+    "label": "Vertigo Berlin",
+    "genre": "pop / art pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Born to Die"
+      },
+      {
+        "number": "2",
+        "title": "Off to the Races"
+      },
+      {
+        "number": "3",
+        "title": "Blue Jeans"
+      },
+      {
+        "number": "4",
+        "title": "Video Games"
+      },
+      {
+        "number": "5",
+        "title": "Diet Mountain Dew"
+      },
+      {
+        "number": "6",
+        "title": "National Anthem"
+      },
+      {
+        "number": "7",
+        "title": "Dark Paradise"
+      },
+      {
+        "number": "8",
+        "title": "Radio"
+      },
+      {
+        "number": "9",
+        "title": "Carmen"
+      },
+      {
+        "number": "10",
+        "title": "Million Dollar Man"
+      },
+      {
+        "number": "11",
+        "title": "Summertime Sadness"
+      },
+      {
+        "number": "12",
+        "title": "This Is What Makes Us Girls"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/821b5fd1-8fdd-4976-8258-90c661cc6423/30983983679-1200.jpg",
+    "back": "https://coverartarchive.org/release/821b5fd1-8fdd-4976-8258-90c661cc6423/30983984645-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/821b5fd1-8fdd-4976-8258-90c661cc6423/30983983679.jpg",
+    "backFull": "https://coverartarchive.org/release/821b5fd1-8fdd-4976-8258-90c661cc6423/30983984645.jpg"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875955645,
+  "album": {
+    "id": "2e3b231b-ab9f-4d85-950a-48708a1cc2fb",
+    "title": "Born This Way",
+    "artist": "Lady Gaga",
+    "year": "2011",
+    "barcode": "00602527641249",
+    "label": "Interscope Records",
+    "genre": "pop / dance-pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Marry the Night"
+      },
+      {
+        "number": "2",
+        "title": "Born This Way"
+      },
+      {
+        "number": "3",
+        "title": "Government Hooker"
+      },
+      {
+        "number": "4",
+        "title": "Judas"
+      },
+      {
+        "number": "5",
+        "title": "Americano"
+      },
+      {
+        "number": "6",
+        "title": "Hair"
+      },
+      {
+        "number": "7",
+        "title": "Scheiße"
+      },
+      {
+        "number": "8",
+        "title": "Bloody Mary"
+      },
+      {
+        "number": "9",
+        "title": "Bad Kids"
+      },
+      {
+        "number": "10",
+        "title": "Highway Unicorn (Road to Love)"
+      },
+      {
+        "number": "11",
+        "title": "Heavy Metal Lover"
+      },
+      {
+        "number": "12",
+        "title": "Electric Chapel"
+      },
+      {
+        "number": "13",
+        "title": "Yoü and I"
+      },
+      {
+        "number": "14",
+        "title": "The Edge of Glory"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/97277195-b627-4c86-b23a-216c3272697b/29921321584-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/97277195-b627-4c86-b23a-216c3272697b/29921321584.jpg",
+    "backFull": ""
+  }
+}

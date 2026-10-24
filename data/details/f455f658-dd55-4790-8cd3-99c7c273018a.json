@@ -1,0 +1,83 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875837227,
+  "album": {
+    "id": "f455f658-dd55-4790-8cd3-99c7c273018a",
+    "title": "MOTOMAMI",
+    "artist": "ROSALÍA",
+    "year": "2022",
+    "barcode": "886449800193",
+    "label": "Columbia",
+    "genre": "flamenco / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "SAOKO"
+      },
+      {
+        "number": "2",
+        "title": "CANDY"
+      },
+      {
+        "number": "3",
+        "title": "LA FAMA"
+      },
+      {
+        "number": "4",
+        "title": "BULERÍAS"
+      },
+      {
+        "number": "5",
+        "title": "CHICKEN TERIYAKI"
+      },
+      {
+        "number": "6",
+        "title": "HENTAI"
+      },
+      {
+        "number": "7",
+        "title": "BIZCOCHITO"
+      },
+      {
+        "number": "8",
+        "title": "G3 N15"
+      },
+      {
+        "number": "9",
+        "title": "MOTOMAMI"
+      },
+      {
+        "number": "10",
+        "title": "DIABLO"
+      },
+      {
+        "number": "11",
+        "title": "DELIRIO DE GRANDEZA"
+      },
+      {
+        "number": "12",
+        "title": "CUUUUuuuuuute"
+      },
+      {
+        "number": "13",
+        "title": "COMO UN G"
+      },
+      {
+        "number": "14",
+        "title": "Abcdefg"
+      },
+      {
+        "number": "15",
+        "title": "LA COMBI VERSACE"
+      },
+      {
+        "number": "16",
+        "title": "SAKURA"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/5e437206-54c0-4313-9084-5da728933d2a/31637397904-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/5e437206-54c0-4313-9084-5da728933d2a/31637397904.jpg",
+    "backFull": ""
+  }
+}

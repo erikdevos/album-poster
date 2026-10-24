@@ -1,0 +1,95 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875798938,
+  "album": {
+    "id": "7b043d9a-b5e1-4ab8-970e-1b0130726029",
+    "title": "Nothing But Thieves",
+    "artist": "Nothing But Thieves",
+    "year": "2015",
+    "barcode": "886445499940",
+    "label": "RCA",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Excuse Me"
+      },
+      {
+        "number": "2",
+        "title": "Ban All the Music"
+      },
+      {
+        "number": "3",
+        "title": "Wake Up Call"
+      },
+      {
+        "number": "4",
+        "title": "Itch"
+      },
+      {
+        "number": "5",
+        "title": "If I Get High"
+      },
+      {
+        "number": "6",
+        "title": "Graveyard Whistling"
+      },
+      {
+        "number": "7",
+        "title": "Hostage"
+      },
+      {
+        "number": "8",
+        "title": "Trip Switch"
+      },
+      {
+        "number": "9",
+        "title": "Lover, Please Stay"
+      },
+      {
+        "number": "10",
+        "title": "Drawing Pins"
+      },
+      {
+        "number": "11",
+        "title": "Painkiller"
+      },
+      {
+        "number": "12",
+        "title": "Tempt You (Evocatio)"
+      },
+      {
+        "number": "13",
+        "title": "Honey Whiskey"
+      },
+      {
+        "number": "14",
+        "title": "Hanging"
+      },
+      {
+        "number": "15",
+        "title": "Neon Brother"
+      },
+      {
+        "number": "16",
+        "title": "Six Billion"
+      },
+      {
+        "number": "17",
+        "title": "In My Head"
+      },
+      {
+        "number": "18",
+        "title": "If I Get High (II)"
+      },
+      {
+        "number": "19",
+        "title": "Ban All the Music (II)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/a8f9dbef-27e6-4a2e-aaeb-2513fe1af2d3/38432621583-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/a8f9dbef-27e6-4a2e-aaeb-2513fe1af2d3/38432621583.jpg",
+    "backFull": ""
+  }
+}

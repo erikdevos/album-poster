@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876447988,
+  "album": {
+    "id": "e295b8f2-a86c-49fb-8668-aaba1c9f9e4a",
+    "title": "Woman",
+    "artist": "Justice",
+    "year": "2016",
+    "barcode": "0190295911140",
+    "label": "Because Music",
+    "genre": "nu disco / electro house",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Safe and Sound"
+      },
+      {
+        "number": "2",
+        "title": "Pleasure"
+      },
+      {
+        "number": "3",
+        "title": "Alakazam!"
+      },
+      {
+        "number": "4",
+        "title": "Fire"
+      },
+      {
+        "number": "5",
+        "title": "Stop"
+      },
+      {
+        "number": "6",
+        "title": "Chorus"
+      },
+      {
+        "number": "7",
+        "title": "Randy"
+      },
+      {
+        "number": "8",
+        "title": "Heavy Metal"
+      },
+      {
+        "number": "9",
+        "title": "Love S.O.S."
+      },
+      {
+        "number": "10",
+        "title": "Close Call"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/df6b0d22-fd9f-4629-9772-d0021f49de96/15193915089.jpg",
+    "back": "https://coverartarchive.org/release/df6b0d22-fd9f-4629-9772-d0021f49de96/15311292802.jpg",
+    "frontFull": "https://coverartarchive.org/release/df6b0d22-fd9f-4629-9772-d0021f49de96/15193915089.jpg",
+    "backFull": "https://coverartarchive.org/release/df6b0d22-fd9f-4629-9772-d0021f49de96/15311292802.jpg"
+  }
+}

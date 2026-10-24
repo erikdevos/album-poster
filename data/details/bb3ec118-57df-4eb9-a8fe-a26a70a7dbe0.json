@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875704857,
+  "album": {
+    "id": "bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0",
+    "title": "LUX",
+    "artist": "ROSALÍA",
+    "year": "2025",
+    "barcode": "196873722672",
+    "label": "Columbia",
+    "genre": "art pop / classical crossover",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Sexo, violencia y llantas"
+      },
+      {
+        "number": "2",
+        "title": "Reliquia"
+      },
+      {
+        "number": "3",
+        "title": "Divinize"
+      },
+      {
+        "number": "4",
+        "title": "Porcelana"
+      },
+      {
+        "number": "5",
+        "title": "Mio Cristo piange diamanti"
+      },
+      {
+        "number": "6",
+        "title": "Berghain"
+      },
+      {
+        "number": "7",
+        "title": "La perla"
+      },
+      {
+        "number": "8",
+        "title": "Mundo nuevo"
+      },
+      {
+        "number": "9",
+        "title": "De madrugá"
+      },
+      {
+        "number": "10",
+        "title": "Dios es un stalker"
+      },
+      {
+        "number": "11",
+        "title": "La yugular"
+      },
+      {
+        "number": "12",
+        "title": "Sauvignon blanc"
+      },
+      {
+        "number": "13",
+        "title": "La rumba del perdón"
+      },
+      {
+        "number": "14",
+        "title": "Memória"
+      },
+      {
+        "number": "15",
+        "title": "Magnolias"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e5913eac-3d74-47af-a3f2-7aa6618f140a/43405280844-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e5913eac-3d74-47af-a3f2-7aa6618f140a/43405280844.jpg",
+    "backFull": ""
+  }
+}

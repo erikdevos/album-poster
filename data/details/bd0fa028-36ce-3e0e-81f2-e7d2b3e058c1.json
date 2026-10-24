@@ -1,0 +1,111 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875810442,
+  "album": {
+    "id": "bd0fa028-36ce-3e0e-81f2-e7d2b3e058c1",
+    "title": "Reanimation",
+    "artist": "Linkin Park",
+    "year": "2002",
+    "barcode": "093624320760",
+    "label": "",
+    "genre": "breakbeat / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Opening"
+      },
+      {
+        "number": "2",
+        "title": "Pts.Of.Athrty"
+      },
+      {
+        "number": "3",
+        "title": "Enth E Nd"
+      },
+      {
+        "number": "4",
+        "title": "[Chali]"
+      },
+      {
+        "number": "5",
+        "title": "Frgt/10"
+      },
+      {
+        "number": "6",
+        "title": "P5hng Me A*wy"
+      },
+      {
+        "number": "7",
+        "title": "Plc.4 Mie Hæd"
+      },
+      {
+        "number": "8",
+        "title": "X-Ecutioner Style"
+      },
+      {
+        "number": "9",
+        "title": "H! Vltg3"
+      },
+      {
+        "number": "10",
+        "title": "[Riff Raff]"
+      },
+      {
+        "number": "11",
+        "title": "Wth>You"
+      },
+      {
+        "number": "12",
+        "title": "Ntr\\mssion"
+      },
+      {
+        "number": "13",
+        "title": "Ppr:kut"
+      },
+      {
+        "number": "14",
+        "title": "Rnw@y"
+      },
+      {
+        "number": "15",
+        "title": "My<Dsmbr"
+      },
+      {
+        "number": "16",
+        "title": "[Stef]"
+      },
+      {
+        "number": "17",
+        "title": "By_Myslf"
+      },
+      {
+        "number": "18",
+        "title": "Kyur4 Th Ich"
+      },
+      {
+        "number": "19",
+        "title": "1Stp Klosr"
+      },
+      {
+        "number": "20",
+        "title": "Krwlng"
+      },
+      {
+        "number": "21",
+        "title": "One Step Closer (live UK/US 2003 - Underground Tour)"
+      },
+      {
+        "number": "22",
+        "title": "Buy Myself (Marilyn Manson remix)"
+      },
+      {
+        "number": "23",
+        "title": "My December (live at Cox Arena, San Diego, CA, 2/23/2002 - Projekt Revolution Tour)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/fda9c1c1-d67a-44c6-98dd-af5f35ed1e7a/26258705640-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/fda9c1c1-d67a-44c6-98dd-af5f35ed1e7a/26258705640.jpg",
+    "backFull": ""
+  }
+}

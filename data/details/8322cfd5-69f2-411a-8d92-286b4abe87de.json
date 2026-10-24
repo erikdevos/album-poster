@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875922857,
+  "album": {
+    "id": "8322cfd5-69f2-411a-8d92-286b4abe87de",
+    "title": "GAMMA",
+    "artist": "Gesaffelstein",
+    "year": "2024",
+    "barcode": "196871778114",
+    "label": "Columbia Records",
+    "genre": "electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Digital Slaves"
+      },
+      {
+        "number": "2",
+        "title": "Hard Dreams"
+      },
+      {
+        "number": "3",
+        "title": "Your Share of the Night"
+      },
+      {
+        "number": "4",
+        "title": "Hysteria"
+      },
+      {
+        "number": "5",
+        "title": "The Urge"
+      },
+      {
+        "number": "6",
+        "title": "Mania"
+      },
+      {
+        "number": "7",
+        "title": "Lost Love"
+      },
+      {
+        "number": "8",
+        "title": "The Perfect"
+      },
+      {
+        "number": "9",
+        "title": "Psycho"
+      },
+      {
+        "number": "10",
+        "title": "Tyranny"
+      },
+      {
+        "number": "11",
+        "title": "Emet"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/2ff34469-5954-4a13-872b-c5bdbf57db72/38411704252-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/2ff34469-5954-4a13-872b-c5bdbf57db72/38411704252.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875848418,
+  "album": {
+    "id": "67683e84-ca17-4ab8-baaf-664e4f5d81f6",
+    "title": "Welcome Oblivion",
+    "artist": "How to Destroy Angels",
+    "year": "2013",
+    "barcode": "887654754622",
+    "label": "Columbia",
+    "genre": "electronic / electro",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Wake‐Up"
+      },
+      {
+        "number": "2",
+        "title": "Keep It Together"
+      },
+      {
+        "number": "3",
+        "title": "And the Sky Began to Scream"
+      },
+      {
+        "number": "4",
+        "title": "Welcome Oblivion"
+      },
+      {
+        "number": "5",
+        "title": "Ice Age"
+      },
+      {
+        "number": "6",
+        "title": "On the Wing"
+      },
+      {
+        "number": "7",
+        "title": "Too Late, All Gone"
+      },
+      {
+        "number": "8",
+        "title": "How Long?"
+      },
+      {
+        "number": "9",
+        "title": "Strings and Attractors"
+      },
+      {
+        "number": "10",
+        "title": "We Fade Away"
+      },
+      {
+        "number": "11",
+        "title": "Recursive Self‐Improvement"
+      },
+      {
+        "number": "12",
+        "title": "The Loop Closes"
+      },
+      {
+        "number": "13",
+        "title": "Hallowed Ground"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/fd255089-2489-4a2c-af2f-ed8a4e98ccb2/6299533987.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/fd255089-2489-4a2c-af2f-ed8a4e98ccb2/6299533987.jpg",
+    "backFull": ""
+  }
+}

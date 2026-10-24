@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876439134,
+  "album": {
+    "id": "867d4882-4e8e-3acd-8134-66f19bcca915",
+    "title": "✝",
+    "artist": "Justice",
+    "year": "2007",
+    "barcode": "5060107721098",
+    "label": "Ed Banger Records",
+    "genre": "electro house / electro",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Genesis"
+      },
+      {
+        "number": "2",
+        "title": "Let There Be Light"
+      },
+      {
+        "number": "3",
+        "title": "D.A.N.C.E."
+      },
+      {
+        "number": "4",
+        "title": "Newjack"
+      },
+      {
+        "number": "5",
+        "title": "Phantom"
+      },
+      {
+        "number": "6",
+        "title": "Phantom, Pt II"
+      },
+      {
+        "number": "7",
+        "title": "Valentine"
+      },
+      {
+        "number": "8",
+        "title": "Tthhee Ppaarrttyy"
+      },
+      {
+        "number": "9",
+        "title": "DVNO"
+      },
+      {
+        "number": "10",
+        "title": "Stress"
+      },
+      {
+        "number": "11",
+        "title": "Waters of Nazareth"
+      },
+      {
+        "number": "12",
+        "title": "One Minute to Midnight"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/4642ee19-7790-3c8d-ab5e-d133de942db6/25581637829-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/4642ee19-7790-3c8d-ab5e-d133de942db6/25581637829.jpg",
+    "backFull": ""
+  }
+}

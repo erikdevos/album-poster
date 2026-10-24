@@ -93,8 +93,7 @@ async function mockNetwork(context) {
             return route.fulfill({ status: 200, contentType: 'image/svg+xml', headers: CORS, body: COVER })
         }
 
-        // fonts, the export library: let it through, or fail quietly when offline
-        if (url.hostname === 'cdn.jsdelivr.net') return route.continue()
+        // fonts and the like: fail quietly
         return route.abort()
     })
 }
@@ -105,6 +104,9 @@ before(async () => {
     server = createServer(async (request, response) => {
         let path = normalize(decodeURIComponent(new URL(request.url, 'http://x').pathname))
         if (path.endsWith('/')) path += 'index.html'
+        // the prepared details are left out: these tests are about what the fake MusicBrainz says
+        // (offline.test.js covers the prepared details)
+        if (path.startsWith('/data/details/')) return void response.writeHead(404).end()
         try {
             const file = await readFile(join(ROOT, path))
             response.writeHead(200, { 'content-type': TYPES[extname(path)] ?? 'application/octet-stream' })
@@ -128,7 +130,8 @@ after(async () => {
 
 // A fresh page for each test, with the fake network and the errors of the page collected
 async function open(path, { viewport = { width: 1280, height: 900 }, acceptDownloads = false, reducedMotion = 'no-preference' } = {}) {
-    const context = await browser.newContext({ viewport, acceptDownloads, colorScheme: 'dark', reducedMotion })
+    // no service worker: it would take the requests that the fake network is meant to answer
+    const context = await browser.newContext({ viewport, acceptDownloads, colorScheme: 'dark', reducedMotion, serviceWorkers: 'block' })
     await mockNetwork(context)
     const page = await context.newPage()
     const errors = []
@@ -900,11 +903,6 @@ for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'f
     })
 }
 
-// The export library comes from jsDelivr, so the tests that export need the internet
-async function jsDelivrReachable() {
-    return fetch('https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/+esm', { method: 'HEAD' })
-        .then(response => response.ok, () => false)
-}
 
 // Opens the album, picks the export options, downloads, and gives back the file name and bytes
 async function exportFile({ format, quality, print = {} }) {
@@ -945,8 +943,7 @@ const pngInfo = bytes => {
     }
 }
 
-test('download PNG gives a file named after the album, 2400 px wide at 300 dpi', async t => {
-    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+test('download PNG gives a file named after the album, 2400 px wide at 300 dpi', async () => {
 
     const { filename, bytes } = await exportFile({ format: 'png', quality: 'standard' })
     assert.equal(filename, 'The Beatles - Abbey Road.png')
@@ -955,16 +952,14 @@ test('download PNG gives a file named after the album, 2400 px wide at 300 dpi',
     assert.equal(pixelsPerMeter, 11811)
 })
 
-test('the higher qualities make larger PNGs, and the page goes back to its own cover', async t => {
-    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+test('the higher qualities make larger PNGs, and the page goes back to its own cover', async () => {
 
     const high = await exportFile({ format: 'png', quality: 'high' })
     assert.equal(pngInfo(high.bytes).width, 4000)
     assert.equal(high.cover, `https://images.test/front-${ABBEY}.svg`)
 })
 
-test('download PDF gives an A4 page for a printer: a margin, and the dpi in the name', async t => {
-    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+test('download PDF gives an A4 page for a printer: a margin, and the dpi in the name', async () => {
 
     const { filename, bytes } = await exportFile({ format: 'pdf', print: { paper: 'a4', margin: 10, dpi: 300 } })
     assert.match(filename, /^The Beatles - Abbey Road \(A4, (29\d|30\d) dpi\)\.pdf$/)
@@ -978,8 +973,7 @@ test('download PDF gives an A4 page for a printer: a margin, and the dpi in the 
     assert.ok(width > 1500 && width <= 2480, `width ${width}`)
 })
 
-test('a PDF with bleed and crop marks has room around the trim, and the marks', async t => {
-    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+test('a PDF with bleed and crop marks has room around the trim, and the marks', async () => {
 
     const { bytes } = await exportFile({ format: 'pdf', print: { paper: 'a3', margin: 0, dpi: 150, bleed: true, marks: true } })
     const text = Buffer.from(bytes).toString('latin1')
@@ -991,8 +985,7 @@ test('a PDF with bleed and crop marks has room around the trim, and the marks', 
     assert.equal((text.match(/ l S/g) ?? []).length, 8)
 })
 
-test('a PDF named without options still makes the old page, as large as the image at 300 dpi', async t => {
-    if (!await jsDelivrReachable()) return t.skip('jsDelivr is not reachable')
+test('a PDF named without options still makes the old page, as large as the image at 300 dpi', async () => {
 
     const { page, close } = await open(`#${ABBEY}`)
     try {

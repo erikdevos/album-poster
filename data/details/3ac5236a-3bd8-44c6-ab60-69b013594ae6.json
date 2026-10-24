@@ -1,0 +1,83 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875882946,
+  "album": {
+    "id": "3ac5236a-3bd8-44c6-ab60-69b013594ae6",
+    "title": "Happier Than Ever",
+    "artist": "Billie Eilish",
+    "year": "2021",
+    "barcode": "00602438254750",
+    "label": "Darkroom Records",
+    "genre": "pop / alternative pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Getting Older"
+      },
+      {
+        "number": "2",
+        "title": "I Didn’t Change My Number"
+      },
+      {
+        "number": "3",
+        "title": "Billie Bossa Nova"
+      },
+      {
+        "number": "4",
+        "title": "my future"
+      },
+      {
+        "number": "5",
+        "title": "Oxytocin"
+      },
+      {
+        "number": "6",
+        "title": "GOLDWING"
+      },
+      {
+        "number": "7",
+        "title": "Lost Cause"
+      },
+      {
+        "number": "8",
+        "title": "Halley’s Comet"
+      },
+      {
+        "number": "9",
+        "title": "Not My Responsibility"
+      },
+      {
+        "number": "10",
+        "title": "OverHeated"
+      },
+      {
+        "number": "11",
+        "title": "Everybody Dies"
+      },
+      {
+        "number": "12",
+        "title": "Your Power"
+      },
+      {
+        "number": "13",
+        "title": "NDA"
+      },
+      {
+        "number": "14",
+        "title": "Therefore I Am"
+      },
+      {
+        "number": "15",
+        "title": "Happier Than Ever"
+      },
+      {
+        "number": "16",
+        "title": "Male Fantasy"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/0c155a34-f9ed-4ade-a676-3ac0d48ead17/29201454100-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/0c155a34-f9ed-4ade-a676-3ac0d48ead17/29201454100.jpg",
+    "backFull": ""
+  }
+}

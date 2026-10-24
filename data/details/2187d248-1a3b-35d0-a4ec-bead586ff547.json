@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875969133,
+  "album": {
+    "id": "2187d248-1a3b-35d0-a4ec-bead586ff547",
+    "title": "Fallen",
+    "artist": "Evanescence",
+    "year": "2003",
+    "barcode": "9399700115734",
+    "label": "Wind‐up",
+    "genre": "alternative rock / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Going Under"
+      },
+      {
+        "number": "2",
+        "title": "Bring Me to Life"
+      },
+      {
+        "number": "3",
+        "title": "Everybody’s Fool"
+      },
+      {
+        "number": "4",
+        "title": "My Immortal"
+      },
+      {
+        "number": "5",
+        "title": "Haunted"
+      },
+      {
+        "number": "6",
+        "title": "Tourniquet"
+      },
+      {
+        "number": "7",
+        "title": "Imaginary"
+      },
+      {
+        "number": "8",
+        "title": "Taking Over Me"
+      },
+      {
+        "number": "9",
+        "title": "Hello"
+      },
+      {
+        "number": "10",
+        "title": "My Last Breath"
+      },
+      {
+        "number": "11",
+        "title": "Whisper"
+      },
+      {
+        "number": "12",
+        "title": "My Immortal (band version)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/9bded46c-c0c9-4b31-85dc-6d0f90225407/36133922467-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/9bded46c-c0c9-4b31-85dc-6d0f90225407/36133922467.png",
+    "backFull": ""
+  }
+}

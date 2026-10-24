@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875807145,
+  "album": {
+    "id": "ecfd0a01-57c8-3949-990a-1a950942e0e0",
+    "title": "10,000 Days",
+    "artist": "Tool",
+    "year": "2006",
+    "barcode": "886447824771",
+    "label": "RCA",
+    "genre": "progressive metal / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Vicarious"
+      },
+      {
+        "number": "2",
+        "title": "Jambi"
+      },
+      {
+        "number": "3",
+        "title": "Wings for Marie, Pt. 1"
+      },
+      {
+        "number": "4",
+        "title": "10,000 Days (Wings, Pt 2)"
+      },
+      {
+        "number": "5",
+        "title": "The Pot"
+      },
+      {
+        "number": "6",
+        "title": "Lipan Conjuring"
+      },
+      {
+        "number": "7",
+        "title": "Lost Keys (Blame Hofman)"
+      },
+      {
+        "number": "8",
+        "title": "Rosetta Stoned"
+      },
+      {
+        "number": "9",
+        "title": "Intension"
+      },
+      {
+        "number": "10",
+        "title": "Right in Two"
+      },
+      {
+        "number": "11",
+        "title": "Viginti Tres"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/99506955-a90e-4287-b99e-af94d494bd6e/23720232510-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/99506955-a90e-4287-b99e-af94d494bd6e/23720232510.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875949027,
+  "album": {
+    "id": "9d9b3ac3-e630-4644-92c7-fb14d4d68d86",
+    "title": "Ultraviolence",
+    "artist": "Lana Del Rey",
+    "year": "2014",
+    "barcode": "00602537865567",
+    "label": "Interscope Records",
+    "genre": "dream pop / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Cruel World"
+      },
+      {
+        "number": "2",
+        "title": "Ultraviolence"
+      },
+      {
+        "number": "3",
+        "title": "Shades of Cool"
+      },
+      {
+        "number": "4",
+        "title": "Brooklyn Baby"
+      },
+      {
+        "number": "5",
+        "title": "West Coast"
+      },
+      {
+        "number": "6",
+        "title": "Sad Girl"
+      },
+      {
+        "number": "7",
+        "title": "Pretty When You Cry"
+      },
+      {
+        "number": "8",
+        "title": "Money Power Glory"
+      },
+      {
+        "number": "9",
+        "title": "Fucked My Way Up to the Top"
+      },
+      {
+        "number": "10",
+        "title": "Old Money"
+      },
+      {
+        "number": "11",
+        "title": "The Other Woman"
+      },
+      {
+        "number": "12",
+        "title": "Black Beauty"
+      },
+      {
+        "number": "13",
+        "title": "Guns and Roses"
+      },
+      {
+        "number": "14",
+        "title": "Florida Kilos"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/7689325c-923b-47d3-80cb-38d8e04b6e77/30640999452-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/7689325c-923b-47d3-80cb-38d8e04b6e77/30640999452.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875881299,
+  "album": {
+    "id": "de9470f4-f4a3-4ddf-967b-ac77c886ad49",
+    "title": "Kiss Land",
+    "artist": "The Weeknd",
+    "year": "2013",
+    "barcode": "0602537526260",
+    "label": "Universal Republic Records",
+    "genre": "contemporary r&b / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Professional"
+      },
+      {
+        "number": "2",
+        "title": "The Town"
+      },
+      {
+        "number": "3",
+        "title": "Adaptation"
+      },
+      {
+        "number": "4",
+        "title": "Love in the Sky"
+      },
+      {
+        "number": "5",
+        "title": "Belong to the World"
+      },
+      {
+        "number": "6",
+        "title": "Live For"
+      },
+      {
+        "number": "7",
+        "title": "Wanderlust"
+      },
+      {
+        "number": "8",
+        "title": "Kiss Land"
+      },
+      {
+        "number": "9",
+        "title": "Pretty"
+      },
+      {
+        "number": "10",
+        "title": "Tears in the Rain"
+      },
+      {
+        "number": "11",
+        "title": "Wanderlust (Pharrell remix)"
+      },
+      {
+        "number": "12",
+        "title": "Odd Look"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/16ff2d98-395c-4c87-aac8-cc4d62a853ec/8654054562-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/16ff2d98-395c-4c87-aac8-cc4d62a853ec/8654054562.jpg",
+    "backFull": ""
+  }
+}

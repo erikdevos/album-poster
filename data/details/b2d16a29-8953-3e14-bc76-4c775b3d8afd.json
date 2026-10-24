@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875860406,
+  "album": {
+    "id": "b2d16a29-8953-3e14-bc76-4c775b3d8afd",
+    "title": "Mer de noms",
+    "artist": "A Perfect Circle",
+    "year": "2000",
+    "barcode": "724384932121",
+    "label": "Virgin Records America, Inc.",
+    "genre": "alternative rock / alternative metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Hollow"
+      },
+      {
+        "number": "2",
+        "title": "Magdalena"
+      },
+      {
+        "number": "3",
+        "title": "Rose"
+      },
+      {
+        "number": "4",
+        "title": "Judith"
+      },
+      {
+        "number": "5",
+        "title": "Orestes"
+      },
+      {
+        "number": "6",
+        "title": "3 Libras"
+      },
+      {
+        "number": "7",
+        "title": "Sleeping Beauty"
+      },
+      {
+        "number": "8",
+        "title": "Thomas"
+      },
+      {
+        "number": "9",
+        "title": "Renholdër"
+      },
+      {
+        "number": "10",
+        "title": "Thinking of You"
+      },
+      {
+        "number": "11",
+        "title": "Breña"
+      },
+      {
+        "number": "12",
+        "title": "Over"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e5c49bf1-925b-32e2-9ac3-c4084f875376/10015661298.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e5c49bf1-925b-32e2-9ac3-c4084f875376/10015661298.jpg",
+    "backFull": ""
+  }
+}

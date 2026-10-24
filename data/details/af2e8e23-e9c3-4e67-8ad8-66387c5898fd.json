@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876392762,
+  "album": {
+    "id": "af2e8e23-e9c3-4e67-8ad8-66387c5898fd",
+    "title": "Black Holes and Revelations",
+    "artist": "Muse",
+    "year": "2006",
+    "barcode": "825646350957",
+    "label": "Warner Bros. Records",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Take a Bow"
+      },
+      {
+        "number": "2",
+        "title": "Starlight"
+      },
+      {
+        "number": "3",
+        "title": "Supermassive Black Hole"
+      },
+      {
+        "number": "4",
+        "title": "Map of the Problematique"
+      },
+      {
+        "number": "5",
+        "title": "Soldier’s Poem"
+      },
+      {
+        "number": "6",
+        "title": "Invincible"
+      },
+      {
+        "number": "7",
+        "title": "Assassin"
+      },
+      {
+        "number": "8",
+        "title": "Exo-Politics"
+      },
+      {
+        "number": "9",
+        "title": "City of Delusion"
+      },
+      {
+        "number": "10",
+        "title": "Hoodoo"
+      },
+      {
+        "number": "11",
+        "title": "Knights of Cydonia"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/fe0bf96c-a56d-45e8-9c0f-6785022ef998/25004873802-1200.jpg",
+    "back": "https://coverartarchive.org/release/fe0bf96c-a56d-45e8-9c0f-6785022ef998/25004876183-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/fe0bf96c-a56d-45e8-9c0f-6785022ef998/25004873802.jpg",
+    "backFull": "https://coverartarchive.org/release/fe0bf96c-a56d-45e8-9c0f-6785022ef998/25004876183.jpg"
+  }
+}

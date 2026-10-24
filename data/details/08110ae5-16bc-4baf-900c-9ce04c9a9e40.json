@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875794914,
+  "album": {
+    "id": "08110ae5-16bc-4baf-900c-9ce04c9a9e40",
+    "title": "Hyperdrama",
+    "artist": "Justice",
+    "year": "2024",
+    "barcode": "5056556135845",
+    "label": "Because Music",
+    "genre": "electro-disco / french electro",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Neverender"
+      },
+      {
+        "number": "2",
+        "title": "Generator"
+      },
+      {
+        "number": "3",
+        "title": "Afterimage"
+      },
+      {
+        "number": "4",
+        "title": "One Night/All Night"
+      },
+      {
+        "number": "5",
+        "title": "Dear Alan"
+      },
+      {
+        "number": "6",
+        "title": "Incognito"
+      },
+      {
+        "number": "7",
+        "title": "Mannequin Love"
+      },
+      {
+        "number": "8",
+        "title": "Moonlight Rendez-vous"
+      },
+      {
+        "number": "9",
+        "title": "Explorer"
+      },
+      {
+        "number": "10",
+        "title": "Muscle Memory"
+      },
+      {
+        "number": "11",
+        "title": "Harpy Dream"
+      },
+      {
+        "number": "12",
+        "title": "Saturnine"
+      },
+      {
+        "number": "13",
+        "title": "The End"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/66869aec-e354-4ade-99fb-d7d746d73bf8/37859330810-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/66869aec-e354-4ade-99fb-d7d746d73bf8/37859330810.jpg",
+    "backFull": ""
+  }
+}

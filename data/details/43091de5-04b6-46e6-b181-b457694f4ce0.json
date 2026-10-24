@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876425070,
+  "album": {
+    "id": "43091de5-04b6-46e6-b181-b457694f4ce0",
+    "title": "Hybrid Theory",
+    "artist": "Linkin Park",
+    "year": "2023",
+    "barcode": "",
+    "label": "",
+    "genre": "",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Papercut"
+      },
+      {
+        "number": "2",
+        "title": "One Step Closer"
+      },
+      {
+        "number": "3",
+        "title": "Crawling"
+      },
+      {
+        "number": "4",
+        "title": "Left in My Conscience (instrumental)"
+      },
+      {
+        "number": "5",
+        "title": "By Myself"
+      },
+      {
+        "number": "6",
+        "title": "Personal (interlude)"
+      },
+      {
+        "number": "7",
+        "title": "A Place for My Head"
+      },
+      {
+        "number": "8",
+        "title": "In the End"
+      },
+      {
+        "number": "9",
+        "title": "With You"
+      },
+      {
+        "number": "10",
+        "title": "Pushing Me Away"
+      },
+      {
+        "number": "11",
+        "title": "Runaway"
+      },
+      {
+        "number": "12",
+        "title": "Forgotten"
+      },
+      {
+        "number": "13",
+        "title": "Points of Authority"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/ba87fddf-d096-4b06-bdbe-446e88e7eddb/36972741582-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/ba87fddf-d096-4b06-bdbe-446e88e7eddb/36972741582.jpg",
+    "backFull": ""
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875894329,
+  "album": {
+    "id": "1ab3ba95-bc96-46f4-bc6d-1e57bc6ad1a0",
+    "title": "Unapologetic",
+    "artist": "Rihanna",
+    "year": "2012",
+    "barcode": "00602537220618",
+    "label": "Def Jam Recordings",
+    "genre": "contemporary r&b / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Phresh Out the Runway"
+      },
+      {
+        "number": "2",
+        "title": "Diamonds"
+      },
+      {
+        "number": "3",
+        "title": "Numb"
+      },
+      {
+        "number": "4",
+        "title": "Pour It Up"
+      },
+      {
+        "number": "5",
+        "title": "Loveeeeeee Song"
+      },
+      {
+        "number": "6",
+        "title": "Jump"
+      },
+      {
+        "number": "7",
+        "title": "Right Now"
+      },
+      {
+        "number": "8",
+        "title": "What Now"
+      },
+      {
+        "number": "9",
+        "title": "Stay"
+      },
+      {
+        "number": "10",
+        "title": "Nobody’s Business"
+      },
+      {
+        "number": "11",
+        "title": "Love Without Tragedy / Mother Mary"
+      },
+      {
+        "number": "12",
+        "title": "Get It Over With"
+      },
+      {
+        "number": "13",
+        "title": "No Love Allowed"
+      },
+      {
+        "number": "14",
+        "title": "Lost in Paradise"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/cc06c0f7-32b6-4a55-9e9b-dfba6c8f50e2/25491165319-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/cc06c0f7-32b6-4a55-9e9b-dfba6c8f50e2/25491165319.jpg",
+    "backFull": ""
+  }
+}

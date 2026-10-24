@@ -7,6 +7,7 @@ import { setupSearch, rememberAlbum } from './search.js'
 import { setupMenu } from './menu.js'
 import { setupDisplay } from './display.js'
 import { setupBrowse } from './browse.js'
+import { registerServiceWorker } from './offline.js'
 import { downloadPoster, printPoster, sharePoster } from './exportPoster.js'
 import { setupExportPanel, exportOptions, printSettings } from './exportPanel.js'
 import { parseLocation, isLegacyId, replaceAlbumId, navigateToAlbum, onAlbumChange } from './router.js'
@@ -60,6 +61,7 @@ function onClick(id, action, { busyButton = id, before = () => {} } = {}) {
 }
 
 async function init() {
+    registerServiceWorker()
     const { albumId, params } = parseLocation()
     applyDisplayOptions(params)
     watchCover(document.getElementById('album-cover'))

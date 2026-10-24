@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875950296,
+  "album": {
+    "id": "24fd0887-9e83-42e3-b27e-e7f89ead4c03",
+    "title": "Norman Fucking Rockwell!",
+    "artist": "Lana Del Rey",
+    "year": "2019",
+    "barcode": "00602508068645",
+    "label": "Interscope Records",
+    "genre": "art pop / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Norman fucking Rockwell"
+      },
+      {
+        "number": "2",
+        "title": "Mariners Apartment Complex"
+      },
+      {
+        "number": "3",
+        "title": "Venice Bitch"
+      },
+      {
+        "number": "4",
+        "title": "Fuck it I love you"
+      },
+      {
+        "number": "5",
+        "title": "Doin’ Time"
+      },
+      {
+        "number": "6",
+        "title": "Love song"
+      },
+      {
+        "number": "7",
+        "title": "Cinnamon Girl"
+      },
+      {
+        "number": "8",
+        "title": "How to disappear"
+      },
+      {
+        "number": "9",
+        "title": "California"
+      },
+      {
+        "number": "10",
+        "title": "The Next Best American Record"
+      },
+      {
+        "number": "11",
+        "title": "The greatest"
+      },
+      {
+        "number": "12",
+        "title": "Bartender"
+      },
+      {
+        "number": "13",
+        "title": "Happiness is a butterfly"
+      },
+      {
+        "number": "14",
+        "title": "hope is a dangerous thing for a woman like me to have – but I have it"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e759b293-5a6f-48cc-808f-38f0b977e00c/23717138029-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e759b293-5a6f-48cc-808f-38f0b977e00c/23717138029.jpg",
+    "backFull": ""
+  }
+}

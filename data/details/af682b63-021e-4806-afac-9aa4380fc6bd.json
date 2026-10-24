@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875973037,
+  "album": {
+    "id": "af682b63-021e-4806-afac-9aa4380fc6bd",
+    "title": "Living Things",
+    "artist": "Linkin Park",
+    "year": "2012",
+    "barcode": "093624950431",
+    "label": "Warner Bros. Records",
+    "genre": "alternative rock / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Lost in the Echo"
+      },
+      {
+        "number": "2",
+        "title": "In My Remains"
+      },
+      {
+        "number": "3",
+        "title": "Burn It Down"
+      },
+      {
+        "number": "4",
+        "title": "Lies Greed Misery"
+      },
+      {
+        "number": "5",
+        "title": "I’ll Be Gone"
+      },
+      {
+        "number": "6",
+        "title": "Castle of Glass"
+      },
+      {
+        "number": "7",
+        "title": "Victimized"
+      },
+      {
+        "number": "8",
+        "title": "Roads Untraveled"
+      },
+      {
+        "number": "9",
+        "title": "Skin to Bone"
+      },
+      {
+        "number": "10",
+        "title": "Until It Breaks"
+      },
+      {
+        "number": "11",
+        "title": "Tinfoil"
+      },
+      {
+        "number": "12",
+        "title": "Powerless"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/6c48c82c-b7df-4b0b-987d-666ec8271afb/17454038939-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/6c48c82c-b7df-4b0b-987d-666ec8271afb/17454038939.jpg",
+    "backFull": ""
+  }
+}

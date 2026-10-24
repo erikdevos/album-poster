@@ -1,0 +1,87 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875844525,
+  "album": {
+    "id": "0bee34eb-07db-48d8-8a76-3470fb212edd",
+    "title": "RUSH!",
+    "artist": "Måneskin",
+    "year": "2023",
+    "barcode": "196589243300",
+    "label": "Epic",
+    "genre": "indie rock / pop rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "OWN MY MIND"
+      },
+      {
+        "number": "2",
+        "title": "GOSSIP"
+      },
+      {
+        "number": "3",
+        "title": "TIMEZONE"
+      },
+      {
+        "number": "4",
+        "title": "BLA BLA BLA"
+      },
+      {
+        "number": "5",
+        "title": "BABY SAID"
+      },
+      {
+        "number": "6",
+        "title": "GASOLINE"
+      },
+      {
+        "number": "7",
+        "title": "FEEL"
+      },
+      {
+        "number": "8",
+        "title": "DON’T WANNA SLEEP"
+      },
+      {
+        "number": "9",
+        "title": "KOOL KIDS"
+      },
+      {
+        "number": "10",
+        "title": "IF NOT FOR YOU"
+      },
+      {
+        "number": "11",
+        "title": "READ YOUR DIARY"
+      },
+      {
+        "number": "12",
+        "title": "MARK CHAPMAN"
+      },
+      {
+        "number": "13",
+        "title": "LA FINE"
+      },
+      {
+        "number": "14",
+        "title": "IL DONO DELLA VITA"
+      },
+      {
+        "number": "15",
+        "title": "MAMMAMIA"
+      },
+      {
+        "number": "16",
+        "title": "SUPERMODEL"
+      },
+      {
+        "number": "17",
+        "title": "THE LONELIEST"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/daa68193-12d9-4c6f-a002-5ae6c7a5fe40/34247642738-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/daa68193-12d9-4c6f-a002-5ae6c7a5fe40/34247642738.jpg",
+    "backFull": ""
+  }
+}

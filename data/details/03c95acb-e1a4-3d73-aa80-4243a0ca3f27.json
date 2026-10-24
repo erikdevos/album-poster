@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875970711,
+  "album": {
+    "id": "03c95acb-e1a4-3d73-aa80-4243a0ca3f27",
+    "title": "Thirteenth Step",
+    "artist": "A Perfect Circle",
+    "year": "2003",
+    "barcode": "724358091823",
+    "label": "Virgin",
+    "genre": "alternative metal / alternative rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Package"
+      },
+      {
+        "number": "2",
+        "title": "Weak and Powerless"
+      },
+      {
+        "number": "3",
+        "title": "The Noose"
+      },
+      {
+        "number": "4",
+        "title": "Blue"
+      },
+      {
+        "number": "5",
+        "title": "Vanishing"
+      },
+      {
+        "number": "6",
+        "title": "A Stranger"
+      },
+      {
+        "number": "7",
+        "title": "The Outsider"
+      },
+      {
+        "number": "8",
+        "title": "Crimes"
+      },
+      {
+        "number": "9",
+        "title": "The Nurse Who Loved Me"
+      },
+      {
+        "number": "10",
+        "title": "Pet"
+      },
+      {
+        "number": "11",
+        "title": "Lullaby"
+      },
+      {
+        "number": "12",
+        "title": "Gravity"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/480f3424-735d-4983-8088-95704039a1bc/1366975408-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/480f3424-735d-4983-8088-95704039a1bc/1366975408.jpg",
+    "backFull": ""
+  }
+}

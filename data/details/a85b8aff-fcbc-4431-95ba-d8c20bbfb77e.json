@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875873304,
+  "album": {
+    "id": "a85b8aff-fcbc-4431-95ba-d8c20bbfb77e",
+    "title": "Beauty Behind the Madness",
+    "artist": "The Weeknd",
+    "year": "2015",
+    "barcode": "00602547563347",
+    "label": "Universal Republic Records",
+    "genre": "alternative r&b / contemporary r&b",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Real Life"
+      },
+      {
+        "number": "2",
+        "title": "Losers"
+      },
+      {
+        "number": "3",
+        "title": "Tell Your Friends"
+      },
+      {
+        "number": "4",
+        "title": "Often"
+      },
+      {
+        "number": "5",
+        "title": "The Hills"
+      },
+      {
+        "number": "6",
+        "title": "Acquainted"
+      },
+      {
+        "number": "7",
+        "title": "Can’t Feel My Face"
+      },
+      {
+        "number": "8",
+        "title": "Shameless"
+      },
+      {
+        "number": "9",
+        "title": "Earned It (Fifty Shades of Grey)"
+      },
+      {
+        "number": "10",
+        "title": "In the Night"
+      },
+      {
+        "number": "11",
+        "title": "As You Are"
+      },
+      {
+        "number": "12",
+        "title": "Dark Times"
+      },
+      {
+        "number": "13",
+        "title": "Prisoner"
+      },
+      {
+        "number": "14",
+        "title": "Angel"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/44ae223a-3963-415f-8a35-8958543fd576/29197443146-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/44ae223a-3963-415f-8a35-8958543fd576/29197443146.png",
+    "backFull": ""
+  }
+}

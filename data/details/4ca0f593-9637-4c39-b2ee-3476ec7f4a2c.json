@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876004385,
+  "album": {
+    "id": "4ca0f593-9637-4c39-b2ee-3476ec7f4a2c",
+    "title": "Out of Ashes",
+    "artist": "Dead by Sunrise",
+    "year": "2009",
+    "barcode": "4943674093793",
+    "label": "Warner Bros. Records",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Fire"
+      },
+      {
+        "number": "2",
+        "title": "Crawl Back In"
+      },
+      {
+        "number": "3",
+        "title": "Too Late"
+      },
+      {
+        "number": "4",
+        "title": "Inside of Me"
+      },
+      {
+        "number": "5",
+        "title": "Let Down"
+      },
+      {
+        "number": "6",
+        "title": "Give Me Your Name"
+      },
+      {
+        "number": "7",
+        "title": "My Suffering"
+      },
+      {
+        "number": "8",
+        "title": "Condemned"
+      },
+      {
+        "number": "9",
+        "title": "Into You"
+      },
+      {
+        "number": "10",
+        "title": "End of the World"
+      },
+      {
+        "number": "11",
+        "title": "Walking in Circles"
+      },
+      {
+        "number": "12",
+        "title": "In the Darkness"
+      },
+      {
+        "number": "13",
+        "title": "Morning After"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/ef56e6cc-670c-4f48-9082-3ebcc0cfeab0/7374444802.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/ef56e6cc-670c-4f48-9082-3ebcc0cfeab0/7374444802.jpg",
+    "backFull": ""
+  }
+}

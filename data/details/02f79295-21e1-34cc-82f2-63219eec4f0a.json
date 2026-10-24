@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875986274,
+  "album": {
+    "id": "02f79295-21e1-34cc-82f2-63219eec4f0a",
+    "title": "Lateralus",
+    "artist": "Tool",
+    "year": "2001",
+    "barcode": "638592101128",
+    "label": "Volcano Records",
+    "genre": "alternative metal / progressive metal",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Grudge"
+      },
+      {
+        "number": "2",
+        "title": "Eon Blue Apocalypse"
+      },
+      {
+        "number": "3",
+        "title": "The Patient"
+      },
+      {
+        "number": "4",
+        "title": "Mantra"
+      },
+      {
+        "number": "5",
+        "title": "Schism"
+      },
+      {
+        "number": "6",
+        "title": "Parabol"
+      },
+      {
+        "number": "7",
+        "title": "Parabola"
+      },
+      {
+        "number": "8",
+        "title": "Ticks & Leeches"
+      },
+      {
+        "number": "9",
+        "title": "Lateralus"
+      },
+      {
+        "number": "10",
+        "title": "Disposition"
+      },
+      {
+        "number": "11",
+        "title": "Reflection"
+      },
+      {
+        "number": "12",
+        "title": "Triad"
+      },
+      {
+        "number": "13",
+        "title": "Faaip de Oiad"
+      }
+    ],
+    "front": "",
+    "back": "",
+    "frontFull": "",
+    "backFull": ""
+  }
+}

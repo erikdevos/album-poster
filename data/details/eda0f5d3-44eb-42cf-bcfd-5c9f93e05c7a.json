@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876419100,
+  "album": {
+    "id": "eda0f5d3-44eb-42cf-bcfd-5c9f93e05c7a",
+    "title": "The Rise and Fall of a Midwest Princess",
+    "artist": "Chappell Roan",
+    "year": "2023",
+    "barcode": "00602458311563",
+    "label": "Amusement Records",
+    "genre": "synth-pop / alternative pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Femininomenon"
+      },
+      {
+        "number": "2",
+        "title": "Red Wine Supernova"
+      },
+      {
+        "number": "3",
+        "title": "After Midnight"
+      },
+      {
+        "number": "4",
+        "title": "Coffee"
+      },
+      {
+        "number": "5",
+        "title": "Casual"
+      },
+      {
+        "number": "6",
+        "title": "Super Graphic Ultra Modern Girl"
+      },
+      {
+        "number": "7",
+        "title": "HOT TO GO!"
+      },
+      {
+        "number": "8",
+        "title": "My Kink Is Karma"
+      },
+      {
+        "number": "9",
+        "title": "Picture You"
+      },
+      {
+        "number": "10",
+        "title": "Kaleidoscope"
+      },
+      {
+        "number": "11",
+        "title": "Pink Pony Club"
+      },
+      {
+        "number": "12",
+        "title": "Naked in Manhattan"
+      },
+      {
+        "number": "13",
+        "title": "California"
+      },
+      {
+        "number": "14",
+        "title": "Guilty Pleasure"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/19febf01-a08f-4504-9930-ab37dab30c73/36903536316-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/19febf01-a08f-4504-9930-ab37dab30c73/36903536316.jpg",
+    "backFull": ""
+  }
+}

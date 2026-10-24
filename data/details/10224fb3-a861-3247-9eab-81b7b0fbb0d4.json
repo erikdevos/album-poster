@@ -1,0 +1,83 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876387593,
+  "album": {
+    "id": "10224fb3-a861-3247-9eab-81b7b0fbb0d4",
+    "title": "With Teeth",
+    "artist": "Nine Inch Nails",
+    "year": "2005",
+    "barcode": "4988005388780",
+    "label": "Interscope Records",
+    "genre": "industrial / industrial rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "All the Love in the World"
+      },
+      {
+        "number": "2",
+        "title": "You Know What You Are?"
+      },
+      {
+        "number": "3",
+        "title": "The Collector"
+      },
+      {
+        "number": "4",
+        "title": "The Hand That Feeds"
+      },
+      {
+        "number": "5",
+        "title": "Love Is Not Enough"
+      },
+      {
+        "number": "6",
+        "title": "Every Day Is Exactly the Same"
+      },
+      {
+        "number": "7",
+        "title": "With Teeth"
+      },
+      {
+        "number": "8",
+        "title": "Only"
+      },
+      {
+        "number": "9",
+        "title": "Getting Smaller"
+      },
+      {
+        "number": "10",
+        "title": "Sunspots"
+      },
+      {
+        "number": "11",
+        "title": "The Line Begins to Blur"
+      },
+      {
+        "number": "12",
+        "title": "Beside You in Time"
+      },
+      {
+        "number": "13",
+        "title": "Right Where It Belongs"
+      },
+      {
+        "number": "14",
+        "title": "Home"
+      },
+      {
+        "number": "15",
+        "title": "Right Where It Belongs V.2"
+      },
+      {
+        "number": "16",
+        "title": "The Hand That Feeds (Ruff mix)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/44cbff72-9db6-4ad0-b4c8-b14986afc93a/10150118074.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/44cbff72-9db6-4ad0-b4c8-b14986afc93a/10150118074.jpg",
+    "backFull": ""
+  }
+}

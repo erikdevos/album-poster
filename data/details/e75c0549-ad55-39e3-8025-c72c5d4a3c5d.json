@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875824665,
+  "album": {
+    "id": "e75c0549-ad55-39e3-8025-c72c5d4a3c5d",
+    "title": "Kid A",
+    "artist": "Radiohead",
+    "year": "2000",
+    "barcode": "634904078263",
+    "label": "XL Recordings",
+    "genre": "electronic / art rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Everything in Its Right Place"
+      },
+      {
+        "number": "2",
+        "title": "Kid A"
+      },
+      {
+        "number": "3",
+        "title": "The National Anthem"
+      },
+      {
+        "number": "4",
+        "title": "How to Disappear Completely"
+      },
+      {
+        "number": "5",
+        "title": "Treefingers"
+      },
+      {
+        "number": "6",
+        "title": "Optimistic"
+      },
+      {
+        "number": "7",
+        "title": "In Limbo"
+      },
+      {
+        "number": "8",
+        "title": "Idioteque"
+      },
+      {
+        "number": "9",
+        "title": "Morning Bell"
+      },
+      {
+        "number": "10",
+        "title": "Motion Picture Soundtrack"
+      },
+      {
+        "number": "11",
+        "title": "[untitled]"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/0e8a1994-f0a7-481d-9be2-6c2f80e14de5/29475045164-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/0e8a1994-f0a7-481d-9be2-6c2f80e14de5/29475045164.png",
+    "backFull": ""
+  }
+}

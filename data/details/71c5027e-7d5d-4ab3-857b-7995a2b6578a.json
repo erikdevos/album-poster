@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875797548,
+  "album": {
+    "id": "71c5027e-7d5d-4ab3-857b-7995a2b6578a",
+    "title": "Moral Panic",
+    "artist": "Nothing But Thieves",
+    "year": "2020",
+    "barcode": "886448583912",
+    "label": "RCA",
+    "genre": "alternative rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Unperson"
+      },
+      {
+        "number": "2",
+        "title": "Is Everybody Going Crazy?"
+      },
+      {
+        "number": "3",
+        "title": "Moral Panic"
+      },
+      {
+        "number": "4",
+        "title": "Real Love Song"
+      },
+      {
+        "number": "5",
+        "title": "Phobia"
+      },
+      {
+        "number": "6",
+        "title": "This Feels Like the End"
+      },
+      {
+        "number": "7",
+        "title": "Free If We Want It"
+      },
+      {
+        "number": "8",
+        "title": "Impossible"
+      },
+      {
+        "number": "9",
+        "title": "There Was Sun"
+      },
+      {
+        "number": "10",
+        "title": "Can You Afford to Be an Individual?"
+      },
+      {
+        "number": "11",
+        "title": "Before We Drift Away"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/3884327f-683e-40f4-856c-2ce7d040eba1/27659325226-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/3884327f-683e-40f4-856c-2ce7d040eba1/27659325226.jpg",
+    "backFull": ""
+  }
+}

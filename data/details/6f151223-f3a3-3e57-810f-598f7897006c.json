@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876391036,
+  "album": {
+    "id": "6f151223-f3a3-3e57-810f-598f7897006c",
+    "title": "Absolution",
+    "artist": "Muse",
+    "year": "2003",
+    "barcode": "5054197904233",
+    "label": "Warner Records",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Intro"
+      },
+      {
+        "number": "2",
+        "title": "Apocalypse Please"
+      },
+      {
+        "number": "3",
+        "title": "Time Is Running Out"
+      },
+      {
+        "number": "4",
+        "title": "Sing for Absolution"
+      },
+      {
+        "number": "5",
+        "title": "Stockholm Syndrome"
+      },
+      {
+        "number": "6",
+        "title": "Falling Away With You"
+      },
+      {
+        "number": "7",
+        "title": "Interlude"
+      },
+      {
+        "number": "8",
+        "title": "Hysteria"
+      },
+      {
+        "number": "9",
+        "title": "Blackout"
+      },
+      {
+        "number": "10",
+        "title": "Butterflies & Hurricanes"
+      },
+      {
+        "number": "11",
+        "title": "The Small Print"
+      },
+      {
+        "number": "12",
+        "title": "Fury"
+      },
+      {
+        "number": "13",
+        "title": "Endlessly"
+      },
+      {
+        "number": "14",
+        "title": "Thoughts of a Dying Atheist"
+      },
+      {
+        "number": "15",
+        "title": "Ruled by Secrecy"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/c3a12ca6-b9da-4204-974a-aaed7a04aca4/37279469776-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/c3a12ca6-b9da-4204-974a-aaed7a04aca4/37279469776.jpg",
+    "backFull": ""
+  }
+}

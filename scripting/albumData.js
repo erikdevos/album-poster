@@ -59,3 +59,51 @@ export function diffAlbums(saved, current) {
         })
     }
 }
+
+// ---------- The details of an album, as kept in data/details/<id>.json ----------
+// { v, fetchedAt, album }: `album` is what getAlbum gives (see sources/musicbrainz.js), `fetchedAt` is
+// when it came from MusicBrainz, in milliseconds, and `v` is the version of this shape (albumCache.js)
+
+const MAX_TEXT = 500
+const MAX_TRACKS = 500
+const text = (value, what, { required = false } = {}) => {
+    if (typeof value !== 'string' || value.length > MAX_TEXT) throw new Error(`${what} has to be text.`)
+    if (required && !value.trim()) throw new Error(`${what} is empty.`)
+    return value
+}
+const url = (value, what) => {
+    if (value !== '' && !/^https:\/\//.test(text(value, what))) throw new Error(`${what} has to be an https link or empty.`)
+    return value
+}
+
+// The clean record, or throws an Error that says what is wrong
+export function validateDetails(record, id) {
+    if (!record || typeof record !== 'object') throw new Error('The details are not an object.')
+    const { v, fetchedAt, album } = record
+    if (!Number.isInteger(v) || v < 1) throw new Error('The details have no version.')
+    if (!Number.isFinite(fetchedAt) || fetchedAt <= 0) throw new Error('The details have no date.')
+    if (!album || typeof album !== 'object') throw new Error('The details have no album.')
+    if (album.id !== id || !isValidId(id)) throw new Error('The details are for another album.')
+    if (!Array.isArray(album.tracks) || album.tracks.length > MAX_TRACKS) throw new Error('The tracks are not a list.')
+
+    return {
+        v,
+        fetchedAt,
+        album: {
+            id,
+            title: text(album.title, 'The title', { required: true }),
+            artist: text(album.artist, 'The artist', { required: true }),
+            year: text(album.year ?? '', 'The year'),
+            barcode: text(album.barcode ?? '', 'The barcode'),
+            label: text(album.label ?? '', 'The label'),
+            genre: text(album.genre ?? '', 'The genre'),
+            tracks: album.tracks.map(track => ({ number: text(String(track.number ?? ''), 'A track number'), title: text(track.title ?? '', 'A track title') })),
+            front: url(album.front ?? '', 'The cover'),
+            back: url(album.back ?? '', 'The back cover'),
+            frontFull: url(album.frontFull ?? '', 'The original cover'),
+            backFull: url(album.backFull ?? '', 'The original back cover')
+        }
+    }
+}
+
+export const formatDetails = (record, id) => JSON.stringify(validateDetails(record, id), null, 2) + '\n'

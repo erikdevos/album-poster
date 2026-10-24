@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875988787,
+  "album": {
+    "id": "fcb872a2-7ef9-3ed0-bd4a-7c55c78179b6",
+    "title": "Pretty Hate Machine",
+    "artist": "Nine Inch Nails",
+    "year": "1989",
+    "barcode": "016581261020",
+    "label": "TVT Records",
+    "genre": "industrial / industrial rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Head Like a Hole"
+      },
+      {
+        "number": "2",
+        "title": "Terrible Lie"
+      },
+      {
+        "number": "3",
+        "title": "Down in It"
+      },
+      {
+        "number": "4",
+        "title": "Sanctified"
+      },
+      {
+        "number": "5",
+        "title": "Something I Can Never Have"
+      },
+      {
+        "number": "6",
+        "title": "Kinda I Want To"
+      },
+      {
+        "number": "7",
+        "title": "Sin"
+      },
+      {
+        "number": "8",
+        "title": "That’s What I Get"
+      },
+      {
+        "number": "9",
+        "title": "The Only Time"
+      },
+      {
+        "number": "10",
+        "title": "Ringfinger"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/60a04a88-3956-49f5-9d0f-b2603be9f612/8270653258-1200.jpg",
+    "back": "https://coverartarchive.org/release/60a04a88-3956-49f5-9d0f-b2603be9f612/3563775883-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/60a04a88-3956-49f5-9d0f-b2603be9f612/8270653258.jpg",
+    "backFull": "https://coverartarchive.org/release/60a04a88-3956-49f5-9d0f-b2603be9f612/3563775883.jpg"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875898213,
+  "album": {
+    "id": "0c482acd-35a2-466b-b833-ef5f2f1297d4",
+    "title": "ANTI",
+    "artist": "Rihanna",
+    "year": "2016",
+    "barcode": "00851365006578",
+    "label": "[no label]",
+    "genre": "contemporary r&b / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Consideration"
+      },
+      {
+        "number": "2",
+        "title": "James Joint"
+      },
+      {
+        "number": "3",
+        "title": "Kiss It Better"
+      },
+      {
+        "number": "4",
+        "title": "Work"
+      },
+      {
+        "number": "5",
+        "title": "Desperado"
+      },
+      {
+        "number": "6",
+        "title": "Woo"
+      },
+      {
+        "number": "7",
+        "title": "Needed Me"
+      },
+      {
+        "number": "8",
+        "title": "Yeah, I Said It"
+      },
+      {
+        "number": "9",
+        "title": "Same Ol’ Mistakes"
+      },
+      {
+        "number": "10",
+        "title": "Never Ending"
+      },
+      {
+        "number": "11",
+        "title": "Love on the Brain"
+      },
+      {
+        "number": "12",
+        "title": "Higher"
+      },
+      {
+        "number": "13",
+        "title": "Close to You"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/b8fdf8b5-45f6-4f1d-b7af-b7c28aff8ad8/32325572219-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/b8fdf8b5-45f6-4f1d-b7af-b7c28aff8ad8/32325572219.jpg",
+    "backFull": ""
+  }
+}

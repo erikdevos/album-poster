@@ -1,0 +1,115 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875906913,
+  "album": {
+    "id": "e9dfea93-6076-4e8e-b45e-1fb19c0c7ab3",
+    "title": "TRON: Ares: Original Motion Picture Soundtrack",
+    "artist": "Nine Inch Nails",
+    "year": "2025",
+    "barcode": "00602478751448",
+    "label": "Interscope Records",
+    "genre": "dark ambient / electro-industrial",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Init"
+      },
+      {
+        "number": "2",
+        "title": "Forked Reality"
+      },
+      {
+        "number": "3",
+        "title": "As Alive as You Need Me to Be"
+      },
+      {
+        "number": "4",
+        "title": "Echoes"
+      },
+      {
+        "number": "5",
+        "title": "This Changes Everything"
+      },
+      {
+        "number": "6",
+        "title": "In the Image Of"
+      },
+      {
+        "number": "7",
+        "title": "I Know You Can Feel It"
+      },
+      {
+        "number": "8",
+        "title": "Permanence"
+      },
+      {
+        "number": "9",
+        "title": "Infiltrator"
+      },
+      {
+        "number": "10",
+        "title": "100% Expendable"
+      },
+      {
+        "number": "11",
+        "title": "Still Remains"
+      },
+      {
+        "number": "12",
+        "title": "Who Wants to Live Forever?"
+      },
+      {
+        "number": "13",
+        "title": "Building Better Worlds"
+      },
+      {
+        "number": "14",
+        "title": "Target Identified"
+      },
+      {
+        "number": "15",
+        "title": "Daemonize"
+      },
+      {
+        "number": "16",
+        "title": "Empathetic Response"
+      },
+      {
+        "number": "17",
+        "title": "What Have You Done?"
+      },
+      {
+        "number": "18",
+        "title": "A Question of Trust"
+      },
+      {
+        "number": "19",
+        "title": "Ghost in the Machine"
+      },
+      {
+        "number": "20",
+        "title": "No Going Back"
+      },
+      {
+        "number": "21",
+        "title": "Nemesis"
+      },
+      {
+        "number": "22",
+        "title": "New Directive"
+      },
+      {
+        "number": "23",
+        "title": "Out in the World"
+      },
+      {
+        "number": "24",
+        "title": "Shadow Over Me"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/7a66bb5b-6fc9-4725-9bff-d2803781af01/42529599191-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/7a66bb5b-6fc9-4725-9bff-d2803781af01/42529599191.jpg",
+    "backFull": ""
+  }
+}

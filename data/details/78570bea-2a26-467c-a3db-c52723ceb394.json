@@ -1,0 +1,75 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875875103,
+  "album": {
+    "id": "78570bea-2a26-467c-a3db-c52723ceb394",
+    "title": "After Hours",
+    "artist": "The Weeknd",
+    "year": "2020",
+    "barcode": "00602508831119",
+    "label": "Republic Records",
+    "genre": "contemporary r&b / synth-pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Alone Again"
+      },
+      {
+        "number": "2",
+        "title": "Too Late"
+      },
+      {
+        "number": "3",
+        "title": "Hardest to Love"
+      },
+      {
+        "number": "4",
+        "title": "Scared to Live"
+      },
+      {
+        "number": "5",
+        "title": "Snowchild"
+      },
+      {
+        "number": "6",
+        "title": "Escape From LA"
+      },
+      {
+        "number": "7",
+        "title": "Heartless"
+      },
+      {
+        "number": "8",
+        "title": "Faith"
+      },
+      {
+        "number": "9",
+        "title": "Blinding Lights"
+      },
+      {
+        "number": "10",
+        "title": "In Your Eyes"
+      },
+      {
+        "number": "11",
+        "title": "Save Your Tears"
+      },
+      {
+        "number": "12",
+        "title": "Repeat After Me (interlude)"
+      },
+      {
+        "number": "13",
+        "title": "After Hours"
+      },
+      {
+        "number": "14",
+        "title": "Until I Bleed Out"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/19e4f6cc-ca0c-4897-8dfc-a36914b7f998/25720993837-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/19e4f6cc-ca0c-4897-8dfc-a36914b7f998/25720993837.jpg",
+    "backFull": ""
+  }
+}

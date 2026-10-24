@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875957923,
+  "album": {
+    "id": "72087170-41c6-4371-a87c-47061feeda10",
+    "title": "Echoes of Silence",
+    "artist": "The Weeknd",
+    "year": "2011",
+    "barcode": "00602445241798",
+    "label": "Republic Records",
+    "genre": "alternative r&b / art pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "D.D."
+      },
+      {
+        "number": "2",
+        "title": "Montreal"
+      },
+      {
+        "number": "3",
+        "title": "Outside"
+      },
+      {
+        "number": "4",
+        "title": "XO / The Host"
+      },
+      {
+        "number": "5",
+        "title": "Initiation"
+      },
+      {
+        "number": "6",
+        "title": "Same Old Song"
+      },
+      {
+        "number": "7",
+        "title": "The Fall"
+      },
+      {
+        "number": "8",
+        "title": "Next"
+      },
+      {
+        "number": "9",
+        "title": "Echoes of Silence"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e190aeab-988a-4464-ad16-e23a270e9f38/38022865779-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e190aeab-988a-4464-ad16-e23a270e9f38/38022865779.jpg",
+    "backFull": ""
+  }
+}

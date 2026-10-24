@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875890677,
+  "album": {
+    "id": "b2cbaa83-cb77-4961-8ca3-816b24e5204f",
+    "title": "The Bones of What You Believe",
+    "artist": "CHVRCHES",
+    "year": "2013",
+    "barcode": "602537459001",
+    "label": "Virgin EMI Records",
+    "genre": "indie pop / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "The Mother We Share"
+      },
+      {
+        "number": "2",
+        "title": "We Sink"
+      },
+      {
+        "number": "3",
+        "title": "Gun"
+      },
+      {
+        "number": "4",
+        "title": "Tether"
+      },
+      {
+        "number": "5",
+        "title": "Lies"
+      },
+      {
+        "number": "6",
+        "title": "Under the Tide"
+      },
+      {
+        "number": "7",
+        "title": "Recover"
+      },
+      {
+        "number": "8",
+        "title": "Night Sky"
+      },
+      {
+        "number": "9",
+        "title": "Science/Visions"
+      },
+      {
+        "number": "10",
+        "title": "Lungs"
+      },
+      {
+        "number": "11",
+        "title": "By the Throat"
+      },
+      {
+        "number": "12",
+        "title": "You Caught the Light"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e56fba8b-3f28-45bb-a8fb-1e35da2960e4/5072208186.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e56fba8b-3f28-45bb-a8fb-1e35da2960e4/5072208186.jpg",
+    "backFull": ""
+  }
+}

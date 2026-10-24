@@ -1,0 +1,107 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875820503,
+  "album": {
+    "id": "b585e56e-69cb-4f53-9597-320af5e5f541",
+    "title": "TRON: Legacy",
+    "artist": "Daft Punk",
+    "year": "2010",
+    "barcode": "5099990847028",
+    "label": "Walt Disney Records",
+    "genre": "electronic / electro house",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Overture"
+      },
+      {
+        "number": "2",
+        "title": "The Grid"
+      },
+      {
+        "number": "3",
+        "title": "The Son of Flynn"
+      },
+      {
+        "number": "4",
+        "title": "Recognizer"
+      },
+      {
+        "number": "5",
+        "title": "Armory"
+      },
+      {
+        "number": "6",
+        "title": "Arena"
+      },
+      {
+        "number": "7",
+        "title": "Rinzler"
+      },
+      {
+        "number": "8",
+        "title": "The Game Has Changed"
+      },
+      {
+        "number": "9",
+        "title": "Outlands"
+      },
+      {
+        "number": "10",
+        "title": "Adagio for TRON"
+      },
+      {
+        "number": "11",
+        "title": "Nocturne"
+      },
+      {
+        "number": "12",
+        "title": "End of Line"
+      },
+      {
+        "number": "13",
+        "title": "Derezzed"
+      },
+      {
+        "number": "14",
+        "title": "Fall"
+      },
+      {
+        "number": "15",
+        "title": "Solar Sailer"
+      },
+      {
+        "number": "16",
+        "title": "Rectifier"
+      },
+      {
+        "number": "17",
+        "title": "Disc Wars"
+      },
+      {
+        "number": "18",
+        "title": "C.L.U."
+      },
+      {
+        "number": "19",
+        "title": "Arrival"
+      },
+      {
+        "number": "20",
+        "title": "Flynn Lives"
+      },
+      {
+        "number": "21",
+        "title": "TRON Legacy (End Titles)"
+      },
+      {
+        "number": "22",
+        "title": "Finale"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/b9b7641f-9389-342e-8be9-e463bd52fdb9/2587494081-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/b9b7641f-9389-342e-8be9-e463bd52fdb9/2587494081.jpg",
+    "backFull": ""
+  }
+}

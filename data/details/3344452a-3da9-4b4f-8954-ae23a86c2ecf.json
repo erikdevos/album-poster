@@ -1,0 +1,83 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875876944,
+  "album": {
+    "id": "3344452a-3da9-4b4f-8954-ae23a86c2ecf",
+    "title": "Dawn FM",
+    "artist": "The Weeknd",
+    "year": "2022",
+    "barcode": "00602445418411",
+    "label": "Republic Records",
+    "genre": "contemporary r&b / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Dawn FM"
+      },
+      {
+        "number": "2",
+        "title": "Gasoline"
+      },
+      {
+        "number": "3",
+        "title": "How Do I Make You Love Me?"
+      },
+      {
+        "number": "4",
+        "title": "Take My Breath"
+      },
+      {
+        "number": "5",
+        "title": "Sacrifice"
+      },
+      {
+        "number": "6",
+        "title": "A Tale by Quincy"
+      },
+      {
+        "number": "7",
+        "title": "Out of Time"
+      },
+      {
+        "number": "8",
+        "title": "Here We Go… Again"
+      },
+      {
+        "number": "9",
+        "title": "Best Friends"
+      },
+      {
+        "number": "10",
+        "title": "Is There Someone Else?"
+      },
+      {
+        "number": "11",
+        "title": "Starry Eyes"
+      },
+      {
+        "number": "12",
+        "title": "Every Angel Is Terrifying"
+      },
+      {
+        "number": "13",
+        "title": "Don’t Break My Heart"
+      },
+      {
+        "number": "14",
+        "title": "I Heard You’re Married"
+      },
+      {
+        "number": "15",
+        "title": "Less Than Zero"
+      },
+      {
+        "number": "16",
+        "title": "Phantom Regret by Jim"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/6e97c587-7503-422f-9120-052ea6a1f90d/31400393114-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/6e97c587-7503-422f-9120-052ea6a1f90d/31400393114.jpg",
+    "backFull": ""
+  }
+}

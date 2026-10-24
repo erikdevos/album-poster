@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875930246,
+  "album": {
+    "id": "a40c7843-979b-38a6-926a-efa31476c51c",
+    "title": "Ultra",
+    "artist": "Depeche Mode",
+    "year": "1997",
+    "barcode": "0094638416821",
+    "label": "Mute",
+    "genre": "alternative rock / electronic",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Barrel of a Gun"
+      },
+      {
+        "number": "2",
+        "title": "The Love Thieves"
+      },
+      {
+        "number": "3",
+        "title": "Home"
+      },
+      {
+        "number": "4",
+        "title": "It's No Good"
+      },
+      {
+        "number": "5",
+        "title": "Uselink"
+      },
+      {
+        "number": "6",
+        "title": "Useless"
+      },
+      {
+        "number": "7",
+        "title": "Sister of Night"
+      },
+      {
+        "number": "8",
+        "title": "Jazz Thieves"
+      },
+      {
+        "number": "9",
+        "title": "Freestate"
+      },
+      {
+        "number": "10",
+        "title": "The Bottom Line"
+      },
+      {
+        "number": "11",
+        "title": "Insight"
+      },
+      {
+        "number": "12",
+        "title": "Junior Painkiller"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/3e7e0454-c2b2-3976-b3d1-c9cdacff51ef/11289364430-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/3e7e0454-c2b2-3976-b3d1-c9cdacff51ef/11289364430.jpg",
+    "backFull": ""
+  }
+}

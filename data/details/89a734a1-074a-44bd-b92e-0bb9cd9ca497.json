@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875803070,
+  "album": {
+    "id": "89a734a1-074a-44bd-b92e-0bb9cd9ca497",
+    "title": "Dead Club City",
+    "artist": "Nothing But Thieves",
+    "year": "2023",
+    "barcode": "196589839190",
+    "label": "RCA",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Welcome to the DCC"
+      },
+      {
+        "number": "2",
+        "title": "Overcome"
+      },
+      {
+        "number": "3",
+        "title": "Tomorrow Is Closed"
+      },
+      {
+        "number": "4",
+        "title": "Keeping You Around"
+      },
+      {
+        "number": "5",
+        "title": "City Haunts"
+      },
+      {
+        "number": "6",
+        "title": "Do You Love Me Yet?"
+      },
+      {
+        "number": "7",
+        "title": "Members Only"
+      },
+      {
+        "number": "8",
+        "title": "Green Eyes :: Siena"
+      },
+      {
+        "number": "9",
+        "title": "Foreign Language"
+      },
+      {
+        "number": "10",
+        "title": "Talking To Myself"
+      },
+      {
+        "number": "11",
+        "title": "Pop The Balloon"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/e1086b41-d895-495a-b289-709c09204770/36061665546-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/e1086b41-d895-495a-b289-709c09204770/36061665546.jpg",
+    "backFull": ""
+  }
+}

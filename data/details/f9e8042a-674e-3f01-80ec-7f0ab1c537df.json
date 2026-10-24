@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875818876,
+  "album": {
+    "id": "f9e8042a-674e-3f01-80ec-7f0ab1c537df",
+    "title": "Human After All",
+    "artist": "Daft Punk",
+    "year": "2005",
+    "barcode": "724356356207",
+    "label": "EMI Music Brasil",
+    "genre": "electronic / house",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Human After All"
+      },
+      {
+        "number": "2",
+        "title": "The Prime Time of Your Life"
+      },
+      {
+        "number": "3",
+        "title": "Robot Rock"
+      },
+      {
+        "number": "4",
+        "title": "Steam Machine"
+      },
+      {
+        "number": "5",
+        "title": "Make Love"
+      },
+      {
+        "number": "6",
+        "title": "The Brainwasher"
+      },
+      {
+        "number": "7",
+        "title": "On/Off"
+      },
+      {
+        "number": "8",
+        "title": "Television Rules the Nation"
+      },
+      {
+        "number": "9",
+        "title": "Technologic"
+      },
+      {
+        "number": "10",
+        "title": "Emotion"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/86d4299f-810e-3c4c-a324-2cc03672ed00/5606649161.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/86d4299f-810e-3c4c-a324-2cc03672ed00/5606649161.jpg",
+    "backFull": ""
+  }
+}

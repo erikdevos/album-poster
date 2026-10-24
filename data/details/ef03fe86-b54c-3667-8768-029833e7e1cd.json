@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876389223,
+  "album": {
+    "id": "ef03fe86-b54c-3667-8768-029833e7e1cd",
+    "title": "Origin of Symmetry",
+    "artist": "Muse",
+    "year": "2001",
+    "barcode": "4945817650016",
+    "label": "cutting edge",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "New Born"
+      },
+      {
+        "number": "2",
+        "title": "Bliss"
+      },
+      {
+        "number": "3",
+        "title": "Space Dementia"
+      },
+      {
+        "number": "4",
+        "title": "Hyper Music"
+      },
+      {
+        "number": "5",
+        "title": "Plug In Baby"
+      },
+      {
+        "number": "6",
+        "title": "Citizen Erased"
+      },
+      {
+        "number": "7",
+        "title": "Micro Cuts"
+      },
+      {
+        "number": "8",
+        "title": "Screenager"
+      },
+      {
+        "number": "9",
+        "title": "Darkshines"
+      },
+      {
+        "number": "10",
+        "title": "Feeling Good"
+      },
+      {
+        "number": "11",
+        "title": "Futurism"
+      },
+      {
+        "number": "12",
+        "title": "Megalomania"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/2a7a193e-c148-48fa-a39c-8d17e5cf3443/40599709259-1200.jpg",
+    "back": "https://coverartarchive.org/release/2a7a193e-c148-48fa-a39c-8d17e5cf3443/40599731204-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/2a7a193e-c148-48fa-a39c-8d17e5cf3443/40599709259.png",
+    "backFull": "https://coverartarchive.org/release/2a7a193e-c148-48fa-a39c-8d17e5cf3443/40599731204.png"
+  }
+}

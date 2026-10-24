@@ -1,0 +1,151 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875996286,
+  "album": {
+    "id": "6c9ae3dd-32ad-472c-96be-69d0a3536261",
+    "title": "The Rise and Fall of Ziggy Stardust and the Spiders From Mars",
+    "artist": "David Bowie",
+    "year": "1972",
+    "barcode": "724352190027",
+    "label": "EMI",
+    "genre": "rock / glam rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Five Years"
+      },
+      {
+        "number": "2",
+        "title": "Soul Love"
+      },
+      {
+        "number": "3",
+        "title": "Moonage Daydream"
+      },
+      {
+        "number": "4",
+        "title": "Starman"
+      },
+      {
+        "number": "5",
+        "title": "It Ain’t Easy"
+      },
+      {
+        "number": "6",
+        "title": "Lady Stardust"
+      },
+      {
+        "number": "7",
+        "title": "Star"
+      },
+      {
+        "number": "8",
+        "title": "Hang On to Yourself"
+      },
+      {
+        "number": "9",
+        "title": "Ziggy Stardust"
+      },
+      {
+        "number": "10",
+        "title": "Suffragette City"
+      },
+      {
+        "number": "11",
+        "title": "Rock ’n’ Roll Suicide"
+      },
+      {
+        "number": "1",
+        "title": "Five Years"
+      },
+      {
+        "number": "2",
+        "title": "Soul Love"
+      },
+      {
+        "number": "3",
+        "title": "Moonage Daydream"
+      },
+      {
+        "number": "4",
+        "title": "Starman"
+      },
+      {
+        "number": "5",
+        "title": "It Ain’t Easy"
+      },
+      {
+        "number": "6",
+        "title": "Lady Stardust"
+      },
+      {
+        "number": "7",
+        "title": "Star"
+      },
+      {
+        "number": "8",
+        "title": "Hang On to Yourself"
+      },
+      {
+        "number": "9",
+        "title": "Ziggy Stardust"
+      },
+      {
+        "number": "10",
+        "title": "Suffragette City"
+      },
+      {
+        "number": "11",
+        "title": "Rock ’n’ Roll Suicide"
+      },
+      {
+        "number": "1",
+        "title": "Five Years (5.1 mix)"
+      },
+      {
+        "number": "2",
+        "title": "Soul Love (5.1 mix)"
+      },
+      {
+        "number": "3",
+        "title": "Moonage Daydream (5.1 mix)"
+      },
+      {
+        "number": "4",
+        "title": "Starman (5.1 mix)"
+      },
+      {
+        "number": "5",
+        "title": "It Ain’t Easy (5.1 mix)"
+      },
+      {
+        "number": "6",
+        "title": "Lady Stardust (5.1 mix)"
+      },
+      {
+        "number": "7",
+        "title": "Star (5.1 mix)"
+      },
+      {
+        "number": "8",
+        "title": "Hang On to Yourself (5.1 mix)"
+      },
+      {
+        "number": "9",
+        "title": "Ziggy Stardust (5.1 mix)"
+      },
+      {
+        "number": "10",
+        "title": "Suffragette City (5.1 mix)"
+      },
+      {
+        "number": "11",
+        "title": "Rock ’n’ Roll Suicide (5.1 mix)"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/a8f17a5b-eaf3-48da-986e-7f3efdaf3db6/7121875119-1200.jpg",
+    "back": "https://coverartarchive.org/release/a8f17a5b-eaf3-48da-986e-7f3efdaf3db6/8002395171-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/a8f17a5b-eaf3-48da-986e-7f3efdaf3db6/7121875119.png",
+    "backFull": "https://coverartarchive.org/release/a8f17a5b-eaf3-48da-986e-7f3efdaf3db6/8002395171.jpg"
+  }
+}

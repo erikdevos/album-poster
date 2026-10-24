@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875832196,
+  "album": {
+    "id": "6e335887-60ba-38f0-95af-fae7774336bf",
+    "title": "In Rainbows",
+    "artist": "Radiohead",
+    "year": "2007",
+    "barcode": "634904032463",
+    "label": "XL Recordings",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "15 Step"
+      },
+      {
+        "number": "2",
+        "title": "Bodysnatchers"
+      },
+      {
+        "number": "3",
+        "title": "Nude"
+      },
+      {
+        "number": "4",
+        "title": "Weird Fishes/Arpeggi"
+      },
+      {
+        "number": "5",
+        "title": "All I Need"
+      },
+      {
+        "number": "6",
+        "title": "Faust Arp"
+      },
+      {
+        "number": "7",
+        "title": "Reckoner"
+      },
+      {
+        "number": "8",
+        "title": "House of Cards"
+      },
+      {
+        "number": "9",
+        "title": "Jigsaw Falling Into Place"
+      },
+      {
+        "number": "10",
+        "title": "Videotape"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/1a33443c-3fff-450f-8298-efbc65659d32/14926982777.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/1a33443c-3fff-450f-8298-efbc65659d32/14926982777.jpg",
+    "backFull": ""
+  }
+}

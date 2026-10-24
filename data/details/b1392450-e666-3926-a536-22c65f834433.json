@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875826953,
+  "album": {
+    "id": "b1392450-e666-3926-a536-22c65f834433",
+    "title": "OK Computer",
+    "artist": "Radiohead",
+    "year": "1997",
+    "barcode": "634904078164",
+    "label": "XL Recordings",
+    "genre": "alternative rock / art rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Airbag"
+      },
+      {
+        "number": "2",
+        "title": "Paranoid Android"
+      },
+      {
+        "number": "3",
+        "title": "Subterranean Homesick Alien"
+      },
+      {
+        "number": "4",
+        "title": "Exit Music (for a Film)"
+      },
+      {
+        "number": "5",
+        "title": "Let Down"
+      },
+      {
+        "number": "6",
+        "title": "Karma Police"
+      },
+      {
+        "number": "7",
+        "title": "Fitter Happier"
+      },
+      {
+        "number": "8",
+        "title": "Electioneering"
+      },
+      {
+        "number": "9",
+        "title": "Climbing Up the Walls"
+      },
+      {
+        "number": "10",
+        "title": "No Surprises"
+      },
+      {
+        "number": "11",
+        "title": "Lucky"
+      },
+      {
+        "number": "12",
+        "title": "The Tourist"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/30702389-5c67-4438-9ea0-2351c8de0f1d/43287476628-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/30702389-5c67-4438-9ea0-2351c8de0f1d/43287476628.png",
+    "backFull": ""
+  }
+}

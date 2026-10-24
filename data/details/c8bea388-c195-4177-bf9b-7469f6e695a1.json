@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875843324,
+  "album": {
+    "id": "c8bea388-c195-4177-bf9b-7469f6e695a1",
+    "title": "Short n’ Sweet",
+    "artist": "Sabrina Carpenter",
+    "year": "2024",
+    "barcode": "00602465891386",
+    "label": "Island",
+    "genre": "pop / contemporary r&b",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Taste"
+      },
+      {
+        "number": "2",
+        "title": "Please Please Please"
+      },
+      {
+        "number": "3",
+        "title": "Good Graces"
+      },
+      {
+        "number": "4",
+        "title": "Sharpest Tool"
+      },
+      {
+        "number": "5",
+        "title": "Coincidence"
+      },
+      {
+        "number": "6",
+        "title": "Bed Chem"
+      },
+      {
+        "number": "7",
+        "title": "Espresso"
+      },
+      {
+        "number": "8",
+        "title": "Dumb & Poetic"
+      },
+      {
+        "number": "9",
+        "title": "Slim Pickins"
+      },
+      {
+        "number": "10",
+        "title": "Juno"
+      },
+      {
+        "number": "11",
+        "title": "Lie to Girls"
+      },
+      {
+        "number": "12",
+        "title": "Don’t Smile"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/84190924-8e99-417e-9703-17b7722df4e7/39023726455-1200.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/84190924-8e99-417e-9703-17b7722df4e7/39023726455.jpg",
+    "backFull": ""
+  }
+}

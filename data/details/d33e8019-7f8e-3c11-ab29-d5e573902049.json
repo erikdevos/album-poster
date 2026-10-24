@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "fetchedAt": 1792876014419,
+  "album": {
+    "id": "d33e8019-7f8e-3c11-ab29-d5e573902049",
+    "title": "Error",
+    "artist": "Error",
+    "year": "2004",
+    "barcode": "045778666621",
+    "label": "Epitaph",
+    "genre": "electronic / noise",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Nothing’s Working"
+      },
+      {
+        "number": "2",
+        "title": "Homicide"
+      },
+      {
+        "number": "3",
+        "title": "Burn in Hell"
+      },
+      {
+        "number": "4",
+        "title": "Jack the Ripper"
+      },
+      {
+        "number": "5",
+        "title": "Brains Out"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/5f7171ac-8a60-40a3-b59b-c75e0595c808/1093705482.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/5f7171ac-8a60-40a3-b59b-c75e0595c808/1093705482.jpg",
+    "backFull": ""
+  }
+}

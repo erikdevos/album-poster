@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875917695,
+  "album": {
+    "id": "1a3deda5-4168-4a6a-9251-d492620dace4",
+    "title": "Eat the Elephant",
+    "artist": "A Perfect Circle",
+    "year": "2018",
+    "barcode": "4050538374254",
+    "label": "BMG",
+    "genre": "alternative rock / rock",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Eat the Elephant"
+      },
+      {
+        "number": "2",
+        "title": "Disillusioned"
+      },
+      {
+        "number": "3",
+        "title": "The Contrarian"
+      },
+      {
+        "number": "4",
+        "title": "The Doomed"
+      },
+      {
+        "number": "5",
+        "title": "So Long, and Thanks for All the Fish"
+      },
+      {
+        "number": "6",
+        "title": "TalkTalk"
+      },
+      {
+        "number": "7",
+        "title": "By and Down the River"
+      },
+      {
+        "number": "8",
+        "title": "Delicious"
+      },
+      {
+        "number": "9",
+        "title": "DLB"
+      },
+      {
+        "number": "10",
+        "title": "Hourglass"
+      },
+      {
+        "number": "11",
+        "title": "Feathers"
+      },
+      {
+        "number": "12",
+        "title": "Get the Lead Out"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/ce453e20-af3a-400c-b7d5-5e6d01f101eb/39257526690-1200.jpg",
+    "back": "https://coverartarchive.org/release/ce453e20-af3a-400c-b7d5-5e6d01f101eb/19708125768-500.jpg",
+    "frontFull": "https://coverartarchive.org/release/ce453e20-af3a-400c-b7d5-5e6d01f101eb/39257526690.jpg",
+    "backFull": "https://coverartarchive.org/release/ce453e20-af3a-400c-b7d5-5e6d01f101eb/19708125768.jpg"
+  }
+}

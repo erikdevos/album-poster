@@ -1,0 +1,79 @@
+{
+  "v": 1,
+  "fetchedAt": 1792875896777,
+  "album": {
+    "id": "06fda337-5c4b-42e0-a96c-a349c786965f",
+    "title": "Rated R",
+    "artist": "Rihanna",
+    "year": "2009",
+    "barcode": "0602527292595",
+    "label": "Def Jam Recordings",
+    "genre": "contemporary r&b / pop",
+    "tracks": [
+      {
+        "number": "1",
+        "title": "Mad House"
+      },
+      {
+        "number": "2",
+        "title": "Wait Your Turn"
+      },
+      {
+        "number": "3",
+        "title": "Hard"
+      },
+      {
+        "number": "4",
+        "title": "Stupid in Love"
+      },
+      {
+        "number": "5",
+        "title": "ROCKSTAR 101"
+      },
+      {
+        "number": "6",
+        "title": "Russian Roulette"
+      },
+      {
+        "number": "7",
+        "title": "Fire Bomb"
+      },
+      {
+        "number": "8",
+        "title": "Rude Boy"
+      },
+      {
+        "number": "9",
+        "title": "Photographs"
+      },
+      {
+        "number": "10",
+        "title": "G4L"
+      },
+      {
+        "number": "11",
+        "title": "Te amo"
+      },
+      {
+        "number": "12",
+        "title": "Cold Case Love"
+      },
+      {
+        "number": "13",
+        "title": "The Last Song"
+      },
+      {
+        "number": "14",
+        "title": "Russian Roulette (Donni Hotwheel remix)"
+      },
+      {
+        "number": "15",
+        "title": "Hole in My Head"
+      }
+    ],
+    "front": "https://coverartarchive.org/release/340e4427-553d-4399-add6-2b1ae9c694d8/14541887388.jpg",
+    "back": "",
+    "frontFull": "https://coverartarchive.org/release/340e4427-553d-4399-add6-2b1ae9c694d8/14541887388.jpg",
+    "backFull": ""
+  }
+}
