@@ -1253,3 +1253,13 @@ test('gallery: the cover sits in a white mat, with the label below it and the tr
         assert.ok(box.tracks.left > box.name.right, 'the tracklist is to the right of the label')
     } finally { await close() }
 })
+
+test('in the cd layouts a track title that wraps to two lines is centred', async () => {
+    for (const layout of ['cd', 'cd-blur']) {
+        const { page, close } = await open(`?layout=${layout}#${LUX}`)
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            assert.equal(await page.locator('#track-list li').first().evaluate(li => getComputedStyle(li).textAlign), 'center', layout)
+        } finally { await close() }
+    }
+})

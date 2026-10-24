@@ -672,7 +672,7 @@ ol.track-list li::before {
     justify-content: center;
     gap: 0.7em;
     margin-bottom: 0.3em;
-    text-align: left;
+    text-align: center; /* a long title on two lines stays centred */
 }
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li::before {
     flex: none;
