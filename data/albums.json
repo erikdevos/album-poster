@@ -508,5 +508,265 @@
     "audiodbId": "2458157",
     "name": "LUX",
     "artist": "Rosalia"
+  },
+  {
+    "id": "deca614f-7b89-4546-b77e-2dbeccfe0c75",
+    "name": "WOR$T GIRL IN AMERICA",
+    "artist": "Slayyyter"
+  },
+  {
+    "id": "bfffa46d-0192-4000-b0b8-4622492e550a",
+    "name": "WILD",
+    "artist": "KATSEYE"
+  },
+  {
+    "id": "e9dfea93-6076-4e8e-b45e-1fb19c0c7ab3",
+    "name": "TRON: Ares: Original Motion Picture Soundtrack",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "b7234418-f054-495d-9aa7-efcba9454b32",
+    "name": "PRIMA",
+    "artist": "ADÉLA"
+  },
+  {
+    "id": "87f70591-69e0-4654-b099-dc47bf3141f7",
+    "name": "The Girl in the Tower",
+    "artist": "Halsey"
+  },
+  {
+    "id": "7dffeca3-420b-4095-abf4-f2e1ab61be35",
+    "name": "The Wow! Signal",
+    "artist": "Muse"
+  },
+  {
+    "id": "19f43783-f613-44bf-a332-fa0487923894",
+    "name": "Vol. I",
+    "artist": "Angine de Poitrine"
+  },
+  {
+    "id": "e94228ce-5394-45f9-b535-7469a6e57d02",
+    "name": "Vol. II",
+    "artist": "Angine de Poitrine"
+  },
+  {
+    "id": "1a3deda5-4168-4a6a-9251-d492620dace4",
+    "name": "Eat the Elephant",
+    "artist": "A Perfect Circle"
+  },
+  {
+    "id": "07de8cfe-5ef6-448f-888f-3eeb9d3fb112",
+    "name": "Sanctuary",
+    "artist": "Evanescence"
+  },
+  {
+    "id": "b3073a10-2d7c-484c-b387-e49ae629da3d",
+    "name": "DeBÍ TiRAR MáS FOToS",
+    "artist": "Bad Bunny"
+  },
+  {
+    "id": "8322cfd5-69f2-411a-8d92-286b4abe87de",
+    "name": "GAMMA",
+    "artist": "Gesaffelstein"
+  },
+  {
+    "id": "19a2e470-0f10-479e-b66a-53b05fba77b8",
+    "name": "Aleph",
+    "artist": "Gesaffelstein"
+  },
+  {
+    "id": "341005c2-14ee-4be3-a421-57e9cf9bae61",
+    "name": "Hyperion",
+    "artist": "Gesaffelstein"
+  },
+  {
+    "id": "38b34599-6352-389b-ad6a-02866357dabe",
+    "name": "Audioslave",
+    "artist": "Audioslave"
+  },
+  {
+    "id": "a40c7843-979b-38a6-926a-efa31476c51c",
+    "name": "Ultra",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "9106c01e-b3f3-3c4b-bf18-b058a5819605",
+    "name": "Sounds of the Universe",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "27727210-39da-369c-b717-53dac0597946",
+    "name": "Playing the Angel",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "e59021bd-1710-3c13-9449-b78560039592",
+    "name": "Music for the Masses",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "7a0e0366-91f4-3444-b45a-83b158004165",
+    "name": "Speak & Spell",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "d44c50ad-61fd-3fce-95fc-27024d7f1d30",
+    "name": "Graduation",
+    "artist": "Kanye West"
+  },
+  {
+    "id": "1c1b50ec-828b-3d7c-9b1b-54cb1fe97d55",
+    "name": "808s & Heartbreak",
+    "artist": "Kanye West"
+  },
+  {
+    "id": "ac12d35d-8f26-4e4a-83b4-f089d5a07b13",
+    "name": "BADLANDS",
+    "artist": "Halsey"
+  },
+  {
+    "id": "406e4a2d-d632-40bc-8119-78f895a3f3c1",
+    "name": "dont smile at me",
+    "artist": "Billie Eilish"
+  },
+  {
+    "id": "9d9b3ac3-e630-4644-92c7-fb14d4d68d86",
+    "name": "Ultraviolence",
+    "artist": "Lana Del Rey"
+  },
+  {
+    "id": "24fd0887-9e83-42e3-b27e-e7f89ead4c03",
+    "name": "Norman Fucking Rockwell!",
+    "artist": "Lana Del Rey"
+  },
+  {
+    "id": "e5495719-b3ad-3eea-a533-fb70af43c23d",
+    "name": "The Fame",
+    "artist": "Lady Gaga"
+  },
+  {
+    "id": "2e3b231b-ab9f-4d85-950a-48708a1cc2fb",
+    "name": "Born This Way",
+    "artist": "Lady Gaga"
+  },
+  {
+    "id": "72087170-41c6-4371-a87c-47061feeda10",
+    "name": "Echoes of Silence",
+    "artist": "The Weeknd"
+  },
+  {
+    "id": "b9c6879f-3a34-3aa0-a68f-73ced2608f7a",
+    "name": "Black Celebration",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "b3100982-db15-3a4b-a3ed-363c91cb40de",
+    "name": "Some Great Reward",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "97822855-3e00-30a9-8d7a-bd0802c961e7",
+    "name": "Exciter",
+    "artist": "Depeche Mode"
+  },
+  {
+    "id": "2187d248-1a3b-35d0-a4ec-bead586ff547",
+    "name": "Fallen",
+    "artist": "Evanescence"
+  },
+  {
+    "id": "03c95acb-e1a4-3d73-aa80-4243a0ca3f27",
+    "name": "Thirteenth Step",
+    "artist": "A Perfect Circle"
+  },
+  {
+    "id": "af682b63-021e-4806-afac-9aa4380fc6bd",
+    "name": "Living Things",
+    "artist": "Linkin Park"
+  },
+  {
+    "id": "2a0981fb-9593-3019-864b-ce934d97a16e",
+    "name": "In Utero",
+    "artist": "Nirvana"
+  },
+  {
+    "id": "a842d860-a023-3a71-ad2e-a3a94cffabd7",
+    "name": "Showbiz",
+    "artist": "Muse"
+  },
+  {
+    "id": "8411a4db-e104-4e45-995f-24b2f1849437",
+    "name": "The Resistance",
+    "artist": "Muse"
+  },
+  {
+    "id": "02f79295-21e1-34cc-82f2-63219eec4f0a",
+    "name": "Lateralus",
+    "artist": "Tool"
+  },
+  {
+    "id": "ef1e8130-dd5f-336a-85fa-4936a47342bd",
+    "name": "Ænima",
+    "artist": "Tool"
+  },
+  {
+    "id": "fcb872a2-7ef9-3ed0-bd4a-7c55c78179b6",
+    "name": "Pretty Hate Machine",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "3bd76d40-7f0e-36b7-9348-91a33afee20e",
+    "name": "Year Zero",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "id": "9162580e-5df4-32de-80cc-f45a8d8a9b1d",
+    "name": "Abbey Road",
+    "artist": "The Beatles"
+  },
+  {
+    "id": "f6a51281-56c4-3538-b915-65a9d4eb29b5",
+    "name": "Low",
+    "artist": "David Bowie"
+  },
+  {
+    "id": "6c9ae3dd-32ad-472c-96be-69d0a3536261",
+    "name": "The Rise and Fall of Ziggy Stardust and the Spiders From Mars",
+    "artist": "David Bowie"
+  },
+  {
+    "id": "156f5e11-10db-34f4-b874-f8b6c59b7c43",
+    "name": "Out of Exile",
+    "artist": "Audioslave"
+  },
+  {
+    "id": "1fd18f5b-9a92-41fd-a590-da6b5cc60d85",
+    "name": "★",
+    "artist": "David Bowie"
+  },
+  {
+    "id": "4ca0f593-9637-4c39-b2ee-3476ec7f4a2c",
+    "name": "Out of Ashes",
+    "artist": "Dead by Sunrise"
+  },
+  {
+    "id": "5d4d0f2d-9be7-4922-bc9a-cbd2880b12c2",
+    "name": "Yeezus",
+    "artist": "Kanye West"
+  },
+  {
+    "id": "5d6e21e1-deb5-428e-bb42-c2a567f3619b",
+    "name": "My Beautiful Dark Twisted Fantasy",
+    "artist": "Kanye West"
+  },
+  {
+    "id": "8c18657a-6338-490d-a952-897663596b96",
+    "name": "The Life of Pablo",
+    "artist": "Kanye West"
+  },
+  {
+    "id": "d33e8019-7f8e-3c11-ab29-d5e573902049",
+    "name": "Error",
+    "artist": "Error"
   }
 ]
