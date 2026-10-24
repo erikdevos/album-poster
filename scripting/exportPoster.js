@@ -42,7 +42,7 @@ async function renderPosterCanvas(planFor, useOriginals) {
 
         const canvas = await toCanvas(poster, {
             pixelRatio: plan.pixelRatio,
-            backgroundColor: getComputedStyle(document.body).backgroundColor,
+            backgroundColor: posterBackground(poster),
             style: { margin: '0' },
             // An image without a source (the hidden back cover) makes the library fail
             filter: node => !(node instanceof HTMLImageElement && !node.getAttribute('src'))
@@ -137,6 +137,15 @@ async function renderPrintPdf(settings) {
         filename: `${fileName()} (${plan.paper.toUpperCase()}, ${plan.effectiveDpi} dpi).pdf`,
         plan
     }
+}
+
+// The background of the picture. html-to-image paints this colour over the background of the poster
+// itself, so it has to be the poster's own colour when it has one (the dark film poster, the paper of
+// the receipt, the colours of the cover), and the page's colour when the poster is see-through.
+function posterBackground(poster) {
+    const own = getComputedStyle(poster).backgroundColor
+    const transparent = /^rgba\(.*,\s*0\)$/.test(own) || own === 'transparent'
+    return transparent ? getComputedStyle(document.body).backgroundColor : own
 }
 
 // The colour of the page behind the poster, as [r, g, b]: it fills the margin and the bleed

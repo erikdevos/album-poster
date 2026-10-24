@@ -2,9 +2,9 @@
 //   size=s|m|l       maximum poster width
 //   theme=light|dark overrides the saved choice and the system setting
 //   colors=cover     poster colours taken from the cover
-//   layout=classic|minimal|swiss|blur|cd|cd-blur|festival|receipt|gallery   how the poster is laid out
+//   layout=classic|minimal|swiss|blur|cd|cd-blur|festival|receipt|gallery|setlist|typographic|riso|film|vinyl   how the poster is laid out
 //   controls=false   hides the header with search, for showing the poster on a screen
-export const LAYOUTS = ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery']
+export const LAYOUTS = ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl']
 
 export function applyDisplayOptions(params) {
     const container = document.getElementById('album-container')

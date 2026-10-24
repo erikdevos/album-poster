@@ -886,7 +886,7 @@ test('with colors=cover the poster gets the colours of the cover', async () => {
     } finally { await close() }
 })
 
-for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery']) {
+for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl']) {
     test(`on a phone the ${layout} poster fits the screen and nothing sticks out`, async () => {
         const { page, close } = await open(`?layout=${layout}#${LUX}`, { viewport: { width: 375, height: 812 } })
         try {
@@ -1184,8 +1184,8 @@ test('festival, receipt and gallery are in the layout menu', async () => {
     try {
         await poster(page).title.getByText('LUX').waitFor()
         const options = await page.locator('#layout-select option').allTextContents()
-        for (const name of ['Festival', 'Receipt', 'Gallery']) assert.ok(options.includes(name), `${name} is missing`)
-        for (const layout of ['festival', 'receipt', 'gallery']) {
+        for (const name of ['Festival', 'Receipt', 'Gallery', 'Setlist', 'Typographic', 'Riso', 'Film', 'Vinyl']) assert.ok(options.includes(name), `${name} is missing`)
+        for (const layout of ['festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl']) {
             await page.getByLabel('Poster layout').selectOption(layout)
             assert.equal(await page.locator('#album-container').getAttribute('data-layout'), layout)
         }
@@ -1290,4 +1290,145 @@ test('cd and cd-blur lay the tracklist out the same, so a long title wraps in th
     assert.ok(cd.ratio >= 1.25, `the lines of a wrapped title are too close: ${cd.ratio}`)
     assert.equal(blur.ratio, cd.ratio)
     assert.ok(Math.abs(cd.pitch - 1.45) < 0.03, `a track on one line takes ${cd.pitch} em`)
+})
+
+// ---------- Setlist, typographic, riso, film and vinyl ----------
+
+test('setlist: marker handwriting on a sheet, with the cover as a tilted sticker', async () => {
+    const { page, close } = await open(`?layout=setlist#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const look = await page.evaluate(() => {
+            const info = getComputedStyle(document.getElementById('album-info'))
+            const cover = getComputedStyle(document.querySelector('.album-cover-wrapper'))
+            return { font: info.fontFamily, background: info.backgroundColor, position: cover.position, transform: cover.transform, tape: getComputedStyle(document.getElementById('album-info'), '::before').content }
+        })
+        assert.match(look.font, /Permanent Marker/)
+        assert.equal(look.background, 'rgb(245, 242, 233)') // paper, in the dark theme too
+        assert.equal(look.position, 'absolute')
+        assert.notEqual(look.transform, 'none')
+        assert.equal(look.tape, '""') // a piece of tape
+    } finally { await close() }
+})
+
+test('typographic: every word of the artist is on a line of its own, and the title is light type', async () => {
+    const { page, close } = await open('?layout=typographic#11111111-2222-4333-8444-555555555555') // the fake MusicBrainz names the artist "Some Band"
+    try {
+        await poster(page).title.getByText('Album').waitFor()
+        const { lines, size, titleWeight, biggest } = await page.evaluate(() => {
+            const artist = document.getElementById('album-artist')
+            const fontSize = parseFloat(getComputedStyle(artist).fontSize)
+            const lineHeight = parseFloat(getComputedStyle(artist).lineHeight)
+            return {
+                lines: Math.round(artist.getBoundingClientRect().height / lineHeight),
+                size: fontSize,
+                titleWeight: getComputedStyle(document.getElementById('album-name')).fontWeight,
+                biggest: parseFloat(getComputedStyle(document.getElementById('album-name')).fontSize)
+            }
+        })
+        assert.equal(lines, 2, 'Some / Band')
+        assert.ok(size > 3 * 5, 'the artist is set large')
+        assert.equal(titleWeight, '300')
+        assert.ok(size > biggest * 2)
+    } finally { await close() }
+})
+
+test('riso: the cover is a duotone in two inks from its own colours, over paper with grain', async () => {
+    const { page, close } = await open(`?layout=riso#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-container').style.getPropertyValue('--sw-vibrant') !== '')
+        const look = await page.evaluate(() => {
+            const poster = document.getElementById('album-container')
+            const wrapper = document.querySelector('.album-cover-wrapper')
+            return {
+                bright: getComputedStyle(poster).getPropertyValue('--ink-bright').trim(),
+                vibrant: poster.style.getPropertyValue('--sw-vibrant').trim(),
+                coverBlend: getComputedStyle(document.getElementById('album-cover')).mixBlendMode,
+                inkBlend: getComputedStyle(wrapper, '::after').mixBlendMode,
+                paper: getComputedStyle(document.getElementById('album-info')).backgroundColor,
+                grain: getComputedStyle(document.getElementById('album-info'), '::after').backgroundImage.startsWith('url(')
+            }
+        })
+        assert.equal(look.bright, look.vibrant, 'the bright ink is the vibrant colour of the cover')
+        assert.equal(look.coverBlend, 'multiply')
+        assert.equal(look.inkBlend, 'screen')
+        assert.equal(look.paper, 'rgb(244, 239, 227)')
+        assert.ok(look.grain)
+    } finally { await close() }
+})
+
+test('the colours of the cover are on the poster as --sw-* properties, and are gone for the next cover that lacks them', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-container').style.getPropertyValue('--sw-vibrant') !== '')
+        const names = await page.evaluate(() => [...document.getElementById('album-container').style].filter(name => name.startsWith('--sw-')))
+        assert.ok(names.includes('--sw-vibrant'))
+        assert.ok(names.every(name => /^--sw-(vibrant|muted|darkvibrant|darkmuted|lightvibrant|lightmuted)$/.test(name)))
+    } finally { await close() }
+})
+
+test('film: the title sits over the fade at the bottom of the cover, and the tracks are one paragraph of credits', async () => {
+    const { page, close } = await open(`?layout=film#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const look = await page.evaluate(() => {
+            const rect = selector => document.querySelector(selector).getBoundingClientRect()
+            return {
+                coverBottom: rect('.album-cover-wrapper').bottom,
+                titleTop: rect('#album-name').top,
+                background: getComputedStyle(document.getElementById('album-info')).backgroundColor,
+                itemDisplay: getComputedStyle(document.querySelector('#track-list li')).display,
+                separator: getComputedStyle(document.querySelector('#track-list li'), '::after').content,
+                presents: getComputedStyle(document.querySelector('#album-artist'), '::after').content
+            }
+        })
+        assert.ok(look.titleTop < look.coverBottom, 'the title overlaps the cover')
+        assert.equal(look.background, 'rgb(9, 9, 11)')
+        assert.equal(look.itemDisplay, 'inline')
+        assert.match(look.separator, /·/)
+        assert.match(look.presents, /presents/)
+    } finally { await close() }
+})
+
+test('vinyl: the record is behind the sleeve, and the tracks are side A and side B', async () => {
+    const { page, close } = await open(`?layout=vinyl#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const tracks = await page.evaluate(() => [...document.querySelectorAll('#track-list li')].map(li => ({
+            label: li.dataset.label, start: li.dataset.sideStart ?? null, left: Math.round(li.getBoundingClientRect().left)
+        })))
+        // three tracks: two on side A, one on side B
+        assert.deepEqual(tracks.map(track => track.label), ['A1', 'A2', 'B1'])
+        assert.deepEqual(tracks.map(track => track.start), ['Side A', null, 'Side B'])
+        assert.ok(tracks[2].left > tracks[0].left, 'side B is in the second column')
+        assert.equal(tracks[0].left, tracks[1].left)
+        const record = await page.evaluate(() => {
+            const before = getComputedStyle(document.querySelector('.album-cover-wrapper'), '::before')
+            return { zIndex: before.zIndex, radius: before.borderRadius, label: before.backgroundImage.includes('radial-gradient') }
+        })
+        assert.equal(record.zIndex, '-1')
+        assert.equal(record.radius, '50%')
+        assert.ok(record.label)
+    } finally { await close() }
+})
+
+test('an export has the background of the poster itself, not the page: the dark film poster on a light page', async () => {
+    const { page, close } = await open(`?layout=film&theme=light#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+        const corner = await page.evaluate(async () => {
+            const { renderPoster } = await import('/scripting/exportPoster.js')
+            const { blob } = await renderPoster({ format: 'png', quality: 'standard' })
+            const bitmap = await createImageBitmap(blob)
+            const canvas = new OffscreenCanvas(bitmap.width, bitmap.height)
+            const context = canvas.getContext('2d')
+            context.drawImage(bitmap, 0, 0)
+            // the bottom left corner, which is the poster's own background
+            return Array.from(context.getImageData(8, bitmap.height - 8, 1, 1).data)
+        })
+        assert.deepEqual(corner, [9, 9, 11, 255])
+    } finally { await close() }
 })

@@ -19,11 +19,31 @@ export function extractPalette(img) {
             })
 
         colorsContainer.replaceChildren(...colorDivs)
+        setSwatchColors(swatches)
         applyPosterColors(swatches)
     } catch (error) {
         console.error('Error extracting palette:', error)
         colorsContainer.replaceChildren()
+        setSwatchColors(null)
         applyPosterColors(null)
+    }
+}
+
+// The colours of the cover as custom properties on the poster (--sw-vibrant, --sw-darkvibrant, ...), for the
+// layouts that print with them (riso, vinyl, film). A colour the cover does not have is left out, and the
+// stylesheet then uses its own fallback.
+const SWATCH_NAMES = ['Vibrant', 'Muted', 'DarkVibrant', 'DarkMuted', 'LightVibrant', 'LightMuted']
+
+function setSwatchColors(swatches) {
+    const poster = document.getElementById('album-container')
+    for (const name of SWATCH_NAMES) {
+        const property = `--sw-${name.toLowerCase()}`
+        const swatch = swatches?.[name]
+        if (swatch) {
+            poster.style.setProperty(property, swatch.getHex())
+        } else {
+            poster.style.removeProperty(property)
+        }
     }
 }
 

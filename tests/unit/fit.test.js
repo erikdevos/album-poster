@@ -27,3 +27,10 @@ test('the track count is at least one', () => {
     assert.equal(fitFactors(album('A', 'B', 0))['--track-count'], 1)
     assert.equal(fitFactors(album('A', 'B', 28))['--track-count'], 28)
 })
+
+test('the artist word factor: short names may grow, long single words shrink, within limits', () => {
+    assert.equal(fitFactors(album('A', 'Tool'))['--fit-artist-word'], '1.60')
+    assert.equal(fitFactors(album('A', 'Nine Inch Nails'))['--fit-artist-word'], '1.40') // the longest word has 5 letters: 7 / 5
+    assert.equal(fitFactors(album('A', 'Gesaffelstein'))['--fit-artist-word'], '0.54')
+    assert.equal(fitFactors(album('A', 'X'.repeat(60)))['--fit-artist-word'], '0.35')
+})

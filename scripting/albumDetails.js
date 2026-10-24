@@ -83,10 +83,13 @@ export function fitFactors(album) {
     const fit = text => Math.min(1, Math.max(0.5, 22 / text.length))
     // A single long word cannot wrap, so the biggest layouts also shrink for the longest word
     const longestWord = Math.max(...album.title.split(/\s+/).map(word => word.length))
+    // The typographic layout sets the artist's words in huge type, one word to a line
+    const longestArtistWord = Math.max(...album.artist.split(/\s+/).map(word => word.length))
     return {
         '--fit-title': fit(album.title).toFixed(2),
         '--fit-artist': fit(album.artist).toFixed(2),
         '--fit-word': Math.min(1, 10 / longestWord).toFixed(2),
+        '--fit-artist-word': Math.min(1.6, Math.max(0.35, 7 / longestArtistWord)).toFixed(2), // short names may grow
         '--track-count': Math.max(album.tracks.length, 1)
     }
 }
@@ -107,9 +110,17 @@ function renderTracks(tracks) {
         return
     }
 
-    trackListEl.replaceChildren(...names.map(name => {
+    // Side A and side B, like a record: the first half of the tracks and the rest. The vinyl layout shows
+    // "A1" in front of a track and "Side A" above the first one of a side; the other layouts ignore this.
+    const half = Math.ceil(names.length / 2)
+    trackListEl.style.setProperty('--half', half)
+    trackListEl.replaceChildren(...names.map((name, index) => {
         const li = document.createElement('li')
         li.textContent = name
+        const side = index < half ? 'A' : 'B'
+        const number = side === 'A' ? index + 1 : index - half + 1
+        li.dataset.label = `${side}${number}`
+        if (number === 1) li.dataset.sideStart = `Side ${side}`
         return li
     }))
 }
