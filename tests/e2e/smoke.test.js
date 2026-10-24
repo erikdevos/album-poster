@@ -1265,3 +1265,29 @@ test('in the cd layouts a track title that wraps is centred, with the number nex
         } finally { await close() }
     }
 })
+
+test('cd and cd-blur lay the tracklist out the same, so a long title wraps in the same place, with room between its lines', async () => {
+    const measure = async layout => {
+        const { page, close } = await open(`?layout=${layout}&size=s#${LUX}`)
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            return await page.evaluate(() => {
+                const list = document.getElementById('track-list')
+                const li = list.querySelector('li')
+                const style = getComputedStyle(li)
+                return {
+                    width: list.getBoundingClientRect().width,
+                    ratio: parseFloat(style.lineHeight) / parseFloat(style.fontSize),
+                    // the height of a track on one line plus the gap, in em: the list is as tall as it was before
+                    pitch: (li.getBoundingClientRect().height + parseFloat(style.marginBottom)) / parseFloat(style.fontSize)
+                }
+            })
+        } finally { await close() }
+    }
+    const cd = await measure('cd')
+    const blur = await measure('cd-blur')
+    assert.equal(blur.width, cd.width, 'the tracklist is as wide in cd-blur as in cd')
+    assert.ok(cd.ratio >= 1.25, `the lines of a wrapped title are too close: ${cd.ratio}`)
+    assert.equal(blur.ratio, cd.ratio)
+    assert.ok(Math.abs(cd.pitch - 1.45) < 0.03, `a track on one line takes ${cd.pitch} em`)
+})
