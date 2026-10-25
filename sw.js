@@ -4,6 +4,10 @@
 
 import { CACHES, LIMITS, SHELL, cacheFor, classify } from './scripting/swRules.js'
 
+// The deploy workflow puts the commit here, so that this file changes with every deploy. The browser
+// then installs the new worker, and the open pages say that there is a new version (offline.js).
+// version: dev
+
 const scope = self.registration.scope
 const NETWORK_TIMEOUT_MS = 4000
 

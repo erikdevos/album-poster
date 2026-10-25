@@ -22,6 +22,7 @@ const COVER = '<svg xmlns="http://www.w3.org/2000/svg" width="250" height="250">
 let server, base, browser
 const requests = { musicbrainz: [], covers: [] }
 const served = []
+let swStamp = '' // appended to sw.js, to make it a new file, as the deploy workflow does
 
 before(async () => {
     server = createServer(async (request, response) => {
@@ -29,7 +30,8 @@ before(async () => {
         served.push(path)
         if (path.endsWith('/')) path += 'index.html'
         try {
-            const file = await readFile(join(ROOT, path))
+            let file = await readFile(join(ROOT, path))
+            if (path === '/sw.js') file = Buffer.concat([file, Buffer.from(`\n// ${swStamp}\n`)])
             response.writeHead(200, { 'content-type': TYPES[extname(path)] ?? 'application/octet-stream' })
             response.end(file)
         } catch {
@@ -261,4 +263,31 @@ test('exporting does not need a CDN: the library comes from this site', async ()
         assert.ok(bytes > 10_000)
         assert.ok(!outside.includes('cdn.jsdelivr.net'), 'the library is not fetched from a CDN')
     } finally { await context.close() }
+})
+
+test('a new version of the app is announced when the service worker changes, and not on the first visit', async () => {
+    swStamp = 'one'
+    const context = await newContext()
+    try {
+        const { page } = await open('', context)
+        // the first worker took charge of this page: that is no update
+        await page.waitForTimeout(300)
+        assert.equal(await page.locator('#update-banner').count(), 0)
+
+        // a deploy: sw.js is a different file now
+        swStamp = 'two'
+        await page.evaluate(async () => (await navigator.serviceWorker.getRegistration()).update())
+        const banner = page.locator('#update-banner')
+        await banner.waitFor()
+        assert.match(await banner.textContent(), /new version/i)
+
+        // the page is not reloaded by itself; a click does it
+        const loaded = page.waitForNavigation()
+        await banner.click()
+        await loaded
+        assert.equal(await page.locator('#update-banner').count(), 0)
+    } finally {
+        swStamp = ''
+        await context.close()
+    }
 })

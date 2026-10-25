@@ -3,6 +3,7 @@
 
 import { loadAlbumList } from './albumList.js'
 import { setupThemeToggle } from './displayOptions.js'
+import { LAYOUT_LABELS } from './layouts.js'
 import { setupMenu } from './menu.js'
 import { registerServiceWorker, offlineReady, offlineStatus, downloadForOffline, clearOffline } from './offline.js'
 import { sortAlbums, filterAlbums, groupByArtist, wallOptions, wallParams, posterLink } from './wallList.js'
@@ -94,7 +95,8 @@ function update() {
         query: $('wall-filter').value.trim(),
         sort: $('wall-sort').value,
         group: $('wall-group').value,
-        size: Number($('wall-size').value)
+        size: Number($('wall-size').value),
+        layout: $('wall-layout').value
     }
     const query = wallParams(options, new URLSearchParams(window.location.search)).toString()
     history.replaceState(null, '', window.location.pathname + (query ? `?${query}` : ''))
@@ -152,9 +154,11 @@ async function init() {
     $('wall-sort').value = options.sort
     $('wall-group').value = options.group
     $('wall-size').value = options.size
+    $('wall-layout').replaceChildren(...Object.entries(LAYOUT_LABELS).map(([id, label]) => new Option(label, id)))
+    $('wall-layout').value = options.layout
     setupThemeToggle()
 
-    for (const id of ['wall-sort', 'wall-group', 'wall-size']) $(id).addEventListener('input', update)
+    for (const id of ['wall-sort', 'wall-group', 'wall-size', 'wall-layout']) $(id).addEventListener('input', update)
     $('wall-filter').addEventListener('input', update)
 
     albums = await loadAlbumList()

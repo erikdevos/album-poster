@@ -2,7 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import {
     PAPERS, DPI_CHOICES, DEFAULT_PRINT, BLEED_MM, MARK_LENGTH_MM, MARK_MIN_OFFSET_MM,
-    cleanPrintSettings, planPrint, describePrint, printStyle
+    cleanPrintSettings, planPrint, describePrint, printStyle, PRESETS, applyPreset, presetFor
 } from '../../scripting/printPlan.js'
 import { canvasLimits } from '../../scripting/exportPlan.js'
 
@@ -114,4 +114,29 @@ test('the print dialog gets the same paper, margin and poster width', () => {
 
 test('the choices of dpi are 150, 300 and 600', () => {
     assert.deepEqual(DPI_CHOICES, [150, 300, 600])
+})
+
+test('a preset sets margin, dpi, bleed and marks, and leaves the paper and orientation alone', () => {
+    const start = { paper: 'a2', orientation: 'landscape', margin: 5, dpi: 150, bleed: false, marks: false }
+    const shop = applyPreset(start, 'shop')
+    assert.deepEqual(shop, { paper: 'a2', orientation: 'landscape', margin: 0, dpi: 300, bleed: true, marks: true })
+    assert.deepEqual(applyPreset(start, 'nope'), start)
+    for (const preset of PRESETS) {
+        // a preset only holds values that the settings accept, and it is recognised again
+        assert.deepEqual(cleanPrintSettings(applyPreset(start, preset.id)), applyPreset(start, preset.id), preset.id)
+        assert.equal(presetFor(applyPreset(start, preset.id)), preset.id)
+    }
+})
+
+test('settings that are not a preset are custom, and the default settings are the home preset', () => {
+    assert.equal(presetFor(DEFAULT_PRINT), 'home')
+    assert.equal(presetFor({ ...DEFAULT_PRINT, margin: 5 }), 'custom')
+    assert.equal(presetFor({ ...DEFAULT_PRINT, marks: true }), 'custom')
+})
+
+test('the print shop preset plans a page with bleed and crop marks around the trim', () => {
+    const plan = planPrint({ settings: applyPreset({ paper: 'a3' }, 'shop'), ...poster })
+    assert.equal(plan.bleed, BLEED_MM)
+    assert.equal(plan.marks, true)
+    assert.ok(plan.media.width > plan.trim.width)
 })

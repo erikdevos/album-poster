@@ -23,7 +23,14 @@ const json = (route, body, status = 200) =>
 const COVER = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
   <rect width="600" height="600" fill="#2a3b5c"/><circle cx="300" cy="300" r="180" fill="#e8b04a"/></svg>`
 
-function release(title, artist) {
+// An album at the extremes: a very long title and artist, and a tracklist that is long and has long tracks
+const EXTREME = '99999999-aaaa-4bbb-8ccc-eeeeeeeeeeee'
+const EXTREME_TITLE = 'The Extraordinarily Long Title of an Album That Goes On and On (Deluxe Anniversary Remastered Edition)'
+const EXTREME_ARTIST = 'Konstantinopolitanische Philharmonie of the Extraordinarily Long Names'
+const extremeTracks = Array.from({ length: 30 }, (_, i) =>
+    i % 3 === 0 ? `A track whose title is so long that it has to wrap onto a second and a third line, number ${i + 1}` : `Track ${i + 1}`)
+
+function release(title, artist, trackNames = ['Come Together', 'Something', 'Octopus\'s Garden']) {
     return {
         title,
         date: '1969-09-26',
@@ -31,12 +38,12 @@ function release(title, artist) {
         'artist-credit': [{ name: artist }],
         'label-info': [{ label: { name: 'Apple' } }],
         'release-group': { title, 'first-release-date': '1969-09-26', genres: [{ name: 'rock', count: 3 }] },
-        media: [{ tracks: ['Come Together', 'Something', 'Octopus\'s Garden'].map((name, i) => ({ number: String(i + 1), title: name })) }]
+        media: [{ tracks: trackNames.map((name, i) => ({ number: String(i + 1), title: name })) }]
     }
 }
 
 // What the fake MusicBrainz knows: three named albums; any other id gets an album named after the id
-const albums = new Map([[ABBEY, ['Abbey Road', 'The Beatles']], [LUX, ['LUX', 'ROSALÍA']], [RATED_R, ['Rated R', 'Rihanna']]])
+const albums = new Map([[EXTREME, [EXTREME_TITLE, EXTREME_ARTIST]], [ABBEY, ['Abbey Road', 'The Beatles']], [LUX, ['LUX', 'ROSALÍA']], [RATED_R, ['Rated R', 'Rihanna']]])
 const albumFor = id => albums.get(id) ?? [`Album ${id.slice(0, 8)}`, 'Some Band']
 const RANDOM_ID = '11111111-2222-4333-8444-555555555555'
 const searches = []
@@ -69,7 +76,8 @@ async function mockNetwork(context) {
             const match = path.match(/\/release\/([^/]+)$/)
             if (match) {
                 const [title, artist] = albumFor(match[1].replace(/^r-/, ''))
-                return json(route, release(title, artist))
+                const id = match[1].replace(/^r-/, '')
+                return json(route, release(title, artist, id === EXTREME ? extremeTracks : undefined))
             }
         }
 
@@ -1027,6 +1035,36 @@ test('the export panel shows pixels for a PNG and print options, with dpi, for a
     } finally { await close() }
 })
 
+test('the purpose sets margin, dpi, bleed and marks together, and says custom when one of them is changed', async () => {
+    const { page, close } = await open(`#${ABBEY}`)
+    try {
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        await page.getByRole('button', { name: 'Export' }).click()
+        await page.getByLabel('File type').selectOption('pdf')
+        assert.equal(await page.locator('#print-preset').inputValue(), 'home') // the default settings
+
+        await page.locator('#print-paper').selectOption('a3')
+        await page.locator('#print-preset').selectOption('shop')
+        assert.equal(await page.locator('#print-margin').inputValue(), '0')
+        assert.equal(await page.locator('#print-dpi').inputValue(), '300')
+        assert.equal(await page.locator('#print-bleed').isChecked(), true)
+        assert.equal(await page.locator('#print-marks').isChecked(), true)
+        assert.equal(await page.locator('#print-paper').inputValue(), 'a3', 'the paper stays')
+        assert.match(await page.locator('#print-summary').textContent(), /^A3 portrait.*3 mm bleed, crop marks$/)
+
+        await page.locator('#print-dpi').selectOption('600')
+        assert.equal(await page.locator('#print-preset').inputValue(), 'custom')
+        await page.locator('#print-preset').selectOption('draft')
+        assert.equal(await page.locator('#print-dpi').inputValue(), '150')
+        assert.equal(await page.locator('#print-bleed').isChecked(), false)
+
+        // remembered with the rest of the settings
+        await page.reload()
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        assert.equal(await page.locator('#print-preset').inputValue(), 'draft')
+    } finally { await close() }
+})
+
 test('the print settings are remembered, and the print dialog gets that paper', async () => {
     const { page, close } = await open(`#${ABBEY}`)
     try {
@@ -1140,6 +1178,28 @@ test('a cover on the wall opens that poster, with the layout of the wall page ke
         await page.locator('.wall-tile').first().waitFor()
         assert.equal(new URL(page.url()).pathname, '/wall/')
         assert.equal(new URL(page.url()).searchParams.get('layout'), 'cd')
+    } finally { await close() }
+})
+
+test('the wall has a layout choice, kept in the URL, and a cover opens its poster in that layout', async () => {
+    const { page, close } = await open('wall/')
+    try {
+        await page.locator('.wall-tile').first().waitFor()
+        const options = await page.locator('#wall-layout option').allTextContents()
+        assert.ok(options.includes('Vinyl') && options.includes('CD blur'))
+        assert.equal(await page.locator('#wall-layout').inputValue(), 'classic')
+        assert.equal(new URL(page.url()).searchParams.has('layout'), false) // the default stays out of the URL
+
+        await page.locator('#wall-layout').selectOption('riso')
+        assert.equal(new URL(page.url()).searchParams.get('layout'), 'riso')
+        assert.match(await page.locator('.wall-tile').first().getAttribute('href'), /\?layout=riso#/)
+
+        await page.reload()
+        await page.locator('.wall-tile').first().waitFor()
+        assert.equal(await page.locator('#wall-layout').inputValue(), 'riso')
+
+        await page.locator('.wall-tile').first().click()
+        await page.locator('#album-container[data-layout="riso"]').waitFor()
     } finally { await close() }
 })
 
@@ -1431,4 +1491,189 @@ test('an export has the background of the poster itself, not the page: the dark 
         })
         assert.deepEqual(corner, [9, 9, 11, 255])
     } finally { await close() }
+})
+
+// ---------- Extremes ----------
+
+// What sticks out of the poster, or out of its own box, in pixels
+const overflow = page => page.evaluate(() => {
+    const box = document.getElementById('album-container').getBoundingClientRect()
+    const out = []
+    for (const id of ['album-artist', 'album-name', 'track-list']) {
+        const element = document.getElementById(id)
+        const rect = element.getBoundingClientRect()
+        const outside = Math.max(box.left - rect.left, rect.right - box.right, box.top - rect.top, rect.bottom - box.bottom)
+        if (outside > 1) out.push(`${id} sticks out by ${Math.round(outside)}px`)
+        if (element.scrollWidth > element.clientWidth + 1) out.push(`${id} is wider than its box by ${element.scrollWidth - element.clientWidth}px`)
+    }
+    for (const li of document.querySelectorAll('#track-list li')) {
+        const rect = li.getBoundingClientRect()
+        if (rect.right > box.right + 1 || rect.bottom > box.bottom + 1) { out.push('a track sticks out'); break }
+    }
+    const container = document.getElementById('album-container')
+    if (container.scrollHeight > container.clientHeight + 1) out.push(`the poster is clipped by ${container.scrollHeight - container.clientHeight}px`)
+    return out
+})
+
+for (const layout of ['setlist', 'typographic', 'riso', 'film', 'vinyl']) {
+    test(`${layout}: a very long title and artist and 30 tracks stay inside the poster`, async () => {
+        for (const size of ['s', 'l']) {
+            const { page, close } = await open(`?layout=${layout}&size=${size}#${EXTREME}`)
+            try {
+                await poster(page).title.getByText('Extraordinarily').waitFor()
+                await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+                assert.deepEqual(await overflow(page), [], `${layout}, size ${size}`)
+            } finally { await close() }
+        }
+    })
+}
+
+test('riso: the ink of a pale cover is darkened until the text and the track numbers can be read on the paper', async () => {
+    const { page, close } = await open(`?layout=riso#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-container').style.getPropertyValue('--sw-vibrant'))
+        const { contrastRatio } = await page.evaluate(async () => {
+            const paper = [244, 239, 227]
+            const { contrastRatio } = await import('/scripting/colors.js')
+            const channels = text => text.match(/\d+/g).map(Number)
+            const colorOf = element => getComputedStyle(element).color
+            const info = document.getElementById('album-info')
+            const number = getComputedStyle(document.querySelector('#track-list li'), '::before').color
+            return { contrastRatio: { text: contrastRatio(channels(colorOf(info)), paper), number: contrastRatio(channels(number), paper) } }
+        })
+        assert.ok(contrastRatio.text >= 4.5, `text ${contrastRatio.text}`)
+        assert.ok(contrastRatio.number >= 3, `numbers ${contrastRatio.number}`)
+    } finally { await close() }
+})
+
+test('film: the fade of the cover does not cover the tracks, also when there are few of them', async () => {
+    const { page, close } = await open(`?layout=film#${LUX}`) // three tracks: the cover has room to grow down to them
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const covered = await page.evaluate(() => {
+            // what is on top where a track and the footer are, instead of the text itself
+            const onTop = element => {
+                const rect = element.getBoundingClientRect()
+                const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2)
+                return hit && !element.contains(hit) && !hit.contains(element) ? hit.className : null
+            }
+            return [onTop(document.querySelector('#track-list li')), onTop(document.querySelector('.album-footer-info'))]
+        })
+        assert.deepEqual(covered, [null, null])
+    } finally { await close() }
+})
+
+test('in every layout the first track and the footer are on top, not covered by another part of the poster', async () => {
+    const { LAYOUTS } = await import('../../scripting/layouts.js')
+    const problems = []
+    for (const layout of LAYOUTS) {
+        const { page, close } = await open(`?layout=${layout}#${LUX}`)
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+            const covered = await page.evaluate(() => {
+                const onTop = element => {
+                    const rect = element.getBoundingClientRect()
+                    const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2)
+                    return hit && !element.contains(hit) && !hit.contains(element) ? String(hit.className) : null
+                }
+                return [onTop(document.querySelector('#track-list li')), onTop(document.querySelector('.album-footer-info'))]
+            })
+            if (covered.some(Boolean)) problems.push(`${layout}: ${covered}`)
+        } finally { await close() }
+    }
+    assert.deepEqual(problems, [])
+})
+
+// ---------- A phone in portrait ----------
+
+// Pairs of text blocks of the poster that lie on top of each other, in pixels of overlap
+const overlaps = page => page.evaluate(() => {
+    const blocks = ['album-artist', 'album-name', 'track-list'].map(id => [id, document.getElementById(id)])
+    blocks.push(['footer', document.querySelector('.album-footer-info')])
+    const found = []
+    for (let i = 0; i < blocks.length; i++) {
+        for (let j = i + 1; j < blocks.length; j++) {
+            const a = blocks[i][1].getBoundingClientRect()
+            const b = blocks[j][1].getBoundingClientRect()
+            const x = Math.min(a.right, b.right) - Math.max(a.left, b.left)
+            const y = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top)
+            if (x > 2 && y > 2) found.push(`${blocks[i][0]} and ${blocks[j][0]} overlap by ${Math.round(x)} × ${Math.round(y)}px`)
+        }
+    }
+    return found
+})
+
+for (const [name, id] of [['a normal album', LUX], ['a very long title, artist and tracklist', EXTREME]]) {
+    test(`on a phone in portrait every layout fits and nothing overlaps: ${name}`, async () => {
+        const { LAYOUTS } = await import('../../scripting/layouts.js')
+        const problems = []
+        for (const layout of LAYOUTS) {
+            const { page, close } = await open(`?layout=${layout}#${id}`, { viewport: { width: 375, height: 812 } })
+            try {
+                await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+                await page.waitForTimeout(150)
+                const sideways = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)
+                const found = [...await overflow(page), ...await overlaps(page)]
+                if (sideways > 0) found.push(`the page scrolls sideways by ${sideways}px`)
+                if (found.length) problems.push(`${layout}: ${found.join('; ')}`)
+            } finally { await close() }
+        }
+        assert.deepEqual(problems, [])
+    })
+}
+
+test('the export panel and its fields stay inside the window, on a phone and on a desktop', async () => {
+    for (const viewport of [{ width: 375, height: 812 }, { width: 320, height: 640 }, { width: 1280, height: 800 }]) {
+        const { page, close } = await open(`#${LUX}`, { viewport })
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            await page.getByRole('button', { name: 'Export' }).click()
+            await page.getByLabel('File type').selectOption('pdf')
+            const outside = await page.evaluate(() => {
+                const panel = document.getElementById('export-panel').getBoundingClientRect()
+                const out = []
+                if (panel.left < 0 || panel.right > innerWidth) out.push('the panel is outside the window')
+                for (const element of document.querySelectorAll('#export-panel select, #export-panel button, #export-panel .panel-note')) {
+                    const rect = element.getBoundingClientRect()
+                    if (rect.width && (rect.left < panel.left - 0.5 || rect.right > panel.right + 0.5)) out.push(`${element.id || element.className} sticks out of the panel`)
+                }
+                if (document.documentElement.scrollWidth > innerWidth) out.push('the page scrolls sideways')
+                return out
+            })
+            assert.deepEqual(outside, [], `${viewport.width} px wide`)
+        } finally { await close() }
+    }
+})
+
+test('the wall, with its layout menu, the offline panel and the update banner, fits a phone', async () => {
+    for (const width of [320, 375]) {
+        const { page, close } = await open('wall/?layout=cd-blur', { viewport: { width, height: 700 } })
+        try {
+            await page.locator('.wall-tile').first().waitFor()
+            await page.getByRole('button', { name: 'Offline use' }).click()
+            // the banner of a new version, as offline.js makes it
+            await page.evaluate(() => {
+                const button = document.createElement('button')
+                button.id = 'update-banner'
+                button.className = 'update-banner'
+                button.textContent = 'A new version is available. Reload'
+                document.body.append(button)
+            })
+            const found = await page.evaluate(() => {
+                const out = []
+                const inside = (selector, label) => {
+                    const rect = document.querySelector(selector).getBoundingClientRect()
+                    if (rect.left < 0 || rect.right > innerWidth) out.push(`${label} is outside the window (${Math.round(rect.left)}..${Math.round(rect.right)})`)
+                }
+                inside('#offline-panel', 'the offline panel')
+                inside('#update-banner', 'the update banner')
+                for (const id of ['wall-filter', 'wall-sort', 'wall-group', 'wall-layout']) inside('#' + id, id)
+                if (document.documentElement.scrollWidth > innerWidth) out.push('the page scrolls sideways')
+                return out
+            })
+            assert.deepEqual(found, [], `${width} px wide`)
+        } finally { await close() }
+    }
 })

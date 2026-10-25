@@ -53,9 +53,10 @@ test('previous and next follow the browse order and go round at the ends', () =>
 })
 
 test('wall options come from the URL, with defaults and limits', () => {
-    assert.deepEqual(wallOptions(new URLSearchParams('')), { query: '', sort: 'artist', group: 'none', size: DEFAULT_COVER_REM })
-    assert.deepEqual(wallOptions(new URLSearchParams('q=muse&sort=title&group=artist&size=14')),
-        { query: 'muse', sort: 'title', group: 'artist', size: 14 })
+    assert.deepEqual(wallOptions(new URLSearchParams('')), { query: '', sort: 'artist', group: 'none', size: DEFAULT_COVER_REM, layout: 'classic' })
+    assert.deepEqual(wallOptions(new URLSearchParams('q=muse&sort=title&group=artist&size=14&layout=riso')),
+        { query: 'muse', sort: 'title', group: 'artist', size: 14, layout: 'riso' })
+    assert.equal(wallOptions(new URLSearchParams('layout=nope')).layout, 'classic')
     const odd = wallOptions(new URLSearchParams('sort=nonsense&group=x&size=2'))
     assert.equal(odd.sort, 'artist')
     assert.equal(odd.group, 'none')
@@ -65,10 +66,13 @@ test('wall options come from the URL, with defaults and limits', () => {
 })
 
 test('wall parameters leave out the defaults, and keep the others that are in the URL', () => {
-    const defaults = { query: '', sort: 'artist', group: 'none', size: DEFAULT_COVER_REM }
+    const defaults = { query: '', sort: 'artist', group: 'none', size: DEFAULT_COVER_REM, layout: 'classic' }
     assert.equal(wallParams(defaults).toString(), '')
     assert.equal(wallParams({ ...defaults, query: 'muse', group: 'artist' }).toString(), 'q=muse&group=artist')
-    assert.equal(wallParams(defaults, new URLSearchParams('layout=cd&q=old')).toString(), 'layout=cd')
+    assert.equal(wallParams({ ...defaults, layout: 'vinyl' }).toString(), 'layout=vinyl')
+    // a layout that is in the URL but not in the settings (an older call) stays as the default
+    assert.equal(wallParams(defaults, new URLSearchParams('layout=cd&q=old')).toString(), '')
+    assert.equal(wallParams({ ...defaults, layout: 'cd' }, new URLSearchParams('theme=dark&q=old')).toString(), 'theme=dark&layout=cd')
 })
 
 test('a cover on the wall links to the poster, with the layout, theme and colours kept', () => {

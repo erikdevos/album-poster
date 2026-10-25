@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { contrastRatio, pickColors, MIN_TEXT_CONTRAST } from '../../scripting/colors.js'
+import { contrastRatio, pickColors, darkenToContrast, MIN_TEXT_CONTRAST } from '../../scripting/colors.js'
 
 const swatch = (r, g, b) => ({
     getRgb: () => [r, g, b],
@@ -45,4 +45,21 @@ test('falls back to the next swatch in order, and gives up (classic look) withou
 test('an accent that does not contrast with the background becomes the text colour', () => {
     const colors = pickColors({ DarkMuted: swatch(20, 20, 20), LightVibrant: swatch(30, 30, 30) })
     assert.equal(colors.accent, colors.fg)
+})
+
+test('a colour is darkened until it contrasts enough, and one that does is left alone', () => {
+    const paper = [244, 239, 227]
+    assert.deepEqual(darkenToContrast([29, 47, 111], paper, 4.5), [29, 47, 111])
+
+    // a bright olive that DarkVibrant can give for a yellow cover
+    const olive = [200, 190, 20]
+    assert.ok(contrastRatio(olive, paper) < 3)
+    const darker = darkenToContrast(olive, paper, 4.5)
+    assert.ok(contrastRatio(darker, paper) >= 4.5)
+    // only darker, and by about the same factor in every channel: the hue stays
+    assert.ok(darker.every((channel, i) => channel <= olive[i]))
+    assert.ok(Math.abs(darker[0] / olive[0] - darker[1] / olive[1]) < 0.02)
+
+    // a contrast that no colour can reach: the end of the road is black
+    assert.deepEqual(darkenToContrast([200, 190, 20], paper, 30), [0, 0, 0])
 })

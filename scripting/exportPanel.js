@@ -2,7 +2,7 @@
 // is a page for a printer, with the paper, the margin, bleed, crop marks and the dpi. The print
 // settings are remembered in this browser, and the browser's own print dialog uses them too.
 
-import { PAPERS, cleanPrintSettings, planPrint, describePrint, DEFAULT_PRINT } from './printPlan.js'
+import { PAPERS, PRESETS, cleanPrintSettings, planPrint, describePrint, applyPreset, presetFor, DEFAULT_PRINT } from './printPlan.js'
 import { canvasLimits } from './exportPlan.js'
 
 const STORAGE_KEY = 'album-poster.print'
@@ -47,6 +47,7 @@ export function exportOptions() {
 
 export function setupExportPanel() {
     $('print-paper').replaceChildren(...PAPERS.map(paper => new Option(paper.label, paper.id)))
+    $('print-preset').replaceChildren(...PRESETS.map(preset => new Option(preset.label, preset.id)), new Option('Custom', 'custom'))
 
     const saved = cleanPrintSettings({ ...DEFAULT_PRINT, ...savedSettings() })
     $('print-paper').value = saved.paper
@@ -72,7 +73,22 @@ export function setupExportPanel() {
     }
 
     $('export-format').addEventListener('change', sync)
-    $('print-options').addEventListener('input', () => {
+    // The purpose shows which preset the settings are the same as, and "Custom" after a change of one of them
+    const showPreset = () => { $('print-preset').value = presetFor(printSettings()) }
+    showPreset()
+
+    $('print-preset').addEventListener('change', () => {
+        const settings = applyPreset(printSettings(), $('print-preset').value)
+        $('print-margin').value = String(settings.margin)
+        $('print-dpi').value = String(settings.dpi)
+        $('print-bleed').checked = settings.bleed
+        $('print-marks').checked = settings.marks
+        saveSettings(printSettings())
+        summarize()
+    })
+    $('print-options').addEventListener('input', ({ target }) => {
+        if (target.id === 'print-preset') return // its change handler sets the other fields first
+        showPreset()
         saveSettings(printSettings())
         summarize()
     })

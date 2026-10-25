@@ -31,6 +31,27 @@ export const BLEED_MM = 3
 export const MARK_LENGTH_MM = 5
 export const MARK_MIN_OFFSET_MM = 3
 
+// What the settings should be for where the poster goes. The paper and the orientation stay as they are.
+export const PRESETS = [
+    { id: 'home', label: 'Home printer', margin: 10, dpi: 300, bleed: false, marks: false },
+    { id: 'shop', label: 'Print shop (bleed, marks)', margin: 0, dpi: 300, bleed: true, marks: true },
+    { id: 'draft', label: 'Draft', margin: 10, dpi: 150, bleed: false, marks: false }
+]
+
+const PRESET_KEYS = ['margin', 'dpi', 'bleed', 'marks']
+
+export function applyPreset(settings, id) {
+    const preset = PRESETS.find(item => item.id === id)
+    if (!preset) return settings
+    return { ...settings, ...Object.fromEntries(PRESET_KEYS.map(key => [key, preset[key]])) }
+}
+
+// The preset these settings are the same as, or 'custom'
+export function presetFor(settings) {
+    const clean = cleanPrintSettings(settings)
+    return PRESETS.find(preset => PRESET_KEYS.every(key => preset[key] === clean[key]))?.id ?? 'custom'
+}
+
 const pick = (value, allowed, fallback) => allowed.includes(value) ? value : fallback
 
 // Settings from the page (strings, anything) to settings that can be planned with

@@ -9,10 +9,34 @@ const CAA = 'https://coverartarchive.org'
 
 export function registerServiceWorker() {
     if (!('serviceWorker' in navigator)) return
+    watchForUpdate()
     // after the page has loaded, so that it does not compete with the page for the network
     window.addEventListener('load', () => {
         navigator.serviceWorker.register(new URL('../sw.js', import.meta.url), { type: 'module' })
             .catch(error => console.warn('No offline mode:', error))
+    })
+}
+
+// A new worker takes over from an old one while this page is open: this page still runs the old
+// files, so it says so, and a click loads the new ones. The first install is not an update (there
+// was no worker in charge of this page before), and the page is never reloaded by itself.
+function watchForUpdate() {
+    if (!navigator.serviceWorker.controller) {
+        // the very first visit: the worker that takes charge now is the first one
+        navigator.serviceWorker.addEventListener('controllerchange', () => watchForUpdate(), { once: true })
+        return
+    }
+    let shown = false
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (shown) return
+        shown = true
+        const button = document.createElement('button')
+        button.type = 'button'
+        button.id = 'update-banner'
+        button.className = 'update-banner'
+        button.textContent = 'A new version is available. Reload'
+        button.addEventListener('click', () => window.location.reload())
+        document.body.append(button)
     })
 }
 

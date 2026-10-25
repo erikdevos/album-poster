@@ -1,6 +1,8 @@
 // What the wall (the grid of all albums) shows, and in which order you browse the list.
 // Pure functions, no DOM.
 
+import { LAYOUTS, DEFAULT_LAYOUT } from './layouts.js'
+
 export const SORTS = ['added', 'artist', 'title']
 export const GROUPS = ['none', 'artist']
 
@@ -61,7 +63,8 @@ export const MIN_COVER_REM = 6
 export const MAX_COVER_REM = 20
 export const DEFAULT_COVER_REM = 10
 
-// The wall's settings from the URL: ?q=muse&sort=artist&group=artist&size=12
+// The wall's settings from the URL: ?q=muse&sort=artist&group=artist&size=12&layout=cd
+// (the layout is the one that the posters open in)
 export function wallOptions(params) {
     const size = Number(params.get('size'))
     return {
@@ -70,18 +73,20 @@ export function wallOptions(params) {
         group: GROUPS.includes(params.get('group')) ? params.get('group') : 'none',
         size: Number.isFinite(size) && params.has('size')
             ? Math.min(MAX_COVER_REM, Math.max(MIN_COVER_REM, size))
-            : DEFAULT_COVER_REM
+            : DEFAULT_COVER_REM,
+        layout: LAYOUTS.includes(params.get('layout')) ? params.get('layout') : DEFAULT_LAYOUT
     }
 }
 
 // The URL parameters for these settings; what is the default is left out
-export function wallParams({ query, sort, group, size }, base = new URLSearchParams()) {
+export function wallParams({ query, sort, group, size, layout = DEFAULT_LAYOUT }, base = new URLSearchParams()) {
     const params = new URLSearchParams(base)
     const set = (name, value, isDefault) => isDefault ? params.delete(name) : params.set(name, value)
     set('q', query, !query)
     set('sort', sort, sort === 'artist')
     set('group', group, group === 'none')
     set('size', size, size === DEFAULT_COVER_REM)
+    set('layout', layout, layout === DEFAULT_LAYOUT)
     return params
 }
 

@@ -1,4 +1,4 @@
-import { pickColors } from './colors.js'
+import { pickColors, darkenToContrast, MIN_TEXT_CONTRAST } from './colors.js'
 
 // `Vibrant` is a global from vibrant.min.js, loaded before the modules.
 export function extractPalette(img) {
@@ -34,8 +34,29 @@ export function extractPalette(img) {
 // stylesheet then uses its own fallback.
 const SWATCH_NAMES = ['Vibrant', 'Muted', 'DarkVibrant', 'DarkMuted', 'LightVibrant', 'LightMuted']
 
+// Riso prints in the colours of the cover on cream paper (#f4efe3 in style.css). A pale cover gives pale
+// ink, which must stay readable: the text is darkened until it passes, and so are the track numbers
+// (bold, next to the title, so they only need the lower bar for graphics and large text).
+const RISO_PAPER = [244, 239, 227]
+const RISO_NUMBER_CONTRAST = 3
+
+function setInkColors(poster, swatches) {
+    const ink = (property, names, minContrast) => {
+        const swatch = names.map(name => swatches?.[name]).find(Boolean)
+        if (swatch) {
+            const [r, g, b] = darkenToContrast(swatch.getRgb(), RISO_PAPER, minContrast)
+            poster.style.setProperty(property, `rgb(${r} ${g} ${b})`)
+        } else {
+            poster.style.removeProperty(property)
+        }
+    }
+    ink('--ink-text', ['DarkVibrant', 'DarkMuted'], MIN_TEXT_CONTRAST)
+    ink('--ink-number', ['Vibrant', 'LightVibrant'], RISO_NUMBER_CONTRAST)
+}
+
 function setSwatchColors(swatches) {
     const poster = document.getElementById('album-container')
+    setInkColors(poster, swatches)
     for (const name of SWATCH_NAMES) {
         const property = `--sw-${name.toLowerCase()}`
         const swatch = swatches?.[name]

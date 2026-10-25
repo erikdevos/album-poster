@@ -61,8 +61,8 @@ export const SHELL = [
     'scripting/albumList.js', 'scripting/barcode.js', 'scripting/browse.js', 'scripting/colors.js',
     'scripting/crossfade.js', 'scripting/display.js', 'scripting/displayOptions.js', 'scripting/exportPanel.js',
     'scripting/exportPlan.js', 'scripting/exportPoster.js', 'scripting/feedback.js', 'scripting/fileFormats.js',
-    'scripting/fullscreen.js', 'scripting/kiosk.js', 'scripting/lineBreaks.js', 'scripting/main.js',
-    'scripting/menu.js', 'scripting/offline.js', 'scripting/playlist.js', 'scripting/printPlan.js',
+    'scripting/fullscreen.js', 'scripting/kiosk.js', 'scripting/layouts.js', 'scripting/lineBreaks.js',
+    'scripting/main.js', 'scripting/menu.js', 'scripting/offline.js', 'scripting/playlist.js', 'scripting/printPlan.js',
     'scripting/router.js', 'scripting/search.js', 'scripting/source.js', 'scripting/swRules.js',
     'scripting/wall.js', 'scripting/wallList.js', 'scripting/sources/musicbrainz.js'
 ]

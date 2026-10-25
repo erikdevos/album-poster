@@ -1374,7 +1374,7 @@ ol.track-list li::before {
     flex-direction: column;
     padding: 6cqi;
     border: none;
-    color: var(--ink-dark);
+    color: var(--ink-text, var(--ink-dark)); /* --ink-text: the ink, darkened until it reads on the paper (albumColors.js) */
     background-color: #f4efe3;
 }
 /* grain over everything: the paper and the ink */
@@ -1452,7 +1452,7 @@ ol.track-list li::before {
     font-size: max(9px, calc(clamp(10px, 2.2cqi, 0.95rem) * min(1, 18 / var(--track-count))));
 }
 #album-container[data-layout="riso"] ol.track-list li::before {
-    color: var(--ink-bright);
+    color: var(--ink-number, var(--ink-bright));
     font-weight: 900;
 }
 #album-container[data-layout="riso"] .album-footer-info {
@@ -1524,6 +1524,11 @@ ol.track-list li::before {
     line-height: 1.02;
     text-align: center;
     text-shadow: 0 0 3cqi rgb(0 0 0 / 0.7), 0 0 0.6cqi var(--sw-vibrant, rgb(255 255 255 / 0.5));
+}
+/* The cover can grow down to here, when there are few tracks: positioned, so that these are above its fade */
+#album-container[data-layout="film"] .album-tracklist-genre-wrapper,
+#album-container[data-layout="film"] .album-footer-info {
+    position: relative;
 }
 #album-container[data-layout="film"] .album-tracklist-genre-wrapper {
     order: 4;
@@ -1871,6 +1876,7 @@ a.header-control {
     top: calc(100% + 0.4rem);
     right: 0;
     display: grid;
+    grid-template-columns: minmax(0, 1fr); /* a long option must not make the column wider than the panel */
     gap: 0.75rem;
     width: min(16rem, calc(100vw - 2 * var(--page-gutter)));
     padding: 0.9rem;
@@ -1893,6 +1899,8 @@ a.header-control {
     opacity: 0.85;
 }
 .panel-field select {
+    min-width: 0;
+    width: 100%;
     height: 2.2rem;
     padding: 0 0.5rem;
     border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
@@ -1911,6 +1919,7 @@ a.header-control {
 }
 .print-options {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.6rem;
 }
 .print-options[hidden],
@@ -2275,6 +2284,35 @@ a.header-control {
 }
 .toast[data-type="error"] {
     background-color: #8a1c1c;
+}
+/* A new version of the app is ready: stays until it is used, not on the slideshow */
+.update-banner {
+    position: fixed;
+    z-index: 61;
+    left: 50%;
+    bottom: 1.25rem;
+    max-width: min(28rem, calc(100vw - 2 * var(--page-gutter)));
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 0.75rem;
+    background-color: rgb(20 20 20 / 0.92);
+    color: #fff;
+    font: inherit;
+    font-size: 0.85rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 0.3);
+    transform: translateX(-50%);
+    animation: toast-in 0.2s ease;
+}
+.update-banner:hover,
+.update-banner:focus-visible {
+    background-color: #000;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+:root[data-kiosk="on"] .update-banner {
+    display: none;
 }
 @keyframes toast-in {
     from { opacity: 0; transform: translate(-50%, 0.5rem); }

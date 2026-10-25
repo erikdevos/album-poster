@@ -1,5 +1,5 @@
 // A small panel under a header button: opens on a click, closes on Escape, on a click elsewhere
-// (also on another menu button) and when focus leaves it. After Escape focus goes back to the button.
+// (also on another menu button) and when focus leaves it. It stays inside the window on a narrow screen. After Escape focus goes back to the button.
 // Markup: <div class="header-menu"> <button id=toggleId aria-controls=panelId> <div id=panelId hidden>
 
 export function setupMenu(toggleId, panelId) {
@@ -9,8 +9,19 @@ export function setupMenu(toggleId, panelId) {
 
     const isOpen = () => !panel.hidden
 
+    // The panel hangs from its button, which on a narrow screen can be at the far left of a second row
+    // of buttons: then the panel is moved sideways until it is inside the window
+    const GUTTER = 16
+    function keepInWindow() {
+        panel.style.translate = ''
+        const { left, right } = panel.getBoundingClientRect()
+        const shift = left < GUTTER ? GUTTER - left : Math.min(0, document.documentElement.clientWidth - GUTTER - right)
+        if (shift) panel.style.translate = `${Math.round(shift)}px 0`
+    }
+
     function open() {
         panel.hidden = false
+        keepInWindow()
         toggle.setAttribute('aria-expanded', 'true')
         panel.querySelector('select, button')?.focus()
     }

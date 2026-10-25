@@ -38,6 +38,8 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html sw.js wall scripting styles data _site/
+          # a new sw.js with every deploy: the open pages then notice that there is a new version
+          sed -i "s|^// version: dev|// version: ${GITHUB_SHA}|" _site/sw.js
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

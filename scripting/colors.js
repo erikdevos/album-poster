@@ -34,6 +34,18 @@ function bestText(rgb) {
     return white >= black ? ['#ffffff', white] : ['#000000', black]
 }
 
+// `rgb` made darker, a step at a time, until it contrasts enough with `background`. A colour that
+// already does is returned as it is; black is the end of the road.
+export function darkenToContrast(rgb, background, minContrast) {
+    const base = rgb.map(Math.round)
+    for (let step = 0; step <= 20; step++) {
+        const factor = 1 - step / 20
+        const color = base.map(channel => Math.round(channel * factor))
+        if (contrastRatio(color, background) >= minContrast) return color
+    }
+    return [0, 0, 0]
+}
+
 // WCAG 2 contrast ratio
 export function contrastRatio(a, b) {
     const [light, dark] = [luminance(a), luminance(b)].sort((x, y) => y - x)

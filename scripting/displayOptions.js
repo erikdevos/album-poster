@@ -4,7 +4,9 @@
 //   colors=cover     poster colours taken from the cover
 //   layout=classic|minimal|swiss|blur|cd|cd-blur|festival|receipt|gallery|setlist|typographic|riso|film|vinyl   how the poster is laid out
 //   controls=false   hides the header with search, for showing the poster on a screen
-export const LAYOUTS = ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl']
+import { LAYOUTS, DEFAULT_LAYOUT } from './layouts.js'
+
+export { LAYOUTS }
 
 export function applyDisplayOptions(params) {
     const container = document.getElementById('album-container')
@@ -12,7 +14,7 @@ export function applyDisplayOptions(params) {
     const size = params.get('size')
     if (['s', 'm', 'l'].includes(size)) container.classList.add(`size-${size}`)
 
-    const layout = LAYOUTS.includes(params.get('layout')) ? params.get('layout') : 'classic'
+    const layout = LAYOUTS.includes(params.get('layout')) ? params.get('layout') : DEFAULT_LAYOUT
     container.dataset.layout = layout
     document.getElementById('layout-select').value = layout
 
