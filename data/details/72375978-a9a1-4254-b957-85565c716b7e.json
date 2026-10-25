@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875884366,
+  "v": 2,
+  "fetchedAt": 1792952995921,
   "album": {
     "id": "72375978-a9a1-4254-b957-85565c716b7e",
     "title": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "!!!!!!!"
+        "title": "!!!!!!!",
+        "length": 14000
       },
       {
         "number": "2",
-        "title": "bad guy"
+        "title": "bad guy",
+        "length": 194000
       },
       {
         "number": "3",
-        "title": "xanny"
+        "title": "xanny",
+        "length": 244000
       },
       {
         "number": "4",
-        "title": "you should see me in a crown"
+        "title": "you should see me in a crown",
+        "length": 181000
       },
       {
         "number": "5",
-        "title": "all the good girls go to hell"
+        "title": "all the good girls go to hell",
+        "length": 169000
       },
       {
         "number": "6",
-        "title": "wish you were gay"
+        "title": "wish you were gay",
+        "length": 222000
       },
       {
         "number": "7",
-        "title": "when the party’s over"
+        "title": "when the party’s over",
+        "length": 196077
       },
       {
         "number": "8",
-        "title": "8"
+        "title": "8",
+        "length": 173000
       },
       {
         "number": "9",
-        "title": "my strange addiction"
+        "title": "my strange addiction",
+        "length": 180000
       },
       {
         "number": "10",
-        "title": "bury a friend"
+        "title": "bury a friend",
+        "length": 193149
       },
       {
         "number": "11",
-        "title": "ilomilo"
+        "title": "ilomilo",
+        "length": 156000
       },
       {
         "number": "12",
-        "title": "listen before i go"
+        "title": "listen before i go",
+        "length": 243000
       },
       {
         "number": "13",
-        "title": "i love you"
+        "title": "i love you",
+        "length": 292000
       },
       {
         "number": "14",
-        "title": "goodbye"
+        "title": "goodbye",
+        "length": 119000
       }
     ],
     "front": "https://coverartarchive.org/release/e5e6642c-7814-4e02-9c68-7734b21c1f63/32734888823-1200.jpg",

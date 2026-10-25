@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875941103,
+  "v": 2,
+  "fetchedAt": 1792953078266,
   "album": {
     "id": "d44c50ad-61fd-3fce-95fc-27024d7f1d30",
     "title": "Graduation",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Good Morning"
+        "title": "Good Morning",
+        "length": 195093
       },
       {
         "number": "2",
-        "title": "Champion"
+        "title": "Champion",
+        "length": 167600
       },
       {
         "number": "3",
-        "title": "Stronger"
+        "title": "Stronger",
+        "length": 311867
       },
       {
         "number": "4",
-        "title": "I Wonder"
+        "title": "I Wonder",
+        "length": 243440
       },
       {
         "number": "5",
-        "title": "Good Life"
+        "title": "Good Life",
+        "length": 207000
       },
       {
         "number": "6",
-        "title": "Can’t Tell Me Nothing"
+        "title": "Can’t Tell Me Nothing",
+        "length": 271600
       },
       {
         "number": "7",
-        "title": "Barry Bonds"
+        "title": "Barry Bonds",
+        "length": 204307
       },
       {
         "number": "8",
-        "title": "Drunk and Hot Girls"
+        "title": "Drunk and Hot Girls",
+        "length": 313227
       },
       {
         "number": "9",
-        "title": "Flashing Lights"
+        "title": "Flashing Lights",
+        "length": 237507
       },
       {
         "number": "10",
-        "title": "Everything I Am"
+        "title": "Everything I Am",
+        "length": 227893
       },
       {
         "number": "11",
-        "title": "The Glory"
+        "title": "The Glory",
+        "length": 212707
       },
       {
         "number": "12",
-        "title": "Homecoming"
+        "title": "Homecoming",
+        "length": 203493
       },
       {
         "number": "13",
-        "title": "Big Brother"
+        "title": "Big Brother",
+        "length": 287573
       }
     ],
     "front": "https://coverartarchive.org/release/08e0cab1-e95c-4b33-8ed3-1337d934fb7f/24202595971-1200.jpg",

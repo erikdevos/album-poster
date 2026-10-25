@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876401369,
+  "v": 2,
+  "fetchedAt": 1792952833736,
   "album": {
     "id": "f88a8087-1c93-42a5-8dd7-c1734a286948",
     "title": "Paradise",
@@ -12,35 +12,43 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Ride"
+        "title": "Ride",
+        "length": 289053
       },
       {
         "number": "2",
-        "title": "American"
+        "title": "American",
+        "length": 248893
       },
       {
         "number": "3",
-        "title": "Cola"
+        "title": "Cola",
+        "length": 260866
       },
       {
         "number": "4",
-        "title": "Body Electric"
+        "title": "Body Electric",
+        "length": 233426
       },
       {
         "number": "5",
-        "title": "Blue Velvet"
+        "title": "Blue Velvet",
+        "length": 158613
       },
       {
         "number": "6",
-        "title": "Gods and Monsters"
+        "title": "Gods and Monsters",
+        "length": 237640
       },
       {
         "number": "7",
-        "title": "Yayo"
+        "title": "Yayo",
+        "length": 321026
       },
       {
         "number": "8",
-        "title": "Bel Air"
+        "title": "Bel Air",
+        "length": 237653
       }
     ],
     "front": "https://coverartarchive.org/release/1207a042-69d8-4d9a-b246-59a7f616b648/28044870740-1200.jpg",

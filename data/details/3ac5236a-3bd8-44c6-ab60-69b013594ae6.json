@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875882946,
+  "v": 2,
+  "fetchedAt": 1792952994203,
   "album": {
     "id": "3ac5236a-3bd8-44c6-ab60-69b013594ae6",
     "title": "Happier Than Ever",
@@ -12,67 +12,83 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Getting Older"
+        "title": "Getting Older",
+        "length": 244221
       },
       {
         "number": "2",
-        "title": "I Didn’t Change My Number"
+        "title": "I Didn’t Change My Number",
+        "length": 158463
       },
       {
         "number": "3",
-        "title": "Billie Bossa Nova"
+        "title": "Billie Bossa Nova",
+        "length": 196730
       },
       {
         "number": "4",
-        "title": "my future"
+        "title": "my future",
+        "length": 210005
       },
       {
         "number": "5",
-        "title": "Oxytocin"
+        "title": "Oxytocin",
+        "length": 210232
       },
       {
         "number": "6",
-        "title": "GOLDWING"
+        "title": "GOLDWING",
+        "length": 151536
       },
       {
         "number": "7",
-        "title": "Lost Cause"
+        "title": "Lost Cause",
+        "length": 212496
       },
       {
         "number": "8",
-        "title": "Halley’s Comet"
+        "title": "Halley’s Comet",
+        "length": 234761
       },
       {
         "number": "9",
-        "title": "Not My Responsibility"
+        "title": "Not My Responsibility",
+        "length": 227679
       },
       {
         "number": "10",
-        "title": "OverHeated"
+        "title": "OverHeated",
+        "length": 214058
       },
       {
         "number": "11",
-        "title": "Everybody Dies"
+        "title": "Everybody Dies",
+        "length": 206622
       },
       {
         "number": "12",
-        "title": "Your Power"
+        "title": "Your Power",
+        "length": 245896
       },
       {
         "number": "13",
-        "title": "NDA"
+        "title": "NDA",
+        "length": 195776
       },
       {
         "number": "14",
-        "title": "Therefore I Am"
+        "title": "Therefore I Am",
+        "length": 173539
       },
       {
         "number": "15",
-        "title": "Happier Than Ever"
+        "title": "Happier Than Ever",
+        "length": 298899
       },
       {
         "number": "16",
-        "title": "Male Fantasy"
+        "title": "Male Fantasy",
+        "length": 194886
       }
     ],
     "front": "https://coverartarchive.org/release/0c155a34-f9ed-4ade-a676-3ac0d48ead17/29201454100-1200.jpg",

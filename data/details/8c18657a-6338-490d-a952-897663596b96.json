@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876011987,
+  "v": 2,
+  "fetchedAt": 1792953137972,
   "album": {
     "id": "8c18657a-6338-490d-a952-897663596b96",
     "title": "The Life of Pablo",
@@ -12,75 +12,93 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Ultralight Beam"
+        "title": "Ultralight Beam",
+        "length": 320000
       },
       {
         "number": "2",
-        "title": "Father Stretch My Hands, Pt. 1"
+        "title": "Father Stretch My Hands, Pt. 1",
+        "length": 135000
       },
       {
         "number": "3",
-        "title": "Pt. 2"
+        "title": "Pt. 2",
+        "length": 129000
       },
       {
         "number": "4",
-        "title": "Famous"
+        "title": "Famous",
+        "length": 194000
       },
       {
         "number": "5",
-        "title": "Feedback"
+        "title": "Feedback",
+        "length": 155000
       },
       {
         "number": "6",
-        "title": "Low Lights"
+        "title": "Low Lights",
+        "length": 131000
       },
       {
         "number": "7",
-        "title": "Highlights"
+        "title": "Highlights",
+        "length": 199000
       },
       {
         "number": "8",
-        "title": "Freestyle 4"
+        "title": "Freestyle 4",
+        "length": 122000
       },
       {
         "number": "9",
-        "title": "I Love Kanye"
+        "title": "I Love Kanye",
+        "length": 44000
       },
       {
         "number": "10",
-        "title": "Waves"
+        "title": "Waves",
+        "length": 181000
       },
       {
         "number": "11",
-        "title": "FML"
+        "title": "FML",
+        "length": 236000
       },
       {
         "number": "12",
-        "title": "Real Friends"
+        "title": "Real Friends",
+        "length": 251000
       },
       {
         "number": "13",
-        "title": "Wolves"
+        "title": "Wolves",
+        "length": 239000
       },
       {
         "number": "14",
-        "title": "Siiiiiiiiilver Surffffeeeeer Intermission"
+        "title": "Siiiiiiiiilver Surffffeeeeer Intermission",
+        "length": 56000
       },
       {
         "number": "15",
-        "title": "30 Hours"
+        "title": "30 Hours",
+        "length": 325000
       },
       {
         "number": "16",
-        "title": "No More Parties in LA"
+        "title": "No More Parties in LA",
+        "length": 374000
       },
       {
         "number": "17",
-        "title": "Facts (Charlie Heat version)"
+        "title": "Facts (Charlie Heat version)",
+        "length": 199000
       },
       {
         "number": "18",
-        "title": "Fade"
+        "title": "Fade",
+        "length": 193000
       }
     ],
     "front": "https://coverartarchive.org/release/99e14f9e-5831-4b2c-b595-531be0f225ea/12790816703-1200.jpg",

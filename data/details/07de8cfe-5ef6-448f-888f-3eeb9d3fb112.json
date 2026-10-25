@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875919720,
+  "v": 2,
+  "fetchedAt": 1792953051408,
   "album": {
     "id": "07de8cfe-5ef6-448f-888f-3eeb9d3fb112",
     "title": "Sanctuary",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Beautiful Lie"
+        "title": "Beautiful Lie",
+        "length": 251000
       },
       {
         "number": "2",
-        "title": "Tell Me When You’ve Had Enough"
+        "title": "Tell Me When You’ve Had Enough",
+        "length": 200000
       },
       {
         "number": "3",
-        "title": "Who Will You Follow"
+        "title": "Who Will You Follow",
+        "length": 235000
       },
       {
         "number": "4",
-        "title": "Rapture"
+        "title": "Rapture",
+        "length": 207000
       },
       {
         "number": "5",
-        "title": "Afterlife"
+        "title": "Afterlife",
+        "length": 249000
       },
       {
         "number": "6",
-        "title": "Sanctuary"
+        "title": "Sanctuary",
+        "length": 258000
       },
       {
         "number": "7",
-        "title": "How Do I Heal"
+        "title": "How Do I Heal",
+        "length": 229000
       },
       {
         "number": "8",
-        "title": "About Us"
+        "title": "About Us",
+        "length": 291000
       },
       {
         "number": "9",
-        "title": "Calm Down"
+        "title": "Calm Down",
+        "length": 259000
       },
       {
         "number": "10",
-        "title": "Self Destruct"
+        "title": "Self Destruct",
+        "length": 234000
       },
       {
         "number": "11",
-        "title": "Forever Without You"
+        "title": "Forever Without You",
+        "length": 316000
       },
       {
         "number": "12",
-        "title": "Wide Open Heart"
+        "title": "Wide Open Heart",
+        "length": 206000
       }
     ],
     "front": "https://coverartarchive.org/release/c7e9b845-23cc-4644-bbbe-6051ef156af7/44832558193-1200.jpg",

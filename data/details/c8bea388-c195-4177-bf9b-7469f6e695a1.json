@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875843324,
+  "v": 2,
+  "fetchedAt": 1792952953749,
   "album": {
     "id": "c8bea388-c195-4177-bf9b-7469f6e695a1",
     "title": "Short n’ Sweet",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Taste"
+        "title": "Taste",
+        "length": 157000
       },
       {
         "number": "2",
-        "title": "Please Please Please"
+        "title": "Please Please Please",
+        "length": 186000
       },
       {
         "number": "3",
-        "title": "Good Graces"
+        "title": "Good Graces",
+        "length": 185000
       },
       {
         "number": "4",
-        "title": "Sharpest Tool"
+        "title": "Sharpest Tool",
+        "length": 218000
       },
       {
         "number": "5",
-        "title": "Coincidence"
+        "title": "Coincidence",
+        "length": 164000
       },
       {
         "number": "6",
-        "title": "Bed Chem"
+        "title": "Bed Chem",
+        "length": 171000
       },
       {
         "number": "7",
-        "title": "Espresso"
+        "title": "Espresso",
+        "length": 175000
       },
       {
         "number": "8",
-        "title": "Dumb & Poetic"
+        "title": "Dumb & Poetic",
+        "length": 133000
       },
       {
         "number": "9",
-        "title": "Slim Pickins"
+        "title": "Slim Pickins",
+        "length": 152000
       },
       {
         "number": "10",
-        "title": "Juno"
+        "title": "Juno",
+        "length": 223000
       },
       {
         "number": "11",
-        "title": "Lie to Girls"
+        "title": "Lie to Girls",
+        "length": 202000
       },
       {
         "number": "12",
-        "title": "Don’t Smile"
+        "title": "Don’t Smile",
+        "length": 206000
       }
     ],
     "front": "https://coverartarchive.org/release/84190924-8e99-417e-9703-17b7722df4e7/39023726455-1200.jpg",

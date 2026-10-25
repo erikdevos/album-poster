@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875928927,
+  "v": 2,
+  "fetchedAt": 1792953064718,
   "album": {
     "id": "38b34599-6352-389b-ad6a-02866357dabe",
     "title": "Audioslave",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Cochise"
+        "title": "Cochise",
+        "length": 222333
       },
       {
         "number": "2",
-        "title": "Show Me How to Live"
+        "title": "Show Me How to Live",
+        "length": 277826
       },
       {
         "number": "3",
-        "title": "Gasoline"
+        "title": "Gasoline",
+        "length": 279400
       },
       {
         "number": "4",
-        "title": "What You Are"
+        "title": "What You Are",
+        "length": 249333
       },
       {
         "number": "5",
-        "title": "Like a Stone"
+        "title": "Like a Stone",
+        "length": 293973
       },
       {
         "number": "6",
-        "title": "Set It Off"
+        "title": "Set It Off",
+        "length": 263200
       },
       {
         "number": "7",
-        "title": "Shadow on the Sun"
+        "title": "Shadow on the Sun",
+        "length": 343400
       },
       {
         "number": "8",
-        "title": "I Am the Highway"
+        "title": "I Am the Highway",
+        "length": 334893
       },
       {
         "number": "9",
-        "title": "Exploder"
+        "title": "Exploder",
+        "length": 206000
       },
       {
         "number": "10",
-        "title": "Hypnotize"
+        "title": "Hypnotize",
+        "length": 206573
       },
       {
         "number": "11",
-        "title": "Bring Em Back Alive"
+        "title": "Bring Em Back Alive",
+        "length": 329493
       },
       {
         "number": "12",
-        "title": "Light My Way"
+        "title": "Light My Way",
+        "length": 303533
       },
       {
         "number": "13",
-        "title": "Getaway Car"
+        "title": "Getaway Car",
+        "length": 299533
       },
       {
         "number": "14",
-        "title": "The Last Remaining Light"
+        "title": "The Last Remaining Light",
+        "length": 317440
       }
     ],
     "front": "https://coverartarchive.org/release/07fc4a1d-ae17-484f-a23b-10a6c8fc0b1d/26560467892-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876392762,
+  "v": 2,
+  "fetchedAt": 1792952826950,
   "album": {
     "id": "af2e8e23-e9c3-4e67-8ad8-66387c5898fd",
     "title": "Black Holes and Revelations",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Take a Bow"
+        "title": "Take a Bow",
+        "length": 275493
       },
       {
         "number": "2",
-        "title": "Starlight"
+        "title": "Starlight",
+        "length": 239800
       },
       {
         "number": "3",
-        "title": "Supermassive Black Hole"
+        "title": "Supermassive Black Hole",
+        "length": 209333
       },
       {
         "number": "4",
-        "title": "Map of the Problematique"
+        "title": "Map of the Problematique",
+        "length": 258866
       },
       {
         "number": "5",
-        "title": "Soldier’s Poem"
+        "title": "Soldier’s Poem",
+        "length": 123906
       },
       {
         "number": "6",
-        "title": "Invincible"
+        "title": "Invincible",
+        "length": 300200
       },
       {
         "number": "7",
-        "title": "Assassin"
+        "title": "Assassin",
+        "length": 211133
       },
       {
         "number": "8",
-        "title": "Exo-Politics"
+        "title": "Exo-Politics",
+        "length": 233266
       },
       {
         "number": "9",
-        "title": "City of Delusion"
+        "title": "City of Delusion",
+        "length": 288866
       },
       {
         "number": "10",
-        "title": "Hoodoo"
+        "title": "Hoodoo",
+        "length": 223333
       },
       {
         "number": "11",
-        "title": "Knights of Cydonia"
+        "title": "Knights of Cydonia",
+        "length": 366800
       }
     ],
     "front": "https://coverartarchive.org/release/fe0bf96c-a56d-45e8-9c0f-6785022ef998/25004873802-1200.jpg",

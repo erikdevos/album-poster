@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875994568,
+  "v": 2,
+  "fetchedAt": 1792953123869,
   "album": {
     "id": "f6a51281-56c4-3538-b915-65a9d4eb29b5",
     "title": "Low",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Speed of Life"
+        "title": "Speed of Life",
+        "length": 166000
       },
       {
         "number": "2",
-        "title": "Breaking Glass"
+        "title": "Breaking Glass",
+        "length": 112000
       },
       {
         "number": "3",
-        "title": "What in the World"
+        "title": "What in the World",
+        "length": 143000
       },
       {
         "number": "4",
-        "title": "Sound and Vision"
+        "title": "Sound and Vision",
+        "length": 184000
       },
       {
         "number": "5",
-        "title": "Always Crashing in the Same Car"
+        "title": "Always Crashing in the Same Car",
+        "length": 213000
       },
       {
         "number": "6",
-        "title": "Be My Wife"
+        "title": "Be My Wife",
+        "length": 176000
       },
       {
         "number": "7",
-        "title": "A New Career in a New Town"
+        "title": "A New Career in a New Town",
+        "length": 173000
       },
       {
         "number": "8",
-        "title": "Warszawa"
+        "title": "Warszawa",
+        "length": 383000
       },
       {
         "number": "9",
-        "title": "Art Decade"
+        "title": "Art Decade",
+        "length": 227000
       },
       {
         "number": "10",
-        "title": "Weeping Wall"
+        "title": "Weeping Wall",
+        "length": 208000
       },
       {
         "number": "11",
-        "title": "Subterraneans"
+        "title": "Subterraneans",
+        "length": 341000
       }
     ],
     "front": "https://coverartarchive.org/release/83e786b5-d49c-4efd-bd10-57914f2eec9b/9838985185-1200.jpg",

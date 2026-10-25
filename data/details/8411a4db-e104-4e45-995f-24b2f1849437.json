@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875978652,
+  "v": 2,
+  "fetchedAt": 1792953111340,
   "album": {
     "id": "8411a4db-e104-4e45-995f-24b2f1849437",
     "title": "The Resistance",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Uprising"
+        "title": "Uprising",
+        "length": 302826
       },
       {
         "number": "2",
-        "title": "Resistance"
+        "title": "Resistance",
+        "length": 346693
       },
       {
         "number": "3",
-        "title": "Undisclosed Desires"
+        "title": "Undisclosed Desires",
+        "length": 236053
       },
       {
         "number": "4",
-        "title": "United States of Eurasia / Collateral Damage"
+        "title": "United States of Eurasia / Collateral Damage",
+        "length": 347813
       },
       {
         "number": "5",
-        "title": "Guiding Light"
+        "title": "Guiding Light",
+        "length": 253453
       },
       {
         "number": "6",
-        "title": "Unnatural Selection"
+        "title": "Unnatural Selection",
+        "length": 414960
       },
       {
         "number": "7",
-        "title": "MK Ultra"
+        "title": "MK Ultra",
+        "length": 246093
       },
       {
         "number": "8",
-        "title": "I Belong to You / Mon cœur s’ouvre à ta voix"
+        "title": "I Belong to You / Mon cœur s’ouvre à ta voix",
+        "length": 338813
       },
       {
         "number": "9",
-        "title": "Exogenesis: Symphony, Part 1: Overture"
+        "title": "Exogenesis: Symphony, Part 1: Overture",
+        "length": 258440
       },
       {
         "number": "10",
-        "title": "Exogenesis: Symphony, Part 2: Cross‐Pollination"
+        "title": "Exogenesis: Symphony, Part 2: Cross‐Pollination",
+        "length": 236160
       },
       {
         "number": "11",
-        "title": "Exogenesis: Symphony, Part 3: Redemption"
+        "title": "Exogenesis: Symphony, Part 3: Redemption",
+        "length": 277026
       }
     ],
     "front": "https://coverartarchive.org/release/8b81525b-7fd8-4cd8-b9cf-c4eb0040804d/9587523172.jpg",

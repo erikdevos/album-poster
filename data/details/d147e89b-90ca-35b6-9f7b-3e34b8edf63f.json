@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876414292,
+  "v": 2,
+  "fetchedAt": 1792952841644,
   "album": {
     "id": "d147e89b-90ca-35b6-9f7b-3e34b8edf63f",
     "title": "Die Mensch·Maschine",
@@ -12,27 +12,33 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "Die Roboter"
+        "title": "Die Roboter",
+        "length": 374333
       },
       {
         "number": "A2",
-        "title": "Spacelab"
+        "title": "Spacelab",
+        "length": 362600
       },
       {
         "number": "A3",
-        "title": "Metropolis"
+        "title": "Metropolis",
+        "length": 363226
       },
       {
         "number": "B1",
-        "title": "Das Modell"
+        "title": "Das Modell",
+        "length": 223733
       },
       {
         "number": "B2",
-        "title": "Neonlicht"
+        "title": "Neonlicht",
+        "length": 540773
       },
       {
         "number": "B3",
-        "title": "Die Mensch·Maschine"
+        "title": "Die Mensch·Maschine",
+        "length": 326333
       }
     ],
     "front": "https://coverartarchive.org/release/8360f429-ab2c-3b1c-ae23-3e94b7ef7438/11445024061-1200.jpg",

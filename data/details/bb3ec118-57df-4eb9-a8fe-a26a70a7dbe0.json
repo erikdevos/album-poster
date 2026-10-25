@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875704857,
+  "v": 2,
+  "fetchedAt": 1792953021393,
   "album": {
     "id": "bb3ec118-57df-4eb9-a8fe-a26a70a7dbe0",
     "title": "LUX",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Sexo, violencia y llantas"
+        "title": "Sexo, violencia y llantas",
+        "length": 141000
       },
       {
         "number": "2",
-        "title": "Reliquia"
+        "title": "Reliquia",
+        "length": 230000
       },
       {
         "number": "3",
-        "title": "Divinize"
+        "title": "Divinize",
+        "length": 243000
       },
       {
         "number": "4",
-        "title": "Porcelana"
+        "title": "Porcelana",
+        "length": 248000
       },
       {
         "number": "5",
-        "title": "Mio Cristo piange diamanti"
+        "title": "Mio Cristo piange diamanti",
+        "length": 270000
       },
       {
         "number": "6",
-        "title": "Berghain"
+        "title": "Berghain",
+        "length": 178000
       },
       {
         "number": "7",
-        "title": "La perla"
+        "title": "La perla",
+        "length": 196000
       },
       {
         "number": "8",
-        "title": "Mundo nuevo"
+        "title": "Mundo nuevo",
+        "length": 140000
       },
       {
         "number": "9",
-        "title": "De madrugá"
+        "title": "De madrugá",
+        "length": 104000
       },
       {
         "number": "10",
-        "title": "Dios es un stalker"
+        "title": "Dios es un stalker",
+        "length": 131000
       },
       {
         "number": "11",
-        "title": "La yugular"
+        "title": "La yugular",
+        "length": 259000
       },
       {
         "number": "12",
-        "title": "Sauvignon blanc"
+        "title": "Sauvignon blanc",
+        "length": 163000
       },
       {
         "number": "13",
-        "title": "La rumba del perdón"
+        "title": "La rumba del perdón",
+        "length": 252000
       },
       {
         "number": "14",
-        "title": "Memória"
+        "title": "Memória",
+        "length": 225000
       },
       {
         "number": "15",
-        "title": "Magnolias"
+        "title": "Magnolias",
+        "length": 195000
       }
     ],
     "front": "https://coverartarchive.org/release/e5913eac-3d74-47af-a3f2-7aa6618f140a/43405280844-1200.jpg",

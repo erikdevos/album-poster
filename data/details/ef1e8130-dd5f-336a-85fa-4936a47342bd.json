@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875987651,
+  "v": 2,
+  "fetchedAt": 1792953116355,
   "album": {
     "id": "ef1e8130-dd5f-336a-85fa-4936a47342bd",
     "title": "Ænima",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Stinkfist"
+        "title": "Stinkfist",
+        "length": 311293
       },
       {
         "number": "2",
-        "title": "Eulogy"
+        "title": "Eulogy",
+        "length": 507720
       },
       {
         "number": "3",
-        "title": "H."
+        "title": "H.",
+        "length": 367133
       },
       {
         "number": "4",
-        "title": "Useful Idiot"
+        "title": "Useful Idiot",
+        "length": 38760
       },
       {
         "number": "5",
-        "title": "Forty Six & 2"
+        "title": "Forty Six & 2",
+        "length": 364520
       },
       {
         "number": "6",
-        "title": "Message to Harry Manback"
+        "title": "Message to Harry Manback",
+        "length": 113227
       },
       {
         "number": "7",
-        "title": "Hooker With a Penis"
+        "title": "Hooker With a Penis",
+        "length": 273827
       },
       {
         "number": "8",
-        "title": "Intermission"
+        "title": "Intermission",
+        "length": 55999
       },
       {
         "number": "9",
-        "title": "Jimmy"
+        "title": "Jimmy",
+        "length": 324413
       },
       {
         "number": "10",
-        "title": "Die Eier von Satan"
+        "title": "Die Eier von Satan",
+        "length": 137375
       },
       {
         "number": "11",
-        "title": "Pushit"
+        "title": "Pushit",
+        "length": 595613
       },
       {
         "number": "12",
-        "title": "Cesaro Summability"
+        "title": "Cesaro Summability",
+        "length": 86195
       },
       {
         "number": "13",
-        "title": "Ænema"
+        "title": "Ænema",
+        "length": 399298
       },
       {
         "number": "14",
-        "title": "(‐) Ions"
+        "title": "(‐) Ions",
+        "length": 240486
       },
       {
         "number": "15",
-        "title": "Third Eye"
+        "title": "Third Eye",
+        "length": 829353
       }
     ],
     "front": "https://coverartarchive.org/release/bb6bd783-6a88-40c6-9abf-ee1c80b3f753/32803266360-1200.jpg",

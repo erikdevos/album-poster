@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875807145,
+  "v": 2,
+  "fetchedAt": 1792952918500,
   "album": {
     "id": "ecfd0a01-57c8-3949-990a-1a950942e0e0",
     "title": "10,000 Days",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Vicarious"
+        "title": "Vicarious",
+        "length": 425680
       },
       {
         "number": "2",
-        "title": "Jambi"
+        "title": "Jambi",
+        "length": 448613
       },
       {
         "number": "3",
-        "title": "Wings for Marie, Pt. 1"
+        "title": "Wings for Marie, Pt. 1",
+        "length": 371456
       },
       {
         "number": "4",
-        "title": "10,000 Days (Wings, Pt 2)"
+        "title": "10,000 Days (Wings, Pt 2)",
+        "length": 673757
       },
       {
         "number": "5",
-        "title": "The Pot"
+        "title": "The Pot",
+        "length": 381947
       },
       {
         "number": "6",
-        "title": "Lipan Conjuring"
+        "title": "Lipan Conjuring",
+        "length": 71053
       },
       {
         "number": "7",
-        "title": "Lost Keys (Blame Hofman)"
+        "title": "Lost Keys (Blame Hofman)",
+        "length": 226271
       },
       {
         "number": "8",
-        "title": "Rosetta Stoned"
+        "title": "Rosetta Stoned",
+        "length": 671356
       },
       {
         "number": "9",
-        "title": "Intension"
+        "title": "Intension",
+        "length": 441252
       },
       {
         "number": "10",
-        "title": "Right in Two"
+        "title": "Right in Two",
+        "length": 535802
       },
       {
         "number": "11",
-        "title": "Viginti Tres"
+        "title": "Viginti Tres",
+        "length": 300761
       }
     ],
     "front": "https://coverartarchive.org/release/99506955-a90e-4287-b99e-af94d494bd6e/23720232510-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875898213,
+  "v": 2,
+  "fetchedAt": 1792953013677,
   "album": {
     "id": "0c482acd-35a2-466b-b833-ef5f2f1297d4",
     "title": "ANTI",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Consideration"
+        "title": "Consideration",
+        "length": 161000
       },
       {
         "number": "2",
-        "title": "James Joint"
+        "title": "James Joint",
+        "length": 72000
       },
       {
         "number": "3",
-        "title": "Kiss It Better"
+        "title": "Kiss It Better",
+        "length": 253000
       },
       {
         "number": "4",
-        "title": "Work"
+        "title": "Work",
+        "length": 219000
       },
       {
         "number": "5",
-        "title": "Desperado"
+        "title": "Desperado",
+        "length": 186000
       },
       {
         "number": "6",
-        "title": "Woo"
+        "title": "Woo",
+        "length": 235000
       },
       {
         "number": "7",
-        "title": "Needed Me"
+        "title": "Needed Me",
+        "length": 191000
       },
       {
         "number": "8",
-        "title": "Yeah, I Said It"
+        "title": "Yeah, I Said It",
+        "length": 133000
       },
       {
         "number": "9",
-        "title": "Same Ol’ Mistakes"
+        "title": "Same Ol’ Mistakes",
+        "length": 397000
       },
       {
         "number": "10",
-        "title": "Never Ending"
+        "title": "Never Ending",
+        "length": 202000
       },
       {
         "number": "11",
-        "title": "Love on the Brain"
+        "title": "Love on the Brain",
+        "length": 224000
       },
       {
         "number": "12",
-        "title": "Higher"
+        "title": "Higher",
+        "length": 120000
       },
       {
         "number": "13",
-        "title": "Close to You"
+        "title": "Close to You",
+        "length": 223000
       }
     ],
     "front": "https://coverartarchive.org/release/b8fdf8b5-45f6-4f1d-b7af-b7c28aff8ad8/32325572219-1200.jpg",

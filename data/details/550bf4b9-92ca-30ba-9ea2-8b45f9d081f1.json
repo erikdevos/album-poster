@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875859100,
+  "v": 2,
+  "fetchedAt": 1792952969889,
   "album": {
     "id": "550bf4b9-92ca-30ba-9ea2-8b45f9d081f1",
     "title": "Ghosts I–IV",
@@ -12,39 +12,48 @@
     "tracks": [
       {
         "number": "1",
-        "title": "1 Ghosts I"
+        "title": "1 Ghosts I",
+        "length": 169000
       },
       {
         "number": "2",
-        "title": "2 Ghosts I"
+        "title": "2 Ghosts I",
+        "length": 196000
       },
       {
         "number": "3",
-        "title": "3 Ghosts I"
+        "title": "3 Ghosts I",
+        "length": 231000
       },
       {
         "number": "4",
-        "title": "4 Ghosts I"
+        "title": "4 Ghosts I",
+        "length": 133000
       },
       {
         "number": "5",
-        "title": "5 Ghosts I"
+        "title": "5 Ghosts I",
+        "length": 172000
       },
       {
         "number": "6",
-        "title": "6 Ghosts I"
+        "title": "6 Ghosts I",
+        "length": 259000
       },
       {
         "number": "7",
-        "title": "7 Ghosts I"
+        "title": "7 Ghosts I",
+        "length": 121000
       },
       {
         "number": "8",
-        "title": "8 Ghosts I"
+        "title": "8 Ghosts I",
+        "length": 176000
       },
       {
         "number": "9",
-        "title": "9 Ghosts I"
+        "title": "9 Ghosts I",
+        "length": 167000
       }
     ],
     "front": "https://coverartarchive.org/release/f36eb891-6276-452a-8fdf-cde443a6f543/10264802906-1200.jpg",

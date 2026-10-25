@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875812838,
+  "v": 2,
+  "fetchedAt": 1792952925561,
   "album": {
     "id": "aa997ea0-2936-40bd-884d-3af8a0e064dc",
     "title": "Random Access Memories",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Give Life Back to Music"
+        "title": "Give Life Back to Music",
+        "length": 274000
       },
       {
         "number": "2",
-        "title": "The Game of Love"
+        "title": "The Game of Love",
+        "length": 321000
       },
       {
         "number": "3",
-        "title": "Giorgio by Moroder"
+        "title": "Giorgio by Moroder",
+        "length": 544000
       },
       {
         "number": "4",
-        "title": "Within"
+        "title": "Within",
+        "length": 228000
       },
       {
         "number": "5",
-        "title": "Instant Crush"
+        "title": "Instant Crush",
+        "length": 337000
       },
       {
         "number": "6",
-        "title": "Lose Yourself to Dance"
+        "title": "Lose Yourself to Dance",
+        "length": 353000
       },
       {
         "number": "7",
-        "title": "Touch"
+        "title": "Touch",
+        "length": 498000
       },
       {
         "number": "8",
-        "title": "Get Lucky"
+        "title": "Get Lucky",
+        "length": 367000
       },
       {
         "number": "9",
-        "title": "Beyond"
+        "title": "Beyond",
+        "length": 290000
       },
       {
         "number": "10",
-        "title": "Motherboard"
+        "title": "Motherboard",
+        "length": 341000
       },
       {
         "number": "11",
-        "title": "Fragments of Time"
+        "title": "Fragments of Time",
+        "length": 279000
       },
       {
         "number": "12",
-        "title": "Doin’ It Right"
+        "title": "Doin’ It Right",
+        "length": 251000
       },
       {
         "number": "13",
-        "title": "Contact"
+        "title": "Contact",
+        "length": 381000
       }
     ],
     "front": "https://coverartarchive.org/release/5000a285-b67e-4cfc-b54b-2b98f1810d2e/46361185179-1200.jpg",

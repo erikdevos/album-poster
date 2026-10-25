@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875959477,
+  "v": 2,
+  "fetchedAt": 1792953097163,
   "album": {
     "id": "b9c6879f-3a34-3aa0-a68f-73ced2608f7a",
     "title": "Black Celebration",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "Black Celebration"
+        "title": "Black Celebration",
+        "length": 297080
       },
       {
         "number": "A2",
-        "title": "Fly on the Windscreen (final)"
+        "title": "Fly on the Windscreen (final)",
+        "length": 319293
       },
       {
         "number": "A3",
-        "title": "A Question of Lust"
+        "title": "A Question of Lust",
+        "length": 258760
       },
       {
         "number": "A4",
-        "title": "Sometimes"
+        "title": "Sometimes",
+        "length": 113560
       },
       {
         "number": "A5",
-        "title": "It Doesn't Matter Two"
+        "title": "It Doesn't Matter Two",
+        "length": 167773
       },
       {
         "number": "B1",
-        "title": "A Question of Time"
+        "title": "A Question of Time",
+        "length": 249026
       },
       {
         "number": "B2",
-        "title": "Stripped"
+        "title": "Stripped",
+        "length": 256973
       },
       {
         "number": "B3",
-        "title": "Here Is the House"
+        "title": "Here Is the House",
+        "length": 256040
       },
       {
         "number": "B4",
-        "title": "World Full of Nothing"
+        "title": "World Full of Nothing",
+        "length": 166453
       },
       {
         "number": "B5",
-        "title": "Dressed in Black"
+        "title": "Dressed in Black",
+        "length": 151493
       },
       {
         "number": "B6",
-        "title": "New Dress"
+        "title": "New Dress",
+        "length": 221080
       }
     ],
     "front": "https://coverartarchive.org/release/786db0cb-0f4b-33b4-afe5-4d768e6fed33/15648221019.jpg",

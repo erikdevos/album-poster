@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875969133,
+  "v": 2,
+  "fetchedAt": 1792953102029,
   "album": {
     "id": "2187d248-1a3b-35d0-a4ec-bead586ff547",
     "title": "Fallen",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Going Under"
+        "title": "Going Under",
+        "length": 214946
       },
       {
         "number": "2",
-        "title": "Bring Me to Life"
+        "title": "Bring Me to Life",
+        "length": 237293
       },
       {
         "number": "3",
-        "title": "Everybody’s Fool"
+        "title": "Everybody’s Fool",
+        "length": 195880
       },
       {
         "number": "4",
-        "title": "My Immortal"
+        "title": "My Immortal",
+        "length": 264213
       },
       {
         "number": "5",
-        "title": "Haunted"
+        "title": "Haunted",
+        "length": 186653
       },
       {
         "number": "6",
-        "title": "Tourniquet"
+        "title": "Tourniquet",
+        "length": 278066
       },
       {
         "number": "7",
-        "title": "Imaginary"
+        "title": "Imaginary",
+        "length": 257519
       },
       {
         "number": "8",
-        "title": "Taking Over Me"
+        "title": "Taking Over Me",
+        "length": 229973
       },
       {
         "number": "9",
-        "title": "Hello"
+        "title": "Hello",
+        "length": 220360
       },
       {
         "number": "10",
-        "title": "My Last Breath"
+        "title": "My Last Breath",
+        "length": 247333
       },
       {
         "number": "11",
-        "title": "Whisper"
+        "title": "Whisper",
+        "length": 330026
       },
       {
         "number": "12",
-        "title": "My Immortal (band version)"
+        "title": "My Immortal (band version)",
+        "length": 273360
       }
     ],
     "front": "https://coverartarchive.org/release/9bded46c-c0c9-4b31-85dc-6d0f90225407/36133922467-1200.jpg",

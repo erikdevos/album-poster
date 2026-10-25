@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875878358,
+  "v": 2,
+  "fetchedAt": 1792952989881,
   "album": {
     "id": "286591d4-ade8-4d24-a804-7024a9b565a4",
     "title": "My Dear Melancholy,",
@@ -12,27 +12,33 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Call Out My Name"
+        "title": "Call Out My Name",
+        "length": 228382
       },
       {
         "number": "2",
-        "title": "Try Me"
+        "title": "Try Me",
+        "length": 221101
       },
       {
         "number": "3",
-        "title": "Wasted Times"
+        "title": "Wasted Times",
+        "length": 220295
       },
       {
         "number": "4",
-        "title": "I Was Never There"
+        "title": "I Was Never There",
+        "length": 241070
       },
       {
         "number": "5",
-        "title": "Hurt You"
+        "title": "Hurt You",
+        "length": 230028
       },
       {
         "number": "6",
-        "title": "Privilege"
+        "title": "Privilege",
+        "length": 170510
       }
     ],
     "front": "https://coverartarchive.org/release/769e3e26-10ae-4f67-a42e-fb8f633c95da/19682539941-1200.jpg",

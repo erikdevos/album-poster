@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875853138,
+  "v": 2,
+  "fetchedAt": 1792952963486,
   "album": {
     "id": "cbffb669-c390-3a4d-b46f-1be8ea934b03",
     "title": "Songs for the Deaf",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Real Song for the Deaf"
+        "title": "The Real Song for the Deaf",
+        "length": 91947
       },
       {
         "number": "2",
-        "title": "You Think I Ain’t Worth a Dollar, but I Feel Like a Millionaire"
+        "title": "You Think I Ain’t Worth a Dollar, but I Feel Like a Millionaire",
+        "length": 193693
       },
       {
         "number": "3",
-        "title": "No One Knows"
+        "title": "No One Knows",
+        "length": 278653
       },
       {
         "number": "4",
-        "title": "First It Giveth"
+        "title": "First It Giveth",
+        "length": 198413
       },
       {
         "number": "5",
-        "title": "Song for the Dead"
+        "title": "Song for the Dead",
+        "length": 352400
       },
       {
         "number": "6",
-        "title": "The Sky Is Fallin’"
+        "title": "The Sky Is Fallin’",
+        "length": 375893
       },
       {
         "number": "7",
-        "title": "Six Shooter"
+        "title": "Six Shooter",
+        "length": 79307
       },
       {
         "number": "8",
-        "title": "Hanging Tree"
+        "title": "Hanging Tree",
+        "length": 186293
       },
       {
         "number": "9",
-        "title": "Go With the Flow"
+        "title": "Go With the Flow",
+        "length": 187107
       },
       {
         "number": "10",
-        "title": "Gonna Leave You"
+        "title": "Gonna Leave You",
+        "length": 170227
       },
       {
         "number": "11",
-        "title": "Do It Again"
+        "title": "Do It Again",
+        "length": 244440
       },
       {
         "number": "12",
-        "title": "God Is on the Radio"
+        "title": "God Is on the Radio",
+        "length": 365293
       },
       {
         "number": "13",
-        "title": "Another Love Song"
+        "title": "Another Love Song",
+        "length": 196200
       },
       {
         "number": "14",
-        "title": "Song for the Deaf"
+        "title": "Song for the Deaf",
+        "length": 372800
       },
       {
         "number": "15",
-        "title": "Mosquito Song"
+        "title": "Mosquito Song",
+        "length": 338507
       }
     ],
     "front": "https://coverartarchive.org/release/989e8e77-6263-45e6-a8e5-8228fed65532/28387489485-1200.jpg",

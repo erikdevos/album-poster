@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875930246,
+  "v": 2,
+  "fetchedAt": 1792953065822,
   "album": {
     "id": "a40c7843-979b-38a6-926a-efa31476c51c",
     "title": "Ultra",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Barrel of a Gun"
+        "title": "Barrel of a Gun",
+        "length": 335506
       },
       {
         "number": "2",
-        "title": "The Love Thieves"
+        "title": "The Love Thieves",
+        "length": 394200
       },
       {
         "number": "3",
-        "title": "Home"
+        "title": "Home",
+        "length": 342893
       },
       {
         "number": "4",
-        "title": "It's No Good"
+        "title": "It's No Good",
+        "length": 358533
       },
       {
         "number": "5",
-        "title": "Uselink"
+        "title": "Uselink",
+        "length": 141240
       },
       {
         "number": "6",
-        "title": "Useless"
+        "title": "Useless",
+        "length": 312266
       },
       {
         "number": "7",
-        "title": "Sister of Night"
+        "title": "Sister of Night",
+        "length": 364400
       },
       {
         "number": "8",
-        "title": "Jazz Thieves"
+        "title": "Jazz Thieves",
+        "length": 174933
       },
       {
         "number": "9",
-        "title": "Freestate"
+        "title": "Freestate",
+        "length": 403866
       },
       {
         "number": "10",
-        "title": "The Bottom Line"
+        "title": "The Bottom Line",
+        "length": 266893
       },
       {
         "number": "11",
-        "title": "Insight"
+        "title": "Insight",
+        "length": 386666
       },
       {
         "number": "12",
-        "title": "Junior Painkiller"
+        "title": "Junior Painkiller",
+        "length": 129773
       }
     ],
     "front": "https://coverartarchive.org/release/3e7e0454-c2b2-3976-b3d1-c9cdacff51ef/11289364430-1200.jpg",

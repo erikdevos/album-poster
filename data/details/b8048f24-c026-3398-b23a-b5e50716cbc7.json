@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875830947,
+  "v": 2,
+  "fetchedAt": 1792952941977,
   "album": {
     "id": "b8048f24-c026-3398-b23a-b5e50716cbc7",
     "title": "The Bends",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Planet Telex"
+        "title": "Planet Telex",
+        "length": 259200
       },
       {
         "number": "2",
-        "title": "The Bends"
+        "title": "The Bends",
+        "length": 246200
       },
       {
         "number": "3",
-        "title": "High and Dry"
+        "title": "High and Dry",
+        "length": 257533
       },
       {
         "number": "4",
-        "title": "Fake Plastic Trees"
+        "title": "Fake Plastic Trees",
+        "length": 290693
       },
       {
         "number": "5",
-        "title": "Bones"
+        "title": "Bones",
+        "length": 189000
       },
       {
         "number": "6",
-        "title": "(Nice Dream)"
+        "title": "(Nice Dream)",
+        "length": 233240
       },
       {
         "number": "7",
-        "title": "Just"
+        "title": "Just",
+        "length": 234093
       },
       {
         "number": "8",
-        "title": "My Iron Lung"
+        "title": "My Iron Lung",
+        "length": 276440
       },
       {
         "number": "9",
-        "title": "Bullet Proof..I Wish I Was"
+        "title": "Bullet Proof..I Wish I Was",
+        "length": 208733
       },
       {
         "number": "10",
-        "title": "Black Star"
+        "title": "Black Star",
+        "length": 247026
       },
       {
         "number": "11",
-        "title": "Sulk"
+        "title": "Sulk",
+        "length": 222973
       },
       {
         "number": "12",
-        "title": "Street Spirit (Fade Out)"
+        "title": "Street Spirit (Fade Out)",
+        "length": 252400
       }
     ],
     "front": "https://coverartarchive.org/release/8af759be-1495-4cc4-85a7-47edc21fa348/32251121765-1200.jpg",

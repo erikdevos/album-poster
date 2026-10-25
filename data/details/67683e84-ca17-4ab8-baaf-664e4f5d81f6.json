@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875848418,
+  "v": 2,
+  "fetchedAt": 1792952958976,
   "album": {
     "id": "67683e84-ca17-4ab8-baaf-664e4f5d81f6",
     "title": "Welcome Oblivion",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Wake‐Up"
+        "title": "The Wake‐Up",
+        "length": 102706
       },
       {
         "number": "2",
-        "title": "Keep It Together"
+        "title": "Keep It Together",
+        "length": 266813
       },
       {
         "number": "3",
-        "title": "And the Sky Began to Scream"
+        "title": "And the Sky Began to Scream",
+        "length": 237160
       },
       {
         "number": "4",
-        "title": "Welcome Oblivion"
+        "title": "Welcome Oblivion",
+        "length": 227226
       },
       {
         "number": "5",
-        "title": "Ice Age"
+        "title": "Ice Age",
+        "length": 412173
       },
       {
         "number": "6",
-        "title": "On the Wing"
+        "title": "On the Wing",
+        "length": 292400
       },
       {
         "number": "7",
-        "title": "Too Late, All Gone"
+        "title": "Too Late, All Gone",
+        "length": 374893
       },
       {
         "number": "8",
-        "title": "How Long?"
+        "title": "How Long?",
+        "length": 233666
       },
       {
         "number": "9",
-        "title": "Strings and Attractors"
+        "title": "Strings and Attractors",
+        "length": 268266
       },
       {
         "number": "10",
-        "title": "We Fade Away"
+        "title": "We Fade Away",
+        "length": 401440
       },
       {
         "number": "11",
-        "title": "Recursive Self‐Improvement"
+        "title": "Recursive Self‐Improvement",
+        "length": 387893
       },
       {
         "number": "12",
-        "title": "The Loop Closes"
+        "title": "The Loop Closes",
+        "length": 290186
       },
       {
         "number": "13",
-        "title": "Hallowed Ground"
+        "title": "Hallowed Ground",
+        "length": 439133
       }
     ],
     "front": "https://coverartarchive.org/release/fd255089-2489-4a2c-af2f-ed8a4e98ccb2/6299533987.jpg",

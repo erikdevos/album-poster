@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875911518,
+  "v": 2,
+  "fetchedAt": 1792953036425,
   "album": {
     "id": "87f70591-69e0-4654-b099-dc47bf3141f7",
     "title": "The Girl in the Tower",
@@ -12,84 +12,103 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Nightmare (live)"
+        "title": "Nightmare (live)",
+        "length": 297000
       },
       {
         "number": "2",
-        "title": "I Am Not a Woman, I’m a God (live)"
+        "title": "I Am Not a Woman, I’m a God (live)",
+        "length": 211000
       },
       {
         "number": "3",
-        "title": "Castle (live)"
+        "title": "Castle (live)",
+        "length": 400000
       },
       {
         "number": "4",
-        "title": "Easier Than Lying (live)"
+        "title": "Easier Than Lying (live)",
+        "length": 234000
       },
       {
         "number": "5",
-        "title": "Dog Years (live)"
+        "title": "Dog Years (live)",
+        "length": 270000
       },
       {
         "number": "6",
-        "title": "You Asked for This (live)"
+        "title": "You Asked for This (live)",
+        "length": 257000
       },
       {
         "number": "7",
-        "title": "Experiment on Me (live)"
+        "title": "Experiment on Me (live)",
+        "length": 302000
       },
       {
         "number": "8",
-        "title": "Closer (live)"
+        "title": "Closer (live)",
+        "length": 225000
       },
       {
         "number": "9",
-        "title": "Honey (live)"
+        "title": "Honey (live)",
+        "length": 270000
       },
       {
         "number": "10",
-        "title": "Lighthouse (live)"
+        "title": "Lighthouse (live)",
+        "length": 296000
       },
       {
         "number": "11",
-        "title": "Colors (live)"
+        "title": "Colors (live)",
+        "length": 304000
       },
       {
         "number": "12",
-        "title": "Without Me (live)"
+        "title": "Without Me (live)",
+        "length": 301000
       },
       {
         "number": "13",
-        "title": "Hurricane (live)"
+        "title": "Hurricane (live)",
+        "length": 288000
       },
       {
         "number": "14",
-        "title": "Lie (live)"
+        "title": "Lie (live)",
+        "length": 176000
       },
       {
         "number": "15",
-        "title": "Gasoline (live)"
+        "title": "Gasoline (live)",
+        "length": 254000
       },
       {
         "number": "16",
-        "title": "Lonely Is the Muse (live)"
+        "title": "Lonely Is the Muse (live)",
+        "length": 331000
       },
       {
         "number": "17",
-        "title": "Bells in Santa Fe (live)"
+        "title": "Bells in Santa Fe (live)",
+        "length": 247000
       },
       {
         "number": "18",
-        "title": "People Disappear Here (live)"
+        "title": "People Disappear Here (live)",
+        "length": 230000
       },
       {
         "number": "19",
-        "title": "Bad at Love (live)"
+        "title": "Bad at Love (live)",
+        "length": 209280
       }
     ],
-    "front": "",
+    "front": "https://coverartarchive.org/release/1397adec-2b5d-4cdf-9b41-4be5298df77f/46326083585-1200.jpg",
     "back": "",
-    "frontFull": "",
+    "frontFull": "https://coverartarchive.org/release/1397adec-2b5d-4cdf-9b41-4be5298df77f/46326083585.jpg",
     "backFull": ""
   }
 }

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875801017,
+  "v": 2,
+  "fetchedAt": 1792952909078,
   "album": {
     "id": "160d64d4-75ee-4097-a3a8-3c1d690c0d94",
     "title": "Broken Machine",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "I Was Just a Kid"
+        "title": "I Was Just a Kid",
+        "length": 270000
       },
       {
         "number": "2",
-        "title": "Amsterdam"
+        "title": "Amsterdam",
+        "length": 272000
       },
       {
         "number": "3",
-        "title": "Sorry"
+        "title": "Sorry",
+        "length": 214000
       },
       {
         "number": "4",
-        "title": "Broken Machine"
+        "title": "Broken Machine",
+        "length": 234000
       },
       {
         "number": "5",
-        "title": "Live Like Animals"
+        "title": "Live Like Animals",
+        "length": 250000
       },
       {
         "number": "6",
-        "title": "Soda"
+        "title": "Soda",
+        "length": 236000
       },
       {
         "number": "7",
-        "title": "I'm Not Made by Design"
+        "title": "I'm Not Made by Design",
+        "length": 232000
       },
       {
         "number": "8",
-        "title": "Particles"
+        "title": "Particles",
+        "length": 235000
       },
       {
         "number": "9",
-        "title": "Get Better"
+        "title": "Get Better",
+        "length": 199000
       },
       {
         "number": "10",
-        "title": "Hell, Yeah"
+        "title": "Hell, Yeah",
+        "length": 186000
       },
       {
         "number": "11",
-        "title": "Afterlife"
+        "title": "Afterlife",
+        "length": 283000
       }
     ],
     "front": "https://coverartarchive.org/release/c83dc1c3-e728-4030-a2ff-4e064ccdae28/19004917092-1200.jpg",

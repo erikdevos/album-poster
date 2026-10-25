@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875864767,
+  "v": 2,
+  "fetchedAt": 1792952975632,
   "album": {
     "id": "c9018967-1382-47e4-87ac-486a824cd81d",
     "title": "My 21st Century Blues.",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Introduction."
+        "title": "Introduction.",
+        "length": 57813
       },
       {
         "number": "2",
-        "title": "Oscar Winning Tears."
+        "title": "Oscar Winning Tears.",
+        "length": 183653
       },
       {
         "number": "3",
-        "title": "Hard Out Here."
+        "title": "Hard Out Here.",
+        "length": 191164
       },
       {
         "number": "4",
-        "title": "Black Mascara."
+        "title": "Black Mascara.",
+        "length": 239787
       },
       {
         "number": "5",
-        "title": "Escapism."
+        "title": "Escapism.",
+        "length": 272373
       },
       {
         "number": "6",
-        "title": "Mary Jane."
+        "title": "Mary Jane.",
+        "length": 232053
       },
       {
         "number": "7",
-        "title": "The Thrill Is Gone."
+        "title": "The Thrill Is Gone.",
+        "length": 199293
       },
       {
         "number": "8",
-        "title": "Ice Cream Man."
+        "title": "Ice Cream Man.",
+        "length": 248733
       },
       {
         "number": "9",
-        "title": "Flip a Switch."
+        "title": "Flip a Switch.",
+        "length": 201373
       },
       {
         "number": "10",
-        "title": "Body Dysmorphia."
+        "title": "Body Dysmorphia.",
+        "length": 153107
       },
       {
         "number": "11",
-        "title": "Environmental Anxiety."
+        "title": "Environmental Anxiety.",
+        "length": 194093
       },
       {
         "number": "12",
-        "title": "Five Star Hotels."
+        "title": "Five Star Hotels.",
+        "length": 204440
       },
       {
         "number": "13",
-        "title": "Worth It."
+        "title": "Worth It.",
+        "length": 246813
       },
       {
         "number": "14",
-        "title": "Buss It Down."
+        "title": "Buss It Down.",
+        "length": 156880
       },
       {
         "number": "15",
-        "title": "Fin."
+        "title": "Fin.",
+        "length": 30867
       }
     ],
     "front": "https://coverartarchive.org/release/904d62fe-3d1d-4520-bc53-37be816009fe/33893717664-1200.jpg",

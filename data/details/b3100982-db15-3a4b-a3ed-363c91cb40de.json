@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875964272,
+  "v": 2,
+  "fetchedAt": 1792953098766,
   "album": {
     "id": "b3100982-db15-3a4b-a3ed-363c91cb40de",
     "title": "Some Great Reward",
@@ -12,39 +12,48 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "Something to Do"
+        "title": "Something to Do",
+        "length": 226933
       },
       {
         "number": "A2",
-        "title": "Lie to Me"
+        "title": "Lie to Me",
+        "length": 303706
       },
       {
         "number": "A3",
-        "title": "People Are People"
+        "title": "People Are People",
+        "length": 232026
       },
       {
         "number": "A4",
-        "title": "It Doesn't Matter"
+        "title": "It Doesn't Matter",
+        "length": 285066
       },
       {
         "number": "A5",
-        "title": "Stories of Old"
+        "title": "Stories of Old",
+        "length": 194173
       },
       {
         "number": "B1",
-        "title": "Somebody"
+        "title": "Somebody",
+        "length": 267400
       },
       {
         "number": "B2",
-        "title": "Master and Servant"
+        "title": "Master and Servant",
+        "length": 252893
       },
       {
         "number": "B3",
-        "title": "If You Want"
+        "title": "If You Want",
+        "length": 280866
       },
       {
         "number": "B4",
-        "title": "Blasphemous Rumours"
+        "title": "Blasphemous Rumours",
+        "length": 382440
       }
     ],
     "front": "https://coverartarchive.org/release/3e3a9c1d-aee4-4f73-9376-fbe70e8366d8/9000459494.jpg",

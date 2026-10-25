@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876391036,
+  "v": 2,
+  "fetchedAt": 1792952825557,
   "album": {
     "id": "6f151223-f3a3-3e57-810f-598f7897006c",
     "title": "Absolution",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Intro"
+        "title": "Intro",
+        "length": 22131
       },
       {
         "number": "2",
-        "title": "Apocalypse Please"
+        "title": "Apocalypse Please",
+        "length": 252496
       },
       {
         "number": "3",
-        "title": "Time Is Running Out"
+        "title": "Time Is Running Out",
+        "length": 236535
       },
       {
         "number": "4",
-        "title": "Sing for Absolution"
+        "title": "Sing for Absolution",
+        "length": 295767
       },
       {
         "number": "5",
-        "title": "Stockholm Syndrome"
+        "title": "Stockholm Syndrome",
+        "length": 296173
       },
       {
         "number": "6",
-        "title": "Falling Away With You"
+        "title": "Falling Away With You",
+        "length": 279685
       },
       {
         "number": "7",
-        "title": "Interlude"
+        "title": "Interlude",
+        "length": 38469
       },
       {
         "number": "8",
-        "title": "Hysteria"
+        "title": "Hysteria",
+        "length": 227023
       },
       {
         "number": "9",
-        "title": "Blackout"
+        "title": "Blackout",
+        "length": 262064
       },
       {
         "number": "10",
-        "title": "Butterflies & Hurricanes"
+        "title": "Butterflies & Hurricanes",
+        "length": 302505
       },
       {
         "number": "11",
-        "title": "The Small Print"
+        "title": "The Small Print",
+        "length": 208737
       },
       {
         "number": "12",
-        "title": "Fury"
+        "title": "Fury",
+        "length": 300715
       },
       {
         "number": "13",
-        "title": "Endlessly"
+        "title": "Endlessly",
+        "length": 228407
       },
       {
         "number": "14",
-        "title": "Thoughts of a Dying Atheist"
+        "title": "Thoughts of a Dying Atheist",
+        "length": 188074
       },
       {
         "number": "15",
-        "title": "Ruled by Secrecy"
+        "title": "Ruled by Secrecy",
+        "length": 292568
       }
     ],
     "front": "https://coverartarchive.org/release/c3a12ca6-b9da-4204-974a-aaed7a04aca4/37279469776-1200.jpg",

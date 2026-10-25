@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875867045,
+  "v": 2,
+  "fetchedAt": 1792952977214,
   "album": {
     "id": "fed1608d-80b7-38d2-aeb8-c6357f0d4c23",
     "title": "Straight Outta Compton",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "Straight Outta Compton"
+        "title": "Straight Outta Compton",
+        "length": 258000
       },
       {
         "number": "A2",
-        "title": "Fuck tha Police"
+        "title": "Fuck tha Police",
+        "length": 346000
       },
       {
         "number": "A3",
-        "title": "Gangsta Gangsta"
+        "title": "Gangsta Gangsta",
+        "length": 336000
       },
       {
         "number": "A4",
-        "title": "If It Ain’t Ruff"
+        "title": "If It Ain’t Ruff",
+        "length": 214000
       },
       {
         "number": "A5",
-        "title": "Parental Discretion Iz Advised"
+        "title": "Parental Discretion Iz Advised",
+        "length": 315000
       },
       {
         "number": "B1",
-        "title": "Express Yourself"
+        "title": "Express Yourself",
+        "length": 265000
       },
       {
         "number": "B2",
-        "title": "Compton’s N the House (remix)"
+        "title": "Compton’s N the House (remix)",
+        "length": 320000
       },
       {
         "number": "B3",
-        "title": "I Ain’t tha 1"
+        "title": "I Ain’t tha 1",
+        "length": 294000
       },
       {
         "number": "B4",
-        "title": "Dopeman (remix)"
+        "title": "Dopeman (remix)",
+        "length": 320000
       },
       {
         "number": "B5",
-        "title": "Quiet on tha Set"
+        "title": "Quiet on tha Set",
+        "length": 239000
       }
     ],
     "front": "https://coverartarchive.org/release/d930166c-e5b6-420d-8177-e62f351f6859/5658377319-1200.jpg",

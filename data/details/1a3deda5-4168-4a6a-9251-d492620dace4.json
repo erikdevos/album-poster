@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875917695,
+  "v": 2,
+  "fetchedAt": 1792953048065,
   "album": {
     "id": "1a3deda5-4168-4a6a-9251-d492620dace4",
     "title": "Eat the Elephant",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Eat the Elephant"
+        "title": "Eat the Elephant",
+        "length": 313640
       },
       {
         "number": "2",
-        "title": "Disillusioned"
+        "title": "Disillusioned",
+        "length": 353986
       },
       {
         "number": "3",
-        "title": "The Contrarian"
+        "title": "The Contrarian",
+        "length": 238533
       },
       {
         "number": "4",
-        "title": "The Doomed"
+        "title": "The Doomed",
+        "length": 281626
       },
       {
         "number": "5",
-        "title": "So Long, and Thanks for All the Fish"
+        "title": "So Long, and Thanks for All the Fish",
+        "length": 266093
       },
       {
         "number": "6",
-        "title": "TalkTalk"
+        "title": "TalkTalk",
+        "length": 248906
       },
       {
         "number": "7",
-        "title": "By and Down the River"
+        "title": "By and Down the River",
+        "length": 304906
       },
       {
         "number": "8",
-        "title": "Delicious"
+        "title": "Delicious",
+        "length": 229506
       },
       {
         "number": "9",
-        "title": "DLB"
+        "title": "DLB",
+        "length": 126746
       },
       {
         "number": "10",
-        "title": "Hourglass"
+        "title": "Hourglass",
+        "length": 314333
       },
       {
         "number": "11",
-        "title": "Feathers"
+        "title": "Feathers",
+        "length": 348320
       },
       {
         "number": "12",
-        "title": "Get the Lead Out"
+        "title": "Get the Lead Out",
+        "length": 400640
       }
     ],
     "front": "https://coverartarchive.org/release/ce453e20-af3a-400c-b7d5-5e6d01f101eb/39257526690-1200.jpg",

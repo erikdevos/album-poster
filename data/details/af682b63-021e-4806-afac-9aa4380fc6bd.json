@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875973037,
+  "v": 2,
+  "fetchedAt": 1792953105839,
   "album": {
     "id": "af682b63-021e-4806-afac-9aa4380fc6bd",
     "title": "Living Things",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Lost in the Echo"
+        "title": "Lost in the Echo",
+        "length": 205117
       },
       {
         "number": "2",
-        "title": "In My Remains"
+        "title": "In My Remains",
+        "length": 200686
       },
       {
         "number": "3",
-        "title": "Burn It Down"
+        "title": "Burn It Down",
+        "length": 230259
       },
       {
         "number": "4",
-        "title": "Lies Greed Misery"
+        "title": "Lies Greed Misery",
+        "length": 146487
       },
       {
         "number": "5",
-        "title": "I’ll Be Gone"
+        "title": "I’ll Be Gone",
+        "length": 211085
       },
       {
         "number": "6",
-        "title": "Castle of Glass"
+        "title": "Castle of Glass",
+        "length": 205395
       },
       {
         "number": "7",
-        "title": "Victimized"
+        "title": "Victimized",
+        "length": 106348
       },
       {
         "number": "8",
-        "title": "Roads Untraveled"
+        "title": "Roads Untraveled",
+        "length": 229932
       },
       {
         "number": "9",
-        "title": "Skin to Bone"
+        "title": "Skin to Bone",
+        "length": 168345
       },
       {
         "number": "10",
-        "title": "Until It Breaks"
+        "title": "Until It Breaks",
+        "length": 223402
       },
       {
         "number": "11",
-        "title": "Tinfoil"
+        "title": "Tinfoil",
+        "length": 71896
       },
       {
         "number": "12",
-        "title": "Powerless"
+        "title": "Powerless",
+        "length": 224467
       }
     ],
     "front": "https://coverartarchive.org/release/6c48c82c-b7df-4b0b-987d-666ec8271afb/17454038939-1200.jpg",

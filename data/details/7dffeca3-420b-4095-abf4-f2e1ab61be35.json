@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875912614,
+  "v": 2,
+  "fetchedAt": 1792953040003,
   "album": {
     "id": "7dffeca3-420b-4095-abf4-f2e1ab61be35",
     "title": "The Wow! Signal",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Dark Forest"
+        "title": "The Dark Forest",
+        "length": 316000
       },
       {
         "number": "2",
-        "title": "Nightshift Superstar"
+        "title": "Nightshift Superstar",
+        "length": 247000
       },
       {
         "number": "3",
-        "title": "Shimmering Scars"
+        "title": "Shimmering Scars",
+        "length": 268000
       },
       {
         "number": "4",
-        "title": "Cryogen"
+        "title": "Cryogen",
+        "length": 301000
       },
       {
         "number": "5",
-        "title": "Be With You"
+        "title": "Be With You",
+        "length": 215000
       },
       {
         "number": "6",
-        "title": "Hexagons"
+        "title": "Hexagons",
+        "length": 326000
       },
       {
         "number": "7",
-        "title": "The Sickness in You & I"
+        "title": "The Sickness in You & I",
+        "length": 257000
       },
       {
         "number": "8",
-        "title": "Unravelling"
+        "title": "Unravelling",
+        "length": 238000
       },
       {
         "number": "9",
-        "title": "Hush"
+        "title": "Hush",
+        "length": 236000
       },
       {
         "number": "10",
-        "title": "Space Debris"
+        "title": "Space Debris",
+        "length": 323000
       }
     ],
     "front": "https://coverartarchive.org/release/66f96b82-4cf1-41a7-82b1-ee075a91952b/44651000762-1200.jpg",

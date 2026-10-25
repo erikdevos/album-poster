@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876415546,
+  "v": 2,
+  "fetchedAt": 1792952843326,
   "album": {
     "id": "798e5814-9f96-46b2-a72a-408d67267661",
     "title": "If I Can’t Have Love, I Want Power",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Tradition"
+        "title": "The Tradition",
+        "length": 226000
       },
       {
         "number": "2",
-        "title": "Bells in Santa Fe"
+        "title": "Bells in Santa Fe",
+        "length": 218000
       },
       {
         "number": "3",
-        "title": "Easier Than Lying"
+        "title": "Easier Than Lying",
+        "length": 206000
       },
       {
         "number": "4",
-        "title": "Lilith"
+        "title": "Lilith",
+        "length": 167000
       },
       {
         "number": "5",
-        "title": "Girl Is a Gun"
+        "title": "Girl Is a Gun",
+        "length": 147000
       },
       {
         "number": "6",
-        "title": "You asked for this"
+        "title": "You asked for this",
+        "length": 266000
       },
       {
         "number": "7",
-        "title": "Darling"
+        "title": "Darling",
+        "length": 182000
       },
       {
         "number": "8",
-        "title": "1121"
+        "title": "1121",
+        "length": 163000
       },
       {
         "number": "9",
-        "title": "honey"
+        "title": "honey",
+        "length": 174000
       },
       {
         "number": "10",
-        "title": "Whispers"
+        "title": "Whispers",
+        "length": 192000
       },
       {
         "number": "11",
-        "title": "I am not a woman, I’m a god"
+        "title": "I am not a woman, I’m a god",
+        "length": 176000
       },
       {
         "number": "12",
-        "title": "The Lighthouse"
+        "title": "The Lighthouse",
+        "length": 273000
       },
       {
         "number": "13",
-        "title": "Ya’aburnee"
+        "title": "Ya’aburnee",
+        "length": 188000
       }
     ],
     "front": "https://coverartarchive.org/release/158a7931-9a39-4f57-90de-8dddede10b94/30252563830-1200.jpg",

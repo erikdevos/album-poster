@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876014419,
+  "v": 2,
+  "fetchedAt": 1792953139628,
   "album": {
     "id": "d33e8019-7f8e-3c11-ab29-d5e573902049",
     "title": "Error",
@@ -12,23 +12,28 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Nothing’s Working"
+        "title": "Nothing’s Working",
+        "length": 158333
       },
       {
         "number": "2",
-        "title": "Homicide"
+        "title": "Homicide",
+        "length": 226666
       },
       {
         "number": "3",
-        "title": "Burn in Hell"
+        "title": "Burn in Hell",
+        "length": 190693
       },
       {
         "number": "4",
-        "title": "Jack the Ripper"
+        "title": "Jack the Ripper",
+        "length": 214040
       },
       {
         "number": "5",
-        "title": "Brains Out"
+        "title": "Brains Out",
+        "length": 242733
       }
     ],
     "front": "https://coverartarchive.org/release/5f7171ac-8a60-40a3-b59b-c75e0595c808/1093705482.jpg",

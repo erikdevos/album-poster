@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875856301,
+  "v": 2,
+  "fetchedAt": 1792952967867,
   "album": {
     "id": "8300fe9c-0022-3c55-8a3e-8dc61f282e8c",
     "title": "Superunknown",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Let Me Drown"
+        "title": "Let Me Drown",
+        "length": 232000
       },
       {
         "number": "2",
-        "title": "My Wave"
+        "title": "My Wave",
+        "length": 312000
       },
       {
         "number": "3",
-        "title": "Fell on Black Days"
+        "title": "Fell on Black Days",
+        "length": 283000
       },
       {
         "number": "4",
-        "title": "Mailman"
+        "title": "Mailman",
+        "length": 266000
       },
       {
         "number": "5",
-        "title": "Superunknown"
+        "title": "Superunknown",
+        "length": 306000
       },
       {
         "number": "6",
-        "title": "Head Down"
+        "title": "Head Down",
+        "length": 369000
       },
       {
         "number": "7",
-        "title": "Black Hole Sun"
+        "title": "Black Hole Sun",
+        "length": 318000
       },
       {
         "number": "8",
-        "title": "Spoonman"
+        "title": "Spoonman",
+        "length": 246000
       },
       {
         "number": "9",
-        "title": "Limo Wreck"
+        "title": "Limo Wreck",
+        "length": 347000
       },
       {
         "number": "10",
-        "title": "The Day I Tried to Live"
+        "title": "The Day I Tried to Live",
+        "length": 320000
       },
       {
         "number": "11",
-        "title": "Kickstand"
+        "title": "Kickstand",
+        "length": 94000
       },
       {
         "number": "12",
-        "title": "Fresh Tendrils"
+        "title": "Fresh Tendrils",
+        "length": 256000
       },
       {
         "number": "13",
-        "title": "4th of July"
+        "title": "4th of July",
+        "length": 308000
       },
       {
         "number": "14",
-        "title": "Half"
+        "title": "Half",
+        "length": 134000
       },
       {
         "number": "15",
-        "title": "Like Suicide"
+        "title": "Like Suicide",
+        "length": 423000
       }
     ],
     "front": "https://coverartarchive.org/release/76c4b437-5af1-46aa-946b-fadd2d378003/45124521191-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876445868,
+  "v": 2,
+  "fetchedAt": 1792952898056,
   "album": {
     "id": "c3f7093d-5a86-45ed-afa6-2413538074c2",
     "title": "Audio, Video, Disco.",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Horsepower"
+        "title": "Horsepower",
+        "length": 220080
       },
       {
         "number": "2",
-        "title": "Civilization"
+        "title": "Civilization",
+        "length": 218800
       },
       {
         "number": "3",
-        "title": "Ohio"
+        "title": "Ohio",
+        "length": 241240
       },
       {
         "number": "4",
-        "title": "Canon (primo)"
+        "title": "Canon (primo)",
+        "length": 27293
       },
       {
         "number": "5",
-        "title": "Canon"
+        "title": "Canon",
+        "length": 219040
       },
       {
         "number": "6",
-        "title": "On’n’On"
+        "title": "On’n’On",
+        "length": 270720
       },
       {
         "number": "7",
-        "title": "Brianvision"
+        "title": "Brianvision",
+        "length": 191880
       },
       {
         "number": "8",
-        "title": "Parade"
+        "title": "Parade",
+        "length": 241586
       },
       {
         "number": "9",
-        "title": "New Lands"
+        "title": "New Lands",
+        "length": 254493
       },
       {
         "number": "10",
-        "title": "Helix"
+        "title": "Helix",
+        "length": 268000
       },
       {
         "number": "11",
-        "title": "Audio, Video, Disco. / Presence"
+        "title": "Audio, Video, Disco. / Presence",
+        "length": 631533
       }
     ],
     "front": "",

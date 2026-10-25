@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875873304,
+  "v": 2,
+  "fetchedAt": 1792952983961,
   "album": {
     "id": "a85b8aff-fcbc-4431-95ba-d8c20bbfb77e",
     "title": "Beauty Behind the Madness",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Real Life"
+        "title": "Real Life",
+        "length": 223346
       },
       {
         "number": "2",
-        "title": "Losers"
+        "title": "Losers",
+        "length": 281173
       },
       {
         "number": "3",
-        "title": "Tell Your Friends"
+        "title": "Tell Your Friends",
+        "length": 334320
       },
       {
         "number": "4",
-        "title": "Often"
+        "title": "Often",
+        "length": 249093
       },
       {
         "number": "5",
-        "title": "The Hills"
+        "title": "The Hills",
+        "length": 242240
       },
       {
         "number": "6",
-        "title": "Acquainted"
+        "title": "Acquainted",
+        "length": 348826
       },
       {
         "number": "7",
-        "title": "Can’t Feel My Face"
+        "title": "Can’t Feel My Face",
+        "length": 213520
       },
       {
         "number": "8",
-        "title": "Shameless"
+        "title": "Shameless",
+        "length": 253506
       },
       {
         "number": "9",
-        "title": "Earned It (Fifty Shades of Grey)"
+        "title": "Earned It (Fifty Shades of Grey)",
+        "length": 277680
       },
       {
         "number": "10",
-        "title": "In the Night"
+        "title": "In the Night",
+        "length": 235653
       },
       {
         "number": "11",
-        "title": "As You Are"
+        "title": "As You Are",
+        "length": 340493
       },
       {
         "number": "12",
-        "title": "Dark Times"
+        "title": "Dark Times",
+        "length": 260640
       },
       {
         "number": "13",
-        "title": "Prisoner"
+        "title": "Prisoner",
+        "length": 274960
       },
       {
         "number": "14",
-        "title": "Angel"
+        "title": "Angel",
+        "length": 377346
       }
     ],
     "front": "https://coverartarchive.org/release/44ae223a-3963-415f-8a35-8958543fd576/29197443146-1200.jpg",

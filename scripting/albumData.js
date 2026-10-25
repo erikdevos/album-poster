@@ -71,6 +71,8 @@ const text = (value, what, { required = false } = {}) => {
     if (required && !value.trim()) throw new Error(`${what} is empty.`)
     return value
 }
+// A track length in milliseconds, or null when it is not known (or cannot be right: under a day is fine)
+const trackLength = value => Number.isFinite(value) && value > 0 && value < 86_400_000 ? Math.round(value) : null
 const url = (value, what) => {
     if (value !== '' && !/^https:\/\//.test(text(value, what))) throw new Error(`${what} has to be an https link or empty.`)
     return value
@@ -97,7 +99,11 @@ export function validateDetails(record, id) {
             barcode: text(album.barcode ?? '', 'The barcode'),
             label: text(album.label ?? '', 'The label'),
             genre: text(album.genre ?? '', 'The genre'),
-            tracks: album.tracks.map(track => ({ number: text(String(track.number ?? ''), 'A track number'), title: text(track.title ?? '', 'A track title') })),
+            tracks: album.tracks.map(track => ({
+                number: text(String(track.number ?? ''), 'A track number'),
+                title: text(track.title ?? '', 'A track title'),
+                length: trackLength(track.length)
+            })),
             front: url(album.front ?? '', 'The cover'),
             back: url(album.back ?? '', 'The back cover'),
             frontFull: url(album.frontFull ?? '', 'The original cover'),

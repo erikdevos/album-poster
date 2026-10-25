@@ -2,6 +2,7 @@ import { getAlbum, isValidId } from './source.js'
 import { setLoading, showMessage, clearMessage } from './feedback.js'
 import { crossfade } from './crossfade.js'
 import { barcodeSvg } from './barcode.js'
+import { formatTrackLength, albumLength, formatAlbumLength } from './duration.js'
 
 let currentRequest = null
 
@@ -65,6 +66,7 @@ export function renderAlbum(album) {
     setField('album-label', album.label)
     setField('album-year', album.year)
     setField('album-genre', album.genre)
+    setField('album-length', formatAlbumLength(albumLength(album.tracks)))
 
     setImage('album-cover', album.front, album.frontFull, `Cover of ${album.title} by ${album.artist}`)
     setImage('album-cover-back', album.back, album.backFull, `Back cover of ${album.title} by ${album.artist}`)
@@ -101,7 +103,8 @@ function setFit(album) {
 
 function renderTracks(tracks) {
     const trackListEl = document.getElementById('track-list')
-    const names = tracks.map(track => track.title).filter(Boolean)
+    const named = tracks.filter(track => track.title)
+    const names = named.map(track => track.title)
 
     if (names.length === 0) {
         const li = document.createElement('li')
@@ -117,9 +120,13 @@ function renderTracks(tracks) {
     trackListEl.replaceChildren(...names.map((name, index) => {
         const li = document.createElement('li')
         li.textContent = name
+        // the length, for the layouts that show it (as `attr(data-length)`)
+        const length = formatTrackLength(named[index].length)
+        if (length) li.dataset.length = length
         const side = index < half ? 'A' : 'B'
         const number = side === 'A' ? index + 1 : index - half + 1
         li.dataset.label = `${side}${number}`
+
         if (number === 1) li.dataset.sideStart = `Side ${side}`
         return li
     }))

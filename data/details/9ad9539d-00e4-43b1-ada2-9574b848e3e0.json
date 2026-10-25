@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875892885,
+  "v": 2,
+  "fetchedAt": 1792953005849,
   "album": {
     "id": "9ad9539d-00e4-43b1-ada2-9574b848e3e0",
     "title": "La Roux",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "In for the Kill"
+        "title": "In for the Kill",
+        "length": 248626
       },
       {
         "number": "2",
-        "title": "Tigerlily"
+        "title": "Tigerlily",
+        "length": 204666
       },
       {
         "number": "3",
-        "title": "Quicksand"
+        "title": "Quicksand",
+        "length": 185693
       },
       {
         "number": "4",
-        "title": "Bulletproof"
+        "title": "Bulletproof",
+        "length": 206986
       },
       {
         "number": "5",
-        "title": "Colourless Colour"
+        "title": "Colourless Colour",
+        "length": 208080
       },
       {
         "number": "6",
-        "title": "I’m Not Your Toy"
+        "title": "I’m Not Your Toy",
+        "length": 199386
       },
       {
         "number": "7",
-        "title": "Cover My Eyes"
+        "title": "Cover My Eyes",
+        "length": 272440
       },
       {
         "number": "8",
-        "title": "As If by Magic"
+        "title": "As If by Magic",
+        "length": 231893
       },
       {
         "number": "9",
-        "title": "Fascination"
+        "title": "Fascination",
+        "length": 221680
       },
       {
         "number": "10",
-        "title": "Reflections Are Protection"
+        "title": "Reflections Are Protection",
+        "length": 260413
       },
       {
         "number": "11",
-        "title": "Armour Love"
+        "title": "Armour Love",
+        "length": 352960
       },
       {
         "number": "12",
-        "title": "Growing Pains"
+        "title": "Growing Pains",
+        "length": 206986
       }
     ],
     "front": "https://coverartarchive.org/release/5b4535a1-c786-41c6-b977-f157c67f5513/15084303685-1200.jpg",

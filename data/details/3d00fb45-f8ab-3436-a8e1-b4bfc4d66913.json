@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875809006,
+  "v": 2,
+  "fetchedAt": 1792952920757,
   "album": {
     "id": "3d00fb45-f8ab-3436-a8e1-b4bfc4d66913",
     "title": "Master of Puppets",
@@ -12,35 +12,43 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "Battery"
+        "title": "Battery",
+        "length": 310000
       },
       {
         "number": "A2",
-        "title": "Master of Puppets"
+        "title": "Master of Puppets",
+        "length": 518293
       },
       {
         "number": "A3",
-        "title": "The Thing That Should Not Be"
+        "title": "The Thing That Should Not Be",
+        "length": 392000
       },
       {
         "number": "A4",
-        "title": "Welcome Home (Sanitarium)"
+        "title": "Welcome Home (Sanitarium)",
+        "length": 387626
       },
       {
         "number": "B1",
-        "title": "Disposable Heroes"
+        "title": "Disposable Heroes",
+        "length": 494000
       },
       {
         "number": "B2",
-        "title": "Leper Messiah"
+        "title": "Leper Messiah",
+        "length": 338000
       },
       {
         "number": "B3",
-        "title": "Orion"
+        "title": "Orion",
+        "length": 492000
       },
       {
         "number": "B4",
-        "title": "Damage, Inc."
+        "title": "Damage, Inc.",
+        "length": 308000
       }
     ],
     "front": "https://coverartarchive.org/release/1ac12ae0-d1ae-41e7-8514-07cb36d5c493/43409244175-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875946856,
+  "v": 2,
+  "fetchedAt": 1792953085743,
   "album": {
     "id": "406e4a2d-d632-40bc-8119-78f895a3f3c1",
     "title": "dont smile at me",
@@ -12,39 +12,48 @@
     "tracks": [
       {
         "number": "1",
-        "title": "COPYCAT"
+        "title": "COPYCAT",
+        "length": 193357
       },
       {
         "number": "2",
-        "title": "idontwannabeyouanymore"
+        "title": "idontwannabeyouanymore",
+        "length": 203569
       },
       {
         "number": "3",
-        "title": "my boy"
+        "title": "my boy",
+        "length": 170852
       },
       {
         "number": "4",
-        "title": "watch"
+        "title": "watch",
+        "length": 177523
       },
       {
         "number": "5",
-        "title": "party favor"
+        "title": "party favor",
+        "length": 204770
       },
       {
         "number": "6",
-        "title": "bellyache"
+        "title": "bellyache",
+        "length": 179172
       },
       {
         "number": "7",
-        "title": "ocean eyes"
+        "title": "ocean eyes",
+        "length": 200379
       },
       {
         "number": "8",
-        "title": "hostage"
+        "title": "hostage",
+        "length": 229426
       },
       {
         "number": "9",
-        "title": "&burn"
+        "title": "&burn",
+        "length": 179016
       }
     ],
     "front": "https://coverartarchive.org/release/d675890d-f14c-4a40-b791-c50432c2a22d/22042933816-1200.jpg",

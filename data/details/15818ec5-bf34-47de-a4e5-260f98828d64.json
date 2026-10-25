@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875900875,
+  "v": 2,
+  "fetchedAt": 1792953016607,
   "album": {
     "id": "15818ec5-bf34-47de-a4e5-260f98828d64",
     "title": "Talk That Talk",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "You da One"
+        "title": "You da One",
+        "length": 200013
       },
       {
         "number": "2",
-        "title": "Where Have You Been"
+        "title": "Where Have You Been",
+        "length": 242680
       },
       {
         "number": "3",
-        "title": "We Found Love"
+        "title": "We Found Love",
+        "length": 215226
       },
       {
         "number": "4",
-        "title": "Talk That Talk"
+        "title": "Talk That Talk",
+        "length": 209600
       },
       {
         "number": "5",
-        "title": "Cockiness (Love It)"
+        "title": "Cockiness (Love It)",
+        "length": 178026
       },
       {
         "number": "6",
-        "title": "Birthday Cake"
+        "title": "Birthday Cake",
+        "length": 78200
       },
       {
         "number": "7",
-        "title": "We All Want Love"
+        "title": "We All Want Love",
+        "length": 237013
       },
       {
         "number": "8",
-        "title": "Drunk on Love"
+        "title": "Drunk on Love",
+        "length": 212186
       },
       {
         "number": "9",
-        "title": "Roc Me Out"
+        "title": "Roc Me Out",
+        "length": 209266
       },
       {
         "number": "10",
-        "title": "Watch n’ Learn"
+        "title": "Watch n’ Learn",
+        "length": 211000
       },
       {
         "number": "11",
-        "title": "Farewell"
+        "title": "Farewell",
+        "length": 256320
       }
     ],
     "front": "https://coverartarchive.org/release/6c4c5763-1a3c-4b2f-88c0-18f60047b71e/32362057914-1200.jpg",

@@ -11,7 +11,7 @@ import { filterAlbums } from './wallList.js'
 
 // The version of what is stored. A record with another version is not used: bump it when the shape of
 // an album changes.
-export const SCHEMA = 1
+export const SCHEMA = 2 // 2: the tracks have a length
 export const TTL_MS = 30 * 24 * 60 * 60 * 1000
 const DB_NAME = 'album-poster'
 const STORE = 'albums'

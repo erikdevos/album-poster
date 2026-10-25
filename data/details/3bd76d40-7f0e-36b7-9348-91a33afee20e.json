@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875991152,
+  "v": 2,
+  "fetchedAt": 1792953119573,
   "album": {
     "id": "3bd76d40-7f0e-36b7-9348-91a33afee20e",
     "title": "Year Zero",
@@ -12,67 +12,83 @@
     "tracks": [
       {
         "number": "1",
-        "title": "HYPERPOWER!"
+        "title": "HYPERPOWER!",
+        "length": 101790
       },
       {
         "number": "2",
-        "title": "The Beginning of the End"
+        "title": "The Beginning of the End",
+        "length": 167397
       },
       {
         "number": "3",
-        "title": "Survivalism"
+        "title": "Survivalism",
+        "length": 263945
       },
       {
         "number": "4",
-        "title": "The Good Soldier"
+        "title": "The Good Soldier",
+        "length": 203177
       },
       {
         "number": "5",
-        "title": "Vessel"
+        "title": "Vessel",
+        "length": 292637
       },
       {
         "number": "6",
-        "title": "Me, I’m Not"
+        "title": "Me, I’m Not",
+        "length": 291864
       },
       {
         "number": "7",
-        "title": "Capital G"
+        "title": "Capital G",
+        "length": 230381
       },
       {
         "number": "8",
-        "title": "My Violent Heart"
+        "title": "My Violent Heart",
+        "length": 253587
       },
       {
         "number": "9",
-        "title": "The Warning"
+        "title": "The Warning",
+        "length": 218681
       },
       {
         "number": "10",
-        "title": "God Given"
+        "title": "God Given",
+        "length": 230937
       },
       {
         "number": "11",
-        "title": "Meet Your Master"
+        "title": "Meet Your Master",
+        "length": 248665
       },
       {
         "number": "12",
-        "title": "The Greater Good"
+        "title": "The Greater Good",
+        "length": 292024
       },
       {
         "number": "13",
-        "title": "The Great Destroyer"
+        "title": "The Great Destroyer",
+        "length": 198713
       },
       {
         "number": "14",
-        "title": "Another Version of the Truth"
+        "title": "Another Version of the Truth",
+        "length": 247981
       },
       {
         "number": "15",
-        "title": "In This Twilight"
+        "title": "In This Twilight",
+        "length": 213827
       },
       {
         "number": "16",
-        "title": "Zero Sum"
+        "title": "Zero Sum",
+        "length": 374287
       }
     ],
     "front": "https://coverartarchive.org/release/d8de198d-2162-4264-9cfe-926d92c4c7ad/34228141965-1200.jpg",

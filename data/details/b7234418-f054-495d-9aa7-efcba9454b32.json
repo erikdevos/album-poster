@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875908432,
+  "v": 2,
+  "fetchedAt": 1792953033635,
   "album": {
     "id": "b7234418-f054-495d-9aa7-efcba9454b32",
     "title": "PRIMA",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "KGB"
+        "title": "KGB",
+        "length": 157316
       },
       {
         "number": "2",
-        "title": "Nicole Kidman"
+        "title": "Nicole Kidman",
+        "length": 181270
       },
       {
         "number": "3",
-        "title": "I’m the Man"
+        "title": "I’m the Man",
+        "length": 150452
       },
       {
         "number": "4",
-        "title": "Boys"
+        "title": "Boys",
+        "length": 144692
       },
       {
         "number": "5",
-        "title": "Red Bottoms"
+        "title": "Red Bottoms",
+        "length": 186942
       },
       {
         "number": "6",
-        "title": "Hitachi"
+        "title": "Hitachi",
+        "length": 216059
       },
       {
         "number": "7",
-        "title": "Fantasize"
+        "title": "Fantasize",
+        "length": 183129
       },
       {
         "number": "8",
-        "title": "Starving Artist"
+        "title": "Starving Artist",
+        "length": 180153
       },
       {
         "number": "9",
-        "title": "Marijuana"
+        "title": "Marijuana",
+        "length": 110303
       },
       {
         "number": "10",
-        "title": "Therapy"
+        "title": "Therapy",
+        "length": 180313
       },
       {
         "number": "11",
-        "title": "Ain’t in LA"
+        "title": "Ain’t in LA",
+        "length": 184928
       }
     ],
     "front": "https://coverartarchive.org/release/264d60e5-36d0-4b3a-9529-dd57a2ac5c39/46101322026-1200.jpg",

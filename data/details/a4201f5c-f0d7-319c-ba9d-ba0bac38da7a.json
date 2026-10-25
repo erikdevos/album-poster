@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876427057,
+  "v": 2,
+  "fetchedAt": 1792952853429,
   "album": {
     "id": "a4201f5c-f0d7-319c-ba9d-ba0bac38da7a",
     "title": "Minutes to Midnight",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Wake"
+        "title": "Wake",
+        "length": 101000
       },
       {
         "number": "2",
-        "title": "Given Up (Clean)"
+        "title": "Given Up (Clean)",
+        "length": 189000
       },
       {
         "number": "3",
-        "title": "Leave Out All the Rest"
+        "title": "Leave Out All the Rest",
+        "length": 209000
       },
       {
         "number": "4",
-        "title": "Bleed It Out (Clean)"
+        "title": "Bleed It Out (Clean)",
+        "length": 164000
       },
       {
         "number": "5",
-        "title": "Shadow of the Day"
+        "title": "Shadow of the Day",
+        "length": 290000
       },
       {
         "number": "6",
-        "title": "What I’ve Done"
+        "title": "What I’ve Done",
+        "length": 206000
       },
       {
         "number": "7",
-        "title": "Hands Held High (Clean)"
+        "title": "Hands Held High (Clean)",
+        "length": 233000
       },
       {
         "number": "8",
-        "title": "No More Sorrow"
+        "title": "No More Sorrow",
+        "length": 222000
       },
       {
         "number": "9",
-        "title": "Valentine’s Day"
+        "title": "Valentine’s Day",
+        "length": 197000
       },
       {
         "number": "10",
-        "title": "In Between"
+        "title": "In Between",
+        "length": 197000
       },
       {
         "number": "11",
-        "title": "In Pieces"
+        "title": "In Pieces",
+        "length": 218000
       },
       {
         "number": "12",
-        "title": "The Little Things Give You Away"
+        "title": "The Little Things Give You Away",
+        "length": 383000
       },
       {
         "number": "13",
-        "title": "What I’ve Done (live)"
+        "title": "What I’ve Done (live)",
+        "length": 210000
       }
     ],
     "front": "https://coverartarchive.org/release/939c1e8b-7b8b-4e0e-894e-8a3333d18b17/22148796481-1200.jpg",

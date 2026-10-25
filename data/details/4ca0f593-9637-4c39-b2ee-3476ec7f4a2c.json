@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876004385,
+  "v": 2,
+  "fetchedAt": 1792953131900,
   "album": {
     "id": "4ca0f593-9637-4c39-b2ee-3476ec7f4a2c",
     "title": "Out of Ashes",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Fire"
+        "title": "Fire",
+        "length": 230000
       },
       {
         "number": "2",
-        "title": "Crawl Back In"
+        "title": "Crawl Back In",
+        "length": 182000
       },
       {
         "number": "3",
-        "title": "Too Late"
+        "title": "Too Late",
+        "length": 179000
       },
       {
         "number": "4",
-        "title": "Inside of Me"
+        "title": "Inside of Me",
+        "length": 138000
       },
       {
         "number": "5",
-        "title": "Let Down"
+        "title": "Let Down",
+        "length": 238000
       },
       {
         "number": "6",
-        "title": "Give Me Your Name"
+        "title": "Give Me Your Name",
+        "length": 296000
       },
       {
         "number": "7",
-        "title": "My Suffering"
+        "title": "My Suffering",
+        "length": 159000
       },
       {
         "number": "8",
-        "title": "Condemned"
+        "title": "Condemned",
+        "length": 152000
       },
       {
         "number": "9",
-        "title": "Into You"
+        "title": "Into You",
+        "length": 203000
       },
       {
         "number": "10",
-        "title": "End of the World"
+        "title": "End of the World",
+        "length": 236000
       },
       {
         "number": "11",
-        "title": "Walking in Circles"
+        "title": "Walking in Circles",
+        "length": 283000
       },
       {
         "number": "12",
-        "title": "In the Darkness"
+        "title": "In the Darkness",
+        "length": 328000
       },
       {
         "number": "13",
-        "title": "Morning After"
+        "title": "Morning After",
+        "length": 209000
       }
     ],
     "front": "https://coverartarchive.org/release/ef56e6cc-670c-4f48-9082-3ebcc0cfeab0/7374444802.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875949027,
+  "v": 2,
+  "fetchedAt": 1792953087038,
   "album": {
     "id": "9d9b3ac3-e630-4644-92c7-fb14d4d68d86",
     "title": "Ultraviolence",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Cruel World"
+        "title": "Cruel World",
+        "length": 399000
       },
       {
         "number": "2",
-        "title": "Ultraviolence"
+        "title": "Ultraviolence",
+        "length": 251000
       },
       {
         "number": "3",
-        "title": "Shades of Cool"
+        "title": "Shades of Cool",
+        "length": 342000
       },
       {
         "number": "4",
-        "title": "Brooklyn Baby"
+        "title": "Brooklyn Baby",
+        "length": 352000
       },
       {
         "number": "5",
-        "title": "West Coast"
+        "title": "West Coast",
+        "length": 257000
       },
       {
         "number": "6",
-        "title": "Sad Girl"
+        "title": "Sad Girl",
+        "length": 318000
       },
       {
         "number": "7",
-        "title": "Pretty When You Cry"
+        "title": "Pretty When You Cry",
+        "length": 234000
       },
       {
         "number": "8",
-        "title": "Money Power Glory"
+        "title": "Money Power Glory",
+        "length": 271000
       },
       {
         "number": "9",
-        "title": "Fucked My Way Up to the Top"
+        "title": "Fucked My Way Up to the Top",
+        "length": 212000
       },
       {
         "number": "10",
-        "title": "Old Money"
+        "title": "Old Money",
+        "length": 271000
       },
       {
         "number": "11",
-        "title": "The Other Woman"
+        "title": "The Other Woman",
+        "length": 182000
       },
       {
         "number": "12",
-        "title": "Black Beauty"
+        "title": "Black Beauty",
+        "length": 315000
       },
       {
         "number": "13",
-        "title": "Guns and Roses"
+        "title": "Guns and Roses",
+        "length": 271000
       },
       {
         "number": "14",
-        "title": "Florida Kilos"
+        "title": "Florida Kilos",
+        "length": 254000
       }
     ],
     "front": "https://coverartarchive.org/release/7689325c-923b-47d3-80cb-38d8e04b6e77/30640999452-1200.jpg",

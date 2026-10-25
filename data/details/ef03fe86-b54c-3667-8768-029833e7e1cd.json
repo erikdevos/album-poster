@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876389223,
+  "v": 2,
+  "fetchedAt": 1792952822841,
   "album": {
     "id": "ef03fe86-b54c-3667-8768-029833e7e1cd",
     "title": "Origin of Symmetry",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "New Born"
+        "title": "New Born",
+        "length": 363426
       },
       {
         "number": "2",
-        "title": "Bliss"
+        "title": "Bliss",
+        "length": 252533
       },
       {
         "number": "3",
-        "title": "Space Dementia"
+        "title": "Space Dementia",
+        "length": 380800
       },
       {
         "number": "4",
-        "title": "Hyper Music"
+        "title": "Hyper Music",
+        "length": 200893
       },
       {
         "number": "5",
-        "title": "Plug In Baby"
+        "title": "Plug In Baby",
+        "length": 218626
       },
       {
         "number": "6",
-        "title": "Citizen Erased"
+        "title": "Citizen Erased",
+        "length": 439133
       },
       {
         "number": "7",
-        "title": "Micro Cuts"
+        "title": "Micro Cuts",
+        "length": 218173
       },
       {
         "number": "8",
-        "title": "Screenager"
+        "title": "Screenager",
+        "length": 260519
       },
       {
         "number": "9",
-        "title": "Darkshines"
+        "title": "Darkshines",
+        "length": 286986
       },
       {
         "number": "10",
-        "title": "Feeling Good"
+        "title": "Feeling Good",
+        "length": 198106
       },
       {
         "number": "11",
-        "title": "Futurism"
+        "title": "Futurism",
+        "length": 207026
       },
       {
         "number": "12",
-        "title": "Megalomania"
+        "title": "Megalomania",
+        "length": 278173
       }
     ],
     "front": "https://coverartarchive.org/release/2a7a193e-c148-48fa-a39c-8d17e5cf3443/40599709259-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875846893,
+  "v": 2,
+  "fetchedAt": 1792952957105,
   "album": {
     "id": "f5093c06-23e3-404f-aeaa-40f72885ee3a",
     "title": "The Dark Side of the Moon",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "Speak to Me"
+        "title": "Speak to Me",
+        "length": 68346
       },
       {
         "number": "A2",
-        "title": "Breathe"
+        "title": "Breathe",
+        "length": 168720
       },
       {
         "number": "A3",
-        "title": "On the Run"
+        "title": "On the Run",
+        "length": 216000
       },
       {
         "number": "A4",
-        "title": "Time"
+        "title": "Time",
+        "length": 421000
       },
       {
         "number": "A5",
-        "title": "The Great Gig in the Sky"
+        "title": "The Great Gig in the Sky",
+        "length": 276000
       },
       {
         "number": "B1",
-        "title": "Money"
+        "title": "Money",
+        "length": 382000
       },
       {
         "number": "B2",
-        "title": "Us and Them"
+        "title": "Us and Them",
+        "length": 466000
       },
       {
         "number": "B3",
-        "title": "Any Colour You Like"
+        "title": "Any Colour You Like",
+        "length": 205000
       },
       {
         "number": "B4",
-        "title": "Brain Damage"
+        "title": "Brain Damage",
+        "length": 228000
       },
       {
         "number": "B5",
-        "title": "Eclipse"
+        "title": "Eclipse",
+        "length": 123000
       }
     ],
     "front": "https://coverartarchive.org/release/956fbc58-362d-43b8-b880-3779e0508559/34025419985-1200.jpg",

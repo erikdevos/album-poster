@@ -15,7 +15,8 @@ export const LAYOUT_LABELS = {
     typographic: 'Typographic',
     riso: 'Riso',
     film: 'Film',
-    vinyl: 'Vinyl'
+    vinyl: 'Vinyl',
+    modern: 'Modern'
 }
 
 export const LAYOUTS = Object.keys(LAYOUT_LABELS)

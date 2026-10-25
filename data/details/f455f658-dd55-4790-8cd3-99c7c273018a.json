@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875837227,
+  "v": 2,
+  "fetchedAt": 1792952949395,
   "album": {
     "id": "f455f658-dd55-4790-8cd3-99c7c273018a",
     "title": "MOTOMAMI",
@@ -12,67 +12,83 @@
     "tracks": [
       {
         "number": "1",
-        "title": "SAOKO"
+        "title": "SAOKO",
+        "length": 137534
       },
       {
         "number": "2",
-        "title": "CANDY"
+        "title": "CANDY",
+        "length": 193489
       },
       {
         "number": "3",
-        "title": "LA FAMA"
+        "title": "LA FAMA",
+        "length": 188121
       },
       {
         "number": "4",
-        "title": "BULERÍAS"
+        "title": "BULERÍAS",
+        "length": 155861
       },
       {
         "number": "5",
-        "title": "CHICKEN TERIYAKI"
+        "title": "CHICKEN TERIYAKI",
+        "length": 122210
       },
       {
         "number": "6",
-        "title": "HENTAI"
+        "title": "HENTAI",
+        "length": 162930
       },
       {
         "number": "7",
-        "title": "BIZCOCHITO"
+        "title": "BIZCOCHITO",
+        "length": 109109
       },
       {
         "number": "8",
-        "title": "G3 N15"
+        "title": "G3 N15",
+        "length": 252122
       },
       {
         "number": "9",
-        "title": "MOTOMAMI"
+        "title": "MOTOMAMI",
+        "length": 61423
       },
       {
         "number": "10",
-        "title": "DIABLO"
+        "title": "DIABLO",
+        "length": 165553
       },
       {
         "number": "11",
-        "title": "DELIRIO DE GRANDEZA"
+        "title": "DELIRIO DE GRANDEZA",
+        "length": 155436
       },
       {
         "number": "12",
-        "title": "CUUUUuuuuuute"
+        "title": "CUUUUuuuuuute",
+        "length": 150701
       },
       {
         "number": "13",
-        "title": "COMO UN G"
+        "title": "COMO UN G",
+        "length": 262105
       },
       {
         "number": "14",
-        "title": "Abcdefg"
+        "title": "Abcdefg",
+        "length": 65961
       },
       {
         "number": "15",
-        "title": "LA COMBI VERSACE"
+        "title": "LA COMBI VERSACE",
+        "length": 160296
       },
       {
         "number": "16",
-        "title": "SAKURA"
+        "title": "SAKURA",
+        "length": 201667
       }
     ],
     "front": "https://coverartarchive.org/release/5e437206-54c0-4313-9084-5da728933d2a/31637397904-1200.jpg",

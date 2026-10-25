@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875823037,
+  "v": 2,
+  "fetchedAt": 1792952935731,
   "album": {
     "id": "416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6",
     "title": "Rumours",
@@ -12,163 +12,203 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Second Hand News"
+        "title": "Second Hand News",
+        "length": 176306
       },
       {
         "number": "2",
-        "title": "Dreams"
+        "title": "Dreams",
+        "length": 257800
       },
       {
         "number": "3",
-        "title": "Never Going Back Again"
+        "title": "Never Going Back Again",
+        "length": 134400
       },
       {
         "number": "4",
-        "title": "Don’t Stop"
+        "title": "Don’t Stop",
+        "length": 193346
       },
       {
         "number": "5",
-        "title": "Go Your Own Way"
+        "title": "Go Your Own Way",
+        "length": 223613
       },
       {
         "number": "6",
-        "title": "Songbird"
+        "title": "Songbird",
+        "length": 200813
       },
       {
         "number": "7",
-        "title": "The Chain"
+        "title": "The Chain",
+        "length": 270213
       },
       {
         "number": "8",
-        "title": "You Make Loving Fun"
+        "title": "You Make Loving Fun",
+        "length": 216626
       },
       {
         "number": "9",
-        "title": "I Don’t Want to Know"
+        "title": "I Don’t Want to Know",
+        "length": 196853
       },
       {
         "number": "10",
-        "title": "Oh Daddy"
+        "title": "Oh Daddy",
+        "length": 236240
       },
       {
         "number": "11",
-        "title": "Gold Dust Woman"
+        "title": "Gold Dust Woman",
+        "length": 299160
       },
       {
         "number": "12",
-        "title": "Silver Springs"
+        "title": "Silver Springs",
+        "length": 288786
       },
       {
         "number": "1",
-        "title": "Intro (live, 1977 Rumours World Tour)"
+        "title": "Intro (live, 1977 Rumours World Tour)",
+        "length": 48373
       },
       {
         "number": "2",
-        "title": "Monday Morning (live, 1977 Rumours World Tour)"
+        "title": "Monday Morning (live, 1977 Rumours World Tour)",
+        "length": 158893
       },
       {
         "number": "3",
-        "title": "Dreams (live, 1977 Rumours World Tour)"
+        "title": "Dreams (live, 1977 Rumours World Tour)",
+        "length": 247213
       },
       {
         "number": "4",
-        "title": "Don’t Stop (live, 1977 Rumours World Tour)"
+        "title": "Don’t Stop (live, 1977 Rumours World Tour)",
+        "length": 231653
       },
       {
         "number": "5",
-        "title": "The Chain (live, 1977 Rumours World Tour)"
+        "title": "The Chain (live, 1977 Rumours World Tour)",
+        "length": 340533
       },
       {
         "number": "6",
-        "title": "Oh Daddy (live, 1977 Rumours World Tour)"
+        "title": "Oh Daddy (live, 1977 Rumours World Tour)",
+        "length": 287866
       },
       {
         "number": "7",
-        "title": "Rhiannon (live, 1977 Rumours World Tour)"
+        "title": "Rhiannon (live, 1977 Rumours World Tour)",
+        "length": 475306
       },
       {
         "number": "8",
-        "title": "Never Going Back Again (live, 1977 Rumours World Tour)"
+        "title": "Never Going Back Again (live, 1977 Rumours World Tour)",
+        "length": 139960
       },
       {
         "number": "9",
-        "title": "Gold Dust Woman (live, 1977 Rumours World Tour)"
+        "title": "Gold Dust Woman (live, 1977 Rumours World Tour)",
+        "length": 423053
       },
       {
         "number": "10",
-        "title": "World Turning (live, 1977 Rumours World Tour)"
+        "title": "World Turning (live, 1977 Rumours World Tour)",
+        "length": 451493
       },
       {
         "number": "11",
-        "title": "Go Your Own Way (live, 1977 Rumours World Tour)"
+        "title": "Go Your Own Way (live, 1977 Rumours World Tour)",
+        "length": 294466
       },
       {
         "number": "12",
-        "title": "Songbird (live, 1977 Rumours World Tour)"
+        "title": "Songbird (live, 1977 Rumours World Tour)",
+        "length": 240440
       },
       {
         "number": "1",
-        "title": "Second Hand News (early take)"
+        "title": "Second Hand News (early take)",
+        "length": 146746
       },
       {
         "number": "2",
-        "title": "Dreams (take 2)"
+        "title": "Dreams (take 2)",
+        "length": 335133
       },
       {
         "number": "3",
-        "title": "Never Going Back Again (acoustic duet)"
+        "title": "Never Going Back Again (acoustic duet)",
+        "length": 139546
       },
       {
         "number": "4",
-        "title": "Go Your Own Way (early take)"
+        "title": "Go Your Own Way (early take)",
+        "length": 244573
       },
       {
         "number": "5",
-        "title": "Songbird (demo)"
+        "title": "Songbird (demo)",
+        "length": 273266
       },
       {
         "number": "6",
-        "title": "Songbird (instrumental, take 10)"
+        "title": "Songbird (instrumental, take 10)",
+        "length": 263906
       },
       {
         "number": "7",
-        "title": "I Don’t Want to Know (early take)"
+        "title": "I Don’t Want to Know (early take)",
+        "length": 222173
       },
       {
         "number": "8",
-        "title": "Keep Me There (instrumental)"
+        "title": "Keep Me There (instrumental)",
+        "length": 314026
       },
       {
         "number": "9",
-        "title": "The Chain (demo)"
+        "title": "The Chain (demo)",
+        "length": 329133
       },
       {
         "number": "10",
-        "title": "Keep Me There (with vocal)"
+        "title": "Keep Me There (with vocal)",
+        "length": 258920
       },
       {
         "number": "11",
-        "title": "Gold Dust Woman (early take)"
+        "title": "Gold Dust Woman (early take)",
+        "length": 325226
       },
       {
         "number": "12",
-        "title": "Oh Daddy (early take)"
+        "title": "Oh Daddy (early take)",
+        "length": 228413
       },
       {
         "number": "13",
-        "title": "Silver Springs (early take)"
+        "title": "Silver Springs (early take)",
+        "length": 331720
       },
       {
         "number": "14",
-        "title": "Planets of the Universe (demo)"
+        "title": "Planets of the Universe (demo)",
+        "length": 267946
       },
       {
         "number": "15",
-        "title": "Doesn’t Anything Last (acoustic duet)"
+        "title": "Doesn’t Anything Last (acoustic duet)",
+        "length": 63146
       },
       {
         "number": "16",
-        "title": "Never Going Back Again (instrumental)"
+        "title": "Never Going Back Again (instrumental)",
+        "length": 156893
       }
     ],
     "front": "https://coverartarchive.org/release/7699b503-6a69-4920-91ac-8ee8aa1c1622/7946930592.jpg",

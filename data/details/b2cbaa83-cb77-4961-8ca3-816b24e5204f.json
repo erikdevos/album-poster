@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875890677,
+  "v": 2,
+  "fetchedAt": 1792953003638,
   "album": {
     "id": "b2cbaa83-cb77-4961-8ca3-816b24e5204f",
     "title": "The Bones of What You Believe",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Mother We Share"
+        "title": "The Mother We Share",
+        "length": 191000
       },
       {
         "number": "2",
-        "title": "We Sink"
+        "title": "We Sink",
+        "length": 214000
       },
       {
         "number": "3",
-        "title": "Gun"
+        "title": "Gun",
+        "length": 233000
       },
       {
         "number": "4",
-        "title": "Tether"
+        "title": "Tether",
+        "length": 286000
       },
       {
         "number": "5",
-        "title": "Lies"
+        "title": "Lies",
+        "length": 221000
       },
       {
         "number": "6",
-        "title": "Under the Tide"
+        "title": "Under the Tide",
+        "length": 272000
       },
       {
         "number": "7",
-        "title": "Recover"
+        "title": "Recover",
+        "length": 225000
       },
       {
         "number": "8",
-        "title": "Night Sky"
+        "title": "Night Sky",
+        "length": 231000
       },
       {
         "number": "9",
-        "title": "Science/Visions"
+        "title": "Science/Visions",
+        "length": 238000
       },
       {
         "number": "10",
-        "title": "Lungs"
+        "title": "Lungs",
+        "length": 182000
       },
       {
         "number": "11",
-        "title": "By the Throat"
+        "title": "By the Throat",
+        "length": 249000
       },
       {
         "number": "12",
-        "title": "You Caught the Light"
+        "title": "You Caught the Light",
+        "length": 335000
       }
     ],
     "front": "https://coverartarchive.org/release/e56fba8b-3f28-45bb-a8fb-1e35da2960e4/5072208186.jpg",

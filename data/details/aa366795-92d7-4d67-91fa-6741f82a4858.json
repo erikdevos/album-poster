@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875863268,
+  "v": 2,
+  "fetchedAt": 1792952973264,
   "album": {
     "id": "aa366795-92d7-4d67-91fa-6741f82a4858",
     "title": "Future Nostalgia",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Future Nostalgia"
+        "title": "Future Nostalgia",
+        "length": 184881
       },
       {
         "number": "2",
-        "title": "Don’t Start Now"
+        "title": "Don’t Start Now",
+        "length": 183290
       },
       {
         "number": "3",
-        "title": "Cool"
+        "title": "Cool",
+        "length": 209583
       },
       {
         "number": "4",
-        "title": "Physical"
+        "title": "Physical",
+        "length": 193829
       },
       {
         "number": "5",
-        "title": "Levitating"
+        "title": "Levitating",
+        "length": 203807
       },
       {
         "number": "6",
-        "title": "Pretty Please"
+        "title": "Pretty Please",
+        "length": 194607
       },
       {
         "number": "7",
-        "title": "Hallucinate"
+        "title": "Hallucinate",
+        "length": 208505
       },
       {
         "number": "8",
-        "title": "Love Again"
+        "title": "Love Again",
+        "length": 258004
       },
       {
         "number": "9",
-        "title": "Break My Heart"
+        "title": "Break My Heart",
+        "length": 221820
       },
       {
         "number": "10",
-        "title": "Good in Bed"
+        "title": "Good in Bed",
+        "length": 218754
       },
       {
         "number": "11",
-        "title": "Boys Will Be Boys"
+        "title": "Boys Will Be Boys",
+        "length": 166266
       }
     ],
     "front": "https://coverartarchive.org/release/57bc5762-baa9-48d8-93ec-7858d8350880/25777832070-1200.jpg",

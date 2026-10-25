@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875868518,
+  "v": 2,
+  "fetchedAt": 1792952979979,
   "album": {
     "id": "1b022e01-4da6-387b-8658-8678046e4cef",
     "title": "Nevermind",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Smells Like Teen Spirit"
+        "title": "Smells Like Teen Spirit",
+        "length": 301000
       },
       {
         "number": "2",
-        "title": "In Bloom"
+        "title": "In Bloom",
+        "length": 254000
       },
       {
         "number": "3",
-        "title": "Come as You Are"
+        "title": "Come as You Are",
+        "length": 218000
       },
       {
         "number": "4",
-        "title": "Breed"
+        "title": "Breed",
+        "length": 184000
       },
       {
         "number": "5",
-        "title": "Lithium"
+        "title": "Lithium",
+        "length": 257000
       },
       {
         "number": "6",
-        "title": "Polly"
+        "title": "Polly",
+        "length": 177000
       },
       {
         "number": "7",
-        "title": "Territorial Pissings"
+        "title": "Territorial Pissings",
+        "length": 142000
       },
       {
         "number": "8",
-        "title": "Drain You"
+        "title": "Drain You",
+        "length": 223000
       },
       {
         "number": "9",
-        "title": "Lounge Act"
+        "title": "Lounge Act",
+        "length": 156000
       },
       {
         "number": "10",
-        "title": "Stay Away"
+        "title": "Stay Away",
+        "length": 212000
       },
       {
         "number": "11",
-        "title": "On a Plain"
+        "title": "On a Plain",
+        "length": 196000
       },
       {
         "number": "12",
-        "title": "Something in the Way"
+        "title": "Something in the Way",
+        "length": 234000
       },
       {
         "number": "13",
-        "title": "Endless, Nameless"
+        "title": "Endless, Nameless",
+        "length": 402000
       }
     ],
     "front": "https://coverartarchive.org/release/c771f7fc-9e62-4349-a2e3-ceaf7122bf5b/30501372565-1200.jpg",

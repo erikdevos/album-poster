@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876447988,
+  "v": 2,
+  "fetchedAt": 1792952901528,
   "album": {
     "id": "e295b8f2-a86c-49fb-8668-aaba1c9f9e4a",
     "title": "Woman",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Safe and Sound"
+        "title": "Safe and Sound",
+        "length": 345293
       },
       {
         "number": "2",
-        "title": "Pleasure"
+        "title": "Pleasure",
+        "length": 255960
       },
       {
         "number": "3",
-        "title": "Alakazam!"
+        "title": "Alakazam!",
+        "length": 311493
       },
       {
         "number": "4",
-        "title": "Fire"
+        "title": "Fire",
+        "length": 334226
       },
       {
         "number": "5",
-        "title": "Stop"
+        "title": "Stop",
+        "length": 297320
       },
       {
         "number": "6",
-        "title": "Chorus"
+        "title": "Chorus",
+        "length": 429320
       },
       {
         "number": "7",
-        "title": "Randy"
+        "title": "Randy",
+        "length": 398186
       },
       {
         "number": "8",
-        "title": "Heavy Metal"
+        "title": "Heavy Metal",
+        "length": 270866
       },
       {
         "number": "9",
-        "title": "Love S.O.S."
+        "title": "Love S.O.S.",
+        "length": 303826
       },
       {
         "number": "10",
-        "title": "Close Call"
+        "title": "Close Call",
+        "length": 308146
       }
     ],
     "front": "https://coverartarchive.org/release/df6b0d22-fd9f-4629-9772-d0021f49de96/15193915089.jpg",

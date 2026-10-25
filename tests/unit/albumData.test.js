@@ -78,6 +78,14 @@ test('details are refused when they are for another album, or incomplete or odd'
     assert.throws(() => validateDetails(detail({ tracks: Array.from({ length: 501 }, () => ({ title: 'x' })) }), A), /tracks/)
 })
 
+test('a track length is kept in milliseconds, and is null when it is unknown or cannot be right', () => {
+    const lengths = tracks => validateDetails(detail({ tracks }), A).album.tracks.map(track => track.length)
+    assert.deepEqual(lengths([
+        { title: 'a', length: 140760 }, { title: 'b', length: 1234.6 }, { title: 'c', length: null }, { title: 'd' },
+        { title: 'e', length: -1 }, { title: 'f', length: 0 }, { title: 'g', length: 'long' }, { title: 'h', length: 90_000_000 }
+    ]), [140760, 1235, null, null, null, null, null, null])
+})
+
 test('missing optional fields become empty text', () => {
     const clean = validateDetails({ v: 1, fetchedAt: 1, album: { id: A, title: 'LUX', artist: 'Rosalia', tracks: [] } }, A)
     assert.equal(clean.album.year, '')

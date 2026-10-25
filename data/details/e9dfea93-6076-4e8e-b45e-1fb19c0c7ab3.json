@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875906913,
+  "v": 2,
+  "fetchedAt": 1792953031271,
   "album": {
     "id": "e9dfea93-6076-4e8e-b45e-1fb19c0c7ab3",
     "title": "TRON: Ares: Original Motion Picture Soundtrack",
@@ -12,99 +12,123 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Init"
+        "title": "Init",
+        "length": 127000
       },
       {
         "number": "2",
-        "title": "Forked Reality"
+        "title": "Forked Reality",
+        "length": 110000
       },
       {
         "number": "3",
-        "title": "As Alive as You Need Me to Be"
+        "title": "As Alive as You Need Me to Be",
+        "length": 237000
       },
       {
         "number": "4",
-        "title": "Echoes"
+        "title": "Echoes",
+        "length": 226000
       },
       {
         "number": "5",
-        "title": "This Changes Everything"
+        "title": "This Changes Everything",
+        "length": 179000
       },
       {
         "number": "6",
-        "title": "In the Image Of"
+        "title": "In the Image Of",
+        "length": 93000
       },
       {
         "number": "7",
-        "title": "I Know You Can Feel It"
+        "title": "I Know You Can Feel It",
+        "length": 321000
       },
       {
         "number": "8",
-        "title": "Permanence"
+        "title": "Permanence",
+        "length": 89000
       },
       {
         "number": "9",
-        "title": "Infiltrator"
+        "title": "Infiltrator",
+        "length": 167000
       },
       {
         "number": "10",
-        "title": "100% Expendable"
+        "title": "100% Expendable",
+        "length": 234000
       },
       {
         "number": "11",
-        "title": "Still Remains"
+        "title": "Still Remains",
+        "length": 114000
       },
       {
         "number": "12",
-        "title": "Who Wants to Live Forever?"
+        "title": "Who Wants to Live Forever?",
+        "length": 350000
       },
       {
         "number": "13",
-        "title": "Building Better Worlds"
+        "title": "Building Better Worlds",
+        "length": 131000
       },
       {
         "number": "14",
-        "title": "Target Identified"
+        "title": "Target Identified",
+        "length": 204000
       },
       {
         "number": "15",
-        "title": "Daemonize"
+        "title": "Daemonize",
+        "length": 309000
       },
       {
         "number": "16",
-        "title": "Empathetic Response"
+        "title": "Empathetic Response",
+        "length": 129000
       },
       {
         "number": "17",
-        "title": "What Have You Done?"
+        "title": "What Have You Done?",
+        "length": 134000
       },
       {
         "number": "18",
-        "title": "A Question of Trust"
+        "title": "A Question of Trust",
+        "length": 80000
       },
       {
         "number": "19",
-        "title": "Ghost in the Machine"
+        "title": "Ghost in the Machine",
+        "length": 89000
       },
       {
         "number": "20",
-        "title": "No Going Back"
+        "title": "No Going Back",
+        "length": 115000
       },
       {
         "number": "21",
-        "title": "Nemesis"
+        "title": "Nemesis",
+        "length": 105000
       },
       {
         "number": "22",
-        "title": "New Directive"
+        "title": "New Directive",
+        "length": 165000
       },
       {
         "number": "23",
-        "title": "Out in the World"
+        "title": "Out in the World",
+        "length": 65000
       },
       {
         "number": "24",
-        "title": "Shadow Over Me"
+        "title": "Shadow Over Me",
+        "length": 235000
       }
     ],
     "front": "https://coverartarchive.org/release/7a66bb5b-6fc9-4725-9bff-d2803781af01/42529599191-1200.jpg",

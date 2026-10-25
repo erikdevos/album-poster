@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875974622,
+  "v": 2,
+  "fetchedAt": 1792953107850,
   "album": {
     "id": "2a0981fb-9593-3019-864b-ce934d97a16e",
     "title": "In Utero",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Serve the Servants"
+        "title": "Serve the Servants",
+        "length": 217000
       },
       {
         "number": "2",
-        "title": "Scentless Apprentice"
+        "title": "Scentless Apprentice",
+        "length": 227666
       },
       {
         "number": "3",
-        "title": "Heart‐Shaped Box"
+        "title": "Heart‐Shaped Box",
+        "length": 281000
       },
       {
         "number": "4",
-        "title": "Rape Me"
+        "title": "Rape Me",
+        "length": 169826
       },
       {
         "number": "5",
-        "title": "Frances Farmer Will Have Her Revenge on Seattle"
+        "title": "Frances Farmer Will Have Her Revenge on Seattle",
+        "length": 249600
       },
       {
         "number": "6",
-        "title": "Dumb"
+        "title": "Dumb",
+        "length": 152133
       },
       {
         "number": "7",
-        "title": "Very Ape"
+        "title": "Very Ape",
+        "length": 115666
       },
       {
         "number": "8",
-        "title": "Milk It"
+        "title": "Milk It",
+        "length": 234800
       },
       {
         "number": "9",
-        "title": "Pennyroyal Tea"
+        "title": "Pennyroyal Tea",
+        "length": 219000
       },
       {
         "number": "10",
-        "title": "Radio Friendly Unit Shifter"
+        "title": "Radio Friendly Unit Shifter",
+        "length": 292000
       },
       {
         "number": "11",
-        "title": "Tourette’s"
+        "title": "Tourette’s",
+        "length": 95293
       },
       {
         "number": "12",
-        "title": "All Apologies"
+        "title": "All Apologies",
+        "length": 236000
       }
     ],
     "front": "https://coverartarchive.org/release/7d13c434-1c49-4d7f-b164-a5247108af01/19918667556-1200.jpg",

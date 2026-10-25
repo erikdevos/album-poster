@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875952555,
+  "v": 2,
+  "fetchedAt": 1792953092000,
   "album": {
     "id": "e5495719-b3ad-3eea-a533-fb70af43c23d",
     "title": "The Fame",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Just Dance"
+        "title": "Just Dance",
+        "length": 241933
       },
       {
         "number": "2",
-        "title": "LoveGame"
+        "title": "LoveGame",
+        "length": 216333
       },
       {
         "number": "3",
-        "title": "Paparazzi"
+        "title": "Paparazzi",
+        "length": 208306
       },
       {
         "number": "4",
-        "title": "Poker Face"
+        "title": "Poker Face",
+        "length": 237200
       },
       {
         "number": "5",
-        "title": "Eh, Eh (Nothing Else I Can Say)"
+        "title": "Eh, Eh (Nothing Else I Can Say)",
+        "length": 175360
       },
       {
         "number": "6",
-        "title": "Beautiful, Dirty, Rich"
+        "title": "Beautiful, Dirty, Rich",
+        "length": 172413
       },
       {
         "number": "7",
-        "title": "The Fame"
+        "title": "The Fame",
+        "length": 222106
       },
       {
         "number": "8",
-        "title": "Money Honey"
+        "title": "Money Honey",
+        "length": 170293
       },
       {
         "number": "9",
-        "title": "Starstruck"
+        "title": "Starstruck",
+        "length": 217120
       },
       {
         "number": "10",
-        "title": "Boys Boys Boys"
+        "title": "Boys Boys Boys",
+        "length": 200813
       },
       {
         "number": "11",
-        "title": "Paper Gangsta"
+        "title": "Paper Gangsta",
+        "length": 263360
       },
       {
         "number": "12",
-        "title": "Brown Eyes"
+        "title": "Brown Eyes",
+        "length": 243000
       },
       {
         "number": "13",
-        "title": "I Like It Rough"
+        "title": "I Like It Rough",
+        "length": 202493
       },
       {
         "number": "14",
-        "title": "Summerboy"
+        "title": "Summerboy",
+        "length": 253946
       },
       {
         "number": "15",
-        "title": "Disco Heaven"
+        "title": "Disco Heaven",
+        "length": 221480
       }
     ],
     "front": "https://coverartarchive.org/release/8c86403a-6bfb-40f8-a1db-1cde6cbf68a5/33619706574-1200.jpg",

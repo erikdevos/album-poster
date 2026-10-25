@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876385503,
+  "v": 2,
+  "fetchedAt": 1792952819753,
   "album": {
     "id": "5abc64d9-2699-4f26-82cb-87ed127f42eb",
     "title": "Hesitation Marks",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Eater of Dreams"
+        "title": "The Eater of Dreams",
+        "length": 52431
       },
       {
         "number": "2",
-        "title": "Copy of A"
+        "title": "Copy of A",
+        "length": 322622
       },
       {
         "number": "3",
-        "title": "Came Back Haunted"
+        "title": "Came Back Haunted",
+        "length": 317269
       },
       {
         "number": "4",
-        "title": "Find My Way"
+        "title": "Find My Way",
+        "length": 315668
       },
       {
         "number": "5",
-        "title": "All Time Low"
+        "title": "All Time Low",
+        "length": 377810
       },
       {
         "number": "6",
-        "title": "Disappointed"
+        "title": "Disappointed",
+        "length": 344115
       },
       {
         "number": "7",
-        "title": "Everything"
+        "title": "Everything",
+        "length": 199559
       },
       {
         "number": "8",
-        "title": "Satellite"
+        "title": "Satellite",
+        "length": 302736
       },
       {
         "number": "9",
-        "title": "Various Methods of Escape"
+        "title": "Various Methods of Escape",
+        "length": 301405
       },
       {
         "number": "10",
-        "title": "Running"
+        "title": "Running",
+        "length": 247600
       },
       {
         "number": "11",
-        "title": "I Would for You"
+        "title": "I Would for You",
+        "length": 272691
       },
       {
         "number": "12",
-        "title": "In Two"
+        "title": "In Two",
+        "length": 331536
       },
       {
         "number": "13",
-        "title": "While I’m Still Here"
+        "title": "While I’m Still Here",
+        "length": 242743
       },
       {
         "number": "14",
-        "title": "Black Noise"
+        "title": "Black Noise",
+        "length": 89024
       }
     ],
     "front": "https://coverartarchive.org/release/c83ebf08-97f4-4971-8fe2-624fc52dd4ca/41845859925-1200.jpg",

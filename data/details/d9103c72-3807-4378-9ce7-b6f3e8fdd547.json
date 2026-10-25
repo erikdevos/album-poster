@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875888957,
+  "v": 2,
+  "fetchedAt": 1792953000918,
   "album": {
     "id": "d9103c72-3807-4378-9ce7-b6f3e8fdd547",
     "title": "To Pimp a Butterfly",
@@ -12,67 +12,83 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Wesley’s Theory"
+        "title": "Wesley’s Theory",
+        "length": 287345
       },
       {
         "number": "2",
-        "title": "For Free? (interlude)"
+        "title": "For Free? (interlude)",
+        "length": 130899
       },
       {
         "number": "3",
-        "title": "King Kunta"
+        "title": "King Kunta",
+        "length": 234690
       },
       {
         "number": "4",
-        "title": "Institutionalized"
+        "title": "Institutionalized",
+        "length": 271774
       },
       {
         "number": "5",
-        "title": "These Walls"
+        "title": "These Walls",
+        "length": 300976
       },
       {
         "number": "6",
-        "title": "u"
+        "title": "u",
+        "length": 268482
       },
       {
         "number": "7",
-        "title": "Alright"
+        "title": "Alright",
+        "length": 219337
       },
       {
         "number": "8",
-        "title": "For Sale? (interlude)"
+        "title": "For Sale? (interlude)",
+        "length": 291721
       },
       {
         "number": "9",
-        "title": "Momma"
+        "title": "Momma",
+        "length": 283117
       },
       {
         "number": "10",
-        "title": "Hood Politics"
+        "title": "Hood Politics",
+        "length": 292529
       },
       {
         "number": "11",
-        "title": "How Much a Dollar Cost"
+        "title": "How Much a Dollar Cost",
+        "length": 261742
       },
       {
         "number": "12",
-        "title": "Complexion (A Zulu Love)"
+        "title": "Complexion (A Zulu Love)",
+        "length": 263353
       },
       {
         "number": "13",
-        "title": "The Blacker the Berry"
+        "title": "The Blacker the Berry",
+        "length": 328829
       },
       {
         "number": "14",
-        "title": "You Ain’t Gotta Lie (Momma Said)"
+        "title": "You Ain’t Gotta Lie (Momma Said)",
+        "length": 241689
       },
       {
         "number": "15",
-        "title": "i"
+        "title": "i",
+        "length": 336012
       },
       {
         "number": "16",
-        "title": "Mortal Man"
+        "title": "Mortal Man",
+        "length": 727102
       }
     ],
     "front": "https://coverartarchive.org/release/b4d6e526-4195-49bc-b660-b6df4c27686e/45334112812-1200.jpg",

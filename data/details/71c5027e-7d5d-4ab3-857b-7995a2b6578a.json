@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875797548,
+  "v": 2,
+  "fetchedAt": 1792952904791,
   "album": {
     "id": "71c5027e-7d5d-4ab3-857b-7995a2b6578a",
     "title": "Moral Panic",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Unperson"
+        "title": "Unperson",
+        "length": 204537
       },
       {
         "number": "2",
-        "title": "Is Everybody Going Crazy?"
+        "title": "Is Everybody Going Crazy?",
+        "length": 237645
       },
       {
         "number": "3",
-        "title": "Moral Panic"
+        "title": "Moral Panic",
+        "length": 220469
       },
       {
         "number": "4",
-        "title": "Real Love Song"
+        "title": "Real Love Song",
+        "length": 222673
       },
       {
         "number": "5",
-        "title": "Phobia"
+        "title": "Phobia",
+        "length": 244530
       },
       {
         "number": "6",
-        "title": "This Feels Like the End"
+        "title": "This Feels Like the End",
+        "length": 242148
       },
       {
         "number": "7",
-        "title": "Free If We Want It"
+        "title": "Free If We Want It",
+        "length": 232736
       },
       {
         "number": "8",
-        "title": "Impossible"
+        "title": "Impossible",
+        "length": 248399
       },
       {
         "number": "9",
-        "title": "There Was Sun"
+        "title": "There Was Sun",
+        "length": 243048
       },
       {
         "number": "10",
-        "title": "Can You Afford to Be an Individual?"
+        "title": "Can You Afford to Be an Individual?",
+        "length": 236047
       },
       {
         "number": "11",
-        "title": "Before We Drift Away"
+        "title": "Before We Drift Away",
+        "length": 254379
       }
     ],
     "front": "https://coverartarchive.org/release/3884327f-683e-40f4-856c-2ce7d040eba1/27659325226-1200.jpg",

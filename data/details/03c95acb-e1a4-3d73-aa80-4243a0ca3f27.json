@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875970711,
+  "v": 2,
+  "fetchedAt": 1792953104121,
   "album": {
     "id": "03c95acb-e1a4-3d73-aa80-4243a0ca3f27",
     "title": "Thirteenth Step",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Package"
+        "title": "The Package",
+        "length": 463000
       },
       {
         "number": "2",
-        "title": "Weak and Powerless"
+        "title": "Weak and Powerless",
+        "length": 197000
       },
       {
         "number": "3",
-        "title": "The Noose"
+        "title": "The Noose",
+        "length": 295000
       },
       {
         "number": "4",
-        "title": "Blue"
+        "title": "Blue",
+        "length": 256000
       },
       {
         "number": "5",
-        "title": "Vanishing"
+        "title": "Vanishing",
+        "length": 294000
       },
       {
         "number": "6",
-        "title": "A Stranger"
+        "title": "A Stranger",
+        "length": 194000
       },
       {
         "number": "7",
-        "title": "The Outsider"
+        "title": "The Outsider",
+        "length": 248000
       },
       {
         "number": "8",
-        "title": "Crimes"
+        "title": "Crimes",
+        "length": 157000
       },
       {
         "number": "9",
-        "title": "The Nurse Who Loved Me"
+        "title": "The Nurse Who Loved Me",
+        "length": 247000
       },
       {
         "number": "10",
-        "title": "Pet"
+        "title": "Pet",
+        "length": 276000
       },
       {
         "number": "11",
-        "title": "Lullaby"
+        "title": "Lullaby",
+        "length": 124000
       },
       {
         "number": "12",
-        "title": "Gravity"
+        "title": "Gravity",
+        "length": 306000
       }
     ],
     "front": "https://coverartarchive.org/release/480f3424-735d-4983-8088-95704039a1bc/1366975408-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875850816,
+  "v": 2,
+  "fetchedAt": 1792952961725,
   "album": {
     "id": "8d73e45e-7ca1-3cb4-ae28-6da76196c17c",
     "title": "London Calling",
@@ -12,79 +12,98 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "London Calling"
+        "title": "London Calling",
+        "length": 197000
       },
       {
         "number": "A2",
-        "title": "Brand New Cadillac"
+        "title": "Brand New Cadillac",
+        "length": 125000
       },
       {
         "number": "A3",
-        "title": "Jimmy Jazz"
+        "title": "Jimmy Jazz",
+        "length": 231000
       },
       {
         "number": "A4",
-        "title": "Hateful"
+        "title": "Hateful",
+        "length": 162000
       },
       {
         "number": "A5",
-        "title": "Rudie Can’t Fail"
+        "title": "Rudie Can’t Fail",
+        "length": 205000
       },
       {
         "number": "B1",
-        "title": "Spanish Bombs"
+        "title": "Spanish Bombs",
+        "length": 197000
       },
       {
         "number": "B2",
-        "title": "The Right Profile"
+        "title": "The Right Profile",
+        "length": 230000
       },
       {
         "number": "B3",
-        "title": "Lost in the Supermarket"
+        "title": "Lost in the Supermarket",
+        "length": 223000
       },
       {
         "number": "B4",
-        "title": "Clampdown"
+        "title": "Clampdown",
+        "length": 225000
       },
       {
         "number": "B5",
-        "title": "The Guns of Brixton"
+        "title": "The Guns of Brixton",
+        "length": 188000
       },
       {
         "number": "C1",
-        "title": "Wrong ’Em Boyo"
+        "title": "Wrong ’Em Boyo",
+        "length": 188000
       },
       {
         "number": "C2",
-        "title": "Death or Glory"
+        "title": "Death or Glory",
+        "length": 232000
       },
       {
         "number": "C3",
-        "title": "Koka Kola"
+        "title": "Koka Kola",
+        "length": 104000
       },
       {
         "number": "C4",
-        "title": "The Card Cheat"
+        "title": "The Card Cheat",
+        "length": 224000
       },
       {
         "number": "D1",
-        "title": "Lover’s Rock"
+        "title": "Lover’s Rock",
+        "length": 239000
       },
       {
         "number": "D2",
-        "title": "Four Horsemen"
+        "title": "Four Horsemen",
+        "length": 175000
       },
       {
         "number": "D3",
-        "title": "I’m Not Down"
+        "title": "I’m Not Down",
+        "length": 183000
       },
       {
         "number": "D4",
-        "title": "Revolution Rock"
+        "title": "Revolution Rock",
+        "length": 329000
       },
       {
         "number": "D5",
-        "title": "Train in Vain"
+        "title": "Train in Vain",
+        "length": 182000
       }
     ],
     "front": "https://coverartarchive.org/release/7bec22a0-eb73-4b79-a619-b253d5c2af87/44824441588-1200.jpg",

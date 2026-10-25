@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875881299,
+  "v": 2,
+  "fetchedAt": 1792952991922,
   "album": {
     "id": "de9470f4-f4a3-4ddf-967b-ac77c886ad49",
     "title": "Kiss Land",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Professional"
+        "title": "Professional",
+        "length": 368720
       },
       {
         "number": "2",
-        "title": "The Town"
+        "title": "The Town",
+        "length": 307346
       },
       {
         "number": "3",
-        "title": "Adaptation"
+        "title": "Adaptation",
+        "length": 283933
       },
       {
         "number": "4",
-        "title": "Love in the Sky"
+        "title": "Love in the Sky",
+        "length": 267920
       },
       {
         "number": "5",
-        "title": "Belong to the World"
+        "title": "Belong to the World",
+        "length": 307173
       },
       {
         "number": "6",
-        "title": "Live For"
+        "title": "Live For",
+        "length": 224106
       },
       {
         "number": "7",
-        "title": "Wanderlust"
+        "title": "Wanderlust",
+        "length": 306773
       },
       {
         "number": "8",
-        "title": "Kiss Land"
+        "title": "Kiss Land",
+        "length": 455333
       },
       {
         "number": "9",
-        "title": "Pretty"
+        "title": "Pretty",
+        "length": 375400
       },
       {
         "number": "10",
-        "title": "Tears in the Rain"
+        "title": "Tears in the Rain",
+        "length": 444653
       },
       {
         "number": "11",
-        "title": "Wanderlust (Pharrell remix)"
+        "title": "Wanderlust (Pharrell remix)",
+        "length": 305693
       },
       {
         "number": "12",
-        "title": "Odd Look"
+        "title": "Odd Look",
+        "length": 252853
       }
     ],
     "front": "https://coverartarchive.org/release/16ff2d98-395c-4c87-aac8-cc4d62a853ec/8654054562-1200.jpg",

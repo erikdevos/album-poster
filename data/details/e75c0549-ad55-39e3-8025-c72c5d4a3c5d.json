@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875824665,
+  "v": 2,
+  "fetchedAt": 1792952937637,
   "album": {
     "id": "e75c0549-ad55-39e3-8025-c72c5d4a3c5d",
     "title": "Kid A",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Everything in Its Right Place"
+        "title": "Everything in Its Right Place",
+        "length": 251000
       },
       {
         "number": "2",
-        "title": "Kid A"
+        "title": "Kid A",
+        "length": 285000
       },
       {
         "number": "3",
-        "title": "The National Anthem"
+        "title": "The National Anthem",
+        "length": 352000
       },
       {
         "number": "4",
-        "title": "How to Disappear Completely"
+        "title": "How to Disappear Completely",
+        "length": 356000
       },
       {
         "number": "5",
-        "title": "Treefingers"
+        "title": "Treefingers",
+        "length": 223000
       },
       {
         "number": "6",
-        "title": "Optimistic"
+        "title": "Optimistic",
+        "length": 316000
       },
       {
         "number": "7",
-        "title": "In Limbo"
+        "title": "In Limbo",
+        "length": 211000
       },
       {
         "number": "8",
-        "title": "Idioteque"
+        "title": "Idioteque",
+        "length": 309000
       },
       {
         "number": "9",
-        "title": "Morning Bell"
+        "title": "Morning Bell",
+        "length": 276000
       },
       {
         "number": "10",
-        "title": "Motion Picture Soundtrack"
+        "title": "Motion Picture Soundtrack",
+        "length": 201000
       },
       {
         "number": "11",
-        "title": "[untitled]"
+        "title": "[untitled]",
+        "length": 53000
       }
     ],
     "front": "https://coverartarchive.org/release/0e8a1994-f0a7-481d-9be2-6c2f80e14de5/29475045164-1200.jpg",

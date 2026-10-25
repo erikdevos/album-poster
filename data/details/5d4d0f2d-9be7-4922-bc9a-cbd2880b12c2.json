@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876007138,
+  "v": 2,
+  "fetchedAt": 1792953133507,
   "album": {
     "id": "5d4d0f2d-9be7-4922-bc9a-cbd2880b12c2",
     "title": "Yeezus",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "On Sight"
+        "title": "On Sight",
+        "length": 156893
       },
       {
         "number": "2",
-        "title": "Black Skinhead"
+        "title": "Black Skinhead",
+        "length": 188306
       },
       {
         "number": "3",
-        "title": "I Am a God"
+        "title": "I Am a God",
+        "length": 231520
       },
       {
         "number": "4",
-        "title": "New Slaves"
+        "title": "New Slaves",
+        "length": 256093
       },
       {
         "number": "5",
-        "title": "Hold My Liquor"
+        "title": "Hold My Liquor",
+        "length": 326946
       },
       {
         "number": "6",
-        "title": "I’m in It"
+        "title": "I’m in It",
+        "length": 234853
       },
       {
         "number": "7",
-        "title": "Blood on the Leaves"
+        "title": "Blood on the Leaves",
+        "length": 360280
       },
       {
         "number": "8",
-        "title": "Guilt Trip"
+        "title": "Guilt Trip",
+        "length": 243746
       },
       {
         "number": "9",
-        "title": "Send It Up"
+        "title": "Send It Up",
+        "length": 178040
       },
       {
         "number": "10",
-        "title": "Bound 2"
+        "title": "Bound 2",
+        "length": 229253
       }
     ],
     "front": "https://coverartarchive.org/release/44f67341-2586-4283-bc3f-cf03ae89dc35/20178703246-1200.jpg",

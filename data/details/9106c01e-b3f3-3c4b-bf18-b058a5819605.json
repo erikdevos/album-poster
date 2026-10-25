@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875933273,
+  "v": 2,
+  "fetchedAt": 1792953067056,
   "album": {
     "id": "9106c01e-b3f3-3c4b-bf18-b058a5819605",
     "title": "Sounds of the Universe",
@@ -12,111 +12,138 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "In Chains"
+        "title": "In Chains",
+        "length": 413000
       },
       {
         "number": "A2",
-        "title": "Hole to Feed"
+        "title": "Hole to Feed",
+        "length": 239000
       },
       {
         "number": "A3",
-        "title": "Wrong"
+        "title": "Wrong",
+        "length": 193000
       },
       {
         "number": "B1",
-        "title": "Fragile Tension"
+        "title": "Fragile Tension",
+        "length": 249000
       },
       {
         "number": "B2",
-        "title": "Little Soul"
+        "title": "Little Soul",
+        "length": 211000
       },
       {
         "number": "B3",
-        "title": "In Sympathy"
+        "title": "In Sympathy",
+        "length": 294000
       },
       {
         "number": "C1",
-        "title": "Peace"
+        "title": "Peace",
+        "length": 269000
       },
       {
         "number": "C2",
-        "title": "Come Back"
+        "title": "Come Back",
+        "length": 315000
       },
       {
         "number": "C3",
-        "title": "Spacewalker"
+        "title": "Spacewalker",
+        "length": 113306
       },
       {
         "number": "C4",
-        "title": "Perfect"
+        "title": "Perfect",
+        "length": 273400
       },
       {
         "number": "D1",
-        "title": "Miles Away/The Truth Is"
+        "title": "Miles Away/The Truth Is",
+        "length": 254000
       },
       {
         "number": "D2",
-        "title": "Jezebel"
+        "title": "Jezebel",
+        "length": 281000
       },
       {
         "number": "D3",
-        "title": "Corrupt"
+        "title": "Corrupt",
+        "length": 302000
       },
       {
         "number": "D4",
-        "title": "Interlude #5"
+        "title": "Interlude #5",
+        "length": 41000
       },
       {
         "number": "1",
-        "title": "In Chains"
+        "title": "In Chains",
+        "length": 413000
       },
       {
         "number": "2",
-        "title": "Hole to Feed"
+        "title": "Hole to Feed",
+        "length": 239000
       },
       {
         "number": "3",
-        "title": "Wrong"
+        "title": "Wrong",
+        "length": 193000
       },
       {
         "number": "4",
-        "title": "Fragile Tension"
+        "title": "Fragile Tension",
+        "length": 249000
       },
       {
         "number": "5",
-        "title": "Little Soul"
+        "title": "Little Soul",
+        "length": 211000
       },
       {
         "number": "6",
-        "title": "In Sympathy"
+        "title": "In Sympathy",
+        "length": 294000
       },
       {
         "number": "7",
-        "title": "Peace"
+        "title": "Peace",
+        "length": 269000
       },
       {
         "number": "8",
-        "title": "Come Back"
+        "title": "Come Back",
+        "length": 315000
       },
       {
         "number": "9",
-        "title": "Spacewalker"
+        "title": "Spacewalker",
+        "length": 113000
       },
       {
         "number": "10",
-        "title": "Perfect"
+        "title": "Perfect",
+        "length": 273000
       },
       {
         "number": "11",
-        "title": "Miles Away/The Truth Is"
+        "title": "Miles Away/The Truth Is",
+        "length": 254000
       },
       {
         "number": "12",
-        "title": "Jezebel"
+        "title": "Jezebel",
+        "length": 281000
       },
       {
         "number": "13",
-        "title": "Corrupt / Interlude #5"
+        "title": "Corrupt / Interlude #5",
+        "length": 538000
       }
     ],
     "front": "https://coverartarchive.org/release/035f7624-347d-44f8-9bb9-3e9b9ce9ca62/1932442965-1200.jpg",

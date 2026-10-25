@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876431309,
+  "v": 2,
+  "fetchedAt": 1792952861669,
   "album": {
     "id": "a3159fb4-2ad3-4678-ba51-36fbc8b8430d",
     "title": "From Zero",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "From Zero (Intro)"
+        "title": "From Zero (Intro)",
+        "length": 22173
       },
       {
         "number": "2",
-        "title": "The Emptiness Machine"
+        "title": "The Emptiness Machine",
+        "length": 190413
       },
       {
         "number": "3",
-        "title": "Cut the Bridge"
+        "title": "Cut the Bridge",
+        "length": 228613
       },
       {
         "number": "4",
-        "title": "Heavy Is the Crown"
+        "title": "Heavy Is the Crown",
+        "length": 167013
       },
       {
         "number": "5",
-        "title": "Over Each Other"
+        "title": "Over Each Other",
+        "length": 170440
       },
       {
         "number": "6",
-        "title": "Casualty"
+        "title": "Casualty",
+        "length": 140920
       },
       {
         "number": "7",
-        "title": "Overflow"
+        "title": "Overflow",
+        "length": 211013
       },
       {
         "number": "8",
-        "title": "Two Faced"
+        "title": "Two Faced",
+        "length": 183586
       },
       {
         "number": "9",
-        "title": "Stained"
+        "title": "Stained",
+        "length": 185413
       },
       {
         "number": "10",
-        "title": "IGYEIH"
+        "title": "IGYEIH",
+        "length": 209080
       },
       {
         "number": "11",
-        "title": "Good Things Go"
+        "title": "Good Things Go",
+        "length": 211840
       }
     ],
     "front": "https://coverartarchive.org/release/cd0ab2da-5003-4ebb-93fb-c930fe39164b/44074278821-1200.jpg",

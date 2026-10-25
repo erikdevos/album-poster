@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875885570,
+  "v": 2,
+  "fetchedAt": 1792952998438,
   "album": {
     "id": "b88655ba-7469-48b8-a296-b9011ab73ef3",
     "title": "DAMN.",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "BLOOD."
+        "title": "BLOOD.",
+        "length": 118066
       },
       {
         "number": "2",
-        "title": "DNA."
+        "title": "DNA.",
+        "length": 185946
       },
       {
         "number": "3",
-        "title": "YAH."
+        "title": "YAH.",
+        "length": 160293
       },
       {
         "number": "4",
-        "title": "ELEMENT."
+        "title": "ELEMENT.",
+        "length": 208733
       },
       {
         "number": "5",
-        "title": "FEEL."
+        "title": "FEEL.",
+        "length": 214826
       },
       {
         "number": "6",
-        "title": "LOYALTY."
+        "title": "LOYALTY.",
+        "length": 227360
       },
       {
         "number": "7",
-        "title": "PRIDE."
+        "title": "PRIDE.",
+        "length": 275253
       },
       {
         "number": "8",
-        "title": "HUMBLE."
+        "title": "HUMBLE.",
+        "length": 177000
       },
       {
         "number": "9",
-        "title": "LUST."
+        "title": "LUST.",
+        "length": 307880
       },
       {
         "number": "10",
-        "title": "LOVE."
+        "title": "LOVE.",
+        "length": 213400
       },
       {
         "number": "11",
-        "title": "XXX."
+        "title": "XXX.",
+        "length": 254200
       },
       {
         "number": "12",
-        "title": "FEAR."
+        "title": "FEAR.",
+        "length": 460573
       },
       {
         "number": "13",
-        "title": "GOD."
+        "title": "GOD.",
+        "length": 248826
       },
       {
         "number": "14",
-        "title": "DUCKWORTH."
+        "title": "DUCKWORTH.",
+        "length": 248613
       }
     ],
     "front": "https://coverartarchive.org/release/b292c647-e3f6-4991-a919-7bd4df4d99ff/46309689086-1200.jpg",

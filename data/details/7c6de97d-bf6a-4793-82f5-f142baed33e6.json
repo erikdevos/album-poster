@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875804484,
+  "v": 2,
+  "fetchedAt": 1792952913733,
   "album": {
     "id": "7c6de97d-bf6a-4793-82f5-f142baed33e6",
     "title": "Loud",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "S&M"
+        "title": "S&M",
+        "length": 243533
       },
       {
         "number": "2",
-        "title": "What's My Name?"
+        "title": "What's My Name?",
+        "length": 263173
       },
       {
         "number": "3",
-        "title": "Cheers (Drink to That)"
+        "title": "Cheers (Drink to That)",
+        "length": 261746
       },
       {
         "number": "4",
-        "title": "Fading"
+        "title": "Fading",
+        "length": 199666
       },
       {
         "number": "5",
-        "title": "Only Girl (in the World)"
+        "title": "Only Girl (in the World)",
+        "length": 235493
       },
       {
         "number": "6",
-        "title": "California King Bed"
+        "title": "California King Bed",
+        "length": 251600
       },
       {
         "number": "7",
-        "title": "Man Down"
+        "title": "Man Down",
+        "length": 267013
       },
       {
         "number": "8",
-        "title": "Raining Men"
+        "title": "Raining Men",
+        "length": 224826
       },
       {
         "number": "9",
-        "title": "Complicated"
+        "title": "Complicated",
+        "length": 257506
       },
       {
         "number": "10",
-        "title": "Skin"
+        "title": "Skin",
+        "length": 303733
       },
       {
         "number": "11",
-        "title": "Love the Way You Lie (Part II)"
+        "title": "Love the Way You Lie (Part II)",
+        "length": 296213
       },
       {
         "number": "12",
-        "title": "Only Girl (in the World) (the Bimbo Jones radio)"
+        "title": "Only Girl (in the World) (the Bimbo Jones radio)",
+        "length": 232000
       },
       {
         "number": "13",
-        "title": "Only Girl (in the World) (CCW radio mix)"
+        "title": "Only Girl (in the World) (CCW radio mix)",
+        "length": 221000
       }
     ],
     "front": "https://coverartarchive.org/release/7d3ebe0a-94a1-45a2-89f3-dc008837b338/14542240865.jpg",

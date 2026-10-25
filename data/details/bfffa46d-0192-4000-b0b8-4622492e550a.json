@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875904768,
+  "v": 2,
+  "fetchedAt": 1792953026652,
   "album": {
     "id": "bfffa46d-0192-4000-b0b8-4622492e550a",
     "title": "WILD",
@@ -12,27 +12,33 @@
     "tracks": [
       {
         "number": "1",
-        "title": "PINKY UP"
+        "title": "PINKY UP",
+        "length": 131437
       },
       {
         "number": "2",
-        "title": "Animal"
+        "title": "Animal",
+        "length": 158000
       },
       {
         "number": "3",
-        "title": "Hootie Frutti"
+        "title": "Hootie Frutti",
+        "length": 140000
       },
       {
         "number": "4",
-        "title": "Bel Air"
+        "title": "Bel Air",
+        "length": 210000
       },
       {
         "number": "5",
-        "title": "That Way"
+        "title": "That Way",
+        "length": 176000
       },
       {
         "number": "6",
-        "title": "PINKY UP"
+        "title": "PINKY UP",
+        "length": 182016
       }
     ],
     "front": "https://coverartarchive.org/release/49f9bf56-e06a-4fe9-86df-1c735a5e19c8/45425769709-1200.jpg",

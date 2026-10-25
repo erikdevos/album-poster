@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875915058,
+  "v": 2,
+  "fetchedAt": 1792953042330,
   "album": {
     "id": "19f43783-f613-44bf-a332-fa0487923894",
     "title": "Vol.1",
@@ -12,27 +12,33 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Sherpa"
+        "title": "Sherpa",
+        "length": 343190
       },
       {
         "number": "2",
-        "title": "Tohogd"
+        "title": "Tohogd",
+        "length": 244974
       },
       {
         "number": "3",
-        "title": "Tamebsz"
+        "title": "Tamebsz",
+        "length": 476654
       },
       {
         "number": "4",
-        "title": "Ababa Hotel"
+        "title": "Ababa Hotel",
+        "length": 385827
       },
       {
         "number": "5",
-        "title": "Sahardnieh"
+        "title": "Sahardnieh",
+        "length": 253453
       },
       {
         "number": "6",
-        "title": "L’Aberek"
+        "title": "L’Aberek",
+        "length": 270364
       }
     ],
     "front": "https://coverartarchive.org/release/de0e1482-d8a6-4afe-9cd1-dc9e1a53941e/44293504530-1200.jpg",

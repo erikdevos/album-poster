@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875875103,
+  "v": 2,
+  "fetchedAt": 1792952985762,
   "album": {
     "id": "78570bea-2a26-467c-a3db-c52723ceb394",
     "title": "After Hours",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Alone Again"
+        "title": "Alone Again",
+        "length": 250057
       },
       {
         "number": "2",
-        "title": "Too Late"
+        "title": "Too Late",
+        "length": 239980
       },
       {
         "number": "3",
-        "title": "Hardest to Love"
+        "title": "Hardest to Love",
+        "length": 211402
       },
       {
         "number": "4",
-        "title": "Scared to Live"
+        "title": "Scared to Live",
+        "length": 191299
       },
       {
         "number": "5",
-        "title": "Snowchild"
+        "title": "Snowchild",
+        "length": 247192
       },
       {
         "number": "6",
-        "title": "Escape From LA"
+        "title": "Escape From LA",
+        "length": 355960
       },
       {
         "number": "7",
-        "title": "Heartless"
+        "title": "Heartless",
+        "length": 198267
       },
       {
         "number": "8",
-        "title": "Faith"
+        "title": "Faith",
+        "length": 283217
       },
       {
         "number": "9",
-        "title": "Blinding Lights"
+        "title": "Blinding Lights",
+        "length": 200046
       },
       {
         "number": "10",
-        "title": "In Your Eyes"
+        "title": "In Your Eyes",
+        "length": 237522
       },
       {
         "number": "11",
-        "title": "Save Your Tears"
+        "title": "Save Your Tears",
+        "length": 215627
       },
       {
         "number": "12",
-        "title": "Repeat After Me (interlude)"
+        "title": "Repeat After Me (interlude)",
+        "length": 195816
       },
       {
         "number": "13",
-        "title": "After Hours"
+        "title": "After Hours",
+        "length": 361025
       },
       {
         "number": "14",
-        "title": "Until I Bleed Out"
+        "title": "Until I Bleed Out",
+        "length": 190151
       }
     ],
     "front": "https://coverartarchive.org/release/19e4f6cc-ca0c-4897-8dfc-a36914b7f998/25720993837-1200.jpg",

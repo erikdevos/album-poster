@@ -213,7 +213,9 @@ export async function getAlbum(id, signal) {
         genre: topGenres(group.genres?.length ? group.genres : release.genres),
         tracks: release.media?.flatMap(medium => medium.tracks ?? []).map(track => ({
             number: track.number,
-            title: track.title
+            title: track.title,
+            // in milliseconds; a release often has no length on the track itself, but the recording has one
+            length: track.length ?? track.recording?.length ?? null
         })) ?? [],
         front: art?.front ?? '',
         back: art?.back ?? '',

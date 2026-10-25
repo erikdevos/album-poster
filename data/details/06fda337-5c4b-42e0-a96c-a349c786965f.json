@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875896777,
+  "v": 2,
+  "fetchedAt": 1792953010586,
   "album": {
     "id": "06fda337-5c4b-42e0-a96c-a349c786965f",
     "title": "Rated R",
@@ -12,63 +12,78 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Mad House"
+        "title": "Mad House",
+        "length": 95000
       },
       {
         "number": "2",
-        "title": "Wait Your Turn"
+        "title": "Wait Your Turn",
+        "length": 226000
       },
       {
         "number": "3",
-        "title": "Hard"
+        "title": "Hard",
+        "length": 251000
       },
       {
         "number": "4",
-        "title": "Stupid in Love"
+        "title": "Stupid in Love",
+        "length": 241000
       },
       {
         "number": "5",
-        "title": "ROCKSTAR 101"
+        "title": "ROCKSTAR 101",
+        "length": 239000
       },
       {
         "number": "6",
-        "title": "Russian Roulette"
+        "title": "Russian Roulette",
+        "length": 228000
       },
       {
         "number": "7",
-        "title": "Fire Bomb"
+        "title": "Fire Bomb",
+        "length": 258000
       },
       {
         "number": "8",
-        "title": "Rude Boy"
+        "title": "Rude Boy",
+        "length": 223000
       },
       {
         "number": "9",
-        "title": "Photographs"
+        "title": "Photographs",
+        "length": 286000
       },
       {
         "number": "10",
-        "title": "G4L"
+        "title": "G4L",
+        "length": 240000
       },
       {
         "number": "11",
-        "title": "Te amo"
+        "title": "Te amo",
+        "length": 208000
       },
       {
         "number": "12",
-        "title": "Cold Case Love"
+        "title": "Cold Case Love",
+        "length": 365000
       },
       {
         "number": "13",
-        "title": "The Last Song"
+        "title": "The Last Song",
+        "length": 256000
       },
       {
         "number": "14",
-        "title": "Russian Roulette (Donni Hotwheel remix)"
+        "title": "Russian Roulette (Donni Hotwheel remix)",
+        "length": 181000
       },
       {
         "number": "15",
-        "title": "Hole in My Head"
+        "title": "Hole in My Head",
+        "length": 245000
       }
     ],
     "front": "https://coverartarchive.org/release/340e4427-553d-4399-add6-2b1ae9c694d8/14541887388.jpg",

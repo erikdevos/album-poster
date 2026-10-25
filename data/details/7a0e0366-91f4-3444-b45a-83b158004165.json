@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875938958,
+  "v": 2,
+  "fetchedAt": 1792953076702,
   "album": {
     "id": "7a0e0366-91f4-3444-b45a-83b158004165",
     "title": "Speak & Spell",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "New Life"
+        "title": "New Life",
+        "length": 239066
       },
       {
         "number": "2",
-        "title": "Puppets"
+        "title": "Puppets",
+        "length": 239626
       },
       {
         "number": "3",
-        "title": "Dreaming of Me"
+        "title": "Dreaming of Me",
+        "length": 225226
       },
       {
         "number": "4",
-        "title": "Boys Say Go!"
+        "title": "Boys Say Go!",
+        "length": 188706
       },
       {
         "number": "5",
-        "title": "Nodisco"
+        "title": "Nodisco",
+        "length": 255466
       },
       {
         "number": "6",
-        "title": "What’s Your Name"
+        "title": "What’s Your Name",
+        "length": 165600
       },
       {
         "number": "7",
-        "title": "Photographic"
+        "title": "Photographic",
+        "length": 298018
       },
       {
         "number": "8",
-        "title": "Tora! Tora! Tora!"
+        "title": "Tora! Tora! Tora!",
+        "length": 268754
       },
       {
         "number": "9",
-        "title": "Big Muff"
+        "title": "Big Muff",
+        "length": 268960
       },
       {
         "number": "10",
-        "title": "Any Second Now (voices)"
+        "title": "Any Second Now (voices)",
+        "length": 153173
       },
       {
         "number": "11",
-        "title": "Just Can’t Get Enough"
+        "title": "Just Can’t Get Enough",
+        "length": 405996
       }
     ],
     "front": "https://coverartarchive.org/release/f1a3f01c-77e9-40f0-904c-6728330ec57c/8343767175-1200.jpg",

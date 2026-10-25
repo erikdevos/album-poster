@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875816364,
+  "v": 2,
+  "fetchedAt": 1792952929461,
   "album": {
     "id": "00054665-89fa-33d5-a8f0-1728ea8c32c3",
     "title": "Homework",
@@ -12,67 +12,83 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Daftendirekt"
+        "title": "Daftendirekt",
+        "length": 164000
       },
       {
         "number": "2",
-        "title": "WDPK 83.7 FM"
+        "title": "WDPK 83.7 FM",
+        "length": 28000
       },
       {
         "number": "3",
-        "title": "Revolution 909"
+        "title": "Revolution 909",
+        "length": 335000
       },
       {
         "number": "4",
-        "title": "Da Funk"
+        "title": "Da Funk",
+        "length": 328000
       },
       {
         "number": "5",
-        "title": "Phœnix"
+        "title": "Phœnix",
+        "length": 297000
       },
       {
         "number": "6",
-        "title": "Fresh"
+        "title": "Fresh",
+        "length": 244400
       },
       {
         "number": "7",
-        "title": "Around the World"
+        "title": "Around the World",
+        "length": 429000
       },
       {
         "number": "8",
-        "title": "Rollin' & Scratchin'"
+        "title": "Rollin' & Scratchin'",
+        "length": 447533
       },
       {
         "number": "9",
-        "title": "Teachers"
+        "title": "Teachers",
+        "length": 173493
       },
       {
         "number": "10",
-        "title": "High Fidelity"
+        "title": "High Fidelity",
+        "length": 362000
       },
       {
         "number": "11",
-        "title": "Rock'n Roll"
+        "title": "Rock'n Roll",
+        "length": 453000
       },
       {
         "number": "12",
-        "title": "Oh Yeah"
+        "title": "Oh Yeah",
+        "length": 121200
       },
       {
         "number": "13",
-        "title": "Burnin'"
+        "title": "Burnin'",
+        "length": 413666
       },
       {
         "number": "14",
-        "title": "Indo Silver Club"
+        "title": "Indo Silver Club",
+        "length": 274000
       },
       {
         "number": "15",
-        "title": "Alive"
+        "title": "Alive",
+        "length": 316000
       },
       {
         "number": "16",
-        "title": "Funk Ad"
+        "title": "Funk Ad",
+        "length": 51240
       }
     ],
     "front": "https://coverartarchive.org/release/2fdcc2d7-50b9-4b27-8262-8cf9e31aaa4d/11664602418-1200.jpg",

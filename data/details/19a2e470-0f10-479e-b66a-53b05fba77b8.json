@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875924468,
+  "v": 2,
+  "fetchedAt": 1792953061683,
   "album": {
     "id": "19a2e470-0f10-479e-b66a-53b05fba77b8",
     "title": "Aleph",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Out of Line"
+        "title": "Out of Line",
+        "length": 155947
       },
       {
         "number": "2",
-        "title": "Pursuit"
+        "title": "Pursuit",
+        "length": 247603
       },
       {
         "number": "3",
-        "title": "Nameless"
+        "title": "Nameless",
+        "length": 279427
       },
       {
         "number": "4",
-        "title": "Destinations"
+        "title": "Destinations",
+        "length": 216720
       },
       {
         "number": "5",
-        "title": "Obsession"
+        "title": "Obsession",
+        "length": 249373
       },
       {
         "number": "6",
-        "title": "Hellifornia"
+        "title": "Hellifornia",
+        "length": 220813
       },
       {
         "number": "7",
-        "title": "Aleph"
+        "title": "Aleph",
+        "length": 286827
       },
       {
         "number": "8",
-        "title": "Wall of Memories"
+        "title": "Wall of Memories",
+        "length": 230693
       },
       {
         "number": "9",
-        "title": "Duel"
+        "title": "Duel",
+        "length": 239333
       },
       {
         "number": "10",
-        "title": "Piece of Future"
+        "title": "Piece of Future",
+        "length": 309880
       },
       {
         "number": "11",
-        "title": "Hate or Glory"
+        "title": "Hate or Glory",
+        "length": 288787
       },
       {
         "number": "12",
-        "title": "Values"
+        "title": "Values",
+        "length": 239160
       },
       {
         "number": "13",
-        "title": "Trans"
+        "title": "Trans",
+        "length": 273600
       },
       {
         "number": "14",
-        "title": "Perfection"
+        "title": "Perfection",
+        "length": 214227
       }
     ],
     "front": "https://coverartarchive.org/release/c7e34161-37cd-40d4-aec8-f5b361c0fa92/5483875148-1200.jpg",

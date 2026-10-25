@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875902197,
+  "v": 2,
+  "fetchedAt": 1792953020212,
   "album": {
     "id": "7e48f018-b774-32e6-a68b-b42db04535c0",
     "title": "Good Girl Gone Bad",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Umbrella"
+        "title": "Umbrella",
+        "length": 275360
       },
       {
         "number": "2",
-        "title": "Push Up on Me"
+        "title": "Push Up on Me",
+        "length": 195040
       },
       {
         "number": "3",
-        "title": "Don’t Stop the Music"
+        "title": "Don’t Stop the Music",
+        "length": 267106
       },
       {
         "number": "4",
-        "title": "Breakin’ Dishes"
+        "title": "Breakin’ Dishes",
+        "length": 199750
       },
       {
         "number": "5",
-        "title": "Shut Up and Drive"
+        "title": "Shut Up and Drive",
+        "length": 212293
       },
       {
         "number": "6",
-        "title": "Hate That I Love You"
+        "title": "Hate That I Love You",
+        "length": 219000
       },
       {
         "number": "7",
-        "title": "Say It"
+        "title": "Say It",
+        "length": 250613
       },
       {
         "number": "8",
-        "title": "Sell Me Candy"
+        "title": "Sell Me Candy",
+        "length": 165600
       },
       {
         "number": "9",
-        "title": "Lemme Get That"
+        "title": "Lemme Get That",
+        "length": 220500
       },
       {
         "number": "10",
-        "title": "Rehab"
+        "title": "Rehab",
+        "length": 294720
       },
       {
         "number": "11",
-        "title": "Question Existing"
+        "title": "Question Existing",
+        "length": 247306
       },
       {
         "number": "12",
-        "title": "Good Girl Gone Bad"
+        "title": "Good Girl Gone Bad",
+        "length": 215093
       },
       {
         "number": "13",
-        "title": "Cry"
+        "title": "Cry",
+        "length": 232500
       },
       {
         "number": "14",
-        "title": "Umbrella (acoustic)"
+        "title": "Umbrella (acoustic)",
+        "length": 276493
       }
     ],
     "front": "https://coverartarchive.org/release/0bbca21e-43f6-4da7-8f3c-cebaea81da31/41460529279-1200.jpg",

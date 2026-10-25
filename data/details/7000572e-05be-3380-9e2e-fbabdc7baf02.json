@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876432767,
+  "v": 2,
+  "fetchedAt": 1792952863334,
   "album": {
     "id": "7000572e-05be-3380-9e2e-fbabdc7baf02",
     "title": "The Rising Tied",
@@ -12,107 +12,133 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Introduction"
+        "title": "Introduction",
+        "length": 43400
       },
       {
         "number": "2",
-        "title": "Remember the Name"
+        "title": "Remember the Name",
+        "length": 230493
       },
       {
         "number": "3",
-        "title": "Right Now"
+        "title": "Right Now",
+        "length": 254586
       },
       {
         "number": "4",
-        "title": "Petrified"
+        "title": "Petrified",
+        "length": 220346
       },
       {
         "number": "5",
-        "title": "Feel Like Home"
+        "title": "Feel Like Home",
+        "length": 233546
       },
       {
         "number": "6",
-        "title": "Where’d You Go"
+        "title": "Where’d You Go",
+        "length": 231866
       },
       {
         "number": "7",
-        "title": "In Stereo"
+        "title": "In Stereo",
+        "length": 209533
       },
       {
         "number": "8",
-        "title": "Back Home"
+        "title": "Back Home",
+        "length": 224600
       },
       {
         "number": "9",
-        "title": "Cigarettes"
+        "title": "Cigarettes",
+        "length": 220173
       },
       {
         "number": "10",
-        "title": "Believe Me"
+        "title": "Believe Me",
+        "length": 222960
       },
       {
         "number": "11",
-        "title": "Get Me Gone"
+        "title": "Get Me Gone",
+        "length": 116413
       },
       {
         "number": "12",
-        "title": "High Road"
+        "title": "High Road",
+        "length": 196520
       },
       {
         "number": "13",
-        "title": "Kenji"
+        "title": "Kenji",
+        "length": 231480
       },
       {
         "number": "14",
-        "title": "Red to Black"
+        "title": "Red to Black",
+        "length": 191986
       },
       {
         "number": "15",
-        "title": "The Battle"
+        "title": "The Battle",
+        "length": 32026
       },
       {
         "number": "16",
-        "title": "Slip Out the Back"
+        "title": "Slip Out the Back",
+        "length": 236680
       },
       {
         "number": "17",
-        "title": "[silence]"
+        "title": "[silence]",
+        "length": 4013
       },
       {
         "number": "18",
-        "title": "[silence]"
+        "title": "[silence]",
+        "length": 4053
       },
       {
         "number": "19",
-        "title": "Be Somebody"
+        "title": "Be Somebody",
+        "length": 195066
       },
       {
         "number": "20",
-        "title": "There They Go"
+        "title": "There They Go",
+        "length": 197333
       },
       {
         "number": "21",
-        "title": "The Hard Way"
+        "title": "The Hard Way",
+        "length": 234240
       },
       {
         "number": "1",
-        "title": "Studio Footage"
+        "title": "Studio Footage",
+        "length": null
       },
       {
         "number": "2",
-        "title": "Interview Footage"
+        "title": "Interview Footage",
+        "length": null
       },
       {
         "number": "3",
-        "title": "“Believe Me“ Video and Making Of…"
+        "title": "“Believe Me“ Video and Making Of…",
+        "length": null
       },
       {
         "number": "4",
-        "title": "Mike Shinoda Meeting Jay-Z"
+        "title": "Mike Shinoda Meeting Jay-Z",
+        "length": null
       },
       {
         "number": "5",
-        "title": "Mike Shinoda Painting Cover Artwork"
+        "title": "Mike Shinoda Painting Cover Artwork",
+        "length": null
       }
     ],
     "front": "https://coverartarchive.org/release/2260aedd-155d-33b0-a4bb-6db7ce3f6598/28875936991-1200.jpg",

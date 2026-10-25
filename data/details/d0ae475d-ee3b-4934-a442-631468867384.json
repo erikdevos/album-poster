@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876381445,
+  "v": 2,
+  "fetchedAt": 1792952813686,
   "album": {
     "id": "d0ae475d-ee3b-4934-a442-631468867384",
     "title": "Trilogy",
@@ -12,123 +12,153 @@
     "tracks": [
       {
         "number": "1",
-        "title": "High for This"
+        "title": "High for This",
+        "length": 247226
       },
       {
         "number": "2",
-        "title": "What You Need"
+        "title": "What You Need",
+        "length": 196360
       },
       {
         "number": "3",
-        "title": "House of Balloons / Glass Table Girls"
+        "title": "House of Balloons / Glass Table Girls",
+        "length": 407080
       },
       {
         "number": "4",
-        "title": "The Morning"
+        "title": "The Morning",
+        "length": 315666
       },
       {
         "number": "5",
-        "title": "Wicked Games"
+        "title": "Wicked Games",
+        "length": 325240
       },
       {
         "number": "6",
-        "title": "The Party & the After Party"
+        "title": "The Party & the After Party",
+        "length": 459386
       },
       {
         "number": "7",
-        "title": "Coming Down"
+        "title": "Coming Down",
+        "length": 295453
       },
       {
         "number": "8",
-        "title": "Loft Music"
+        "title": "Loft Music",
+        "length": 363986
       },
       {
         "number": "9",
-        "title": "The Knowing"
+        "title": "The Knowing",
+        "length": 349186
       },
       {
         "number": "10",
-        "title": "Twenty Eight"
+        "title": "Twenty Eight",
+        "length": 258453
       },
       {
         "number": "1",
-        "title": "Lonely Star"
+        "title": "Lonely Star",
+        "length": 349293
       },
       {
         "number": "2",
-        "title": "Life of the Party"
+        "title": "Life of the Party",
+        "length": 297000
       },
       {
         "number": "3",
-        "title": "Thursday"
+        "title": "Thursday",
+        "length": 320026
       },
       {
         "number": "4",
-        "title": "The Zone"
+        "title": "The Zone",
+        "length": 418506
       },
       {
         "number": "5",
-        "title": "The Birds Pt. 1"
+        "title": "The Birds Pt. 1",
+        "length": 214186
       },
       {
         "number": "6",
-        "title": "The Birds Pt. 2"
+        "title": "The Birds Pt. 2",
+        "length": 350640
       },
       {
         "number": "7",
-        "title": "Gone"
+        "title": "Gone",
+        "length": 487853
       },
       {
         "number": "8",
-        "title": "Rolling Stone"
+        "title": "Rolling Stone",
+        "length": 230920
       },
       {
         "number": "9",
-        "title": "Heaven or Las Vegas"
+        "title": "Heaven or Las Vegas",
+        "length": 360293
       },
       {
         "number": "10",
-        "title": "Valerie"
+        "title": "Valerie",
+        "length": 286840
       },
       {
         "number": "1",
-        "title": "D.D."
+        "title": "D.D.",
+        "length": 275493
       },
       {
         "number": "2",
-        "title": "Montreal"
+        "title": "Montreal",
+        "length": 250520
       },
       {
         "number": "3",
-        "title": "Outside"
+        "title": "Outside",
+        "length": 260093
       },
       {
         "number": "4",
-        "title": "XO / The Host"
+        "title": "XO / The Host",
+        "length": 443986
       },
       {
         "number": "5",
-        "title": "Initiation"
+        "title": "Initiation",
+        "length": 260693
       },
       {
         "number": "6",
-        "title": "Same Old Song"
+        "title": "Same Old Song",
+        "length": 312053
       },
       {
         "number": "7",
-        "title": "The Fall"
+        "title": "The Fall",
+        "length": 345160
       },
       {
         "number": "8",
-        "title": "Next"
+        "title": "Next",
+        "length": 360106
       },
       {
         "number": "9",
-        "title": "Echoes of Silence"
+        "title": "Echoes of Silence",
+        "length": 248906
       },
       {
         "number": "10",
-        "title": "Till Dawn (Here Comes the Sun)"
+        "title": "Till Dawn (Here Comes the Sun)",
+        "length": 319693
       }
     ],
     "front": "https://coverartarchive.org/release/62ea06a1-8517-4e85-b66f-c2eee37e5b68/6456250497-1200.jpg",

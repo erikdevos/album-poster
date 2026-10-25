@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875999435,
+  "v": 2,
+  "fetchedAt": 1792953127510,
   "album": {
     "id": "156f5e11-10db-34f4-b874-f8b6c59b7c43",
     "title": "Out of Exile",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Your Time Has Come"
+        "title": "Your Time Has Come",
+        "length": 255426
       },
       {
         "number": "2",
-        "title": "Out of Exile"
+        "title": "Out of Exile",
+        "length": 291200
       },
       {
         "number": "3",
-        "title": "Be Yourself"
+        "title": "Be Yourself",
+        "length": 279400
       },
       {
         "number": "4",
-        "title": "Doesn’t Remind Me"
+        "title": "Doesn’t Remind Me",
+        "length": 255773
       },
       {
         "number": "5",
-        "title": "Drown Me Slowly"
+        "title": "Drown Me Slowly",
+        "length": 233600
       },
       {
         "number": "6",
-        "title": "Heaven’s Dead"
+        "title": "Heaven’s Dead",
+        "length": 276600
       },
       {
         "number": "7",
-        "title": "The Worm"
+        "title": "The Worm",
+        "length": 237626
       },
       {
         "number": "8",
-        "title": "Man or Animal"
+        "title": "Man or Animal",
+        "length": 233093
       },
       {
         "number": "9",
-        "title": "Yesterday to Tomorrow"
+        "title": "Yesterday to Tomorrow",
+        "length": 273680
       },
       {
         "number": "10",
-        "title": "Dandelion"
+        "title": "Dandelion",
+        "length": 278026
       },
       {
         "number": "11",
-        "title": "#1 Zero"
+        "title": "#1 Zero",
+        "length": 299000
       },
       {
         "number": "12",
-        "title": "The Curse"
+        "title": "The Curse",
+        "length": 309706
       }
     ],
     "front": "https://coverartarchive.org/release/6c02f2db-3668-31ce-a758-6da1d735cd16/14911264703.jpg",

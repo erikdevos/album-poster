@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876419100,
+  "v": 2,
+  "fetchedAt": 1792952848352,
   "album": {
     "id": "eda0f5d3-44eb-42cf-bcfd-5c9f93e05c7a",
     "title": "The Rise and Fall of a Midwest Princess",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Femininomenon"
+        "title": "Femininomenon",
+        "length": 219710
       },
       {
         "number": "2",
-        "title": "Red Wine Supernova"
+        "title": "Red Wine Supernova",
+        "length": 192720
       },
       {
         "number": "3",
-        "title": "After Midnight"
+        "title": "After Midnight",
+        "length": 204857
       },
       {
         "number": "4",
-        "title": "Coffee"
+        "title": "Coffee",
+        "length": 205520
       },
       {
         "number": "5",
-        "title": "Casual"
+        "title": "Casual",
+        "length": 232796
       },
       {
         "number": "6",
-        "title": "Super Graphic Ultra Modern Girl"
+        "title": "Super Graphic Ultra Modern Girl",
+        "length": 183888
       },
       {
         "number": "7",
-        "title": "HOT TO GO!"
+        "title": "HOT TO GO!",
+        "length": 184841
       },
       {
         "number": "8",
-        "title": "My Kink Is Karma"
+        "title": "My Kink Is Karma",
+        "length": 222578
       },
       {
         "number": "9",
-        "title": "Picture You"
+        "title": "Picture You",
+        "length": 187130
       },
       {
         "number": "10",
-        "title": "Kaleidoscope"
+        "title": "Kaleidoscope",
+        "length": 222650
       },
       {
         "number": "11",
-        "title": "Pink Pony Club"
+        "title": "Pink Pony Club",
+        "length": 258034
       },
       {
         "number": "12",
-        "title": "Naked in Manhattan"
+        "title": "Naked in Manhattan",
+        "length": 211057
       },
       {
         "number": "13",
-        "title": "California"
+        "title": "California",
+        "length": 198089
       },
       {
         "number": "14",
-        "title": "Guilty Pleasure"
+        "title": "Guilty Pleasure",
+        "length": 224583
       }
     ],
     "front": "https://coverartarchive.org/release/19febf01-a08f-4504-9930-ab37dab30c73/36903536316-1200.jpg",

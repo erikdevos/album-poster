@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875921146,
+  "v": 2,
+  "fetchedAt": 1792953055582,
   "album": {
     "id": "b3073a10-2d7c-484c-b387-e49ae629da3d",
     "title": "DeBÍ TiRAR MáS FOToS",
@@ -12,71 +12,88 @@
     "tracks": [
       {
         "number": "1",
-        "title": "NUEVAYoL"
+        "title": "NUEVAYoL",
+        "length": 183685
       },
       {
         "number": "2",
-        "title": "VOY A LLeVARTE PA PR"
+        "title": "VOY A LLeVARTE PA PR",
+        "length": 156364
       },
       {
         "number": "3",
-        "title": "BAILE INoLVIDABLE"
+        "title": "BAILE INoLVIDABLE",
+        "length": 367725
       },
       {
         "number": "4",
-        "title": "PERFuMITO NUEVO"
+        "title": "PERFuMITO NUEVO",
+        "length": 200680
       },
       {
         "number": "5",
-        "title": "WELTiTA"
+        "title": "WELTiTA",
+        "length": 187507
       },
       {
         "number": "6",
-        "title": "VeLDÁ"
+        "title": "VeLDÁ",
+        "length": 235336
       },
       {
         "number": "7",
-        "title": "EL CLúB"
+        "title": "EL CLúB",
+        "length": 222568
       },
       {
         "number": "8",
-        "title": "KETU TeCRÉ"
+        "title": "KETU TeCRÉ",
+        "length": 250789
       },
       {
         "number": "9",
-        "title": "BOKeTE"
+        "title": "BOKeTE",
+        "length": 215983
       },
       {
         "number": "10",
-        "title": "KLOuFRENS"
+        "title": "KLOuFRENS",
+        "length": 199114
       },
       {
         "number": "11",
-        "title": "TURiSTA"
+        "title": "TURiSTA",
+        "length": 190028
       },
       {
         "number": "12",
-        "title": "CAFé CON RON"
+        "title": "CAFé CON RON",
+        "length": 228836
       },
       {
         "number": "13",
-        "title": "PIToRRO DE COCO"
+        "title": "PIToRRO DE COCO",
+        "length": 206627
       },
       {
         "number": "14",
-        "title": "LO QUE LE PASÓ A HAWAii"
+        "title": "LO QUE LE PASÓ A HAWAii",
+        "length": 229381
       },
       {
         "number": "15",
-        "title": "EoO"
+        "title": "EoO",
+        "length": 204768
       },
       {
         "number": "16",
-        "title": "DtMF"
+        "title": "DtMF",
+        "length": 237117
       },
       {
         "number": "17",
-        "title": "LA MuDANZA"
+        "title": "LA MuDANZA",
+        "length": 213010
       }
     ],
     "front": "https://coverartarchive.org/release/c9e6b642-a6d9-4b22-8ec1-16c47b6143fc/40857018101-1200.jpg",

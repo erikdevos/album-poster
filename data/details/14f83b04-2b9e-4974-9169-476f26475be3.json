@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875871303,
+  "v": 2,
+  "fetchedAt": 1792952981241,
   "album": {
     "id": "14f83b04-2b9e-4974-9169-476f26475be3",
     "title": "Hurry Up Tomorrow",
@@ -12,91 +12,113 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Wake Me Up"
+        "title": "Wake Me Up",
+        "length": 308575
       },
       {
         "number": "2",
-        "title": "Cry for Me"
+        "title": "Cry for Me",
+        "length": 224137
       },
       {
         "number": "3",
-        "title": "I Can’t Fucking Sing"
+        "title": "I Can’t Fucking Sing",
+        "length": 12288
       },
       {
         "number": "4",
-        "title": "São Paulo"
+        "title": "São Paulo",
+        "length": 301623
       },
       {
         "number": "5",
-        "title": "Until We’re Skin & Bones"
+        "title": "Until We’re Skin & Bones",
+        "length": 22034
       },
       {
         "number": "6",
-        "title": "Baptized in Fear"
+        "title": "Baptized in Fear",
+        "length": 232176
       },
       {
         "number": "7",
-        "title": "Open Hearts"
+        "title": "Open Hearts",
+        "length": 234924
       },
       {
         "number": "8",
-        "title": "Opening Night"
+        "title": "Opening Night",
+        "length": 96024
       },
       {
         "number": "9",
-        "title": "Reflections Laughing"
+        "title": "Reflections Laughing",
+        "length": 291193
       },
       {
         "number": "10",
-        "title": "Enjoy the Show"
+        "title": "Enjoy the Show",
+        "length": 301429
       },
       {
         "number": "11",
-        "title": "Given Up on Me"
+        "title": "Given Up on Me",
+        "length": 354781
       },
       {
         "number": "12",
-        "title": "I Can’t Wait to Get There"
+        "title": "I Can’t Wait to Get There",
+        "length": 188922
       },
       {
         "number": "13",
-        "title": "Timeless"
+        "title": "Timeless",
+        "length": 256000
       },
       {
         "number": "14",
-        "title": "Niagara Falls"
+        "title": "Niagara Falls",
+        "length": 277275
       },
       {
         "number": "15",
-        "title": "Take Me Back to LA"
+        "title": "Take Me Back to LA",
+        "length": 253735
       },
       {
         "number": "16",
-        "title": "Big Sleep"
+        "title": "Big Sleep",
+        "length": 225312
       },
       {
         "number": "17",
-        "title": "Give Me Mercy"
+        "title": "Give Me Mercy",
+        "length": 216431
       },
       {
         "number": "18",
-        "title": "Drive"
+        "title": "Drive",
+        "length": 188653
       },
       {
         "number": "19",
-        "title": "The Abyss"
+        "title": "The Abyss",
+        "length": 282873
       },
       {
         "number": "20",
-        "title": "Red Terror"
+        "title": "Red Terror",
+        "length": 231861
       },
       {
         "number": "21",
-        "title": "Without a Warning"
+        "title": "Without a Warning",
+        "length": 297525
       },
       {
         "number": "22",
-        "title": "Hurry Up Tomorrow"
+        "title": "Hurry Up Tomorrow",
+        "length": 291487
       }
     ],
     "front": "https://coverartarchive.org/release/c807933b-b18b-4ec9-a126-bd4aecf2f5fb/45194765731-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875926200,
+  "v": 2,
+  "fetchedAt": 1792953063037,
   "album": {
     "id": "341005c2-14ee-4be3-a421-57e9cf9bae61",
     "title": "Hyperion",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Hyperion"
+        "title": "Hyperion",
+        "length": 173080
       },
       {
         "number": "2",
-        "title": "Reset"
+        "title": "Reset",
+        "length": 205440
       },
       {
         "number": "3",
-        "title": "Lost in the Fire"
+        "title": "Lost in the Fire",
+        "length": 202093
       },
       {
         "number": "4",
-        "title": "Ever Now"
+        "title": "Ever Now",
+        "length": 98066
       },
       {
         "number": "5",
-        "title": "Blast Off"
+        "title": "Blast Off",
+        "length": 235200
       },
       {
         "number": "6",
-        "title": "So Bad"
+        "title": "So Bad",
+        "length": 216560
       },
       {
         "number": "7",
-        "title": "Forever"
+        "title": "Forever",
+        "length": 271733
       },
       {
         "number": "8",
-        "title": "Vortex"
+        "title": "Vortex",
+        "length": 157373
       },
       {
         "number": "9",
-        "title": "Memora"
+        "title": "Memora",
+        "length": 217106
       },
       {
         "number": "10",
-        "title": "Humanity Gone"
+        "title": "Humanity Gone",
+        "length": 642186
       }
     ],
     "front": "https://coverartarchive.org/release/0942e4a8-50fe-404b-b75e-36d449a20130/23790562150-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875818876,
+  "v": 2,
+  "fetchedAt": 1792952930848,
   "album": {
     "id": "f9e8042a-674e-3f01-80ec-7f0ab1c537df",
     "title": "Human After All",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Human After All"
+        "title": "Human After All",
+        "length": 319226
       },
       {
         "number": "2",
-        "title": "The Prime Time of Your Life"
+        "title": "The Prime Time of Your Life",
+        "length": 263373
       },
       {
         "number": "3",
-        "title": "Robot Rock"
+        "title": "Robot Rock",
+        "length": 287760
       },
       {
         "number": "4",
-        "title": "Steam Machine"
+        "title": "Steam Machine",
+        "length": 320800
       },
       {
         "number": "5",
-        "title": "Make Love"
+        "title": "Make Love",
+        "length": 290000
       },
       {
         "number": "6",
-        "title": "The Brainwasher"
+        "title": "The Brainwasher",
+        "length": 248240
       },
       {
         "number": "7",
-        "title": "On/Off"
+        "title": "On/Off",
+        "length": 19333
       },
       {
         "number": "8",
-        "title": "Television Rules the Nation"
+        "title": "Television Rules the Nation",
+        "length": 287733
       },
       {
         "number": "9",
-        "title": "Technologic"
+        "title": "Technologic",
+        "length": 284360
       },
       {
         "number": "10",
-        "title": "Emotion"
+        "title": "Emotion",
+        "length": 418066
       }
     ],
     "front": "https://coverartarchive.org/release/86d4299f-810e-3c4c-a324-2cc03672ed00/5606649161.jpg",

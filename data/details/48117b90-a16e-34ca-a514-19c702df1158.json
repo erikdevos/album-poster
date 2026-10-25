@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875815108,
+  "v": 2,
+  "fetchedAt": 1792952927027,
   "album": {
     "id": "48117b90-a16e-34ca-a514-19c702df1158",
     "title": "Discovery",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "One More Time"
+        "title": "One More Time",
+        "length": 320357
       },
       {
         "number": "2",
-        "title": "Aerodynamic"
+        "title": "Aerodynamic",
+        "length": 212547
       },
       {
         "number": "3",
-        "title": "Digital Love"
+        "title": "Digital Love",
+        "length": 301373
       },
       {
         "number": "4",
-        "title": "Harder, Better, Faster, Stronger"
+        "title": "Harder, Better, Faster, Stronger",
+        "length": 224693
       },
       {
         "number": "5",
-        "title": "Crescendolls"
+        "title": "Crescendolls",
+        "length": 211640
       },
       {
         "number": "6",
-        "title": "Nightvision"
+        "title": "Nightvision",
+        "length": 104467
       },
       {
         "number": "7",
-        "title": "Superheroes"
+        "title": "Superheroes",
+        "length": 237800
       },
       {
         "number": "8",
-        "title": "High Life"
+        "title": "High Life",
+        "length": 201800
       },
       {
         "number": "9",
-        "title": "Something About Us"
+        "title": "Something About Us",
+        "length": 232667
       },
       {
         "number": "10",
-        "title": "Voyager"
+        "title": "Voyager",
+        "length": 227867
       },
       {
         "number": "11",
-        "title": "Veridis Quo"
+        "title": "Veridis Quo",
+        "length": 345187
       },
       {
         "number": "12",
-        "title": "Short Circuit"
+        "title": "Short Circuit",
+        "length": 206867
       },
       {
         "number": "13",
-        "title": "Face to Face"
+        "title": "Face to Face",
+        "length": 240173
       },
       {
         "number": "14",
-        "title": "Too Long"
+        "title": "Too Long",
+        "length": 600293
       }
     ],
     "front": "https://coverartarchive.org/release/6cd30d99-4923-4d5e-8e51-9d87506976f1/43702618964-1200.jpg",

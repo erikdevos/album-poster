@@ -1,71 +1,84 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875986274,
+  "v": 2,
+  "fetchedAt": 1792953112924,
   "album": {
     "id": "02f79295-21e1-34cc-82f2-63219eec4f0a",
     "title": "Lateralus",
     "artist": "Tool",
     "year": "2001",
-    "barcode": "638592101128",
+    "barcode": "828765364522",
     "label": "Volcano Records",
     "genre": "alternative metal / progressive metal",
     "tracks": [
       {
         "number": "1",
-        "title": "The Grudge"
+        "title": "The Grudge",
+        "length": 516266
       },
       {
         "number": "2",
-        "title": "Eon Blue Apocalypse"
+        "title": "Eon Blue Apocalypse",
+        "length": 64733
       },
       {
         "number": "3",
-        "title": "The Patient"
+        "title": "The Patient",
+        "length": 433960
       },
       {
         "number": "4",
-        "title": "Mantra"
+        "title": "Mantra",
+        "length": 72600
       },
       {
         "number": "5",
-        "title": "Schism"
+        "title": "Schism",
+        "length": 407573
       },
       {
         "number": "6",
-        "title": "Parabol"
+        "title": "Parabol",
+        "length": 184426
       },
       {
         "number": "7",
-        "title": "Parabola"
+        "title": "Parabola",
+        "length": 363533
       },
       {
         "number": "8",
-        "title": "Ticks & Leeches"
+        "title": "Ticks & Leeches",
+        "length": 490040
       },
       {
         "number": "9",
-        "title": "Lateralus"
+        "title": "Lateralis",
+        "length": 564160
       },
       {
         "number": "10",
-        "title": "Disposition"
+        "title": "Disposition",
+        "length": 286066
       },
       {
         "number": "11",
-        "title": "Reflection"
+        "title": "Reflection",
+        "length": 667706
       },
       {
         "number": "12",
-        "title": "Triad"
+        "title": "Triad",
+        "length": 526533
       },
       {
         "number": "13",
-        "title": "Faaip de Oiad"
+        "title": "Faaip de Oiad",
+        "length": 159000
       }
     ],
-    "front": "",
+    "front": "https://coverartarchive.org/release/7cd19f01-41b1-4e13-9b16-064938ac52ba/45219676534-1200.jpg",
     "back": "",
-    "frontFull": "",
+    "frontFull": "https://coverartarchive.org/release/7cd19f01-41b1-4e13-9b16-064938ac52ba/45219676534.jpg",
     "backFull": ""
   }
 }

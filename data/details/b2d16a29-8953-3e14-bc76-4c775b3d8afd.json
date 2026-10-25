@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875860406,
+  "v": 2,
+  "fetchedAt": 1792952971693,
   "album": {
     "id": "b2d16a29-8953-3e14-bc76-4c775b3d8afd",
     "title": "Mer de noms",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The Hollow"
+        "title": "The Hollow",
+        "length": 180986
       },
       {
         "number": "2",
-        "title": "Magdalena"
+        "title": "Magdalena",
+        "length": 248093
       },
       {
         "number": "3",
-        "title": "Rose"
+        "title": "Rose",
+        "length": 208000
       },
       {
         "number": "4",
-        "title": "Judith"
+        "title": "Judith",
+        "length": 249293
       },
       {
         "number": "5",
-        "title": "Orestes"
+        "title": "Orestes",
+        "length": 290386
       },
       {
         "number": "6",
-        "title": "3 Libras"
+        "title": "3 Libras",
+        "length": 221666
       },
       {
         "number": "7",
-        "title": "Sleeping Beauty"
+        "title": "Sleeping Beauty",
+        "length": 252853
       },
       {
         "number": "8",
-        "title": "Thomas"
+        "title": "Thomas",
+        "length": 211400
       },
       {
         "number": "9",
-        "title": "Renholdër"
+        "title": "Renholdër",
+        "length": 146520
       },
       {
         "number": "10",
-        "title": "Thinking of You"
+        "title": "Thinking of You",
+        "length": 276600
       },
       {
         "number": "11",
-        "title": "Breña"
+        "title": "Breña",
+        "length": 266493
       },
       {
         "number": "12",
-        "title": "Over"
+        "title": "Over",
+        "length": 141200
       }
     ],
     "front": "https://coverartarchive.org/release/e5c49bf1-925b-32e2-9ac3-c4084f875376/10015661298.jpg",

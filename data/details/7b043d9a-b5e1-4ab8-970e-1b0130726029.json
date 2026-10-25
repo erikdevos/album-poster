@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875798938,
+  "v": 2,
+  "fetchedAt": 1792952907747,
   "album": {
     "id": "7b043d9a-b5e1-4ab8-970e-1b0130726029",
     "title": "Nothing But Thieves",
@@ -12,79 +12,98 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Excuse Me"
+        "title": "Excuse Me",
+        "length": 218000
       },
       {
         "number": "2",
-        "title": "Ban All the Music"
+        "title": "Ban All the Music",
+        "length": 172000
       },
       {
         "number": "3",
-        "title": "Wake Up Call"
+        "title": "Wake Up Call",
+        "length": 165000
       },
       {
         "number": "4",
-        "title": "Itch"
+        "title": "Itch",
+        "length": 204000
       },
       {
         "number": "5",
-        "title": "If I Get High"
+        "title": "If I Get High",
+        "length": 206000
       },
       {
         "number": "6",
-        "title": "Graveyard Whistling"
+        "title": "Graveyard Whistling",
+        "length": 232000
       },
       {
         "number": "7",
-        "title": "Hostage"
+        "title": "Hostage",
+        "length": 229000
       },
       {
         "number": "8",
-        "title": "Trip Switch"
+        "title": "Trip Switch",
+        "length": 181000
       },
       {
         "number": "9",
-        "title": "Lover, Please Stay"
+        "title": "Lover, Please Stay",
+        "length": 247000
       },
       {
         "number": "10",
-        "title": "Drawing Pins"
+        "title": "Drawing Pins",
+        "length": 217000
       },
       {
         "number": "11",
-        "title": "Painkiller"
+        "title": "Painkiller",
+        "length": 145000
       },
       {
         "number": "12",
-        "title": "Tempt You (Evocatio)"
+        "title": "Tempt You (Evocatio)",
+        "length": 216000
       },
       {
         "number": "13",
-        "title": "Honey Whiskey"
+        "title": "Honey Whiskey",
+        "length": 191000
       },
       {
         "number": "14",
-        "title": "Hanging"
+        "title": "Hanging",
+        "length": 231000
       },
       {
         "number": "15",
-        "title": "Neon Brother"
+        "title": "Neon Brother",
+        "length": 235000
       },
       {
         "number": "16",
-        "title": "Six Billion"
+        "title": "Six Billion",
+        "length": 227000
       },
       {
         "number": "17",
-        "title": "In My Head"
+        "title": "In My Head",
+        "length": 231000
       },
       {
         "number": "18",
-        "title": "If I Get High (II)"
+        "title": "If I Get High (II)",
+        "length": 205000
       },
       {
         "number": "19",
-        "title": "Ban All the Music (II)"
+        "title": "Ban All the Music (II)",
+        "length": 177000
       }
     ],
     "front": "https://coverartarchive.org/release/a8f9dbef-27e6-4a2e-aaeb-2513fe1af2d3/38432621583-1200.jpg",

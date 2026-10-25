@@ -38,7 +38,11 @@ function release(title, artist, trackNames = ['Come Together', 'Something', 'Oct
         'artist-credit': [{ name: artist }],
         'label-info': [{ label: { name: 'Apple' } }],
         'release-group': { title, 'first-release-date': '1969-09-26', genres: [{ name: 'rock', count: 3 }] },
-        media: [{ tracks: trackNames.map((name, i) => ({ number: String(i + 1), title: name })) }]
+        media: [{ tracks: trackNames.map((name, i) => ({
+            number: String(i + 1), title: name,
+            // as MusicBrainz does: the length on the track, or only on its recording
+            ...(i === 0 ? { length: 200_000 } : { recording: { length: 100_000 } })
+        })) }]
     }
 }
 
@@ -894,7 +898,7 @@ test('with colors=cover the poster gets the colours of the cover', async () => {
     } finally { await close() }
 })
 
-for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl']) {
+for (const layout of ['classic', 'minimal', 'swiss', 'blur', 'cd', 'cd-blur', 'festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl', 'modern']) {
     test(`on a phone the ${layout} poster fits the screen and nothing sticks out`, async () => {
         const { page, close } = await open(`?layout=${layout}#${LUX}`, { viewport: { width: 375, height: 812 } })
         try {
@@ -1245,7 +1249,7 @@ test('festival, receipt and gallery are in the layout menu', async () => {
         await poster(page).title.getByText('LUX').waitFor()
         const options = await page.locator('#layout-select option').allTextContents()
         for (const name of ['Festival', 'Receipt', 'Gallery', 'Setlist', 'Typographic', 'Riso', 'Film', 'Vinyl']) assert.ok(options.includes(name), `${name} is missing`)
-        for (const layout of ['festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl']) {
+        for (const layout of ['festival', 'receipt', 'gallery', 'setlist', 'typographic', 'riso', 'film', 'vinyl', 'modern']) {
             await page.getByLabel('Poster layout').selectOption(layout)
             assert.equal(await page.locator('#album-container').getAttribute('data-layout'), layout)
         }
@@ -1515,7 +1519,7 @@ const overflow = page => page.evaluate(() => {
     return out
 })
 
-for (const layout of ['setlist', 'typographic', 'riso', 'film', 'vinyl']) {
+for (const layout of ['setlist', 'typographic', 'riso', 'film', 'vinyl', 'modern']) {
     test(`${layout}: a very long title and artist and 30 tracks stay inside the poster`, async () => {
         for (const size of ['s', 'l']) {
             const { page, close } = await open(`?layout=${layout}&size=${size}#${EXTREME}`)
@@ -1676,4 +1680,52 @@ test('the wall, with its layout menu, the offline panel and the update banner, f
             assert.deepEqual(found, [], `${width} px wide`)
         } finally { await close() }
     }
+})
+
+test('modern: title, artist with the colours, a rounded cover, two columns of tracks and the details at the right', async () => {
+    const { page, close } = await open(`?layout=modern#${LUX}`, { viewport: { width: 700, height: 1100 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+        const look = await page.evaluate(() => {
+            const rect = selector => document.querySelector(selector).getBoundingClientRect()
+            const labels = [...document.querySelectorAll('.album-footer-info .footer-item')]
+                .map(item => getComputedStyle(item, '::before').content)
+            return {
+                columns: getComputedStyle(document.getElementById('track-list')).columnCount,
+                radius: parseFloat(getComputedStyle(document.querySelector('.album-cover-wrapper')).borderTopLeftRadius),
+                title: rect('#album-name'), artist: rect('#album-artist'), colors: rect('#album-colors'),
+                cover: rect('.album-cover-wrapper'), tracks: rect('#track-list'), footer: rect('.album-footer-info'),
+                labels
+            }
+        })
+        assert.equal(look.columns, '2')
+        assert.ok(look.radius > 0, 'the cover has rounded corners')
+        // top to bottom: title, artist and colours on one row, cover, then tracks and details side by side
+        assert.ok(look.title.bottom <= look.artist.top + 1)
+        assert.ok(Math.abs((look.artist.top + look.artist.bottom) / 2 - (look.colors.top + look.colors.bottom) / 2) < 6, 'the colours are level with the artist')
+        assert.ok(look.colors.left > look.artist.right, 'the colours are at the right')
+        assert.ok(look.artist.bottom <= look.cover.top + 1 && look.cover.bottom <= look.tracks.top + 1)
+        assert.ok(look.footer.left >= look.tracks.right - 1, 'the details are beside the tracks, at the right')
+        assert.ok(Math.abs(look.footer.top - look.tracks.top) < 2)
+        assert.deepEqual(look.labels, ['"Music Label"', '"Release Year"', '"Genre"', '"Album Length"'])
+    } finally { await close() }
+})
+
+test('the track lengths come from MusicBrainz, and the album length shows in modern only', async () => {
+    const { page, close } = await open(`?layout=modern#${ABBEY}`, { viewport: { width: 700, height: 1100 } })
+    try {
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        // 3 tracks: 200 s on the track, 100 s on each recording
+        assert.deepEqual(await page.locator('#track-list li').evaluateAll(items => items.map(li => li.dataset.length)), ['3:20', '1:40', '1:40'])
+        const length = page.locator('.footer-length')
+        await length.waitFor()
+        assert.equal(await page.locator('#album-length').textContent(), '6 min 40 sec')
+        assert.equal(await length.evaluate(el => getComputedStyle(el, '::before').content), '"Album Length"')
+        assert.equal(await length.evaluate(el => getComputedStyle(el).order), '-1')
+
+        await page.goto(`${base}?layout=classic#${ABBEY}`)
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        assert.equal(await page.locator('.footer-length').isHidden(), true, 'other layouts do not show it')
+    } finally { await close() }
 })

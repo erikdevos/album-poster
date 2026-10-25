@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875826953,
+  "v": 2,
+  "fetchedAt": 1792952940335,
   "album": {
     "id": "b1392450-e666-3926-a536-22c65f834433",
     "title": "OK Computer",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Airbag"
+        "title": "Airbag",
+        "length": 287000
       },
       {
         "number": "2",
-        "title": "Paranoid Android"
+        "title": "Paranoid Android",
+        "length": 387000
       },
       {
         "number": "3",
-        "title": "Subterranean Homesick Alien"
+        "title": "Subterranean Homesick Alien",
+        "length": 267000
       },
       {
         "number": "4",
-        "title": "Exit Music (for a Film)"
+        "title": "Exit Music (for a Film)",
+        "length": 267000
       },
       {
         "number": "5",
-        "title": "Let Down"
+        "title": "Let Down",
+        "length": 299266
       },
       {
         "number": "6",
-        "title": "Karma Police"
+        "title": "Karma Police",
+        "length": 264000
       },
       {
         "number": "7",
-        "title": "Fitter Happier"
+        "title": "Fitter Happier",
+        "length": 117333
       },
       {
         "number": "8",
-        "title": "Electioneering"
+        "title": "Electioneering",
+        "length": 230000
       },
       {
         "number": "9",
-        "title": "Climbing Up the Walls"
+        "title": "Climbing Up the Walls",
+        "length": 285200
       },
       {
         "number": "10",
-        "title": "No Surprises"
+        "title": "No Surprises",
+        "length": 228533
       },
       {
         "number": "11",
-        "title": "Lucky"
+        "title": "Lucky",
+        "length": 258000
       },
       {
         "number": "12",
-        "title": "The Tourist"
+        "title": "The Tourist",
+        "length": 326000
       }
     ],
     "front": "https://coverartarchive.org/release/30702389-5c67-4438-9ea0-2351c8de0f1d/43287476628-1200.jpg",

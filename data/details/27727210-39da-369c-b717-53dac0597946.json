@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875934641,
+  "v": 2,
+  "fetchedAt": 1792953071076,
   "album": {
     "id": "27727210-39da-369c-b717-53dac0597946",
     "title": "Playing the Angel",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "A Pain That I’m Used To"
+        "title": "A Pain That I’m Used To",
+        "length": 251360
       },
       {
         "number": "2",
-        "title": "John the Revelator"
+        "title": "John the Revelator",
+        "length": 222640
       },
       {
         "number": "3",
-        "title": "Suffer Well"
+        "title": "Suffer Well",
+        "length": 229666
       },
       {
         "number": "4",
-        "title": "The Sinner in Me"
+        "title": "The Sinner in Me",
+        "length": 296066
       },
       {
         "number": "5",
-        "title": "Precious"
+        "title": "Precious",
+        "length": 250160
       },
       {
         "number": "6",
-        "title": "Macro"
+        "title": "Macro",
+        "length": 243333
       },
       {
         "number": "7",
-        "title": "I Want It All"
+        "title": "I Want It All",
+        "length": 369640
       },
       {
         "number": "8",
-        "title": "Nothing’s Impossible"
+        "title": "Nothing’s Impossible",
+        "length": 261200
       },
       {
         "number": "9",
-        "title": "Introspectre"
+        "title": "Introspectre",
+        "length": 102160
       },
       {
         "number": "10",
-        "title": "Damaged People"
+        "title": "Damaged People",
+        "length": 209840
       },
       {
         "number": "11",
-        "title": "Lilian"
+        "title": "Lilian",
+        "length": 289960
       },
       {
         "number": "12",
-        "title": "The Darkest Star"
+        "title": "The Darkest Star",
+        "length": 415040
       }
     ],
     "front": "https://coverartarchive.org/release/d371c531-00b0-4afd-b239-257a30ee1171/21813145326-1200.jpg",

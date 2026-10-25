@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875992836,
+  "v": 2,
+  "fetchedAt": 1792953121004,
   "album": {
     "id": "9162580e-5df4-32de-80cc-f45a8d8a9b1d",
     "title": "Abbey Road",
@@ -12,71 +12,88 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Come Together"
+        "title": "Come Together",
+        "length": 259946
       },
       {
         "number": "2",
-        "title": "Something"
+        "title": "Something",
+        "length": 182293
       },
       {
         "number": "3",
-        "title": "Maxwell’s Silver Hammer"
+        "title": "Maxwell’s Silver Hammer",
+        "length": 207920
       },
       {
         "number": "4",
-        "title": "Oh! Darling"
+        "title": "Oh! Darling",
+        "length": 207240
       },
       {
         "number": "5",
-        "title": "Octopus’s Garden"
+        "title": "Octopus’s Garden",
+        "length": 170720
       },
       {
         "number": "6",
-        "title": "I Want You (She’s So Heavy)"
+        "title": "I Want You (She’s So Heavy)",
+        "length": 467320
       },
       {
         "number": "7",
-        "title": "Here Comes the Sun"
+        "title": "Here Comes the Sun",
+        "length": 185733
       },
       {
         "number": "8",
-        "title": "Because"
+        "title": "Because",
+        "length": 165666
       },
       {
         "number": "9",
-        "title": "You Never Give Me Your Money"
+        "title": "You Never Give Me Your Money",
+        "length": 242973
       },
       {
         "number": "10",
-        "title": "Sun King"
+        "title": "Sun King",
+        "length": 146266
       },
       {
         "number": "11",
-        "title": "Mean Mr Mustard"
+        "title": "Mean Mr Mustard",
+        "length": 66533
       },
       {
         "number": "12",
-        "title": "Polythene Pam"
+        "title": "Polythene Pam",
+        "length": 72640
       },
       {
         "number": "13",
-        "title": "She Came In Through the Bathroom Window"
+        "title": "She Came In Through the Bathroom Window",
+        "length": 118626
       },
       {
         "number": "14",
-        "title": "Golden Slumbers"
+        "title": "Golden Slumbers",
+        "length": 91760
       },
       {
         "number": "15",
-        "title": "Carry That Weight"
+        "title": "Carry That Weight",
+        "length": 96466
       },
       {
         "number": "16",
-        "title": "The End"
+        "title": "The End",
+        "length": 141613
       },
       {
         "number": "17",
-        "title": "Her Majesty"
+        "title": "Her Majesty",
+        "length": 25986
       }
     ],
     "front": "https://coverartarchive.org/release/31765b9f-e969-4257-855f-c7ea1f657b2a/39706767821-1200.jpg",

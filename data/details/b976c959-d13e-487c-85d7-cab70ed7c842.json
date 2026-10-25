@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876430060,
+  "v": 2,
+  "fetchedAt": 1792952858668,
   "album": {
     "id": "b976c959-d13e-487c-85d7-cab70ed7c842",
     "title": "One More Light",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Nobody Can Save Me"
+        "title": "Nobody Can Save Me",
+        "length": 225546
       },
       {
         "number": "2",
-        "title": "Good Goodbye"
+        "title": "Good Goodbye",
+        "length": 211413
       },
       {
         "number": "3",
-        "title": "Talking to Myself"
+        "title": "Talking to Myself",
+        "length": 231306
       },
       {
         "number": "4",
-        "title": "Battle Symphony"
+        "title": "Battle Symphony",
+        "length": 216266
       },
       {
         "number": "5",
-        "title": "Invisible"
+        "title": "Invisible",
+        "length": 214346
       },
       {
         "number": "6",
-        "title": "Heavy"
+        "title": "Heavy",
+        "length": 169773
       },
       {
         "number": "7",
-        "title": "Sorry for Now"
+        "title": "Sorry for Now",
+        "length": 203653
       },
       {
         "number": "8",
-        "title": "Halfway Right"
+        "title": "Halfway Right",
+        "length": 217066
       },
       {
         "number": "9",
-        "title": "One More Light"
+        "title": "One More Light",
+        "length": 255066
       },
       {
         "number": "10",
-        "title": "Sharp Edges"
+        "title": "Sharp Edges",
+        "length": 178200
       }
     ],
     "front": "https://coverartarchive.org/release/aa623b4f-f8f7-4639-ad3b-89ec2c3bb465/16247595624-1200.jpg",

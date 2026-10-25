@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875794914,
+  "v": 2,
+  "fetchedAt": 1792952902761,
   "album": {
     "id": "08110ae5-16bc-4baf-900c-9ce04c9a9e40",
     "title": "Hyperdrama",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Neverender"
+        "title": "Neverender",
+        "length": 266493
       },
       {
         "number": "2",
-        "title": "Generator"
+        "title": "Generator",
+        "length": 282747
       },
       {
         "number": "3",
-        "title": "Afterimage"
+        "title": "Afterimage",
+        "length": 245560
       },
       {
         "number": "4",
-        "title": "One Night/All Night"
+        "title": "One Night/All Night",
+        "length": 276067
       },
       {
         "number": "5",
-        "title": "Dear Alan"
+        "title": "Dear Alan",
+        "length": 333040
       },
       {
         "number": "6",
-        "title": "Incognito"
+        "title": "Incognito",
+        "length": 241760
       },
       {
         "number": "7",
-        "title": "Mannequin Love"
+        "title": "Mannequin Love",
+        "length": 207373
       },
       {
         "number": "8",
-        "title": "Moonlight Rendez-vous"
+        "title": "Moonlight Rendez-vous",
+        "length": 120453
       },
       {
         "number": "9",
-        "title": "Explorer"
+        "title": "Explorer",
+        "length": 249467
       },
       {
         "number": "10",
-        "title": "Muscle Memory"
+        "title": "Muscle Memory",
+        "length": 250253
       },
       {
         "number": "11",
-        "title": "Harpy Dream"
+        "title": "Harpy Dream",
+        "length": 28227
       },
       {
         "number": "12",
-        "title": "Saturnine"
+        "title": "Saturnine",
+        "length": 201533
       },
       {
         "number": "13",
-        "title": "The End"
+        "title": "The End",
+        "length": 254347
       }
     ],
     "front": "https://coverartarchive.org/release/66869aec-e354-4ade-99fb-d7d746d73bf8/37859330810-1200.jpg",

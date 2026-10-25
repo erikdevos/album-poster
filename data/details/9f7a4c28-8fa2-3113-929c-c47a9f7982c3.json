@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875806074,
+  "v": 2,
+  "fetchedAt": 1792952914982,
   "album": {
     "id": "9f7a4c28-8fa2-3113-929c-c47a9f7982c3",
     "title": "Sgt. Pepper’s Lonely Hearts Club Band",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Sgt. Pepper’s Lonely Hearts Club Band"
+        "title": "Sgt. Pepper’s Lonely Hearts Club Band",
+        "length": 122893
       },
       {
         "number": "2",
-        "title": "With a Little Help From My Friends"
+        "title": "With a Little Help From My Friends",
+        "length": 164106
       },
       {
         "number": "3",
-        "title": "Lucy in the Sky With Diamonds"
+        "title": "Lucy in the Sky With Diamonds",
+        "length": 208466
       },
       {
         "number": "4",
-        "title": "Getting Better"
+        "title": "Getting Better",
+        "length": 168120
       },
       {
         "number": "5",
-        "title": "Fixing a Hole"
+        "title": "Fixing a Hole",
+        "length": 156826
       },
       {
         "number": "6",
-        "title": "She’s Leaving Home"
+        "title": "She’s Leaving Home",
+        "length": 215160
       },
       {
         "number": "7",
-        "title": "Being for the Benefit of Mr. Kite!"
+        "title": "Being for the Benefit of Mr. Kite!",
+        "length": 157533
       },
       {
         "number": "8",
-        "title": "Within You Without You"
+        "title": "Within You Without You",
+        "length": 304666
       },
       {
         "number": "9",
-        "title": "When I’m Sixty Four"
+        "title": "When I’m Sixty Four",
+        "length": 157666
       },
       {
         "number": "10",
-        "title": "Lovely Rita"
+        "title": "Lovely Rita",
+        "length": 162093
       },
       {
         "number": "11",
-        "title": "Good Morning Good Morning"
+        "title": "Good Morning Good Morning",
+        "length": 161226
       },
       {
         "number": "12",
-        "title": "Sgt. Pepper’s Lonely Hearts Club Band (reprise)"
+        "title": "Sgt. Pepper’s Lonely Hearts Club Band (reprise)",
+        "length": 79066
       },
       {
         "number": "13",
-        "title": "A Day in the Life"
+        "title": "A Day in the Life",
+        "length": 337413
       }
     ],
     "front": "https://coverartarchive.org/release/9dca8a47-b1e1-4810-aeb7-2774a0e7af5b/29759367493-1200.jpg",

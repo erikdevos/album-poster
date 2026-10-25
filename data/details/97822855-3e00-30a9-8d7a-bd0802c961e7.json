@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875966721,
+  "v": 2,
+  "fetchedAt": 1792953100095,
   "album": {
     "id": "97822855-3e00-30a9-8d7a-bd0802c961e7",
     "title": "Exciter",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Dream On"
+        "title": "Dream On",
+        "length": 260946
       },
       {
         "number": "2",
-        "title": "Shine"
+        "title": "Shine",
+        "length": 334000
       },
       {
         "number": "3",
-        "title": "The Sweetest Condition"
+        "title": "The Sweetest Condition",
+        "length": 224000
       },
       {
         "number": "4",
-        "title": "When the Body Speaks"
+        "title": "When the Body Speaks",
+        "length": 362000
       },
       {
         "number": "5",
-        "title": "The Dead of Night"
+        "title": "The Dead of Night",
+        "length": 291000
       },
       {
         "number": "6",
-        "title": "Lovetheme"
+        "title": "Lovetheme",
+        "length": 124000
       },
       {
         "number": "7",
-        "title": "Freelove"
+        "title": "Freelove",
+        "length": 372000
       },
       {
         "number": "8",
-        "title": "Comatose"
+        "title": "Comatose",
+        "length": 205000
       },
       {
         "number": "9",
-        "title": "I Feel Loved"
+        "title": "I Feel Loved",
+        "length": 262000
       },
       {
         "number": "10",
-        "title": "Breathe"
+        "title": "Breathe",
+        "length": 319000
       },
       {
         "number": "11",
-        "title": "Easy Tiger"
+        "title": "Easy Tiger",
+        "length": 126000
       },
       {
         "number": "12",
-        "title": "I Am You"
+        "title": "I Am You",
+        "length": 311000
       },
       {
         "number": "13",
-        "title": "Goodnight Lovers"
+        "title": "Goodnight Lovers",
+        "length": 229493
       }
     ],
     "front": "https://coverartarchive.org/release/2689a2ed-19b4-4095-8c77-f2e24e915962/22524388802-1200.jpg",

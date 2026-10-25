@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875894329,
+  "v": 2,
+  "fetchedAt": 1792953008344,
   "album": {
     "id": "1ab3ba95-bc96-46f4-bc6d-1e57bc6ad1a0",
     "title": "Unapologetic",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Phresh Out the Runway"
+        "title": "Phresh Out the Runway",
+        "length": 222413
       },
       {
         "number": "2",
-        "title": "Diamonds"
+        "title": "Diamonds",
+        "length": 225146
       },
       {
         "number": "3",
-        "title": "Numb"
+        "title": "Numb",
+        "length": 205066
       },
       {
         "number": "4",
-        "title": "Pour It Up"
+        "title": "Pour It Up",
+        "length": 161200
       },
       {
         "number": "5",
-        "title": "Loveeeeeee Song"
+        "title": "Loveeeeeee Song",
+        "length": 256320
       },
       {
         "number": "6",
-        "title": "Jump"
+        "title": "Jump",
+        "length": 264453
       },
       {
         "number": "7",
-        "title": "Right Now"
+        "title": "Right Now",
+        "length": 181626
       },
       {
         "number": "8",
-        "title": "What Now"
+        "title": "What Now",
+        "length": 243093
       },
       {
         "number": "9",
-        "title": "Stay"
+        "title": "Stay",
+        "length": 240706
       },
       {
         "number": "10",
-        "title": "Nobody’s Business"
+        "title": "Nobody’s Business",
+        "length": 216293
       },
       {
         "number": "11",
-        "title": "Love Without Tragedy / Mother Mary"
+        "title": "Love Without Tragedy / Mother Mary",
+        "length": 418880
       },
       {
         "number": "12",
-        "title": "Get It Over With"
+        "title": "Get It Over With",
+        "length": 211880
       },
       {
         "number": "13",
-        "title": "No Love Allowed"
+        "title": "No Love Allowed",
+        "length": 249133
       },
       {
         "number": "14",
-        "title": "Lost in Paradise"
+        "title": "Lost in Paradise",
+        "length": 215760
       }
     ],
     "front": "https://coverartarchive.org/release/cc06c0f7-32b6-4a55-9e9b-dfba6c8f50e2/25491165319-1200.jpg",

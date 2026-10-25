@@ -36,8 +36,9 @@ const release = {
         genres: [{ name: 'pop', count: 2 }, { name: 'rock', count: 5 }, { name: 'folk', count: 1 }]
     },
     media: [
-        { tracks: [{ number: '1', title: 'One' }, { number: '2', title: 'Two' }] },
-        { tracks: [{ number: '3', title: 'Three' }] }
+        // a length on the track, one only on its recording (as MusicBrainz often has it), and none at all
+        { tracks: [{ number: '1', title: 'One', length: 201000, recording: { length: 200000 } }, { number: '2', title: 'Two', length: null, recording: { length: 140760 } }] },
+        { tracks: [{ number: '3', title: 'Three', recording: {} }] }
     ]
 }
 
@@ -241,7 +242,11 @@ test('getAlbum combines Cover Art Archive and MusicBrainz', async () => {
         label: 'Columbia',
         genre: 'rock / pop',
         barcode: '4006381333931',
-        tracks: [{ number: '1', title: 'One' }, { number: '2', title: 'Two' }, { number: '3', title: 'Three' }],
+        tracks: [
+            { number: '1', title: 'One', length: 201000 }, // the track's own length wins
+            { number: '2', title: 'Two', length: 140760 },
+            { number: '3', title: 'Three', length: null }
+        ],
         front: 'https://x/front-1200.jpg',
         back: 'https://x/back-500.jpg',
         frontFull: 'https://x/front.jpg',

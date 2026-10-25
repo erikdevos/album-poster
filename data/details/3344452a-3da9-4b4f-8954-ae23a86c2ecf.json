@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875876944,
+  "v": 2,
+  "fetchedAt": 1792952987798,
   "album": {
     "id": "3344452a-3da9-4b4f-8954-ae23a86c2ecf",
     "title": "Dawn FM",
@@ -12,67 +12,83 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Dawn FM"
+        "title": "Dawn FM",
+        "length": 96240
       },
       {
         "number": "2",
-        "title": "Gasoline"
+        "title": "Gasoline",
+        "length": 212165
       },
       {
         "number": "3",
-        "title": "How Do I Make You Love Me?"
+        "title": "How Do I Make You Love Me?",
+        "length": 214214
       },
       {
         "number": "4",
-        "title": "Take My Breath"
+        "title": "Take My Breath",
+        "length": 339023
       },
       {
         "number": "5",
-        "title": "Sacrifice"
+        "title": "Sacrifice",
+        "length": 188918
       },
       {
         "number": "6",
-        "title": "A Tale by Quincy"
+        "title": "A Tale by Quincy",
+        "length": 96232
       },
       {
         "number": "7",
-        "title": "Out of Time"
+        "title": "Out of Time",
+        "length": 214193
       },
       {
         "number": "8",
-        "title": "Here We Go… Again"
+        "title": "Here We Go… Again",
+        "length": 209777
       },
       {
         "number": "9",
-        "title": "Best Friends"
+        "title": "Best Friends",
+        "length": 163504
       },
       {
         "number": "10",
-        "title": "Is There Someone Else?"
+        "title": "Is There Someone Else?",
+        "length": 199111
       },
       {
         "number": "11",
-        "title": "Starry Eyes"
+        "title": "Starry Eyes",
+        "length": 148000
       },
       {
         "number": "12",
-        "title": "Every Angel Is Terrifying"
+        "title": "Every Angel Is Terrifying",
+        "length": 167255
       },
       {
         "number": "13",
-        "title": "Don’t Break My Heart"
+        "title": "Don’t Break My Heart",
+        "length": 205469
       },
       {
         "number": "14",
-        "title": "I Heard You’re Married"
+        "title": "I Heard You’re Married",
+        "length": 263641
       },
       {
         "number": "15",
-        "title": "Less Than Zero"
+        "title": "Less Than Zero",
+        "length": 211814
       },
       {
         "number": "16",
-        "title": "Phantom Regret by Jim"
+        "title": "Phantom Regret by Jim",
+        "length": 179580
       }
     ],
     "front": "https://coverartarchive.org/release/6e97c587-7503-422f-9120-052ea6a1f90d/31400393114-1200.jpg",

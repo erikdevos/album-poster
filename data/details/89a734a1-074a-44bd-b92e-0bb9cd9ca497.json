@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875803070,
+  "v": 2,
+  "fetchedAt": 1792952910876,
   "album": {
     "id": "89a734a1-074a-44bd-b92e-0bb9cd9ca497",
     "title": "Dead Club City",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Welcome to the DCC"
+        "title": "Welcome to the DCC",
+        "length": 197000
       },
       {
         "number": "2",
-        "title": "Overcome"
+        "title": "Overcome",
+        "length": 214000
       },
       {
         "number": "3",
-        "title": "Tomorrow Is Closed"
+        "title": "Tomorrow Is Closed",
+        "length": 238000
       },
       {
         "number": "4",
-        "title": "Keeping You Around"
+        "title": "Keeping You Around",
+        "length": 215000
       },
       {
         "number": "5",
-        "title": "City Haunts"
+        "title": "City Haunts",
+        "length": 191000
       },
       {
         "number": "6",
-        "title": "Do You Love Me Yet?"
+        "title": "Do You Love Me Yet?",
+        "length": 326000
       },
       {
         "number": "7",
-        "title": "Members Only"
+        "title": "Members Only",
+        "length": 169000
       },
       {
         "number": "8",
-        "title": "Green Eyes :: Siena"
+        "title": "Green Eyes :: Siena",
+        "length": 228000
       },
       {
         "number": "9",
-        "title": "Foreign Language"
+        "title": "Foreign Language",
+        "length": 234000
       },
       {
         "number": "10",
-        "title": "Talking To Myself"
+        "title": "Talking To Myself",
+        "length": 255000
       },
       {
         "number": "11",
-        "title": "Pop The Balloon"
+        "title": "Pop The Balloon",
+        "length": 271000
       }
     ],
     "front": "https://coverartarchive.org/release/e1086b41-d895-495a-b289-709c09204770/36061665546-1200.jpg",

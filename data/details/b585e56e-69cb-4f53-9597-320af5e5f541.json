@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875820503,
+  "v": 2,
+  "fetchedAt": 1792952934041,
   "album": {
     "id": "b585e56e-69cb-4f53-9597-320af5e5f541",
     "title": "TRON: Legacy",
@@ -12,91 +12,113 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Overture"
+        "title": "Overture",
+        "length": 148013
       },
       {
         "number": "2",
-        "title": "The Grid"
+        "title": "The Grid",
+        "length": 96746
       },
       {
         "number": "3",
-        "title": "The Son of Flynn"
+        "title": "The Son of Flynn",
+        "length": 95226
       },
       {
         "number": "4",
-        "title": "Recognizer"
+        "title": "Recognizer",
+        "length": 157706
       },
       {
         "number": "5",
-        "title": "Armory"
+        "title": "Armory",
+        "length": 122973
       },
       {
         "number": "6",
-        "title": "Arena"
+        "title": "Arena",
+        "length": 93240
       },
       {
         "number": "7",
-        "title": "Rinzler"
+        "title": "Rinzler",
+        "length": 137640
       },
       {
         "number": "8",
-        "title": "The Game Has Changed"
+        "title": "The Game Has Changed",
+        "length": 205480
       },
       {
         "number": "9",
-        "title": "Outlands"
+        "title": "Outlands",
+        "length": 162480
       },
       {
         "number": "10",
-        "title": "Adagio for TRON"
+        "title": "Adagio for TRON",
+        "length": 251093
       },
       {
         "number": "11",
-        "title": "Nocturne"
+        "title": "Nocturne",
+        "length": 101680
       },
       {
         "number": "12",
-        "title": "End of Line"
+        "title": "End of Line",
+        "length": 156480
       },
       {
         "number": "13",
-        "title": "Derezzed"
+        "title": "Derezzed",
+        "length": 104120
       },
       {
         "number": "14",
-        "title": "Fall"
+        "title": "Fall",
+        "length": 82613
       },
       {
         "number": "15",
-        "title": "Solar Sailer"
+        "title": "Solar Sailer",
+        "length": 162120
       },
       {
         "number": "16",
-        "title": "Rectifier"
+        "title": "Rectifier",
+        "length": 134053
       },
       {
         "number": "17",
-        "title": "Disc Wars"
+        "title": "Disc Wars",
+        "length": 251440
       },
       {
         "number": "18",
-        "title": "C.L.U."
+        "title": "C.L.U.",
+        "length": 279320
       },
       {
         "number": "19",
-        "title": "Arrival"
+        "title": "Arrival",
+        "length": 120493
       },
       {
         "number": "20",
-        "title": "Flynn Lives"
+        "title": "Flynn Lives",
+        "length": 202146
       },
       {
         "number": "21",
-        "title": "TRON Legacy (End Titles)"
+        "title": "TRON Legacy (End Titles)",
+        "length": 197826
       },
       {
         "number": "22",
-        "title": "Finale"
+        "title": "Finale",
+        "length": 262786
       }
     ],
     "front": "https://coverartarchive.org/release/b9b7641f-9389-342e-8be9-e463bd52fdb9/2587494081-1200.jpg",

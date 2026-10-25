@@ -291,6 +291,9 @@ ol.track-list li::before {
     text-transform: uppercase;
 }
 /* A separator in front of every visible item that has a visible item before it */
+.album-footer-info .footer-length {
+    display: none; /* only the layouts that have room for it show the length of the album */
+}
 .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
     content: "|";
     margin-right: 1.5cqi;
@@ -2410,4 +2413,127 @@ footer .container {
     #album-container[data-layout="film"] {
         width: 150mm;
     }
+}
+
+/* ---------- Layout: modern ----------
+   A clean print on grey: the title big at the top left, the artist below it with the cover's colours
+   at the right, a rounded cover, and under it the tracks in two columns and the details at the right
+   (label, year, genre). It follows the theme and takes `colors=cover`. */
+#album-container[data-layout="modern"] {
+    --poster-ratio: 1.55;
+}
+#album-container[data-layout="modern"] .album-info-container {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-areas:
+        "name name"
+        "artist colors"
+        "cover cover"
+        "tracks details";
+    align-content: start;
+    column-gap: 4cqi;
+    padding: 9cqi 8cqi 8cqi;
+    border: none;
+    font-family: var(--font-secondary);
+}
+#album-container[data-layout="modern"] .album-name {
+    grid-area: name;
+    margin: 0 0 2cqi;
+    padding: 0;
+    border: none;
+    font-size: calc(10cqi * min(var(--fit-title), var(--fit-word)));
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+/* the artist and the colours are laid on the grid themselves */
+#album-container[data-layout="modern"] .album-artist {
+    display: contents;
+}
+#album-container[data-layout="modern"] .album-artist h3 {
+    grid-area: artist;
+    align-self: center;
+    max-width: none;
+    margin: 0;
+    font-size: calc(3.3cqi * var(--fit-artist));
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+#album-container[data-layout="modern"] .album-colors {
+    grid-area: colors;
+    align-self: center;
+    justify-self: end;
+    flex-wrap: nowrap;
+    gap: 0;
+}
+#album-container[data-layout="modern"] .album-color {
+    width: 3.6cqi;
+    outline: none;
+}
+#album-container[data-layout="modern"] .album-cover-wrapper {
+    grid-area: cover;
+    margin: 4.5cqi 0 5cqi;
+    border-radius: 1cqi;
+    overflow: hidden;
+    box-shadow: 0 0 0 max(1px, 0.2cqi) color-mix(in srgb, currentColor 30%, transparent);
+}
+#album-container[data-layout="modern"] .album-tracklist-genre-wrapper {
+    grid-area: tracks;
+    display: block;
+    padding: 0;
+    border: none;
+}
+#album-container[data-layout="modern"] .album-tracklist-genre-wrapper .right {
+    display: none;
+}
+#album-container[data-layout="modern"] ol.track-list {
+    padding: 0;
+    column-count: 2;
+    column-gap: 3cqi;
+    font-size: max(8px, calc(2.1cqi * min(1, 22 / var(--track-count))));
+    line-height: 1.35;
+    text-transform: none;
+}
+#album-container[data-layout="modern"] ol.track-list li {
+    display: block;
+    margin: 0 0 0.45em;
+    font-weight: 400;
+}
+#album-container[data-layout="modern"] ol.track-list li::before {
+    content: none;
+}
+/* the details: a bold name and a grey value, at the right, with the labels that are not in the markup */
+#album-container[data-layout="modern"] .album-footer-info {
+    grid-area: details;
+    display: grid;
+    align-content: start;
+    justify-items: end;
+    gap: 2.2cqi;
+    font-size: max(8px, 2.1cqi);
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: right;
+    text-transform: none;
+}
+#album-container[data-layout="modern"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before,
+#album-container[data-layout="modern"] .album-footer-info .footer-item::before {
+    display: block;
+    margin: 0 0 0.15em;
+    color: var(--poster-fg);
+    font-weight: 700;
+}
+#album-container[data-layout="modern"] .album-footer-info .footer-item:nth-child(1)::before { content: "Music Label"; }
+#album-container[data-layout="modern"] .album-footer-info .footer-item:nth-child(2)::before { content: "Release Year"; }
+#album-container[data-layout="modern"] .album-footer-info .footer-item:nth-child(3)::before { content: "Genre"; }
+#album-container[data-layout="modern"] .album-footer-info .footer-length:not(.hidden) {
+    display: block;
+    order: -1; /* the length first, as on the example */
+}
+#album-container[data-layout="modern"] .album-footer-info .footer-length::before { content: "Album Length"; }
+#album-container[data-layout="modern"] .album-footer-info .album-text-label {
+    display: none;
+}
+#album-container[data-layout="modern"] .album-footer-info .footer-item {
+    color: color-mix(in srgb, var(--poster-fg) 62%, transparent);
 }

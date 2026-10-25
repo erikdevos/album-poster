@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876425070,
+  "v": 2,
+  "fetchedAt": 1792952851304,
   "album": {
     "id": "43091de5-04b6-46e6-b181-b457694f4ce0",
     "title": "Hybrid Theory",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Papercut"
+        "title": "Papercut",
+        "length": 282485
       },
       {
         "number": "2",
-        "title": "One Step Closer"
+        "title": "One Step Closer",
+        "length": 320453
       },
       {
         "number": "3",
-        "title": "Crawling"
+        "title": "Crawling",
+        "length": 273509
       },
       {
         "number": "4",
-        "title": "Left in My Conscience (instrumental)"
+        "title": "Left in My Conscience (instrumental)",
+        "length": 172589
       },
       {
         "number": "5",
-        "title": "By Myself"
+        "title": "By Myself",
+        "length": 263309
       },
       {
         "number": "6",
-        "title": "Personal (interlude)"
+        "title": "Personal (interlude)",
+        "length": 55925
       },
       {
         "number": "7",
-        "title": "A Place for My Head"
+        "title": "A Place for My Head",
+        "length": 274829
       },
       {
         "number": "8",
-        "title": "In the End"
+        "title": "In the End",
+        "length": 231605
       },
       {
         "number": "9",
-        "title": "With You"
+        "title": "With You",
+        "length": 269309
       },
       {
         "number": "10",
-        "title": "Pushing Me Away"
+        "title": "Pushing Me Away",
+        "length": 330605
       },
       {
         "number": "11",
-        "title": "Runaway"
+        "title": "Runaway",
+        "length": 204869
       },
       {
         "number": "12",
-        "title": "Forgotten"
+        "title": "Forgotten",
+        "length": 238015
       },
       {
         "number": "13",
-        "title": "Points of Authority"
+        "title": "Points of Authority",
+        "length": 200168
       }
     ],
     "front": "https://coverartarchive.org/release/ba87fddf-d096-4b06-bdbe-446e88e7eddb/36972741582-1200.jpg",

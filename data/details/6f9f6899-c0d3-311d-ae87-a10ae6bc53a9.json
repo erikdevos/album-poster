@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875834608,
+  "v": 2,
+  "fetchedAt": 1792952946704,
   "album": {
     "id": "6f9f6899-c0d3-311d-ae87-a10ae6bc53a9",
     "title": "Mezzanine",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Angel"
+        "title": "Angel",
+        "length": 380533
       },
       {
         "number": "2",
-        "title": "Risingson"
+        "title": "Risingson",
+        "length": 298826
       },
       {
         "number": "3",
-        "title": "Teardrop"
+        "title": "Teardrop",
+        "length": 330773
       },
       {
         "number": "4",
-        "title": "Inertia Creeps"
+        "title": "Inertia Creeps",
+        "length": 356960
       },
       {
         "number": "5",
-        "title": "Exchange"
+        "title": "Exchange",
+        "length": 251200
       },
       {
         "number": "6",
-        "title": "Dissolved Girl"
+        "title": "Dissolved Girl",
+        "length": 366906
       },
       {
         "number": "7",
-        "title": "Man Next Door"
+        "title": "Man Next Door",
+        "length": 356426
       },
       {
         "number": "8",
-        "title": "Black Milk"
+        "title": "Black Milk",
+        "length": 381533
       },
       {
         "number": "9",
-        "title": "Mezzanine"
+        "title": "Mezzanine",
+        "length": 356773
       },
       {
         "number": "10",
-        "title": "Group Four"
+        "title": "Group Four",
+        "length": 492266
       },
       {
         "number": "11",
-        "title": "(Exchange)"
+        "title": "(Exchange)",
+        "length": 248533
       },
       {
         "number": "12",
-        "title": "Superpredators (The Mad Professor remix)"
+        "title": "Superpredators (The Mad Professor remix)",
+        "length": 312026
       }
     ],
     "front": "https://coverartarchive.org/release/6e512ec0-1316-4abb-b6b6-07dbd8b005ed/12203062606.png",

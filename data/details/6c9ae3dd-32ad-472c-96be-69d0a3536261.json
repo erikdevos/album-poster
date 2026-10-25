@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875996286,
+  "v": 2,
+  "fetchedAt": 1792953126028,
   "album": {
     "id": "6c9ae3dd-32ad-472c-96be-69d0a3536261",
     "title": "The Rise and Fall of Ziggy Stardust and the Spiders From Mars",
@@ -12,135 +12,168 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Five Years"
+        "title": "Five Years",
+        "length": 283093
       },
       {
         "number": "2",
-        "title": "Soul Love"
+        "title": "Soul Love",
+        "length": 213706
       },
       {
         "number": "3",
-        "title": "Moonage Daydream"
+        "title": "Moonage Daydream",
+        "length": 279826
       },
       {
         "number": "4",
-        "title": "Starman"
+        "title": "Starman",
+        "length": 253573
       },
       {
         "number": "5",
-        "title": "It Ain’t Easy"
+        "title": "It Ain’t Easy",
+        "length": 177133
       },
       {
         "number": "6",
-        "title": "Lady Stardust"
+        "title": "Lady Stardust",
+        "length": 201093
       },
       {
         "number": "7",
-        "title": "Star"
+        "title": "Star",
+        "length": 166973
       },
       {
         "number": "8",
-        "title": "Hang On to Yourself"
+        "title": "Hang On to Yourself",
+        "length": 158426
       },
       {
         "number": "9",
-        "title": "Ziggy Stardust"
+        "title": "Ziggy Stardust",
+        "length": 193306
       },
       {
         "number": "10",
-        "title": "Suffragette City"
+        "title": "Suffragette City",
+        "length": 205360
       },
       {
         "number": "11",
-        "title": "Rock ’n’ Roll Suicide"
+        "title": "Rock ’n’ Roll Suicide",
+        "length": 178600
       },
       {
         "number": "1",
-        "title": "Five Years"
+        "title": "Five Years",
+        "length": 283000
       },
       {
         "number": "2",
-        "title": "Soul Love"
+        "title": "Soul Love",
+        "length": 214000
       },
       {
         "number": "3",
-        "title": "Moonage Daydream"
+        "title": "Moonage Daydream",
+        "length": 279000
       },
       {
         "number": "4",
-        "title": "Starman"
+        "title": "Starman",
+        "length": 254000
       },
       {
         "number": "5",
-        "title": "It Ain’t Easy"
+        "title": "It Ain’t Easy",
+        "length": 177000
       },
       {
         "number": "6",
-        "title": "Lady Stardust"
+        "title": "Lady Stardust",
+        "length": 200000
       },
       {
         "number": "7",
-        "title": "Star"
+        "title": "Star",
+        "length": 167000
       },
       {
         "number": "8",
-        "title": "Hang On to Yourself"
+        "title": "Hang On to Yourself",
+        "length": 159000
       },
       {
         "number": "9",
-        "title": "Ziggy Stardust"
+        "title": "Ziggy Stardust",
+        "length": 193000
       },
       {
         "number": "10",
-        "title": "Suffragette City"
+        "title": "Suffragette City",
+        "length": 204000
       },
       {
         "number": "11",
-        "title": "Rock ’n’ Roll Suicide"
+        "title": "Rock ’n’ Roll Suicide",
+        "length": 181000
       },
       {
         "number": "1",
-        "title": "Five Years (5.1 mix)"
+        "title": "Five Years (5.1 mix)",
+        "length": 283000
       },
       {
         "number": "2",
-        "title": "Soul Love (5.1 mix)"
+        "title": "Soul Love (5.1 mix)",
+        "length": 214000
       },
       {
         "number": "3",
-        "title": "Moonage Daydream (5.1 mix)"
+        "title": "Moonage Daydream (5.1 mix)",
+        "length": 288000
       },
       {
         "number": "4",
-        "title": "Starman (5.1 mix)"
+        "title": "Starman (5.1 mix)",
+        "length": 254000
       },
       {
         "number": "5",
-        "title": "It Ain’t Easy (5.1 mix)"
+        "title": "It Ain’t Easy (5.1 mix)",
+        "length": 177000
       },
       {
         "number": "6",
-        "title": "Lady Stardust (5.1 mix)"
+        "title": "Lady Stardust (5.1 mix)",
+        "length": 200000
       },
       {
         "number": "7",
-        "title": "Star (5.1 mix)"
+        "title": "Star (5.1 mix)",
+        "length": 167000
       },
       {
         "number": "8",
-        "title": "Hang On to Yourself (5.1 mix)"
+        "title": "Hang On to Yourself (5.1 mix)",
+        "length": 178000
       },
       {
         "number": "9",
-        "title": "Ziggy Stardust (5.1 mix)"
+        "title": "Ziggy Stardust (5.1 mix)",
+        "length": 193000
       },
       {
         "number": "10",
-        "title": "Suffragette City (5.1 mix)"
+        "title": "Suffragette City (5.1 mix)",
+        "length": 204000
       },
       {
         "number": "11",
-        "title": "Rock ’n’ Roll Suicide (5.1 mix)"
+        "title": "Rock ’n’ Roll Suicide (5.1 mix)",
+        "length": 162000
       }
     ],
     "front": "https://coverartarchive.org/release/a8f17a5b-eaf3-48da-986e-7f3efdaf3db6/7121875119-1200.jpg",

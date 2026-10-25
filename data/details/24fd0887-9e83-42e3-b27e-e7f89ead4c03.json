@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875950296,
+  "v": 2,
+  "fetchedAt": 1792953089564,
   "album": {
     "id": "24fd0887-9e83-42e3-b27e-e7f89ead4c03",
     "title": "Norman Fucking Rockwell!",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Norman fucking Rockwell"
+        "title": "Norman fucking Rockwell",
+        "length": 248934
       },
       {
         "number": "2",
-        "title": "Mariners Apartment Complex"
+        "title": "Mariners Apartment Complex",
+        "length": 247150
       },
       {
         "number": "3",
-        "title": "Venice Bitch"
+        "title": "Venice Bitch",
+        "length": 577199
       },
       {
         "number": "4",
-        "title": "Fuck it I love you"
+        "title": "Fuck it I love you",
+        "length": 218288
       },
       {
         "number": "5",
-        "title": "Doin’ Time"
+        "title": "Doin’ Time",
+        "length": 202193
       },
       {
         "number": "6",
-        "title": "Love song"
+        "title": "Love song",
+        "length": 229326
       },
       {
         "number": "7",
-        "title": "Cinnamon Girl"
+        "title": "Cinnamon Girl",
+        "length": 300683
       },
       {
         "number": "8",
-        "title": "How to disappear"
+        "title": "How to disappear",
+        "length": 228071
       },
       {
         "number": "9",
-        "title": "California"
+        "title": "California",
+        "length": 305900
       },
       {
         "number": "10",
-        "title": "The Next Best American Record"
+        "title": "The Next Best American Record",
+        "length": 349347
       },
       {
         "number": "11",
-        "title": "The greatest"
+        "title": "The greatest",
+        "length": 300361
       },
       {
         "number": "12",
-        "title": "Bartender"
+        "title": "Bartender",
+        "length": 263441
       },
       {
         "number": "13",
-        "title": "Happiness is a butterfly"
+        "title": "Happiness is a butterfly",
+        "length": 272485
       },
       {
         "number": "14",
-        "title": "hope is a dangerous thing for a woman like me to have – but I have it"
+        "title": "hope is a dangerous thing for a woman like me to have – but I have it",
+        "length": 324540
       }
     ],
     "front": "https://coverartarchive.org/release/e759b293-5a6f-48cc-808f-38f0b977e00c/23717138029-1200.jpg",

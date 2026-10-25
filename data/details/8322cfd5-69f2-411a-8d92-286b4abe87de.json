@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875922857,
+  "v": 2,
+  "fetchedAt": 1792953058776,
   "album": {
     "id": "8322cfd5-69f2-411a-8d92-286b4abe87de",
     "title": "GAMMA",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Digital Slaves"
+        "title": "Digital Slaves",
+        "length": 114000
       },
       {
         "number": "2",
-        "title": "Hard Dreams"
+        "title": "Hard Dreams",
+        "length": 170000
       },
       {
         "number": "3",
-        "title": "Your Share of the Night"
+        "title": "Your Share of the Night",
+        "length": 189000
       },
       {
         "number": "4",
-        "title": "Hysteria"
+        "title": "Hysteria",
+        "length": 115000
       },
       {
         "number": "5",
-        "title": "The Urge"
+        "title": "The Urge",
+        "length": 144000
       },
       {
         "number": "6",
-        "title": "Mania"
+        "title": "Mania",
+        "length": 155000
       },
       {
         "number": "7",
-        "title": "Lost Love"
+        "title": "Lost Love",
+        "length": 153000
       },
       {
         "number": "8",
-        "title": "The Perfect"
+        "title": "The Perfect",
+        "length": 144000
       },
       {
         "number": "9",
-        "title": "Psycho"
+        "title": "Psycho",
+        "length": 124000
       },
       {
         "number": "10",
-        "title": "Tyranny"
+        "title": "Tyranny",
+        "length": 158000
       },
       {
         "number": "11",
-        "title": "Emet"
+        "title": "Emet",
+        "length": 160000
       }
     ],
     "front": "https://coverartarchive.org/release/2ff34469-5954-4a13-872b-c5bdbf57db72/38411704252-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875903390,
+  "v": 2,
+  "fetchedAt": 1792953023976,
   "album": {
     "id": "deca614f-7b89-4546-b77e-2dbeccfe0c75",
     "title": "WOR$T GIRL IN AMERICA",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "DANCE…"
+        "title": "DANCE…",
+        "length": 287000
       },
       {
         "number": "2",
-        "title": "BEAT UP CHANEL$"
+        "title": "BEAT UP CHANEL$",
+        "length": 198000
       },
       {
         "number": "3",
-        "title": "CANNIBALISM!"
+        "title": "CANNIBALISM!",
+        "length": 167000
       },
       {
         "number": "4",
-        "title": "OLD TECHNOLOGY"
+        "title": "OLD TECHNOLOGY",
+        "length": 159000
       },
       {
         "number": "5",
-        "title": "CRANK"
+        "title": "CRANK",
+        "length": 175000
       },
       {
         "number": "6",
-        "title": "GAS STATION"
+        "title": "GAS STATION",
+        "length": 218000
       },
       {
         "number": "7",
-        "title": "YES GODDD"
+        "title": "YES GODDD",
+        "length": 159000
       },
       {
         "number": "8",
-        "title": "UNKNOWN LOVERZ"
+        "title": "UNKNOWN LOVERZ",
+        "length": 199000
       },
       {
         "number": "9",
-        "title": "OLD FLING$"
+        "title": "OLD FLING$",
+        "length": 217000
       },
       {
         "number": "10",
-        "title": "I’M ACTUALLY KINDA FAMOUS"
+        "title": "I’M ACTUALLY KINDA FAMOUS",
+        "length": 156000
       },
       {
         "number": "11",
-        "title": "$T. LOSER"
+        "title": "$T. LOSER",
+        "length": 215000
       },
       {
         "number": "12",
-        "title": "WHAT IS IT LIKE, TO BE LIKED?"
+        "title": "WHAT IS IT LIKE, TO BE LIKED?",
+        "length": 138000
       },
       {
         "number": "13",
-        "title": "*PRAYER*"
+        "title": "*PRAYER*",
+        "length": 37000
       },
       {
         "number": "14",
-        "title": "BRITTANY MURPHY."
+        "title": "BRITTANY MURPHY.",
+        "length": 224000
       }
     ],
     "front": "https://coverartarchive.org/release/79a2f948-e3a2-4eee-ae7b-2f0e117d4c1d/44080257335-1200.jpg",

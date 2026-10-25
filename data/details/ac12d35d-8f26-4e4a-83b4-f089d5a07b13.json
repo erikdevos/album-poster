@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875945353,
+  "v": 2,
+  "fetchedAt": 1792953082375,
   "album": {
     "id": "ac12d35d-8f26-4e4a-83b4-f089d5a07b13",
     "title": "BADLANDS",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Castle"
+        "title": "Castle",
+        "length": 277623
       },
       {
         "number": "2",
-        "title": "Hold Me Down"
+        "title": "Hold Me Down",
+        "length": 204785
       },
       {
         "number": "3",
-        "title": "New Americana"
+        "title": "New Americana",
+        "length": 183808
       },
       {
         "number": "4",
-        "title": "Drive"
+        "title": "Drive",
+        "length": 258764
       },
       {
         "number": "5",
-        "title": "Roman Holiday"
+        "title": "Roman Holiday",
+        "length": 201549
       },
       {
         "number": "6",
-        "title": "Colors"
+        "title": "Colors",
+        "length": 249499
       },
       {
         "number": "7",
-        "title": "Coming Down"
+        "title": "Coming Down",
+        "length": 223299
       },
       {
         "number": "8",
-        "title": "Haunting"
+        "title": "Haunting",
+        "length": 260797
       },
       {
         "number": "9",
-        "title": "Control"
+        "title": "Control",
+        "length": 214761
       },
       {
         "number": "10",
-        "title": "Young God"
+        "title": "Young God",
+        "length": 179837
       },
       {
         "number": "11",
-        "title": "Ghost"
+        "title": "Ghost",
+        "length": 153656
       }
     ],
     "front": "https://coverartarchive.org/release/624c3866-e54d-468e-b525-cfb3815eef49/25490675842-1200.jpg",

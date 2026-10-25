@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875977286,
+  "v": 2,
+  "fetchedAt": 1792953109703,
   "album": {
     "id": "a842d860-a023-3a71-ad2e-a3a94cffabd7",
     "title": "Showbiz",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Sunburn"
+        "title": "Sunburn",
+        "length": 234400
       },
       {
         "number": "2",
-        "title": "Muscle Museum"
+        "title": "Muscle Museum",
+        "length": 264493
       },
       {
         "number": "3",
-        "title": "Fillip"
+        "title": "Fillip",
+        "length": 241466
       },
       {
         "number": "4",
-        "title": "Falling Down"
+        "title": "Falling Down",
+        "length": 273866
       },
       {
         "number": "5",
-        "title": "Cave"
+        "title": "Cave",
+        "length": 286773
       },
       {
         "number": "6",
-        "title": "Showbiz"
+        "title": "Showbiz",
+        "length": 316026
       },
       {
         "number": "7",
-        "title": "Unintended"
+        "title": "Unintended",
+        "length": 237133
       },
       {
         "number": "8",
-        "title": "Uno"
+        "title": "Uno",
+        "length": 218506
       },
       {
         "number": "9",
-        "title": "Sober"
+        "title": "Sober",
+        "length": 244133
       },
       {
         "number": "10",
-        "title": "Escape"
+        "title": "Escape",
+        "length": 211426
       },
       {
         "number": "11",
-        "title": "Overdue"
+        "title": "Overdue",
+        "length": 146466
       },
       {
         "number": "12",
-        "title": "Hate This & I’ll Love You"
+        "title": "Hate This & I’ll Love You",
+        "length": 321200
       }
     ],
     "front": "https://coverartarchive.org/release/5f2e104f-3b06-3cfe-a004-e5141b13f681/1940746072-1200.jpg",

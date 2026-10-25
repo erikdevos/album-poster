@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875942692,
+  "v": 2,
+  "fetchedAt": 1792953079380,
   "album": {
     "id": "1c1b50ec-828b-3d7c-9b1b-54cb1fe97d55",
     "title": "808s & Heartbreak",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Say You Will"
+        "title": "Say You Will",
+        "length": 378000
       },
       {
         "number": "2",
-        "title": "Welcome to Heartbreak"
+        "title": "Welcome to Heartbreak",
+        "length": 263000
       },
       {
         "number": "3",
-        "title": "Heartless"
+        "title": "Heartless",
+        "length": 211000
       },
       {
         "number": "4",
-        "title": "Amazing"
+        "title": "Amazing",
+        "length": 238000
       },
       {
         "number": "5",
-        "title": "Love Lockdown"
+        "title": "Love Lockdown",
+        "length": 270000
       },
       {
         "number": "6",
-        "title": "Paranoid"
+        "title": "Paranoid",
+        "length": 278000
       },
       {
         "number": "7",
-        "title": "RoboCop"
+        "title": "RoboCop",
+        "length": 274000
       },
       {
         "number": "8",
-        "title": "Street Lights"
+        "title": "Street Lights",
+        "length": 190000
       },
       {
         "number": "9",
-        "title": "Bad News"
+        "title": "Bad News",
+        "length": 239000
       },
       {
         "number": "10",
-        "title": "See You in My Nightmares"
+        "title": "See You in My Nightmares",
+        "length": 258000
       },
       {
         "number": "11",
-        "title": "Coldest Winter"
+        "title": "Coldest Winter",
+        "length": 164000
       },
       {
         "number": "12",
-        "title": "Pinocchio Story (freestyle live from Singapore)"
+        "title": "Pinocchio Story (freestyle live from Singapore)",
+        "length": 362000
       }
     ],
     "front": "https://coverartarchive.org/release/9505501e-f98d-4975-9775-63a671f713e1/43101510210-1200.jpg",

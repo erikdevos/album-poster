@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876383423,
+  "v": 2,
+  "fetchedAt": 1792952815618,
   "album": {
     "id": "7c4cab8d-dead-3870-b501-93c90fd0a580",
     "title": "The Downward Spiral",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Mr Self Destruct"
+        "title": "Mr Self Destruct",
+        "length": 270573
       },
       {
         "number": "2",
-        "title": "Piggy"
+        "title": "Piggy",
+        "length": 264426
       },
       {
         "number": "3",
-        "title": "Heresy"
+        "title": "Heresy",
+        "length": 234400
       },
       {
         "number": "4",
-        "title": "March of the Pigs"
+        "title": "March of the Pigs",
+        "length": 178466
       },
       {
         "number": "5",
-        "title": "Closer"
+        "title": "Closer",
+        "length": 373133
       },
       {
         "number": "6",
-        "title": "Ruiner"
+        "title": "Ruiner",
+        "length": 298840
       },
       {
         "number": "7",
-        "title": "The Becoming"
+        "title": "The Becoming",
+        "length": 331626
       },
       {
         "number": "8",
-        "title": "I Do Not Want This"
+        "title": "I Do Not Want This",
+        "length": 341173
       },
       {
         "number": "9",
-        "title": "Big Man With a Gun"
+        "title": "Big Man With a Gun",
+        "length": 96226
       },
       {
         "number": "10",
-        "title": "A Warm Place"
+        "title": "A Warm Place",
+        "length": 202600
       },
       {
         "number": "11",
-        "title": "Eraser"
+        "title": "Eraser",
+        "length": 293506
       },
       {
         "number": "12",
-        "title": "Reptile"
+        "title": "Reptile",
+        "length": 412333
       },
       {
         "number": "13",
-        "title": "The Downward Spiral"
+        "title": "The Downward Spiral",
+        "length": 236893
       },
       {
         "number": "14",
-        "title": "Hurt"
+        "title": "Hurt",
+        "length": 374066
       }
     ],
     "front": "https://coverartarchive.org/release/2d410836-5add-3661-b0b0-168ba1696611/2546761764-1200.jpg",

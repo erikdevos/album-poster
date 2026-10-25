@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875936432,
+  "v": 2,
+  "fetchedAt": 1792953073461,
   "album": {
     "id": "e59021bd-1710-3c13-9449-b78560039592",
     "title": "Music for the Masses",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Never Let Me Down Again"
+        "title": "Never Let Me Down Again",
+        "length": 287960
       },
       {
         "number": "2",
-        "title": "The Things You Said"
+        "title": "The Things You Said",
+        "length": 242440
       },
       {
         "number": "3",
-        "title": "Strangelove"
+        "title": "Strangelove",
+        "length": 297026
       },
       {
         "number": "4",
-        "title": "Sacred"
+        "title": "Sacred",
+        "length": 287373
       },
       {
         "number": "5",
-        "title": "Little 15"
+        "title": "Little 15",
+        "length": 258893
       },
       {
         "number": "6",
-        "title": "Behind the Wheel"
+        "title": "Behind the Wheel",
+        "length": 318066
       },
       {
         "number": "7",
-        "title": "I Want You Now"
+        "title": "I Want You Now",
+        "length": 224973
       },
       {
         "number": "8",
-        "title": "To Have and to Hold"
+        "title": "To Have and to Hold",
+        "length": 171493
       },
       {
         "number": "9",
-        "title": "Nothing"
+        "title": "Nothing",
+        "length": 257773
       },
       {
         "number": "10",
-        "title": "Pimpf / Interlude #1: Mission Impossible"
+        "title": "Pimpf / Interlude #1: Mission Impossible",
+        "length": 325426
       },
       {
         "number": "11",
-        "title": "Agent Orange"
+        "title": "Agent Orange",
+        "length": 305240
       },
       {
         "number": "12",
-        "title": "Never Let Me Down Again (Aggro mix)"
+        "title": "Never Let Me Down Again (Aggro mix)",
+        "length": 297666
       },
       {
         "number": "13",
-        "title": "To Have and to Hold (Spanish Taster)"
+        "title": "To Have and to Hold (Spanish Taster)",
+        "length": 156333
       },
       {
         "number": "14",
-        "title": "Pleasure, Little Treasure (Glitter mix)"
+        "title": "Pleasure, Little Treasure (Glitter mix)",
+        "length": 335893
       }
     ],
     "front": "https://coverartarchive.org/release/8d059e75-d9bb-4d90-97a9-1cb6ed7472c6/9552817368-1200.jpg",

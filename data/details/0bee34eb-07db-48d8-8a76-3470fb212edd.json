@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875844525,
+  "v": 2,
+  "fetchedAt": 1792952955474,
   "album": {
     "id": "0bee34eb-07db-48d8-8a76-3470fb212edd",
     "title": "RUSH!",
@@ -12,71 +12,88 @@
     "tracks": [
       {
         "number": "1",
-        "title": "OWN MY MIND"
+        "title": "OWN MY MIND",
+        "length": 191000
       },
       {
         "number": "2",
-        "title": "GOSSIP"
+        "title": "GOSSIP",
+        "length": 168000
       },
       {
         "number": "3",
-        "title": "TIMEZONE"
+        "title": "TIMEZONE",
+        "length": 179000
       },
       {
         "number": "4",
-        "title": "BLA BLA BLA"
+        "title": "BLA BLA BLA",
+        "length": 184000
       },
       {
         "number": "5",
-        "title": "BABY SAID"
+        "title": "BABY SAID",
+        "length": 164000
       },
       {
         "number": "6",
-        "title": "GASOLINE"
+        "title": "GASOLINE",
+        "length": 221000
       },
       {
         "number": "7",
-        "title": "FEEL"
+        "title": "FEEL",
+        "length": 167000
       },
       {
         "number": "8",
-        "title": "DON’T WANNA SLEEP"
+        "title": "DON’T WANNA SLEEP",
+        "length": 156000
       },
       {
         "number": "9",
-        "title": "KOOL KIDS"
+        "title": "KOOL KIDS",
+        "length": 163000
       },
       {
         "number": "10",
-        "title": "IF NOT FOR YOU"
+        "title": "IF NOT FOR YOU",
+        "length": 194000
       },
       {
         "number": "11",
-        "title": "READ YOUR DIARY"
+        "title": "READ YOUR DIARY",
+        "length": 150000
       },
       {
         "number": "12",
-        "title": "MARK CHAPMAN"
+        "title": "MARK CHAPMAN",
+        "length": 220000
       },
       {
         "number": "13",
-        "title": "LA FINE"
+        "title": "LA FINE",
+        "length": 200000
       },
       {
         "number": "14",
-        "title": "IL DONO DELLA VITA"
+        "title": "IL DONO DELLA VITA",
+        "length": 224000
       },
       {
         "number": "15",
-        "title": "MAMMAMIA"
+        "title": "MAMMAMIA",
+        "length": 186000
       },
       {
         "number": "16",
-        "title": "SUPERMODEL"
+        "title": "SUPERMODEL",
+        "length": 148000
       },
       {
         "number": "17",
-        "title": "THE LONELIEST"
+        "title": "THE LONELIEST",
+        "length": 247000
       }
     ],
     "front": "https://coverartarchive.org/release/daa68193-12d9-4c6f-a002-5ae6c7a5fe40/34247642738-1200.jpg",

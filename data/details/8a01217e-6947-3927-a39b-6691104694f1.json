@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875842170,
+  "v": 2,
+  "fetchedAt": 1792952951533,
   "album": {
     "id": "8a01217e-6947-3927-a39b-6691104694f1",
     "title": "The College Dropout",
@@ -12,87 +12,108 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Intro"
+        "title": "Intro",
+        "length": 19000
       },
       {
         "number": "2",
-        "title": "We Don’t Care"
+        "title": "We Don’t Care",
+        "length": 240000
       },
       {
         "number": "3",
-        "title": "Graduation Day"
+        "title": "Graduation Day",
+        "length": 82000
       },
       {
         "number": "4",
-        "title": "All Falls Down"
+        "title": "All Falls Down",
+        "length": 224000
       },
       {
         "number": "5",
-        "title": "I’ll Fly Away"
+        "title": "I’ll Fly Away",
+        "length": 70000
       },
       {
         "number": "6",
-        "title": "Spaceship"
+        "title": "Spaceship",
+        "length": 324000
       },
       {
         "number": "7",
-        "title": "Jesus Walks"
+        "title": "Jesus Walks",
+        "length": 194000
       },
       {
         "number": "8",
-        "title": "Never Let Me Down"
+        "title": "Never Let Me Down",
+        "length": 324000
       },
       {
         "number": "9",
-        "title": "Get ’Em High"
+        "title": "Get ’Em High",
+        "length": 289000
       },
       {
         "number": "10",
-        "title": "Workout Plan"
+        "title": "Workout Plan",
+        "length": 46000
       },
       {
         "number": "11",
-        "title": "The New Workout Plan"
+        "title": "The New Workout Plan",
+        "length": 323000
       },
       {
         "number": "12",
-        "title": "Slow Jamz"
+        "title": "Slow Jamz",
+        "length": 316000
       },
       {
         "number": "13",
-        "title": "Breathe In, Breathe Out"
+        "title": "Breathe In, Breathe Out",
+        "length": 247000
       },
       {
         "number": "14",
-        "title": "School Spirit (skit 1)"
+        "title": "School Spirit (skit 1)",
+        "length": 79000
       },
       {
         "number": "15",
-        "title": "School Spirit"
+        "title": "School Spirit",
+        "length": 182000
       },
       {
         "number": "16",
-        "title": "School Spirit (skit 2)"
+        "title": "School Spirit (skit 2)",
+        "length": 44000
       },
       {
         "number": "17",
-        "title": "Lil Jimmy (skit)"
+        "title": "Lil Jimmy (skit)",
+        "length": 53000
       },
       {
         "number": "18",
-        "title": "Two Words"
+        "title": "Two Words",
+        "length": 266000
       },
       {
         "number": "19",
-        "title": "Through the Wire"
+        "title": "Through the Wire",
+        "length": 221000
       },
       {
         "number": "20",
-        "title": "Family Business"
+        "title": "Family Business",
+        "length": 279000
       },
       {
         "number": "21",
-        "title": "Last Call"
+        "title": "Last Call",
+        "length": 761000
       }
     ],
     "front": "https://coverartarchive.org/release/da13b81f-7b09-3fb6-b5c9-8551f22c797e/37280144185-1200.jpg",

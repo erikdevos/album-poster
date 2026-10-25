@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876410319,
+  "v": 2,
+  "fetchedAt": 1792952839277,
   "album": {
     "id": "71f1482e-e63f-3b2c-811b-939f62708f2a",
     "title": "Violator",
@@ -12,39 +12,48 @@
     "tracks": [
       {
         "number": "A1",
-        "title": "World in My Eyes"
+        "title": "World in My Eyes",
+        "length": 266000
       },
       {
         "number": "A2",
-        "title": "Sweetest Perfection"
+        "title": "Sweetest Perfection",
+        "length": 283000
       },
       {
         "number": "A3",
-        "title": "Personal Jesus"
+        "title": "Personal Jesus",
+        "length": 295240
       },
       {
         "number": "A4",
-        "title": "Halo"
+        "title": "Halo",
+        "length": 270000
       },
       {
         "number": "A5",
-        "title": "Waiting for the Night"
+        "title": "Waiting for the Night",
+        "length": 367000
       },
       {
         "number": "B1",
-        "title": "Enjoy the Silence / Interlude #2: Crucified"
+        "title": "Enjoy the Silence / Interlude #2: Crucified",
+        "length": 372973
       },
       {
         "number": "B2",
-        "title": "Policy of Truth"
+        "title": "Policy of Truth",
+        "length": 295000
       },
       {
         "number": "B3",
-        "title": "Blue Dress / Interlude #3"
+        "title": "Blue Dress / Interlude #3",
+        "length": 342000
       },
       {
         "number": "B4",
-        "title": "Clean"
+        "title": "Clean",
+        "length": 327000
       }
     ],
     "front": "https://coverartarchive.org/release/5454efa9-445a-4b73-8d16-e9fdbf022119/18529866710-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876437167,
+  "v": 2,
+  "fetchedAt": 1792952866771,
   "album": {
     "id": "1af599c9-0b44-3a5a-a06b-39e8db6b2b4e",
     "title": "Mellon Collie and the Infinite Sadness",
@@ -12,115 +12,143 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Mellon Collie and the Infinite Sadness"
+        "title": "Mellon Collie and the Infinite Sadness",
+        "length": 172092
       },
       {
         "number": "2",
-        "title": "Tonight, Tonight"
+        "title": "Tonight, Tonight",
+        "length": 254629
       },
       {
         "number": "3",
-        "title": "Jellybelly"
+        "title": "Jellybelly",
+        "length": 181508
       },
       {
         "number": "4",
-        "title": "Zero"
+        "title": "Zero",
+        "length": 160199
       },
       {
         "number": "5",
-        "title": "Here Is No Why"
+        "title": "Here Is No Why",
+        "length": 225098
       },
       {
         "number": "6",
-        "title": "Bullet With Butterfly Wings"
+        "title": "Bullet With Butterfly Wings",
+        "length": 258489
       },
       {
         "number": "7",
-        "title": "To Forgive"
+        "title": "To Forgive",
+        "length": 257267
       },
       {
         "number": "8",
-        "title": "An Ode to No One"
+        "title": "An Ode to No One",
+        "length": 291733
       },
       {
         "number": "9",
-        "title": "Love"
+        "title": "Love",
+        "length": 262760
       },
       {
         "number": "10",
-        "title": "Cupid de Locke"
+        "title": "Cupid de Locke",
+        "length": 170280
       },
       {
         "number": "11",
-        "title": "Galapogos"
+        "title": "Galapogos",
+        "length": 286319
       },
       {
         "number": "12",
-        "title": "Muzzle"
+        "title": "Muzzle",
+        "length": 223921
       },
       {
         "number": "13",
-        "title": "Porcelina of the Vast Oceans"
+        "title": "Porcelina of the Vast Oceans",
+        "length": 561533
       },
       {
         "number": "14",
-        "title": "Take Me Down"
+        "title": "Take Me Down",
+        "length": 171926
       },
       {
         "number": "1",
-        "title": "Where Boys Fear to Tread"
+        "title": "Where Boys Fear to Tread",
+        "length": 262601
       },
       {
         "number": "2",
-        "title": "Bodies"
+        "title": "Bodies",
+        "length": 252318
       },
       {
         "number": "3",
-        "title": "Thirty‐Three"
+        "title": "Thirty‐Three",
+        "length": 250285
       },
       {
         "number": "4",
-        "title": "In the Arms of Sleep"
+        "title": "In the Arms of Sleep",
+        "length": 252544
       },
       {
         "number": "5",
-        "title": "1979"
+        "title": "1979",
+        "length": 266197
       },
       {
         "number": "6",
-        "title": "Tales of a Scorched Earth"
+        "title": "Tales of a Scorched Earth",
+        "length": 225843
       },
       {
         "number": "7",
-        "title": "Thru the Eyes of Ruby"
+        "title": "Thru the Eyes of Ruby",
+        "length": 458293
       },
       {
         "number": "8",
-        "title": "Stumbleine"
+        "title": "Stumbleine",
+        "length": 174413
       },
       {
         "number": "9",
-        "title": "X.Y.U."
+        "title": "X.Y.U.",
+        "length": 427093
       },
       {
         "number": "10",
-        "title": "We Only Come Out at Night"
+        "title": "We Only Come Out at Night",
+        "length": 245253
       },
       {
         "number": "11",
-        "title": "Beautiful"
+        "title": "Beautiful",
+        "length": 258387
       },
       {
         "number": "12",
-        "title": "Lily (My One and Only)"
+        "title": "Lily (My One and Only)",
+        "length": 211907
       },
       {
         "number": "13",
-        "title": "By Starlight"
+        "title": "By Starlight",
+        "length": 288120
       },
       {
         "number": "14",
-        "title": "Farewell and Goodnight"
+        "title": "Farewell and Goodnight",
+        "length": 262065
       }
     ],
     "front": "https://coverartarchive.org/release/61a93f13-72ff-4aea-97e6-9b0954cb36b0/38216215200-1200.jpg",

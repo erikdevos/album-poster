@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876395338,
+  "v": 2,
+  "fetchedAt": 1792952829554,
   "album": {
     "id": "20b4c8b3-e922-44a3-90e8-fa00acad8ed4",
     "title": "The Fame Monster",
@@ -12,39 +12,48 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Bad Romance"
+        "title": "Bad Romance",
+        "length": 294504
       },
       {
         "number": "2",
-        "title": "Alejandro"
+        "title": "Alejandro",
+        "length": 274950
       },
       {
         "number": "3",
-        "title": "Monster"
+        "title": "Monster",
+        "length": 249139
       },
       {
         "number": "4",
-        "title": "Speechless"
+        "title": "Speechless",
+        "length": 270827
       },
       {
         "number": "5",
-        "title": "Dance in the Dark"
+        "title": "Dance in the Dark",
+        "length": 288981
       },
       {
         "number": "6",
-        "title": "Telephone"
+        "title": "Telephone",
+        "length": 220537
       },
       {
         "number": "7",
-        "title": "So Happy I Could Die"
+        "title": "So Happy I Could Die",
+        "length": 234748
       },
       {
         "number": "8",
-        "title": "Teeth"
+        "title": "Teeth",
+        "length": 220682
       },
       {
         "number": "9",
-        "title": "Bad Romance (Starsmith remix)"
+        "title": "Bad Romance (Starsmith remix)",
+        "length": 295535
       }
     ],
     "front": "https://coverartarchive.org/release/a31482f5-532a-49db-9c70-e2c0a59565ef/26028751908-1200.jpg",

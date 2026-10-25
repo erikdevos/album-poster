@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876387593,
+  "v": 2,
+  "fetchedAt": 1792952821281,
   "album": {
     "id": "10224fb3-a861-3247-9eab-81b7b0fbb0d4",
     "title": "With Teeth",
@@ -12,67 +12,83 @@
     "tracks": [
       {
         "number": "1",
-        "title": "All the Love in the World"
+        "title": "All the Love in the World",
+        "length": 315293
       },
       {
         "number": "2",
-        "title": "You Know What You Are?"
+        "title": "You Know What You Are?",
+        "length": 221933
       },
       {
         "number": "3",
-        "title": "The Collector"
+        "title": "The Collector",
+        "length": 187480
       },
       {
         "number": "4",
-        "title": "The Hand That Feeds"
+        "title": "The Hand That Feeds",
+        "length": 211693
       },
       {
         "number": "5",
-        "title": "Love Is Not Enough"
+        "title": "Love Is Not Enough",
+        "length": 221333
       },
       {
         "number": "6",
-        "title": "Every Day Is Exactly the Same"
+        "title": "Every Day Is Exactly the Same",
+        "length": 294893
       },
       {
         "number": "7",
-        "title": "With Teeth"
+        "title": "With Teeth",
+        "length": 337706
       },
       {
         "number": "8",
-        "title": "Only"
+        "title": "Only",
+        "length": 263093
       },
       {
         "number": "9",
-        "title": "Getting Smaller"
+        "title": "Getting Smaller",
+        "length": 215506
       },
       {
         "number": "10",
-        "title": "Sunspots"
+        "title": "Sunspots",
+        "length": 243160
       },
       {
         "number": "11",
-        "title": "The Line Begins to Blur"
+        "title": "The Line Begins to Blur",
+        "length": 224440
       },
       {
         "number": "12",
-        "title": "Beside You in Time"
+        "title": "Beside You in Time",
+        "length": 324626
       },
       {
         "number": "13",
-        "title": "Right Where It Belongs"
+        "title": "Right Where It Belongs",
+        "length": 307546
       },
       {
         "number": "14",
-        "title": "Home"
+        "title": "Home",
+        "length": 194026
       },
       {
         "number": "15",
-        "title": "Right Where It Belongs V.2"
+        "title": "Right Where It Belongs V.2",
+        "length": 304226
       },
       {
         "number": "16",
-        "title": "The Hand That Feeds (Ruff mix)"
+        "title": "The Hand That Feeds (Ruff mix)",
+        "length": 237666
       }
     ],
     "front": "https://coverartarchive.org/release/44cbff72-9db6-4ad0-b4c8-b14986afc93a/10150118074.jpg",

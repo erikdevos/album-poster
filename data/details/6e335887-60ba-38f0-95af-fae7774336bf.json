@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875832196,
+  "v": 2,
+  "fetchedAt": 1792952943417,
   "album": {
     "id": "6e335887-60ba-38f0-95af-fae7774336bf",
     "title": "In Rainbows",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "15 Step"
+        "title": "15 Step",
+        "length": 237000
       },
       {
         "number": "2",
-        "title": "Bodysnatchers"
+        "title": "Bodysnatchers",
+        "length": 242293
       },
       {
         "number": "3",
-        "title": "Nude"
+        "title": "Nude",
+        "length": 255386
       },
       {
         "number": "4",
-        "title": "Weird Fishes/Arpeggi"
+        "title": "Weird Fishes/Arpeggi",
+        "length": 318186
       },
       {
         "number": "5",
-        "title": "All I Need"
+        "title": "All I Need",
+        "length": 228000
       },
       {
         "number": "6",
-        "title": "Faust Arp"
+        "title": "Faust Arp",
+        "length": 129000
       },
       {
         "number": "7",
-        "title": "Reckoner"
+        "title": "Reckoner",
+        "length": 290213
       },
       {
         "number": "8",
-        "title": "House of Cards"
+        "title": "House of Cards",
+        "length": 328293
       },
       {
         "number": "9",
-        "title": "Jigsaw Falling Into Place"
+        "title": "Jigsaw Falling Into Place",
+        "length": 248000
       },
       {
         "number": "10",
-        "title": "Videotape"
+        "title": "Videotape",
+        "length": 279000
       }
     ],
     "front": "https://coverartarchive.org/release/1a33443c-3fff-450f-8298-efbc65659d32/14926982777.jpg",

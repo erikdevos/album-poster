@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875916280,
+  "v": 2,
+  "fetchedAt": 1792953045653,
   "album": {
     "id": "e94228ce-5394-45f9-b535-7469a6e57d02",
     "title": "Vol.II",
@@ -12,27 +12,33 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Fabienk"
+        "title": "Fabienk",
+        "length": 391000
       },
       {
         "number": "2",
-        "title": "Mata Zyklek"
+        "title": "Mata Zyklek",
+        "length": 369000
       },
       {
         "number": "3",
-        "title": "Sarniezz"
+        "title": "Sarniezz",
+        "length": 276000
       },
       {
         "number": "4",
-        "title": "Utzp"
+        "title": "Utzp",
+        "length": 411000
       },
       {
         "number": "5",
-        "title": "Yor Zarad"
+        "title": "Yor Zarad",
+        "length": 390000
       },
       {
         "number": "6",
-        "title": "Angor"
+        "title": "Angor",
+        "length": 377000
       }
     ],
     "front": "https://coverartarchive.org/release/aa7845c8-79e3-4149-93ac-3968d7951439/44536532463-1200.jpg",

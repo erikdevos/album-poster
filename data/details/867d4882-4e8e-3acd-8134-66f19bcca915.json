@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876439134,
+  "v": 2,
+  "fetchedAt": 1792952869059,
   "album": {
     "id": "867d4882-4e8e-3acd-8134-66f19bcca915",
     "title": "✝",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Genesis"
+        "title": "Genesis",
+        "length": 234960
       },
       {
         "number": "2",
-        "title": "Let There Be Light"
+        "title": "Let There Be Light",
+        "length": 295946
       },
       {
         "number": "3",
-        "title": "D.A.N.C.E."
+        "title": "D.A.N.C.E.",
+        "length": 242266
       },
       {
         "number": "4",
-        "title": "Newjack"
+        "title": "Newjack",
+        "length": 216893
       },
       {
         "number": "5",
-        "title": "Phantom"
+        "title": "Phantom",
+        "length": 262266
       },
       {
         "number": "6",
-        "title": "Phantom, Pt II"
+        "title": "Phantom, Pt II",
+        "length": 200826
       },
       {
         "number": "7",
-        "title": "Valentine"
+        "title": "Valentine",
+        "length": 176253
       },
       {
         "number": "8",
-        "title": "Tthhee Ppaarrttyy"
+        "title": "Tthhee Ppaarrttyy",
+        "length": 243426
       },
       {
         "number": "9",
-        "title": "DVNO"
+        "title": "DVNO",
+        "length": 236133
       },
       {
         "number": "10",
-        "title": "Stress"
+        "title": "Stress",
+        "length": 298586
       },
       {
         "number": "11",
-        "title": "Waters of Nazareth"
+        "title": "Waters of Nazareth",
+        "length": 265173
       },
       {
         "number": "12",
-        "title": "One Minute to Midnight"
+        "title": "One Minute to Midnight",
+        "length": 220933
       }
     ],
     "front": "https://coverartarchive.org/release/4642ee19-7790-3c8d-ab5e-d133de942db6/25581637829-1200.jpg",

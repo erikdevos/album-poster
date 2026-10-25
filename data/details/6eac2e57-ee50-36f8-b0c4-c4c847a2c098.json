@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792875833406,
+  "v": 2,
+  "fetchedAt": 1792952944806,
   "album": {
     "id": "6eac2e57-ee50-36f8-b0c4-c4c847a2c098",
     "title": "Back to Black",
@@ -12,47 +12,58 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Rehab"
+        "title": "Rehab",
+        "length": 214946
       },
       {
         "number": "2",
-        "title": "You Know I’m No Good"
+        "title": "You Know I’m No Good",
+        "length": 257186
       },
       {
         "number": "3",
-        "title": "Me & Mr Jones"
+        "title": "Me & Mr Jones",
+        "length": 153173
       },
       {
         "number": "4",
-        "title": "Just Friends"
+        "title": "Just Friends",
+        "length": 193306
       },
       {
         "number": "5",
-        "title": "Back to Black"
+        "title": "Back to Black",
+        "length": 241293
       },
       {
         "number": "6",
-        "title": "Love Is a Losing Game"
+        "title": "Love Is a Losing Game",
+        "length": 155413
       },
       {
         "number": "7",
-        "title": "Tears Dry on Their Own"
+        "title": "Tears Dry on Their Own",
+        "length": 186440
       },
       {
         "number": "8",
-        "title": "Wake Up Alone"
+        "title": "Wake Up Alone",
+        "length": 222000
       },
       {
         "number": "9",
-        "title": "Some Unholy War"
+        "title": "Some Unholy War",
+        "length": 142693
       },
       {
         "number": "10",
-        "title": "He Can Only Hold Her"
+        "title": "He Can Only Hold Her",
+        "length": 166000
       },
       {
         "number": "11",
-        "title": "Addicted"
+        "title": "Addicted",
+        "length": 165000
       }
     ],
     "front": "https://coverartarchive.org/release/ccf4da26-ea82-462f-b753-88bb976fd40e/36926439244-1200.jpg",

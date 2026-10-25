@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876379168,
+  "v": 2,
+  "fetchedAt": 1792952811687,
   "album": {
     "id": "ceaa5c39-91c7-4c8a-886c-85b11fa8a1f6",
     "title": "Starboy",
@@ -12,75 +12,93 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Starboy"
+        "title": "Starboy",
+        "length": 230000
       },
       {
         "number": "2",
-        "title": "Party Monster"
+        "title": "Party Monster",
+        "length": 249000
       },
       {
         "number": "3",
-        "title": "False Alarm"
+        "title": "False Alarm",
+        "length": 220000
       },
       {
         "number": "4",
-        "title": "Reminder"
+        "title": "Reminder",
+        "length": 218000
       },
       {
         "number": "5",
-        "title": "Rockin’"
+        "title": "Rockin’",
+        "length": 232000
       },
       {
         "number": "6",
-        "title": "Secrets"
+        "title": "Secrets",
+        "length": 265000
       },
       {
         "number": "7",
-        "title": "True Colors"
+        "title": "True Colors",
+        "length": 206000
       },
       {
         "number": "8",
-        "title": "Stargirl (interlude)"
+        "title": "Stargirl (interlude)",
+        "length": 111000
       },
       {
         "number": "9",
-        "title": "Sidewalks"
+        "title": "Sidewalks",
+        "length": 231000
       },
       {
         "number": "10",
-        "title": "Six Feet Under"
+        "title": "Six Feet Under",
+        "length": 237000
       },
       {
         "number": "11",
-        "title": "Love to Lay"
+        "title": "Love to Lay",
+        "length": 223000
       },
       {
         "number": "12",
-        "title": "A Lonely Night"
+        "title": "A Lonely Night",
+        "length": 220000
       },
       {
         "number": "13",
-        "title": "Attention"
+        "title": "Attention",
+        "length": 197000
       },
       {
         "number": "14",
-        "title": "Ordinary Life"
+        "title": "Ordinary Life",
+        "length": 221000
       },
       {
         "number": "15",
-        "title": "Nothing Without You"
+        "title": "Nothing Without You",
+        "length": 198000
       },
       {
         "number": "16",
-        "title": "All I Know"
+        "title": "All I Know",
+        "length": 321000
       },
       {
         "number": "17",
-        "title": "Die for You"
+        "title": "Die for You",
+        "length": 260000
       },
       {
         "number": "18",
-        "title": "I Feel It Coming"
+        "title": "I Feel It Coming",
+        "length": 269000
       }
     ],
     "front": "https://coverartarchive.org/release/e7a685cb-197b-4407-9310-239ee24f0e76/29173409048-1200.jpg",

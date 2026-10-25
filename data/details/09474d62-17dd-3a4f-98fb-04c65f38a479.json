@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876428643,
+  "v": 2,
+  "fetchedAt": 1792952856471,
   "album": {
     "id": "09474d62-17dd-3a4f-98fb-04c65f38a479",
     "title": "Meteora",
@@ -12,55 +12,68 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Foreword"
+        "title": "Foreword",
+        "length": 13387
       },
       {
         "number": "2",
-        "title": "Don’t Stay"
+        "title": "Don’t Stay",
+        "length": 188113
       },
       {
         "number": "3",
-        "title": "Somewhere I Belong"
+        "title": "Somewhere I Belong",
+        "length": 214074
       },
       {
         "number": "4",
-        "title": "Lying From You"
+        "title": "Lying From You",
+        "length": 175195
       },
       {
         "number": "5",
-        "title": "Hit the Floor"
+        "title": "Hit the Floor",
+        "length": 164310
       },
       {
         "number": "6",
-        "title": "Easier to Run"
+        "title": "Easier to Run",
+        "length": 204184
       },
       {
         "number": "7",
-        "title": "Faint"
+        "title": "Faint",
+        "length": 162206
       },
       {
         "number": "8",
-        "title": "Figure.09"
+        "title": "Figure.09",
+        "length": 197627
       },
       {
         "number": "9",
-        "title": "Breaking the Habit"
+        "title": "Breaking the Habit",
+        "length": 196302
       },
       {
         "number": "10",
-        "title": "From the Inside"
+        "title": "From the Inside",
+        "length": 175647
       },
       {
         "number": "11",
-        "title": "Nobody’s Listening"
+        "title": "Nobody’s Listening",
+        "length": 179041
       },
       {
         "number": "12",
-        "title": "Session"
+        "title": "Session",
+        "length": 144829
       },
       {
         "number": "13",
-        "title": "Numb"
+        "title": "Numb",
+        "length": 187508
       }
     ],
     "front": "https://coverartarchive.org/release/e1656e7e-c23f-48e4-894e-fe1e0d5e6707/17357251129-1200.jpg",

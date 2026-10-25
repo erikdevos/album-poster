@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876435536,
+  "v": 2,
+  "fetchedAt": 1792952865155,
   "album": {
     "id": "bcba43e7-2f72-3b60-b234-577e77fd2d9e",
     "title": "The Black Parade",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "The End."
+        "title": "The End.",
+        "length": 112920
       },
       {
         "number": "2",
-        "title": "Dead!"
+        "title": "Dead!",
+        "length": 195507
       },
       {
         "number": "3",
-        "title": "This Is How I Disappear"
+        "title": "This Is How I Disappear",
+        "length": 239053
       },
       {
         "number": "4",
-        "title": "The Sharpest Lives"
+        "title": "The Sharpest Lives",
+        "length": 200880
       },
       {
         "number": "5",
-        "title": "Welcome to the Black Parade"
+        "title": "Welcome to the Black Parade",
+        "length": 311107
       },
       {
         "number": "6",
-        "title": "I Don’t Love You"
+        "title": "I Don’t Love You",
+        "length": 238680
       },
       {
         "number": "7",
-        "title": "House of Wolves"
+        "title": "House of Wolves",
+        "length": 184000
       },
       {
         "number": "8",
-        "title": "Cancer"
+        "title": "Cancer",
+        "length": 142973
       },
       {
         "number": "9",
-        "title": "Mama"
+        "title": "Mama",
+        "length": 279040
       },
       {
         "number": "10",
-        "title": "Sleep"
+        "title": "Sleep",
+        "length": 283467
       },
       {
         "number": "11",
-        "title": "Teenagers"
+        "title": "Teenagers",
+        "length": 161920
       },
       {
         "number": "12",
-        "title": "Disenchanted"
+        "title": "Disenchanted",
+        "length": 295000
       },
       {
         "number": "13",
-        "title": "Famous Last Words"
+        "title": "Famous Last Words",
+        "length": 299227
       },
       {
         "number": "14",
-        "title": "Blood"
+        "title": "Blood",
+        "length": 173547
       }
     ],
     "front": "https://coverartarchive.org/release/30aec7a5-af1c-4f41-949c-5ecf8ad0ce4e/27877560750-1200.jpg",

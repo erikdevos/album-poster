@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876009629,
+  "v": 2,
+  "fetchedAt": 1792953137046,
   "album": {
     "id": "5d6e21e1-deb5-428e-bb42-c2a567f3619b",
     "title": "My Beautiful Dark Twisted Fantasy",
@@ -12,59 +12,73 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Dark Fantasy"
+        "title": "Dark Fantasy",
+        "length": 280786
       },
       {
         "number": "2",
-        "title": "Gorgeous"
+        "title": "Gorgeous",
+        "length": 357653
       },
       {
         "number": "3",
-        "title": "Power"
+        "title": "Power",
+        "length": 292093
       },
       {
         "number": "4",
-        "title": "All of the Lights (interlude)"
+        "title": "All of the Lights (interlude)",
+        "length": 62253
       },
       {
         "number": "5",
-        "title": "All of the Lights"
+        "title": "All of the Lights",
+        "length": 299786
       },
       {
         "number": "6",
-        "title": "Monster"
+        "title": "Monster",
+        "length": 378893
       },
       {
         "number": "7",
-        "title": "So Appalled"
+        "title": "So Appalled",
+        "length": 398173
       },
       {
         "number": "8",
-        "title": "Devil in a New Dress"
+        "title": "Devil in a New Dress",
+        "length": 352466
       },
       {
         "number": "9",
-        "title": "Runaway"
+        "title": "Runaway",
+        "length": 548200
       },
       {
         "number": "10",
-        "title": "Hell of a Life"
+        "title": "Hell of a Life",
+        "length": 327786
       },
       {
         "number": "11",
-        "title": "Blame Game"
+        "title": "Blame Game",
+        "length": 469866
       },
       {
         "number": "12",
-        "title": "Lost in the World"
+        "title": "Lost in the World",
+        "length": 256586
       },
       {
         "number": "13",
-        "title": "Who Will Survive in America"
+        "title": "Who Will Survive in America",
+        "length": 98200
       },
       {
         "number": "1",
-        "title": "Runaway"
+        "title": "Runaway",
+        "length": 2067000
       }
     ],
     "front": "https://coverartarchive.org/release/cd474271-bd7a-4d53-ba9e-e9d5bd7958cb/39032890177-1200.jpg",

@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876406828,
+  "v": 2,
+  "fetchedAt": 1792952837629,
   "album": {
     "id": "e171597d-e6d5-36c8-8d0e-63daf79796b8",
     "title": "Songs of Faith and Devotion",
@@ -12,43 +12,53 @@
     "tracks": [
       {
         "number": "1",
-        "title": "I Feel You"
+        "title": "I Feel You",
+        "length": 275466
       },
       {
         "number": "2",
-        "title": "Walking in My Shoes"
+        "title": "Walking in My Shoes",
+        "length": 335066
       },
       {
         "number": "3",
-        "title": "Condemnation"
+        "title": "Condemnation",
+        "length": 200426
       },
       {
         "number": "4",
-        "title": "Mercy in You"
+        "title": "Mercy in You",
+        "length": 257906
       },
       {
         "number": "5",
-        "title": "Judas"
+        "title": "Judas",
+        "length": 314360
       },
       {
         "number": "6",
-        "title": "In Your Room"
+        "title": "In Your Room",
+        "length": 386840
       },
       {
         "number": "7",
-        "title": "Get Right With Me / Interlude #4"
+        "title": "Get Right With Me / Interlude #4",
+        "length": 232893
       },
       {
         "number": "8",
-        "title": "Rush"
+        "title": "Rush",
+        "length": 277600
       },
       {
         "number": "9",
-        "title": "One Caress"
+        "title": "One Caress",
+        "length": 212866
       },
       {
         "number": "10",
-        "title": "Higher Love"
+        "title": "Higher Love",
+        "length": 356906
       }
     ],
     "front": "https://coverartarchive.org/release/13ee7e6b-2f9a-30af-b4bb-2c2dbde12c44/20967138423-1200.jpg",

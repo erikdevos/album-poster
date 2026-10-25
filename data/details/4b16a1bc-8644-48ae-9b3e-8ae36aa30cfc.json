@@ -1,6 +1,6 @@
 {
-  "v": 1,
-  "fetchedAt": 1792876403971,
+  "v": 2,
+  "fetchedAt": 1792952836109,
   "album": {
     "id": "4b16a1bc-8644-48ae-9b3e-8ae36aa30cfc",
     "title": "Born to Die",
@@ -12,51 +12,63 @@
     "tracks": [
       {
         "number": "1",
-        "title": "Born to Die"
+        "title": "Born to Die",
+        "length": 286000
       },
       {
         "number": "2",
-        "title": "Off to the Races"
+        "title": "Off to the Races",
+        "length": 299933
       },
       {
         "number": "3",
-        "title": "Blue Jeans"
+        "title": "Blue Jeans",
+        "length": 209440
       },
       {
         "number": "4",
-        "title": "Video Games"
+        "title": "Video Games",
+        "length": 281000
       },
       {
         "number": "5",
-        "title": "Diet Mountain Dew"
+        "title": "Diet Mountain Dew",
+        "length": 222000
       },
       {
         "number": "6",
-        "title": "National Anthem"
+        "title": "National Anthem",
+        "length": 230000
       },
       {
         "number": "7",
-        "title": "Dark Paradise"
+        "title": "Dark Paradise",
+        "length": 243173
       },
       {
         "number": "8",
-        "title": "Radio"
+        "title": "Radio",
+        "length": 214000
       },
       {
         "number": "9",
-        "title": "Carmen"
+        "title": "Carmen",
+        "length": 248000
       },
       {
         "number": "10",
-        "title": "Million Dollar Man"
+        "title": "Million Dollar Man",
+        "length": 230000
       },
       {
         "number": "11",
-        "title": "Summertime Sadness"
+        "title": "Summertime Sadness",
+        "length": 264000
       },
       {
         "number": "12",
-        "title": "This Is What Makes Us Girls"
+        "title": "This Is What Makes Us Girls",
+        "length": 240306
       }
     ],
     "front": "https://coverartarchive.org/release/821b5fd1-8fdd-4976-8258-90c661cc6423/30983983679-1200.jpg",
