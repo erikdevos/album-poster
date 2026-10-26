@@ -147,7 +147,6 @@ main {
     text-rendering: optimizeLegibility;
     color: var(--poster-fg);
     background-color: var(--poster-bg);
-    border: max(2px, 0.5cqi) solid currentColor;
 }
 
 /* Rules between the sections */
