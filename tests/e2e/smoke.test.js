@@ -729,7 +729,7 @@ test('a message is a bubble at the bottom of the window, and does not move the p
 })
 
 test('the menu buttons are icons, with a clear name for screen readers and a tooltip', async () => {
-    const { page, close } = await open(`#${LUX}`)
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1000, height: 1400 } }) // a portrait window: the header is on top
     try {
         await poster(page).title.getByText('LUX').waitFor()
         const buttons = { 'shuffle-button': 'Random album', 'display-toggle': 'Display and slideshow', 'export-toggle': 'Export', 'theme-toggle': 'Dark mode' }
@@ -748,7 +748,7 @@ test('the menu buttons are icons, with a clear name for screen readers and a too
 })
 
 test('the search box is short on a wide screen and the results are wider than the box', async () => {
-    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1000, height: 1400 } }) // the header is on top here
     try {
         await poster(page).title.getByText('LUX').waitFor()
         const box = page.getByRole('combobox', { name: 'Search albums' })
@@ -1736,5 +1736,258 @@ test('festival has no colour blocks, and the other layouts that show them still 
             await page.waitForFunction(() => document.querySelector('#album-colors .album-color'))
             assert.equal(await page.locator('#album-colors').isVisible(), shown, layout)
         } finally { await close() }
+    }
+})
+
+// ---------- The navigation at the side ----------
+
+test('on a wide landscape screen the navigation is a column at the right and the poster gets the height', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const look = await page.evaluate(() => {
+            const rect = selector => document.querySelector(selector).getBoundingClientRect()
+            const header = rect('.site-header')
+            const controls = [...document.querySelectorAll('.site-header .header-control')].map(el => el.getBoundingClientRect())
+            return {
+                position: getComputedStyle(document.querySelector('.site-header')).position,
+                header, poster: rect('#album-container'), footer: rect('footer'),
+                tops: controls.map(r => Math.round(r.top)),
+                lefts: controls.map(r => Math.round(r.left)),
+                labels: [...document.querySelectorAll('.site-header .control-label')].map(el => el.offsetParent !== null && el.textContent.trim()),
+                scrollWidth: document.documentElement.scrollWidth
+            }
+        })
+        assert.equal(look.position, 'fixed')
+        assert.equal(Math.round(look.header.right), 1280, 'at the right edge')
+        assert.equal(Math.round(look.header.top), 0)
+        assert.equal(Math.round(look.header.bottom), 800, 'the whole height')
+        assert.ok(look.header.width < 300, 'a narrow column')
+        // one under the other, in order from top to bottom; only previous, next and random share a row
+        assert.deepEqual([...look.tops].sort((a, b) => a - b), look.tops, 'in order, top to bottom')
+        assert.equal(look.tops.length - new Set(look.tops).size, 2, 'three buttons on one row, all others on a row of their own')
+        assert.ok(look.tops.length >= 8)
+        // the poster is next to the column, not under it, and starts near the top of the window
+        assert.ok(look.poster.right <= look.header.left, 'the poster is beside the column')
+        assert.ok(look.poster.top < 40, `the poster starts at the top: ${look.poster.top}`)
+        assert.equal(look.labels.filter(Boolean).length, look.labels.length - 3, 'the buttons have a name next to the icon, except the three that share a row')
+        assert.ok(look.footer.left >= look.header.left && look.footer.bottom <= 800, 'the credit is in the column, at the bottom')
+        assert.ok(look.scrollWidth <= 1280)
+    } finally { await close() }
+})
+
+test('the poster is as high as the window allows: only the page padding is kept free, not a header', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 1100 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        // classic is about 1.85 times as high as wide: the width follows from the height under 2 rem of padding.
+        // Under a header (6.5 rem) the poster would have been (1100 - 104) / 1.85 = 538 px wide.
+        const width = await page.evaluate(() => document.getElementById('album-container').getBoundingClientRect().width)
+        assert.ok(width > 560 && width <= 800, `${width}`)
+    } finally { await close() }
+})
+
+test('in a portrait window, and on a narrow one, the header stays on top without names next to the icons', async () => {
+    for (const viewport of [{ width: 800, height: 1100 }, { width: 880, height: 700 }, { width: 375, height: 812 }]) {
+        const { page, close } = await open(`#${LUX}`, { viewport })
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            const look = await page.evaluate(() => ({
+                position: getComputedStyle(document.querySelector('.site-header')).position,
+                labels: [...document.querySelectorAll('.site-header .control-label')].filter(el => el.offsetParent !== null).length,
+                headerBottom: document.querySelector('.site-header').getBoundingClientRect().bottom,
+                posterTop: document.getElementById('album-container').getBoundingClientRect().top
+            }))
+            assert.notEqual(look.position, 'fixed', `${viewport.width}×${viewport.height}`)
+            assert.equal(look.labels, 0)
+            assert.ok(look.posterTop >= look.headerBottom - 1, 'the poster is under the header')
+        } finally { await close() }
+    }
+})
+
+test('in the column the panels open to the left and stay inside the window, also the tall PDF panel on a low window', async () => {
+    for (const height of [800, 600]) {
+        const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height } })
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            await page.getByRole('button', { name: 'Export' }).click()
+            await page.getByLabel('File type').selectOption('pdf')
+            // the panel grew; it is moved up to fit as soon as the browser has noticed
+            await page.waitForFunction(h => document.getElementById('export-panel').getBoundingClientRect().bottom <= h, height, { timeout: 3000 })
+            const box = await page.locator('#export-panel').boundingBox()
+            const column = await page.locator('.site-header').boundingBox()
+            assert.ok(box.x + box.width <= column.x + 1, `the panel is left of the column (${height})`)
+            assert.ok(box.y >= 0 && box.y + box.height <= height + 1, `the panel is inside the window (${height})`)
+            // the buttons at the bottom of the panel can be used
+            await page.getByRole('button', { name: 'Download' }).scrollIntoViewIfNeeded()
+            const download = await page.getByRole('button', { name: 'Download' }).boundingBox()
+            assert.ok(download.y >= 0 && download.y + download.height <= height, `Download is on screen (${height})`)
+        } finally { await close() }
+    }
+})
+
+test('the credit for the sources is small and quiet, without a band of its own', async () => {
+    for (const viewport of [{ width: 1280, height: 800 }, { width: 375, height: 812 }]) {
+        const { page, close } = await open(`#${LUX}`, { viewport })
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            const look = await page.evaluate(() => {
+                const footer = document.querySelector('footer')
+                const style = getComputedStyle(footer)
+                return { size: parseFloat(style.fontSize), background: style.backgroundColor, text: footer.textContent.trim().replace(/\s+/g, ' '), links: footer.querySelectorAll('a').length }
+            })
+            assert.ok(look.size <= 11.2, `small: ${look.size}px`)
+            assert.equal(look.background, 'rgba(0, 0, 0, 0)')
+            assert.equal(look.links, 2)
+            assert.match(look.text, /MusicBrainz.*Cover Art Archive/)
+        } finally { await close() }
+    }
+})
+
+test('in the column the style menu has the name "Style" above it, and room under it', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const look = await page.evaluate(() => {
+            const rect = selector => document.querySelector(selector).getBoundingClientRect()
+            const label = document.querySelector('.field-label')
+            return {
+                visible: label.offsetParent !== null, text: label.textContent.trim(),
+                label: rect('.field-label'), select: rect('#layout-select'), search: rect('#album-search'), next: rect('#prev-button')
+            }
+        })
+        assert.equal(look.visible, true)
+        assert.equal(look.text, 'Style')
+        assert.ok(look.label.bottom <= look.select.top + 1, 'the name is above the select')
+        assert.ok(look.search.bottom < look.label.top, 'and under the search box')
+        const gap = look.next.top - look.select.bottom
+        assert.ok(gap >= 12, `room under the select: ${gap}px`)
+        // still found by its accessible name
+        assert.equal(await page.getByLabel('Poster layout').count(), 1)
+    } finally { await close() }
+
+    // the header on top has no such name: there the select is a control like the others
+    const top = await open(`#${LUX}`, { viewport: { width: 1000, height: 1400 } })
+    try {
+        await poster(top.page).title.getByText('LUX').waitFor()
+        assert.equal(await top.page.locator('.field-label').isHidden(), true)
+    } finally { await top.close() }
+})
+
+test('in the column previous, next and random are on one row, compact, with only an icon', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const look = await page.evaluate(() => {
+            const buttons = ['prev-button', 'next-button', 'shuffle-button'].map(id => document.getElementById(id))
+            const rects = buttons.map(b => b.getBoundingClientRect())
+            return {
+                tops: rects.map(r => Math.round(r.top)), lefts: rects.map(r => r.left), widths: rects.map(r => r.width),
+                text: buttons.map(b => b.innerText.trim()),
+                names: buttons.map(b => b.getAttribute('aria-label')),
+                wall: document.querySelector('#wall-link, a[aria-label="Wall: all albums"]').getBoundingClientRect().top,
+                bottom: Math.max(...rects.map(r => r.bottom)), select: document.getElementById('layout-select').getBoundingClientRect().bottom
+            }
+        })
+        assert.equal(new Set(look.tops).size, 1, 'on one row')
+        assert.ok(look.lefts[0] < look.lefts[1] && look.lefts[1] < look.lefts[2], 'previous, next, random, from left to right')
+        assert.deepEqual(look.text, ['', '', ''], 'only an icon')
+        assert.deepEqual(look.names, ['Previous album', 'Next album', 'Random album'], 'still with a name for screen readers')
+        assert.ok(look.widths.every(width => width < 80), 'compact')
+        assert.ok(look.tops[0] > look.select, 'under the style menu')
+        assert.ok(look.wall > look.bottom, 'and above the wall button')
+    } finally { await close() }
+})
+
+// ---------- Keyboard focus ----------
+
+// Tabs through the page and gives, for every element that gets focus, how its focus ring looks
+const focusRings = async (page, steps) => {
+    const rings = []
+    for (let i = 0; i < steps; i++) {
+        await page.keyboard.press('Tab')
+        rings.push(await page.evaluate(() => {
+            const element = document.activeElement
+            const style = getComputedStyle(element)
+            return {
+                name: element.getAttribute('aria-label') || element.id || element.tagName,
+                width: parseFloat(style.outlineWidth), style: style.outlineStyle, color: style.outlineColor,
+                background: getComputedStyle(document.body).backgroundColor
+            }
+        }))
+    }
+    return rings
+}
+
+for (const [theme, ring] of [['light', 'rgb(10, 88, 202)'], ['dark', 'rgb(138, 180, 255)']]) {
+    test(`keyboard focus: every control gets a clear blue ring that contrasts with the page, ${theme} theme`, async () => {
+        const { contrastRatio } = await import('../../scripting/colors.js')
+        const channels = text => text.match(/[\d.]+/g).slice(0, 3).map(Number)
+        for (const path of [`?theme=${theme}#${LUX}`, `wall/?theme=${theme}`]) {
+            const { page, close } = await open(path, { viewport: { width: 1280, height: 800 } })
+            try {
+                await page.locator('#album-container .album-name, .wall-tile').first().waitFor()
+                const rings = await focusRings(page, 9)
+                assert.ok(new Set(rings.map(item => item.name)).size >= 6, 'it moves through the controls')
+                for (const item of rings) {
+                    assert.equal(item.style, 'solid', item.name)
+                    assert.ok(item.width >= 3, `${item.name} ring is ${item.width}px`)
+                    assert.equal(item.color, ring, `${item.name} in ${path}`)
+                    assert.ok(contrastRatio(channels(item.color), channels(item.background)) >= 3, `${item.name} contrast against the page`)
+                }
+            } finally { await close() }
+        }
+    })
+}
+
+test('keyboard focus: the fields in a panel have the ring too, and a mouse click does not show one', async () => {
+    const { page, close } = await open(`?theme=light#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        await page.getByRole('button', { name: 'Export' }).click()
+        await page.keyboard.press('Tab') // from the file type select, to the next one
+        await page.keyboard.press('Tab')
+        const ring = await page.evaluate(() => {
+            const style = getComputedStyle(document.activeElement)
+            return { tag: document.activeElement.tagName, color: style.outlineColor, width: parseFloat(style.outlineWidth) }
+        })
+        assert.equal(ring.color, 'rgb(10, 88, 202)')
+        assert.ok(ring.width >= 3)
+
+        // a click on a button is not keyboard focus: no ring
+        await page.locator('#theme-toggle').click()
+        const clicked = await page.evaluate(() => ({ matches: document.activeElement.matches(':focus-visible'), width: getComputedStyle(document.activeElement).outlineWidth }))
+        assert.equal(clicked.matches, false)
+    } finally { await close() }
+})
+
+test('the page opens with the focus on the Style menu, and the arrow keys go through the styles', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        assert.equal(await page.evaluate(() => document.activeElement.id), 'layout-select')
+        assert.equal(await page.evaluate(() => document.activeElement.matches(':focus-visible')), true, 'with a ring, so that it can be seen')
+        assert.equal(await page.locator('#album-container').getAttribute('data-layout'), 'classic')
+
+        await page.keyboard.press('ArrowDown')
+        assert.equal(await page.locator('#album-container').getAttribute('data-layout'), 'modern') // the next one in the menu
+        assert.equal(new URL(page.url()).searchParams.get('layout'), 'modern')
+        await page.keyboard.press('ArrowDown')
+        assert.equal(await page.locator('#album-container').getAttribute('data-layout'), 'minimal')
+        await page.keyboard.press('ArrowUp')
+        assert.equal(await page.locator('#album-container').getAttribute('data-layout'), 'modern')
+        // left and right still belong to the select, not to previous and next album
+        const id = await currentId(page)
+        await page.keyboard.press('ArrowRight')
+        assert.equal(await currentId(page), id)
+    } finally { await close() }
+
+    // no header, no focus on it
+    for (const query of ['?controls=false', '?display=true']) {
+        const hidden = await open(`${query}#${LUX}`)
+        try {
+            await poster(hidden.page).title.getByText('LUX').waitFor()
+            assert.notEqual(await hidden.page.evaluate(() => document.activeElement.id), 'layout-select', query)
+        } finally { await hidden.close() }
     }
 })

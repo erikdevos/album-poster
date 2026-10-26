@@ -18,7 +18,7 @@
             } catch (error) {}
         </script>
     </head>
-    <body>
+    <body class="has-rail">
         <!-- Fixed to the window, so that loading and messages never move the page -->
         <div class="loading-line" aria-hidden="true"></div>
         <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
@@ -32,7 +32,9 @@
                 <ul id="search-results" role="listbox" aria-label="Albums" hidden></ul>
                 <p id="search-status" class="sr-only" role="status"></p>
             </div>
-            <select id="layout-select" class="header-control layout-select" aria-label="Poster layout">
+            <div class="style-field">
+                <span class="field-label" aria-hidden="true">Style</span>
+                <select id="layout-select" class="header-control layout-select" aria-label="Poster layout">
                 <option value="classic">Classic</option>
                 <option value="modern">Modern</option>
                 <option value="minimal">Minimal</option>
@@ -49,33 +51,36 @@
                 <option value="setlist">Setlist</option>
                 <option value="vinyl">Vinyl</option>
             </select>
+            </div>
+            <div class="nav-buttons">
             <button id="prev-button" class="header-control icon-button browse-button" type="button" title="Previous album (left arrow)" aria-label="Previous album">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                     <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            <span class="control-label">Previous</span></button>
             <button id="next-button" class="header-control icon-button browse-button" type="button" title="Next album (right arrow)" aria-label="Next album">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                     <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            <span class="control-label">Next</span></button>
             <button id="shuffle-button" class="header-control icon-button" type="button" title="Random album" aria-label="Random album">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                     <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            <span class="control-label">Random</span></button>
+            </div>
             <a id="wall-link" class="header-control icon-button" href="wall/" title="Wall: all albums" aria-label="Wall: all albums">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                     <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 </svg>
-            </a>
+            <span class="control-label">Wall</span></a>
             <div class="header-menu">
                 <button id="display-toggle" class="header-control icon-button" type="button" title="Display and slideshow" aria-label="Display and slideshow"
                         aria-haspopup="dialog" aria-expanded="false" aria-controls="display-panel">
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                         <path d="M3 5h18v11H3zM8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </button>
+                <span class="control-label">Display</span></button>
                 <div id="display-panel" class="menu-panel" role="dialog" aria-label="Display and slideshow" hidden>
                     <button id="menu-fullscreen" class="panel-button" type="button">Full screen</button>
                     <p class="panel-heading">Slideshow</p>
@@ -103,7 +108,7 @@
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </button>
+                <span class="control-label">Export</span></button>
                 <div id="export-panel" class="menu-panel" role="dialog" aria-label="Export the poster" hidden>
                     <label class="panel-field">File type
                         <select id="export-format">
@@ -167,7 +172,7 @@
                 <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                     <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            <span class="control-label">Dark mode</span></button>
         </header>
         <main>
 

@@ -71,7 +71,21 @@ async function init() {
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
     setupBrowse(albums)
     setupThemeToggle()
-    document.getElementById('layout-select').addEventListener('change', event => setLayout(event.target.value))
+    const styleMenu = document.getElementById('layout-select')
+    styleMenu.addEventListener('change', event => setLayout(event.target.value))
+    // The page opens with the focus on the Style menu: the arrow keys then go through the styles at once.
+    // (Not when the header is hidden, as in display mode or with controls=false.)
+    if (styleMenu.offsetParent !== null) styleMenu.focus({ preventScroll: true })
+    // Up and down go to the previous and next style at once, on every system (on a Mac a closed select
+    // would open its list instead). Alt+arrow still opens the list.
+    styleMenu.addEventListener('keydown', event => {
+        if ((event.key !== 'ArrowDown' && event.key !== 'ArrowUp') || event.altKey || event.ctrlKey || event.metaKey) return
+        event.preventDefault()
+        const index = styleMenu.selectedIndex + (event.key === 'ArrowDown' ? 1 : -1)
+        if (index < 0 || index >= styleMenu.options.length) return
+        styleMenu.selectedIndex = index
+        styleMenu.dispatchEvent(new Event('change', { bubbles: true }))
+    })
     // The export panel closes when something in it is used; the Export button shows a loader while the file is made
     const exportMenu = setupMenu('export-toggle', 'export-panel')
     const before = () => exportMenu.close()

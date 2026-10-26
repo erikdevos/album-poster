@@ -9,15 +9,27 @@ export function setupMenu(toggleId, panelId) {
 
     const isOpen = () => !panel.hidden
 
-    // The panel hangs from its button, which on a narrow screen can be at the far left of a second row
-    // of buttons: then the panel is moved sideways until it is inside the window
+    // The panel hangs from its button. On a narrow screen that button can be at the far left of a second
+    // row of buttons, and in the column at the side the panel can be taller than what is under the button:
+    // then the panel is moved until it is inside the window. (Only in the column, which is fixed to the
+    // window; a panel under a header that scrolls with the page just scrolls with it.)
     const GUTTER = 16
     function keepInWindow() {
         panel.style.translate = ''
-        const { left, right } = panel.getBoundingClientRect()
-        const shift = left < GUTTER ? GUTTER - left : Math.min(0, document.documentElement.clientWidth - GUTTER - right)
-        if (shift) panel.style.translate = `${Math.round(shift)}px 0`
+        const rect = panel.getBoundingClientRect()
+        const view = document.documentElement
+        const shiftX = rect.left < GUTTER ? GUTTER - rect.left : Math.min(0, view.clientWidth - GUTTER - rect.right)
+        let shiftY = 0
+        if (getComputedStyle(menu.closest('header') ?? menu).position === 'fixed') {
+            shiftY = Math.min(0, view.clientHeight - GUTTER - rect.bottom)
+            shiftY = Math.max(shiftY, GUTTER - rect.top) // but not above the top of the window
+        }
+        if (shiftX || shiftY) panel.style.translate = `${Math.round(shiftX)}px ${Math.round(shiftY)}px`
     }
+
+    // The panel can change size while it is open (the PDF options make the export panel higher)
+    const resizeWatcher = typeof ResizeObserver === 'function' ? new ResizeObserver(() => { if (isOpen()) keepInWindow() }) : null
+    resizeWatcher?.observe(panel)
 
     function open() {
         panel.hidden = false

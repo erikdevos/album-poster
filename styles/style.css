@@ -9,8 +9,12 @@
     --bg: #EFEFE6;
     --fg: #000000;
     --muted-bg: color-mix(in srgb, var(--fg) 8%, transparent);
-    --chrome: #3d3d3d;
     --page-gutter: 1rem;
+    /* The keyboard focus ring: a blue that stands out from the black, white and cream of the app, with
+       at least 3:1 against the page in both themes. --focus-on-dark is for the dark surfaces on the
+       poster (the display buttons, the update banner). */
+    --focus: #0a58ca;
+    --focus-on-dark: #8ab4ff;
     --chrome-height: 6.5rem; /* header + page padding around the poster */
 }
 :root[data-controls="off"] {
@@ -22,11 +26,13 @@
     :root:not([data-theme="light"]) {
         --bg: #000000;
         --fg: #FFFFFF;
+        --focus: #8ab4ff;
     }
 }
 :root[data-theme="dark"] {
     --bg: #000000;
     --fg: #FFFFFF;
+    --focus: #8ab4ff;
 }
 
 *, *::before, *::after {
@@ -63,8 +69,10 @@ a {
     color: inherit;
 }
 
+/* Keyboard focus, on every button, link, field and menu: a clear coloured ring, a little away from the
+   element so that it also shows on the round buttons and on a field with a border */
 :focus-visible {
-    outline: 2px solid currentColor;
+    outline: 3px solid var(--focus);
     outline-offset: 2px;
 }
 
@@ -2154,7 +2162,7 @@ a.header-control {
     display: none;
 }
 .display-button:focus-visible {
-    outline-color: #fff;
+    outline-color: var(--focus-on-dark);
 }
 .display-controls .kiosk-only {
     display: none;
@@ -2309,7 +2317,7 @@ a.header-control {
 .update-banner:hover,
 .update-banner:focus-visible {
     background-color: #000;
-    outline: 2px solid #fff;
+    outline: 3px solid var(--focus-on-dark);
     outline-offset: 2px;
 }
 :root[data-kiosk="on"] .update-banner {
@@ -2337,16 +2345,25 @@ a.header-control {
 
 /* ---------- Footer ---------- */
 
+/* Only a short credit for the sources: small, quiet and without a band of its own */
 footer {
-    margin-top: 3rem;
-    padding: 2rem var(--page-gutter);
-    background-color: var(--chrome);
-    color: white;
-    font-size: 0.8rem;
+    margin-top: 2rem;
+    padding: 1rem var(--page-gutter) 1.25rem;
+    color: color-mix(in srgb, var(--fg) 55%, transparent);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    text-align: center;
 }
 footer .container {
     width: min(100%, 800px);
     margin-inline: auto;
+}
+footer a {
+    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+    text-underline-offset: 0.15em;
+}
+footer a:hover {
+    color: var(--fg);
 }
 
 /* ---------- Print: one poster on an A4 page, in the light theme ---------- */
@@ -2532,4 +2549,147 @@ footer .container {
 }
 #album-container[data-layout="modern"] .album-footer-info .footer-item {
     color: color-mix(in srgb, var(--poster-fg) 62%, transparent);
+}
+
+/* ---------- Navigation at the side: wide screens ----------
+   On a wide landscape screen the height is what is short, not the width. The header moves to a column
+   at the right, so that the poster gets the whole height of the window. The same controls, one under
+   the other, with a name next to each icon. Narrower or portrait screens keep the header on top.
+   The wall has its own header, which stays on top. */
+.control-label,
+.field-label {
+    display: none;
+}
+/* in the header on top the select is a control like the others; the wrapper is only for the column */
+.style-field,
+.nav-buttons {
+    display: contents;
+}
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+    :root {
+        --rail-width: 14.5rem;
+        --chrome-height: 2rem; /* only the page padding: the header and the credit are in the column at the side */
+    }
+    :root[data-controls="off"] {
+        --rail-width: 0px;
+    }
+    .has-rail {
+        padding-right: var(--rail-width);
+    }
+    /* the credit goes to the bottom of the column, smaller */
+    .has-rail footer {
+        position: fixed;
+        z-index: 31;
+        right: 0;
+        bottom: 0;
+        width: var(--rail-width);
+        margin: 0;
+        padding: 0.7rem 0.9rem 0.9rem;
+        font-size: 0.62rem;
+        text-align: left;
+    }
+    .has-rail footer .container {
+        width: auto;
+        margin: 0;
+    }
+    :root[data-display="on"] .has-rail {
+        padding-right: 0;
+    }
+
+    .has-rail .site-header {
+        position: fixed;
+        z-index: 30;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0.5rem;
+        width: var(--rail-width);
+        margin: 0;
+        padding: 1.1rem 0.9rem;
+        border-left: 1px solid color-mix(in srgb, var(--fg) 15%, transparent);
+    }
+    .has-rail .site-title {
+        margin: 0 0 0.5rem;
+    }
+    .has-rail .search {
+        flex: none;
+    }
+    /* the results list opens to the left of the column, over the page */
+    .has-rail #search-results {
+        top: 0;
+        left: auto;
+        right: calc(100% + 0.9rem);
+        width: 20rem;
+    }
+    /* the style menu has a name above it, and some room under it before the buttons */
+    .has-rail .style-field {
+        display: grid;
+        gap: 0.25rem;
+        margin: 0.35rem 0 0.9rem;
+    }
+    .has-rail .field-label {
+        display: block;
+        padding-left: 0.95rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.85;
+    }
+    .has-rail .layout-select {
+        width: 100%;
+    }
+    /* previous, next and random share one row, as icons only */
+    .has-rail .nav-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+    .has-rail .nav-buttons .header-control.icon-button {
+        justify-content: center;
+        padding: 0;
+    }
+    .has-rail .nav-buttons .control-label {
+        display: none;
+    }
+    /* every other control is a full-width row: the icon and its name */
+    .has-rail .header-control.icon-button,
+    .has-rail .header-control.theme-toggle {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.7rem;
+        padding: 0 0.95rem;
+    }
+    .has-rail .control-label {
+        display: inline;
+    }
+    .has-rail .header-menu {
+        display: grid;
+    }
+    /* the panels open to the left of the column */
+    .has-rail .menu-panel {
+        top: 0;
+        right: calc(100% + 0.9rem);
+        max-height: calc(100dvh - 2rem);
+        overflow-y: auto;
+    }
+}
+/* A window that is not high: the column is tighter, so that all of it fits without scrolling
+   (a scrolling column would cut off the panels that open to its left) */
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) and (max-height: 640px) {
+    .has-rail .site-header {
+        gap: 0.3rem;
+        padding-block: 0.6rem;
+    }
+    .has-rail .site-title {
+        margin-bottom: 0.1rem;
+        font-size: 0.95rem;
+    }
+    .has-rail .header-control,
+    .has-rail .search input {
+        height: 2rem;
+    }
 }
