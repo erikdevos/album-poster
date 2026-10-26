@@ -3,20 +3,20 @@
 
 export const LAYOUT_LABELS = {
     classic: 'Classic',
+    modern: 'Modern',
     minimal: 'Minimal',
     swiss: 'Swiss',
+    typographic: 'Typographic',
     blur: 'Blur',
+    riso: 'Riso',
+    film: 'Film',
+    gallery: 'Gallery',
     cd: 'CD',
     'cd-blur': 'CD blur',
     festival: 'Festival',
     receipt: 'Receipt',
-    gallery: 'Gallery',
     setlist: 'Setlist',
-    typographic: 'Typographic',
-    riso: 'Riso',
-    film: 'Film',
-    vinyl: 'Vinyl',
-    modern: 'Modern'
+    vinyl: 'Vinyl'
 }
 
 export const LAYOUTS = Object.keys(LAYOUT_LABELS)

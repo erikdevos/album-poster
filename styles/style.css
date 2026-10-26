@@ -784,9 +784,7 @@ ol.track-list li::before {
     text-align: center;
 }
 #album-container[data-layout="festival"] .album-colors {
-    order: 2;
-    justify-content: center;
-    margin-top: 3cqi;
+    display: none; /* the colour blocks do not fit a gig poster */
 }
 #album-container[data-layout="festival"] .album-name {
     order: 2;
@@ -1734,7 +1732,7 @@ ol.track-list li::before {
 
 .search {
     position: relative;
-    flex: 0 1 10rem;
+    flex: 0 1 11rem;
 }
 .search input {
     width: 100%;
@@ -2474,9 +2472,7 @@ footer .container {
 #album-container[data-layout="modern"] .album-cover-wrapper {
     grid-area: cover;
     margin: 4.5cqi 0 5cqi;
-    border-radius: 1cqi;
     overflow: hidden;
-    box-shadow: 0 0 0 max(1px, 0.2cqi) color-mix(in srgb, currentColor 30%, transparent);
 }
 #album-container[data-layout="modern"] .album-tracklist-genre-wrapper {
     grid-area: tracks;

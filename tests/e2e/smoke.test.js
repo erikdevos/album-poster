@@ -1682,7 +1682,7 @@ test('the wall, with its layout menu, the offline panel and the update banner, f
     }
 })
 
-test('modern: title, artist with the colours, a rounded cover, two columns of tracks and the details at the right', async () => {
+test('modern: title, artist with the colours, the cover, two columns of tracks and the details at the right', async () => {
     const { page, close } = await open(`?layout=modern#${LUX}`, { viewport: { width: 700, height: 1100 } })
     try {
         await poster(page).title.getByText('LUX').waitFor()
@@ -1693,14 +1693,12 @@ test('modern: title, artist with the colours, a rounded cover, two columns of tr
                 .map(item => getComputedStyle(item, '::before').content)
             return {
                 columns: getComputedStyle(document.getElementById('track-list')).columnCount,
-                radius: parseFloat(getComputedStyle(document.querySelector('.album-cover-wrapper')).borderTopLeftRadius),
                 title: rect('#album-name'), artist: rect('#album-artist'), colors: rect('#album-colors'),
                 cover: rect('.album-cover-wrapper'), tracks: rect('#track-list'), footer: rect('.album-footer-info'),
                 labels
             }
         })
         assert.equal(look.columns, '2')
-        assert.ok(look.radius > 0, 'the cover has rounded corners')
         // top to bottom: title, artist and colours on one row, cover, then tracks and details side by side
         assert.ok(look.title.bottom <= look.artist.top + 1)
         assert.ok(Math.abs((look.artist.top + look.artist.bottom) / 2 - (look.colors.top + look.colors.bottom) / 2) < 6, 'the colours are level with the artist')
@@ -1728,4 +1726,15 @@ test('the track lengths come from MusicBrainz, and the album length shows in mod
         await poster(page).title.getByText('Abbey Road').waitFor()
         assert.equal(await page.locator('.footer-length').isHidden(), true, 'other layouts do not show it')
     } finally { await close() }
+})
+
+test('festival has no colour blocks, and the other layouts that show them still do', async () => {
+    for (const [layout, shown] of [['festival', false], ['classic', true]]) {
+        const { page, close } = await open(`?layout=${layout}#${LUX}`)
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            await page.waitForFunction(() => document.querySelector('#album-colors .album-color'))
+            assert.equal(await page.locator('#album-colors').isVisible(), shown, layout)
+        } finally { await close() }
+    }
 })
