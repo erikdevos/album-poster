@@ -26,7 +26,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
-      - run: npm run test:e2e
+      - name: Browser tests
+        run: |
+          npm run test:e2e 2>&1 | tee e2e.log
+      - name: Which browser tests failed
+        if: failure()
+        run: python3 scripts/ci-annotate.py e2e.log
 
   build:
     needs: test

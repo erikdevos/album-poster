@@ -18,4 +18,8 @@ jobs:
       - name: Unit tests
         run: npm test
       - name: Browser tests (the Chrome on the runner, fake MusicBrainz)
-        run: npm run test:e2e
+        run: |
+          npm run test:e2e 2>&1 | tee e2e.log
+      - name: Which browser tests failed
+        if: failure()
+        run: python3 scripts/ci-annotate.py e2e.log
