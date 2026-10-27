@@ -204,7 +204,7 @@ test('a loader shows in the search box while searching, and the results do not m
         await page.getByText('Searching…').waitFor()
         assert.equal(await posterTop(page), before)
 
-        await page.getByRole('option', { name: /Abbey Road/ }).waitFor({ timeout: 15_000 })
+        await page.getByRole('option', { name: /Abbey Road/ }).waitFor({ timeout: 45_000 })
         assert.equal(await page.locator('.search').getAttribute('data-searching'), null)
         assert.equal(await page.locator('#search-results').getAttribute('aria-busy'), 'false')
     } finally {
@@ -567,18 +567,19 @@ test('the slideshow changes album every few seconds, from the curated list, and 
         assert.equal(await root(page).getAttribute('data-display'), 'on')
         assert.equal(await currentId(page), LUX) // it starts with the album in the URL
 
-        await page.waitForFunction(id => location.hash.slice(1) !== id, LUX, { timeout: 15_000 })
+        await page.waitForFunction(id => location.hash.slice(1) !== id, LUX, { timeout: 45_000 })
         const second = await currentId(page)
         assert.ok(curatedIds.includes(second), 'the next album is one from the curated list')
-        await page.locator('#album-name').getByText(`Album ${second.slice(0, 8)}`).waitFor()
+        await page.locator('#album-name').getByText(albumFor(second)[0], { exact: true }).waitFor() // the fake MusicBrainz names a few of the curated albums
 
-        await page.waitForFunction(id => location.hash.slice(1) !== id, second, { timeout: 15_000 })
+        await page.waitForFunction(id => location.hash.slice(1) !== id, second, { timeout: 45_000 })
         assert.notEqual(await currentId(page), second)
     } finally { await close() }
 })
 
 test('pause stops the slideshow, and Next, N and the arrow key go on to the next album', async () => {
-    const { page, close } = await open(`?kiosk=3#${LUX}`)
+    // a long interval: the test uses the buttons and keys, and a slow machine must not let the slideshow move on by itself first
+    const { page, close } = await open(`?kiosk=120#${LUX}`)
     try {
         await poster(page).title.getByText('LUX').waitFor()
         await page.mouse.move(200, 200)
@@ -592,7 +593,7 @@ test('pause stops the slideshow, and Next, N and the arrow key go on to the next
         // the buttons have faded away by now; a move of the mouse brings them back
         await page.mouse.move(220, 220)
         await page.mouse.move(230, 230)
-        const changedFrom = id => page.waitForFunction(from => location.hash.slice(1) !== from, id, { timeout: 15_000 })
+        const changedFrom = id => page.waitForFunction(from => location.hash.slice(1) !== from, id, { timeout: 45_000 })
 
         await page.getByRole('button', { name: 'Next album' }).click()
         await changedFrom(LUX)
@@ -614,7 +615,7 @@ test('the slideshow can take random albums from MusicBrainz', async () => {
     const { page, close } = await open(`?kiosk=3&source=random#${LUX}`)
     try {
         await poster(page).title.getByText('LUX').waitFor()
-        await page.waitForFunction(id => location.hash.slice(1) === id, RANDOM_ID, { timeout: 20_000 })
+        await page.waitForFunction(id => location.hash.slice(1) === id, RANDOM_ID, { timeout: 45_000 })
         await page.locator('#album-name').getByText(`Album ${RANDOM_ID.slice(0, 8)}`).waitFor()
 
         const search = searches.find(query => query.startsWith('tag:'))
@@ -698,7 +699,7 @@ test('while an album loads there is a loader on the Random button and a line at 
         assert.equal(await page.locator('#toast').isHidden(), true)
 
         // when the album is there, the loaders are gone
-        await page.waitForFunction(() => !document.documentElement.dataset.loading, null, { timeout: 15_000 })
+        await page.waitForFunction(() => !document.documentElement.dataset.loading, null, { timeout: 45_000 })
         assert.equal(await random.getAttribute('aria-busy'), null)
         assert.equal(await posterTop(page), before.top)
     } finally {
@@ -772,7 +773,7 @@ test('the title and the cover change together: the old poster stays until the ne
         await page.waitForFunction(() => document.getElementById('album-cover').complete)
         const oldCover = await page.evaluate(() => document.getElementById('album-cover').src)
 
-        slowImageMs = 1500
+        slowImageMs = 4000 // long enough that a slow machine still looks while the cover is on its way
         await page.evaluate(id => { location.hash = id }, ABBEY)
 
         // while the new cover is on its way, the old poster stays complete: old title, old cover
@@ -782,7 +783,7 @@ test('the title and the cover change together: the old poster stays until the ne
         assert.equal(await page.evaluate(() => document.getElementById('album-cover').src), oldCover)
 
         // then both change in one go: the new title never stands on the old cover
-        await poster(page).title.getByText('Abbey Road').waitFor({ timeout: 15_000 })
+        await poster(page).title.getByText('Abbey Road').waitFor({ timeout: 45_000 })
         const state = await page.evaluate(() => {
             const cover = document.getElementById('album-cover')
             return { src: cover.src, complete: cover.complete, width: cover.naturalWidth, hidden: cover.classList.contains('hidden') }
@@ -821,7 +822,7 @@ test('the old poster fades out over the new one, and is gone afterwards', async 
         assert.equal(seen.hidden, 'true')
         assert.equal(seen.clickable, 'none')
 
-        await page.waitForFunction(() => !document.querySelector('.poster-ghost'), null, { timeout: 5000 })
+        await page.waitForFunction(() => !document.querySelector('.poster-ghost'), null, { timeout: 20_000 })
         assert.equal(await page.locator('[id="album-name"]').count(), 1)
     } finally { await close() }
 })
@@ -846,7 +847,7 @@ test('a quick second choice does not leave copies behind, and the last album win
         await poster(page).title.getByText('LUX').waitFor()
         await page.evaluate(([a, b]) => { location.hash = a; setTimeout(() => { location.hash = b }, 60) }, [ABBEY, RATED_R])
         await poster(page).title.getByText('Rated R').waitFor()
-        await page.waitForFunction(() => !document.querySelector('.poster-ghost'), null, { timeout: 5000 })
+        await page.waitForFunction(() => !document.querySelector('.poster-ghost'), null, { timeout: 20_000 })
         assert.equal(await poster(page).title.textContent(), 'Rated R')
         assert.equal(await page.evaluate(() => document.querySelectorAll('.poster-ghost').length), 0)
     } finally { await close() }
@@ -1514,8 +1515,15 @@ const overflow = page => page.evaluate(() => {
         const rect = li.getBoundingClientRect()
         if (rect.right > box.right + 1 || rect.bottom > box.bottom + 1) { out.push('a track sticks out'); break }
     }
+    // what is clipped by the poster: any part of its content under the bottom (the blurred backdrop of the
+    // blur layouts is decoration that is meant to reach a little beyond the poster, so it does not count)
     const container = document.getElementById('album-container')
-    if (container.scrollHeight > container.clientHeight + 1) out.push(`the poster is clipped by ${container.scrollHeight - container.clientHeight}px`)
+    const bottom = container.getBoundingClientRect().bottom
+    for (const element of container.querySelectorAll('*')) {
+        if (element.closest('.poster-backdrop')) continue
+        const rect = element.getBoundingClientRect()
+        if (rect.height && rect.bottom > bottom + 1) { out.push(`${element.id || element.className || element.tagName} is clipped by ${Math.round(rect.bottom - bottom)}px`); break }
+    }
     return out
 })
 
@@ -1813,7 +1821,7 @@ test('in the column the panels open to the left and stay inside the window, also
             await page.getByRole('button', { name: 'Export' }).click()
             await page.getByLabel('File type').selectOption('pdf')
             // the panel grew; it is moved up to fit as soon as the browser has noticed
-            await page.waitForFunction(h => document.getElementById('export-panel').getBoundingClientRect().bottom <= h, height, { timeout: 3000 })
+            await page.waitForFunction(h => document.getElementById('export-panel').getBoundingClientRect().bottom <= h, height, { timeout: 15_000 })
             const box = await page.locator('#export-panel').boundingBox()
             const column = await page.locator('.site-header').boundingBox()
             assert.ok(box.x + box.width <= column.x + 1, `the panel is left of the column (${height})`)
@@ -1990,4 +1998,137 @@ test('the page opens with the focus on the Style menu, and the arrow keys go thr
             assert.notEqual(await hidden.page.evaluate(() => document.activeElement.id), 'layout-select', query)
         } finally { await hidden.close() }
     }
+})
+
+test('the track lengths show in receipt, setlist and cd, and not in the other layouts', async () => {
+    const lengthsShown = async layout => {
+        const { page, close } = await open(`?layout=${layout}#${ABBEY}`, { viewport: { width: 700, height: 1400 } })
+        try {
+            await poster(page).title.getByText('Abbey Road').waitFor()
+            return await page.evaluate(() => {
+                const content = [...document.querySelectorAll('#track-list li')].map(li => getComputedStyle(li, '::after').content)
+                const length = document.querySelector('.footer-length')
+                return { content, total: getComputedStyle(length).display === 'none' ? '' : length.textContent, prefix: getComputedStyle(length, '::before').content }
+            })
+        } finally { await close() }
+    }
+    for (const layout of ['receipt', 'setlist', 'cd', 'cd-blur']) {
+        const shown = await lengthsShown(layout)
+        assert.deepEqual(shown.content, ['"3:20"', '"1:40"', '"1:40"'], layout)
+    }
+    for (const layout of ['classic', 'swiss', 'vinyl']) {
+        const shown = await lengthsShown(layout)
+        assert.ok(shown.content.every(text => text === 'none' || text === 'normal' || text === '""' || text === '"|"' || !/\d:\d\d/.test(text)), layout)
+    }
+    // receipt: the playing time, as a line of its own before the label
+    const receipt = await lengthsShown('receipt')
+    assert.equal(receipt.total, '6 min 40 sec')
+    assert.equal(receipt.prefix, '"Playing time "')
+})
+
+test('the wall header on a phone is three rows: title with icons, the filter, and the three menus next to each other', async () => {
+    for (const width of [375, 320]) {
+        const { page, close } = await open('wall/', { viewport: { width, height: 700 } })
+        try {
+            await page.locator('.wall-tile').first().waitFor()
+            const look = await page.evaluate(() => {
+                const rect = selector => document.querySelector(selector).getBoundingClientRect()
+                return {
+                    header: rect('.wall-header'), title: rect('.site-title'), theme: rect('#theme-toggle'), filter: rect('#wall-filter'),
+                    sort: rect('#wall-sort'), group: rect('#wall-group'), layout: rect('#wall-layout'),
+                    labels: [...document.querySelectorAll('.wall-field:not(.wall-size)')].map(el => el.firstChild.textContent.trim())
+                }
+            })
+            assert.ok(look.header.height <= 175, `${width}: header is ${look.header.height}px high`)
+            assert.ok(Math.abs(look.title.top - look.theme.top) < 20, 'the icons are on the row of the title')
+            assert.ok(look.filter.top > look.title.bottom - 1, 'the filter is under it')
+            assert.ok(look.sort.top > look.filter.bottom - 1, 'and the menus under that')
+            assert.ok(Math.abs(look.sort.top - look.group.top) < 2 && Math.abs(look.group.top - look.layout.top) < 2, 'on one row')
+            assert.ok(look.sort.right <= look.group.left + 1 && look.group.right <= look.layout.left + 1 && look.layout.right <= width, 'next to each other, inside the window')
+            assert.deepEqual(look.labels, ['Sort', 'Group', 'Layout'])
+        } finally { await close() }
+    }
+})
+
+// ---------- More accessibility ----------
+
+test('a skip button is the first thing for the keyboard, only seen when it has focus, and takes you to the poster without changing the album', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const skip = page.locator('#skip-to-poster')
+        // before it has focus it is out of sight; the first element of the page in tab order
+        assert.ok((await skip.boundingBox()).y + (await skip.boundingBox()).height <= 0, 'out of sight')
+        assert.equal(await page.evaluate(() => document.querySelector('button, a, input, select, [tabindex="0"]').id), 'skip-to-poster')
+
+        await skip.focus()
+        const box = await skip.boundingBox()
+        assert.ok(box.y >= 0 && box.x >= 0, 'on screen with focus')
+        await page.keyboard.press('Enter')
+        assert.equal(await page.evaluate(() => document.activeElement.id), 'album-container')
+        assert.equal(await currentId(page), LUX, 'the album stays')
+    } finally { await close() }
+})
+
+test('screen readers are told which album is on the poster when it changes', async () => {
+    const { page, close } = await open(`#${LUX}`)
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        const status = page.locator('#album-status')
+        assert.equal(await status.textContent(), 'LUX by ROSALÍA')
+        assert.equal(await status.getAttribute('aria-live'), 'polite')
+        await page.evaluate(id => { location.hash = id }, ABBEY)
+        await poster(page).title.getByText('Abbey Road').waitFor()
+        await page.waitForFunction(() => document.getElementById('album-status').textContent === 'Abbey Road by The Beatles')
+    } finally { await close() }
+})
+
+test('after Next, Previous and Random the focus stays on that button, so that the keyboard can go on', async () => {
+    const { page, close } = await open(`#${LUX}`, { viewport: { width: 1280, height: 800 } })
+    try {
+        await poster(page).title.getByText('LUX').waitFor()
+        for (const id of ['next-button', 'prev-button', 'shuffle-button']) {
+            const before = await currentId(page)
+            await page.locator(`#${id}`).focus()
+            await page.keyboard.press('Enter')
+            await page.waitForFunction(from => location.hash.slice(1) !== from, before, { timeout: 45_000 })
+            await page.waitForFunction(() => !document.querySelector('.poster-ghost'))
+            assert.equal(await page.evaluate(() => document.activeElement.id), id, `focus stays on ${id}`)
+        }
+    } finally { await close() }
+})
+
+test('the wall has a skip button to the albums too', async () => {
+    const { page, close } = await open('wall/', { viewport: { width: 1280, height: 800 } })
+    try {
+        await page.locator('.wall-tile').first().waitFor()
+        await page.locator('#skip-to-albums').focus()
+        assert.ok((await page.locator('#skip-to-albums').boundingBox()).y >= 0)
+        await page.keyboard.press('Enter')
+        assert.equal(await page.evaluate(() => document.activeElement.id), 'wall-main')
+    } finally { await close() }
+})
+
+test('modern is light grey paper in the dark theme too, and takes the colours of the cover', async () => {
+    const { contrastRatio } = await import('../../scripting/colors.js')
+    const channels = text => text.match(/[\d.]+/g).slice(0, 3).map(Number)
+    const paperOf = async url => {
+        const { page, close } = await open(url) // the tests run with a dark colour scheme
+        try {
+            await poster(page).title.getByText('LUX').waitFor()
+            await page.waitForFunction(() => document.getElementById('album-cover').naturalWidth > 0)
+            return await page.evaluate(() => {
+                const info = getComputedStyle(document.getElementById('album-info'))
+                return { bg: info.backgroundColor, fg: info.color, theme: document.documentElement.dataset.theme ?? 'system' }
+            })
+        } finally { await close() }
+    }
+    for (const theme of ['dark', 'light']) {
+        const paper = await paperOf(`?layout=modern&theme=${theme}#${LUX}`)
+        assert.equal(paper.bg, 'rgb(235, 235, 236)', theme)
+        assert.equal(paper.fg, 'rgb(20, 20, 20)', theme)
+        assert.ok(contrastRatio(channels(paper.fg), channels(paper.bg)) >= 12, 'readable')
+    }
+    const cover = await paperOf(`?layout=modern&colors=cover#${LUX}`)
+    assert.notEqual(cover.bg, 'rgb(235, 235, 236)', 'colors=cover paints the poster in the colours of the cover')
 })

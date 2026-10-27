@@ -144,15 +144,38 @@
         align-items: baseline;
         gap: 0.75rem;
     }
-    .wall-field:not(.wall-size) {
-        flex: 1 1 40%;
+    /* The header in three rows: the title with the icons, the filter, and the three menus next to
+       each other, each with its name above it */
+    .wall-header > .site-title {
+        order: 1;
     }
-    .wall-field select {
-        flex: 1;
+    .wall-header > a.header-control,
+    .wall-header > .header-menu,
+    .wall-header > .theme-toggle {
+        order: 2;
     }
     .wall-search {
         order: 3;
         flex-basis: 100%;
+    }
+    .wall-field:not(.wall-size) {
+        order: 4;
+        flex: 1 1 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.15rem;
+        min-width: 0;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+    .wall-field select {
+        width: 100%;
+        min-width: 0;
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 400;
     }
     .wall-size {
         display: none;

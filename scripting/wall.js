@@ -150,6 +150,7 @@ function setupOffline() {
 
 async function init() {
     registerServiceWorker()
+    $('skip-to-albums').addEventListener('click', () => $('wall-main').focus())
     $('wall-filter').value = options.query
     $('wall-sort').value = options.sort
     $('wall-group').value = options.group

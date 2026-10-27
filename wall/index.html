@@ -19,6 +19,7 @@
         </script>
     </head>
     <body>
+        <button type="button" id="skip-to-albums" class="skip-link">Skip to the albums</button>
         <header class="site-header wall-header">
             <h1 class="site-title"><a id="poster-link" href="../">Album poster</a></h1>
             <div class="search wall-search" role="search">
@@ -73,7 +74,7 @@
                 </svg>
             </button>
         </header>
-        <main class="wall">
+        <main class="wall" id="wall-main" tabindex="-1">
             <p id="wall-count" class="wall-count" role="status" aria-live="polite"></p>
             <div id="wall-albums"><!-- Loaded through JS --></div>
         </main>

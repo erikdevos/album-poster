@@ -71,6 +71,9 @@ async function init() {
     document.getElementById('shuffle-button').addEventListener('click', showRandomAlbum)
     setupBrowse(albums)
     setupThemeToggle()
+    document.getElementById('skip-to-poster').addEventListener('click', () => {
+        document.getElementById('album-container').focus({ preventScroll: false })
+    })
     const styleMenu = document.getElementById('layout-select')
     styleMenu.addEventListener('change', event => setLayout(event.target.value))
     // The page opens with the focus on the Style menu: the arrow keys then go through the styles at once.

@@ -61,6 +61,7 @@ export function renderAlbum(album) {
     document.getElementById('album-name').textContent = album.title
     document.getElementById('album-artist').textContent = album.artist
     document.title = `${album.title} – ${album.artist}`
+    document.getElementById('album-status').textContent = `${album.title} by ${album.artist}`
 
     // Footer: label, year and genre
     setField('album-label', album.label)

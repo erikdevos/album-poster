@@ -19,9 +19,13 @@
         </script>
     </head>
     <body class="has-rail">
+        <!-- A button, not a link to #poster: the part after # is the album -->
+        <button type="button" id="skip-to-poster" class="skip-link">Skip to the poster</button>
         <!-- Fixed to the window, so that loading and messages never move the page -->
         <div class="loading-line" aria-hidden="true"></div>
         <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+        <!-- For screen readers: says which album is on the poster when it changes -->
+        <p id="album-status" class="sr-only" role="status" aria-live="polite"></p>
 
         <header class="site-header">
             <h1 class="site-title">Album poster</h1>
@@ -176,7 +180,7 @@
         </header>
         <main>
 
-            <section id="album-container" aria-label="Album poster">
+            <section id="album-container" aria-label="Album poster" tabindex="-1">
                 <!-- Album info -->
                 <div id="album-info" class="album-info-container no-back">
                     <!-- Only visible in the blur layout: the cover, enlarged and blurred, behind the poster -->

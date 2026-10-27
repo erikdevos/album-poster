@@ -689,6 +689,18 @@ ol.track-list li::before {
     text-align: center;
     text-wrap: balance;
 }
+/* the length after the title, in one piece so that it does not break away from it */
+#album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li[data-length]::after {
+    content: attr(data-length);
+    display: inline-block;
+    margin-left: 0.7em;
+    font-size: 0.85em;
+    line-height: 1; /* it must not make the line higher than a title without a length */
+    vertical-align: baseline;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.7;
+    text-wrap: nowrap;
+}
 #album-container:is([data-layout="cd"], [data-layout="cd-blur"]) ol.track-list li::before {
     display: inline-block;
     min-width: 1.6em;
@@ -969,8 +981,14 @@ ol.track-list li::before {
     line-height: 1.3;
 }
 #album-container[data-layout="receipt"] ol.track-list li {
-    grid-template-columns: 2.6em 1fr;
+    grid-template-columns: 2.6em 1fr auto;
     font-weight: 400;
+}
+/* the length of a track at the right, like the price of an item */
+#album-container[data-layout="receipt"] ol.track-list li[data-length]::after {
+    content: attr(data-length);
+    padding-left: 1em;
+    font-variant-numeric: tabular-nums;
 }
 #album-container[data-layout="receipt"] ol.track-list li::before {
     font-weight: 400;
@@ -995,8 +1013,15 @@ ol.track-list li::before {
     font-weight: 400;
     text-align: center;
 }
-#album-container[data-layout="receipt"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden)::before {
+#album-container[data-layout="receipt"] .album-footer-info .footer-item:not(.hidden) ~ .footer-item:not(.hidden):not(.footer-length)::before {
     content: none;
+}
+#album-container[data-layout="receipt"] .album-footer-info .footer-length:not(.hidden) {
+    display: block;
+    order: -1;
+}
+#album-container[data-layout="receipt"] .album-footer-info .footer-length::before {
+    content: "Playing time ";
 }
 #album-container[data-layout="receipt"] .album-footer-info::after {
     content: "*** Thank you for listening ***";
@@ -1244,9 +1269,18 @@ ol.track-list li::before {
     text-transform: none;
 }
 #album-container[data-layout="setlist"] ol.track-list li {
-    grid-template-columns: 2em 1fr;
+    grid-template-columns: 2em 1fr auto;
     margin-bottom: 0.25em;
     font-weight: 400;
+}
+/* the length of a song in the margin, in pencil */
+#album-container[data-layout="setlist"] ol.track-list li[data-length]::after {
+    content: attr(data-length);
+    padding-left: 1em;
+    color: #6b6a64;
+    font-size: 0.8em;
+    font-variant-numeric: tabular-nums;
+    align-self: end;
 }
 #album-container[data-layout="setlist"] ol.track-list li::before {
     content: counter(track) ".";
@@ -2044,6 +2078,31 @@ a.header-control {
     }
 }
 
+/* The first thing the keyboard reaches: a way past the header to the poster. Only seen when it has focus. */
+.skip-link {
+    position: absolute;
+    z-index: 100;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.6rem 1rem;
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--fg);
+    color: var(--bg);
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transform: translateY(-300%);
+}
+.skip-link:focus-visible {
+    transform: none;
+}
+/* the poster takes the focus from the skip button, but it is not a control: no ring around it */
+#album-container:focus,
+.wall:focus {
+    outline: none;
+}
+
 /* Only for screen readers */
 .sr-only {
     position: absolute;
@@ -2432,9 +2491,12 @@ footer a:hover {
 /* ---------- Layout: modern ----------
    A clean print on grey: the title big at the top left, the artist below it with the cover's colours
    at the right, a rounded cover, and under it the tracks in two columns and the details at the right
-   (label, year, genre). It follows the theme and takes `colors=cover`. */
+   (label, year, genre). Light grey paper in both themes; it takes `colors=cover`. */
 #album-container[data-layout="modern"] {
     --poster-ratio: 1.55;
+    /* light grey paper with near-black type, in the dark theme too; ?colors=cover sets these on the poster itself */
+    --poster-bg: #ebebec;
+    --poster-fg: #141414;
 }
 #album-container[data-layout="modern"] .album-info-container {
     display: grid;
