@@ -19,14 +19,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Chrome for the browser tests
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
       - run: npm test
       - name: Browser tests
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: |
           npm run test:e2e 2>&1 | tee e2e.log
       - name: Which browser tests failed
@@ -37,7 +44,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/configure-pages@v5
       - name: Collect the site (no tests, scripts or tooling)
         run: |
@@ -46,7 +53,7 @@ jobs:
           # a new sw.js with every deploy: the open pages then notice that there is a new version
           sed -i "s|^// version: dev|// version: ${GITHUB_SHA}|" _site/sw.js
           touch _site/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 

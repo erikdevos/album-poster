@@ -9,15 +9,22 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Chrome for the browser tests
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
       - name: Unit tests
         run: npm test
       - name: Browser tests (the Chrome on the runner, fake MusicBrainz)
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: |
           npm run test:e2e 2>&1 | tee e2e.log
       - name: Which browser tests failed
