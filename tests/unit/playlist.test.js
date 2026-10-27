@@ -35,6 +35,19 @@ test('the same item never comes twice in a row, also not between rounds', () => 
     }
 })
 
+test('the item that is on the screen when the playlist starts does not come up first', () => {
+    // with a random that would put 'a' first: the unlucky case, for every starting item
+    for (const current of ['a', 'b', 'c', 'd']) {
+        for (let run = 0; run < 100; run++) {
+            const list = createPlaylist(['a', 'b', 'c', 'd'], Math.random, current)
+            assert.notEqual(list.next(), current)
+        }
+    }
+    // a list of one has nothing else to play, and an item that is not in the list changes nothing
+    assert.equal(createPlaylist(['only'], Math.random, 'only').next(), 'only')
+    assert.ok(['a', 'b'].includes(createPlaylist(['a', 'b'], Math.random, 'zzz').next()))
+})
+
 test('a playlist of one repeats it, and an empty one gives nothing', () => {
     const one = createPlaylist(['only'])
     assert.equal(one.next(), 'only')

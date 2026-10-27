@@ -15,10 +15,11 @@ export function shuffle(items, random = Math.random) {
 }
 
 // Plays every item once in random order, then shuffles again. The first of a new round is never
-// the last of the round before, so the same album does not come up twice in a row.
-export function createPlaylist(items, random = Math.random) {
+// the last of the round before, so the same album does not come up twice in a row. `current` is the
+// item that is on the screen when the playlist starts: it is not the first to come up either.
+export function createPlaylist(items, random = Math.random, current = null) {
     let queue = []
-    let last = null
+    let last = current
 
     return {
         next() {

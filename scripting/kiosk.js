@@ -6,6 +6,7 @@
 
 import { createPlaylist } from './playlist.js'
 import { getAlbum, randomAlbumId } from './source.js'
+import { parseLocation } from './router.js'
 
 const COVER_TIMEOUT_MS = 6000
 const RETRY_MS = 2000
@@ -109,7 +110,9 @@ export function createKiosk({ albums, showAlbum }) {
             running = true
             paused = false
             generation++
-            playlist = createPlaylist(albums)
+            // the album that is on the poster now does not come up first
+            const shown = parseLocation().albumId
+            playlist = createPlaylist(albums, Math.random, albums.find(album => album.id === shown) ?? null)
             preparing = null
 
             root.dataset.kiosk = 'on'
